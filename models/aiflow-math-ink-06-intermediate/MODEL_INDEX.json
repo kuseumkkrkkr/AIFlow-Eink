@@ -1,0 +1,221 @@
+{
+  "schema": "aiflow-math-ink-06-public-checkpoint-index-v1",
+  "model_version": "AIFlow Math Ink 0.6 research",
+  "input_contract": {
+    "ink_space": [128, 128],
+    "maximum_events": 128,
+    "canonical_sample_hz": 6.0,
+    "sequence_channels": 19,
+    "source_modalities": ["online", "raster"]
+  },
+  "output_contract": {
+    "exact_labels": 378,
+    "visual_families": 324,
+    "virtual_stroke_hypotheses": 4,
+    "behavior_roles": [
+      "identifier_lower",
+      "identifier_upper",
+      "multiply_operator"
+    ]
+  },
+  "seeds": {
+    "17": {
+      "base": "models/seed17/base_378.pt",
+      "online_adapter": "models/seed17/online_adapter.pt",
+      "behavior_role_head": "models/seed17/behavior_role_head.pt"
+    },
+    "31": {
+      "base": "models/seed31/base_378.pt",
+      "online_adapter": "models/seed31/online_adapter.pt",
+      "behavior_role_head": "models/seed31/behavior_role_head.pt"
+    },
+    "47": {
+      "base": "models/seed47/base_378.pt",
+      "online_adapter": "models/seed47/online_adapter.pt",
+      "behavior_role_head": "models/seed47/behavior_role_head.pt"
+    }
+  },
+  "grouping_head": "artifacts/boundary_behavior_guard.joblib",
+  "p_boundary_joint": {
+    "status": "rejected_after_shared_state_fix",
+    "artifacts_published": false,
+    "corrected_report": "reports/p_boundary_joint_sharedfix_3seed_summary.json",
+    "training_track": "P_with_obligations",
+    "product_validation": false
+  },
+  "device_contract_stress": {
+    "report": "reports/p_boundary_device_stress_sharedfix_3seed.json",
+    "model_variant": "base_plus_shared_adapter_plus_shadow_auxiliary",
+    "modes": [
+      "coordinate_jitter",
+      "timestamp_missing",
+      "sparse_sampling_recanonicalized",
+      "affine_device"
+    ],
+    "all_seed_mode_gates_passed": true,
+    "android_hardware_validation": false,
+    "product_validation": false
+  },
+  "composite_torch_export": {
+    "seed": 17,
+    "online": "exports/seed17/online.pt2",
+    "raster": "exports/seed17/raster.pt2",
+    "manifest": "exports/seed17/export_manifest.json",
+    "shared_state_applied": true,
+    "top1_agreement": 1.0,
+    "maximum_absolute_logit_error": 0.0,
+    "online_family_fusion_weight": 0.15,
+    "total_pt2_bytes": 24300116,
+    "representative_samples": 76,
+    "litert_flatbuffer": false
+  },
+  "composite_cpu_proxy": {
+    "report": "reports/composite_cpu_benchmark.json",
+    "online_p95_ms_range": [8.90, 9.67],
+    "raster_p95_ms_range": [22.10, 26.63],
+    "model_state_bytes": 8947108,
+    "model_state_plus_inference_growth_bytes": 26387876,
+    "android_validation": false
+  },
+  "online_error_consensus": {
+    "report": "reports/online_error_consensus_paired_test_3seed.json",
+    "samples": 3782,
+    "exact_ensemble_top1": 0.8371232151985168,
+    "exact_ensemble_top5": 0.9801692366600037,
+    "visual_family_top1": 0.9299312829971313,
+    "all_seed_wrong_rate": 0.11951348185539246,
+    "formula_context_exact_gate_passed": false
+  },
+  "online_family_fusion_calibration": {
+    "report": "reports/online_family_fusion_calibration_3seed.json",
+    "selected_weight": 0.15,
+    "paired_test_top1": 0.8381808400154114,
+    "paired_test_gain_pp": 0.10576248168945312
+  },
+  "behavior_exact_gate": {
+    "report": "reports/behavior_exact_gate_3seed.json",
+    "scope": "truth_group_conditional_behavior_targets",
+    "official_test_teacher_exact_top1_mean": 0.336483,
+    "official_test_final_exact_top1_mean": 0.472966,
+    "official_test_gain_pp_mean": 13.6483,
+    "product_validation": false
+  },
+  "formula_context_contract": {
+    "report": "reports/formula_context_contract_3seed.json",
+    "selected_mode": "formula",
+    "official_test_all_supported_exact_top1": 0.6303,
+    "official_test_all_supported_visual_family_top1": 0.6818,
+    "product_validation": false
+  },
+  "research_formula_adapter": {
+    "status": "research_shadow_only",
+    "training_track": "R_noncommercial_only",
+    "architecture": "zero_init_skeleton_trajectory_adapter_h64",
+    "checkpoints": {
+      "17": "models/research_formula_adapter/seed17/formula_adapter.pt",
+      "31": "models/research_formula_adapter/seed31/formula_adapter.pt",
+      "47": "models/research_formula_adapter/seed47/formula_adapter.pt"
+    },
+    "summary": "reports/formula_adapter_h64_3seed_summary.json",
+    "validation_visual_family_top1_mean": 0.9330453563714902,
+    "official_test_visual_family_top1_mean": 0.8817204301075269,
+    "visual_family_generalization_gap_pp_mean": 5.132492626396335,
+    "product_validation": false,
+    "distillation_allowed": false
+  },
+  "p_synthetic_behavior_proxy": {
+    "status": "rejected_no_3seed_expansion",
+    "training_report": "reports/behavior_role_p_proxy_w035_seed17.json",
+    "distribution_audit": "reports/p_proxy_shift_seed17.json",
+    "samples": 1590,
+    "loss_weight": 0.35,
+    "official_test_accuracy_before": 0.930708646774292,
+    "official_test_accuracy_after": 0.930708646774292,
+    "official_test_macro_f1_before": 0.7664031279554507,
+    "official_test_macro_f1_after": 0.7361821054646563,
+    "uppercase_recall_before": 0.6129032258064516,
+    "uppercase_recall_after": 0.45161290322580644,
+    "maximum_layout_absolute_smd": 2.8216191770723147,
+    "checkpoint_published": false,
+    "product_validation": false
+  },
+  "p_formula_intake": {
+    "status": "implemented_fail_closed",
+    "source": "src/p_formula_intake06.py",
+    "materializer": "scripts/materialize_math_ink_06_p_formula.py",
+    "record_schema": "contracts/aiflow_p_formula_v1.schema.json",
+    "annotation_schema": "contracts/aiflow_p_formula_annotation_v1.schema.json",
+    "requires_human_verified_tokens": true,
+    "requires_checkpoint_vocabulary_labels": 378,
+    "writes_only_after_full_preflight": true,
+    "automatic_collection": false,
+    "server_upload": false,
+    "product_validation": false
+  },
+  "p_formula_training": {
+    "status": "implemented_waiting_for_real_p_formula",
+    "dataset": "src/p_formula_dataset06.py",
+    "trainer": "scripts/train_math_ink_06_p_formula_adapter.py",
+    "three_seed_summary": "scripts/summarize_math_ink_06_p_formula_seeds.py",
+    "student_distiller": "scripts/distill_math_ink_06_p_formula_student.py",
+    "student_exporter": "scripts/export_math_ink_06_p_formula_student.py",
+    "release_driver": "scripts/run_math_ink_06_p_formula_release.py",
+    "recipe": "configs/MATH-INK-06-P-FORMULA-v1.json",
+    "seeds": [17, 31, 47],
+    "formula_adapter_hidden_size": 64,
+    "frozen_product_encoder": true,
+    "frozen_online_adapter": true,
+    "seed_gate": {
+      "exact_top1_minimum": 0.92,
+      "exact_top5_minimum": 0.99,
+      "macro_f1_minimum": 0.9,
+      "writer_floor_minimum": 0.75,
+      "missing_metadata_drop_maximum_pp": 3.0
+    },
+    "student_distillation_requires_all_seeds": true,
+    "same_data_sha256_required_across_seeds": true,
+    "distillation": {
+      "teacher_probability_temperature": 2.0,
+      "teacher_weights_embedded": false,
+      "maximum_teacher_to_student_regression_pp": 1.0,
+      "cuda_fixture_path_passed": true,
+      "fixture_release_gate_passed": false,
+      "strict_export_contract_smoke": {
+        "exact_labels": 378,
+        "samples": 2,
+        "top1_agreement": 1.0,
+        "maximum_absolute_logit_error": 0.0,
+        "artifact_persisted": false
+      },
+      "student_export_maximum_bytes": 26214400,
+      "litert_exported": false
+    },
+    "teacher_ensemble_mobile_deployment_allowed": false,
+    "fixture_smoke_passed": true,
+    "real_p_training_completed": false,
+    "product_validation": false
+  },
+  "release_state": {
+    "track": "R_noncommercial_only",
+    "product_validation": false,
+    "commercial_release": false,
+    "litert_exported": false,
+    "distillation_allowed_for_r_track_heads": false
+  },
+  "android_oda_runtime": {
+    "status": "source_and_aar_build_verified_waiting_for_tflite",
+    "source": "android/aiflow-math-ink-runtime",
+    "public_api": ["recognizeOnline", "recognizeRaster", "SymbolResult"],
+    "litert_api": "CompiledModel",
+    "litert_version": "2.1.6",
+    "kotlin_version": "2.3.0",
+    "python_feature_parity_tolerance": 0.0001,
+    "unit_tests": 5,
+    "release_aar_bytes": 56139,
+    "release_aar_sha256": "2b75abe9040c537a04da6f352c139142850f3d84a2b26e2c7dc79fe23bf74bba",
+    "server_payload_excludes_raw_ink": true,
+    "tflite_present": false,
+    "android_hardware_validation": false,
+    "product_validation": false
+  }
+}

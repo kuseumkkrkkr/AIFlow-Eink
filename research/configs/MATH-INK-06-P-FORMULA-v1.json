@@ -1,0 +1,68 @@
+{
+  "recipe_id": "MATH-INK-06-P-FORMULA-v1",
+  "seeds": [17, 31, 47],
+  "input": {
+    "schema": "aiflow-p-formula-v1",
+    "track": "P",
+    "commercial_training_allowed": true,
+    "minimum_independent_sources": 2,
+    "required_splits": ["training", "validation", "test"],
+    "same_data_sha256_required_across_seeds": true,
+    "identity_overlap_required": {
+      "origin_id": 0,
+      "writer_id": 0,
+      "device_id": 0,
+      "source_id": 0
+    }
+  },
+  "model": {
+    "frozen_product_encoder": true,
+    "frozen_online_adapter": true,
+    "formula_adapter": "zero_init_skeleton_trajectory_adapter",
+    "hidden_size": 64,
+    "maximum_events": 128,
+    "sequence_channels": 19,
+    "exact_labels": 378
+  },
+  "training": {
+    "epochs": 16,
+    "batch_size": 256,
+    "learning_rate": 0.0004,
+    "weight_decay": 0.002,
+    "exact_loss_weight": 0.1,
+    "family_loss_weight": 1.0,
+    "context_dropout": 0.3,
+    "patience": 4,
+    "sampler": "inverse_sqrt_source_x_exact_label",
+    "device": "cuda"
+  },
+  "seed_gate": {
+    "exact_top1_minimum": 0.92,
+    "exact_top5_minimum": 0.99,
+    "macro_f1_minimum": 0.9,
+    "writer_floor_minimum": 0.75,
+    "missing_metadata_drop_maximum_pp": 3.0
+  },
+  "three_seed_gate": {
+    "all_individual_seeds_must_pass": true,
+    "teacher_ensemble_mobile_deployment_allowed": false,
+    "student_distillation_allowed_after_pass": true,
+    "product_validation": false,
+    "next_gate": "LiteRT parity and Android low/mid/high tier benchmark"
+  },
+  "distillation": {
+    "teacher_ensemble": "probability_mean",
+    "temperature": 2.0,
+    "teacher_exact_weight": 0.7,
+    "teacher_family_weight": 1.0,
+    "hard_exact_weight": 0.2,
+    "hard_family_weight": 0.5,
+    "student_seed": 17,
+    "student_formula_adapter_hidden_size": 64,
+    "teacher_weights_embedded": false,
+    "maximum_teacher_to_student_regression_pp": 1.0,
+    "student_must_pass_seed_gate": true,
+    "litert_exported": false,
+    "product_validation": false
+  }
+}

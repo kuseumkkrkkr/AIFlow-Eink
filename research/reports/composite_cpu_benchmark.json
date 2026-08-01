@@ -1,0 +1,92 @@
+{
+  "schema": "aiflow-math-ink-06-composite-cpu-benchmark-v1",
+  "generated_at": "2026-07-23T20:46:12.605642+00:00",
+  "torch_version": "2.5.1+cpu",
+  "platform": "win32",
+  "model_version": "aiflow-math-ink-0.6-federated-online1+aiflow-math-ink-0.6-skeleton-adapter1",
+  "model_state_bytes": 8947108,
+  "baseline_process_rss_bytes": 214052864,
+  "maximum_observed_process_rss_bytes": 231493632,
+  "inference_rss_growth_bytes": 17440768,
+  "model_state_plus_inference_growth_bytes": 26387876,
+  "memory_proxy_gate_le_100mib": true,
+  "rows": [
+    {
+      "threads": 1,
+      "online": {
+        "samples": 76,
+        "mean_ms": 6.75049078927259,
+        "p50_ms": 6.356400001095608,
+        "p95_ms": 9.667199992691167,
+        "maximum_ms": 10.958600003505126,
+        "output_checksum": 352945188,
+        "observed_process_rss_bytes": 219881472
+      },
+      "raster": {
+        "samples": 76,
+        "mean_ms": 20.92347894779921,
+        "p50_ms": 20.28549999522511,
+        "p95_ms": 26.63040001061745,
+        "maximum_ms": 30.65020000212826,
+        "output_checksum": 1642561801,
+        "observed_process_rss_bytes": 226779136
+      },
+      "proxy_gates": {
+        "online_p95_le_50ms": true,
+        "raster_p95_le_200ms": true
+      }
+    },
+    {
+      "threads": 2,
+      "online": {
+        "samples": 76,
+        "mean_ms": 6.810434210101927,
+        "p50_ms": 6.225100005394779,
+        "p95_ms": 9.654299996327609,
+        "maximum_ms": 9.932500004651956,
+        "output_checksum": 352945188,
+        "observed_process_rss_bytes": 227344384
+      },
+      "raster": {
+        "samples": 76,
+        "mean_ms": 18.964061841918586,
+        "p50_ms": 18.356900007347576,
+        "p95_ms": 24.987400000100024,
+        "maximum_ms": 25.607700008549727,
+        "output_checksum": 1642561801,
+        "observed_process_rss_bytes": 231112704
+      },
+      "proxy_gates": {
+        "online_p95_le_50ms": true,
+        "raster_p95_le_200ms": true
+      }
+    },
+    {
+      "threads": 4,
+      "online": {
+        "samples": 76,
+        "mean_ms": 7.332614473661555,
+        "p50_ms": 7.513899996411055,
+        "p95_ms": 8.904300004360266,
+        "maximum_ms": 9.474000005866401,
+        "output_checksum": 352945188,
+        "observed_process_rss_bytes": 231493632
+      },
+      "raster": {
+        "samples": 76,
+        "mean_ms": 19.088826316108584,
+        "p50_ms": 19.559899999876507,
+        "p95_ms": 22.10249999188818,
+        "maximum_ms": 23.168300001998432,
+        "output_checksum": 1642561801,
+        "observed_process_rss_bytes": 231378944
+      },
+      "proxy_gates": {
+        "online_p95_le_50ms": true,
+        "raster_p95_le_200ms": true
+      }
+    }
+  ],
+  "interpretation_limit": "Windows PyTorch CPU proxy이며 Android LiteRT·배터리·delegate 성능 판정이 아니다.",
+  "product_validation": false
+}

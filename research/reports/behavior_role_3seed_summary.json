@@ -1,0 +1,132 @@
+{
+  "experiment": "R-MATH-INK-06-BEHAVIOR-ROLE-3SEED-001",
+  "generated_at": "2026-07-23T16:44:02.899929+00:00",
+  "seeds": [
+    17,
+    31,
+    47
+  ],
+  "reports": [
+    "research\\runs\\math_ink_06_behavior_role_seed17_20260724\\report.json",
+    "research\\runs\\math_ink_06_behavior_role_seed31_20260724\\report.json",
+    "research\\runs\\math_ink_06_behavior_role_seed47_20260724\\report.json"
+  ],
+  "split_contract": "CROHME2012 trainData writer fit/validation; testDataGT official held-out",
+  "denominator": {
+    "formulas": {
+      "fit": 1063,
+      "validation": 275,
+      "official_test": 488
+    },
+    "role_samples": {
+      "fit": {
+        "identifier_lower": 1573,
+        "multiply_operator": 177,
+        "identifier_upper": 99
+      },
+      "validation": {
+        "identifier_lower": 401,
+        "multiply_operator": 44,
+        "identifier_upper": 22
+      },
+      "official_test": {
+        "identifier_lower": 568,
+        "identifier_upper": 31,
+        "multiply_operator": 36
+      }
+    }
+  },
+  "teacher_official_test": {
+    "accuracy": {
+      "values": [
+        0.7433071136474609,
+        0.6078740358352661,
+        0.6094487905502319
+      ],
+      "mean": 0.6535433133443197,
+      "std": 0.06347584762070135,
+      "minimum": 0.6078740358352661
+    },
+    "macro_f1": {
+      "values": [
+        0.3644206619715246,
+        0.31082213130722774,
+        0.31121831754743146
+      ],
+      "mean": 0.3288203702753946,
+      "std": 0.02517372727695006,
+      "minimum": 0.31082213130722774
+    }
+  },
+  "behavior_official_test": {
+    "accuracy": {
+      "values": [
+        0.930708646774292,
+        0.9385826587677002,
+        0.930708646774292
+      ],
+      "mean": 0.9333333174387614,
+      "std": 0.00371184485045543,
+      "minimum": 0.930708646774292
+    },
+    "macro_f1": {
+      "values": [
+        0.7664031279554507,
+        0.7717349248806314,
+        0.7541782507773837
+      ],
+      "mean": 0.764105434537822,
+      "std": 0.0073493195908634484,
+      "minimum": 0.7541782507773837
+    },
+    "identifier_lower_recall": {
+      "values": [
+        0.9507042253521126,
+        0.9630281690140845,
+        0.9559859154929577
+      ],
+      "mean": 0.9565727699530516,
+      "std": 0.0050483129501424015,
+      "minimum": 0.9507042253521126
+    },
+    "identifier_upper_recall": {
+      "values": [
+        0.6129032258064516,
+        0.5161290322580645,
+        0.5483870967741935
+      ],
+      "mean": 0.5591397849462365,
+      "std": 0.040232875126601536,
+      "minimum": 0.5161290322580645
+    },
+    "multiply_operator_recall": {
+      "values": [
+        0.8888888888888888,
+        0.9166666666666666,
+        0.8611111111111112
+      ],
+      "mean": 0.8888888888888888,
+      "std": 0.02268046058132569,
+      "minimum": 0.8611111111111112
+    },
+    "ece": {
+      "values": [
+        0.04725504415735027,
+        0.050884793443143006,
+        0.048238128075605236
+      ],
+      "mean": 0.04879265522536617,
+      "std": 0.0015328394652397476,
+      "minimum": 0.04725504415735027
+    }
+  },
+  "diagnosis": {
+    "behavior_accuracy_gain_pp": 27.979000409444165,
+    "stable_across_seeds": true,
+    "remaining_bottleneck": "identifier_upper recall; official test denominator 31",
+    "conditional_scope": "truth symbol grouping 이후 semantic role 분류"
+  },
+  "track": "R_noncommercial_only",
+  "product_validation": false,
+  "distillation_allowed": false
+}

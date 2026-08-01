@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aiflow.local/schemas/p-formula-annotation-v1.json",
+  "title": "AIFlow Math Ink 0.6 P Formula Human Annotation",
+  "type": "object",
+  "required": [
+    "sample_id",
+    "device_id",
+    "label_status",
+    "tokens"
+  ],
+  "properties": {
+    "sample_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "device_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "label_status": {
+      "const": "human_verified"
+    },
+    "tokens": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}
