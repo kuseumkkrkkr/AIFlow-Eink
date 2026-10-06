@@ -1,0 +1,147 @@
+{
+  "schema": "aiflow-mini-formula-lm-onnx-dynamic-shape-audit/v1",
+  "generated_at": "2026-10-02T08:34:59.605019+00:00",
+  "status": "passed_fp32_dynamic_shape_contract",
+  "protocol": {
+    "training_performed": false,
+    "development_or_acceptance_rows_loaded": 0,
+    "crohme_rows_loaded": 0,
+    "synthetic_smoke_inputs_only": true,
+    "profiles": 6
+  },
+  "provenance": {
+    "checkpoint_sha256": "dd2889e84c82c9d04f6dacf42cf99de02938902fc220022987de64b8b1567a72",
+    "fp32_onnx_sha256": "4b1cb53afc90ec8c2e64b6621d13a2cbf75fe15fe4a7cc766983d4684783a246",
+    "int8_onnx_sha256": "40a7a5703b2fb830ee83cfd664b04db21cd44fa4c3af4826c9013a57410a944e",
+    "onnxruntime_version": "1.29.0"
+  },
+  "fp32": {
+    "max_abs_error_across_profiles": 2.86102294921875e-06,
+    "tolerance": 0.0001,
+    "shape_profiles": [
+      {
+        "batch": 1,
+        "symbols_max": 1,
+        "sequence_length": 3,
+        "valid_lengths": [
+          3
+        ],
+        "fp32_max_abs_error": 2.384185791015625e-06,
+        "fp32_output_shape": [
+          1,
+          372
+        ],
+        "int8_max_abs_error": 0.2650136947631836,
+        "int8_argmax_matches": 1,
+        "int8_argmax_total": 1
+      },
+      {
+        "batch": 2,
+        "symbols_max": 8,
+        "sequence_length": 17,
+        "valid_lengths": [
+          17,
+          15
+        ],
+        "fp32_max_abs_error": 2.86102294921875e-06,
+        "fp32_output_shape": [
+          2,
+          372
+        ],
+        "int8_max_abs_error": 0.41442012786865234,
+        "int8_argmax_matches": 2,
+        "int8_argmax_total": 2
+      },
+      {
+        "batch": 8,
+        "symbols_max": 32,
+        "sequence_length": 65,
+        "valid_lengths": [
+          65,
+          63,
+          61,
+          59,
+          57,
+          65,
+          63,
+          61
+        ],
+        "fp32_max_abs_error": 2.86102294921875e-06,
+        "fp32_output_shape": [
+          8,
+          372
+        ],
+        "int8_max_abs_error": 0.08207082748413086,
+        "int8_argmax_matches": 8,
+        "int8_argmax_total": 8
+      },
+      {
+        "batch": 1,
+        "symbols_max": 64,
+        "sequence_length": 129,
+        "valid_lengths": [
+          129
+        ],
+        "fp32_max_abs_error": 2.384185791015625e-06,
+        "fp32_output_shape": [
+          1,
+          372
+        ],
+        "int8_max_abs_error": 0.046792030334472656,
+        "int8_argmax_matches": 1,
+        "int8_argmax_total": 1
+      },
+      {
+        "batch": 2,
+        "symbols_max": 64,
+        "sequence_length": 129,
+        "valid_lengths": [
+          129,
+          127
+        ],
+        "fp32_max_abs_error": 2.384185791015625e-06,
+        "fp32_output_shape": [
+          2,
+          372
+        ],
+        "int8_max_abs_error": 0.06958627700805664,
+        "int8_argmax_matches": 2,
+        "int8_argmax_total": 2
+      },
+      {
+        "batch": 8,
+        "symbols_max": 64,
+        "sequence_length": 129,
+        "valid_lengths": [
+          129,
+          127,
+          125,
+          123,
+          121,
+          129,
+          127,
+          125
+        ],
+        "fp32_max_abs_error": 2.86102294921875e-06,
+        "fp32_output_shape": [
+          8,
+          372
+        ],
+        "int8_max_abs_error": 0.13126707077026367,
+        "int8_argmax_matches": 7,
+        "int8_argmax_total": 8
+      }
+    ]
+  },
+  "int8": {
+    "argmax_agreement_across_synthetic_rows": 0.9545454545454546,
+    "argmax_matches": 21,
+    "rows": 22,
+    "status": "diagnostic_only_no_accuracy_claim"
+  },
+  "decision": {
+    "dynamic_batch_and_sequence_supported": true,
+    "android_execution_verified": false,
+    "promotion_eligible": false
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "aiflow-direct-augmented-main-plan/v25",
+  "code_sha256": {
+    "run_hwr_direct_augmented_main_v25.py": "476ee4a69a122a1580e49120290068c3e91e4e49ae81cd9d27ea79018adb0bb7",
+    "run_hwr_broad_diversity_v16.py": "304ab2a2e3b99a8a191925072ca69a1461d4ec926db64119a63a2744dafb83af",
+    "train_character_classifier_v1.py": "7be87058f02733e6c4ba80123b4935c10cb4b298964609e8dca82a5781e4fb59",
+    "run_hwr_affine_distillation_experiment_v1.py": "3a36d8efee518b2fa5c3683e9fa7a4d6ff31450d48a353f355f2667834357b4a",
+    "audit_hwr_owned_formula_transfer_v21.py": "09a5a1c04ac57a1d3410eecaa7ef841dd349782fe2514a8f08ea3e1d4c3a3488",
+    "audit_hwr_encoder_head_swap_v22.py": "abd2e51c425eaa6b1de5acb2964abdbe7c675a56fa859b9e4fd82274835ef724"
+  },
+  "parent_plan_sha256": "449076d1d952e7c1e6cb8e71f3848a6aed768cc946edd79e671987aaf3248fe2",
+  "parent_manifest_sha256": "80959792e35f3787c61b0384c7a2816d2eda6e9c5381779ec9db116b2bb6ed14",
+  "data_certificate_sha256": "32ca6952a58df539fd8b4d746d291de20954ccfd96506f5d342b48db4c134837",
+  "canonical_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+  "arrays_sha256": {
+    "original_population_indices": "10569feeb0bc343c13b521c749c1a0f8bae32a953aead0fd3447fd920862617f",
+    "augmented_view_indices": "ba1e7617928f2063b5dbfad9c93bd19c561889937f79d3a90e0b60056f2cede0",
+    "shared_target_ids": "00e5942fc58de37485054fd1eaeeaec66e7aeae757c7f8c77507898032ab8b7d"
+  },
+  "qa_image_sha256": "d08f30c4c57ee4595fd5ed76074ba9fbb8fc877f33e5cb80ebb7e06b4ccac691",
+  "qa_pairs": 30,
+  "user_authorization": "User explicitly requested substantial augmented data training of the main model, followed by results; direct inherited-label CE, not KL-only.",
+  "architecture": "same main 4-layer Transformer+pooling+372-class head; all 57 tensors optimized",
+  "cold_initialization": "current canonical main; original file not replaced",
+  "arms": [
+    "real_paired_control",
+    "augmented_main"
+  ],
+  "steps": 2400,
+  "batch_size": 64,
+  "original_rows_per_batch": 16,
+  "augmented_rows_per_batch": 48,
+  "total_exposures": 153600,
+  "changed_augmented_exposures": 115200,
+  "unique_augmented_views": 68726,
+  "augmented_classes": 366,
+  "positive_target_classes": 371,
+  "missing_positive_target_labels": [
+    "="
+  ],
+  "objective": "mean hard-label CrossEntropy over 64 rows; KL/teacher terms zero; 75% augmented rows in augmented_main",
+  "control": "same source population indices, same labels, same steps and optimizer; substitute corresponding original ink for each augmented row",
+  "label_source": "original admitted TRAIN ground-truth class inherited through same-class/same-topology constrained deformation",
+  "label_invariance_assumption": true,
+  "generated_labels_human_verified": false,
+  "synthetic_hard_label_exposures": 115200,
+  "learning_rate": 1e-05,
+  "weight_decay": 0.0001,
+  "gradient_clip": 1.0,
+  "threads": 2,
+  "development_folds": [
+    1,
+    2
+  ],
+  "owned_formulas": 149,
+  "all_evaluation_cases_already_consumed": true,
+  "no_interim_evaluation": true,
+  "no_best_epoch_selection": true,
+  "owned_training_rows": 0,
+  "crohme_rows": 0,
+  "official_test_rows_read": 0,
+  "product_adopted": false,
+  "collection_or_deployment_resumed": false
+}

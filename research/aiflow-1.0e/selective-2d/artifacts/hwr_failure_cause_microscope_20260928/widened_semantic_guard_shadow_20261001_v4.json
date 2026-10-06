@@ -1,0 +1,2269 @@
+{
+  "schema": "aiflow-hwr-widened-semantic-guard-shadow/v1",
+  "scope": "consumed-development posthoc shadow only; frozen equation-guard constants; no training, CROHME, tuning, or runtime promotion",
+  "inputs": {
+    "top20_trace": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\topk20_trace_20261001\\formula_traces.jsonl",
+      "sha256": "14335f9f9f0d27140078133414c7a22e98e4df333a1d83663d29052d9d4dff0f"
+    },
+    "top5_baseline_trace": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\formula_traces.jsonl",
+      "sha256": "785e909f569e3c6346b4fcecc83173445b1ef016ad31ee13e7188700990c76e7"
+    }
+  },
+  "configuration": {
+    "candidate_ks": [
+      5,
+      20
+    ],
+    "guard": "semantic_equation_guard_v1 frozen defaults",
+    "base_prediction": "HWR rank-1",
+    "ordering": "formula_layout_v1 geometry order"
+  },
+  "summary": {
+    "formulas": 149,
+    "tokens": 579,
+    "metrics_by_k": {
+      "5": {
+        "candidate_complete_formulas": 137,
+        "hwr_top1_token_hits": 470,
+        "after_guard_token_hits": 473,
+        "hwr_top1_formula_exact": 76,
+        "after_guard_formula_exact": 79,
+        "guard_changed_formulas": 3,
+        "guard_audit_totals": {
+          "eligible_formulas": 15,
+          "finalized_formulas": 3,
+          "changed_glyphs": 3,
+          "no_valid_equation": 12,
+          "skipped_ambiguous": 0,
+          "skipped_symbolic_baseline": 88
+        },
+        "existing_guard_pipeline": {
+          "hwr_top1": {
+            "token_hits": 470,
+            "formula_exact": 76,
+            "formulas_changed_from_hwr_top1": 0
+          },
+          "after_fence": {
+            "token_hits": 476,
+            "formula_exact": 79,
+            "formulas_changed_from_hwr_top1": 6
+          },
+          "after_infix": {
+            "token_hits": 486,
+            "formula_exact": 85,
+            "formulas_changed_from_hwr_top1": 16
+          },
+          "after_equation": {
+            "token_hits": 489,
+            "formula_exact": 88,
+            "formulas_changed_from_hwr_top1": 19
+          },
+          "after_expression": {
+            "token_hits": 491,
+            "formula_exact": 89,
+            "formulas_changed_from_hwr_top1": 20
+          }
+        }
+      },
+      "20": {
+        "candidate_complete_formulas": 143,
+        "hwr_top1_token_hits": 470,
+        "after_guard_token_hits": 473,
+        "hwr_top1_formula_exact": 76,
+        "after_guard_formula_exact": 79,
+        "guard_changed_formulas": 3,
+        "guard_audit_totals": {
+          "eligible_formulas": 15,
+          "finalized_formulas": 3,
+          "changed_glyphs": 3,
+          "no_valid_equation": 12,
+          "skipped_ambiguous": 0,
+          "skipped_symbolic_baseline": 88
+        },
+        "existing_guard_pipeline": {
+          "hwr_top1": {
+            "token_hits": 470,
+            "formula_exact": 76,
+            "formulas_changed_from_hwr_top1": 0
+          },
+          "after_fence": {
+            "token_hits": 477,
+            "formula_exact": 79,
+            "formulas_changed_from_hwr_top1": 8
+          },
+          "after_infix": {
+            "token_hits": 484,
+            "formula_exact": 83,
+            "formulas_changed_from_hwr_top1": 16
+          },
+          "after_equation": {
+            "token_hits": 488,
+            "formula_exact": 87,
+            "formulas_changed_from_hwr_top1": 19
+          },
+          "after_expression": {
+            "token_hits": 490,
+            "formula_exact": 88,
+            "formulas_changed_from_hwr_top1": 20
+          }
+        }
+      }
+    },
+    "recovered_after_guard_at_k20_vs_k5": [],
+    "regressed_after_guard_at_k20_vs_k5": [],
+    "newly_candidate_complete_from_k5_to_k20": [
+      {
+        "sample_id": "aiflow_0032",
+        "top5_missing_slots_recovered_by_candidate_expansion": [
+          {
+            "position": 0,
+            "target": "0",
+            "target_rank": 19,
+            "top1": "\\circlearrowright",
+            "top5": [
+              "\\circlearrowright",
+              "\\fullmoon",
+              "\\partial",
+              "a",
+              "\\Omega"
+            ]
+          }
+        ],
+        "equation_guard_changed_formula": false,
+        "formula_exact_after_guard": false,
+        "guard_changed_positions": []
+      },
+      {
+        "sample_id": "aiflow_0038",
+        "top5_missing_slots_recovered_by_candidate_expansion": [
+          {
+            "position": 0,
+            "target": "x",
+            "target_rank": 8,
+            "top1": "\\mathfrak{X}",
+            "top5": [
+              "\\mathfrak{X}",
+              "\\between",
+              "\\mathbb{1}",
+              "\\kappa",
+              "\\mathcal{X}"
+            ]
+          }
+        ],
+        "equation_guard_changed_formula": false,
+        "formula_exact_after_guard": false,
+        "guard_changed_positions": []
+      },
+      {
+        "sample_id": "aiflow_0046",
+        "top5_missing_slots_recovered_by_candidate_expansion": [
+          {
+            "position": 0,
+            "target": "5",
+            "target_rank": 6,
+            "top1": "\\hbar",
+            "top5": [
+              "\\hbar",
+              "H",
+              "\\Pi",
+              "\\dag",
+              "\\pi"
+            ]
+          }
+        ],
+        "equation_guard_changed_formula": false,
+        "formula_exact_after_guard": false,
+        "guard_changed_positions": []
+      },
+      {
+        "sample_id": "aiflow_0068",
+        "top5_missing_slots_recovered_by_candidate_expansion": [
+          {
+            "position": 1,
+            "target": "0",
+            "target_rank": 7,
+            "top1": "\\circ",
+            "top5": [
+              "\\circ",
+              "\\degree",
+              "o",
+              "D",
+              "\\fullmoon"
+            ]
+          }
+        ],
+        "equation_guard_changed_formula": false,
+        "formula_exact_after_guard": false,
+        "guard_changed_positions": []
+      },
+      {
+        "sample_id": "aiflow_0074",
+        "top5_missing_slots_recovered_by_candidate_expansion": [
+          {
+            "position": 2,
+            "target": "0",
+            "target_rank": 16,
+            "top1": "\\longmapsto",
+            "top5": [
+              "\\longmapsto",
+              "H",
+              "\\leadsto",
+              "\\mapsto",
+              "\\ni"
+            ]
+          }
+        ],
+        "equation_guard_changed_formula": false,
+        "formula_exact_after_guard": false,
+        "guard_changed_positions": []
+      },
+      {
+        "sample_id": "aiflow_0142",
+        "top5_missing_slots_recovered_by_candidate_expansion": [
+          {
+            "position": 2,
+            "target": "1",
+            "target_rank": 14,
+            "top1": ")",
+            "top5": [
+              ")",
+              "]",
+              "\\}",
+              "\\rangle",
+              "\\rfloor"
+            ]
+          }
+        ],
+        "equation_guard_changed_formula": false,
+        "formula_exact_after_guard": false,
+        "guard_changed_positions": []
+      }
+    ],
+    "guard_changed_formula_sets_identical_at_k5_and_k20": true,
+    "guard_changed_formula_ids_by_k": {
+      "5": [
+        "aiflow_0022",
+        "aiflow_0023",
+        "aiflow_0153"
+      ],
+      "20": [
+        "aiflow_0022",
+        "aiflow_0023",
+        "aiflow_0153"
+      ]
+    },
+    "changed_formula_details_by_k": {
+      "5": [
+        {
+          "sample_id": "aiflow_0022",
+          "candidate_complete": true,
+          "target_ranks": [
+            1,
+            1,
+            2,
+            1,
+            1
+          ],
+          "before_exact": false,
+          "after_exact": true,
+          "before_token_hits": 4,
+          "after_token_hits": 5,
+          "changed_positions": [
+            {
+              "position": 2,
+              "before": "/",
+              "after": "1",
+              "target": "1",
+              "target_rank": 2
+            }
+          ],
+          "guard_audit": {
+            "configuration": {
+              "minimum_formula_length": 3,
+              "maximum_formula_length": 12,
+              "maximum_changed_glyphs": 3,
+              "beam_width": 64,
+              "preferred_token_bonus": 0.75,
+              "minimum_valid_score_margin": 1.5,
+              "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+              "minimum_vertical_overlap": 0.25,
+              "arithmetic_tokens": [
+                "+",
+                "-",
+                "/",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "=",
+                "\\cdot",
+                "\\div",
+                "\\times"
+              ],
+              "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+            },
+            "formulas": 1,
+            "changed_glyphs": 1,
+            "eligible_formulas": 1,
+            "finalized_formulas": 1,
+            "changes": [
+              {
+                "formula_id": "aiflow_0022",
+                "before": [
+                  "3",
+                  "\\div",
+                  "/",
+                  "=",
+                  "3"
+                ],
+                "after": [
+                  "3",
+                  "\\div",
+                  "1",
+                  "=",
+                  "3"
+                ],
+                "changed_positions": [
+                  2
+                ],
+                "valid_score_margin": null,
+                "only_valid_equation": true
+              }
+            ],
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "deleted_glyphs": 0,
+            "grouping_mutations": 0
+          },
+          "pipeline_stages": {
+            "hwr_top1": {
+              "token_hits": 4,
+              "formula_exact": false,
+              "tokens": [
+                "3",
+                "\\div",
+                "/",
+                "=",
+                "3"
+              ],
+              "changed_positions": []
+            },
+            "after_fence": {
+              "token_hits": 4,
+              "formula_exact": false,
+              "tokens": [
+                "3",
+                "\\div",
+                "/",
+                "=",
+                "3"
+              ],
+              "changed_positions": []
+            },
+            "after_infix": {
+              "token_hits": 4,
+              "formula_exact": false,
+              "tokens": [
+                "3",
+                "\\div",
+                "/",
+                "=",
+                "3"
+              ],
+              "changed_positions": []
+            },
+            "after_equation": {
+              "token_hits": 5,
+              "formula_exact": true,
+              "tokens": [
+                "3",
+                "\\div",
+                "1",
+                "=",
+                "3"
+              ],
+              "changed_positions": [
+                2
+              ]
+            },
+            "after_expression": {
+              "token_hits": 5,
+              "formula_exact": true,
+              "tokens": [
+                "3",
+                "\\div",
+                "1",
+                "=",
+                "3"
+              ],
+              "changed_positions": [
+                2
+              ]
+            }
+          },
+          "pipeline_guard_audits": {
+            "fence": {
+              "configuration": {
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "maximum_changed_glyphs": 2,
+                "maximum_formula_length": 64,
+                "selected_fence_policy": "Top-5 fence substitutions allowed only to complete an unbalanced baseline; at most two changed glyphs and ambiguous completions fail closed",
+                "fence_pairs": {
+                  "(": ")",
+                  "[": "]",
+                  "{": "}",
+                  "\\{": "\\}",
+                  "\\langle": "\\rangle",
+                  "\\lceil": "\\rceil",
+                  "\\lfloor": "\\rfloor",
+                  "\\llbracket": "\\rrbracket"
+                }
+              },
+              "formulas": 1,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "infix": {
+              "configuration": {
+                "infix_operators": [
+                  "+",
+                  "-",
+                  "/",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ],
+                "value_roles": [
+                  "digit",
+                  "operand"
+                ],
+                "minimum_probability_ratio": 0.0,
+                "spatial_relation": "right on both sides",
+                "requires_digit_neighbor": true,
+                "all_digit_triplets": "immutable"
+              },
+              "formulas": 1,
+              "finalized_formulas": 0,
+              "skipped_role_pattern": 3,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "equation": {
+              "configuration": {
+                "minimum_formula_length": 3,
+                "maximum_formula_length": 12,
+                "maximum_changed_glyphs": 3,
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+                "minimum_vertical_overlap": 0.25,
+                "arithmetic_tokens": [
+                  "+",
+                  "-",
+                  "/",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "=",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ],
+                "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+              },
+              "formulas": 1,
+              "changed_glyphs": 1,
+              "eligible_formulas": 1,
+              "finalized_formulas": 1,
+              "changes": [
+                {
+                  "formula_id": "aiflow_0022",
+                  "before": [
+                    "3",
+                    "\\div",
+                    "/",
+                    "=",
+                    "3"
+                  ],
+                  "after": [
+                    "3",
+                    "\\div",
+                    "1",
+                    "=",
+                    "3"
+                  ],
+                  "changed_positions": [
+                    2
+                  ],
+                  "valid_score_margin": null,
+                  "only_valid_equation": true
+                }
+              ],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "expression": {
+              "status": "unchanged",
+              "configuration": {
+                "minimum_formula_length": 3,
+                "maximum_formula_length": 12,
+                "maximum_changed_glyphs": 3,
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "grammar": "flat numeric arithmetic expression without equality",
+                "arithmetic_tokens": [
+                  "+",
+                  "-",
+                  "/",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "=",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ]
+              },
+              "formulas": 1,
+              "candidate_sequences_scored": 0,
+              "skipped_equality": 1,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0,
+              "equation_truth_checked": false,
+              "expression_value_used_for_ranking": false
+            }
+          },
+          "layout_audit": {
+            "enabled": true,
+            "policy": "geometry-only ordering and relations over immutable HWR boxes",
+            "formulas": 1,
+            "records": 5,
+            "structural_edges": 0,
+            "relation_counts": {},
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "deleted_glyphs": 0,
+            "grouping_mutations": 0,
+            "threshold_provenance": "hand-set dimensionless defaults; no dataset fitting",
+            "script_relation_source": "conservative_geometry"
+          }
+        },
+        {
+          "sample_id": "aiflow_0023",
+          "candidate_complete": true,
+          "target_ranks": [
+            1,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "before_exact": false,
+          "after_exact": true,
+          "before_token_hits": 5,
+          "after_token_hits": 6,
+          "changed_positions": [
+            {
+              "position": 1,
+              "before": "6",
+              "after": "0",
+              "target": "0",
+              "target_rank": 3
+            }
+          ],
+          "guard_audit": {
+            "configuration": {
+              "minimum_formula_length": 3,
+              "maximum_formula_length": 12,
+              "maximum_changed_glyphs": 3,
+              "beam_width": 64,
+              "preferred_token_bonus": 0.75,
+              "minimum_valid_score_margin": 1.5,
+              "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+              "minimum_vertical_overlap": 0.25,
+              "arithmetic_tokens": [
+                "+",
+                "-",
+                "/",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "=",
+                "\\cdot",
+                "\\div",
+                "\\times"
+              ],
+              "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+            },
+            "formulas": 1,
+            "changed_glyphs": 1,
+            "eligible_formulas": 1,
+            "finalized_formulas": 1,
+            "changes": [
+              {
+                "formula_id": "aiflow_0023",
+                "before": [
+                  "3",
+                  "6",
+                  "\\div",
+                  "6",
+                  "=",
+                  "5"
+                ],
+                "after": [
+                  "3",
+                  "0",
+                  "\\div",
+                  "6",
+                  "=",
+                  "5"
+                ],
+                "changed_positions": [
+                  1
+                ],
+                "valid_score_margin": null,
+                "only_valid_equation": true
+              }
+            ],
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "deleted_glyphs": 0,
+            "grouping_mutations": 0
+          },
+          "pipeline_stages": {
+            "hwr_top1": {
+              "token_hits": 5,
+              "formula_exact": false,
+              "tokens": [
+                "3",
+                "6",
+                "\\div",
+                "6",
+                "=",
+                "5"
+              ],
+              "changed_positions": []
+            },
+            "after_fence": {
+              "token_hits": 5,
+              "formula_exact": false,
+              "tokens": [
+                "3",
+                "6",
+                "\\div",
+                "6",
+                "=",
+                "5"
+              ],
+              "changed_positions": []
+            },
+            "after_infix": {
+              "token_hits": 5,
+              "formula_exact": false,
+              "tokens": [
+                "3",
+                "6",
+                "\\div",
+                "6",
+                "=",
+                "5"
+              ],
+              "changed_positions": []
+            },
+            "after_equation": {
+              "token_hits": 6,
+              "formula_exact": true,
+              "tokens": [
+                "3",
+                "0",
+                "\\div",
+                "6",
+                "=",
+                "5"
+              ],
+              "changed_positions": [
+                1
+              ]
+            },
+            "after_expression": {
+              "token_hits": 6,
+              "formula_exact": true,
+              "tokens": [
+                "3",
+                "0",
+                "\\div",
+                "6",
+                "=",
+                "5"
+              ],
+              "changed_positions": [
+                1
+              ]
+            }
+          },
+          "pipeline_guard_audits": {
+            "fence": {
+              "configuration": {
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "maximum_changed_glyphs": 2,
+                "maximum_formula_length": 64,
+                "selected_fence_policy": "Top-5 fence substitutions allowed only to complete an unbalanced baseline; at most two changed glyphs and ambiguous completions fail closed",
+                "fence_pairs": {
+                  "(": ")",
+                  "[": "]",
+                  "{": "}",
+                  "\\{": "\\}",
+                  "\\langle": "\\rangle",
+                  "\\lceil": "\\rceil",
+                  "\\lfloor": "\\rfloor",
+                  "\\llbracket": "\\rrbracket"
+                }
+              },
+              "formulas": 1,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "infix": {
+              "configuration": {
+                "infix_operators": [
+                  "+",
+                  "-",
+                  "/",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ],
+                "value_roles": [
+                  "digit",
+                  "operand"
+                ],
+                "minimum_probability_ratio": 0.0,
+                "spatial_relation": "right on both sides",
+                "requires_digit_neighbor": true,
+                "all_digit_triplets": "immutable"
+              },
+              "formulas": 1,
+              "finalized_formulas": 0,
+              "skipped_role_pattern": 4,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "equation": {
+              "configuration": {
+                "minimum_formula_length": 3,
+                "maximum_formula_length": 12,
+                "maximum_changed_glyphs": 3,
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+                "minimum_vertical_overlap": 0.25,
+                "arithmetic_tokens": [
+                  "+",
+                  "-",
+                  "/",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "=",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ],
+                "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+              },
+              "formulas": 1,
+              "changed_glyphs": 1,
+              "eligible_formulas": 1,
+              "finalized_formulas": 1,
+              "changes": [
+                {
+                  "formula_id": "aiflow_0023",
+                  "before": [
+                    "3",
+                    "6",
+                    "\\div",
+                    "6",
+                    "=",
+                    "5"
+                  ],
+                  "after": [
+                    "3",
+                    "0",
+                    "\\div",
+                    "6",
+                    "=",
+                    "5"
+                  ],
+                  "changed_positions": [
+                    1
+                  ],
+                  "valid_score_margin": null,
+                  "only_valid_equation": true
+                }
+              ],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "expression": {
+              "status": "unchanged",
+              "configuration": {
+                "minimum_formula_length": 3,
+                "maximum_formula_length": 12,
+                "maximum_changed_glyphs": 3,
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "grammar": "flat numeric arithmetic expression without equality",
+                "arithmetic_tokens": [
+                  "+",
+                  "-",
+                  "/",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "=",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ]
+              },
+              "formulas": 1,
+              "candidate_sequences_scored": 0,
+              "skipped_equality": 1,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0,
+              "equation_truth_checked": false,
+              "expression_value_used_for_ranking": false
+            }
+          },
+          "layout_audit": {
+            "enabled": true,
+            "policy": "geometry-only ordering and relations over immutable HWR boxes",
+            "formulas": 1,
+            "records": 6,
+            "structural_edges": 0,
+            "relation_counts": {},
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "deleted_glyphs": 0,
+            "grouping_mutations": 0,
+            "threshold_provenance": "hand-set dimensionless defaults; no dataset fitting",
+            "script_relation_source": "conservative_geometry"
+          }
+        },
+        {
+          "sample_id": "aiflow_0153",
+          "candidate_complete": true,
+          "target_ranks": [
+            1,
+            1,
+            3,
+            1,
+            1
+          ],
+          "before_exact": false,
+          "after_exact": true,
+          "before_token_hits": 4,
+          "after_token_hits": 5,
+          "changed_positions": [
+            {
+              "position": 2,
+              "before": "/",
+              "after": "1",
+              "target": "1",
+              "target_rank": 3
+            }
+          ],
+          "guard_audit": {
+            "configuration": {
+              "minimum_formula_length": 3,
+              "maximum_formula_length": 12,
+              "maximum_changed_glyphs": 3,
+              "beam_width": 64,
+              "preferred_token_bonus": 0.75,
+              "minimum_valid_score_margin": 1.5,
+              "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+              "minimum_vertical_overlap": 0.25,
+              "arithmetic_tokens": [
+                "+",
+                "-",
+                "/",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "=",
+                "\\cdot",
+                "\\div",
+                "\\times"
+              ],
+              "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+            },
+            "formulas": 1,
+            "changed_glyphs": 1,
+            "eligible_formulas": 1,
+            "finalized_formulas": 1,
+            "changes": [
+              {
+                "formula_id": "aiflow_0153",
+                "before": [
+                  "7",
+                  "-",
+                  "/",
+                  "=",
+                  "6"
+                ],
+                "after": [
+                  "7",
+                  "-",
+                  "1",
+                  "=",
+                  "6"
+                ],
+                "changed_positions": [
+                  2
+                ],
+                "valid_score_margin": null,
+                "only_valid_equation": true
+              }
+            ],
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "deleted_glyphs": 0,
+            "grouping_mutations": 0
+          },
+          "pipeline_stages": {
+            "hwr_top1": {
+              "token_hits": 4,
+              "formula_exact": false,
+              "tokens": [
+                "7",
+                "-",
+                "/",
+                "=",
+                "6"
+              ],
+              "changed_positions": []
+            },
+            "after_fence": {
+              "token_hits": 4,
+              "formula_exact": false,
+              "tokens": [
+                "7",
+                "-",
+                "/",
+                "=",
+                "6"
+              ],
+              "changed_positions": []
+            },
+            "after_infix": {
+              "token_hits": 4,
+              "formula_exact": false,
+              "tokens": [
+                "7",
+                "-",
+                "/",
+                "=",
+                "6"
+              ],
+              "changed_positions": []
+            },
+            "after_equation": {
+              "token_hits": 5,
+              "formula_exact": true,
+              "tokens": [
+                "7",
+                "-",
+                "1",
+                "=",
+                "6"
+              ],
+              "changed_positions": [
+                2
+              ]
+            },
+            "after_expression": {
+              "token_hits": 5,
+              "formula_exact": true,
+              "tokens": [
+                "7",
+                "-",
+                "1",
+                "=",
+                "6"
+              ],
+              "changed_positions": [
+                2
+              ]
+            }
+          },
+          "pipeline_guard_audits": {
+            "fence": {
+              "configuration": {
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "maximum_changed_glyphs": 2,
+                "maximum_formula_length": 64,
+                "selected_fence_policy": "Top-5 fence substitutions allowed only to complete an unbalanced baseline; at most two changed glyphs and ambiguous completions fail closed",
+                "fence_pairs": {
+                  "(": ")",
+                  "[": "]",
+                  "{": "}",
+                  "\\{": "\\}",
+                  "\\langle": "\\rangle",
+                  "\\lceil": "\\rceil",
+                  "\\lfloor": "\\rfloor",
+                  "\\llbracket": "\\rrbracket"
+                }
+              },
+              "formulas": 1,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "infix": {
+              "configuration": {
+                "infix_operators": [
+                  "+",
+                  "-",
+                  "/",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ],
+                "value_roles": [
+                  "digit",
+                  "operand"
+                ],
+                "minimum_probability_ratio": 0.0,
+                "spatial_relation": "right on both sides",
+                "requires_digit_neighbor": true,
+                "all_digit_triplets": "immutable"
+              },
+              "formulas": 1,
+              "finalized_formulas": 0,
+              "skipped_role_pattern": 3,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "equation": {
+              "configuration": {
+                "minimum_formula_length": 3,
+                "maximum_formula_length": 12,
+                "maximum_changed_glyphs": 3,
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+                "minimum_vertical_overlap": 0.25,
+                "arithmetic_tokens": [
+                  "+",
+                  "-",
+                  "/",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "=",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ],
+                "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+              },
+              "formulas": 1,
+              "changed_glyphs": 1,
+              "eligible_formulas": 1,
+              "finalized_formulas": 1,
+              "changes": [
+                {
+                  "formula_id": "aiflow_0153",
+                  "before": [
+                    "7",
+                    "-",
+                    "/",
+                    "=",
+                    "6"
+                  ],
+                  "after": [
+                    "7",
+                    "-",
+                    "1",
+                    "=",
+                    "6"
+                  ],
+                  "changed_positions": [
+                    2
+                  ],
+                  "valid_score_margin": null,
+                  "only_valid_equation": true
+                }
+              ],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "expression": {
+              "status": "unchanged",
+              "configuration": {
+                "minimum_formula_length": 3,
+                "maximum_formula_length": 12,
+                "maximum_changed_glyphs": 3,
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "grammar": "flat numeric arithmetic expression without equality",
+                "arithmetic_tokens": [
+                  "+",
+                  "-",
+                  "/",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "=",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ]
+              },
+              "formulas": 1,
+              "candidate_sequences_scored": 0,
+              "skipped_equality": 1,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0,
+              "equation_truth_checked": false,
+              "expression_value_used_for_ranking": false
+            }
+          },
+          "layout_audit": {
+            "enabled": true,
+            "policy": "geometry-only ordering and relations over immutable HWR boxes",
+            "formulas": 1,
+            "records": 5,
+            "structural_edges": 0,
+            "relation_counts": {},
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "deleted_glyphs": 0,
+            "grouping_mutations": 0,
+            "threshold_provenance": "hand-set dimensionless defaults; no dataset fitting",
+            "script_relation_source": "conservative_geometry"
+          }
+        }
+      ],
+      "20": [
+        {
+          "sample_id": "aiflow_0022",
+          "candidate_complete": true,
+          "target_ranks": [
+            1,
+            1,
+            2,
+            1,
+            1
+          ],
+          "before_exact": false,
+          "after_exact": true,
+          "before_token_hits": 4,
+          "after_token_hits": 5,
+          "changed_positions": [
+            {
+              "position": 2,
+              "before": "/",
+              "after": "1",
+              "target": "1",
+              "target_rank": 2
+            }
+          ],
+          "guard_audit": {
+            "configuration": {
+              "minimum_formula_length": 3,
+              "maximum_formula_length": 12,
+              "maximum_changed_glyphs": 3,
+              "beam_width": 64,
+              "preferred_token_bonus": 0.75,
+              "minimum_valid_score_margin": 1.5,
+              "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+              "minimum_vertical_overlap": 0.25,
+              "arithmetic_tokens": [
+                "+",
+                "-",
+                "/",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "=",
+                "\\cdot",
+                "\\div",
+                "\\times"
+              ],
+              "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+            },
+            "formulas": 1,
+            "changed_glyphs": 1,
+            "eligible_formulas": 1,
+            "finalized_formulas": 1,
+            "changes": [
+              {
+                "formula_id": "aiflow_0022",
+                "before": [
+                  "3",
+                  "\\div",
+                  "/",
+                  "=",
+                  "3"
+                ],
+                "after": [
+                  "3",
+                  "\\div",
+                  "1",
+                  "=",
+                  "3"
+                ],
+                "changed_positions": [
+                  2
+                ],
+                "valid_score_margin": 25.262913609866644,
+                "only_valid_equation": false
+              }
+            ],
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "deleted_glyphs": 0,
+            "grouping_mutations": 0
+          },
+          "pipeline_stages": {
+            "hwr_top1": {
+              "token_hits": 4,
+              "formula_exact": false,
+              "tokens": [
+                "3",
+                "\\div",
+                "/",
+                "=",
+                "3"
+              ],
+              "changed_positions": []
+            },
+            "after_fence": {
+              "token_hits": 4,
+              "formula_exact": false,
+              "tokens": [
+                "3",
+                "\\div",
+                "/",
+                "=",
+                "3"
+              ],
+              "changed_positions": []
+            },
+            "after_infix": {
+              "token_hits": 4,
+              "formula_exact": false,
+              "tokens": [
+                "3",
+                "\\div",
+                "/",
+                "=",
+                "3"
+              ],
+              "changed_positions": []
+            },
+            "after_equation": {
+              "token_hits": 5,
+              "formula_exact": true,
+              "tokens": [
+                "3",
+                "\\div",
+                "1",
+                "=",
+                "3"
+              ],
+              "changed_positions": [
+                2
+              ]
+            },
+            "after_expression": {
+              "token_hits": 5,
+              "formula_exact": true,
+              "tokens": [
+                "3",
+                "\\div",
+                "1",
+                "=",
+                "3"
+              ],
+              "changed_positions": [
+                2
+              ]
+            }
+          },
+          "pipeline_guard_audits": {
+            "fence": {
+              "configuration": {
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "maximum_changed_glyphs": 2,
+                "maximum_formula_length": 64,
+                "selected_fence_policy": "Top-5 fence substitutions allowed only to complete an unbalanced baseline; at most two changed glyphs and ambiguous completions fail closed",
+                "fence_pairs": {
+                  "(": ")",
+                  "[": "]",
+                  "{": "}",
+                  "\\{": "\\}",
+                  "\\langle": "\\rangle",
+                  "\\lceil": "\\rceil",
+                  "\\lfloor": "\\rfloor",
+                  "\\llbracket": "\\rrbracket"
+                }
+              },
+              "formulas": 1,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "infix": {
+              "configuration": {
+                "infix_operators": [
+                  "+",
+                  "-",
+                  "/",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ],
+                "value_roles": [
+                  "digit",
+                  "operand"
+                ],
+                "minimum_probability_ratio": 0.0,
+                "spatial_relation": "right on both sides",
+                "requires_digit_neighbor": true,
+                "all_digit_triplets": "immutable"
+              },
+              "formulas": 1,
+              "finalized_formulas": 0,
+              "skipped_role_pattern": 3,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "equation": {
+              "configuration": {
+                "minimum_formula_length": 3,
+                "maximum_formula_length": 12,
+                "maximum_changed_glyphs": 3,
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+                "minimum_vertical_overlap": 0.25,
+                "arithmetic_tokens": [
+                  "+",
+                  "-",
+                  "/",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "=",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ],
+                "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+              },
+              "formulas": 1,
+              "changed_glyphs": 1,
+              "eligible_formulas": 1,
+              "finalized_formulas": 1,
+              "changes": [
+                {
+                  "formula_id": "aiflow_0022",
+                  "before": [
+                    "3",
+                    "\\div",
+                    "/",
+                    "=",
+                    "3"
+                  ],
+                  "after": [
+                    "3",
+                    "\\div",
+                    "1",
+                    "=",
+                    "3"
+                  ],
+                  "changed_positions": [
+                    2
+                  ],
+                  "valid_score_margin": 25.262913609866644,
+                  "only_valid_equation": false
+                }
+              ],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "expression": {
+              "status": "unchanged",
+              "configuration": {
+                "minimum_formula_length": 3,
+                "maximum_formula_length": 12,
+                "maximum_changed_glyphs": 3,
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "grammar": "flat numeric arithmetic expression without equality",
+                "arithmetic_tokens": [
+                  "+",
+                  "-",
+                  "/",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "=",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ]
+              },
+              "formulas": 1,
+              "candidate_sequences_scored": 0,
+              "skipped_equality": 1,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0,
+              "equation_truth_checked": false,
+              "expression_value_used_for_ranking": false
+            }
+          },
+          "layout_audit": {
+            "enabled": true,
+            "policy": "geometry-only ordering and relations over immutable HWR boxes",
+            "formulas": 1,
+            "records": 5,
+            "structural_edges": 0,
+            "relation_counts": {},
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "deleted_glyphs": 0,
+            "grouping_mutations": 0,
+            "threshold_provenance": "hand-set dimensionless defaults; no dataset fitting",
+            "script_relation_source": "conservative_geometry"
+          }
+        },
+        {
+          "sample_id": "aiflow_0023",
+          "candidate_complete": true,
+          "target_ranks": [
+            1,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "before_exact": false,
+          "after_exact": true,
+          "before_token_hits": 5,
+          "after_token_hits": 6,
+          "changed_positions": [
+            {
+              "position": 1,
+              "before": "6",
+              "after": "0",
+              "target": "0",
+              "target_rank": 3
+            }
+          ],
+          "guard_audit": {
+            "configuration": {
+              "minimum_formula_length": 3,
+              "maximum_formula_length": 12,
+              "maximum_changed_glyphs": 3,
+              "beam_width": 64,
+              "preferred_token_bonus": 0.75,
+              "minimum_valid_score_margin": 1.5,
+              "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+              "minimum_vertical_overlap": 0.25,
+              "arithmetic_tokens": [
+                "+",
+                "-",
+                "/",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "=",
+                "\\cdot",
+                "\\div",
+                "\\times"
+              ],
+              "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+            },
+            "formulas": 1,
+            "changed_glyphs": 1,
+            "eligible_formulas": 1,
+            "finalized_formulas": 1,
+            "changes": [
+              {
+                "formula_id": "aiflow_0023",
+                "before": [
+                  "3",
+                  "6",
+                  "\\div",
+                  "6",
+                  "=",
+                  "5"
+                ],
+                "after": [
+                  "3",
+                  "0",
+                  "\\div",
+                  "6",
+                  "=",
+                  "5"
+                ],
+                "changed_positions": [
+                  1
+                ],
+                "valid_score_margin": null,
+                "only_valid_equation": true
+              }
+            ],
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "deleted_glyphs": 0,
+            "grouping_mutations": 0
+          },
+          "pipeline_stages": {
+            "hwr_top1": {
+              "token_hits": 5,
+              "formula_exact": false,
+              "tokens": [
+                "3",
+                "6",
+                "\\div",
+                "6",
+                "=",
+                "5"
+              ],
+              "changed_positions": []
+            },
+            "after_fence": {
+              "token_hits": 5,
+              "formula_exact": false,
+              "tokens": [
+                "3",
+                "6",
+                "\\div",
+                "6",
+                "=",
+                "5"
+              ],
+              "changed_positions": []
+            },
+            "after_infix": {
+              "token_hits": 5,
+              "formula_exact": false,
+              "tokens": [
+                "3",
+                "6",
+                "\\div",
+                "6",
+                "=",
+                "5"
+              ],
+              "changed_positions": []
+            },
+            "after_equation": {
+              "token_hits": 6,
+              "formula_exact": true,
+              "tokens": [
+                "3",
+                "0",
+                "\\div",
+                "6",
+                "=",
+                "5"
+              ],
+              "changed_positions": [
+                1
+              ]
+            },
+            "after_expression": {
+              "token_hits": 6,
+              "formula_exact": true,
+              "tokens": [
+                "3",
+                "0",
+                "\\div",
+                "6",
+                "=",
+                "5"
+              ],
+              "changed_positions": [
+                1
+              ]
+            }
+          },
+          "pipeline_guard_audits": {
+            "fence": {
+              "configuration": {
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "maximum_changed_glyphs": 2,
+                "maximum_formula_length": 64,
+                "selected_fence_policy": "Top-5 fence substitutions allowed only to complete an unbalanced baseline; at most two changed glyphs and ambiguous completions fail closed",
+                "fence_pairs": {
+                  "(": ")",
+                  "[": "]",
+                  "{": "}",
+                  "\\{": "\\}",
+                  "\\langle": "\\rangle",
+                  "\\lceil": "\\rceil",
+                  "\\lfloor": "\\rfloor",
+                  "\\llbracket": "\\rrbracket"
+                }
+              },
+              "formulas": 1,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "infix": {
+              "configuration": {
+                "infix_operators": [
+                  "+",
+                  "-",
+                  "/",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ],
+                "value_roles": [
+                  "digit",
+                  "operand"
+                ],
+                "minimum_probability_ratio": 0.0,
+                "spatial_relation": "right on both sides",
+                "requires_digit_neighbor": true,
+                "all_digit_triplets": "immutable"
+              },
+              "formulas": 1,
+              "finalized_formulas": 0,
+              "skipped_role_pattern": 4,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "equation": {
+              "configuration": {
+                "minimum_formula_length": 3,
+                "maximum_formula_length": 12,
+                "maximum_changed_glyphs": 3,
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+                "minimum_vertical_overlap": 0.25,
+                "arithmetic_tokens": [
+                  "+",
+                  "-",
+                  "/",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "=",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ],
+                "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+              },
+              "formulas": 1,
+              "changed_glyphs": 1,
+              "eligible_formulas": 1,
+              "finalized_formulas": 1,
+              "changes": [
+                {
+                  "formula_id": "aiflow_0023",
+                  "before": [
+                    "3",
+                    "6",
+                    "\\div",
+                    "6",
+                    "=",
+                    "5"
+                  ],
+                  "after": [
+                    "3",
+                    "0",
+                    "\\div",
+                    "6",
+                    "=",
+                    "5"
+                  ],
+                  "changed_positions": [
+                    1
+                  ],
+                  "valid_score_margin": null,
+                  "only_valid_equation": true
+                }
+              ],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "expression": {
+              "status": "unchanged",
+              "configuration": {
+                "minimum_formula_length": 3,
+                "maximum_formula_length": 12,
+                "maximum_changed_glyphs": 3,
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "grammar": "flat numeric arithmetic expression without equality",
+                "arithmetic_tokens": [
+                  "+",
+                  "-",
+                  "/",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "=",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ]
+              },
+              "formulas": 1,
+              "candidate_sequences_scored": 0,
+              "skipped_equality": 1,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0,
+              "equation_truth_checked": false,
+              "expression_value_used_for_ranking": false
+            }
+          },
+          "layout_audit": {
+            "enabled": true,
+            "policy": "geometry-only ordering and relations over immutable HWR boxes",
+            "formulas": 1,
+            "records": 6,
+            "structural_edges": 0,
+            "relation_counts": {},
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "deleted_glyphs": 0,
+            "grouping_mutations": 0,
+            "threshold_provenance": "hand-set dimensionless defaults; no dataset fitting",
+            "script_relation_source": "conservative_geometry"
+          }
+        },
+        {
+          "sample_id": "aiflow_0153",
+          "candidate_complete": true,
+          "target_ranks": [
+            1,
+            1,
+            3,
+            1,
+            1
+          ],
+          "before_exact": false,
+          "after_exact": true,
+          "before_token_hits": 4,
+          "after_token_hits": 5,
+          "changed_positions": [
+            {
+              "position": 2,
+              "before": "/",
+              "after": "1",
+              "target": "1",
+              "target_rank": 3
+            }
+          ],
+          "guard_audit": {
+            "configuration": {
+              "minimum_formula_length": 3,
+              "maximum_formula_length": 12,
+              "maximum_changed_glyphs": 3,
+              "beam_width": 64,
+              "preferred_token_bonus": 0.75,
+              "minimum_valid_score_margin": 1.5,
+              "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+              "minimum_vertical_overlap": 0.25,
+              "arithmetic_tokens": [
+                "+",
+                "-",
+                "/",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "=",
+                "\\cdot",
+                "\\div",
+                "\\times"
+              ],
+              "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+            },
+            "formulas": 1,
+            "changed_glyphs": 1,
+            "eligible_formulas": 1,
+            "finalized_formulas": 1,
+            "changes": [
+              {
+                "formula_id": "aiflow_0153",
+                "before": [
+                  "7",
+                  "-",
+                  "/",
+                  "=",
+                  "6"
+                ],
+                "after": [
+                  "7",
+                  "-",
+                  "1",
+                  "=",
+                  "6"
+                ],
+                "changed_positions": [
+                  2
+                ],
+                "valid_score_margin": null,
+                "only_valid_equation": true
+              }
+            ],
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "deleted_glyphs": 0,
+            "grouping_mutations": 0
+          },
+          "pipeline_stages": {
+            "hwr_top1": {
+              "token_hits": 4,
+              "formula_exact": false,
+              "tokens": [
+                "7",
+                "-",
+                "/",
+                "=",
+                "6"
+              ],
+              "changed_positions": []
+            },
+            "after_fence": {
+              "token_hits": 4,
+              "formula_exact": false,
+              "tokens": [
+                "7",
+                "-",
+                "/",
+                "=",
+                "6"
+              ],
+              "changed_positions": []
+            },
+            "after_infix": {
+              "token_hits": 4,
+              "formula_exact": false,
+              "tokens": [
+                "7",
+                "-",
+                "/",
+                "=",
+                "6"
+              ],
+              "changed_positions": []
+            },
+            "after_equation": {
+              "token_hits": 5,
+              "formula_exact": true,
+              "tokens": [
+                "7",
+                "-",
+                "1",
+                "=",
+                "6"
+              ],
+              "changed_positions": [
+                2
+              ]
+            },
+            "after_expression": {
+              "token_hits": 5,
+              "formula_exact": true,
+              "tokens": [
+                "7",
+                "-",
+                "1",
+                "=",
+                "6"
+              ],
+              "changed_positions": [
+                2
+              ]
+            }
+          },
+          "pipeline_guard_audits": {
+            "fence": {
+              "configuration": {
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "maximum_changed_glyphs": 2,
+                "maximum_formula_length": 64,
+                "selected_fence_policy": "Top-5 fence substitutions allowed only to complete an unbalanced baseline; at most two changed glyphs and ambiguous completions fail closed",
+                "fence_pairs": {
+                  "(": ")",
+                  "[": "]",
+                  "{": "}",
+                  "\\{": "\\}",
+                  "\\langle": "\\rangle",
+                  "\\lceil": "\\rceil",
+                  "\\lfloor": "\\rfloor",
+                  "\\llbracket": "\\rrbracket"
+                }
+              },
+              "formulas": 1,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "infix": {
+              "configuration": {
+                "infix_operators": [
+                  "+",
+                  "-",
+                  "/",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ],
+                "value_roles": [
+                  "digit",
+                  "operand"
+                ],
+                "minimum_probability_ratio": 0.0,
+                "spatial_relation": "right on both sides",
+                "requires_digit_neighbor": true,
+                "all_digit_triplets": "immutable"
+              },
+              "formulas": 1,
+              "finalized_formulas": 0,
+              "skipped_role_pattern": 3,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "equation": {
+              "configuration": {
+                "minimum_formula_length": 3,
+                "maximum_formula_length": 12,
+                "maximum_changed_glyphs": 3,
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+                "minimum_vertical_overlap": 0.25,
+                "arithmetic_tokens": [
+                  "+",
+                  "-",
+                  "/",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "=",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ],
+                "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+              },
+              "formulas": 1,
+              "changed_glyphs": 1,
+              "eligible_formulas": 1,
+              "finalized_formulas": 1,
+              "changes": [
+                {
+                  "formula_id": "aiflow_0153",
+                  "before": [
+                    "7",
+                    "-",
+                    "/",
+                    "=",
+                    "6"
+                  ],
+                  "after": [
+                    "7",
+                    "-",
+                    "1",
+                    "=",
+                    "6"
+                  ],
+                  "changed_positions": [
+                    2
+                  ],
+                  "valid_score_margin": null,
+                  "only_valid_equation": true
+                }
+              ],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0
+            },
+            "expression": {
+              "status": "unchanged",
+              "configuration": {
+                "minimum_formula_length": 3,
+                "maximum_formula_length": 12,
+                "maximum_changed_glyphs": 3,
+                "beam_width": 64,
+                "preferred_token_bonus": 0.75,
+                "minimum_valid_score_margin": 1.5,
+                "grammar": "flat numeric arithmetic expression without equality",
+                "arithmetic_tokens": [
+                  "+",
+                  "-",
+                  "/",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "=",
+                  "\\cdot",
+                  "\\div",
+                  "\\times"
+                ]
+              },
+              "formulas": 1,
+              "candidate_sequences_scored": 0,
+              "skipped_equality": 1,
+              "changes": [],
+              "candidate_preservation_rate": 1.0,
+              "new_tokens": 0,
+              "deleted_glyphs": 0,
+              "grouping_mutations": 0,
+              "equation_truth_checked": false,
+              "expression_value_used_for_ranking": false
+            }
+          },
+          "layout_audit": {
+            "enabled": true,
+            "policy": "geometry-only ordering and relations over immutable HWR boxes",
+            "formulas": 1,
+            "records": 5,
+            "structural_edges": 0,
+            "relation_counts": {},
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "deleted_glyphs": 0,
+            "grouping_mutations": 0,
+            "threshold_provenance": "hand-set dimensionless defaults; no dataset fitting",
+            "script_relation_source": "conservative_geometry"
+          }
+        }
+      ]
+    }
+  },
+  "verification": {
+    "checks": {
+      "formula_ID_sets_match": true,
+      "top5_logits_identical_to_baseline": true,
+      "candidate_completeness_monotonic": true,
+      "all_selected_tokens_preserved": true,
+      "formula_exact_recovery_regression_ids_reconcile": true,
+      "newly_candidate_complete_details_reconcile": true
+    },
+    "all_checks_pass": true
+  }
+}

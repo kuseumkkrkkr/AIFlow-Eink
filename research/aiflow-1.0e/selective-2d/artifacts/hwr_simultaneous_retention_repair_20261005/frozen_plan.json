@@ -1,0 +1,51 @@
+{
+  "schema": "aiflow-simultaneous-retention-plan/v1",
+  "script_sha256": "d6ad29c126a0935812e2fb9c2c980cb08052c9e1422f1de107c4d7b7f6100d2c",
+  "previous_result_sha256": "fd57fd9b19739d920667b8264e28cc49986b8da2fad0cfcb29042d9e69f0bcb8",
+  "previous_plan_sha256": "d4d1afc4ed9abcfa2aeec2bbb5719f9cd5ac8863d5b5f907038ad58672b812b2",
+  "dependency_hashes": {
+    "run_hwr_joint_retention_repair_v1.py": "066db5ff212175e608ad0b0d5bab7573915c657fcfaf598d8618ddcae89376a7",
+    "repair_hwr_fixed_rank_margins_v1.py": "3d1cb1ab254aa2f1e1b321f6afe3bca1657ec6e203a96b8098bd2903f50fc847",
+    "verify_hwr_joint_retention_repair_v1.py": "4f3115f526f63a3277189242ed363809b5f3055237e625262ab0789e95fab3f9",
+    "run_hwr_affine_distillation_experiment_v1.py": "3a36d8efee518b2fa5c3683e9fa7a4d6ff31450d48a353f355f2667834357b4a"
+  },
+  "reference_hashes": {
+    "joint_features": "489552d8dbade0d9429d078439b939b7a7b601d9f367ef0602edb408aa9c1cc1",
+    "joint_labels": "88f74e24301757ff1c288ef997567043990a763b2518009ab492a5cd873abf9d",
+    "reference_top1_mask": "1ea3ea5a72d8a4bb2d4023594581fd133bf17a80b2f76f80cfa2f73d18db4394",
+    "reference_top5_mask": "63c5f99e99a0b16e4ac8d0ffc1e1b0d86ee827fb94cff0ff562edb065ea97cfa",
+    "reference_top1_floor": "beae31625c8cb6052e95bbc86f5ec9e81b15953c11b6f0c63e62d5467ea13e50",
+    "reference_top5_floor": "42afa960f4e6be63d91850ec779f574195f5d61d63489a402ae3167e26ece90b"
+  },
+  "canonical_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+  "parent_checkpoint_sha256": "b0aa6411b1e299ec14773cd44eadf54341d55582af68b0dc973c846c6e1d8963",
+  "max_rounds": 32,
+  "max_constraints_per_round": 16,
+  "correction_slack": 0.0001,
+  "norm_cap_multiple": 2.0,
+  "selection": "same globally worst 16 fixed-margin violations as sequential comparator",
+  "changed_factor": "simultaneous minimal-norm halfspace correction instead of sequential correction",
+  "fixed_margin_fraction": 0.5,
+  "source_gain_retention_gate": 0.9,
+  "protected_counts": {
+    "old_math": {
+      "top1": 841,
+      "top5": 1007
+    },
+    "source_digits": {
+      "top1": 958,
+      "top5": 1015
+    }
+  },
+  "solver": "normalized gradient Gram convex dual, L-BFGS-B <=2000 iterations, actual primal and stationarity certificate",
+  "acceptance": "all unchanged fixed joint rank/margin constraints AND unchanged 90% TRAIN gain gate",
+  "failure_policy": "retain failed candidate and evidence; no floor weakening or canonical fake pass",
+  "optimizer_created": false,
+  "parameter_optimization_performed": true,
+  "human_boundary_labels": 0,
+  "held_inputs_forwarded": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "limits": "Same optimization TRAIN anchors, not independent evaluation. Digit adaptation plus 371-class retention, not all-domain human-boundary distillation."
+}

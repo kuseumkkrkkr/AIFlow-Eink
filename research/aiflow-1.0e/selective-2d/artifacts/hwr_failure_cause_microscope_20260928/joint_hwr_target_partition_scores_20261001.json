@@ -1,0 +1,620 @@
+{
+  "schema": "aiflow-hwr-joint-target-partition-score-audit/v1",
+  "scope": "frozen consumed-development replay; Top-5 logits and strokes reused; no HWR inference, training, CROHME, or promotion",
+  "inputs": {
+    "guarded_summary": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\grouping_geometry_prior_guard_semantic_shadow_20261001\\summary.json",
+      "sha256": "836da30b5b6c5e86d48cd14143f3b3e34f0f683ab0929f72d3ca6ffc8da730b8"
+    },
+    "root_cause_audit": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\guarded_failure_root_cause_microscope_20261001_v3.json",
+      "sha256": "66c2cb20ec3f1a26b8e0dd1a3fd66da1f76a27261c2d45794fede03d828eea15"
+    },
+    "layer_trace": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\formula_traces.jsonl",
+      "sha256": "785e909f569e3c6346b4fcecc83173445b1ef016ad31ee13e7188700990c76e7"
+    },
+    "layer_trace_summary": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\summary.json",
+      "sha256": "1b26fbc501466bcb8ccd7c25d9796320173640a4aa35b82eac4ecd833ad5460e"
+    },
+    "dataset_formulas_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "partition_ranker_sha256": "0d283d40b40f60d58131dec213efb84074f9119ac82b32fcb893ca931aeb0582",
+    "hwr_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e"
+  },
+  "formula_count": 15,
+  "gold_decoder_acceptance_count": 15,
+  "gold_total_score_beats_fast_count": 0,
+  "gold_partition_in_local_top32_count": 14,
+  "gold_partition_guard_rejected_count": 0,
+  "score_delta_summary": {
+    "scored_count": 15,
+    "mean_gold_minus_fast": -1.3159540744107263,
+    "positive_count": 0,
+    "acceptance_margin": 0.02
+  },
+  "formulas": [
+    {
+      "sample_id": "aiflow_0163",
+      "fast_group_count": 5,
+      "target_group_count": 5,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": false,
+      "target_partition_rank": null,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.21448108655645365,
+        "geometry_prior_score": 1.9893968188121283,
+        "total_score": 1.7749157322556746
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "6",
+          "\\div",
+          "\\vdots",
+          "\\%",
+          "3"
+        ],
+        "target_tokens": [
+          "6",
+          "\\div",
+          "2",
+          "=",
+          "3"
+        ],
+        "token_sequence_exact": false,
+        "latex": "6\\div\\vdots\\%3",
+        "hwr_score": -0.3392146800953881,
+        "geometry_prior_score": 0.025560689997622014,
+        "total_score": -0.31365399009776607,
+        "score_delta_vs_fast": -2.0885697223534407,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 2
+      }
+    },
+    {
+      "sample_id": "aiflow_0003",
+      "fast_group_count": 4,
+      "target_group_count": 3,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 2,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.2936395376189711,
+        "geometry_prior_score": 2.3560348777032676,
+        "total_score": 2.0623953400842963
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "0",
+          "x",
+          "7"
+        ],
+        "target_tokens": [
+          "0",
+          "\\times",
+          "7"
+        ],
+        "token_sequence_exact": false,
+        "latex": "0x7",
+        "hwr_score": -0.3173039774538679,
+        "geometry_prior_score": 2.3392980870750977,
+        "total_score": 2.0219941096212297,
+        "score_delta_vs_fast": -0.04040123046306654,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0008",
+      "fast_group_count": 4,
+      "target_group_count": 3,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 2,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.33491011264937204,
+        "geometry_prior_score": 3.4496376202310106,
+        "total_score": 3.1147275075816387
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "b",
+          "=",
+          "4"
+        ],
+        "target_tokens": [
+          "b",
+          "=",
+          "4"
+        ],
+        "token_sequence_exact": true,
+        "latex": "b=4",
+        "hwr_score": -0.06618705989481304,
+        "geometry_prior_score": 2.9540742263525757,
+        "total_score": 2.8878871664577628,
+        "score_delta_vs_fast": -0.22684034112387597,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0074",
+      "fast_group_count": 3,
+      "target_group_count": 3,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 9,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.049341203843627814,
+        "geometry_prior_score": 1.324248668199965,
+        "total_score": 1.2749074643563372
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "7",
+          "-",
+          "\\longmapsto"
+        ],
+        "target_tokens": [
+          "7",
+          "-",
+          "0"
+        ],
+        "token_sequence_exact": false,
+        "latex": "7\\longmapsto-",
+        "hwr_score": -0.5017651905594941,
+        "geometry_prior_score": -2.0950190035699903,
+        "total_score": -2.5967841941294845,
+        "score_delta_vs_fast": -3.8716916584858216,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 1
+      }
+    },
+    {
+      "sample_id": "aiflow_0038",
+      "fast_group_count": 2,
+      "target_group_count": 1,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 2,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.07942095823359552,
+        "geometry_prior_score": 1.5755060112750925,
+        "total_score": 1.4960850530414969
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "\\mathfrak{X}"
+        ],
+        "target_tokens": [
+          "x"
+        ],
+        "token_sequence_exact": false,
+        "latex": "\\mathfrak{X}",
+        "hwr_score": -0.459416767616792,
+        "geometry_prior_score": -1.2834410586273104,
+        "total_score": -1.7428578262441023,
+        "score_delta_vs_fast": -3.238942879285599,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 1
+      }
+    },
+    {
+      "sample_id": "aiflow_0092",
+      "fast_group_count": 6,
+      "target_group_count": 5,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 2,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.21864564892512703,
+        "geometry_prior_score": 2.6505509449119344,
+        "total_score": 2.4319052959868075
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "2",
+          "x",
+          "\\between",
+          "+",
+          "|"
+        ],
+        "target_tokens": [
+          "2",
+          "\\times",
+          "x",
+          "+",
+          "1"
+        ],
+        "token_sequence_exact": false,
+        "latex": "2x\\between+|",
+        "hwr_score": -0.3608401151017572,
+        "geometry_prior_score": 1.8583601502016605,
+        "total_score": 1.4975200350999032,
+        "score_delta_vs_fast": -0.9343852608869043,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0093",
+      "fast_group_count": 4,
+      "target_group_count": 3,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 2,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.29072459660142247,
+        "geometry_prior_score": 2.104598183795833,
+        "total_score": 1.8138735871944105
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "x",
+          "/",
+          "2"
+        ],
+        "target_tokens": [
+          "x",
+          "/",
+          "2"
+        ],
+        "token_sequence_exact": true,
+        "latex": "x/2",
+        "hwr_score": -0.18952016821264026,
+        "geometry_prior_score": 0.5877144108648816,
+        "total_score": 0.39819424265224135,
+        "score_delta_vs_fast": -1.4156793445421691,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0098",
+      "fast_group_count": 3,
+      "target_group_count": 2,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 3,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.4863010238321271,
+        "geometry_prior_score": 3.0375884539674782,
+        "total_score": 2.551287430135351
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "x",
+          "2"
+        ],
+        "target_tokens": [
+          "x",
+          "2"
+        ],
+        "token_sequence_exact": true,
+        "latex": "x^{2}",
+        "hwr_score": -0.4877513476554003,
+        "geometry_prior_score": -0.9072185845448478,
+        "total_score": -1.3949699322002482,
+        "score_delta_vs_fast": -3.9462573623355994,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0101",
+      "fast_group_count": 4,
+      "target_group_count": 3,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 3,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.6301043159941888,
+        "geometry_prior_score": 1.7637664388107648,
+        "total_score": 1.133662122816576
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "7",
+          "=",
+          "7"
+        ],
+        "target_tokens": [
+          "7",
+          "=",
+          "7"
+        ],
+        "token_sequence_exact": true,
+        "latex": "7=7",
+        "hwr_score": -0.11327586317654437,
+        "geometry_prior_score": 0.7814102803205435,
+        "total_score": 0.6681344171439991,
+        "score_delta_vs_fast": -0.46552770567257684,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0102",
+      "fast_group_count": 4,
+      "target_group_count": 3,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 2,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.5870092157851592,
+        "geometry_prior_score": 1.992570235654568,
+        "total_score": 1.4055610198694088
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "x",
+          "=",
+          "y"
+        ],
+        "target_tokens": [
+          "x",
+          "=",
+          "y"
+        ],
+        "token_sequence_exact": true,
+        "latex": "x=y",
+        "hwr_score": -0.6025384466476721,
+        "geometry_prior_score": 1.1253096674690244,
+        "total_score": 0.5227712208213523,
+        "score_delta_vs_fast": -0.8827897990480565,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0103",
+      "fast_group_count": 6,
+      "target_group_count": 5,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 2,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.1657945558118685,
+        "geometry_prior_score": 2.7414356730788296,
+        "total_score": 2.575641117266961
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "x",
+          "+",
+          "y",
+          "=",
+          "5"
+        ],
+        "target_tokens": [
+          "x",
+          "+",
+          "y",
+          "=",
+          "5"
+        ],
+        "token_sequence_exact": true,
+        "latex": "x+y=5",
+        "hwr_score": -0.256585051553403,
+        "geometry_prior_score": 2.376379772250911,
+        "total_score": 2.1197947206975076,
+        "score_delta_vs_fast": -0.45584639656945347,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0106",
+      "fast_group_count": 4,
+      "target_group_count": 3,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 2,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.43034578713026667,
+        "geometry_prior_score": 2.000373846015078,
+        "total_score": 1.5700280588848115
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "(",
+          "x",
+          ")"
+        ],
+        "target_tokens": [
+          "(",
+          "x",
+          ")"
+        ],
+        "token_sequence_exact": true,
+        "latex": "(x)",
+        "hwr_score": -0.2826219524345626,
+        "geometry_prior_score": 1.5047146911977567,
+        "total_score": 1.2220927387631941,
+        "score_delta_vs_fast": -0.3479353201216173,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0109",
+      "fast_group_count": 10,
+      "target_group_count": 9,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 3,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.35453654308672655,
+        "geometry_prior_score": 1.9938104678549715,
+        "total_score": 1.6392739247682449
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "(",
+          "\\kappa",
+          "4",
+          "(",
+          "y",
+          "-",
+          "|",
+          ")",
+          ")"
+        ],
+        "target_tokens": [
+          "(",
+          "x",
+          "+",
+          "(",
+          "y",
+          "-",
+          "1",
+          ")",
+          ")"
+        ],
+        "token_sequence_exact": false,
+        "latex": "(\\kappa4(y-|))",
+        "hwr_score": -0.4429383658639672,
+        "geometry_prior_score": 1.6425604107913154,
+        "total_score": 1.1996220449273483,
+        "score_delta_vs_fast": -0.4396518798408966,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0110",
+      "fast_group_count": 8,
+      "target_group_count": 7,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 2,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.29138342556936647,
+        "geometry_prior_score": 2.8249893061454445,
+        "total_score": 2.533605880576078
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "3",
+          "\\times",
+          "(",
+          "x",
+          "+",
+          "i",
+          ")"
+        ],
+        "target_tokens": [
+          "3",
+          "\\times",
+          "(",
+          "x",
+          "+",
+          "1",
+          ")"
+        ],
+        "token_sequence_exact": false,
+        "latex": "3\\times(x+i)",
+        "hwr_score": -0.27947883055397454,
+        "geometry_prior_score": 2.2500898856298384,
+        "total_score": 1.9706110550758638,
+        "score_delta_vs_fast": -0.5629948255002142,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0112",
+      "fast_group_count": 6,
+      "target_group_count": 5,
+      "guard_would_reject_target_for_group_increase": false,
+      "target_partition_in_local_top32": true,
+      "target_partition_rank": 3,
+      "geometry_search_mode": "beam",
+      "fast": {
+        "hwr_score": -0.21385158413905936,
+        "geometry_prior_score": 3.3498948600561933,
+        "total_score": 3.136043275917134
+      },
+      "gold_partition_counterfactual": {
+        "decoder_accepted": true,
+        "decoder_rejection_reason": null,
+        "predicted_tokens": [
+          "x",
+          "\\times",
+          "y",
+          "+",
+          "2"
+        ],
+        "target_tokens": [
+          "x",
+          "\\times",
+          "y",
+          "+",
+          "2"
+        ],
+        "token_sequence_exact": true,
+        "latex": "x\\timesy+2",
+        "hwr_score": -0.26352056272699664,
+        "geometry_prior_score": 2.5777664487125262,
+        "total_score": 2.3142458859855295,
+        "score_delta_vs_fast": -0.8217973899316044,
+        "beats_fast_by_acceptance_margin": false,
+        "misses_hwr_top5_count": 0
+      }
+    }
+  ],
+  "validation": {
+    "current_dataset_and_model_hashes_match_saved_layer_trace": true,
+    "target_groups_present_in_current_local_candidate_graph": true,
+    "fast_decoder_output_and_score_reconciled": true,
+    "fast_geometry_score_reconciled": true,
+    "top5_targets_match_gold_groups": true,
+    "current_candidate_counts_reconciled": true,
+    "local_top32_target_ranks_reconciled": true,
+    "crohme_training_or_tuning": false,
+    "product_default_enabled": false,
+    "promotion_eligible": false
+  }
+}

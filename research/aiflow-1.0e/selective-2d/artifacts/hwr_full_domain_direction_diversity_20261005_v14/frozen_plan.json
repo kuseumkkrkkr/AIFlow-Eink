@@ -1,0 +1,30 @@
+{
+  "schema": "aiflow-full-domain-direction-diversity-plan/v14",
+  "script_sha256": "848e4581de31b9248f9df0e07c80969a983a79c074a45909e62f458ac8cd29d1",
+  "baseline_audit_sha256": "0e02fa389fffe23c160cb4be62ded3dc0937f54debe9d9adaa45a87af34817d5",
+  "baseline_entrypoint_sha256": "5ba59eb39ca2728d041daa3544c3611d63850b02bca5c976921ae6814f2c0849",
+  "max_directions": 4,
+  "max_pairwise_positive_cosine": 0.98,
+  "scales": [
+    1.0,
+    0.5,
+    0.25,
+    0.125,
+    0.0625,
+    0.03125
+  ],
+  "direction_selection": "unchanged first donor; greedy minimum maximum whitened-direction cosine; deterministic row-index tie break",
+  "source_seed_limit": "originals and fits inherited from sealed teacher-margin-selected TRAIN seeds; not an independent or random acceptance sample",
+  "class_balanced_use": "per-source-class sampling required if human-approved candidates are later used; generated counts are not training weights",
+  "metric": "empirical class/topology q68, not Gaussian SD or human recognition probability",
+  "actual_projected_q68_limit": "diagnostic only; do not assume capped donor distance proves re-aligned endpoint radius",
+  "source_class_metadata_is_semantic_ground_truth": false,
+  "hard_synthetic_labels_assigned": 0,
+  "parameter_updates": 0,
+  "model_forwards": 0,
+  "teacher_logits_loaded": false,
+  "official_test_rows_read": 0,
+  "held_examples_forwarded": 0,
+  "crohme_rows": 0,
+  "product_adopted": false
+}

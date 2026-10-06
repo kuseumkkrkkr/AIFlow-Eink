@@ -1,0 +1,45 @@
+{
+  "schema": "aiflow-direct-calibration-retention-verdict/v26",
+  "status": "verified_encoder_retention_failure_not_equal_only",
+  "result_sha256": "d3d828dc9e4cd112ba5c0d5405964940ffdd2e7458099ce84580543ae576d647",
+  "scope": "Consumed 149-formula oracle-group diagnosis; no optimizer steps, checkpoint export or deployment",
+  "augmented_main_formula_exact_of_149": {
+    "as_trained": 52,
+    "new_encoder_original_head": 57,
+    "restore_original_punctuation_rows": 52,
+    "restore_original_all_27_calibrated_rows": 55,
+    "original_encoder_new_head": 73,
+    "fully_original_reference": 76
+  },
+  "real_paired_control_formula_exact_of_149": {
+    "as_trained": 54,
+    "new_encoder_original_head": 56,
+    "restore_original_punctuation_rows": 54,
+    "restore_original_all_27_calibrated_rows": 56,
+    "original_encoder_new_head": 73
+  },
+  "augmented_main_regression_taxonomy": {
+    "lost_previously_correct_formulas": 26,
+    "lost_formulas_with_equal_error": 3,
+    "lost_formulas_only_equal_error": 1,
+    "observed_competitor_confusions": ["7 -> eta", "8 -> mathscr C", "x -> between", "times -> X or x", "b -> flat", "1 -> prime or mid"],
+    "missing_equal_positive_is_not_sufficient_explanation": true
+  },
+  "verification": {
+    "as_trained_outputs_bit_exact_with_v25": true,
+    "all_variant_top5_matches_independent_double_affine": true,
+    "all_ten_saved_probe_counts_independently_recounted": true,
+    "original_encoder_embeddings_bit_exact_with_v21": true,
+    "only_selected_head_rows_changed_in_partial_restoration": true,
+    "model_memory_restored": true,
+    "checkpoint_files_unchanged": true
+  },
+  "interpretation": "Reusing the original encoder with either directly retrained head restores 73 formula hits, while restoring the full original head or calibrated rows on new encoders does not approach the 76-hit reference. Encoder/pooling representation retention is the larger intervention target in this diagnostic. Component mismatch and consumed-data bias prevent a universal causal architecture claim.",
+  "next_controlled_change": "Keep augmented hard-label CE at full weight and all main parameters trainable; add a separately logged frozen-canonical representation-retention loss on admitted TRAIN inputs only, not on the 149 diagnostic cases. Preserve the V25 data and matched control evidence.",
+  "optimizer_steps": 0,
+  "crohme_rows": 0,
+  "new_human_acceptance": false,
+  "variants_adopted": false,
+  "product_checkpoint_changed": false,
+  "goal_complete": false
+}

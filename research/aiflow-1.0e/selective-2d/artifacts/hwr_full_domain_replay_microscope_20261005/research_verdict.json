@@ -1,0 +1,25 @@
+{
+  "schema": "aiflow-full-domain-replay-research-verdict/v1",
+  "status": "balanced_replay_ready_human_boundary_learning_unproven",
+  "changes": {
+    "class_budget_ratio_before": 10.0,
+    "class_budget_ratio_after": 1.0,
+    "classes_verified": 370,
+    "topology_sampling": "cyclic without replacement within each class",
+    "loss": "class-macro full 372-way T-squared KL; no hard generated labels; teacher detached"
+  },
+  "findings": [
+    "Deterministic same-model self-replay has nearly zero gradient and carries no new human-label knowledge.",
+    "Dropout-on self-replay, original-to-view consistency, and Top-5 truncation produce different nonzero gradients. This does not prove accuracy gain.",
+    "Original-to-view consistency and Top-5 truncation gradients have cosine -0.4741 on this fixed class-balanced TRAIN probe; they cannot be treated as equivalent objectives.",
+    "Three geometry-valid transformations lose the original dataset label from the teacher Top-5; keep them for blind review, not hard-label training.",
+    "FP64 independent reductions reproduce all losses and the sum of all 57 parameter gradient norms."
+  ],
+  "next_required_evidence": "Independent human vote distributions and unused whole-math writer/device acceptance; this microscope supplies neither.",
+  "human_boundary_labels": 0,
+  "new_training_performed": false,
+  "inference_contract_changed": false,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "goal_complete": false
+}

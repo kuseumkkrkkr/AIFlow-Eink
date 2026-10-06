@@ -1,0 +1,6831 @@
+{
+  "schema": "aiflow-hwr-full-domain-boundary-profile/v1",
+  "status": "teacher_boundary_review_candidates_only",
+  "summary": {
+    "classes_scanned": 370,
+    "paths_scanned": 1121,
+    "valid_grid_inputs": 10089,
+    "invalid_grid_inputs_not_forwarded": 0,
+    "paths_with_teacher_crossings": 433,
+    "multiple_crossing_paths": 12,
+    "endpoint_only_scan_missed_paths": 12,
+    "refined_review_pairs": 262,
+    "control_review_pairs": 108,
+    "review_classes": 370,
+    "review_rows": 740,
+    "bracket_width_max": 0.125,
+    "refinement_is_local_not_global_monotonic": true,
+    "human_boundary_labels": 0,
+    "numeric_margin_band": 0.0001,
+    "initial_crossing_classes": 264,
+    "numerical_or_geometry_weak_classes_returned_to_controls": 2
+  },
+  "frozen_plan_sha256": "f2593e866da3748cb42dcaa8633ed1274e45518399af0567c41ebb6d12bb8e36",
+  "source_report_sha256": "0e02fa389fffe23c160cb4be62ded3dc0937f54debe9d9adaa45a87af34817d5",
+  "provenance": {
+    "teacher_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "real_training_source_ids": [
+      0,
+      1
+    ],
+    "heldout_rows_read": 0,
+    "official_test_rows_read": 0,
+    "crohme_rows": 0
+  },
+  "candidate_cache": {
+    "class_labels": [
+      "+",
+      "-",
+      "/",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "<",
+      ">",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "X",
+      "Y",
+      "Z",
+      "[",
+      "\\#",
+      "\\$",
+      "\\%",
+      "\\&",
+      "\\AA",
+      "\\AE",
+      "\\Bowtie",
+      "\\Delta",
+      "\\Downarrow",
+      "\\Gamma",
+      "\\Im",
+      "\\L",
+      "\\Lambda",
+      "\\Leftarrow",
+      "\\Leftrightarrow",
+      "\\Longleftrightarrow",
+      "\\Longrightarrow",
+      "\\O",
+      "\\Omega",
+      "\\Phi",
+      "\\Pi",
+      "\\Psi",
+      "\\Re",
+      "\\Rightarrow",
+      "\\S",
+      "\\Sigma",
+      "\\Theta",
+      "\\Vdash",
+      "\\Xi",
+      "\\aa",
+      "\\ae",
+      "\\aleph",
+      "\\alpha",
+      "\\amalg",
+      "\\angle",
+      "\\approx",
+      "\\ast",
+      "\\astrosun",
+      "\\asymp",
+      "\\backsim",
+      "\\backslash",
+      "\\barwedge",
+      "\\because",
+      "\\beta",
+      "\\between",
+      "\\blacksquare",
+      "\\blacktriangleright",
+      "\\bot",
+      "\\bowtie",
+      "\\boxdot",
+      "\\boxplus",
+      "\\boxtimes",
+      "\\bullet",
+      "\\cap",
+      "\\cdot",
+      "\\celsius",
+      "\\checked",
+      "\\checkmark",
+      "\\chi",
+      "\\circ",
+      "\\circlearrowleft",
+      "\\circlearrowright",
+      "\\circledR",
+      "\\circledast",
+      "\\circledcirc",
+      "\\clubsuit",
+      "\\cong",
+      "\\coprod",
+      "\\copyright",
+      "\\cup",
+      "\\curvearrowright",
+      "\\dag",
+      "\\dashv",
+      "\\ddots",
+      "\\degree",
+      "\\delta",
+      "\\diameter",
+      "\\diamond",
+      "\\diamondsuit",
+      "\\div",
+      "\\doteq",
+      "\\dots",
+      "\\dotsc",
+      "\\downarrow",
+      "\\ell",
+      "\\emptyset",
+      "\\epsilon",
+      "\\equiv",
+      "\\eta",
+      "\\exists",
+      "\\female",
+      "\\fint",
+      "\\flat",
+      "\\forall",
+      "\\frown",
+      "\\fullmoon",
+      "\\gamma",
+      "\\geq",
+      "\\geqslant",
+      "\\gtrless",
+      "\\gtrsim",
+      "\\guillemotleft",
+      "\\hbar",
+      "\\heartsuit",
+      "\\hookrightarrow",
+      "\\iddots",
+      "\\in",
+      "\\infty",
+      "\\int",
+      "\\iota",
+      "\\kappa",
+      "\\lambda",
+      "\\langle",
+      "\\lceil",
+      "\\leadsto",
+      "\\leftarrow",
+      "\\leftmoon",
+      "\\leftrightarrow",
+      "\\leq",
+      "\\leqslant",
+      "\\lesssim",
+      "\\lfloor",
+      "\\lhd",
+      "\\lightning",
+      "\\llbracket",
+      "\\longmapsto",
+      "\\longrightarrow",
+      "\\lozenge",
+      "\\ltimes",
+      "\\male",
+      "\\mapsfrom",
+      "\\mapsto",
+      "\\mars",
+      "\\mathbb{1}",
+      "\\mathbb{H}",
+      "\\mathbb{N}",
+      "\\mathbb{Q}",
+      "\\mathbb{R}",
+      "\\mathbb{Z}",
+      "\\mathcal{A}",
+      "\\mathcal{B}",
+      "\\mathcal{C}",
+      "\\mathcal{D}",
+      "\\mathcal{E}",
+      "\\mathcal{F}",
+      "\\mathcal{G}",
+      "\\mathcal{H}",
+      "\\mathcal{L}",
+      "\\mathcal{M}",
+      "\\mathcal{N}",
+      "\\mathcal{O}",
+      "\\mathcal{P}",
+      "\\mathcal{R}",
+      "\\mathcal{S}",
+      "\\mathcal{T}",
+      "\\mathcal{U}",
+      "\\mathcal{X}",
+      "\\mathcal{Z}",
+      "\\mathds{1}",
+      "\\mathds{C}",
+      "\\mathds{E}",
+      "\\mathds{N}",
+      "\\mathds{P}",
+      "\\mathds{Q}",
+      "\\mathds{R}",
+      "\\mathds{Z}",
+      "\\mathfrak{A}",
+      "\\mathfrak{M}",
+      "\\mathfrak{S}",
+      "\\mathfrak{X}",
+      "\\mathscr{A}",
+      "\\mathscr{C}",
+      "\\mathscr{D}",
+      "\\mathscr{E}",
+      "\\mathscr{F}",
+      "\\mathscr{H}",
+      "\\mathscr{L}",
+      "\\mathscr{P}",
+      "\\mathscr{S}",
+      "\\mathsection",
+      "\\mid",
+      "\\models",
+      "\\mp",
+      "\\mu",
+      "\\multimap",
+      "\\nRightarrow",
+      "\\nabla",
+      "\\nearrow",
+      "\\neg",
+      "\\neq",
+      "\\nexists",
+      "\\ni",
+      "\\nmid",
+      "\\not\\equiv",
+      "\\notin",
+      "\\nrightarrow",
+      "\\nsubseteq",
+      "\\nu",
+      "\\nvDash",
+      "\\o",
+      "\\odot",
+      "\\ohm",
+      "\\oiint",
+      "\\oint",
+      "\\omega",
+      "\\ominus",
+      "\\oplus",
+      "\\otimes",
+      "\\parallel",
+      "\\parr",
+      "\\partial",
+      "\\perp",
+      "\\phi",
+      "\\pi",
+      "\\pitchfork",
+      "\\pm",
+      "\\pounds",
+      "\\prec",
+      "\\preccurlyeq",
+      "\\preceq",
+      "\\prime",
+      "\\prod",
+      "\\propto",
+      "\\psi",
+      "\\rangle",
+      "\\rceil",
+      "\\rfloor",
+      "\\rho",
+      "\\rightarrow",
+      "\\rightharpoonup",
+      "\\rightleftarrows",
+      "\\rightleftharpoons",
+      "\\rightrightarrows",
+      "\\rightsquigarrow",
+      "\\rrbracket",
+      "\\rtimes",
+      "\\searrow",
+      "\\setminus",
+      "\\sharp",
+      "\\shortrightarrow",
+      "\\sigma",
+      "\\sim",
+      "\\simeq",
+      "\\sphericalangle",
+      "\\sqcap",
+      "\\sqcup",
+      "\\sqrt{}",
+      "\\sqsubseteq",
+      "\\square",
+      "\\ss",
+      "\\star",
+      "\\subset",
+      "\\subseteq",
+      "\\subsetneq",
+      "\\succ",
+      "\\succeq",
+      "\\sum",
+      "\\sun",
+      "\\supset",
+      "\\supseteq",
+      "\\tau",
+      "\\therefore",
+      "\\theta",
+      "\\times",
+      "\\top",
+      "\\triangle",
+      "\\triangledown",
+      "\\triangleleft",
+      "\\trianglelefteq",
+      "\\triangleq",
+      "\\triangleright",
+      "\\twoheadrightarrow",
+      "\\uparrow",
+      "\\upharpoonright",
+      "\\uplus",
+      "\\vDash",
+      "\\varepsilon",
+      "\\varkappa",
+      "\\varnothing",
+      "\\varoiint",
+      "\\varphi",
+      "\\varpi",
+      "\\varpropto",
+      "\\varrho",
+      "\\varsubsetneq",
+      "\\vartheta",
+      "\\vartriangle",
+      "\\vdash",
+      "\\vdots",
+      "\\vee",
+      "\\venus",
+      "\\wedge",
+      "\\with",
+      "\\wp",
+      "\\wr",
+      "\\xi",
+      "\\zeta",
+      "\\{",
+      "\\|",
+      "\\}",
+      "]",
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s",
+      "u",
+      "v",
+      "w",
+      "x",
+      "y",
+      "z",
+      "|",
+      "(",
+      ")",
+      "="
+    ],
+    "artifacts": {
+      "candidate_features": {
+        "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_full_domain_boundary_profile_20261005_stable_v2\\candidate_features.npy",
+        "shape": [
+          740,
+          128,
+          5
+        ],
+        "dtype": "float32",
+        "sha256": "42618885e137768ed00bc263149fa8835c0679a4da301eb9d928625befc8a61d"
+      },
+      "teacher_logits": {
+        "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_full_domain_boundary_profile_20261005_stable_v2\\teacher_logits.npy",
+        "shape": [
+          740,
+          372
+        ],
+        "dtype": "float32",
+        "sha256": "43e0b2b6e16aeb22ca19a92d48e7171bce4b87dae33ef2bd3fc39aede00a1061"
+      }
+    }
+  },
+  "profile_cache": {
+    "candidate_features": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_full_domain_boundary_profile_20261005_stable_v2\\candidate_features.npy",
+      "shape": [
+        740,
+        128,
+        5
+      ],
+      "dtype": "float32",
+      "sha256": "42618885e137768ed00bc263149fa8835c0679a4da301eb9d928625befc8a61d"
+    },
+    "teacher_logits": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_full_domain_boundary_profile_20261005_stable_v2\\teacher_logits.npy",
+      "shape": [
+        740,
+        372
+      ],
+      "dtype": "float32",
+      "sha256": "43e0b2b6e16aeb22ca19a92d48e7171bce4b87dae33ef2bd3fc39aede00a1061"
+    },
+    "selected_parent_pair_indices": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_full_domain_boundary_profile_20261005_stable_v2\\selected_parent_pair_indices.npy",
+      "shape": [
+        370
+      ],
+      "dtype": "int64",
+      "sha256": "81139dd193a161ac07a8fd86c8d627fe648f106c093f3aab3745edf7dc18ad29"
+    },
+    "candidate_phase_fractions": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_full_domain_boundary_profile_20261005_stable_v2\\candidate_phase_fractions.npy",
+      "shape": [
+        370,
+        2
+      ],
+      "dtype": "float32",
+      "sha256": "5b986603393d19074a50447233fb01956c5da4d63bd1fa6aed2ed59b55682270"
+    },
+    "teacher_bracket_mask": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_full_domain_boundary_profile_20261005_stable_v2\\teacher_bracket_mask.npy",
+      "shape": [
+        370
+      ],
+      "dtype": "bool",
+      "sha256": "cbe1eafc777e7289295f58d906bc4c17a85e50be0d71c49288d401e696fe5c8a"
+    },
+    "grid_geometry_valid": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_full_domain_boundary_profile_20261005_stable_v2\\grid_geometry_valid.npy",
+      "shape": [
+        1121,
+        9
+      ],
+      "dtype": "bool",
+      "sha256": "57ec3bdf4de0cfd3609735867a3abfc5f412de31ea608db8e087d9b6009366e6"
+    },
+    "grid_teacher_logits": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_full_domain_boundary_profile_20261005_stable_v2\\grid_teacher_logits.npy",
+      "shape": [
+        1121,
+        9,
+        372
+      ],
+      "dtype": "float32",
+      "sha256": "80fc564bcd62df3f87bcc8c0485768820d48076e907c8de3c3629756932c3be6"
+    },
+    "grid_global_margins": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_full_domain_boundary_profile_20261005_stable_v2\\grid_global_margins.npy",
+      "shape": [
+        1121,
+        9
+      ],
+      "dtype": "float32",
+      "sha256": "d696bf11aed5ac9dbec62c4ccab590c89037deaa6a3fb2ac5b50f67cdf86087b"
+    }
+  },
+  "classes": [
+    {
+      "class_id": 0,
+      "label": "+",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 1,
+      "label": "-",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 2,
+      "label": "/",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 3,
+      "label": "0",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 4,
+      "label": "1",
+      "paths": 1,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 5,
+      "label": "2",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 6,
+      "label": "3",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 7,
+      "label": "4",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 8,
+      "label": "5",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 9,
+      "label": "6",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 10,
+      "label": "7",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 11,
+      "label": "8",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 12,
+      "label": "9",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 13,
+      "label": "<",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 14,
+      "label": ">",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 15,
+      "label": "A",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 16,
+      "label": "B",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 17,
+      "label": "C",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 18,
+      "label": "D",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 19,
+      "label": "E",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 20,
+      "label": "F",
+      "paths": 3,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 21,
+      "label": "G",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 22,
+      "label": "H",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 23,
+      "label": "I",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 24,
+      "label": "J",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 25,
+      "label": "K",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        3,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 26,
+      "label": "L",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 27,
+      "label": "M",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 28,
+      "label": "N",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 29,
+      "label": "O",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 30,
+      "label": "P",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 31,
+      "label": "Q",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 32,
+      "label": "R",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 33,
+      "label": "S",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 34,
+      "label": "T",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 35,
+      "label": "U",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 36,
+      "label": "V",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 37,
+      "label": "W",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 38,
+      "label": "X",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 39,
+      "label": "Y",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 40,
+      "label": "Z",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 41,
+      "label": "[",
+      "paths": 4,
+      "paths_with_crossings": 4,
+      "sampled_grid_positive_counts": [
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 42,
+      "label": "\\#",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 43,
+      "label": "\\$",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 44,
+      "label": "\\%",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 45,
+      "label": "\\&",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 46,
+      "label": "\\AA",
+      "paths": 8,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        5,
+        5,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 47,
+      "label": "\\AE",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 48,
+      "label": "\\Bowtie",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 49,
+      "label": "\\Delta",
+      "paths": 3,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 50,
+      "label": "\\Downarrow",
+      "paths": 1,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "class_id": 51,
+      "label": "\\Gamma",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 52,
+      "label": "\\Im",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 53,
+      "label": "\\L",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 54,
+      "label": "\\Lambda",
+      "paths": 6,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 55,
+      "label": "\\Leftarrow",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 56,
+      "label": "\\Leftrightarrow",
+      "paths": 5,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 57,
+      "label": "\\Longleftrightarrow",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 58,
+      "label": "\\Longrightarrow",
+      "paths": 4,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 59,
+      "label": "\\O",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 60,
+      "label": "\\Omega",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 61,
+      "label": "\\Phi",
+      "paths": 8,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 62,
+      "label": "\\Pi",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 63,
+      "label": "\\Psi",
+      "paths": 5,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 64,
+      "label": "\\Re",
+      "paths": 4,
+      "paths_with_crossings": 4,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "class_id": 65,
+      "label": "\\Rightarrow",
+      "paths": 6,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        3,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        6
+      ]
+    },
+    {
+      "class_id": 66,
+      "label": "\\S",
+      "paths": 3,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        1,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 67,
+      "label": "\\Sigma",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 68,
+      "label": "\\Theta",
+      "paths": 6,
+      "paths_with_crossings": 5,
+      "sampled_grid_positive_counts": [
+        2,
+        3,
+        5,
+        5,
+        5,
+        4,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "class_id": 69,
+      "label": "\\Vdash",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 70,
+      "label": "\\Xi",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 71,
+      "label": "\\aa",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 72,
+      "label": "\\ae",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 73,
+      "label": "\\aleph",
+      "paths": 7,
+      "paths_with_crossings": 4,
+      "sampled_grid_positive_counts": [
+        5,
+        3,
+        3,
+        4,
+        3,
+        3,
+        3,
+        3,
+        4
+      ]
+    },
+    {
+      "class_id": 74,
+      "label": "\\alpha",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 75,
+      "label": "\\amalg",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 76,
+      "label": "\\angle",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 77,
+      "label": "\\approx",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 78,
+      "label": "\\ast",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 79,
+      "label": "\\astrosun",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 80,
+      "label": "\\asymp",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 81,
+      "label": "\\backsim",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 82,
+      "label": "\\backslash",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 83,
+      "label": "\\barwedge",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 84,
+      "label": "\\because",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 85,
+      "label": "\\beta",
+      "paths": 4,
+      "paths_with_crossings": 4,
+      "sampled_grid_positive_counts": [
+        1,
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 86,
+      "label": "\\between",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 87,
+      "label": "\\blacksquare",
+      "paths": 6,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        4,
+        5,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 88,
+      "label": "\\blacktriangleright",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 89,
+      "label": "\\bot",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 90,
+      "label": "\\bowtie",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 91,
+      "label": "\\boxdot",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 92,
+      "label": "\\boxplus",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 93,
+      "label": "\\boxtimes",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 94,
+      "label": "\\bullet",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 95,
+      "label": "\\cap",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 96,
+      "label": "\\cdot",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 97,
+      "label": "\\celsius",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 98,
+      "label": "\\checked",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 99,
+      "label": "\\checkmark",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 100,
+      "label": "\\chi",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 101,
+      "label": "\\circ",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 102,
+      "label": "\\circlearrowleft",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 103,
+      "label": "\\circlearrowright",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 104,
+      "label": "\\circledR",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 105,
+      "label": "\\circledast",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 106,
+      "label": "\\circledcirc",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 107,
+      "label": "\\clubsuit",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 108,
+      "label": "\\cong",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 109,
+      "label": "\\coprod",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 110,
+      "label": "\\copyright",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 111,
+      "label": "\\cup",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 112,
+      "label": "\\curvearrowright",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 113,
+      "label": "\\dag",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 114,
+      "label": "\\dashv",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 115,
+      "label": "\\ddots",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 116,
+      "label": "\\degree",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 117,
+      "label": "\\delta",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 118,
+      "label": "\\diameter",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 119,
+      "label": "\\diamond",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 120,
+      "label": "\\diamondsuit",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 121,
+      "label": "\\div",
+      "paths": 6,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "class_id": 122,
+      "label": "\\doteq",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 123,
+      "label": "\\dots",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 124,
+      "label": "\\dotsc",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 125,
+      "label": "\\downarrow",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 126,
+      "label": "\\ell",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 127,
+      "label": "\\emptyset",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 128,
+      "label": "\\epsilon",
+      "paths": 4,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 129,
+      "label": "\\equiv",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 130,
+      "label": "\\eta",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 131,
+      "label": "\\exists",
+      "paths": 8,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        5,
+        4,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 132,
+      "label": "\\female",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 133,
+      "label": "\\fint",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 134,
+      "label": "\\flat",
+      "paths": 3,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 135,
+      "label": "\\forall",
+      "paths": 7,
+      "paths_with_crossings": 4,
+      "sampled_grid_positive_counts": [
+        3,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "class_id": 136,
+      "label": "\\frown",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 137,
+      "label": "\\fullmoon",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 138,
+      "label": "\\gamma",
+      "paths": 3,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 139,
+      "label": "\\geq",
+      "paths": 1,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 140,
+      "label": "\\geqslant",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 141,
+      "label": "\\gtrless",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 142,
+      "label": "\\gtrsim",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 143,
+      "label": "\\guillemotleft",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 144,
+      "label": "\\hbar",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 145,
+      "label": "\\heartsuit",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 146,
+      "label": "\\hookrightarrow",
+      "paths": 6,
+      "paths_with_crossings": 5,
+      "sampled_grid_positive_counts": [
+        3,
+        4,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 147,
+      "label": "\\iddots",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 148,
+      "label": "\\in",
+      "paths": 10,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        4,
+        6,
+        6,
+        6,
+        6,
+        6,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "class_id": 149,
+      "label": "\\infty",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 150,
+      "label": "\\int",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 151,
+      "label": "\\iota",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 152,
+      "label": "\\kappa",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 153,
+      "label": "\\lambda",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 154,
+      "label": "\\langle",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 155,
+      "label": "\\lceil",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 156,
+      "label": "\\leadsto",
+      "paths": 5,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "class_id": 157,
+      "label": "\\leftarrow",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 158,
+      "label": "\\leftmoon",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 159,
+      "label": "\\leftrightarrow",
+      "paths": 8,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        4,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "class_id": 160,
+      "label": "\\leq",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 161,
+      "label": "\\leqslant",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 162,
+      "label": "\\lesssim",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 163,
+      "label": "\\lfloor",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 164,
+      "label": "\\lhd",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 165,
+      "label": "\\lightning",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 166,
+      "label": "\\llbracket",
+      "paths": 8,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        4,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 167,
+      "label": "\\longmapsto",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        3,
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 168,
+      "label": "\\longrightarrow",
+      "paths": 5,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        2,
+        3,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 169,
+      "label": "\\lozenge",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 170,
+      "label": "\\ltimes",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 171,
+      "label": "\\male",
+      "paths": 6,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        5,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 172,
+      "label": "\\mapsfrom",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 173,
+      "label": "\\mapsto",
+      "paths": 6,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ]
+    },
+    {
+      "class_id": 174,
+      "label": "\\mars",
+      "paths": 8,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        6
+      ]
+    },
+    {
+      "class_id": 175,
+      "label": "\\mathbb{1}",
+      "paths": 8,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        3,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 176,
+      "label": "\\mathbb{H}",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 178,
+      "label": "\\mathbb{Q}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 179,
+      "label": "\\mathbb{R}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 180,
+      "label": "\\mathbb{Z}",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 181,
+      "label": "\\mathcal{A}",
+      "paths": 5,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 182,
+      "label": "\\mathcal{B}",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 183,
+      "label": "\\mathcal{C}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 184,
+      "label": "\\mathcal{D}",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 185,
+      "label": "\\mathcal{E}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 186,
+      "label": "\\mathcal{F}",
+      "paths": 4,
+      "paths_with_crossings": 4,
+      "sampled_grid_positive_counts": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "class_id": 187,
+      "label": "\\mathcal{G}",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 188,
+      "label": "\\mathcal{H}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 189,
+      "label": "\\mathcal{L}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 190,
+      "label": "\\mathcal{M}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 191,
+      "label": "\\mathcal{N}",
+      "paths": 4,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 192,
+      "label": "\\mathcal{O}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 193,
+      "label": "\\mathcal{P}",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 194,
+      "label": "\\mathcal{R}",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 195,
+      "label": "\\mathcal{S}",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 196,
+      "label": "\\mathcal{T}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 197,
+      "label": "\\mathcal{U}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 198,
+      "label": "\\mathcal{X}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 199,
+      "label": "\\mathcal{Z}",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 200,
+      "label": "\\mathds{1}",
+      "paths": 3,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 201,
+      "label": "\\mathds{C}",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 202,
+      "label": "\\mathds{E}",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 203,
+      "label": "\\mathds{N}",
+      "paths": 7,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        6,
+        5,
+        5,
+        5,
+        5,
+        6,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "class_id": 204,
+      "label": "\\mathds{P}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 205,
+      "label": "\\mathds{Q}",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 206,
+      "label": "\\mathds{R}",
+      "paths": 10,
+      "paths_with_crossings": 5,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 207,
+      "label": "\\mathds{Z}",
+      "paths": 8,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 208,
+      "label": "\\mathfrak{A}",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2
+      ]
+    },
+    {
+      "class_id": 209,
+      "label": "\\mathfrak{M}",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 210,
+      "label": "\\mathfrak{S}",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 211,
+      "label": "\\mathfrak{X}",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 212,
+      "label": "\\mathscr{A}",
+      "paths": 4,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 213,
+      "label": "\\mathscr{C}",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 214,
+      "label": "\\mathscr{D}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 215,
+      "label": "\\mathscr{E}",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 216,
+      "label": "\\mathscr{F}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 217,
+      "label": "\\mathscr{H}",
+      "paths": 4,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 218,
+      "label": "\\mathscr{L}",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 219,
+      "label": "\\mathscr{P}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 220,
+      "label": "\\mathscr{S}",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 221,
+      "label": "\\mathsection",
+      "paths": 3,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 222,
+      "label": "\\mid",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 223,
+      "label": "\\models",
+      "paths": 5,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 224,
+      "label": "\\mp",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 225,
+      "label": "\\mu",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 226,
+      "label": "\\multimap",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 227,
+      "label": "\\nRightarrow",
+      "paths": 1,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 228,
+      "label": "\\nabla",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 229,
+      "label": "\\nearrow",
+      "paths": 4,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 230,
+      "label": "\\neg",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 231,
+      "label": "\\neq",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 232,
+      "label": "\\nexists",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 233,
+      "label": "\\ni",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 234,
+      "label": "\\nmid",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 235,
+      "label": "\\not\\equiv",
+      "paths": 1,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 236,
+      "label": "\\notin",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 237,
+      "label": "\\nrightarrow",
+      "paths": 3,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 238,
+      "label": "\\nsubseteq",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 239,
+      "label": "\\nu",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 240,
+      "label": "\\nvDash",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 241,
+      "label": "\\o",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 242,
+      "label": "\\odot",
+      "paths": 4,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 243,
+      "label": "\\ohm",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 244,
+      "label": "\\oiint",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 245,
+      "label": "\\oint",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 246,
+      "label": "\\omega",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 247,
+      "label": "\\ominus",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 248,
+      "label": "\\oplus",
+      "paths": 10,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "class_id": 249,
+      "label": "\\otimes",
+      "paths": 8,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        5,
+        7,
+        7,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "class_id": 250,
+      "label": "\\parallel",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 251,
+      "label": "\\parr",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 252,
+      "label": "\\partial",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 253,
+      "label": "\\perp",
+      "paths": 5,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "class_id": 254,
+      "label": "\\phi",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 255,
+      "label": "\\pi",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 256,
+      "label": "\\pitchfork",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 257,
+      "label": "\\pm",
+      "paths": 4,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        3,
+        4,
+        4,
+        4,
+        3,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 258,
+      "label": "\\pounds",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 259,
+      "label": "\\prec",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 260,
+      "label": "\\preccurlyeq",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 261,
+      "label": "\\preceq",
+      "paths": 4,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 262,
+      "label": "\\prime",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 263,
+      "label": "\\prod",
+      "paths": 7,
+      "paths_with_crossings": 4,
+      "sampled_grid_positive_counts": [
+        4,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 264,
+      "label": "\\propto",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 265,
+      "label": "\\psi",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 266,
+      "label": "\\rangle",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 267,
+      "label": "\\rceil",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 268,
+      "label": "\\rfloor",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 269,
+      "label": "\\rho",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 270,
+      "label": "\\rightarrow",
+      "paths": 6,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 271,
+      "label": "\\rightharpoonup",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 272,
+      "label": "\\rightleftarrows",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 273,
+      "label": "\\rightleftharpoons",
+      "paths": 3,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 274,
+      "label": "\\rightrightarrows",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 275,
+      "label": "\\rightsquigarrow",
+      "paths": 4,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 276,
+      "label": "\\rrbracket",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 277,
+      "label": "\\rtimes",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 278,
+      "label": "\\searrow",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 279,
+      "label": "\\setminus",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 280,
+      "label": "\\sharp",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 281,
+      "label": "\\shortrightarrow",
+      "paths": 6,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 282,
+      "label": "\\sigma",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 283,
+      "label": "\\sim",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 284,
+      "label": "\\simeq",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 285,
+      "label": "\\sphericalangle",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 286,
+      "label": "\\sqcap",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 287,
+      "label": "\\sqcup",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 288,
+      "label": "\\sqrt{}",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 289,
+      "label": "\\sqsubseteq",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2
+      ]
+    },
+    {
+      "class_id": 290,
+      "label": "\\square",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 291,
+      "label": "\\ss",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "class_id": 292,
+      "label": "\\star",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 293,
+      "label": "\\subset",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 294,
+      "label": "\\subseteq",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 295,
+      "label": "\\subsetneq",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 296,
+      "label": "\\succ",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 297,
+      "label": "\\succeq",
+      "paths": 4,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 298,
+      "label": "\\sum",
+      "paths": 6,
+      "paths_with_crossings": 4,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 299,
+      "label": "\\sun",
+      "paths": 1,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 300,
+      "label": "\\supset",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 301,
+      "label": "\\supseteq",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "class_id": 302,
+      "label": "\\tau",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 303,
+      "label": "\\therefore",
+      "paths": 10,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "class_id": 304,
+      "label": "\\theta",
+      "paths": 4,
+      "paths_with_crossings": 4,
+      "sampled_grid_positive_counts": [
+        0,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 305,
+      "label": "\\times",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 306,
+      "label": "\\top",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 307,
+      "label": "\\triangle",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 308,
+      "label": "\\triangledown",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 309,
+      "label": "\\triangleleft",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 310,
+      "label": "\\trianglelefteq",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 311,
+      "label": "\\triangleq",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 312,
+      "label": "\\triangleright",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 313,
+      "label": "\\twoheadrightarrow",
+      "paths": 5,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 314,
+      "label": "\\uparrow",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 315,
+      "label": "\\upharpoonright",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 316,
+      "label": "\\uplus",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 317,
+      "label": "\\vDash",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 318,
+      "label": "\\varepsilon",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 319,
+      "label": "\\varkappa",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 320,
+      "label": "\\varnothing",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 321,
+      "label": "\\varoiint",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 322,
+      "label": "\\varphi",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 323,
+      "label": "\\varpi",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ]
+    },
+    {
+      "class_id": 324,
+      "label": "\\varpropto",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 325,
+      "label": "\\varrho",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 326,
+      "label": "\\varsubsetneq",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 327,
+      "label": "\\vartheta",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 328,
+      "label": "\\vartriangle",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 329,
+      "label": "\\vdash",
+      "paths": 1,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 330,
+      "label": "\\vdots",
+      "paths": 6,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "class_id": 331,
+      "label": "\\vee",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 332,
+      "label": "\\venus",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 333,
+      "label": "\\wedge",
+      "paths": 4,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 334,
+      "label": "\\with",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 335,
+      "label": "\\wp",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 336,
+      "label": "\\wr",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 337,
+      "label": "\\xi",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 338,
+      "label": "\\zeta",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 339,
+      "label": "\\{",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 340,
+      "label": "\\|",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 341,
+      "label": "\\}",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 342,
+      "label": "]",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 343,
+      "label": "a",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 344,
+      "label": "b",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 345,
+      "label": "c",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 346,
+      "label": "d",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 347,
+      "label": "e",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 348,
+      "label": "f",
+      "paths": 4,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 349,
+      "label": "g",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 350,
+      "label": "h",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 351,
+      "label": "i",
+      "paths": 3,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 352,
+      "label": "j",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 353,
+      "label": "k",
+      "paths": 6,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 354,
+      "label": "l",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 355,
+      "label": "m",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 356,
+      "label": "n",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 357,
+      "label": "o",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 358,
+      "label": "p",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "class_id": 359,
+      "label": "q",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "class_id": 360,
+      "label": "r",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 361,
+      "label": "s",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 362,
+      "label": "u",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 363,
+      "label": "v",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 364,
+      "label": "w",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 365,
+      "label": "x",
+      "paths": 2,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 366,
+      "label": "y",
+      "paths": 4,
+      "paths_with_crossings": 1,
+      "sampled_grid_positive_counts": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 367,
+      "label": "z",
+      "paths": 4,
+      "paths_with_crossings": 3,
+      "sampled_grid_positive_counts": [
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "class_id": 368,
+      "label": "|",
+      "paths": 2,
+      "paths_with_crossings": 2,
+      "sampled_grid_positive_counts": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "class_id": 369,
+      "label": "(",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "class_id": 370,
+      "label": ")",
+      "paths": 2,
+      "paths_with_crossings": 0,
+      "sampled_grid_positive_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "endpoint_only_missed_parent_pair_indices": [
+    59,
+    227,
+    270,
+    513,
+    531,
+    545,
+    641,
+    687,
+    689,
+    695,
+    1042,
+    1046
+  ],
+  "review_packet_sha256": {
+    "blind_review_mapping.json": "a89454ad96d51ea547c91bb55ff68c09b9b0c280f1a39b8fdddb6ecc3e859687",
+    "blind_human_review_queue.csv": "aab12452f223c5df4eb3db53c0ca5f020af70640330d895d5f8c6c3029c91795",
+    "blind_review_000.png": "0df2bab00623a28c74d5cfa807be3c93790aa13dbcb2ea925d6b9335c516a5a3",
+    "blind_review_001.png": "76e0d2d3f514b9e4056e5373688f3e1e5317313b583e061b0b0ac9ceb8e9da04",
+    "blind_review_002.png": "04bb8942c4b556a076bee09c1979670df0e0f31060d44fdf4803994083d17133",
+    "blind_review_003.png": "4d30df8acace22bc8d6afe01f9a0351d0bc816430dbd601a7b39734edc9357d3",
+    "blind_review_004.png": "a54a3172ab934f996ebb0acf63e12b061c767f819a3435bb062eed23cea5f681",
+    "blind_review_005.png": "c2095b4c8b1a9ff980b00550ee91a3e244b3e86efcde825afe5d39746b638922",
+    "blind_review_006.png": "f0529eed43e0b088bd06c4b5e91f23dbbf7c564409d4cfcf903b91b70e151076",
+    "blind_review_007.png": "7bc3303ef9d3992eb0f008353d80f274736ec3b8e847d7304631bf5e0489458e",
+    "blind_review_008.png": "e5321dd1b9c1d2e9c3420e9143a13b456e35f7874c65b964b1b8419f3a2c583a",
+    "blind_review_009.png": "51878738fb41f189d1480201c4b0504b60c17ea42a23d79e5fa271eb8ec19e62"
+  },
+  "human_targets_available": false,
+  "hard_synthetic_labels_assigned": 0,
+  "student_training_performed": false,
+  "product_adopted": false,
+  "limitations": "Nine points only sample the path; no crossing observed does not prove no boundary. Teacher-selected candidates are biased and cannot estimate population human recognition probabilities."
+}

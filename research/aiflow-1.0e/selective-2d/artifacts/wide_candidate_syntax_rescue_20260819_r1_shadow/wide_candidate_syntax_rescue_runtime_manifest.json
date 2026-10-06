@@ -1,0 +1,112 @@
+{
+  "schema": "aiflow-wide-candidate-syntax-rescue-runtime-manifest/v1",
+  "generated_at": "2026-08-19T11:56:33.941965+00:00",
+  "status": "shadow_runtime_only",
+  "shadow_runtime_admitted": true,
+  "product_default_admitted": false,
+  "training_performed": false,
+  "pipeline": [
+    "baseline 372-class HWR Top-5, neural formula context, and formula layout",
+    "dual HWR numeric operand rescue",
+    "research-only auxiliary HWR Top-10 retrieval",
+    "unique minimum-change numeric syntax placement rescue"
+  ],
+  "runtime_contract": {
+    "baseline_formula_order_authoritative": true,
+    "wide_candidate_context_order_used": false,
+    "candidate_authority": "ordered union of the baseline path and declared auxiliary HWR Top-10",
+    "maximum_changes_per_formula": 2,
+    "maximum_formula_glyphs": 64,
+    "baseline_must_be_invalid_numeric_syntax": true,
+    "repair_must_be_unique_at_minimum_change_count": true,
+    "literal_alpha_operand_locked": true,
+    "arithmetic_evaluation": false,
+    "inserted_or_deleted_glyphs": 0,
+    "glyph_order_mutations": 0,
+    "grouping_mutations": 0,
+    "layout_mutations": 0
+  },
+  "topk_retrieval": {
+    "direct": {
+      "records": 387,
+      "top5_truth_count": 368,
+      "top10_truth_count": 376,
+      "top5_formula_oracle_count": 81,
+      "top10_formula_oracle_count": 88,
+      "top5_prefix_token_changes": 0,
+      "top5_prefix_max_probability_difference": 0.0
+    },
+    "crohme_noncommercial_diagnostic": {
+      "records": 9535,
+      "top5_truth_count": 8922,
+      "top10_truth_count": 9196,
+      "top5_formula_oracle_count": 646,
+      "top10_formula_oracle_count": 773,
+      "top5_prefix_token_changes": 0,
+      "top5_prefix_max_probability_difference": 0.0
+    }
+  },
+  "metrics": {
+    "direct_project_owned_writer_loo": {
+      "records": 387,
+      "formulas": 95,
+      "baseline_character_top1_count": 355,
+      "challenger_character_top1_count": 358,
+      "challenger_character_top1": 0.9250645994832042,
+      "baseline_formula_exact_count": 76,
+      "challenger_formula_exact_count": 78,
+      "challenger_formula_exact": 0.8210526315789474,
+      "improved_glyphs": 3,
+      "regressed_glyphs": 0,
+      "improved_formulas": 2,
+      "regressed_formulas": 0
+    },
+    "crohme_noncommercial_diagnostic": {
+      "records": 9535,
+      "formulas": 984,
+      "baseline_character_top1_count": 7513,
+      "challenger_character_top1_count": 7516,
+      "challenger_character_top1": 0.788253801782905,
+      "baseline_formula_exact_count": 286,
+      "challenger_formula_exact_count": 288,
+      "challenger_formula_exact": 0.2926829268292683,
+      "improved_glyphs": 3,
+      "regressed_glyphs": 0,
+      "improved_formulas": 2,
+      "regressed_formulas": 0,
+      "product_validation": false
+    }
+  },
+  "rejected_challenger": {
+    "name": "unlocked literal alphabetic operand to digit repair",
+    "reason": "RIT_2014_98.inkml regressed a correct b to 6",
+    "resulting_guard": "literal one-character alphabetic operands remain immutable"
+  },
+  "evidence": {
+    "evaluation_sha256": "f3e2504abde4f9e89e08f436a9e29d8c6a29aa0483fbb07dd156cc119bcc9fcd",
+    "runtime_config_sha256": "1fac4df580754a010ada22661f4bbd8a8cb00dafd96f20d71ada8b8b8432692f",
+    "direct_baseline_sha256": "6785a5afef6fb133f1ced28f50ae3bafddb6fe10b810dfc56a59d62ff2bde91c",
+    "direct_wide_candidates_sha256": "f848a91d59a0b11970889c839cbe08fd1fdac5499cc910d95d02bdac653d029e",
+    "direct_integrated_runtime_sha256": "d53ee630aeeee3304a39cdec41f72ccf1a82782ec8f86bc37af48b78071fe693",
+    "crohme_pre_dual_baseline_sha256": "b8e812abba7bd1a970b41de757c844a2928cb7a37c72939085890b591ddd530d",
+    "crohme_auxiliary_top5_sha256": "7e5c573bb2beb5ce72eaaf3f03fb8ad559611c7d68981caa5b70c4637f0789ac",
+    "crohme_auxiliary_finalized_sha256": "44132510ebe5697c1d436102380f752d2699f74d6494a084df6366d8604105c0",
+    "crohme_wide_candidates_sha256": "adfdb46458ba1003eb55d5d5763741be70063aff2d6f7ad4c1ef705b96b4954c",
+    "direct_top10_report_sha256": "dc0808fb228cca7d1633f955aa1c7fc30e23208572d5dc2cb8b6d01681fbae06",
+    "crohme_top10_report_sha256": "a09a03a4705e92955511fca750689bf6ccaa46cad43097e7f93e35535cc3d2ce"
+  },
+  "implementation_sha256": {
+    "build_expanded_owned_context_candidates_v1.py": "b83f58a3788b24e1bfa071e366c430ee0c06110451dc2e11de4bdd7815004e5f",
+    "build_crohme_product_fusion_candidates_v1.py": "1ea83fd1a194332d7fb5f0b92d3a0e52f1c8ac81757f1bdd3487c38255eb942a",
+    "audit_wide_formula_candidates_v1.py": "629474dfde5996d2bc2dc1c9a3c6f6445be5d3c0bd7e8d774c2e53b5701cf108",
+    "wide_candidate_syntax_rescue_v1.py": "347acd711e0be9fe99a3bcca2b267d99ccb1fb80694e33c0a6149318fd99138c",
+    "evaluate_wide_candidate_syntax_rescue_v1.py": "6a92e4ee8a8f9fecb95a92f97cec6b2fa7b3c3356de3bef8db38bef6a80941a9"
+  },
+  "limits": [
+    "the direct 95 formulas and thresholds are repeatedly observed development evidence",
+    "CROHME is CC BY-NC repeated diagnostic evidence and not product validation",
+    "the candidate contract expands from a dual Top-5 union to baseline plus auxiliary Top-10",
+    "seven direct formulas still lack the truth in the declared Top-10 candidate cache",
+    "fresh project-owned writer-disjoint and formula-disjoint commercial acceptance is required"
+  ]
+}

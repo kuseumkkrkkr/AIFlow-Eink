@@ -1,0 +1,190 @@
+{
+  "schema": "aiflow-sampling-balance-result/v30",
+  "status": "verified_train_only_distribution_audit",
+  "profiles": {
+    "admitted_real_population": {
+      "rows": 163982,
+      "positive_classes": 371,
+      "family": {
+        "digits": {
+          "rows": 7318,
+          "fraction": 0.044626849288336524,
+          "positive_classes": 10
+        },
+        "latin_letters": {
+          "rows": 5464,
+          "fraction": 0.03332073032405996,
+          "positive_classes": 51
+        },
+        "math_symbols": {
+          "rows": 151200,
+          "fraction": 0.9220524203876035,
+          "positive_classes": 310
+        }
+      }
+    },
+    "ancestor_balanced_schedule": {
+      "rows": 76800,
+      "positive_classes": 371,
+      "family": {
+        "digits": {
+          "rows": 2070,
+          "fraction": 0.026953125,
+          "positive_classes": 10
+        },
+        "latin_letters": {
+          "rows": 10557,
+          "fraction": 0.1374609375,
+          "positive_classes": 51
+        },
+        "math_symbols": {
+          "rows": 64173,
+          "fraction": 0.8355859375,
+          "positive_classes": 310
+        }
+      }
+    },
+    "direct_real_region": {
+      "rows": 38400,
+      "positive_classes": 371,
+      "family": {
+        "digits": {
+          "rows": 1047,
+          "fraction": 0.027265625,
+          "positive_classes": 10
+        },
+        "latin_letters": {
+          "rows": 5265,
+          "fraction": 0.137109375,
+          "positive_classes": 51
+        },
+        "math_symbols": {
+          "rows": 32088,
+          "fraction": 0.835625,
+          "positive_classes": 310
+        }
+      }
+    },
+    "direct_augmented_region": {
+      "rows": 115200,
+      "positive_classes": 366,
+      "family": {
+        "digits": {
+          "rows": 3425,
+          "fraction": 0.029730902777777776,
+          "positive_classes": 10
+        },
+        "latin_letters": {
+          "rows": 16330,
+          "fraction": 0.14175347222222223,
+          "positive_classes": 51
+        },
+        "math_symbols": {
+          "rows": 95445,
+          "fraction": 0.828515625,
+          "positive_classes": 305
+        }
+      }
+    },
+    "direct_all_hard_targets": {
+      "rows": 153600,
+      "positive_classes": 371,
+      "family": {
+        "digits": {
+          "rows": 4472,
+          "fraction": 0.029114583333333333,
+          "positive_classes": 10
+        },
+        "latin_letters": {
+          "rows": 21595,
+          "fraction": 0.14059244791666667,
+          "positive_classes": 51
+        },
+        "math_symbols": {
+          "rows": 127533,
+          "fraction": 0.83029296875,
+          "positive_classes": 310
+        }
+      }
+    },
+    "distinct_augmented_view_slots": {
+      "rows": 68726,
+      "positive_classes": 366,
+      "family": {
+        "digits": {
+          "rows": 2057,
+          "fraction": 0.02993044844745802,
+          "positive_classes": 10
+        },
+        "latin_letters": {
+          "rows": 9732,
+          "fraction": 0.14160579693274744,
+          "positive_classes": 51
+        },
+        "math_symbols": {
+          "rows": 56937,
+          "fraction": 0.8284637546197946,
+          "positive_classes": 305
+        }
+      }
+    }
+  },
+  "comparison": {
+    "digits": {
+      "train_fraction": 0.044626849288336524,
+      "hard_target_fraction": 0.029114583333333333,
+      "relative_exposure": 0.6524006018265464,
+      "delta_percentage_points": -1.5512265955003193,
+      "class_count": 10
+    },
+    "latin_letters": {
+      "train_fraction": 0.03332073032405996,
+      "hard_target_fraction": 0.14059244791666667,
+      "relative_exposure": 4.2193687398006645,
+      "delta_percentage_points": 10.72717175926067,
+      "class_count": 51
+    },
+    "math_symbols": {
+      "train_fraction": 0.9220524203876035,
+      "hard_target_fraction": 0.83029296875,
+      "relative_exposure": 0.9004834762008103,
+      "delta_percentage_points": -9.175945163760346,
+      "class_count": 311
+    }
+  },
+  "source_counts": {
+    "0": {
+      "population_rows": 154009,
+      "hard_target_exposures": 135632
+    },
+    "1": {
+      "population_rows": 3978,
+      "hard_target_exposures": 14284
+    },
+    "3": {
+      "population_rows": 5995,
+      "hard_target_exposures": 3684
+    }
+  },
+  "missing_positive_train_labels": [
+    "="
+  ],
+  "missing_augmented_slot_labels": [
+    "\\blacktriangleright",
+    "\\mathbb{N}",
+    "\\mathbb{Q}",
+    "\\mathbb{R}",
+    "\\wr",
+    "="
+  ],
+  "label_schedule_reproduced": true,
+  "family_rule_independently_reproduced": true,
+  "class_family_totals_crosschecked": true,
+  "unchanged_generation_and_training_artifacts": true,
+  "evaluation_inputs_read": 0,
+  "owned_labels_read": 0,
+  "optimizer_steps": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "limits": "TRAIN population frequency is not an established app-user or acceptance distribution. Family imbalance is measured, not proof of the causal source of accuracy regression."
+}

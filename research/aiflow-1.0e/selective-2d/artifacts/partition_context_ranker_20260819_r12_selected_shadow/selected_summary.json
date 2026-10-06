@@ -1,0 +1,85 @@
+{
+  "schema": "aiflow-partition-context-selected-summary/v1",
+  "generated_at": "2026-08-19T14:31:39.967775+00:00",
+  "status": "development_only_posthoc_shadow",
+  "model_version": "aiflow-partition-context-ranker-1.0-r2-shadow",
+  "dataset": {
+    "dataset_info_sha256": "03dfc7d65cf39b66410198e0410414f73398ec968bac3cd3c73fe26ce699cb3f",
+    "formulas_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "ownership_sha256": "2b466b35cedfa9f9d3ed4f965ef36884cb0eab0791466b50524e906b5f0647df",
+    "formulas": 96,
+    "writers": 7
+  },
+  "protocol": {
+    "fit": "first 47 accepted ownership formulas with writer-LOO grouping candidates",
+    "test": "subsequent 49 accepted ownership formulas with frozen Top-5 partitions",
+    "test_already_inspected": true,
+    "untouched_commercial_acceptance": false
+  },
+  "metrics": {
+    "geometry_grouping_exact": {
+      "count": 45,
+      "total": 49,
+      "rate": 0.9183673469387755
+    },
+    "selected_grouping_exact": {
+      "count": 48,
+      "total": 49,
+      "rate": 0.9795918367346939,
+      "improved_formulas": 3,
+      "regressed_formulas": 0
+    },
+    "selected_raw_hwr_formula_exact": {
+      "count": 15,
+      "total": 49,
+      "rate": 0.30612244897959184
+    },
+    "selected_masked_context_formula_exact": {
+      "count": 29,
+      "total": 49,
+      "rate": 0.5918367346938775
+    },
+    "selected_layout_guard_formula_exact": {
+      "count": 38,
+      "total": 49,
+      "rate": 0.7755102040816326
+    },
+    "selected_top5_formula_oracle": {
+      "count": 41,
+      "total": 49,
+      "rate": 0.8367346938775511
+    }
+  },
+  "rejected_challengers": [
+    {
+      "name": "new calibrated writer-LOO HWR candidate stream",
+      "final_formula_exact_count": 35,
+      "top5_formula_oracle_count": 40,
+      "reason": "lower than selected 38 and 41"
+    },
+    {
+      "name": "Top-20 old-new product probability fusion",
+      "top20_formula_oracle_count": 47,
+      "final_formula_exact_count": 38,
+      "reason": "approved conservative rescues changed zero formulas while adding current-data overlap"
+    }
+  ],
+  "artifacts": {
+    "partition_context_ranker": {
+      "file": "partition_context_ranker.joblib",
+      "sha256": "0d283d40b40f60d58131dec213efb84074f9119ac82b32fcb893ca931aeb0582"
+    },
+    "hwr_checkpoint_sha256": "1fed74b4580d3acc9ff48544a7d715c52170037bcb0842921b1fe0339f0abd1d",
+    "context_checkpoint_sha256": "7e0ff1b04ba1071867bfa6811869f242907ebe017d0996597776c6050cc2fc94"
+  },
+  "contracts": {
+    "all_strokes_exactly_once": true,
+    "truth_label_writer_or_target_count_input": false,
+    "candidate_preserving": true,
+    "inserted_or_deleted_glyphs": 0,
+    "arithmetic_solver": false,
+    "requires_explicit_shadow_opt_in": true,
+    "posthoc_test_tuning": true,
+    "product_default_enabled": false
+  }
+}

@@ -1,0 +1,1422 @@
+{
+  "schema": "aiflow-hwr-semantic-equation-microscope-audit/v1",
+  "scope": "frozen microscope diagnostic only; existing guard constants; no training/tuning/CROHME; no runtime promotion",
+  "input": {
+    "path": "artifacts\\hwr_pipeline_microscope_20260928_semantic_guard_final\\formula_traces.jsonl",
+    "sha256": "7ef6c6a9e8d6dad7606cf4168aeedbb19cb9200972bfc06567731d92125cba93"
+  },
+  "formulas": 149,
+  "tokens": 579,
+  "guard_configuration": {
+    "minimum_formula_length": 3,
+    "maximum_formula_length": 12,
+    "maximum_changed_glyphs": 3,
+    "beam_width": 64,
+    "preferred_token_bonus": 0.75,
+    "minimum_valid_score_margin": 1.5,
+    "minimum_vertical_overlap": 0.25
+  },
+  "metrics": {
+    "hwr_top1": {
+      "token_hits": 470,
+      "formula_exact": 76
+    },
+    "after_infix": {
+      "token_hits": 485,
+      "formula_exact": 84
+    },
+    "after_equation_guard": {
+      "token_hits": 488,
+      "formula_exact": 87
+    },
+    "delta_vs_infix": {
+      "token_hits": 3,
+      "formula_exact": 3,
+      "recovered_glyphs": 3,
+      "regressed_glyphs": 0,
+      "recovered_formulas": 3,
+      "regressed_formulas": 0,
+      "changed_glyphs": 3
+    },
+    "delta_vs_hwr_top1": {
+      "token_hits": 18,
+      "formula_exact": 11,
+      "recovered_glyphs": 18,
+      "regressed_glyphs": 0,
+      "recovered_formulas": 11,
+      "regressed_formulas": 0
+    },
+    "fixed_guard_audit_totals": {
+      "baseline_already_valid": 12,
+      "changed_glyphs": 3,
+      "deleted_glyphs": 0,
+      "eligible_formulas": 17,
+      "finalized_formulas": 3,
+      "formulas": 149,
+      "grouping_mutations": 0,
+      "new_tokens": 0,
+      "no_valid_equation": 14,
+      "skipped_length": 31,
+      "skipped_nonflat": 5,
+      "skipped_symbolic_baseline": 84
+    },
+    "candidate_preservation_rate": 1.0,
+    "product_default_enabled": false
+  },
+  "verification": {
+    "checks": {
+      "frozen_formula_count_149": true,
+      "frozen_token_count_579": true,
+      "hwr_top1_baseline_470_tokens_76_exact": true,
+      "infix_stage_baseline_485_tokens_84_exact": true,
+      "candidate_preservation_all_tokens": true,
+      "no_formula_regressions_vs_infix": true,
+      "no_formula_regressions_vs_hwr_top1": true,
+      "all_changed_glyphs_recovered": true,
+      "no_hwr_top1_glyph_regressions": true,
+      "guard_outputs_are_exact_equations": true,
+      "guard_change_limit_respected": true,
+      "no_group_or_glyph_invention": true
+    },
+    "all_checks_pass": true
+  },
+  "formula_level_trace": [
+    {
+      "sample_id": "aiflow_0141",
+      "target_tokens": [
+        "3",
+        "+",
+        "9"
+      ],
+      "hwr_top1_tokens": [
+        "3",
+        "+",
+        "9"
+      ],
+      "after_infix_tokens": [
+        "3",
+        "+",
+        "9"
+      ],
+      "after_equation_guard_tokens": [
+        "3",
+        "+",
+        "9"
+      ],
+      "exact": {
+        "hwr_top1": true,
+        "after_infix": true,
+        "after_equation_guard": true
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0143",
+      "target_tokens": [
+        "9",
+        "+",
+        "3"
+      ],
+      "hwr_top1_tokens": [
+        "9",
+        "+",
+        "3"
+      ],
+      "after_infix_tokens": [
+        "9",
+        "+",
+        "3"
+      ],
+      "after_equation_guard_tokens": [
+        "9",
+        "+",
+        "3"
+      ],
+      "exact": {
+        "hwr_top1": true,
+        "after_infix": true,
+        "after_equation_guard": true
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0015",
+      "target_tokens": [
+        "0",
+        "+",
+        "0"
+      ],
+      "hwr_top1_tokens": [
+        "0",
+        "+",
+        "0"
+      ],
+      "after_infix_tokens": [
+        "0",
+        "+",
+        "0"
+      ],
+      "after_equation_guard_tokens": [
+        "0",
+        "+",
+        "0"
+      ],
+      "exact": {
+        "hwr_top1": true,
+        "after_infix": true,
+        "after_equation_guard": true
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0021",
+      "target_tokens": [
+        "1",
+        "2",
+        "-",
+        "1"
+      ],
+      "hwr_top1_tokens": [
+        "/",
+        "2",
+        "-",
+        "/"
+      ],
+      "after_infix_tokens": [
+        "/",
+        "2",
+        "-",
+        "/"
+      ],
+      "after_equation_guard_tokens": [
+        "/",
+        "2",
+        "-",
+        "/"
+      ],
+      "exact": {
+        "hwr_top1": false,
+        "after_infix": false,
+        "after_equation_guard": false
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0022",
+      "target_tokens": [
+        "3",
+        "\\div",
+        "1",
+        "=",
+        "3"
+      ],
+      "hwr_top1_tokens": [
+        "3",
+        "\\div",
+        "/",
+        "=",
+        "3"
+      ],
+      "after_infix_tokens": [
+        "3",
+        "\\div",
+        "/",
+        "=",
+        "3"
+      ],
+      "after_equation_guard_tokens": [
+        "3",
+        "\\div",
+        "1",
+        "=",
+        "3"
+      ],
+      "exact": {
+        "hwr_top1": false,
+        "after_infix": false,
+        "after_equation_guard": true
+      },
+      "changes": [
+        {
+          "position": 2,
+          "before": "/",
+          "after": "1",
+          "target": "1",
+          "before_correct": false,
+          "after_correct": true,
+          "candidate_rank": 2,
+          "candidate_probability": 0.17555072903633118,
+          "top5": [
+            "/",
+            "1",
+            "\\prime",
+            "i",
+            "\\mid"
+          ]
+        }
+      ],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "changed_glyphs": 1,
+        "eligible_formulas": 1,
+        "finalized_formulas": 1,
+        "changes": [
+          {
+            "formula_id": "aiflow_0022",
+            "before": [
+              "3",
+              "\\div",
+              "/",
+              "=",
+              "3"
+            ],
+            "after": [
+              "3",
+              "\\div",
+              "1",
+              "=",
+              "3"
+            ],
+            "changed_positions": [
+              2
+            ],
+            "valid_score_margin": null,
+            "only_valid_equation": true
+          }
+        ],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0023",
+      "target_tokens": [
+        "3",
+        "0",
+        "\\div",
+        "6",
+        "=",
+        "5"
+      ],
+      "hwr_top1_tokens": [
+        "3",
+        "6",
+        "\\div",
+        "6",
+        "=",
+        "5"
+      ],
+      "after_infix_tokens": [
+        "3",
+        "6",
+        "\\div",
+        "6",
+        "=",
+        "5"
+      ],
+      "after_equation_guard_tokens": [
+        "3",
+        "0",
+        "\\div",
+        "6",
+        "=",
+        "5"
+      ],
+      "exact": {
+        "hwr_top1": false,
+        "after_infix": false,
+        "after_equation_guard": true
+      },
+      "changes": [
+        {
+          "position": 1,
+          "before": "6",
+          "after": "0",
+          "target": "0",
+          "before_correct": false,
+          "after_correct": true,
+          "candidate_rank": 3,
+          "candidate_probability": 0.07329513877630234,
+          "top5": [
+            "6",
+            "\\diamond",
+            "0",
+            "\\lozenge",
+            "\\supset"
+          ]
+        }
+      ],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "changed_glyphs": 1,
+        "eligible_formulas": 1,
+        "finalized_formulas": 1,
+        "changes": [
+          {
+            "formula_id": "aiflow_0023",
+            "before": [
+              "3",
+              "6",
+              "\\div",
+              "6",
+              "=",
+              "5"
+            ],
+            "after": [
+              "3",
+              "0",
+              "\\div",
+              "6",
+              "=",
+              "5"
+            ],
+            "changed_positions": [
+              1
+            ],
+            "valid_score_margin": null,
+            "only_valid_equation": true
+          }
+        ],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0153",
+      "target_tokens": [
+        "7",
+        "-",
+        "1",
+        "=",
+        "6"
+      ],
+      "hwr_top1_tokens": [
+        "7",
+        "-",
+        "/",
+        "=",
+        "6"
+      ],
+      "after_infix_tokens": [
+        "7",
+        "-",
+        "/",
+        "=",
+        "6"
+      ],
+      "after_equation_guard_tokens": [
+        "7",
+        "-",
+        "1",
+        "=",
+        "6"
+      ],
+      "exact": {
+        "hwr_top1": false,
+        "after_infix": false,
+        "after_equation_guard": true
+      },
+      "changes": [
+        {
+          "position": 2,
+          "before": "/",
+          "after": "1",
+          "target": "1",
+          "before_correct": false,
+          "after_correct": true,
+          "candidate_rank": 3,
+          "candidate_probability": 0.016692738980054855,
+          "top5": [
+            "/",
+            "\\prime",
+            "1",
+            "i",
+            "("
+          ]
+        }
+      ],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "changed_glyphs": 1,
+        "eligible_formulas": 1,
+        "finalized_formulas": 1,
+        "changes": [
+          {
+            "formula_id": "aiflow_0153",
+            "before": [
+              "7",
+              "-",
+              "/",
+              "=",
+              "6"
+            ],
+            "after": [
+              "7",
+              "-",
+              "1",
+              "=",
+              "6"
+            ],
+            "changed_positions": [
+              2
+            ],
+            "valid_score_margin": null,
+            "only_valid_equation": true
+          }
+        ],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0154",
+      "target_tokens": [
+        "8",
+        "+",
+        "9"
+      ],
+      "hwr_top1_tokens": [
+        "8",
+        "+",
+        "9"
+      ],
+      "after_infix_tokens": [
+        "8",
+        "+",
+        "9"
+      ],
+      "after_equation_guard_tokens": [
+        "8",
+        "+",
+        "9"
+      ],
+      "exact": {
+        "hwr_top1": true,
+        "after_infix": true,
+        "after_equation_guard": true
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0123",
+      "target_tokens": [
+        "5",
+        "-",
+        "0"
+      ],
+      "hwr_top1_tokens": [
+        "5",
+        "-",
+        "0"
+      ],
+      "after_infix_tokens": [
+        "5",
+        "-",
+        "0"
+      ],
+      "after_equation_guard_tokens": [
+        "5",
+        "-",
+        "0"
+      ],
+      "exact": {
+        "hwr_top1": true,
+        "after_infix": true,
+        "after_equation_guard": true
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0124",
+      "target_tokens": [
+        "5",
+        "\\times",
+        "0"
+      ],
+      "hwr_top1_tokens": [
+        "5",
+        "x",
+        "0"
+      ],
+      "after_infix_tokens": [
+        "5",
+        "\\times",
+        "0"
+      ],
+      "after_equation_guard_tokens": [
+        "5",
+        "\\times",
+        "0"
+      ],
+      "exact": {
+        "hwr_top1": false,
+        "after_infix": true,
+        "after_equation_guard": true
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0057",
+      "target_tokens": [
+        "1",
+        "2",
+        "+",
+        "2"
+      ],
+      "hwr_top1_tokens": [
+        "1",
+        "2",
+        "+",
+        "2"
+      ],
+      "after_infix_tokens": [
+        "1",
+        "2",
+        "+",
+        "2"
+      ],
+      "after_equation_guard_tokens": [
+        "1",
+        "2",
+        "+",
+        "2"
+      ],
+      "exact": {
+        "hwr_top1": true,
+        "after_infix": true,
+        "after_equation_guard": true
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0003",
+      "target_tokens": [
+        "0",
+        "\\times",
+        "7"
+      ],
+      "hwr_top1_tokens": [
+        "0",
+        "x",
+        "7"
+      ],
+      "after_infix_tokens": [
+        "0",
+        "\\times",
+        "7"
+      ],
+      "after_equation_guard_tokens": [
+        "0",
+        "\\times",
+        "7"
+      ],
+      "exact": {
+        "hwr_top1": false,
+        "after_infix": true,
+        "after_equation_guard": true
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0004",
+      "target_tokens": [
+        "2",
+        "+",
+        "7"
+      ],
+      "hwr_top1_tokens": [
+        "2",
+        "4",
+        "7"
+      ],
+      "after_infix_tokens": [
+        "2",
+        "4",
+        "7"
+      ],
+      "after_equation_guard_tokens": [
+        "2",
+        "4",
+        "7"
+      ],
+      "exact": {
+        "hwr_top1": false,
+        "after_infix": false,
+        "after_equation_guard": false
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0005",
+      "target_tokens": [
+        "5",
+        "+",
+        "4"
+      ],
+      "hwr_top1_tokens": [
+        "5",
+        "+",
+        "4"
+      ],
+      "after_infix_tokens": [
+        "5",
+        "+",
+        "4"
+      ],
+      "after_equation_guard_tokens": [
+        "5",
+        "+",
+        "4"
+      ],
+      "exact": {
+        "hwr_top1": true,
+        "after_infix": true,
+        "after_equation_guard": true
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0084",
+      "target_tokens": [
+        "4",
+        "\\times",
+        "6"
+      ],
+      "hwr_top1_tokens": [
+        "4",
+        "\\times",
+        "6"
+      ],
+      "after_infix_tokens": [
+        "4",
+        "\\times",
+        "6"
+      ],
+      "after_equation_guard_tokens": [
+        "4",
+        "\\times",
+        "6"
+      ],
+      "exact": {
+        "hwr_top1": true,
+        "after_infix": true,
+        "after_equation_guard": true
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0085",
+      "target_tokens": [
+        "6",
+        "+",
+        "3"
+      ],
+      "hwr_top1_tokens": [
+        "6",
+        "+",
+        "3"
+      ],
+      "after_infix_tokens": [
+        "6",
+        "+",
+        "3"
+      ],
+      "after_equation_guard_tokens": [
+        "6",
+        "+",
+        "3"
+      ],
+      "exact": {
+        "hwr_top1": true,
+        "after_infix": true,
+        "after_equation_guard": true
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    },
+    {
+      "sample_id": "aiflow_0088",
+      "target_tokens": [
+        "9",
+        "-",
+        "4"
+      ],
+      "hwr_top1_tokens": [
+        "9",
+        "-",
+        "4"
+      ],
+      "after_infix_tokens": [
+        "9",
+        "-",
+        "4"
+      ],
+      "after_equation_guard_tokens": [
+        "9",
+        "-",
+        "4"
+      ],
+      "exact": {
+        "hwr_top1": true,
+        "after_infix": true,
+        "after_equation_guard": true
+      },
+      "changes": [],
+      "guard_audit": {
+        "configuration": {
+          "minimum_formula_length": 3,
+          "maximum_formula_length": 12,
+          "maximum_changed_glyphs": 3,
+          "beam_width": 64,
+          "preferred_token_bonus": 0.75,
+          "minimum_valid_score_margin": 1.5,
+          "flat_relation": "center_x must increase and adjacent vertical intervals must overlap",
+          "minimum_vertical_overlap": 0.25,
+          "arithmetic_tokens": [
+            "+",
+            "-",
+            "/",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "=",
+            "\\cdot",
+            "\\div",
+            "\\times"
+          ],
+          "symbolic_baseline_policy": "skip when any selected token is outside the arithmetic vocabulary"
+        },
+        "formulas": 1,
+        "eligible_formulas": 1,
+        "no_valid_equation": 1,
+        "changes": [],
+        "candidate_preservation_rate": 1.0,
+        "new_tokens": 0,
+        "deleted_glyphs": 0,
+        "grouping_mutations": 0
+      }
+    }
+  ]
+}

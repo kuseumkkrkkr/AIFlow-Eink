@@ -1,0 +1,40 @@
+{
+  "schema": "aiflow-joint-retention-repair-plan/v1",
+  "script_sha256": "066db5ff212175e608ad0b0d5bab7573915c657fcfaf598d8618ddcae89376a7",
+  "shared_repair_sha256": "3d1cb1ab254aa2f1e1b321f6afe3bca1657ec6e203a96b8098bd2903f50fc847",
+  "prior_plan_sha256": "ad23911a699b773abc0a448d9049835d82bf702ab03d34c58b92c8343e269461",
+  "prior_result_sha256": "1c7668d12918cef415e10ce1575c0b2bafafd7ed4a1e00419ed31685ded97723",
+  "canonical_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+  "parent_checkpoint_sha256": "b0aa6411b1e299ec14773cd44eadf54341d55582af68b0dc973c846c6e1d8963",
+  "max_rounds": 32,
+  "constraints_per_round": 16,
+  "correction_slack": 0.0001,
+  "norm_cap_multiple": 2.0,
+  "fixed_margin_fraction": 0.5,
+  "old_reference_rule": "canonical floors for canonical-correct rows; parent fixed floors only for newly rescued rows",
+  "source_reference_rule": "preserve all parent-correct source TRAIN Top-1/Top-5 rows at half parent margin",
+  "protected_counts": {
+    "old_math": {
+      "top1": 841,
+      "top5": 1007
+    },
+    "source_digits": {
+      "top1": 958,
+      "top5": 1015
+    }
+  },
+  "old_train_classes": 371,
+  "source_digit_classes": 10,
+  "source_gain_retention_gate": 0.9,
+  "acceptance": "all immutable joint margin/rank constraints AND the unchanged 90% source TRAIN gain gate",
+  "failure_policy": "keep failed candidate; never weaken masks/floors or retry within this frozen run",
+  "optimizer_created": false,
+  "parameter_optimization_performed": true,
+  "new_human_boundary_distillation_performed": false,
+  "held_inputs_forwarded": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0,
+  "human_boundary_labels": 0,
+  "product_adopted": false,
+  "limits": "TRAIN-only finite-constraint experiment; source probe rows are now optimization anchors, NOT independent validation or product selection"
+}

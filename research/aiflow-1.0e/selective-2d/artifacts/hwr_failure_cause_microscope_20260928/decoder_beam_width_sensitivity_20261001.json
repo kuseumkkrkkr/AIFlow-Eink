@@ -1,0 +1,8053 @@
+{
+  "schema": "aiflow-hwr-decoder-beam-width-sensitivity/v1",
+  "scope": "posthoc cached Top-5 sensitivity on the same frozen development cohort; not independent acceptance and not a selected product setting",
+  "inputs": {
+    "traces_path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\formula_traces.jsonl",
+    "traces_sha256": "785e909f569e3c6346b4fcecc83173445b1ef016ad31ee13e7188700990c76e7",
+    "shadow_path": "artifacts\\hwr_failure_cause_microscope_20260928\\semantic_guard_saved_tournament_posthoc_shadow_gate_20261001.json",
+    "shadow_sha256": "4fcdee027327e462e4339325f72c64165cd683251b686afe156d331f225d7990",
+    "decoder_path": "scripts/selective_decoder_v1.py",
+    "decoder_sha256": "9c8b5497b65441756a3bfa2cfbfcb203b011ec4c1aa7c7363851a3872d91261a",
+    "audit_script_sha256": "bfc821388b5c9dc3468c043468c851772c16bb09ba64508f0caa852e66141181"
+  },
+  "widths": [
+    32,
+    64,
+    128
+  ],
+  "summary_by_width": {
+    "32": {
+      "formulas": 149,
+      "accepted": 149,
+      "strict_exact_oracle_groups": 76,
+      "candidate_preservation_failures": 0,
+      "fast_group_exact_formulas": 125,
+      "strict_exact_fast_groups": 68
+    },
+    "64": {
+      "formulas": 149,
+      "accepted": 149,
+      "strict_exact_oracle_groups": 76,
+      "candidate_preservation_failures": 0,
+      "fast_group_exact_formulas": 125,
+      "strict_exact_fast_groups": 68
+    },
+    "128": {
+      "formulas": 149,
+      "accepted": 149,
+      "strict_exact_oracle_groups": 76,
+      "candidate_preservation_failures": 0,
+      "fast_group_exact_formulas": 125,
+      "strict_exact_fast_groups": 68
+    }
+  },
+  "comparisons_vs_32": {
+    "64": {
+      "recovered_vs_32": [],
+      "regressed_vs_32": [],
+      "unchanged_exact_vs_32": 76
+    },
+    "128": {
+      "recovered_vs_32": [],
+      "regressed_vs_32": [],
+      "unchanged_exact_vs_32": 76
+    }
+  },
+  "exact_sample_ids_by_width": {
+    "32": {
+      "exact_oracle_groups": [
+        "aiflow_0141",
+        "aiflow_0143",
+        "aiflow_0147",
+        "aiflow_0015",
+        "aiflow_0018",
+        "aiflow_0024",
+        "aiflow_0025",
+        "aiflow_0026",
+        "aiflow_0027",
+        "aiflow_0028",
+        "aiflow_0029",
+        "aiflow_0030",
+        "aiflow_0151",
+        "aiflow_0154",
+        "aiflow_0156",
+        "aiflow_0157",
+        "aiflow_0122",
+        "aiflow_0123",
+        "aiflow_0129",
+        "aiflow_0130",
+        "aiflow_0131",
+        "aiflow_0133",
+        "aiflow_0135",
+        "aiflow_0137",
+        "aiflow_0047",
+        "aiflow_0048",
+        "aiflow_0049",
+        "aiflow_0054",
+        "aiflow_0055",
+        "aiflow_0057",
+        "aiflow_0059",
+        "aiflow_0062",
+        "aiflow_0063",
+        "aiflow_0065",
+        "aiflow_0160",
+        "aiflow_0162",
+        "aiflow_0001",
+        "aiflow_0002",
+        "aiflow_0005",
+        "aiflow_0008",
+        "aiflow_0071",
+        "aiflow_0072",
+        "aiflow_0076",
+        "aiflow_0077",
+        "aiflow_0079",
+        "aiflow_0080",
+        "aiflow_0119",
+        "aiflow_0120",
+        "aiflow_0121",
+        "aiflow_0066",
+        "aiflow_0033",
+        "aiflow_0034",
+        "aiflow_0035",
+        "aiflow_0037",
+        "aiflow_0039",
+        "aiflow_0040",
+        "aiflow_0041",
+        "aiflow_0042",
+        "aiflow_0043",
+        "aiflow_0081",
+        "aiflow_0082",
+        "aiflow_0083",
+        "aiflow_0084",
+        "aiflow_0085",
+        "aiflow_0088",
+        "aiflow_0091",
+        "aiflow_0093",
+        "aiflow_0094",
+        "aiflow_0098",
+        "aiflow_0101",
+        "aiflow_0102",
+        "aiflow_0103",
+        "aiflow_0106",
+        "aiflow_0107",
+        "aiflow_0112",
+        "aiflow_0114"
+      ],
+      "exact_fast_groups": [
+        "aiflow_0141",
+        "aiflow_0143",
+        "aiflow_0147",
+        "aiflow_0015",
+        "aiflow_0018",
+        "aiflow_0024",
+        "aiflow_0025",
+        "aiflow_0026",
+        "aiflow_0027",
+        "aiflow_0028",
+        "aiflow_0029",
+        "aiflow_0030",
+        "aiflow_0151",
+        "aiflow_0154",
+        "aiflow_0156",
+        "aiflow_0157",
+        "aiflow_0122",
+        "aiflow_0123",
+        "aiflow_0129",
+        "aiflow_0130",
+        "aiflow_0131",
+        "aiflow_0133",
+        "aiflow_0135",
+        "aiflow_0137",
+        "aiflow_0047",
+        "aiflow_0048",
+        "aiflow_0049",
+        "aiflow_0054",
+        "aiflow_0055",
+        "aiflow_0057",
+        "aiflow_0059",
+        "aiflow_0062",
+        "aiflow_0063",
+        "aiflow_0065",
+        "aiflow_0160",
+        "aiflow_0162",
+        "aiflow_0001",
+        "aiflow_0002",
+        "aiflow_0005",
+        "aiflow_0071",
+        "aiflow_0072",
+        "aiflow_0076",
+        "aiflow_0077",
+        "aiflow_0079",
+        "aiflow_0080",
+        "aiflow_0119",
+        "aiflow_0120",
+        "aiflow_0121",
+        "aiflow_0066",
+        "aiflow_0033",
+        "aiflow_0034",
+        "aiflow_0035",
+        "aiflow_0037",
+        "aiflow_0039",
+        "aiflow_0040",
+        "aiflow_0041",
+        "aiflow_0042",
+        "aiflow_0043",
+        "aiflow_0081",
+        "aiflow_0082",
+        "aiflow_0083",
+        "aiflow_0084",
+        "aiflow_0085",
+        "aiflow_0088",
+        "aiflow_0091",
+        "aiflow_0094",
+        "aiflow_0107",
+        "aiflow_0114"
+      ]
+    },
+    "64": {
+      "exact_oracle_groups": [
+        "aiflow_0141",
+        "aiflow_0143",
+        "aiflow_0147",
+        "aiflow_0015",
+        "aiflow_0018",
+        "aiflow_0024",
+        "aiflow_0025",
+        "aiflow_0026",
+        "aiflow_0027",
+        "aiflow_0028",
+        "aiflow_0029",
+        "aiflow_0030",
+        "aiflow_0151",
+        "aiflow_0154",
+        "aiflow_0156",
+        "aiflow_0157",
+        "aiflow_0122",
+        "aiflow_0123",
+        "aiflow_0129",
+        "aiflow_0130",
+        "aiflow_0131",
+        "aiflow_0133",
+        "aiflow_0135",
+        "aiflow_0137",
+        "aiflow_0047",
+        "aiflow_0048",
+        "aiflow_0049",
+        "aiflow_0054",
+        "aiflow_0055",
+        "aiflow_0057",
+        "aiflow_0059",
+        "aiflow_0062",
+        "aiflow_0063",
+        "aiflow_0065",
+        "aiflow_0160",
+        "aiflow_0162",
+        "aiflow_0001",
+        "aiflow_0002",
+        "aiflow_0005",
+        "aiflow_0008",
+        "aiflow_0071",
+        "aiflow_0072",
+        "aiflow_0076",
+        "aiflow_0077",
+        "aiflow_0079",
+        "aiflow_0080",
+        "aiflow_0119",
+        "aiflow_0120",
+        "aiflow_0121",
+        "aiflow_0066",
+        "aiflow_0033",
+        "aiflow_0034",
+        "aiflow_0035",
+        "aiflow_0037",
+        "aiflow_0039",
+        "aiflow_0040",
+        "aiflow_0041",
+        "aiflow_0042",
+        "aiflow_0043",
+        "aiflow_0081",
+        "aiflow_0082",
+        "aiflow_0083",
+        "aiflow_0084",
+        "aiflow_0085",
+        "aiflow_0088",
+        "aiflow_0091",
+        "aiflow_0093",
+        "aiflow_0094",
+        "aiflow_0098",
+        "aiflow_0101",
+        "aiflow_0102",
+        "aiflow_0103",
+        "aiflow_0106",
+        "aiflow_0107",
+        "aiflow_0112",
+        "aiflow_0114"
+      ],
+      "exact_fast_groups": [
+        "aiflow_0141",
+        "aiflow_0143",
+        "aiflow_0147",
+        "aiflow_0015",
+        "aiflow_0018",
+        "aiflow_0024",
+        "aiflow_0025",
+        "aiflow_0026",
+        "aiflow_0027",
+        "aiflow_0028",
+        "aiflow_0029",
+        "aiflow_0030",
+        "aiflow_0151",
+        "aiflow_0154",
+        "aiflow_0156",
+        "aiflow_0157",
+        "aiflow_0122",
+        "aiflow_0123",
+        "aiflow_0129",
+        "aiflow_0130",
+        "aiflow_0131",
+        "aiflow_0133",
+        "aiflow_0135",
+        "aiflow_0137",
+        "aiflow_0047",
+        "aiflow_0048",
+        "aiflow_0049",
+        "aiflow_0054",
+        "aiflow_0055",
+        "aiflow_0057",
+        "aiflow_0059",
+        "aiflow_0062",
+        "aiflow_0063",
+        "aiflow_0065",
+        "aiflow_0160",
+        "aiflow_0162",
+        "aiflow_0001",
+        "aiflow_0002",
+        "aiflow_0005",
+        "aiflow_0071",
+        "aiflow_0072",
+        "aiflow_0076",
+        "aiflow_0077",
+        "aiflow_0079",
+        "aiflow_0080",
+        "aiflow_0119",
+        "aiflow_0120",
+        "aiflow_0121",
+        "aiflow_0066",
+        "aiflow_0033",
+        "aiflow_0034",
+        "aiflow_0035",
+        "aiflow_0037",
+        "aiflow_0039",
+        "aiflow_0040",
+        "aiflow_0041",
+        "aiflow_0042",
+        "aiflow_0043",
+        "aiflow_0081",
+        "aiflow_0082",
+        "aiflow_0083",
+        "aiflow_0084",
+        "aiflow_0085",
+        "aiflow_0088",
+        "aiflow_0091",
+        "aiflow_0094",
+        "aiflow_0107",
+        "aiflow_0114"
+      ]
+    },
+    "128": {
+      "exact_oracle_groups": [
+        "aiflow_0141",
+        "aiflow_0143",
+        "aiflow_0147",
+        "aiflow_0015",
+        "aiflow_0018",
+        "aiflow_0024",
+        "aiflow_0025",
+        "aiflow_0026",
+        "aiflow_0027",
+        "aiflow_0028",
+        "aiflow_0029",
+        "aiflow_0030",
+        "aiflow_0151",
+        "aiflow_0154",
+        "aiflow_0156",
+        "aiflow_0157",
+        "aiflow_0122",
+        "aiflow_0123",
+        "aiflow_0129",
+        "aiflow_0130",
+        "aiflow_0131",
+        "aiflow_0133",
+        "aiflow_0135",
+        "aiflow_0137",
+        "aiflow_0047",
+        "aiflow_0048",
+        "aiflow_0049",
+        "aiflow_0054",
+        "aiflow_0055",
+        "aiflow_0057",
+        "aiflow_0059",
+        "aiflow_0062",
+        "aiflow_0063",
+        "aiflow_0065",
+        "aiflow_0160",
+        "aiflow_0162",
+        "aiflow_0001",
+        "aiflow_0002",
+        "aiflow_0005",
+        "aiflow_0008",
+        "aiflow_0071",
+        "aiflow_0072",
+        "aiflow_0076",
+        "aiflow_0077",
+        "aiflow_0079",
+        "aiflow_0080",
+        "aiflow_0119",
+        "aiflow_0120",
+        "aiflow_0121",
+        "aiflow_0066",
+        "aiflow_0033",
+        "aiflow_0034",
+        "aiflow_0035",
+        "aiflow_0037",
+        "aiflow_0039",
+        "aiflow_0040",
+        "aiflow_0041",
+        "aiflow_0042",
+        "aiflow_0043",
+        "aiflow_0081",
+        "aiflow_0082",
+        "aiflow_0083",
+        "aiflow_0084",
+        "aiflow_0085",
+        "aiflow_0088",
+        "aiflow_0091",
+        "aiflow_0093",
+        "aiflow_0094",
+        "aiflow_0098",
+        "aiflow_0101",
+        "aiflow_0102",
+        "aiflow_0103",
+        "aiflow_0106",
+        "aiflow_0107",
+        "aiflow_0112",
+        "aiflow_0114"
+      ],
+      "exact_fast_groups": [
+        "aiflow_0141",
+        "aiflow_0143",
+        "aiflow_0147",
+        "aiflow_0015",
+        "aiflow_0018",
+        "aiflow_0024",
+        "aiflow_0025",
+        "aiflow_0026",
+        "aiflow_0027",
+        "aiflow_0028",
+        "aiflow_0029",
+        "aiflow_0030",
+        "aiflow_0151",
+        "aiflow_0154",
+        "aiflow_0156",
+        "aiflow_0157",
+        "aiflow_0122",
+        "aiflow_0123",
+        "aiflow_0129",
+        "aiflow_0130",
+        "aiflow_0131",
+        "aiflow_0133",
+        "aiflow_0135",
+        "aiflow_0137",
+        "aiflow_0047",
+        "aiflow_0048",
+        "aiflow_0049",
+        "aiflow_0054",
+        "aiflow_0055",
+        "aiflow_0057",
+        "aiflow_0059",
+        "aiflow_0062",
+        "aiflow_0063",
+        "aiflow_0065",
+        "aiflow_0160",
+        "aiflow_0162",
+        "aiflow_0001",
+        "aiflow_0002",
+        "aiflow_0005",
+        "aiflow_0071",
+        "aiflow_0072",
+        "aiflow_0076",
+        "aiflow_0077",
+        "aiflow_0079",
+        "aiflow_0080",
+        "aiflow_0119",
+        "aiflow_0120",
+        "aiflow_0121",
+        "aiflow_0066",
+        "aiflow_0033",
+        "aiflow_0034",
+        "aiflow_0035",
+        "aiflow_0037",
+        "aiflow_0039",
+        "aiflow_0040",
+        "aiflow_0041",
+        "aiflow_0042",
+        "aiflow_0043",
+        "aiflow_0081",
+        "aiflow_0082",
+        "aiflow_0083",
+        "aiflow_0084",
+        "aiflow_0085",
+        "aiflow_0088",
+        "aiflow_0091",
+        "aiflow_0094",
+        "aiflow_0107",
+        "aiflow_0114"
+      ]
+    }
+  },
+  "verification": {
+    "checks": {
+      "149_trace_rows_match_shadow": true,
+      "beam32_matches_saved_decoder_for_all_formulas": true,
+      "all_widths_accept_all_oracle_group_formulas": true,
+      "all_widths_preserve_existing_top5_candidates": true,
+      "fast_group_exact_denominator_is_constant": true,
+      "product_default_stays_disabled": true,
+      "crohme_training_or_tuning_stays_disabled": true
+    },
+    "all_checks_pass": true
+  },
+  "formula_level": [
+    {
+      "sample_id": "aiflow_0140",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "+",
+        "1",
+        "=",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "+",
+            ")",
+            "=",
+            "2"
+          ],
+          "latex": "|+)=2",
+          "joint_score": -0.4022750976248169,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "+",
+            ")",
+            "=",
+            "2"
+          ],
+          "latex": "|+)=2",
+          "joint_score": -0.4022750976248169,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "+",
+            ")",
+            "=",
+            "2"
+          ],
+          "latex": "|+)=2",
+          "joint_score": -0.4022750976248169,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0141",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "3",
+        "+",
+        "9"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "3",
+            "+",
+            "9"
+          ],
+          "latex": "3+9",
+          "joint_score": -0.05044953975915678,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "3",
+            "+",
+            "9"
+          ],
+          "latex": "3+9",
+          "joint_score": -0.05044953975915678,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "3",
+            "+",
+            "9"
+          ],
+          "latex": "3+9",
+          "joint_score": -0.05044953975915678,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0142",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "5",
+        "\\times",
+        "1",
+        "=",
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "5",
+            "\\times",
+            ")",
+            "=",
+            "5"
+          ],
+          "latex": "5\\times)=5",
+          "joint_score": -0.16934862167398848,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "5",
+            "\\times",
+            ")",
+            "=",
+            "5"
+          ],
+          "latex": "5\\times)=5",
+          "joint_score": -0.16934862167398848,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "5",
+            "\\times",
+            ")",
+            "=",
+            "5"
+          ],
+          "latex": "5\\times)=5",
+          "joint_score": -0.16934862167398848,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0143",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "9",
+        "+",
+        "3"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "9",
+            "+",
+            "3"
+          ],
+          "latex": "9+3",
+          "joint_score": -0.03117568390021507,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "9",
+            "+",
+            "3"
+          ],
+          "latex": "9+3",
+          "joint_score": -0.03117568390021507,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "9",
+            "+",
+            "3"
+          ],
+          "latex": "9+3",
+          "joint_score": -0.03117568390021507,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0144",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "2",
+        "+",
+        "5",
+        "=",
+        "1",
+        "7"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "2",
+            "+",
+            "5",
+            "=",
+            "\\rfloor",
+            "7"
+          ],
+          "latex": "|2+5=\\rfloor7",
+          "joint_score": -0.15725280313950923,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "2",
+            "+",
+            "5",
+            "=",
+            "\\rfloor",
+            "7"
+          ],
+          "latex": "|2+5=\\rfloor7",
+          "joint_score": -0.15725280313950923,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "2",
+            "+",
+            "5",
+            "=",
+            "\\rfloor",
+            "7"
+          ],
+          "latex": "|2+5=\\rfloor7",
+          "joint_score": -0.15725280313950923,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0145",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "2",
+        "+",
+        "8"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "2",
+            "+",
+            "8"
+          ],
+          "latex": "|2+8",
+          "joint_score": -0.275978436698962,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "2",
+            "+",
+            "8"
+          ],
+          "latex": "|2+8",
+          "joint_score": -0.275978436698962,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "2",
+            "+",
+            "8"
+          ],
+          "latex": "|2+8",
+          "joint_score": -0.275978436698962,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0146",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "(",
+        "x",
+        "+",
+        "9",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "(",
+            "\\chi",
+            "+",
+            "9",
+            ")"
+          ],
+          "latex": "(\\chi+9)",
+          "joint_score": -0.11109608211810271,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "(",
+            "\\chi",
+            "+",
+            "9",
+            ")"
+          ],
+          "latex": "(\\chi+9)",
+          "joint_score": -0.11109608211810271,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "(",
+            "\\chi",
+            "+",
+            "9",
+            ")"
+          ],
+          "latex": "(\\chi+9)",
+          "joint_score": -0.11109608211810271,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0147",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "b",
+        "/",
+        "3"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "/",
+            "3"
+          ],
+          "latex": "b/3",
+          "joint_score": -0.026431864314998253,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "/",
+            "3"
+          ],
+          "latex": "b/3",
+          "joint_score": -0.026431864314998253,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "/",
+            "3"
+          ],
+          "latex": "b/3",
+          "joint_score": -0.026431864314998253,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0015",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "0",
+        "+",
+        "0"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "0",
+            "+",
+            "0"
+          ],
+          "latex": "0+0",
+          "joint_score": -0.4011210586549759,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "0",
+            "+",
+            "0"
+          ],
+          "latex": "0+0",
+          "joint_score": -0.4011210586549759,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "0",
+            "+",
+            "0"
+          ],
+          "latex": "0+0",
+          "joint_score": -0.4011210586549759,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0016",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "+",
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "1",
+            "\\bot",
+            "5"
+          ],
+          "latex": "1\\bot5",
+          "joint_score": -0.3292251032615136,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "1",
+            "\\bot",
+            "5"
+          ],
+          "latex": "1\\bot5",
+          "joint_score": -0.3292251032615136,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "1",
+            "\\bot",
+            "5"
+          ],
+          "latex": "1\\bot5",
+          "joint_score": -0.3292251032615136,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0017",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "6",
+        "\\times",
+        "0",
+        "=",
+        "0"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "\\times",
+            "O",
+            "=",
+            "\\mathcal{O}"
+          ],
+          "latex": "6\\timesO=\\mathcal{O}",
+          "joint_score": -0.37622020709512244,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "\\times",
+            "O",
+            "=",
+            "\\mathcal{O}"
+          ],
+          "latex": "6\\timesO=\\mathcal{O}",
+          "joint_score": -0.37622020709512244,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "\\times",
+            "O",
+            "=",
+            "\\mathcal{O}"
+          ],
+          "latex": "6\\timesO=\\mathcal{O}",
+          "joint_score": -0.37622020709512244,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0018",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "7",
+        "-",
+        "6",
+        "=",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "7",
+            "-",
+            "6",
+            "=",
+            "1"
+          ],
+          "latex": "7-6=1",
+          "joint_score": -0.2353558688190102,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "7",
+            "-",
+            "6",
+            "=",
+            "1"
+          ],
+          "latex": "7-6=1",
+          "joint_score": -0.2353558688190102,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "7",
+            "-",
+            "6",
+            "=",
+            "1"
+          ],
+          "latex": "7-6=1",
+          "joint_score": -0.2353558688190102,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0019",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "0",
+        "-",
+        "3"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "0",
+            "-",
+            "3"
+          ],
+          "latex": "|0-3",
+          "joint_score": -0.41162972733748193,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "0",
+            "-",
+            "3"
+          ],
+          "latex": "|0-3",
+          "joint_score": -0.41162972733748193,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "0",
+            "-",
+            "3"
+          ],
+          "latex": "|0-3",
+          "joint_score": -0.41162972733748193,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0020",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "0",
+        "+",
+        "8"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "/",
+            "o",
+            "+",
+            "8"
+          ],
+          "latex": "/o+8",
+          "joint_score": -0.46610267987839044,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "/",
+            "o",
+            "+",
+            "8"
+          ],
+          "latex": "/o+8",
+          "joint_score": -0.46610267987839044,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "/",
+            "o",
+            "+",
+            "8"
+          ],
+          "latex": "/o+8",
+          "joint_score": -0.46610267987839044,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0021",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "2",
+        "-",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "/",
+            "2",
+            "-",
+            "/"
+          ],
+          "latex": "/2-/",
+          "joint_score": -0.10338524306312319,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "/",
+            "2",
+            "-",
+            "/"
+          ],
+          "latex": "/2-/",
+          "joint_score": -0.10338524306312319,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "/",
+            "2",
+            "-",
+            "/"
+          ],
+          "latex": "/2-/",
+          "joint_score": -0.10338524306312319,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0022",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "3",
+        "\\div",
+        "1",
+        "=",
+        "3"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "3",
+            "\\div",
+            "/",
+            "=",
+            "3"
+          ],
+          "latex": "3\\div/=3",
+          "joint_score": -0.07690730536666689,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "3",
+            "\\div",
+            "/",
+            "=",
+            "3"
+          ],
+          "latex": "3\\div/=3",
+          "joint_score": -0.07690730536666689,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "3",
+            "\\div",
+            "/",
+            "=",
+            "3"
+          ],
+          "latex": "3\\div/=3",
+          "joint_score": -0.07690730536666689,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0023",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "3",
+        "0",
+        "\\div",
+        "6",
+        "=",
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "3",
+            "6",
+            "\\div",
+            "6",
+            "=",
+            "5"
+          ],
+          "latex": "36\\div6=5",
+          "joint_score": -0.18943555075761723,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "3",
+            "6",
+            "\\div",
+            "6",
+            "=",
+            "5"
+          ],
+          "latex": "36\\div6=5",
+          "joint_score": -0.18943555075761723,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "3",
+            "6",
+            "\\div",
+            "6",
+            "=",
+            "5"
+          ],
+          "latex": "36\\div6=5",
+          "joint_score": -0.18943555075761723,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0024",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "4",
+        "8",
+        "\\div",
+        "8",
+        "=",
+        "6"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "4",
+            "8",
+            "\\div",
+            "8",
+            "=",
+            "6"
+          ],
+          "latex": "48\\div8=6",
+          "joint_score": -0.16088576652447695,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "4",
+            "8",
+            "\\div",
+            "8",
+            "=",
+            "6"
+          ],
+          "latex": "48\\div8=6",
+          "joint_score": -0.16088576652447695,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "4",
+            "8",
+            "\\div",
+            "8",
+            "=",
+            "6"
+          ],
+          "latex": "48\\div8=6",
+          "joint_score": -0.16088576652447695,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0025",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "y",
+        "/",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "y",
+            "/",
+            "4"
+          ],
+          "latex": "y/4",
+          "joint_score": -0.2239318709693877,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "y",
+            "/",
+            "4"
+          ],
+          "latex": "y/4",
+          "joint_score": -0.2239318709693877,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "y",
+            "/",
+            "4"
+          ],
+          "latex": "y/4",
+          "joint_score": -0.2239318709693877,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0026",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "b",
+        "+",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "+",
+            "4"
+          ],
+          "latex": "b+4",
+          "joint_score": -0.02418869702111463,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "+",
+            "4"
+          ],
+          "latex": "b+4",
+          "joint_score": -0.02418869702111463,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "+",
+            "4"
+          ],
+          "latex": "b+4",
+          "joint_score": -0.02418869702111463,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0027",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "m",
+        "/",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "m",
+            "/",
+            "4"
+          ],
+          "latex": "m/4",
+          "joint_score": -0.03361848449737309,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "m",
+            "/",
+            "4"
+          ],
+          "latex": "m/4",
+          "joint_score": -0.03361848449737309,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "m",
+            "/",
+            "4"
+          ],
+          "latex": "m/4",
+          "joint_score": -0.03361848449737309,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0028",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "(",
+        "n",
+        "+",
+        "5",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "n",
+            "+",
+            "5",
+            ")"
+          ],
+          "latex": "(n+5)",
+          "joint_score": -0.007801250158124977,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "n",
+            "+",
+            "5",
+            ")"
+          ],
+          "latex": "(n+5)",
+          "joint_score": -0.007801250158124977,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "n",
+            "+",
+            "5",
+            ")"
+          ],
+          "latex": "(n+5)",
+          "joint_score": -0.007801250158124977,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0029",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "f",
+        "(",
+        "y",
+        ")",
+        "+",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f",
+            "(",
+            "y",
+            ")",
+            "+",
+            "2"
+          ],
+          "latex": "f(y)+2",
+          "joint_score": -0.05532606422328875,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f",
+            "(",
+            "y",
+            ")",
+            "+",
+            "2"
+          ],
+          "latex": "f(y)+2",
+          "joint_score": -0.05532606422328875,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f",
+            "(",
+            "y",
+            ")",
+            "+",
+            "2"
+          ],
+          "latex": "f(y)+2",
+          "joint_score": -0.05532606422328875,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0030",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "f",
+        "(",
+        "y",
+        ")",
+        "+",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f",
+            "(",
+            "y",
+            ")",
+            "+",
+            "4"
+          ],
+          "latex": "f(y)+4",
+          "joint_score": -0.14175311467767493,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f",
+            "(",
+            "y",
+            ")",
+            "+",
+            "4"
+          ],
+          "latex": "f(y)+4",
+          "joint_score": -0.14175311467767493,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f",
+            "(",
+            "y",
+            ")",
+            "+",
+            "4"
+          ],
+          "latex": "f(y)+4",
+          "joint_score": -0.14175311467767493,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0151",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "2",
+        "-",
+        "0",
+        "=",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "2",
+            "-",
+            "0",
+            "=",
+            "2"
+          ],
+          "latex": "2-0=2",
+          "joint_score": -0.1814418453202337,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "2",
+            "-",
+            "0",
+            "=",
+            "2"
+          ],
+          "latex": "2-0=2",
+          "joint_score": -0.1814418453202337,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "2",
+            "-",
+            "0",
+            "=",
+            "2"
+          ],
+          "latex": "2-0=2",
+          "joint_score": -0.1814418453202337,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0152",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "6",
+        "\\times",
+        "0",
+        "=",
+        "0"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "\\times",
+            "\\mathcal{O}",
+            "=",
+            "\\mathcal{O}"
+          ],
+          "latex": "6\\times\\mathcal{O}=\\mathcal{O}",
+          "joint_score": -0.22281155882617773,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "\\times",
+            "\\mathcal{O}",
+            "=",
+            "\\mathcal{O}"
+          ],
+          "latex": "6\\times\\mathcal{O}=\\mathcal{O}",
+          "joint_score": -0.22281155882617773,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "\\times",
+            "\\mathcal{O}",
+            "=",
+            "\\mathcal{O}"
+          ],
+          "latex": "6\\times\\mathcal{O}=\\mathcal{O}",
+          "joint_score": -0.22281155882617773,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0153",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "7",
+        "-",
+        "1",
+        "=",
+        "6"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "7",
+            "-",
+            "/",
+            "=",
+            "6"
+          ],
+          "latex": "7-/=6",
+          "joint_score": -0.09759405285739477,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "7",
+            "-",
+            "/",
+            "=",
+            "6"
+          ],
+          "latex": "7-/=6",
+          "joint_score": -0.09759405285739477,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "7",
+            "-",
+            "/",
+            "=",
+            "6"
+          ],
+          "latex": "7-/=6",
+          "joint_score": -0.09759405285739477,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0154",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "8",
+        "+",
+        "9"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "8",
+            "+",
+            "9"
+          ],
+          "latex": "8+9",
+          "joint_score": -0.14255295376411356,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "8",
+            "+",
+            "9"
+          ],
+          "latex": "8+9",
+          "joint_score": -0.14255295376411356,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "8",
+            "+",
+            "9"
+          ],
+          "latex": "8+9",
+          "joint_score": -0.14255295376411356,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0155",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "\\div",
+        "1",
+        "=",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "1",
+            "\\div",
+            "(",
+            "=",
+            "/"
+          ],
+          "latex": "1\\div(=/",
+          "joint_score": -0.40574221606870947,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "1",
+            "\\div",
+            "(",
+            "=",
+            "/"
+          ],
+          "latex": "1\\div(=/",
+          "joint_score": -0.40574221606870947,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "1",
+            "\\div",
+            "(",
+            "=",
+            "/"
+          ],
+          "latex": "1\\div(=/",
+          "joint_score": -0.40574221606870947,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0156",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "x",
+        "+",
+        "6"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "+",
+            "6"
+          ],
+          "latex": "x+6",
+          "joint_score": -0.042752649163930186,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "+",
+            "6"
+          ],
+          "latex": "x+6",
+          "joint_score": -0.042752649163930186,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "+",
+            "6"
+          ],
+          "latex": "x+6",
+          "joint_score": -0.042752649163930186,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0157",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "b",
+        "+",
+        "7"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "+",
+            "7"
+          ],
+          "latex": "b+7",
+          "joint_score": -0.11828158169853971,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "+",
+            "7"
+          ],
+          "latex": "b+7",
+          "joint_score": -0.11828158169853971,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "+",
+            "7"
+          ],
+          "latex": "b+7",
+          "joint_score": -0.11828158169853971,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0122",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "2",
+        "+",
+        "0",
+        "=",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "2",
+            "+",
+            "0",
+            "=",
+            "2"
+          ],
+          "latex": "2+0=2",
+          "joint_score": -0.03776325594194495,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "2",
+            "+",
+            "0",
+            "=",
+            "2"
+          ],
+          "latex": "2+0=2",
+          "joint_score": -0.03776325594194495,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "2",
+            "+",
+            "0",
+            "=",
+            "2"
+          ],
+          "latex": "2+0=2",
+          "joint_score": -0.03776325594194495,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0123",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "5",
+        "-",
+        "0"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "5",
+            "-",
+            "0"
+          ],
+          "latex": "5-0",
+          "joint_score": -0.12389908144857716,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "5",
+            "-",
+            "0"
+          ],
+          "latex": "5-0",
+          "joint_score": -0.12389908144857716,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "5",
+            "-",
+            "0"
+          ],
+          "latex": "5-0",
+          "joint_score": -0.12389908144857716,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0124",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "5",
+        "\\times",
+        "0"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "5",
+            "x",
+            "0"
+          ],
+          "latex": "5x0",
+          "joint_score": -0.2627792259561274,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "5",
+            "x",
+            "0"
+          ],
+          "latex": "5x0",
+          "joint_score": -0.2627792259561274,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "5",
+            "x",
+            "0"
+          ],
+          "latex": "5x0",
+          "joint_score": -0.2627792259561274,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0125",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "5",
+        "+",
+        "2",
+        "=",
+        "7"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "5",
+            "+",
+            "2",
+            "=",
+            "\\eta"
+          ],
+          "latex": "5+2=\\eta",
+          "joint_score": -0.17354630707832835,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "5",
+            "+",
+            "2",
+            "=",
+            "\\eta"
+          ],
+          "latex": "5+2=\\eta",
+          "joint_score": -0.17354630707832835,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "5",
+            "+",
+            "2",
+            "=",
+            "\\eta"
+          ],
+          "latex": "5+2=\\eta",
+          "joint_score": -0.17354630707832835,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0126",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "7",
+        "+",
+        "4",
+        "=",
+        "1",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "7",
+            "+",
+            "4",
+            "=",
+            "|",
+            "|"
+          ],
+          "latex": "7+4=||",
+          "joint_score": -0.264085094352749,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "7",
+            "+",
+            "4",
+            "=",
+            "|",
+            "|"
+          ],
+          "latex": "7+4=||",
+          "joint_score": -0.264085094352749,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "7",
+            "+",
+            "4",
+            "=",
+            "|",
+            "|"
+          ],
+          "latex": "7+4=||",
+          "joint_score": -0.264085094352749,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0127",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "0",
+        "-",
+        "7"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "0",
+            "-",
+            "7"
+          ],
+          "latex": "|0-7",
+          "joint_score": -0.2814010954979284,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "0",
+            "-",
+            "7"
+          ],
+          "latex": "|0-7",
+          "joint_score": -0.2814010954979284,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "0",
+            "-",
+            "7"
+          ],
+          "latex": "|0-7",
+          "joint_score": -0.2814010954979284,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0128",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "2",
+        "-",
+        "0",
+        "=",
+        "1",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "2",
+            "-",
+            "0",
+            "\\simeq",
+            "|",
+            "2"
+          ],
+          "latex": "|2-0\\simeq|2",
+          "joint_score": -0.4735318736644348,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "2",
+            "-",
+            "0",
+            "\\simeq",
+            "|",
+            "2"
+          ],
+          "latex": "|2-0\\simeq|2",
+          "joint_score": -0.4735318736644348,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "2",
+            "-",
+            "0",
+            "\\simeq",
+            "|",
+            "2"
+          ],
+          "latex": "|2-0\\simeq|2",
+          "joint_score": -0.4735318736644348,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0129",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "3",
+        "0",
+        "\\div",
+        "5",
+        "=",
+        "6"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "3",
+            "0",
+            "\\div",
+            "5",
+            "=",
+            "6"
+          ],
+          "latex": "30\\div5=6",
+          "joint_score": -0.2927872075269691,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "3",
+            "0",
+            "\\div",
+            "5",
+            "=",
+            "6"
+          ],
+          "latex": "30\\div5=6",
+          "joint_score": -0.2927872075269691,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "3",
+            "0",
+            "\\div",
+            "5",
+            "=",
+            "6"
+          ],
+          "latex": "30\\div5=6",
+          "joint_score": -0.2927872075269691,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0130",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "2",
+        "8",
+        "\\div",
+        "7",
+        "=",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "2",
+            "8",
+            "\\div",
+            "7",
+            "=",
+            "4"
+          ],
+          "latex": "28\\div7=4",
+          "joint_score": -0.03788370054363861,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "2",
+            "8",
+            "\\div",
+            "7",
+            "=",
+            "4"
+          ],
+          "latex": "28\\div7=4",
+          "joint_score": -0.03788370054363861,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "2",
+            "8",
+            "\\div",
+            "7",
+            "=",
+            "4"
+          ],
+          "latex": "28\\div7=4",
+          "joint_score": -0.03788370054363861,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0131",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "y",
+        "=",
+        "3"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "y",
+            "=",
+            "3"
+          ],
+          "latex": "y=3",
+          "joint_score": -0.00829627574998952,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "y",
+            "=",
+            "3"
+          ],
+          "latex": "y=3",
+          "joint_score": -0.00829627574998952,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "y",
+            "=",
+            "3"
+          ],
+          "latex": "y=3",
+          "joint_score": -0.00829627574998952,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0132",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "4",
+        "\\times",
+        "a",
+        "+",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "4",
+            "x",
+            "a",
+            "+",
+            "|"
+          ],
+          "latex": "4xa+|",
+          "joint_score": -0.33730176395597244,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "4",
+            "x",
+            "a",
+            "+",
+            "|"
+          ],
+          "latex": "4xa+|",
+          "joint_score": -0.33730176395597244,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "4",
+            "x",
+            "a",
+            "+",
+            "|"
+          ],
+          "latex": "4xa+|",
+          "joint_score": -0.33730176395597244,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0133",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "a",
+        "=",
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "a",
+            "=",
+            "5"
+          ],
+          "latex": "a=5",
+          "joint_score": -0.0022574861175411903,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "a",
+            "=",
+            "5"
+          ],
+          "latex": "a=5",
+          "joint_score": -0.0022574861175411903,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "a",
+            "=",
+            "5"
+          ],
+          "latex": "a=5",
+          "joint_score": -0.0022574861175411903,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0134",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "3",
+        "\\times",
+        "b",
+        "+",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "3",
+            "\\times",
+            "b",
+            "+",
+            "|"
+          ],
+          "latex": "3\\timesb+|",
+          "joint_score": -0.21916590860623755,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "3",
+            "\\times",
+            "b",
+            "+",
+            "|"
+          ],
+          "latex": "3\\timesb+|",
+          "joint_score": -0.21916590860623755,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "3",
+            "\\times",
+            "b",
+            "+",
+            "|"
+          ],
+          "latex": "3\\timesb+|",
+          "joint_score": -0.21916590860623755,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0135",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "(",
+        "b",
+        "+",
+        "4",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "b",
+            "+",
+            "4",
+            ")"
+          ],
+          "latex": "(b+4)",
+          "joint_score": -0.09429437651188635,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "b",
+            "+",
+            "4",
+            ")"
+          ],
+          "latex": "(b+4)",
+          "joint_score": -0.09429437651188635,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "b",
+            "+",
+            "4",
+            ")"
+          ],
+          "latex": "(b+4)",
+          "joint_score": -0.09429437651188635,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0136",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "5",
+        "\\times",
+        "m",
+        "+",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "5",
+            "X",
+            "m",
+            "+",
+            "|"
+          ],
+          "latex": "5Xm+|",
+          "joint_score": -0.3627237352667379,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "5",
+            "X",
+            "m",
+            "+",
+            "|"
+          ],
+          "latex": "5Xm+|",
+          "joint_score": -0.3627237352667379,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "5",
+            "X",
+            "m",
+            "+",
+            "|"
+          ],
+          "latex": "5Xm+|",
+          "joint_score": -0.3627237352667379,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0137",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "(",
+        "n",
+        "+",
+        "9",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "n",
+            "+",
+            "9",
+            ")"
+          ],
+          "latex": "(n+9)",
+          "joint_score": -0.008366495293666348,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "n",
+            "+",
+            "9",
+            ")"
+          ],
+          "latex": "(n+9)",
+          "joint_score": -0.008366495293666348,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "n",
+            "+",
+            "9",
+            ")"
+          ],
+          "latex": "(n+9)",
+          "joint_score": -0.008366495293666348,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0046",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\hbar"
+          ],
+          "latex": "\\hbar",
+          "joint_score": -1.620217698229567,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\hbar"
+          ],
+          "latex": "\\hbar",
+          "joint_score": -1.620217698229567,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\hbar"
+          ],
+          "latex": "\\hbar",
+          "joint_score": -1.620217698229567,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0047",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "n"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "n"
+          ],
+          "latex": "n",
+          "joint_score": -0.25231046648419103,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "n"
+          ],
+          "latex": "n",
+          "joint_score": -0.25231046648419103,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "n"
+          ],
+          "latex": "n",
+          "joint_score": -0.25231046648419103,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0048",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "="
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "="
+          ],
+          "latex": "=",
+          "joint_score": -0.005244572781693895,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "="
+          ],
+          "latex": "=",
+          "joint_score": -0.005244572781693895,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "="
+          ],
+          "latex": "=",
+          "joint_score": -0.005244572781693895,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0049",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "/"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "/"
+          ],
+          "latex": "/",
+          "joint_score": -0.13155250224551623,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "/"
+          ],
+          "latex": "/",
+          "joint_score": -0.13155250224551623,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "/"
+          ],
+          "latex": "/",
+          "joint_score": -0.13155250224551623,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0050",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "0",
+        "\\times",
+        "7",
+        "=",
+        "0"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "0",
+            "X",
+            "7",
+            "=",
+            "0"
+          ],
+          "latex": "0X7=0",
+          "joint_score": -0.37347836178100324,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "0",
+            "X",
+            "7",
+            "=",
+            "0"
+          ],
+          "latex": "0X7=0",
+          "joint_score": -0.37347836178100324,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "0",
+            "X",
+            "7",
+            "=",
+            "0"
+          ],
+          "latex": "0X7=0",
+          "joint_score": -0.37347836178100324,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0051",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "2",
+        "\\times",
+        "5",
+        "=",
+        "1",
+        "0"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "\\times",
+            "5",
+            "=",
+            "(",
+            "0"
+          ],
+          "latex": "2\\times5=(0",
+          "joint_score": -0.2169905085047156,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "\\times",
+            "5",
+            "=",
+            "(",
+            "0"
+          ],
+          "latex": "2\\times5=(0",
+          "joint_score": -0.2169905085047156,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "\\times",
+            "5",
+            "=",
+            "(",
+            "0"
+          ],
+          "latex": "2\\times5=(0",
+          "joint_score": -0.2169905085047156,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0052",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "2",
+        "\\times",
+        "8",
+        "=",
+        "1",
+        "6"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "X",
+            "8",
+            "=",
+            "(",
+            "6"
+          ],
+          "latex": "2X8=(6",
+          "joint_score": -0.4259629346695311,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "X",
+            "8",
+            "=",
+            "(",
+            "6"
+          ],
+          "latex": "2X8=(6",
+          "joint_score": -0.4259629346695311,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "X",
+            "8",
+            "=",
+            "(",
+            "6"
+          ],
+          "latex": "2X8=(6",
+          "joint_score": -0.4259629346695311,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0053",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "5",
+        "+",
+        "0",
+        "=",
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\hbar",
+            "+",
+            "0",
+            "=",
+            "5"
+          ],
+          "latex": "\\hbar+0=5",
+          "joint_score": -0.2586282495346989,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\hbar",
+            "+",
+            "0",
+            "=",
+            "5"
+          ],
+          "latex": "\\hbar+0=5",
+          "joint_score": -0.2586282495346989,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\hbar",
+            "+",
+            "0",
+            "=",
+            "5"
+          ],
+          "latex": "\\hbar+0=5",
+          "joint_score": -0.2586282495346989,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0054",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "6",
+        "+",
+        "3",
+        "=",
+        "9"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "6",
+            "+",
+            "3",
+            "=",
+            "9"
+          ],
+          "latex": "6+3=9",
+          "joint_score": -0.03433667100241901,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "6",
+            "+",
+            "3",
+            "=",
+            "9"
+          ],
+          "latex": "6+3=9",
+          "joint_score": -0.03433667100241901,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "6",
+            "+",
+            "3",
+            "=",
+            "9"
+          ],
+          "latex": "6+3=9",
+          "joint_score": -0.03433667100241901,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0055",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "6",
+        "\\times",
+        "6",
+        "=",
+        "3",
+        "6"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "6",
+            "\\times",
+            "6",
+            "=",
+            "3",
+            "6"
+          ],
+          "latex": "6\\times6=36",
+          "joint_score": -0.1011476948134289,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "6",
+            "\\times",
+            "6",
+            "=",
+            "3",
+            "6"
+          ],
+          "latex": "6\\times6=36",
+          "joint_score": -0.1011476948134289,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "6",
+            "\\times",
+            "6",
+            "=",
+            "3",
+            "6"
+          ],
+          "latex": "6\\times6=36",
+          "joint_score": -0.1011476948134289,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0056",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "6",
+        "+",
+        "8",
+        "=",
+        "1",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "+",
+            "8",
+            "\\triangledown",
+            "1",
+            "4"
+          ],
+          "latex": "6+8\\triangledown14",
+          "joint_score": -0.601788381876967,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "+",
+            "8",
+            "\\triangledown",
+            "1",
+            "4"
+          ],
+          "latex": "6+8\\triangledown14",
+          "joint_score": -0.601788381876967,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "+",
+            "8",
+            "\\triangledown",
+            "1",
+            "4"
+          ],
+          "latex": "6+8\\triangledown14",
+          "joint_score": -0.601788381876967,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0057",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "2",
+        "+",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "1",
+            "2",
+            "+",
+            "2"
+          ],
+          "latex": "12+2",
+          "joint_score": -0.35011089232700876,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "1",
+            "2",
+            "+",
+            "2"
+          ],
+          "latex": "12+2",
+          "joint_score": -0.35011089232700876,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "1",
+            "2",
+            "+",
+            "2"
+          ],
+          "latex": "12+2",
+          "joint_score": -0.35011089232700876,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0058",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "8",
+        "\\div",
+        "3",
+        "=",
+        "6"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\lfloor",
+            "\\mathscr{C}",
+            "\\div",
+            "3",
+            "=",
+            "6"
+          ],
+          "latex": "\\lfloor\\mathscr{C}\\div3=6",
+          "joint_score": -0.15330762344121326,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\lfloor",
+            "\\mathscr{C}",
+            "\\div",
+            "3",
+            "=",
+            "6"
+          ],
+          "latex": "\\lfloor\\mathscr{C}\\div3=6",
+          "joint_score": -0.15330762344121326,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\lfloor",
+            "\\mathscr{C}",
+            "\\div",
+            "3",
+            "=",
+            "6"
+          ],
+          "latex": "\\lfloor\\mathscr{C}\\div3=6",
+          "joint_score": -0.15330762344121326,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0059",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "n",
+        "/",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "n",
+            "/",
+            "2"
+          ],
+          "latex": "n/2",
+          "joint_score": -0.03515955342071312,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "n",
+            "/",
+            "2"
+          ],
+          "latex": "n/2",
+          "joint_score": -0.03515955342071312,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "n",
+            "/",
+            "2"
+          ],
+          "latex": "n/2",
+          "joint_score": -0.03515955342071312,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0060",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "6",
+        "\\times",
+        "n",
+        "+",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "X",
+            "n",
+            "+",
+            "1"
+          ],
+          "latex": "6Xn+1",
+          "joint_score": -0.18361946961491973,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "X",
+            "n",
+            "+",
+            "1"
+          ],
+          "latex": "6Xn+1",
+          "joint_score": -0.18361946961491973,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "X",
+            "n",
+            "+",
+            "1"
+          ],
+          "latex": "6Xn+1",
+          "joint_score": -0.18361946961491973,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0061",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "8",
+        "\\times",
+        "n",
+        "+",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "8",
+            "X",
+            "n",
+            "+",
+            "1"
+          ],
+          "latex": "8Xn+1",
+          "joint_score": -0.24825030561605246,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "8",
+            "X",
+            "n",
+            "+",
+            "1"
+          ],
+          "latex": "8Xn+1",
+          "joint_score": -0.24825030561605246,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "8",
+            "X",
+            "n",
+            "+",
+            "1"
+          ],
+          "latex": "8Xn+1",
+          "joint_score": -0.24825030561605246,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0062",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "f",
+        "(",
+        "x",
+        ")",
+        "+",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f",
+            "(",
+            "x",
+            ")",
+            "+",
+            "1"
+          ],
+          "latex": "f(x)+1",
+          "joint_score": -0.07169394744693842,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f",
+            "(",
+            "x",
+            ")",
+            "+",
+            "1"
+          ],
+          "latex": "f(x)+1",
+          "joint_score": -0.07169394744693842,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f",
+            "(",
+            "x",
+            ")",
+            "+",
+            "1"
+          ],
+          "latex": "f(x)+1",
+          "joint_score": -0.07169394744693842,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0063",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "f",
+        "(",
+        "x",
+        ")",
+        "=",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f",
+            "(",
+            "x",
+            ")",
+            "=",
+            "4"
+          ],
+          "latex": "f(x)=4",
+          "joint_score": -0.12860111093089813,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f",
+            "(",
+            "x",
+            ")",
+            "=",
+            "4"
+          ],
+          "latex": "f(x)=4",
+          "joint_score": -0.12860111093089813,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f",
+            "(",
+            "x",
+            ")",
+            "=",
+            "4"
+          ],
+          "latex": "f(x)=4",
+          "joint_score": -0.12860111093089813,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0064",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "f",
+        "(",
+        "t",
+        ")",
+        "+",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "(",
+            "\\mathcal{A}",
+            ")",
+            "+",
+            "2"
+          ],
+          "latex": "f(\\mathcal{A})+2",
+          "joint_score": -0.23519923169928214,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "(",
+            "\\mathcal{A}",
+            ")",
+            "+",
+            "2"
+          ],
+          "latex": "f(\\mathcal{A})+2",
+          "joint_score": -0.23519923169928214,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "(",
+            "\\mathcal{A}",
+            ")",
+            "+",
+            "2"
+          ],
+          "latex": "f(\\mathcal{A})+2",
+          "joint_score": -0.23519923169928214,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0065",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "\\sqrt{}",
+        "(",
+        "a",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "\\sqrt{}",
+            "(",
+            "a",
+            ")"
+          ],
+          "latex": "\\sqrt{(a)}",
+          "joint_score": -0.051608091622108276,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "\\sqrt{}",
+            "(",
+            "a",
+            ")"
+          ],
+          "latex": "\\sqrt{(a)}",
+          "joint_score": -0.051608091622108276,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "\\sqrt{}",
+            "(",
+            "a",
+            ")"
+          ],
+          "latex": "\\sqrt{(a)}",
+          "joint_score": -0.051608091622108276,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0160",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "/"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "/"
+          ],
+          "latex": "/",
+          "joint_score": -0.05362650562650868,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "/"
+          ],
+          "latex": "/",
+          "joint_score": -0.05362650562650868,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "/"
+          ],
+          "latex": "/",
+          "joint_score": -0.05362650562650868,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0161",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "2",
+        "\\times",
+        "2",
+        "=",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "X",
+            "2",
+            "=",
+            "4"
+          ],
+          "latex": "2X2=4",
+          "joint_score": -0.30487224732525037,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "X",
+            "2",
+            "=",
+            "4"
+          ],
+          "latex": "2X2=4",
+          "joint_score": -0.30487224732525037,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "X",
+            "2",
+            "=",
+            "4"
+          ],
+          "latex": "2X2=4",
+          "joint_score": -0.30487224732525037,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0162",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "8",
+        "+",
+        "5",
+        "=",
+        "1",
+        "3"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "8",
+            "+",
+            "5",
+            "=",
+            "1",
+            "3"
+          ],
+          "latex": "8+5=13",
+          "joint_score": -0.24051974898907444,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "8",
+            "+",
+            "5",
+            "=",
+            "1",
+            "3"
+          ],
+          "latex": "8+5=13",
+          "joint_score": -0.24051974898907444,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "8",
+            "+",
+            "5",
+            "=",
+            "1",
+            "3"
+          ],
+          "latex": "8+5=13",
+          "joint_score": -0.24051974898907444,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0163",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "6",
+        "\\div",
+        "2",
+        "=",
+        "3"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "\\div",
+            "\\vdots",
+            "\\%",
+            "3"
+          ],
+          "latex": "6\\div\\vdots\\%3",
+          "joint_score": -0.3392146800953881,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "\\div",
+            "\\vdots",
+            "\\%",
+            "3"
+          ],
+          "latex": "6\\div\\vdots\\%3",
+          "joint_score": -0.3392146800953881,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "\\div",
+            "\\vdots",
+            "\\%",
+            "3"
+          ],
+          "latex": "6\\div\\vdots\\%3",
+          "joint_score": -0.3392146800953881,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0164",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "4",
+        "5",
+        "\\div",
+        "5",
+        "=",
+        "9"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "4",
+            "\\mathcal{S}",
+            "\\leadsto",
+            "\\cdot",
+            "\\%",
+            "\\Pi"
+          ],
+          "latex": "4\\mathcal{S}\\leadsto\\%\\cdot\\Pi",
+          "joint_score": -0.554119521069079,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "4",
+            "\\mathcal{S}",
+            "\\leadsto",
+            "\\cdot",
+            "\\%",
+            "\\Pi"
+          ],
+          "latex": "4\\mathcal{S}\\leadsto\\%\\cdot\\Pi",
+          "joint_score": -0.554119521069079,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "4",
+            "\\mathcal{S}",
+            "\\leadsto",
+            "\\cdot",
+            "\\%",
+            "\\Pi"
+          ],
+          "latex": "4\\mathcal{S}\\leadsto\\%\\cdot\\Pi",
+          "joint_score": -0.554119521069079,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0001",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "f"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f"
+          ],
+          "latex": "f",
+          "joint_score": -0.014560633016448367,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f"
+          ],
+          "latex": "f",
+          "joint_score": -0.014560633016448367,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f"
+          ],
+          "latex": "f",
+          "joint_score": -0.014560633016448367,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0002",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "-"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "-"
+          ],
+          "latex": "-",
+          "joint_score": -0.026752625043901846,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "-"
+          ],
+          "latex": "-",
+          "joint_score": -0.026752625043901846,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "-"
+          ],
+          "latex": "-",
+          "joint_score": -0.026752625043901846,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0003",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "0",
+        "\\times",
+        "7"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "0",
+            "x",
+            "7"
+          ],
+          "latex": "0x7",
+          "joint_score": -0.3173039774538679,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "0",
+            "x",
+            "7"
+          ],
+          "latex": "0x7",
+          "joint_score": -0.3173039774538679,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "0",
+            "x",
+            "7"
+          ],
+          "latex": "0x7",
+          "joint_score": -0.3173039774538679,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0004",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "2",
+        "+",
+        "7"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "4",
+            "7"
+          ],
+          "latex": "247",
+          "joint_score": -0.14764520542507834,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "4",
+            "7"
+          ],
+          "latex": "247",
+          "joint_score": -0.14764520542507834,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "4",
+            "7"
+          ],
+          "latex": "247",
+          "joint_score": -0.14764520542507834,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0005",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "5",
+        "+",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "5",
+            "+",
+            "4"
+          ],
+          "latex": "5+4",
+          "joint_score": -0.20830244543042906,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "5",
+            "+",
+            "4"
+          ],
+          "latex": "5+4",
+          "joint_score": -0.20830244543042906,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "5",
+            "+",
+            "4"
+          ],
+          "latex": "5+4",
+          "joint_score": -0.20830244543042906,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0006",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "7",
+        "\\times",
+        "3",
+        "=",
+        "2",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "7",
+            "x",
+            "3",
+            "=",
+            "2",
+            "|"
+          ],
+          "latex": "7x3=2|",
+          "joint_score": -0.2748775040796508,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "7",
+            "x",
+            "3",
+            "=",
+            "2",
+            "|"
+          ],
+          "latex": "7x3=2|",
+          "joint_score": -0.2748775040796508,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "7",
+            "x",
+            "3",
+            "=",
+            "2",
+            "|"
+          ],
+          "latex": "7x3=2|",
+          "joint_score": -0.2748775040796508,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0007",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "1",
+        "6",
+        "\\div",
+        "8",
+        "=",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "6",
+            "\\div",
+            "8",
+            "=",
+            "2"
+          ],
+          "latex": "|6\\div8=2",
+          "joint_score": -0.2714885205884102,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "6",
+            "\\div",
+            "8",
+            "=",
+            "2"
+          ],
+          "latex": "|6\\div8=2",
+          "joint_score": -0.2714885205884102,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "6",
+            "\\div",
+            "8",
+            "=",
+            "2"
+          ],
+          "latex": "|6\\div8=2",
+          "joint_score": -0.2714885205884102,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0008",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "b",
+        "=",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "=",
+            "4"
+          ],
+          "latex": "b=4",
+          "joint_score": -0.06618705989481304,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "=",
+            "4"
+          ],
+          "latex": "b=4",
+          "joint_score": -0.06618705989481304,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "=",
+            "4"
+          ],
+          "latex": "b=4",
+          "joint_score": -0.06618705989481304,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0009",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "f",
+        "(",
+        "y",
+        ")",
+        "=",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "(",
+            "y",
+            ")",
+            "=",
+            "|"
+          ],
+          "latex": "f(y)=|",
+          "joint_score": -0.16632805787632943,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "(",
+            "y",
+            ")",
+            "=",
+            "|"
+          ],
+          "latex": "f(y)=|",
+          "joint_score": -0.16632805787632943,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "(",
+            "y",
+            ")",
+            "=",
+            "|"
+          ],
+          "latex": "f(y)=|",
+          "joint_score": -0.16632805787632943,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0010",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "x",
+        "\\neq",
+        "y"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "X",
+            "\\neq",
+            "y"
+          ],
+          "latex": "X\\neqy",
+          "joint_score": -0.17577245927823607,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "X",
+            "\\neq",
+            "y"
+          ],
+          "latex": "X\\neqy",
+          "joint_score": -0.17577245927823607,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "X",
+            "\\neq",
+            "y"
+          ],
+          "latex": "X\\neqy",
+          "joint_score": -0.17577245927823607,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0071",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "="
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "="
+          ],
+          "latex": "=",
+          "joint_score": -0.00516332718357585,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "="
+          ],
+          "latex": "=",
+          "joint_score": -0.00516332718357585,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "="
+          ],
+          "latex": "=",
+          "joint_score": -0.00516332718357585,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0072",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "\\times"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "\\times"
+          ],
+          "latex": "\\times",
+          "joint_score": -0.7712565395856861,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "\\times"
+          ],
+          "latex": "\\times",
+          "joint_score": -0.7712565395856861,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "\\times"
+          ],
+          "latex": "\\times",
+          "joint_score": -0.7712565395856861,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0073",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "\\times",
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "\\times",
+            "5"
+          ],
+          "latex": "|\\times5",
+          "joint_score": -0.7474201319388559,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "\\times",
+            "5"
+          ],
+          "latex": "|\\times5",
+          "joint_score": -0.7474201319388559,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "\\times",
+            "5"
+          ],
+          "latex": "|\\times5",
+          "joint_score": -0.7474201319388559,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0074",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "7",
+        "-",
+        "0"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "7",
+            "-",
+            "\\longmapsto"
+          ],
+          "latex": "7\\longmapsto-",
+          "joint_score": -0.5017651905594941,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "7",
+            "-",
+            "\\longmapsto"
+          ],
+          "latex": "7\\longmapsto-",
+          "joint_score": -0.5017651905594941,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "7",
+            "-",
+            "\\longmapsto"
+          ],
+          "latex": "7\\longmapsto-",
+          "joint_score": -0.5017651905594941,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0075",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "1",
+        "+",
+        "0"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "1",
+            "+",
+            "0"
+          ],
+          "latex": "|1+0",
+          "joint_score": -0.7468095072678796,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "1",
+            "+",
+            "0"
+          ],
+          "latex": "|1+0",
+          "joint_score": -0.7468095072678796,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "1",
+            "+",
+            "0"
+          ],
+          "latex": "|1+0",
+          "joint_score": -0.7468095072678796,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0076",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "4",
+        "0",
+        "\\div",
+        "8",
+        "=",
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "4",
+            "0",
+            "\\div",
+            "8",
+            "=",
+            "5"
+          ],
+          "latex": "40\\div8=5",
+          "joint_score": -0.28068575595973144,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "4",
+            "0",
+            "\\div",
+            "8",
+            "=",
+            "5"
+          ],
+          "latex": "40\\div8=5",
+          "joint_score": -0.28068575595973144,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "4",
+            "0",
+            "\\div",
+            "8",
+            "=",
+            "5"
+          ],
+          "latex": "40\\div8=5",
+          "joint_score": -0.28068575595973144,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0077",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "(",
+        "y",
+        "+",
+        "7",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "y",
+            "+",
+            "7",
+            ")"
+          ],
+          "latex": "(y+7)",
+          "joint_score": -0.0893213595743807,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "y",
+            "+",
+            "7",
+            ")"
+          ],
+          "latex": "(y+7)",
+          "joint_score": -0.0893213595743807,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "y",
+            "+",
+            "7",
+            ")"
+          ],
+          "latex": "(y+7)",
+          "joint_score": -0.0893213595743807,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0078",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "a",
+        "=",
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "a",
+            "=",
+            "S"
+          ],
+          "latex": "a=S",
+          "joint_score": -0.21595180100965208,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "a",
+            "=",
+            "S"
+          ],
+          "latex": "a=S",
+          "joint_score": -0.21595180100965208,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "a",
+            "=",
+            "S"
+          ],
+          "latex": "a=S",
+          "joint_score": -0.21595180100965208,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0079",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "b",
+        "/",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "/",
+            "4"
+          ],
+          "latex": "b/4",
+          "joint_score": -0.02979541824293973,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "/",
+            "4"
+          ],
+          "latex": "b/4",
+          "joint_score": -0.02979541824293973,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "b",
+            "/",
+            "4"
+          ],
+          "latex": "b/4",
+          "joint_score": -0.02979541824293973,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0080",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "n",
+        "/",
+        "3"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "n",
+            "/",
+            "3"
+          ],
+          "latex": "n/3",
+          "joint_score": -0.29426280973737695,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "n",
+            "/",
+            "3"
+          ],
+          "latex": "n/3",
+          "joint_score": -0.29426280973737695,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "n",
+            "/",
+            "3"
+          ],
+          "latex": "n/3",
+          "joint_score": -0.29426280973737695,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0118",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|"
+          ],
+          "latex": "|",
+          "joint_score": -0.938311842883389,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|"
+          ],
+          "latex": "|",
+          "joint_score": -0.938311842883389,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|"
+          ],
+          "latex": "|",
+          "joint_score": -0.938311842883389,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0119",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "m"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "m"
+          ],
+          "latex": "m",
+          "joint_score": -0.08712898928843096,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "m"
+          ],
+          "latex": "m",
+          "joint_score": -0.08712898928843096,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "m"
+          ],
+          "latex": "m",
+          "joint_score": -0.08712898928843096,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0120",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "+"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "+"
+          ],
+          "latex": "+",
+          "joint_score": -0.001955393163595045,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "+"
+          ],
+          "latex": "+",
+          "joint_score": -0.001955393163595045,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "+"
+          ],
+          "latex": "+",
+          "joint_score": -0.001955393163595045,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0121",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "="
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "="
+          ],
+          "latex": "=",
+          "joint_score": -0.002369347504429475,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "="
+          ],
+          "latex": "=",
+          "joint_score": -0.002369347504429475,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "="
+          ],
+          "latex": "=",
+          "joint_score": -0.002369347504429475,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0066",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "f"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f"
+          ],
+          "latex": "f",
+          "joint_score": -0.10818867191203108,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f"
+          ],
+          "latex": "f",
+          "joint_score": -0.10818867191203108,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f"
+          ],
+          "latex": "f",
+          "joint_score": -0.10818867191203108,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0067",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "\\times",
+        "4",
+        "=",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "\\times",
+            "4",
+            "=",
+            "4"
+          ],
+          "latex": "|\\times4=4",
+          "joint_score": -0.30984556704491445,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "\\times",
+            "4",
+            "=",
+            "4"
+          ],
+          "latex": "|\\times4=4",
+          "joint_score": -0.30984556704491445,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "\\times",
+            "4",
+            "=",
+            "4"
+          ],
+          "latex": "|\\times4=4",
+          "joint_score": -0.30984556704491445,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0068",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "2",
+        "0",
+        "\\div",
+        "4",
+        "=",
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "\\circ",
+            "\\div",
+            "4",
+            "\\asymp",
+            "5"
+          ],
+          "latex": "2\\circ\\div4\\asymp5",
+          "joint_score": -0.28395641331998916,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "\\circ",
+            "\\div",
+            "4",
+            "\\asymp",
+            "5"
+          ],
+          "latex": "2\\circ\\div4\\asymp5",
+          "joint_score": -0.28395641331998916,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "\\circ",
+            "\\div",
+            "4",
+            "\\asymp",
+            "5"
+          ],
+          "latex": "2\\circ\\div4\\asymp5",
+          "joint_score": -0.28395641331998916,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0069",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "y",
+        "=",
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "y",
+            "\\triangle",
+            "-"
+          ],
+          "latex": "y\\triangle-",
+          "joint_score": -0.5540510565106133,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "y",
+            "\\triangle",
+            "-"
+          ],
+          "latex": "y\\triangle-",
+          "joint_score": -0.5540510565106133,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "y",
+            "\\triangle",
+            "-"
+          ],
+          "latex": "y\\triangle-",
+          "joint_score": -0.5540510565106133,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0032",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "0"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\circlearrowright"
+          ],
+          "latex": "\\circlearrowright",
+          "joint_score": -0.5941212018521633,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\circlearrowright"
+          ],
+          "latex": "\\circlearrowright",
+          "joint_score": -0.5941212018521633,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\circlearrowright"
+          ],
+          "latex": "\\circlearrowright",
+          "joint_score": -0.5941212018521633,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0033",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "4"
+          ],
+          "latex": "4",
+          "joint_score": -0.003095943975368422,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "4"
+          ],
+          "latex": "4",
+          "joint_score": -0.003095943975368422,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "4"
+          ],
+          "latex": "4",
+          "joint_score": -0.003095943975368422,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0034",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "5"
+          ],
+          "latex": "5",
+          "joint_score": -0.0024555647514514695,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "5"
+          ],
+          "latex": "5",
+          "joint_score": -0.0024555647514514695,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "5"
+          ],
+          "latex": "5",
+          "joint_score": -0.0024555647514514695,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0035",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "6"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "6"
+          ],
+          "latex": "6",
+          "joint_score": -7.98705429633559e-06,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "6"
+          ],
+          "latex": "6",
+          "joint_score": -7.98705429633559e-06,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "6"
+          ],
+          "latex": "6",
+          "joint_score": -7.98705429633559e-06,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0036",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "8"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\aa"
+          ],
+          "latex": "\\aa",
+          "joint_score": -1.5683150789236062,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\aa"
+          ],
+          "latex": "\\aa",
+          "joint_score": -1.5683150789236062,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\aa"
+          ],
+          "latex": "\\aa",
+          "joint_score": -1.5683150789236062,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0037",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "9"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "9"
+          ],
+          "latex": "9",
+          "joint_score": -0.1250194623725736,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "9"
+          ],
+          "latex": "9",
+          "joint_score": -0.1250194623725736,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "9"
+          ],
+          "latex": "9",
+          "joint_score": -0.1250194623725736,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0038",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "x"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\mathfrak{X}"
+          ],
+          "latex": "\\mathfrak{X}",
+          "joint_score": -0.459416767616792,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\mathfrak{X}"
+          ],
+          "latex": "\\mathfrak{X}",
+          "joint_score": -0.459416767616792,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\mathfrak{X}"
+          ],
+          "latex": "\\mathfrak{X}",
+          "joint_score": -0.459416767616792,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0039",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "y"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "y"
+          ],
+          "latex": "y",
+          "joint_score": -0.1736269313803581,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "y"
+          ],
+          "latex": "y",
+          "joint_score": -0.1736269313803581,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "y"
+          ],
+          "latex": "y",
+          "joint_score": -0.1736269313803581,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0040",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "f"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f"
+          ],
+          "latex": "f",
+          "joint_score": -0.7984260014551074,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f"
+          ],
+          "latex": "f",
+          "joint_score": -0.7984260014551074,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "f"
+          ],
+          "latex": "f",
+          "joint_score": -0.7984260014551074,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0041",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "g"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "g"
+          ],
+          "latex": "g",
+          "joint_score": -0.8938317242637858,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "g"
+          ],
+          "latex": "g",
+          "joint_score": -0.8938317242637858,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "g"
+          ],
+          "latex": "g",
+          "joint_score": -0.8938317242637858,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0042",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "+"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "+"
+          ],
+          "latex": "+",
+          "joint_score": -0.010867906247293993,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "+"
+          ],
+          "latex": "+",
+          "joint_score": -0.010867906247293993,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "+"
+          ],
+          "latex": "+",
+          "joint_score": -0.010867906247293993,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0043",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "-"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "-"
+          ],
+          "latex": "-",
+          "joint_score": -0.15750234613686634,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "-"
+          ],
+          "latex": "-",
+          "joint_score": -0.15750234613686634,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "-"
+          ],
+          "latex": "-",
+          "joint_score": -0.15750234613686634,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0044",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "="
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\Xi"
+          ],
+          "latex": "\\Xi",
+          "joint_score": -0.37598460397289324,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\Xi"
+          ],
+          "latex": "\\Xi",
+          "joint_score": -0.37598460397289324,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\Xi"
+          ],
+          "latex": "\\Xi",
+          "joint_score": -0.37598460397289324,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0081",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "\\times"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "\\times"
+          ],
+          "latex": "\\times",
+          "joint_score": -0.07811354808818247,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "\\times"
+          ],
+          "latex": "\\times",
+          "joint_score": -0.07811354808818247,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "\\times"
+          ],
+          "latex": "\\times",
+          "joint_score": -0.07811354808818247,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0082",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "("
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "("
+          ],
+          "latex": "(",
+          "joint_score": -0.02624829328868697,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "("
+          ],
+          "latex": "(",
+          "joint_score": -0.02624829328868697,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "("
+          ],
+          "latex": "(",
+          "joint_score": -0.02624829328868697,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0083",
+      "fast_group_exact": true,
+      "target_tokens": [
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            ")"
+          ],
+          "latex": ")",
+          "joint_score": -0.00017423955550822167,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            ")"
+          ],
+          "latex": ")",
+          "joint_score": -0.00017423955550822167,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            ")"
+          ],
+          "latex": ")",
+          "joint_score": -0.00017423955550822167,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0084",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "4",
+        "\\times",
+        "6"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "4",
+            "\\times",
+            "6"
+          ],
+          "latex": "4\\times6",
+          "joint_score": -0.248721240898783,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "4",
+            "\\times",
+            "6"
+          ],
+          "latex": "4\\times6",
+          "joint_score": -0.248721240898783,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "4",
+            "\\times",
+            "6"
+          ],
+          "latex": "4\\times6",
+          "joint_score": -0.248721240898783,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0085",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "6",
+        "+",
+        "3"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "6",
+            "+",
+            "3"
+          ],
+          "latex": "6+3",
+          "joint_score": -0.011019984513450015,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "6",
+            "+",
+            "3"
+          ],
+          "latex": "6+3",
+          "joint_score": -0.011019984513450015,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "6",
+            "+",
+            "3"
+          ],
+          "latex": "6+3",
+          "joint_score": -0.011019984513450015,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0086",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "6",
+        "\\times",
+        "8",
+        "=",
+        "4",
+        "8"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "\\times",
+            "\\parr",
+            "=",
+            "4",
+            "\\parr"
+          ],
+          "latex": "6\\times\\parr=4\\parr",
+          "joint_score": -0.2010191599879766,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "\\times",
+            "\\parr",
+            "=",
+            "4",
+            "\\parr"
+          ],
+          "latex": "6\\times\\parr=4\\parr",
+          "joint_score": -0.2010191599879766,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "6",
+            "\\times",
+            "\\parr",
+            "=",
+            "4",
+            "\\parr"
+          ],
+          "latex": "6\\times\\parr=4\\parr",
+          "joint_score": -0.2010191599879766,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0087",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "9",
+        "+",
+        "1",
+        "=",
+        "1",
+        "0"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "q",
+            "+",
+            "|",
+            "=",
+            "|",
+            "\\circ"
+          ],
+          "latex": "q+|=|\\circ",
+          "joint_score": -0.5941073363839521,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "q",
+            "+",
+            "|",
+            "=",
+            "|",
+            "\\circ"
+          ],
+          "latex": "q+|=|\\circ",
+          "joint_score": -0.5941073363839521,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "q",
+            "+",
+            "|",
+            "=",
+            "|",
+            "\\circ"
+          ],
+          "latex": "q+|=|\\circ",
+          "joint_score": -0.5941073363839521,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0088",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "9",
+        "-",
+        "4"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "9",
+            "-",
+            "4"
+          ],
+          "latex": "9-4",
+          "joint_score": -0.028635939420935317,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "9",
+            "-",
+            "4"
+          ],
+          "latex": "9-4",
+          "joint_score": -0.028635939420935317,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "9",
+            "-",
+            "4"
+          ],
+          "latex": "9-4",
+          "joint_score": -0.028635939420935317,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0089",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "0",
+        "+",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "I",
+            "0",
+            "+",
+            "2"
+          ],
+          "latex": "I0+2",
+          "joint_score": -0.9575440212622853,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "I",
+            "0",
+            "+",
+            "2"
+          ],
+          "latex": "I0+2",
+          "joint_score": -0.9575440212622853,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "I",
+            "0",
+            "+",
+            "2"
+          ],
+          "latex": "I0+2",
+          "joint_score": -0.9575440212622853,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0090",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "1",
+        "2",
+        "-",
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "2",
+            "-",
+            "5"
+          ],
+          "latex": "|2-5",
+          "joint_score": -0.3557029298751763,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "2",
+            "-",
+            "5"
+          ],
+          "latex": "|2-5",
+          "joint_score": -0.3557029298751763,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "|",
+            "2",
+            "-",
+            "5"
+          ],
+          "latex": "|2-5",
+          "joint_score": -0.3557029298751763,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0091",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "x",
+        "+",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "+",
+            "2"
+          ],
+          "latex": "x+2",
+          "joint_score": -0.09619729882806738,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "+",
+            "2"
+          ],
+          "latex": "x+2",
+          "joint_score": -0.09619729882806738,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "+",
+            "2"
+          ],
+          "latex": "x+2",
+          "joint_score": -0.09619729882806738,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0092",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "2",
+        "\\times",
+        "x",
+        "+",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "x",
+            "\\between",
+            "+",
+            "|"
+          ],
+          "latex": "2x\\between+|",
+          "joint_score": -0.3608401151017572,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "x",
+            "\\between",
+            "+",
+            "|"
+          ],
+          "latex": "2x\\between+|",
+          "joint_score": -0.3608401151017572,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "2",
+            "x",
+            "\\between",
+            "+",
+            "|"
+          ],
+          "latex": "2x\\between+|",
+          "joint_score": -0.3608401151017572,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0093",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "x",
+        "/",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "/",
+            "2"
+          ],
+          "latex": "x/2",
+          "joint_score": -0.18952016821264026,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "/",
+            "2"
+          ],
+          "latex": "x/2",
+          "joint_score": -0.18952016821264026,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "/",
+            "2"
+          ],
+          "latex": "x/2",
+          "joint_score": -0.18952016821264026,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0094",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "y",
+        "-",
+        "3"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "y",
+            "-",
+            "3"
+          ],
+          "latex": "y-3",
+          "joint_score": -0.01584871208189579,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "y",
+            "-",
+            "3"
+          ],
+          "latex": "y-3",
+          "joint_score": -0.01584871208189579,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "y",
+            "-",
+            "3"
+          ],
+          "latex": "y-3",
+          "joint_score": -0.01584871208189579,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0095",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "f",
+        "(",
+        "x",
+        ")",
+        "+",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "L",
+            "\\between",
+            ")",
+            "+",
+            "2"
+          ],
+          "latex": "fL\\between)+2",
+          "joint_score": -0.2866504004264699,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "L",
+            "\\between",
+            ")",
+            "+",
+            "2"
+          ],
+          "latex": "fL\\between)+2",
+          "joint_score": -0.2866504004264699,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "L",
+            "\\between",
+            ")",
+            "+",
+            "2"
+          ],
+          "latex": "fL\\between)+2",
+          "joint_score": -0.2866504004264699,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0096",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "f",
+        "(",
+        "y",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "(",
+            "\\zeta",
+            ")"
+          ],
+          "latex": "f(\\zeta)",
+          "joint_score": -0.2573683648589252,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "(",
+            "\\zeta",
+            ")"
+          ],
+          "latex": "f(\\zeta)",
+          "joint_score": -0.2573683648589252,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "(",
+            "\\zeta",
+            ")"
+          ],
+          "latex": "f(\\zeta)",
+          "joint_score": -0.2573683648589252,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0097",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "g",
+        "(",
+        "x",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "g",
+            "L",
+            "x",
+            ")"
+          ],
+          "latex": "gLx)",
+          "joint_score": -0.28957602619184647,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "g",
+            "L",
+            "x",
+            ")"
+          ],
+          "latex": "gLx)",
+          "joint_score": -0.28957602619184647,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "g",
+            "L",
+            "x",
+            ")"
+          ],
+          "latex": "gLx)",
+          "joint_score": -0.28957602619184647,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0098",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "x",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "2"
+          ],
+          "latex": "x^{2}",
+          "joint_score": -0.4877513476554003,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "2"
+          ],
+          "latex": "x^{2}",
+          "joint_score": -0.4877513476554003,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "2"
+          ],
+          "latex": "x^{2}",
+          "joint_score": -0.4877513476554003,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0099",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "\\sqrt{}",
+        "(",
+        "x",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\sqrt{}",
+            "\\iota",
+            "x",
+            ")"
+          ],
+          "latex": "\\sqrt{\\iotax})",
+          "joint_score": -0.28397921902717227,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\sqrt{}",
+            "\\iota",
+            "x",
+            ")"
+          ],
+          "latex": "\\sqrt{\\iotax})",
+          "joint_score": -0.28397921902717227,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\sqrt{}",
+            "\\iota",
+            "x",
+            ")"
+          ],
+          "latex": "\\sqrt{\\iotax})",
+          "joint_score": -0.28397921902717227,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0100",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "y",
+        "2",
+        "+",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "y",
+            "2",
+            "\\dag",
+            "|"
+          ],
+          "latex": "y^{2}\\dag|",
+          "joint_score": -0.7353228021002631,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "y",
+            "2",
+            "\\dag",
+            "|"
+          ],
+          "latex": "y^{2}\\dag|",
+          "joint_score": -0.7353228021002631,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "y",
+            "2",
+            "\\dag",
+            "|"
+          ],
+          "latex": "y^{2}\\dag|",
+          "joint_score": -0.7353228021002631,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0101",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "7",
+        "=",
+        "7"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "7",
+            "=",
+            "7"
+          ],
+          "latex": "7=7",
+          "joint_score": -0.11327586317654437,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "7",
+            "=",
+            "7"
+          ],
+          "latex": "7=7",
+          "joint_score": -0.11327586317654437,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "7",
+            "=",
+            "7"
+          ],
+          "latex": "7=7",
+          "joint_score": -0.11327586317654437,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0102",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "x",
+        "=",
+        "y"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "=",
+            "y"
+          ],
+          "latex": "x=y",
+          "joint_score": -0.6025384466476721,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "=",
+            "y"
+          ],
+          "latex": "x=y",
+          "joint_score": -0.6025384466476721,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "=",
+            "y"
+          ],
+          "latex": "x=y",
+          "joint_score": -0.6025384466476721,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0103",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "x",
+        "+",
+        "y",
+        "=",
+        "5"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "+",
+            "y",
+            "=",
+            "5"
+          ],
+          "latex": "x+y=5",
+          "joint_score": -0.256585051553403,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "+",
+            "y",
+            "=",
+            "5"
+          ],
+          "latex": "x+y=5",
+          "joint_score": -0.256585051553403,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "+",
+            "y",
+            "=",
+            "5"
+          ],
+          "latex": "x+y=5",
+          "joint_score": -0.256585051553403,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0104",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "f",
+        "(",
+        "x",
+        ")",
+        "+",
+        "g",
+        "(",
+        "y",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "L",
+            "x",
+            ")",
+            "+",
+            "g",
+            "(",
+            "\\zeta",
+            ")"
+          ],
+          "latex": "fLx)+g^{(}\\zeta)",
+          "joint_score": -0.43002071016901544,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "L",
+            "x",
+            ")",
+            "+",
+            "g",
+            "(",
+            "\\zeta",
+            ")"
+          ],
+          "latex": "fLx)+g^{(}\\zeta)",
+          "joint_score": -0.43002071016901544,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "f",
+            "L",
+            "x",
+            ")",
+            "+",
+            "g",
+            "(",
+            "\\zeta",
+            ")"
+          ],
+          "latex": "fLx)+g^{(}\\zeta)",
+          "joint_score": -0.43002071016901544,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0105",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "f",
+        "(",
+        "g",
+        "(",
+        "x",
+        ")",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\fint",
+            "(",
+            "g",
+            "\\iota",
+            "x",
+            ")",
+            ")"
+          ],
+          "latex": "\\fint(g\\iotax))",
+          "joint_score": -0.20986606449049475,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\fint",
+            "(",
+            "g",
+            "\\iota",
+            "x",
+            ")",
+            ")"
+          ],
+          "latex": "\\fint(g\\iotax))",
+          "joint_score": -0.20986606449049475,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\fint",
+            "(",
+            "g",
+            "\\iota",
+            "x",
+            ")",
+            ")"
+          ],
+          "latex": "\\fint(g\\iotax))",
+          "joint_score": -0.20986606449049475,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0106",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "(",
+        "x",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "x",
+            ")"
+          ],
+          "latex": "(x)",
+          "joint_score": -0.2826219524345626,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "x",
+            ")"
+          ],
+          "latex": "(x)",
+          "joint_score": -0.2826219524345626,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "x",
+            ")"
+          ],
+          "latex": "(x)",
+          "joint_score": -0.2826219524345626,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0107",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "(",
+        "y",
+        "-",
+        "2",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "y",
+            "-",
+            "2",
+            ")"
+          ],
+          "latex": "(y-2)",
+          "joint_score": -0.11903319588390568,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "y",
+            "-",
+            "2",
+            ")"
+          ],
+          "latex": "(y-2)",
+          "joint_score": -0.11903319588390568,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "(",
+            "y",
+            "-",
+            "2",
+            ")"
+          ],
+          "latex": "(y-2)",
+          "joint_score": -0.11903319588390568,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0108",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "(",
+        "3",
+        "+",
+        "5",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "[",
+            "3",
+            "+",
+            "5",
+            ")"
+          ],
+          "latex": "[3+5)",
+          "joint_score": -0.152136761395122,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "[",
+            "3",
+            "+",
+            "5",
+            ")"
+          ],
+          "latex": "[3+5)",
+          "joint_score": -0.152136761395122,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "[",
+            "3",
+            "+",
+            "5",
+            ")"
+          ],
+          "latex": "[3+5)",
+          "joint_score": -0.152136761395122,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0109",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "(",
+        "x",
+        "+",
+        "(",
+        "y",
+        "-",
+        "1",
+        ")",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "(",
+            "\\kappa",
+            "4",
+            "(",
+            "y",
+            "-",
+            "|",
+            ")",
+            ")"
+          ],
+          "latex": "(\\kappa4(y-|))",
+          "joint_score": -0.4429383658639672,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "(",
+            "\\kappa",
+            "4",
+            "(",
+            "y",
+            "-",
+            "|",
+            ")",
+            ")"
+          ],
+          "latex": "(\\kappa4(y-|))",
+          "joint_score": -0.4429383658639672,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "(",
+            "\\kappa",
+            "4",
+            "(",
+            "y",
+            "-",
+            "|",
+            ")",
+            ")"
+          ],
+          "latex": "(\\kappa4(y-|))",
+          "joint_score": -0.4429383658639672,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0110",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "3",
+        "\\times",
+        "(",
+        "x",
+        "+",
+        "1",
+        ")"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "3",
+            "\\times",
+            "(",
+            "x",
+            "+",
+            "i",
+            ")"
+          ],
+          "latex": "3\\times(x+i)",
+          "joint_score": -0.27947883055397454,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "3",
+            "\\times",
+            "(",
+            "x",
+            "+",
+            "i",
+            ")"
+          ],
+          "latex": "3\\times(x+i)",
+          "joint_score": -0.27947883055397454,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "3",
+            "\\times",
+            "(",
+            "x",
+            "+",
+            "i",
+            ")"
+          ],
+          "latex": "3\\times(x+i)",
+          "joint_score": -0.27947883055397454,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0111",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "(",
+        "x",
+        "+",
+        "1",
+        ")",
+        "\\times",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "(",
+            "x",
+            "\\Psi",
+            "\\prime",
+            ")",
+            "\\times",
+            "2"
+          ],
+          "latex": "(x\\Psi\\prime)\\times2",
+          "joint_score": -0.2765748929340321,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "(",
+            "x",
+            "\\Psi",
+            "\\prime",
+            ")",
+            "\\times",
+            "2"
+          ],
+          "latex": "(x\\Psi\\prime)\\times2",
+          "joint_score": -0.2765748929340321,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "(",
+            "x",
+            "\\Psi",
+            "\\prime",
+            ")",
+            "\\times",
+            "2"
+          ],
+          "latex": "(x\\Psi\\prime)\\times2",
+          "joint_score": -0.2765748929340321,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0112",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "x",
+        "\\times",
+        "y",
+        "+",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "\\times",
+            "y",
+            "+",
+            "2"
+          ],
+          "latex": "x\\timesy+2",
+          "joint_score": -0.26352056272699664,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "\\times",
+            "y",
+            "+",
+            "2"
+          ],
+          "latex": "x\\timesy+2",
+          "joint_score": -0.26352056272699664,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "x",
+            "\\times",
+            "y",
+            "+",
+            "2"
+          ],
+          "latex": "x\\timesy+2",
+          "joint_score": -0.26352056272699664,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0113",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "8",
+        "\\div",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "p",
+            "\\div",
+            "2"
+          ],
+          "latex": "p\\div2",
+          "joint_score": -0.508390789823879,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "p",
+            "\\div",
+            "2"
+          ],
+          "latex": "p\\div2",
+          "joint_score": -0.508390789823879,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "p",
+            "\\div",
+            "2"
+          ],
+          "latex": "p\\div2",
+          "joint_score": -0.508390789823879,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0114",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "3",
+        "\\times",
+        "y",
+        "-",
+        "2"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "3",
+            "\\times",
+            "y",
+            "-",
+            "2"
+          ],
+          "latex": "3\\timesy-2",
+          "joint_score": -0.23724332730621084,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "3",
+            "\\times",
+            "y",
+            "-",
+            "2"
+          ],
+          "latex": "3\\timesy-2",
+          "joint_score": -0.23724332730621084,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": true,
+          "tokens": [
+            "3",
+            "\\times",
+            "y",
+            "-",
+            "2"
+          ],
+          "latex": "3\\timesy-2",
+          "joint_score": -0.23724332730621084,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0115",
+      "fast_group_exact": true,
+      "target_tokens": [
+        "g",
+        "(",
+        "y",
+        ")",
+        "-",
+        "1"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "g",
+            "(",
+            "y",
+            ")",
+            "-",
+            "|"
+          ],
+          "latex": "g(y)-|",
+          "joint_score": -0.3744582736563622,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "g",
+            "(",
+            "y",
+            ")",
+            "-",
+            "|"
+          ],
+          "latex": "g(y)-|",
+          "joint_score": -0.3744582736563622,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "g",
+            "(",
+            "y",
+            ")",
+            "-",
+            "|"
+          ],
+          "latex": "g(y)-|",
+          "joint_score": -0.3744582736563622,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    },
+    {
+      "sample_id": "aiflow_0116",
+      "fast_group_exact": false,
+      "target_tokens": [
+        "f",
+        "(",
+        "x",
+        ")",
+        "=",
+        "y"
+      ],
+      "widths": {
+        "32": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\fint",
+            "\\iota",
+            "x",
+            ")",
+            "=",
+            "y"
+          ],
+          "latex": "\\fint\\iotax)=y",
+          "joint_score": -0.2511507412265976,
+          "beam32_parity_with_saved_trace": true
+        },
+        "64": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\fint",
+            "\\iota",
+            "x",
+            ")",
+            "=",
+            "y"
+          ],
+          "latex": "\\fint\\iotax)=y",
+          "joint_score": -0.2511507412265976,
+          "beam32_parity_with_saved_trace": null
+        },
+        "128": {
+          "accepted": true,
+          "exact_with_oracle_groups": false,
+          "tokens": [
+            "\\fint",
+            "\\iota",
+            "x",
+            ")",
+            "=",
+            "y"
+          ],
+          "latex": "\\fint\\iotax)=y",
+          "joint_score": -0.2511507412265976,
+          "beam32_parity_with_saved_trace": null
+        }
+      }
+    }
+  ]
+}

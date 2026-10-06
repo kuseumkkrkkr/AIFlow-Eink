@@ -1,0 +1,116 @@
+{
+  "schema": "aiflow-direct-feature-retention-plan/v27",
+  "code_sha256": "7f6333ecc4f7019a9cbe59a59f8a666c94b3b7c9b04ae6857b94197f120c5971",
+  "pre_training_numerical_qa_correction": {
+    "previous_code_sha256": "f784a4594e453361fbfd490f257caa65b7085c439cd4f514e2e6c598096cf657",
+    "observed_initial_train_feature_mse": 1.800318656089081e-13,
+    "initial_mse_tolerance": 1e-10,
+    "reason": "Identical weights have tiny FP32 differences between autograd and no-grad attention kernels; use a numerical tolerance instead of exact zero.",
+    "training_started_before_correction": false,
+    "objective_coefficient_or_data_changed": false
+  },
+  "parent_plan_sha256": "3664b05152f60c7ab4b787e0928bb001bec4f695afdb24180d96f770d692c49a",
+  "canonical_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+  "direct_baseline_sha256": "e17cf21e1aadff80b835fdf104d23a17c0fcdd5df4e1c86488ae0a4e4493f7e4",
+  "steps": 2400,
+  "batch_size": 64,
+  "original_rows": 16,
+  "augmented_rows": 48,
+  "same_v25_data_and_schedule": true,
+  "all_57_main_tensors_trainable": true,
+  "hard_ce_weight": 1.0,
+  "kl_weight": 0.0,
+  "feature_weight": 0.7412244467384174,
+  "unclamped_feature_weight": 0.7412244467384174,
+  "coefficient_rule": "median CE/MSE encoder-gradient norm on eight fixed TRAIN batches, clamp [0.1,100]",
+  "calibration_rows": [
+    {
+      "schedule_step": 0,
+      "ce": 0.2658803164958954,
+      "feature_mse": 0.22523948550224304,
+      "ce_encoder_gradient_l2": 1.480592131614685,
+      "feature_encoder_gradient_l2": 2.3696541786193848,
+      "ratio": 0.6248135888238816
+    },
+    {
+      "schedule_step": 342,
+      "ce": 0.21101738512516022,
+      "feature_mse": 0.23877058923244476,
+      "ce_encoder_gradient_l2": 1.609519600868225,
+      "feature_encoder_gradient_l2": 2.6873395442962646,
+      "ratio": 0.5989267728688564
+    },
+    {
+      "schedule_step": 685,
+      "ce": 0.41251474618911743,
+      "feature_mse": 0.2385343313217163,
+      "ce_encoder_gradient_l2": 1.8137117624282837,
+      "feature_encoder_gradient_l2": 2.6937155723571777,
+      "ratio": 0.6733122758172895
+    },
+    {
+      "schedule_step": 1028,
+      "ce": 0.34847456216812134,
+      "feature_mse": 0.2561216950416565,
+      "ce_encoder_gradient_l2": 1.8785895109176636,
+      "feature_encoder_gradient_l2": 2.786457061767578,
+      "ratio": 0.6741857022286171
+    },
+    {
+      "schedule_step": 1370,
+      "ce": 0.39311349391937256,
+      "feature_mse": 0.23952041566371918,
+      "ce_encoder_gradient_l2": 2.6877799034118652,
+      "feature_encoder_gradient_l2": 2.582568407058716,
+      "ratio": 1.0407390937121292
+    },
+    {
+      "schedule_step": 1713,
+      "ce": 0.4396837651729584,
+      "feature_mse": 0.23019346594810486,
+      "ce_encoder_gradient_l2": 2.277153253555298,
+      "feature_encoder_gradient_l2": 2.6732046604156494,
+      "ratio": 0.8518439636422112
+    },
+    {
+      "schedule_step": 2056,
+      "ce": 0.5289029479026794,
+      "feature_mse": 0.2533741295337677,
+      "ce_encoder_gradient_l2": 3.6523971557617188,
+      "feature_encoder_gradient_l2": 3.053943395614624,
+      "ratio": 1.1959609863779588
+    },
+    {
+      "schedule_step": 2399,
+      "ce": 0.21141642332077026,
+      "feature_mse": 0.2381676435470581,
+      "ce_encoder_gradient_l2": 1.8975040912628174,
+      "feature_encoder_gradient_l2": 2.3476314544677734,
+      "ratio": 0.8082631912482177
+    }
+  ],
+  "coefficient_evaluation_inputs_used": 0,
+  "objective": "mean inherited-label hard CE + frozen coefficient * MSE(student embedding, canonical embedding on SAME TRAIN input)",
+  "cold_initialization": "canonical main, all tensors trainable",
+  "lr": 1e-05,
+  "weight_decay": 0.0001,
+  "gradient_clip": 1.0,
+  "seed": 2026100525,
+  "threads": 2,
+  "development_folds": [
+    1,
+    2
+  ],
+  "no_interim_evaluation": true,
+  "no_best_epoch_selection": true,
+  "teacher_requires_grad": false,
+  "generated_labels_human_verified": false,
+  "label_inheritance_assumption": true,
+  "owned_optimizer_rows": 0,
+  "crohme_rows": 0,
+  "all_evaluation_cases_already_consumed": true,
+  "historical_canonical_calibration_formulas_in_owned_diagnostic": 95,
+  "additional_codex_reviewed_annotations": 53,
+  "product_adopted": false,
+  "collection_or_deployment_resumed": false
+}

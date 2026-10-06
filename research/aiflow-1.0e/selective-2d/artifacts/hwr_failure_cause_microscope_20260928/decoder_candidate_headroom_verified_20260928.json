@@ -1,0 +1,1196 @@
+{
+  "schema": "aiflow-decoder-candidate-headroom-microscope/v1",
+  "scope": "posthoc shadow diagnostics only; no fitting, tuning, CROHME, or promotion",
+  "input_summary_sha256": "b9d00a4ec5b93269c3568187f668ce0d2f3f50b1a28b510e5f178a6684a1b994",
+  "token_beam": 32,
+  "arms": {
+    "fast": {
+      "group_exact_formulas": 125,
+      "formula_failure_buckets": {
+        "decoder_exact": 68,
+        "gold_missing_from_symbol_top5": 5,
+        "gold_tuple_in_beam_but_not_selected": 45,
+        "gold_tuple_pruned_before_structural_decoder": 7
+      },
+      "top1_formula_exact": 68,
+      "top5_complete_formulas": 120,
+      "decoder_exact_formulas": 68,
+      "decoder_equals_independent_top1_formulas": 125,
+      "decoder_rescued_top1_formula_count": 0,
+      "decoder_regressed_top1_formula_count": 0,
+      "top32_gold_sequence_rank_histogram": {
+        "1": 68,
+        "10": 3,
+        "12": 1,
+        "18": 1,
+        "19": 2,
+        "2": 11,
+        "27": 1,
+        "29": 1,
+        "3": 9,
+        "32": 1,
+        "4": 4,
+        "5": 5,
+        "6": 2,
+        "8": 3,
+        "9": 1,
+        "outside_top32": 12
+      },
+      "target_symbol_rank_histogram": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4,
+        "outside_top5": 5
+      },
+      "token_counts": {
+        "total": 469,
+        "top1_hits": 390,
+        "decoder_hits": 390,
+        "decoder_top1_agreements": 469,
+        "decoder_top1_disagreements": 0,
+        "decoder_wrong_gold_in_top5": 74,
+        "decoder_wrong_gold_outside_top5": 5
+      },
+      "top1_error_confusions": [
+        {
+          "gold": "1",
+          "top1": "|",
+          "count": 23
+        },
+        {
+          "gold": "1",
+          "top1": "/",
+          "count": 6
+        },
+        {
+          "gold": "\\times",
+          "top1": "X",
+          "count": 6
+        },
+        {
+          "gold": "0",
+          "top1": "\\mathcal{O}",
+          "count": 3
+        },
+        {
+          "gold": "1",
+          "top1": "(",
+          "count": 3
+        },
+        {
+          "gold": "\\times",
+          "top1": "x",
+          "count": 3
+        },
+        {
+          "gold": "1",
+          "top1": ")",
+          "count": 2
+        },
+        {
+          "gold": "5",
+          "top1": "\\hbar",
+          "count": 2
+        },
+        {
+          "gold": "8",
+          "top1": "\\parr",
+          "count": 2
+        },
+        {
+          "gold": "(",
+          "top1": "\\iota",
+          "count": 2
+        },
+        {
+          "gold": "1",
+          "top1": "\\rfloor",
+          "count": 1
+        },
+        {
+          "gold": "x",
+          "top1": "\\chi",
+          "count": 1
+        },
+        {
+          "gold": "+",
+          "top1": "\\bot",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "top1": "O",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "top1": "o",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "top1": "6",
+          "count": 1
+        },
+        {
+          "gold": "7",
+          "top1": "\\eta",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "top1": "\\simeq",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "top1": "\\triangledown",
+          "count": 1
+        },
+        {
+          "gold": "1",
+          "top1": "\\lfloor",
+          "count": 1
+        }
+      ],
+      "decoder_error_confusions": [
+        {
+          "gold": "1",
+          "decoder": "|",
+          "count": 23
+        },
+        {
+          "gold": "1",
+          "decoder": "/",
+          "count": 6
+        },
+        {
+          "gold": "\\times",
+          "decoder": "X",
+          "count": 6
+        },
+        {
+          "gold": "0",
+          "decoder": "\\mathcal{O}",
+          "count": 3
+        },
+        {
+          "gold": "1",
+          "decoder": "(",
+          "count": 3
+        },
+        {
+          "gold": "\\times",
+          "decoder": "x",
+          "count": 3
+        },
+        {
+          "gold": "1",
+          "decoder": ")",
+          "count": 2
+        },
+        {
+          "gold": "5",
+          "decoder": "\\hbar",
+          "count": 2
+        },
+        {
+          "gold": "8",
+          "decoder": "\\parr",
+          "count": 2
+        },
+        {
+          "gold": "(",
+          "decoder": "\\iota",
+          "count": 2
+        },
+        {
+          "gold": "1",
+          "decoder": "\\rfloor",
+          "count": 1
+        },
+        {
+          "gold": "x",
+          "decoder": "\\chi",
+          "count": 1
+        },
+        {
+          "gold": "+",
+          "decoder": "\\bot",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "decoder": "O",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "decoder": "o",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "decoder": "6",
+          "count": 1
+        },
+        {
+          "gold": "7",
+          "decoder": "\\eta",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "decoder": "\\simeq",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "decoder": "\\triangledown",
+          "count": 1
+        },
+        {
+          "gold": "1",
+          "decoder": "\\lfloor",
+          "count": 1
+        }
+      ],
+      "sample_ids_by_failure_bucket": {
+        "gold_tuple_pruned_before_structural_decoder": [
+          "aiflow_0140",
+          "aiflow_0020",
+          "aiflow_0155",
+          "aiflow_0087",
+          "aiflow_0095",
+          "aiflow_0100",
+          "aiflow_0105"
+        ],
+        "gold_missing_from_symbol_top5": [
+          "aiflow_0142",
+          "aiflow_0046",
+          "aiflow_0064",
+          "aiflow_0032",
+          "aiflow_0036"
+        ],
+        "gold_tuple_in_beam_but_not_selected": [
+          "aiflow_0144",
+          "aiflow_0145",
+          "aiflow_0146",
+          "aiflow_0016",
+          "aiflow_0017",
+          "aiflow_0019",
+          "aiflow_0021",
+          "aiflow_0022",
+          "aiflow_0023",
+          "aiflow_0152",
+          "aiflow_0153",
+          "aiflow_0124",
+          "aiflow_0125",
+          "aiflow_0126",
+          "aiflow_0127",
+          "aiflow_0128",
+          "aiflow_0132",
+          "aiflow_0134",
+          "aiflow_0136",
+          "aiflow_0050",
+          "aiflow_0051",
+          "aiflow_0052",
+          "aiflow_0053",
+          "aiflow_0056",
+          "aiflow_0058"
+        ]
+      }
+    },
+    "selective_geometry": {
+      "group_exact_formulas": 125,
+      "formula_failure_buckets": {
+        "decoder_exact": 68,
+        "gold_missing_from_symbol_top5": 5,
+        "gold_tuple_in_beam_but_not_selected": 45,
+        "gold_tuple_pruned_before_structural_decoder": 7
+      },
+      "top1_formula_exact": 68,
+      "top5_complete_formulas": 120,
+      "decoder_exact_formulas": 68,
+      "decoder_equals_independent_top1_formulas": 125,
+      "decoder_rescued_top1_formula_count": 0,
+      "decoder_regressed_top1_formula_count": 0,
+      "top32_gold_sequence_rank_histogram": {
+        "1": 68,
+        "10": 3,
+        "12": 1,
+        "18": 1,
+        "19": 2,
+        "2": 11,
+        "27": 1,
+        "29": 1,
+        "3": 9,
+        "32": 1,
+        "4": 4,
+        "5": 5,
+        "6": 2,
+        "8": 3,
+        "9": 1,
+        "outside_top32": 12
+      },
+      "target_symbol_rank_histogram": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4,
+        "outside_top5": 5
+      },
+      "token_counts": {
+        "total": 469,
+        "top1_hits": 390,
+        "decoder_hits": 390,
+        "decoder_top1_agreements": 469,
+        "decoder_top1_disagreements": 0,
+        "decoder_wrong_gold_in_top5": 74,
+        "decoder_wrong_gold_outside_top5": 5
+      },
+      "top1_error_confusions": [
+        {
+          "gold": "1",
+          "top1": "|",
+          "count": 23
+        },
+        {
+          "gold": "1",
+          "top1": "/",
+          "count": 6
+        },
+        {
+          "gold": "\\times",
+          "top1": "X",
+          "count": 6
+        },
+        {
+          "gold": "0",
+          "top1": "\\mathcal{O}",
+          "count": 3
+        },
+        {
+          "gold": "1",
+          "top1": "(",
+          "count": 3
+        },
+        {
+          "gold": "\\times",
+          "top1": "x",
+          "count": 3
+        },
+        {
+          "gold": "1",
+          "top1": ")",
+          "count": 2
+        },
+        {
+          "gold": "5",
+          "top1": "\\hbar",
+          "count": 2
+        },
+        {
+          "gold": "8",
+          "top1": "\\parr",
+          "count": 2
+        },
+        {
+          "gold": "(",
+          "top1": "\\iota",
+          "count": 2
+        },
+        {
+          "gold": "1",
+          "top1": "\\rfloor",
+          "count": 1
+        },
+        {
+          "gold": "x",
+          "top1": "\\chi",
+          "count": 1
+        },
+        {
+          "gold": "+",
+          "top1": "\\bot",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "top1": "O",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "top1": "o",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "top1": "6",
+          "count": 1
+        },
+        {
+          "gold": "7",
+          "top1": "\\eta",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "top1": "\\simeq",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "top1": "\\triangledown",
+          "count": 1
+        },
+        {
+          "gold": "1",
+          "top1": "\\lfloor",
+          "count": 1
+        }
+      ],
+      "decoder_error_confusions": [
+        {
+          "gold": "1",
+          "decoder": "|",
+          "count": 23
+        },
+        {
+          "gold": "1",
+          "decoder": "/",
+          "count": 6
+        },
+        {
+          "gold": "\\times",
+          "decoder": "X",
+          "count": 6
+        },
+        {
+          "gold": "0",
+          "decoder": "\\mathcal{O}",
+          "count": 3
+        },
+        {
+          "gold": "1",
+          "decoder": "(",
+          "count": 3
+        },
+        {
+          "gold": "\\times",
+          "decoder": "x",
+          "count": 3
+        },
+        {
+          "gold": "1",
+          "decoder": ")",
+          "count": 2
+        },
+        {
+          "gold": "5",
+          "decoder": "\\hbar",
+          "count": 2
+        },
+        {
+          "gold": "8",
+          "decoder": "\\parr",
+          "count": 2
+        },
+        {
+          "gold": "(",
+          "decoder": "\\iota",
+          "count": 2
+        },
+        {
+          "gold": "1",
+          "decoder": "\\rfloor",
+          "count": 1
+        },
+        {
+          "gold": "x",
+          "decoder": "\\chi",
+          "count": 1
+        },
+        {
+          "gold": "+",
+          "decoder": "\\bot",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "decoder": "O",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "decoder": "o",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "decoder": "6",
+          "count": 1
+        },
+        {
+          "gold": "7",
+          "decoder": "\\eta",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "decoder": "\\simeq",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "decoder": "\\triangledown",
+          "count": 1
+        },
+        {
+          "gold": "1",
+          "decoder": "\\lfloor",
+          "count": 1
+        }
+      ],
+      "sample_ids_by_failure_bucket": {
+        "gold_tuple_pruned_before_structural_decoder": [
+          "aiflow_0140",
+          "aiflow_0020",
+          "aiflow_0155",
+          "aiflow_0087",
+          "aiflow_0095",
+          "aiflow_0100",
+          "aiflow_0105"
+        ],
+        "gold_missing_from_symbol_top5": [
+          "aiflow_0142",
+          "aiflow_0046",
+          "aiflow_0064",
+          "aiflow_0032",
+          "aiflow_0036"
+        ],
+        "gold_tuple_in_beam_but_not_selected": [
+          "aiflow_0144",
+          "aiflow_0145",
+          "aiflow_0146",
+          "aiflow_0016",
+          "aiflow_0017",
+          "aiflow_0019",
+          "aiflow_0021",
+          "aiflow_0022",
+          "aiflow_0023",
+          "aiflow_0152",
+          "aiflow_0153",
+          "aiflow_0124",
+          "aiflow_0125",
+          "aiflow_0126",
+          "aiflow_0127",
+          "aiflow_0128",
+          "aiflow_0132",
+          "aiflow_0134",
+          "aiflow_0136",
+          "aiflow_0050",
+          "aiflow_0051",
+          "aiflow_0052",
+          "aiflow_0053",
+          "aiflow_0056",
+          "aiflow_0058"
+        ]
+      }
+    },
+    "selective_joint_hwr": {
+      "group_exact_formulas": 90,
+      "formula_failure_buckets": {
+        "decoder_exact": 59,
+        "gold_missing_from_symbol_top5": 3,
+        "gold_tuple_in_beam_but_not_selected": 25,
+        "gold_tuple_pruned_before_structural_decoder": 3
+      },
+      "top1_formula_exact": 59,
+      "top5_complete_formulas": 87,
+      "decoder_exact_formulas": 59,
+      "decoder_equals_independent_top1_formulas": 90,
+      "decoder_rescued_top1_formula_count": 0,
+      "decoder_regressed_top1_formula_count": 0,
+      "top32_gold_sequence_rank_histogram": {
+        "1": 59,
+        "10": 2,
+        "12": 1,
+        "18": 1,
+        "19": 1,
+        "2": 5,
+        "29": 1,
+        "3": 6,
+        "4": 3,
+        "5": 4,
+        "8": 1,
+        "outside_top32": 6
+      },
+      "target_symbol_rank_histogram": {
+        "1": 260,
+        "2": 13,
+        "3": 20,
+        "4": 2,
+        "5": 2,
+        "outside_top5": 3
+      },
+      "token_counts": {
+        "total": 300,
+        "top1_hits": 260,
+        "decoder_hits": 260,
+        "decoder_top1_agreements": 300,
+        "decoder_top1_disagreements": 0,
+        "decoder_wrong_gold_in_top5": 37,
+        "decoder_wrong_gold_outside_top5": 3
+      },
+      "top1_error_confusions": [
+        {
+          "gold": "1",
+          "top1": "|",
+          "count": 9
+        },
+        {
+          "gold": "1",
+          "top1": "/",
+          "count": 6
+        },
+        {
+          "gold": "\\times",
+          "top1": "X",
+          "count": 3
+        },
+        {
+          "gold": "0",
+          "top1": "\\mathcal{O}",
+          "count": 2
+        },
+        {
+          "gold": "\\times",
+          "top1": "x",
+          "count": 2
+        },
+        {
+          "gold": "8",
+          "top1": "\\parr",
+          "count": 2
+        },
+        {
+          "gold": "1",
+          "top1": ")",
+          "count": 1
+        },
+        {
+          "gold": "x",
+          "top1": "\\chi",
+          "count": 1
+        },
+        {
+          "gold": "+",
+          "top1": "\\bot",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "top1": "o",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "top1": "6",
+          "count": 1
+        },
+        {
+          "gold": "1",
+          "top1": "(",
+          "count": 1
+        },
+        {
+          "gold": "1",
+          "top1": "\\lfloor",
+          "count": 1
+        },
+        {
+          "gold": "8",
+          "top1": "\\mathscr{C}",
+          "count": 1
+        },
+        {
+          "gold": "t",
+          "top1": "\\mathcal{A}",
+          "count": 1
+        },
+        {
+          "gold": "+",
+          "top1": "4",
+          "count": 1
+        },
+        {
+          "gold": "5",
+          "top1": "S",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "top1": "\\circlearrowright",
+          "count": 1
+        },
+        {
+          "gold": "8",
+          "top1": "\\aa",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "top1": "\\Xi",
+          "count": 1
+        }
+      ],
+      "decoder_error_confusions": [
+        {
+          "gold": "1",
+          "decoder": "|",
+          "count": 9
+        },
+        {
+          "gold": "1",
+          "decoder": "/",
+          "count": 6
+        },
+        {
+          "gold": "\\times",
+          "decoder": "X",
+          "count": 3
+        },
+        {
+          "gold": "0",
+          "decoder": "\\mathcal{O}",
+          "count": 2
+        },
+        {
+          "gold": "\\times",
+          "decoder": "x",
+          "count": 2
+        },
+        {
+          "gold": "8",
+          "decoder": "\\parr",
+          "count": 2
+        },
+        {
+          "gold": "1",
+          "decoder": ")",
+          "count": 1
+        },
+        {
+          "gold": "x",
+          "decoder": "\\chi",
+          "count": 1
+        },
+        {
+          "gold": "+",
+          "decoder": "\\bot",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "decoder": "o",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "decoder": "6",
+          "count": 1
+        },
+        {
+          "gold": "1",
+          "decoder": "(",
+          "count": 1
+        },
+        {
+          "gold": "1",
+          "decoder": "\\lfloor",
+          "count": 1
+        },
+        {
+          "gold": "8",
+          "decoder": "\\mathscr{C}",
+          "count": 1
+        },
+        {
+          "gold": "t",
+          "decoder": "\\mathcal{A}",
+          "count": 1
+        },
+        {
+          "gold": "+",
+          "decoder": "4",
+          "count": 1
+        },
+        {
+          "gold": "5",
+          "decoder": "S",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "decoder": "\\circlearrowright",
+          "count": 1
+        },
+        {
+          "gold": "8",
+          "decoder": "\\aa",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "decoder": "\\Xi",
+          "count": 1
+        }
+      ],
+      "sample_ids_by_failure_bucket": {
+        "gold_tuple_pruned_before_structural_decoder": [
+          "aiflow_0140",
+          "aiflow_0020",
+          "aiflow_0155"
+        ],
+        "gold_tuple_in_beam_but_not_selected": [
+          "aiflow_0145",
+          "aiflow_0146",
+          "aiflow_0016",
+          "aiflow_0021",
+          "aiflow_0022",
+          "aiflow_0023",
+          "aiflow_0152",
+          "aiflow_0153",
+          "aiflow_0124",
+          "aiflow_0126",
+          "aiflow_0127",
+          "aiflow_0134",
+          "aiflow_0050",
+          "aiflow_0058",
+          "aiflow_0060",
+          "aiflow_0061",
+          "aiflow_0004",
+          "aiflow_0006",
+          "aiflow_0078",
+          "aiflow_0118",
+          "aiflow_0044",
+          "aiflow_0086",
+          "aiflow_0096",
+          "aiflow_0099",
+          "aiflow_0115"
+        ],
+        "gold_missing_from_symbol_top5": [
+          "aiflow_0064",
+          "aiflow_0032",
+          "aiflow_0036"
+        ]
+      }
+    },
+    "selective_joint_hwr_geometry_prior": {
+      "group_exact_formulas": 127,
+      "formula_failure_buckets": {
+        "decoder_exact": 67,
+        "gold_missing_from_symbol_top5": 6,
+        "gold_tuple_in_beam_but_not_selected": 46,
+        "gold_tuple_pruned_before_structural_decoder": 8
+      },
+      "top1_formula_exact": 67,
+      "top5_complete_formulas": 121,
+      "decoder_exact_formulas": 67,
+      "decoder_equals_independent_top1_formulas": 127,
+      "decoder_rescued_top1_formula_count": 0,
+      "decoder_regressed_top1_formula_count": 0,
+      "top32_gold_sequence_rank_histogram": {
+        "1": 67,
+        "10": 3,
+        "12": 1,
+        "18": 1,
+        "19": 2,
+        "2": 11,
+        "27": 1,
+        "29": 1,
+        "3": 10,
+        "32": 1,
+        "4": 4,
+        "5": 5,
+        "6": 2,
+        "8": 3,
+        "9": 1,
+        "outside_top32": 14
+      },
+      "target_symbol_rank_histogram": {
+        "1": 401,
+        "2": 29,
+        "3": 36,
+        "4": 9,
+        "5": 4,
+        "outside_top5": 6
+      },
+      "token_counts": {
+        "total": 485,
+        "top1_hits": 401,
+        "decoder_hits": 401,
+        "decoder_top1_agreements": 485,
+        "decoder_top1_disagreements": 0,
+        "decoder_wrong_gold_in_top5": 78,
+        "decoder_wrong_gold_outside_top5": 6
+      },
+      "top1_error_confusions": [
+        {
+          "gold": "1",
+          "top1": "|",
+          "count": 24
+        },
+        {
+          "gold": "1",
+          "top1": "/",
+          "count": 6
+        },
+        {
+          "gold": "\\times",
+          "top1": "X",
+          "count": 6
+        },
+        {
+          "gold": "0",
+          "top1": "\\mathcal{O}",
+          "count": 3
+        },
+        {
+          "gold": "1",
+          "top1": "(",
+          "count": 3
+        },
+        {
+          "gold": "\\times",
+          "top1": "x",
+          "count": 3
+        },
+        {
+          "gold": "1",
+          "top1": ")",
+          "count": 2
+        },
+        {
+          "gold": "5",
+          "top1": "\\hbar",
+          "count": 2
+        },
+        {
+          "gold": "0",
+          "top1": "\\circ",
+          "count": 2
+        },
+        {
+          "gold": "8",
+          "top1": "\\parr",
+          "count": 2
+        },
+        {
+          "gold": "(",
+          "top1": "\\iota",
+          "count": 2
+        },
+        {
+          "gold": "1",
+          "top1": "\\rfloor",
+          "count": 1
+        },
+        {
+          "gold": "x",
+          "top1": "\\chi",
+          "count": 1
+        },
+        {
+          "gold": "+",
+          "top1": "\\bot",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "top1": "O",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "top1": "o",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "top1": "6",
+          "count": 1
+        },
+        {
+          "gold": "7",
+          "top1": "\\eta",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "top1": "\\simeq",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "top1": "\\triangledown",
+          "count": 1
+        }
+      ],
+      "decoder_error_confusions": [
+        {
+          "gold": "1",
+          "decoder": "|",
+          "count": 24
+        },
+        {
+          "gold": "1",
+          "decoder": "/",
+          "count": 6
+        },
+        {
+          "gold": "\\times",
+          "decoder": "X",
+          "count": 6
+        },
+        {
+          "gold": "0",
+          "decoder": "\\mathcal{O}",
+          "count": 3
+        },
+        {
+          "gold": "1",
+          "decoder": "(",
+          "count": 3
+        },
+        {
+          "gold": "\\times",
+          "decoder": "x",
+          "count": 3
+        },
+        {
+          "gold": "1",
+          "decoder": ")",
+          "count": 2
+        },
+        {
+          "gold": "5",
+          "decoder": "\\hbar",
+          "count": 2
+        },
+        {
+          "gold": "0",
+          "decoder": "\\circ",
+          "count": 2
+        },
+        {
+          "gold": "8",
+          "decoder": "\\parr",
+          "count": 2
+        },
+        {
+          "gold": "(",
+          "decoder": "\\iota",
+          "count": 2
+        },
+        {
+          "gold": "1",
+          "decoder": "\\rfloor",
+          "count": 1
+        },
+        {
+          "gold": "x",
+          "decoder": "\\chi",
+          "count": 1
+        },
+        {
+          "gold": "+",
+          "decoder": "\\bot",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "decoder": "O",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "decoder": "o",
+          "count": 1
+        },
+        {
+          "gold": "0",
+          "decoder": "6",
+          "count": 1
+        },
+        {
+          "gold": "7",
+          "decoder": "\\eta",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "decoder": "\\simeq",
+          "count": 1
+        },
+        {
+          "gold": "=",
+          "decoder": "\\triangledown",
+          "count": 1
+        }
+      ],
+      "sample_ids_by_failure_bucket": {
+        "gold_tuple_pruned_before_structural_decoder": [
+          "aiflow_0140",
+          "aiflow_0020",
+          "aiflow_0155",
+          "aiflow_0087",
+          "aiflow_0095",
+          "aiflow_0100",
+          "aiflow_0105",
+          "aiflow_0111"
+        ],
+        "gold_missing_from_symbol_top5": [
+          "aiflow_0142",
+          "aiflow_0046",
+          "aiflow_0064",
+          "aiflow_0068",
+          "aiflow_0032",
+          "aiflow_0036"
+        ],
+        "gold_tuple_in_beam_but_not_selected": [
+          "aiflow_0144",
+          "aiflow_0145",
+          "aiflow_0146",
+          "aiflow_0016",
+          "aiflow_0017",
+          "aiflow_0019",
+          "aiflow_0021",
+          "aiflow_0022",
+          "aiflow_0023",
+          "aiflow_0152",
+          "aiflow_0153",
+          "aiflow_0124",
+          "aiflow_0125",
+          "aiflow_0126",
+          "aiflow_0127",
+          "aiflow_0128",
+          "aiflow_0132",
+          "aiflow_0134",
+          "aiflow_0136",
+          "aiflow_0050",
+          "aiflow_0051",
+          "aiflow_0052",
+          "aiflow_0053",
+          "aiflow_0056",
+          "aiflow_0058"
+        ]
+      }
+    }
+  }
+}

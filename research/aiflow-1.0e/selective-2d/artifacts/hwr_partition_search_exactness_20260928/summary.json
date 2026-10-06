@@ -1,0 +1,1537 @@
+{
+  "schema": "aiflow-partition-search-exactness-diagnostic/v1",
+  "scope": "forensic failure-cause analysis only; frozen data, no fitting, threshold selection, CROHME, or promotion",
+  "search_contract": {
+    "beam_width": 32,
+    "top_n": 32,
+    "options_per_stroke": 64,
+    "exact_max_strokes": 12,
+    "exactness": "exact over the retained per-stroke candidate cap"
+  },
+  "inputs": {
+    "dataset_root": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\frozen_dataset",
+    "formulas_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "ownership_sha256": "b7c21e4798ba60ef5d8c985a54fb68a363165b481de56ae9b96e6d63878bf354",
+    "partition_ranker_sha256": "0d283d40b40f60d58131dec213efb84074f9119ac82b32fcb893ca931aeb0582"
+  },
+  "summary": {
+    "counts": {
+      "beam_miss_exactly_explained_by_pruning": 0,
+      "beam_missed_target": 3,
+      "exact_eligible_formulas": 148,
+      "exact_status:exact_stroke_cap_exceeded": 1,
+      "exact_status:target_below_exact_top32": 2,
+      "exact_status:target_in_exact_top32": 146,
+      "formulas": 149,
+      "formulas_all_target_edges_survive_per_stroke_cap": 148,
+      "target_groups": 579,
+      "target_groups_present_in_lattice": 579
+    },
+    "beam_target_rank_histogram": {
+      "1": 125,
+      "2": 13,
+      "3": 7,
+      "8": 1,
+      ">32": 3
+    },
+    "exact_target_rank_histogram": {
+      "1": 125,
+      "2": 13,
+      "3": 7,
+      "8": 1,
+      ">32": 2
+    }
+  },
+  "formula_diagnostics": [
+    {
+      "sample_id": "aiflow_0140",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0141",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0142",
+      "stroke_count": 9,
+      "lattice_group_count": 51,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0143",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0144",
+      "stroke_count": 11,
+      "lattice_group_count": 68,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0145",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0146",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0147",
+      "stroke_count": 3,
+      "lattice_group_count": 7,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0015",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0016",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0017",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0018",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0019",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0020",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0021",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0022",
+      "stroke_count": 8,
+      "lattice_group_count": 45,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0023",
+      "stroke_count": 9,
+      "lattice_group_count": 53,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0024",
+      "stroke_count": 10,
+      "lattice_group_count": 61,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0025",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0026",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0027",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0028",
+      "stroke_count": 6,
+      "lattice_group_count": 30,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0029",
+      "stroke_count": 9,
+      "lattice_group_count": 52,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0030",
+      "stroke_count": 10,
+      "lattice_group_count": 58,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0151",
+      "stroke_count": 6,
+      "lattice_group_count": 30,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0152",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0153",
+      "stroke_count": 6,
+      "lattice_group_count": 30,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0154",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0155",
+      "stroke_count": 8,
+      "lattice_group_count": 45,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0156",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0157",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0122",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0123",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0124",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0125",
+      "stroke_count": 9,
+      "lattice_group_count": 51,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0126",
+      "stroke_count": 10,
+      "lattice_group_count": 61,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0127",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0128",
+      "stroke_count": 8,
+      "lattice_group_count": 46,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0129",
+      "stroke_count": 10,
+      "lattice_group_count": 61,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0130",
+      "stroke_count": 12,
+      "lattice_group_count": 77,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0131",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0132",
+      "stroke_count": 8,
+      "lattice_group_count": 45,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0133",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0134",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0135",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0136",
+      "stroke_count": 8,
+      "lattice_group_count": 45,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0137",
+      "stroke_count": 6,
+      "lattice_group_count": 30,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0046",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0047",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0048",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0049",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0050",
+      "stroke_count": 8,
+      "lattice_group_count": 45,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0051",
+      "stroke_count": 9,
+      "lattice_group_count": 53,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0052",
+      "stroke_count": 8,
+      "lattice_group_count": 45,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0053",
+      "stroke_count": 9,
+      "lattice_group_count": 51,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0054",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0055",
+      "stroke_count": 8,
+      "lattice_group_count": 45,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0056",
+      "stroke_count": 9,
+      "lattice_group_count": 52,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0057",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0058",
+      "stroke_count": 9,
+      "lattice_group_count": 53,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0059",
+      "stroke_count": 3,
+      "lattice_group_count": 7,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0060",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0061",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0062",
+      "stroke_count": 9,
+      "lattice_group_count": 51,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0063",
+      "stroke_count": 9,
+      "lattice_group_count": 52,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0064",
+      "stroke_count": 8,
+      "lattice_group_count": 45,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0065",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0160",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0161",
+      "stroke_count": 8,
+      "lattice_group_count": 45,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0162",
+      "stroke_count": 9,
+      "lattice_group_count": 53,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0163",
+      "stroke_count": 11,
+      "lattice_group_count": 72,
+      "beam_target_rank": null,
+      "exact_target_rank": null,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_below_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0164",
+      "stroke_count": 14,
+      "lattice_group_count": 92,
+      "beam_target_rank": null,
+      "exact_target_rank": null,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": null,
+      "exact_status": "exact_stroke_cap_exceeded"
+    },
+    {
+      "sample_id": "aiflow_0001",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0002",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0003",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0004",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0005",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0006",
+      "stroke_count": 9,
+      "lattice_group_count": 51,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0007",
+      "stroke_count": 10,
+      "lattice_group_count": 61,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0008",
+      "stroke_count": 6,
+      "lattice_group_count": 30,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0009",
+      "stroke_count": 9,
+      "lattice_group_count": 52,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0010",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 3,
+      "exact_target_rank": 3,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0071",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0072",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0073",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0074",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 8,
+      "exact_target_rank": 8,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0075",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0076",
+      "stroke_count": 11,
+      "lattice_group_count": 67,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0077",
+      "stroke_count": 6,
+      "lattice_group_count": 30,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0078",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0079",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0080",
+      "stroke_count": 3,
+      "lattice_group_count": 7,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0118",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0119",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0120",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0121",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0066",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0067",
+      "stroke_count": 9,
+      "lattice_group_count": 53,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0068",
+      "stroke_count": 11,
+      "lattice_group_count": 68,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0069",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": null,
+      "exact_target_rank": null,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_below_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0032",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0033",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0034",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0035",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0036",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0037",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0038",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0039",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0040",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0041",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0042",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0043",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0044",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0081",
+      "stroke_count": 2,
+      "lattice_group_count": 3,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0082",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0083",
+      "stroke_count": 1,
+      "lattice_group_count": 1,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0084",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0085",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0086",
+      "stroke_count": 9,
+      "lattice_group_count": 52,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0087",
+      "stroke_count": 8,
+      "lattice_group_count": 45,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0088",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0089",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0090",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0091",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0092",
+      "stroke_count": 8,
+      "lattice_group_count": 45,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0093",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0094",
+      "stroke_count": 3,
+      "lattice_group_count": 7,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0095",
+      "stroke_count": 9,
+      "lattice_group_count": 52,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0096",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0097",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 3,
+      "exact_target_rank": 3,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0098",
+      "stroke_count": 3,
+      "lattice_group_count": 7,
+      "beam_target_rank": 3,
+      "exact_target_rank": 3,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0099",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0100",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0101",
+      "stroke_count": 6,
+      "lattice_group_count": 30,
+      "beam_target_rank": 3,
+      "exact_target_rank": 3,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0102",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0103",
+      "stroke_count": 9,
+      "lattice_group_count": 51,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0104",
+      "stroke_count": 12,
+      "lattice_group_count": 75,
+      "beam_target_rank": 3,
+      "exact_target_rank": 3,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0105",
+      "stroke_count": 9,
+      "lattice_group_count": 52,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0106",
+      "stroke_count": 4,
+      "lattice_group_count": 13,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0107",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0108",
+      "stroke_count": 7,
+      "lattice_group_count": 38,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0109",
+      "stroke_count": 11,
+      "lattice_group_count": 68,
+      "beam_target_rank": 3,
+      "exact_target_rank": 3,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0110",
+      "stroke_count": 10,
+      "lattice_group_count": 60,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0111",
+      "stroke_count": 10,
+      "lattice_group_count": 61,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0112",
+      "stroke_count": 8,
+      "lattice_group_count": 45,
+      "beam_target_rank": 3,
+      "exact_target_rank": 3,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0113",
+      "stroke_count": 5,
+      "lattice_group_count": 21,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0114",
+      "stroke_count": 6,
+      "lattice_group_count": 30,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0115",
+      "stroke_count": 6,
+      "lattice_group_count": 30,
+      "beam_target_rank": 1,
+      "exact_target_rank": 1,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    },
+    {
+      "sample_id": "aiflow_0116",
+      "stroke_count": 9,
+      "lattice_group_count": 52,
+      "beam_target_rank": 2,
+      "exact_target_rank": 2,
+      "target_group_candidate_recall": 1.0,
+      "target_edges_survive_per_stroke_cap": true,
+      "exact_status": "target_in_exact_top32"
+    }
+  ]
+}

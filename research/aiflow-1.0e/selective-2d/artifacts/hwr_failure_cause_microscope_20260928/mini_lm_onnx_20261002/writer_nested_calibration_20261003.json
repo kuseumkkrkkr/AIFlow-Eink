@@ -1,0 +1,218 @@
+{
+  "schema": "aiflow-mini-lm-writer-nested-calibration/v1",
+  "status": "consumed_development_writer_lofo_diagnostic",
+  "protocol": {
+    "training_performed": false,
+    "lambda_selection": "leave-one-writer-out; each held writer's formulas excluded from lambda choice",
+    "model_or_architecture_selection_performed": false,
+    "fusion_grid": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "crohme_rows_loaded": 0,
+    "current_formula_data_consumed_development": true,
+    "teacher_lambda_source_current_formula_overlap": 42,
+    "promotion_eligible": false,
+    "warning": "writer nesting reduces within-cohort tuning leakage but the 149-formula cohort is already consumed development data; this is not independent acceptance"
+  },
+  "provenance": {
+    "checkpoint_sha256": "dd2889e84c82c9d04f6dacf42cf99de02938902fc220022987de64b8b1567a72",
+    "distillation_report_sha256": "907195a153f076c880e2216f671cbbffa674b59f289780089a7026528d3d3bf9",
+    "summary_sha256": "aef4636afef850a0b9b74736e42ad9487884103684e5827854a7bafd692f9282",
+    "formula_data_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "formula_count": 149,
+    "writer_count": 9
+  },
+  "metrics": {
+    "fast_formula_exact": 68,
+    "fixed_teacher_lambda": 0.5,
+    "fixed_lambda_formula_exact": 84,
+    "fixed_lambda_delta_over_fast": 16,
+    "fixed_lambda_writer_bootstrap_delta_pp_95_ci": [
+      5.8441558441558445,
+      13.821138211382113
+    ],
+    "writer_lofo_formula_exact": 84,
+    "writer_lofo_delta_over_fast": 16,
+    "writer_lofo_writer_bootstrap_delta_pp_95_ci": [
+      5.8441558441558445,
+      13.821138211382113
+    ],
+    "candidate_preservation_rate": 1.0,
+    "fixed_lambda_changed_tokens": 36,
+    "fixed_lambda_improved_tokens": 27,
+    "fixed_lambda_regressed_tokens": 4
+  },
+  "lambda_sweep": {
+    "0.0": {
+      "formula_exact": 68,
+      "delta_over_fast": 0,
+      "changed_tokens": 0,
+      "improved_tokens": 0,
+      "regressed_tokens": 0
+    },
+    "0.1": {
+      "formula_exact": 72,
+      "delta_over_fast": 4,
+      "changed_tokens": 11,
+      "improved_tokens": 8,
+      "regressed_tokens": 0
+    },
+    "0.2": {
+      "formula_exact": 78,
+      "delta_over_fast": 10,
+      "changed_tokens": 20,
+      "improved_tokens": 16,
+      "regressed_tokens": 0
+    },
+    "0.3": {
+      "formula_exact": 78,
+      "delta_over_fast": 10,
+      "changed_tokens": 26,
+      "improved_tokens": 19,
+      "regressed_tokens": 2
+    },
+    "0.4": {
+      "formula_exact": 83,
+      "delta_over_fast": 15,
+      "changed_tokens": 35,
+      "improved_tokens": 26,
+      "regressed_tokens": 4
+    },
+    "0.5": {
+      "formula_exact": 84,
+      "delta_over_fast": 16,
+      "changed_tokens": 36,
+      "improved_tokens": 27,
+      "regressed_tokens": 4
+    },
+    "0.6": {
+      "formula_exact": 84,
+      "delta_over_fast": 16,
+      "changed_tokens": 37,
+      "improved_tokens": 28,
+      "regressed_tokens": 4
+    },
+    "0.7": {
+      "formula_exact": 83,
+      "delta_over_fast": 15,
+      "changed_tokens": 38,
+      "improved_tokens": 28,
+      "regressed_tokens": 5
+    },
+    "0.8": {
+      "formula_exact": 83,
+      "delta_over_fast": 15,
+      "changed_tokens": 43,
+      "improved_tokens": 29,
+      "regressed_tokens": 9
+    },
+    "0.9": {
+      "formula_exact": 82,
+      "delta_over_fast": 14,
+      "changed_tokens": 46,
+      "improved_tokens": 29,
+      "regressed_tokens": 11
+    },
+    "1.0": {
+      "formula_exact": 82,
+      "delta_over_fast": 14,
+      "changed_tokens": 47,
+      "improved_tokens": 29,
+      "regressed_tokens": 12
+    }
+  },
+  "folds": [
+    {
+      "held_writer_hash": "dd17fb6b404e",
+      "fit_formula_count": 139,
+      "held_formula_count": 10,
+      "selected_lambda": 0.5,
+      "fit_exact_count": 77,
+      "held_exact_count": 7,
+      "fixed_lambda_held_exact_count": 7
+    },
+    {
+      "held_writer_hash": "89dca579c408",
+      "fit_formula_count": 126,
+      "held_formula_count": 23,
+      "selected_lambda": 0.5,
+      "fit_exact_count": 69,
+      "held_exact_count": 15,
+      "fixed_lambda_held_exact_count": 15
+    },
+    {
+      "held_writer_hash": "e4227aebe599",
+      "fit_formula_count": 129,
+      "held_formula_count": 20,
+      "selected_lambda": 0.5,
+      "fit_exact_count": 71,
+      "held_exact_count": 13,
+      "fixed_lambda_held_exact_count": 13
+    },
+    {
+      "held_writer_hash": "29e970274233",
+      "fit_formula_count": 139,
+      "held_formula_count": 10,
+      "selected_lambda": 0.5,
+      "fit_exact_count": 80,
+      "held_exact_count": 4,
+      "fixed_lambda_held_exact_count": 4
+    },
+    {
+      "held_writer_hash": "1a6e30b7f331",
+      "fit_formula_count": 129,
+      "held_formula_count": 20,
+      "selected_lambda": 0.5,
+      "fit_exact_count": 73,
+      "held_exact_count": 11,
+      "fixed_lambda_held_exact_count": 11
+    },
+    {
+      "held_writer_hash": "888592ae00b1",
+      "fit_formula_count": 141,
+      "held_formula_count": 8,
+      "selected_lambda": 0.5,
+      "fit_exact_count": 80,
+      "held_exact_count": 4,
+      "fixed_lambda_held_exact_count": 4
+    },
+    {
+      "held_writer_hash": "4d947afbc905",
+      "fit_formula_count": 144,
+      "held_formula_count": 5,
+      "selected_lambda": 0.5,
+      "fit_exact_count": 81,
+      "held_exact_count": 3,
+      "fixed_lambda_held_exact_count": 3
+    },
+    {
+      "held_writer_hash": "2806613abcb1",
+      "fit_formula_count": 145,
+      "held_formula_count": 4,
+      "selected_lambda": 0.5,
+      "fit_exact_count": 83,
+      "held_exact_count": 1,
+      "fixed_lambda_held_exact_count": 1
+    },
+    {
+      "held_writer_hash": "3e154070bbf2",
+      "fit_formula_count": 100,
+      "held_formula_count": 49,
+      "selected_lambda": 0.5,
+      "fit_exact_count": 58,
+      "held_exact_count": 26,
+      "fixed_lambda_held_exact_count": 26
+    }
+  ],
+  "product_adopted": false
+}

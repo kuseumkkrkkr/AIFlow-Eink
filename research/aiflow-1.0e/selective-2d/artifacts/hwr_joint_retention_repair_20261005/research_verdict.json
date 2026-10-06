@@ -1,0 +1,53 @@
+{
+  "schema": "aiflow-joint-retention-research-verdict/v1",
+  "result_sha256": "fd57fd9b19739d920667b8264e28cc49986b8da2fad0cfcb29042d9e69f0bcb8",
+  "status": "verified_train_gate_failure",
+  "full_domain_augmentation_scope": {
+    "vocabulary_classes": 372,
+    "generated_classes": 370,
+    "digits": 10,
+    "latin_letters": 51,
+    "math_symbols": 309,
+    "unsupported": {
+      "=": "no real TRAIN support; synthetic rows not used to estimate human variation",
+      "\\mathbb{N}": "46 real rows but insufficient support per stroke topology"
+    },
+    "generated_pairs": 1121,
+    "geometry_errors": 0,
+    "human_boundary_labels": 0,
+    "limit": "Empirical correlated geometry q68, NOT Gaussian one-SD coverage or human recognition probability. All-domain boundary distillation has not occurred."
+  },
+  "joint_repair": {
+    "old_train_top1_before": 831,
+    "old_train_top1_after": 843,
+    "old_train_top5_before": 1005,
+    "old_train_top5_after": 1007,
+    "source_train_top1_before": 853,
+    "source_train_top1_after": 958,
+    "source_train_gain_retained_fraction": 1.0,
+    "protected_top1_membership_regressions": 0,
+    "protected_top5_membership_regressions": 0,
+    "top1_fixed_margin_violations": 16,
+    "top5_fixed_margin_violations": 1,
+    "bounded_rounds": 32,
+    "gate_passed": false,
+    "independent_performance_claim_allowed": false
+  },
+  "microscope": {
+    "checkpoint_reload_batch32_bit_exact": true,
+    "batch1_16_32_same_rank_and_violation_counts": true,
+    "parameter_tensors": 57,
+    "worst_old_conflicts": ["O vs 0", "mathcal O vs 0", "o vs 0", "bowtie vs rtimes"],
+    "remaining_source_conflict": "9 vs 3",
+    "encoder_cross_domain_gradient_cosine_range": [-0.03299532928321427, -0.0008152939493549577],
+    "head_cross_domain_gradient_cosine": 0.0,
+    "interpretation": "Selected failed constraints show local shared-encoder interference. This neither proves global infeasibility nor architecture insufficiency."
+  },
+  "next_bounded_hypothesis": "Replace sequential worst-constraint corrections with a simultaneous constrained local update; keep immutable floors, finite budget and all-domain replay. Do not claim success by weakening floors or restoring canonical weights.",
+  "human_probability_distillation_prerequisite": "Completed blinded independent human votes; geometry inspection and teacher confidence cannot substitute.",
+  "canonical_checkpoint_unchanged": true,
+  "held_inputs_forwarded": 0,
+  "crohme_rows": 0,
+  "deployment_resumed": false,
+  "product_adopted": false
+}

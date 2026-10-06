@@ -1,0 +1,57 @@
+{
+  "schema": "aiflow-feature-margin-microscope-verdict/v28",
+  "status": "verified_joint_encoder_head_ranking_drift_not_capacity_proof",
+  "result_sha256": "f764bc315f4f29f2d2e4d07abff3aafa210096bf2a0ed3c5add3de455abcab28",
+  "margin_records_sha256": "3b32273cf0db0c23d310b12831238c34302e0447c807ecae6829e44df1950f5e",
+  "formula_top1_of_149": {
+    "canonical": 76,
+    "direct_augmented": 52,
+    "feature_retained": 56,
+    "canonical_encoder_retained_head": 73,
+    "retained_encoder_canonical_head": 70,
+    "restore_only_encoder_0": 56,
+    "restore_only_encoder_1": 60,
+    "restore_only_encoder_2": 63,
+    "restore_only_encoder_3": 68
+  },
+  "remaining_regressions": {
+    "previously_correct_glyphs_lost": 37,
+    "negative_encoder_contribution_to_fixed_rival_margin": 37,
+    "negative_head_contribution_to_fixed_rival_margin": 37,
+    "fixed_rival_margin_already_negative_with_new_encoder_original_head": 14,
+    "decomposition_path": "encoder first, head second; contributions are path-dependent, not Shapley causal attribution",
+    "decomposition_max_error": 9.992007221626409e-16
+  },
+  "layer_output_mse": {
+    "projection_and_position": 1.7678783037911e-06,
+    "encoder_0": 0.00042969553756715795,
+    "encoder_1": 0.0015210354757384237,
+    "encoder_2": 0.003244385179148308,
+    "encoder_3": 0.02249479776212949,
+    "pooling": 0.025997364439958117,
+    "last_vs_previous_ratio": 6.933454728712161
+  },
+  "interpretation": "Strong pooled MSE retention does not preserve discriminative class gaps. Both encoder and head changes reduce every observed regressed glyph's gap to the retained model's actual wrong Top-1. Restoring the last encoder layer or either full component recovers many cases, without demonstrating a universal capacity limit or a safe deployed replacement.",
+  "next_controlled_change": {
+    "preserve": "V25 TRAIN inputs and inherited hard labels; 75% augmented rows; 2400 steps; all 57 tensors trainable; hard CE coefficient 1; V27 feature retention coefficient fixed",
+    "add": "Joint encoder/head correct-class-versus-rival gap retention on canonical-teacher-correct admitted TRAIN rows only",
+    "coefficient": "Seal using gradient norms on eight fixed TRAIN batches, never select using these 149 diagnostic labels or errors",
+    "not_allowed": "No optimizer on diagnostic rows, no CROHME tuning, no component-restored model adoption, no diversity-volume escalation based on this regression"
+  },
+  "verification": {
+    "all_diagonal_logits_bit_exact_with_prior_certified_results": true,
+    "all_nine_top5_sets_match_double_affine_check": true,
+    "manual_layer_trace_top5_matches_real_encode": true,
+    "six_stage_means_independently_recounted": true,
+    "nine_formula_counts_independently_recounted": true,
+    "margin_decomposition_independently_recounted": true,
+    "model_memory_restored": true,
+    "checkpoint_files_unchanged": true
+  },
+  "limits": "Consumed 149-formula oracle-group diagnostic; 95 formulas were historical canonical calibration inputs and 53 additional annotations were Codex-reviewed. Layer outputs include upstream changes; one-layer restoration mixes coadapted components. No fresh human acceptance or official Expression Rate.",
+  "optimizer_steps": 0,
+  "crohme_rows": 0,
+  "coefficient_selection": false,
+  "product_adopted": false,
+  "goal_complete": false
+}

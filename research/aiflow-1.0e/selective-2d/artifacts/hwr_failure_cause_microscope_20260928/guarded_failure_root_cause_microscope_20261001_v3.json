@@ -1,0 +1,1549 @@
+{
+  "schema": "aiflow-hwr-guarded-failure-root-cause-microscope/v1",
+  "scope": "consumed 149-formula development cohort; forensic replay only",
+  "interpretation_limits": {
+    "local_partition_replay": "frozen geometry-ranker replay; candidate reachability is direct evidence, but replay scores are not direct attribution of the current joint-HWR score",
+    "feature_equalization": "posthoc correlated-feature counterfactual; not causal proof, threshold selection, or promotion evidence",
+    "token_sequence_crosscheck": "exact token-list comparison only; not normalized-LaTeX/relation-graph acceptance"
+  },
+  "inputs": {
+    "guarded_summary": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\grouping_geometry_prior_guard_semantic_shadow_20261001\\summary.json",
+      "sha256": "836da30b5b6c5e86d48cd14143f3b3e34f0f683ab0929f72d3ca6ffc8da730b8"
+    },
+    "decomposition": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\guarded_failure_decomposition_20261001.json",
+      "sha256": "8625a5650708dfc9eef86e85a1e5cec2c1c8b9d9e54171102e2e9f9102e68f6d"
+    },
+    "partition_replay": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\local_partition_cause_microscope_replay_20261001.json",
+      "sha256": "34fc4a3ab509e515f609644f8f8107bf8323808dc8a3b319f93d3c81032ecfdc"
+    },
+    "layer_audit": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\failure_cause_matrix_microscope_20261001_v3.json",
+      "sha256": "ee43eae06765576dd32d421426b243843f0f3b17c3e9876d577b90c2c52c1bbf"
+    }
+  },
+  "grouping_failure_causes": {
+    "count": 21,
+    "outcome_counts": {
+      "gold_partition_blocked_by_locked_boundary": 2,
+      "gold_partition_reachable_but_not_promoted": 15,
+      "local_search_not_run": 1,
+      "router_not_triggered": 3
+    },
+    "token_sequence_exact_despite_group_error": {
+      "count": 1,
+      "sample_ids": [
+        "aiflow_0069"
+      ],
+      "metric_note": "token sequence only; not strict normalized-LaTeX accuracy"
+    },
+    "formulas": [
+      {
+        "sample_id": "aiflow_0163",
+        "error_shape": "same_count_wrong_partition",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 6,
+        "local_region_strokes": 10,
+        "local_candidate_count": 265,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_ranked_below_exact_capped_top32",
+          "target_rank": null,
+          "target_score_delta_vs_incumbent": -21.602197416959566,
+          "target_in_geometry_shortlist": false
+        }
+      },
+      {
+        "sample_id": "aiflow_0164",
+        "error_shape": "same_count_wrong_partition",
+        "cause": "local_search_not_run",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 12,
+        "local_region_strokes": 13,
+        "local_candidate_count": 0,
+        "target_partition_reachable": null,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": [
+            [
+              13
+            ]
+          ]
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_incumbent": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      {
+        "sample_id": "aiflow_0003",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 5,
+        "local_region_strokes": 5,
+        "local_candidate_count": 31,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 2,
+          "target_score_delta_vs_incumbent": -0.08368395314085042,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0008",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 6,
+        "local_region_strokes": 6,
+        "local_candidate_count": 58,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 2,
+          "target_score_delta_vs_incumbent": -2.9733803632706106,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0010",
+        "error_shape": "oversegmentation",
+        "cause": "router_not_triggered",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 0,
+        "local_region_strokes": 0,
+        "local_candidate_count": 0,
+        "target_partition_reachable": null,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": {
+          "fast_partition_search_mode": "beam",
+          "fast_top1_top2_partition_score_gap": 2.073057586069204,
+          "partition_margin_threshold": 0.25,
+          "partition_margin_triggered": false,
+          "minimum_fast_group_hwr_margin": 0.3462309241294861,
+          "symbol_margin_threshold": 0.15,
+          "symbol_margin_triggered": false,
+          "replayed_risk_reasons": [],
+          "replay_matches_trace_risk_reasons": true
+        },
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_incumbent": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      {
+        "sample_id": "aiflow_0074",
+        "error_shape": "same_count_wrong_partition",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 4,
+        "local_region_strokes": 4,
+        "local_candidate_count": 15,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 9,
+          "target_score_delta_vs_incumbent": -13.677070687079821,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0069",
+        "error_shape": "same_count_wrong_partition",
+        "cause": "router_not_triggered",
+        "token_sequence_exact_despite_group_error": true,
+        "local_region_seed_strokes": 0,
+        "local_region_strokes": 0,
+        "local_candidate_count": 0,
+        "target_partition_reachable": null,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": {
+          "fast_partition_search_mode": "beam",
+          "fast_top1_top2_partition_score_gap": 7.02834474817916,
+          "partition_margin_threshold": 0.25,
+          "partition_margin_triggered": false,
+          "minimum_fast_group_hwr_margin": 0.3186792582273483,
+          "symbol_margin_threshold": 0.15,
+          "symbol_margin_triggered": false,
+          "replayed_risk_reasons": [],
+          "replay_matches_trace_risk_reasons": true
+        },
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_incumbent": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      {
+        "sample_id": "aiflow_0038",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 2,
+        "local_region_strokes": 2,
+        "local_candidate_count": 3,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 2,
+          "target_score_delta_vs_incumbent": -5.717894139804805,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0092",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 6,
+        "local_region_strokes": 7,
+        "local_candidate_count": 93,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 2,
+          "target_score_delta_vs_incumbent": -6.337526357682192,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0093",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 4,
+        "local_region_strokes": 4,
+        "local_candidate_count": 15,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 2,
+          "target_score_delta_vs_incumbent": -6.067535091723805,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0097",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_blocked_by_locked_boundary",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 2,
+        "local_region_strokes": 2,
+        "local_candidate_count": 6,
+        "target_partition_reachable": false,
+        "locked_boundary_crossings": [
+          [
+            2,
+            3
+          ]
+        ],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": [
+            [
+              3
+            ]
+          ]
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_incumbent": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      {
+        "sample_id": "aiflow_0098",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 3,
+        "local_region_strokes": 3,
+        "local_candidate_count": 7,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 3,
+          "target_score_delta_vs_incumbent": -11.834421115536978,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0101",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 6,
+        "local_region_strokes": 6,
+        "local_candidate_count": 58,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 3,
+          "target_score_delta_vs_incumbent": -5.894136950941327,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0102",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 4,
+        "local_region_strokes": 5,
+        "local_candidate_count": 31,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 2,
+          "target_score_delta_vs_incumbent": -4.3363028409277184,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0103",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 9,
+        "local_region_strokes": 9,
+        "local_candidate_count": 132,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 2,
+          "target_score_delta_vs_incumbent": -3.2855031074512695,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0104",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_blocked_by_locked_boundary",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 4,
+        "local_region_strokes": 5,
+        "local_candidate_count": 36,
+        "target_partition_reachable": false,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [
+            [
+              3,
+              4
+            ]
+          ],
+          "locked_groups_missing_from_target": [
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_incumbent": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      {
+        "sample_id": "aiflow_0106",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 4,
+        "local_region_strokes": 4,
+        "local_candidate_count": 15,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 2,
+          "target_score_delta_vs_incumbent": -1.982636619269286,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0109",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 10,
+        "local_region_strokes": 10,
+        "local_candidate_count": 209,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 3,
+          "target_score_delta_vs_incumbent": -3.8637506277002167,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0110",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 10,
+        "local_region_strokes": 10,
+        "local_candidate_count": 188,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 2,
+          "target_score_delta_vs_incumbent": -5.7489942051560625,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0112",
+        "error_shape": "oversegmentation",
+        "cause": "gold_partition_reachable_but_not_promoted",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 4,
+        "local_region_strokes": 4,
+        "local_candidate_count": 18,
+        "target_partition_reachable": true,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 3,
+          "target_score_delta_vs_incumbent": -6.177027290749336,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      {
+        "sample_id": "aiflow_0116",
+        "error_shape": "oversegmentation",
+        "cause": "router_not_triggered",
+        "token_sequence_exact_despite_group_error": false,
+        "local_region_seed_strokes": 0,
+        "local_region_strokes": 0,
+        "local_candidate_count": 0,
+        "target_partition_reachable": null,
+        "locked_boundary_crossings": [],
+        "locked_group_mismatches": {
+          "target_outside_missing_from_locks": [],
+          "locked_groups_missing_from_target": []
+        },
+        "router_cues": {
+          "fast_partition_search_mode": "beam",
+          "fast_top1_top2_partition_score_gap": 1.5707771027457795,
+          "partition_margin_threshold": 0.25,
+          "partition_margin_triggered": false,
+          "minimum_fast_group_hwr_margin": 0.22939398884773254,
+          "symbol_margin_threshold": 0.15,
+          "symbol_margin_triggered": false,
+          "replayed_risk_reasons": [],
+          "replay_matches_trace_risk_reasons": true
+        },
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_incumbent": null,
+          "target_in_geometry_shortlist": null
+        }
+      }
+    ]
+  },
+  "reachable_target_group_score_microscope": {
+    "scope": "negative target-group versus overlapping Fast-group local-score comparisons in reachable-but-not-promoted formulas",
+    "formulas": 15,
+    "comparisons": 17,
+    "feature_equalization_effects": [
+      {
+        "feature": "endpoint_gap_mean_ref",
+        "negative_comparisons": 17,
+        "mean_delta_change": 3.72237710518377,
+        "counterfactual_flips_to_nonnegative": 3
+      },
+      {
+        "feature": "stroke_height_std_ref",
+        "negative_comparisons": 17,
+        "mean_delta_change": 1.0473881232340623,
+        "counterfactual_flips_to_nonnegative": 1
+      },
+      {
+        "feature": "width_ref",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.9742988899459224,
+        "counterfactual_flips_to_nonnegative": 1
+      },
+      {
+        "feature": "pair_gap_max_ref",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.919410477525674,
+        "counterfactual_flips_to_nonnegative": 0
+      },
+      {
+        "feature": "y_overlap_mean",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.7179122535792839,
+        "counterfactual_flips_to_nonnegative": 1
+      },
+      {
+        "feature": "aspect_log",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.5288935056167734,
+        "counterfactual_flips_to_nonnegative": 1
+      },
+      {
+        "feature": "candidate_cx_formula",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.4699473740426869,
+        "counterfactual_flips_to_nonnegative": 1
+      },
+      {
+        "feature": "stroke_height_mean_ref",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.3459617357298087,
+        "counterfactual_flips_to_nonnegative": 1
+      },
+      {
+        "feature": "stroke_count",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.16121463680413478,
+        "counterfactual_flips_to_nonnegative": 1
+      },
+      {
+        "feature": "singleton",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.11615122359252208,
+        "counterfactual_flips_to_nonnegative": 1
+      },
+      {
+        "feature": "height_ref",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.07948329767913165,
+        "counterfactual_flips_to_nonnegative": 1
+      },
+      {
+        "feature": "stroke_width_std_ref",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.04218190662438973,
+        "counterfactual_flips_to_nonnegative": 0
+      },
+      {
+        "feature": "pair_gap_mean_ref",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.036254442359472644,
+        "counterfactual_flips_to_nonnegative": 0
+      },
+      {
+        "feature": "stroke_width_mean_ref",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.021537892419331173,
+        "counterfactual_flips_to_nonnegative": 0
+      },
+      {
+        "feature": "candidate_width_formula",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.018067249607341532,
+        "counterfactual_flips_to_nonnegative": 0
+      },
+      {
+        "feature": "has_spatial_pair",
+        "negative_comparisons": 17,
+        "mean_delta_change": 0.0,
+        "counterfactual_flips_to_nonnegative": 0
+      },
+      {
+        "feature": "temporal_contiguous",
+        "negative_comparisons": 17,
+        "mean_delta_change": -0.07895371928786436,
+        "counterfactual_flips_to_nonnegative": 0
+      },
+      {
+        "feature": "temporal_span",
+        "negative_comparisons": 17,
+        "mean_delta_change": -0.11865431220602908,
+        "counterfactual_flips_to_nonnegative": 0
+      },
+      {
+        "feature": "x_overlap_mean",
+        "negative_comparisons": 17,
+        "mean_delta_change": -0.1627803203498266,
+        "counterfactual_flips_to_nonnegative": 1
+      },
+      {
+        "feature": "candidate_cy_formula",
+        "negative_comparisons": 17,
+        "mean_delta_change": -0.22959005410755245,
+        "counterfactual_flips_to_nonnegative": 0
+      },
+      {
+        "feature": "path_length_ref",
+        "negative_comparisons": 17,
+        "mean_delta_change": -1.3800193412635149,
+        "counterfactual_flips_to_nonnegative": 1
+      },
+      {
+        "feature": "point_count_log",
+        "negative_comparisons": 17,
+        "mean_delta_change": -1.6406747425264148,
+        "counterfactual_flips_to_nonnegative": 1
+      }
+    ],
+    "interpretation": "posthoc one-feature equalization; correlation-sensitive diagnostic, not causal proof or promotion evidence"
+  },
+  "top5_candidate_misses": {
+    "count": 6,
+    "formulas": [
+      {
+        "sample_id": "aiflow_0142",
+        "target_tokens": [
+          "5",
+          "\\times",
+          "1",
+          "=",
+          "5"
+        ],
+        "selected_tokens": [
+          "5",
+          "\\times",
+          ")",
+          "=",
+          "5"
+        ],
+        "first_lost_position": 3,
+        "missing_glyphs": [
+          {
+            "target": "1",
+            "in_checkpoint_vocabulary": true,
+            "stroke_indices": [
+              4
+            ],
+            "raw_point_count": 13,
+            "raw_points_per_stroke": [
+              13
+            ],
+            "target_rank": 14,
+            "target_probability": 3.84719533030875e-06,
+            "top1": ")",
+            "top1_probability": 0.9957557916641235,
+            "top5": [
+              ")",
+              "]",
+              "\\}",
+              "\\rangle",
+              "\\rfloor"
+            ],
+            "layer_trajectory": [
+              {
+                "stage": "encoder.input",
+                "top1": "\\vDash",
+                "target_rank": 40,
+                "target_margin_logit": -0.6405416429042816
+              },
+              {
+                "stage": "encoder.block_0.output",
+                "top1": "\\mathds{1}",
+                "target_rank": 44,
+                "target_margin_logit": -1.4421131014823914
+              },
+              {
+                "stage": "encoder.block_1.output",
+                "top1": "\\between",
+                "target_rank": 74,
+                "target_margin_logit": -1.8991693258285522
+              },
+              {
+                "stage": "encoder.block_2.output",
+                "top1": "\\}",
+                "target_rank": 21,
+                "target_margin_logit": -3.1324952840805054
+              },
+              {
+                "stage": "encoder.block_3.output",
+                "top1": ")",
+                "target_rank": 14,
+                "target_margin_logit": -12.463912963867188
+              },
+              {
+                "stage": "encoder.output",
+                "top1": ")",
+                "target_rank": 14,
+                "target_margin_logit": -12.463912963867188
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0046",
+        "target_tokens": [
+          "5"
+        ],
+        "selected_tokens": [
+          "\\hbar"
+        ],
+        "first_lost_position": 1,
+        "missing_glyphs": [
+          {
+            "target": "5",
+            "in_checkpoint_vocabulary": true,
+            "stroke_indices": [
+              0,
+              1
+            ],
+            "raw_point_count": 35,
+            "raw_points_per_stroke": [
+              23,
+              12
+            ],
+            "target_rank": 6,
+            "target_probability": 0.03592102229595184,
+            "top1": "\\hbar",
+            "top1_probability": 0.1978556215763092,
+            "top5": [
+              "\\hbar",
+              "H",
+              "\\Pi",
+              "\\dag",
+              "\\pi"
+            ],
+            "layer_trajectory": [
+              {
+                "stage": "encoder.input",
+                "top1": "\\vDash",
+                "target_rank": 141,
+                "target_margin_logit": -1.0184946358203888
+              },
+              {
+                "stage": "encoder.block_0.output",
+                "top1": "\\div",
+                "target_rank": 81,
+                "target_margin_logit": -1.5063623785972595
+              },
+              {
+                "stage": "encoder.block_1.output",
+                "top1": "\\$",
+                "target_rank": 10,
+                "target_margin_logit": -1.9427636861801147
+              },
+              {
+                "stage": "encoder.block_2.output",
+                "top1": "\\mapsfrom",
+                "target_rank": 32,
+                "target_margin_logit": -1.9770233631134033
+              },
+              {
+                "stage": "encoder.block_3.output",
+                "top1": "\\hbar",
+                "target_rank": 6,
+                "target_margin_logit": -1.7062149047851562
+              },
+              {
+                "stage": "encoder.output",
+                "top1": "\\hbar",
+                "target_rank": 6,
+                "target_margin_logit": -1.7062149047851562
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0064",
+        "target_tokens": [
+          "f",
+          "(",
+          "t",
+          ")",
+          "+",
+          "2"
+        ],
+        "selected_tokens": [
+          "f",
+          "(",
+          "\\mathcal{A}",
+          ")",
+          "+",
+          "2"
+        ],
+        "first_lost_position": 3,
+        "missing_glyphs": [
+          {
+            "target": "t",
+            "in_checkpoint_vocabulary": false,
+            "stroke_indices": [
+              2,
+              3
+            ],
+            "raw_point_count": 32,
+            "raw_points_per_stroke": [
+              23,
+              9
+            ],
+            "target_rank": null,
+            "target_probability": null,
+            "top1": "\\mathcal{A}",
+            "top1_probability": 0.5148227214813232,
+            "top5": [
+              "\\mathcal{A}",
+              "\\pm",
+              "\\hbar",
+              "\\chi",
+              "\\lesssim"
+            ],
+            "layer_trajectory": [
+              {
+                "stage": "encoder.input",
+                "top1": "\\vDash",
+                "target_rank": null,
+                "target_margin_logit": null
+              },
+              {
+                "stage": "encoder.block_0.output",
+                "top1": "\\div",
+                "target_rank": null,
+                "target_margin_logit": null
+              },
+              {
+                "stage": "encoder.block_1.output",
+                "top1": "\\div",
+                "target_rank": null,
+                "target_margin_logit": null
+              },
+              {
+                "stage": "encoder.block_2.output",
+                "top1": "\\hbar",
+                "target_rank": null,
+                "target_margin_logit": null
+              },
+              {
+                "stage": "encoder.block_3.output",
+                "top1": "\\mathcal{A}",
+                "target_rank": null,
+                "target_margin_logit": null
+              },
+              {
+                "stage": "encoder.output",
+                "top1": "\\mathcal{A}",
+                "target_rank": null,
+                "target_margin_logit": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0068",
+        "target_tokens": [
+          "2",
+          "0",
+          "\\div",
+          "4",
+          "=",
+          "5"
+        ],
+        "selected_tokens": [
+          "2",
+          "\\circ",
+          "\\div",
+          "4",
+          "\\asymp",
+          "5"
+        ],
+        "first_lost_position": 2,
+        "missing_glyphs": [
+          {
+            "target": "0",
+            "in_checkpoint_vocabulary": true,
+            "stroke_indices": [
+              1
+            ],
+            "raw_point_count": 28,
+            "raw_points_per_stroke": [
+              28
+            ],
+            "target_rank": 7,
+            "target_probability": 0.04138585180044174,
+            "top1": "\\circ",
+            "top1_probability": 0.4428849220275879,
+            "top5": [
+              "\\circ",
+              "\\degree",
+              "o",
+              "D",
+              "\\fullmoon"
+            ],
+            "layer_trajectory": [
+              {
+                "stage": "encoder.input",
+                "top1": "\\vDash",
+                "target_rank": 227,
+                "target_margin_logit": -1.2165365815162659
+              },
+              {
+                "stage": "encoder.block_0.output",
+                "top1": "\\rightleftarrows",
+                "target_rank": 257,
+                "target_margin_logit": -2.4988781809806824
+              },
+              {
+                "stage": "encoder.block_1.output",
+                "top1": "\\circlearrowright",
+                "target_rank": 162,
+                "target_margin_logit": -3.117179572582245
+              },
+              {
+                "stage": "encoder.block_2.output",
+                "top1": "\\circ",
+                "target_rank": 41,
+                "target_margin_logit": -2.1656994819641113
+              },
+              {
+                "stage": "encoder.block_3.output",
+                "top1": "\\circ",
+                "target_rank": 7,
+                "target_margin_logit": -2.370370864868164
+              },
+              {
+                "stage": "encoder.output",
+                "top1": "\\circ",
+                "target_rank": 7,
+                "target_margin_logit": -2.370370864868164
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0032",
+        "target_tokens": [
+          "0"
+        ],
+        "selected_tokens": [
+          "\\circlearrowright"
+        ],
+        "first_lost_position": 1,
+        "missing_glyphs": [
+          {
+            "target": "0",
+            "in_checkpoint_vocabulary": true,
+            "stroke_indices": [
+              0
+            ],
+            "raw_point_count": 46,
+            "raw_points_per_stroke": [
+              46
+            ],
+            "target_rank": 19,
+            "target_probability": 0.001744606764987111,
+            "top1": "\\circlearrowright",
+            "top1_probability": 0.5520474910736084,
+            "top5": [
+              "\\circlearrowright",
+              "\\fullmoon",
+              "\\partial",
+              "a",
+              "\\Omega"
+            ],
+            "layer_trajectory": [
+              {
+                "stage": "encoder.input",
+                "top1": "\\vDash",
+                "target_rank": 230,
+                "target_margin_logit": -1.2167303711175919
+              },
+              {
+                "stage": "encoder.block_0.output",
+                "top1": "\\circlearrowright",
+                "target_rank": 257,
+                "target_margin_logit": -2.9352710843086243
+              },
+              {
+                "stage": "encoder.block_1.output",
+                "top1": "\\circlearrowright",
+                "target_rank": 105,
+                "target_margin_logit": -3.0254992246627808
+              },
+              {
+                "stage": "encoder.block_2.output",
+                "top1": "\\circlearrowright",
+                "target_rank": 35,
+                "target_margin_logit": -2.245129346847534
+              },
+              {
+                "stage": "encoder.block_3.output",
+                "top1": "\\circlearrowright",
+                "target_rank": 19,
+                "target_margin_logit": -5.757104873657227
+              },
+              {
+                "stage": "encoder.output",
+                "top1": "\\circlearrowright",
+                "target_rank": 19,
+                "target_margin_logit": -5.757104873657227
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0036",
+        "target_tokens": [
+          "8"
+        ],
+        "selected_tokens": [
+          "\\aa"
+        ],
+        "first_lost_position": 1,
+        "missing_glyphs": [
+          {
+            "target": "8",
+            "in_checkpoint_vocabulary": true,
+            "stroke_indices": [
+              0
+            ],
+            "raw_point_count": 64,
+            "raw_points_per_stroke": [
+              64
+            ],
+            "target_rank": 79,
+            "target_probability": 0.00036796642234548926,
+            "top1": "\\aa",
+            "top1_probability": 0.20839601755142212,
+            "top5": [
+              "\\aa",
+              "\\triangleleft",
+              "\\mathfrak{A}",
+              "\\diamondsuit",
+              "\\lhd"
+            ],
+            "layer_trajectory": [
+              {
+                "stage": "encoder.input",
+                "top1": "\\vDash",
+                "target_rank": 261,
+                "target_margin_logit": -1.2864601165056229
+              },
+              {
+                "stage": "encoder.block_0.output",
+                "top1": "\\aa",
+                "target_rank": 289,
+                "target_margin_logit": -2.6614546179771423
+              },
+              {
+                "stage": "encoder.block_1.output",
+                "top1": "\\circlearrowright",
+                "target_rank": 99,
+                "target_margin_logit": -2.2570560574531555
+              },
+              {
+                "stage": "encoder.block_2.output",
+                "top1": "4",
+                "target_rank": 174,
+                "target_margin_logit": -4.558147948235273
+              },
+              {
+                "stage": "encoder.block_3.output",
+                "top1": "\\aa",
+                "target_rank": 79,
+                "target_margin_logit": -6.339203596115112
+              },
+              {
+                "stage": "encoder.output",
+                "top1": "\\aa",
+                "target_rank": 79,
+                "target_margin_logit": -6.339203596115112
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "candidate_present_decoder_residuals": {
+    "scope": "base decoder choices inside formulas still inexact after the semantic shadow",
+    "wrong_token_count_by_target_hwr_rank": {
+      "2": 9,
+      "3": 8,
+      "4": 6,
+      "5": 3
+    },
+    "wrong_token_count_by_decoder_vs_hwr_top1": {
+      "decoder_kept_hwr_top1": 26
+    },
+    "formula_token_errors": [
+      {
+        "sample_id": "aiflow_0146",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              1,
+              2
+            ],
+            "target": "x",
+            "target_hwr_rank": 2,
+            "hwr_top1": "\\chi",
+            "decoder_token": "\\chi",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0016",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              1,
+              2
+            ],
+            "target": "+",
+            "target_hwr_rank": 3,
+            "hwr_top1": "\\bot",
+            "decoder_token": "\\bot",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0020",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              0
+            ],
+            "target": "1",
+            "target_hwr_rank": 3,
+            "hwr_top1": "/",
+            "decoder_token": "/",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          },
+          {
+            "stroke_indices": [
+              1
+            ],
+            "target": "0",
+            "target_hwr_rank": 4,
+            "hwr_top1": "o",
+            "decoder_token": "o",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0058",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              0
+            ],
+            "target": "1",
+            "target_hwr_rank": 2,
+            "hwr_top1": "\\lfloor",
+            "decoder_token": "\\lfloor",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          },
+          {
+            "stroke_indices": [
+              1
+            ],
+            "target": "8",
+            "target_hwr_rank": 3,
+            "hwr_top1": "\\mathscr{C}",
+            "decoder_token": "\\mathscr{C}",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0004",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              1,
+              2
+            ],
+            "target": "+",
+            "target_hwr_rank": 2,
+            "hwr_top1": "4",
+            "decoder_token": "4",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0009",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              8
+            ],
+            "target": "1",
+            "target_hwr_rank": 4,
+            "hwr_top1": "|",
+            "decoder_token": "|",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0078",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              3
+            ],
+            "target": "5",
+            "target_hwr_rank": 4,
+            "hwr_top1": "S",
+            "decoder_token": "S",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0118",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              0
+            ],
+            "target": "1",
+            "target_hwr_rank": 2,
+            "hwr_top1": "|",
+            "decoder_token": "|",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0044",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              0,
+              1
+            ],
+            "target": "=",
+            "target_hwr_rank": 3,
+            "hwr_top1": "\\Xi",
+            "decoder_token": "\\Xi",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0087",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              0
+            ],
+            "target": "9",
+            "target_hwr_rank": 2,
+            "hwr_top1": "q",
+            "decoder_token": "q",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          },
+          {
+            "stroke_indices": [
+              3
+            ],
+            "target": "1",
+            "target_hwr_rank": 3,
+            "hwr_top1": "|",
+            "decoder_token": "|",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          },
+          {
+            "stroke_indices": [
+              6
+            ],
+            "target": "1",
+            "target_hwr_rank": 2,
+            "hwr_top1": "|",
+            "decoder_token": "|",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          },
+          {
+            "stroke_indices": [
+              7
+            ],
+            "target": "0",
+            "target_hwr_rank": 5,
+            "hwr_top1": "\\circ",
+            "decoder_token": "\\circ",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0089",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              0
+            ],
+            "target": "1",
+            "target_hwr_rank": 2,
+            "hwr_top1": "I",
+            "decoder_token": "I",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0095",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              2
+            ],
+            "target": "(",
+            "target_hwr_rank": 5,
+            "hwr_top1": "L",
+            "decoder_token": "L",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          },
+          {
+            "stroke_indices": [
+              3,
+              4
+            ],
+            "target": "x",
+            "target_hwr_rank": 4,
+            "hwr_top1": "\\between",
+            "decoder_token": "\\between",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0096",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              3
+            ],
+            "target": "y",
+            "target_hwr_rank": 5,
+            "hwr_top1": "\\zeta",
+            "decoder_token": "\\zeta",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0100",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              2,
+              3
+            ],
+            "target": "+",
+            "target_hwr_rank": 4,
+            "hwr_top1": "\\dag",
+            "decoder_token": "\\dag",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          },
+          {
+            "stroke_indices": [
+              4
+            ],
+            "target": "1",
+            "target_hwr_rank": 3,
+            "hwr_top1": "|",
+            "decoder_token": "|",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0105",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              0,
+              1
+            ],
+            "target": "f",
+            "target_hwr_rank": 2,
+            "hwr_top1": "\\fint",
+            "decoder_token": "\\fint",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          },
+          {
+            "stroke_indices": [
+              4
+            ],
+            "target": "(",
+            "target_hwr_rank": 2,
+            "hwr_top1": "\\iota",
+            "decoder_token": "\\iota",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0111",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              3,
+              4
+            ],
+            "target": "+",
+            "target_hwr_rank": 3,
+            "hwr_top1": "\\Psi",
+            "decoder_token": "\\Psi",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          },
+          {
+            "stroke_indices": [
+              5
+            ],
+            "target": "1",
+            "target_hwr_rank": 4,
+            "hwr_top1": "\\prime",
+            "decoder_token": "\\prime",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0113",
+        "base_decoder_token_errors": [
+          {
+            "stroke_indices": [
+              0
+            ],
+            "target": "8",
+            "target_hwr_rank": 3,
+            "hwr_top1": "p",
+            "decoder_token": "p",
+            "decoder_choice_vs_hwr_top1": "decoder_kept_hwr_top1"
+          }
+        ]
+      }
+    ]
+  },
+  "validation": {
+    "guarded_summary_hash_matches_decomposition": true,
+    "all_group_failures_joined": true,
+    "all_group_failures_joined_to_formula_tokens": true,
+    "token_exact_group_failures_are_subset": true,
+    "all_top5_misses_joined_to_layer_trace": true,
+    "grouping_cause_counts_reconcile": true,
+    "crohme_training_or_tuning": false,
+    "product_default_enabled": false,
+    "promotion_eligible": false
+  }
+}

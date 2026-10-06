@@ -1,0 +1,48 @@
+{
+  "schema": "aiflow-math-retention-research-verdict/v1",
+  "retention_result_sha256": "46784fa83bee32d99210dbe3fc8ed96015599ad6105211f418c86c1880172854",
+  "status": "strict_backtracking_preserves_training_anchors_but_stalls_learning",
+  "scope": "Training and integrity only; no independent performance claim.",
+  "source_train_probe_rows": 1024,
+  "source_train_probe_baseline_hits": 853,
+  "old_train_replay_baseline_hits": 831,
+  "comparisons": [
+    {
+      "arm": "stochastic_replay",
+      "source_train_probe_hits": 958,
+      "source_training_gain_hits": 105,
+      "old_train_regressed": 18
+    },
+    {
+      "arm": "deterministic_replay",
+      "source_train_probe_hits": 963,
+      "source_training_gain_hits": 110,
+      "old_train_regressed": 16
+    },
+    {
+      "arm": "deterministic_guarded",
+      "source_train_probe_hits": 858,
+      "source_training_gain_hits": 5,
+      "old_train_regressed": 0
+    }
+  ],
+  "guard_steps_accepted": 4,
+  "guard_steps_fully_rejected": 60,
+  "guard_steps_total": 64,
+  "guard_candidate_checks": 372,
+  "diagnostic_conclusions": [
+    "Dropout-off replay removes an initial stochastic preservation signal but alone does not prevent old-label rank flips.",
+    "Whole-update backtracking protects the finite TRAIN anchors, while rejecting 60 of 64 steps and retaining only five extra source-training hits.",
+    "Do not infer that the guarded candidate improves independent digit, whole-math, formula or human-boundary recognition."
+  ],
+  "next_research_hypothesis": "Correct the update direction that violates protected margins rather than scaling or rejecting the whole update. This remains unimplemented and unproven.",
+  "checkpoint_selected_for_product": false,
+  "canonical_checkpoint_changed": false,
+  "existing_product_training_defaults_changed": false,
+  "held_inputs_forwarded": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0,
+  "human_boundary_labels": 0,
+  "product_adopted": false,
+  "still_required": "Independent whole-math writer/device/formula acceptance and actual human-boundary votes before any promotion."
+}

@@ -1,0 +1,136 @@
+{
+  "schema": "aiflow-hwr-local-group-count-guard-audit/v1",
+  "scope": "post-hoc shadow counterfactual only; no training, CROHME, runtime change, or promotion",
+  "inputs": {
+    "source_report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\grouping_hwr_tournament_geometry_prior_20260928\\summary.json",
+    "source_report_sha256": "b9d00a4ec5b93269c3568187f668ce0d2f3f50b1a28b510e5f178a6684a1b994",
+    "ownership": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\frozen_dataset\\data\\ownership_train.jsonl",
+    "ownership_sha256": "b7c21e4798ba60ef5d8c985a54fb68a363165b481de56ae9b96e6d63878bf354",
+    "formulas": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\frozen_dataset\\data\\formulas_valid.jsonl",
+    "formulas_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "formula_rows": 149,
+    "writer_count": 9,
+    "challenger_arm": "selective_joint_hwr_geometry_prior",
+    "geometry_prior_weight": 1.0
+  },
+  "policy": "reject a local_2d challenger only when it emits more groups than the Fast incumbent; otherwise preserve the existing challenger result",
+  "summary": {
+    "metrics": {
+      "fast": {
+        "formulas": 149,
+        "group_exact": 125,
+        "token_sequence_exact": 69,
+        "strict_formula_exact": 68,
+        "local_routes": 0
+      },
+      "challenger": {
+        "formulas": 149,
+        "group_exact": 127,
+        "token_sequence_exact": 68,
+        "strict_formula_exact": 67,
+        "local_routes": 4
+      },
+      "gated": {
+        "formulas": 149,
+        "group_exact": 128,
+        "token_sequence_exact": 69,
+        "strict_formula_exact": 68,
+        "local_routes": 3
+      }
+    },
+    "fast_to_challenger": {
+      "group_exact": {
+        "recovered": [
+          "aiflow_0007",
+          "aiflow_0068",
+          "aiflow_0111"
+        ],
+        "regressed": [
+          "aiflow_0091"
+        ],
+        "delta": 2
+      },
+      "token_exact": {
+        "recovered": [],
+        "regressed": [
+          "aiflow_0091"
+        ],
+        "delta": -1
+      },
+      "strict_exact": {
+        "recovered": [],
+        "regressed": [
+          "aiflow_0091"
+        ],
+        "delta": -1
+      }
+    },
+    "fast_to_gated": {
+      "group_exact": {
+        "recovered": [
+          "aiflow_0007",
+          "aiflow_0068",
+          "aiflow_0111"
+        ],
+        "regressed": [],
+        "delta": 3
+      },
+      "token_exact": {
+        "recovered": [],
+        "regressed": [],
+        "delta": 0
+      },
+      "strict_exact": {
+        "recovered": [],
+        "regressed": [],
+        "delta": 0
+      }
+    },
+    "rejected_group_increases": [
+      {
+        "sample_id": "aiflow_0091",
+        "fast_group_count": 3,
+        "challenger_group_count": 4,
+        "challenger_group_exact": false,
+        "challenger_token_exact": false,
+        "challenger_strict_exact": false,
+        "score_delta": 0.03305214462102146
+      }
+    ],
+    "writer_cluster_bootstrap": {
+      "group_exact": {
+        "method": "paired writer-cluster bootstrap; writers sampled with replacement",
+        "iterations": 10000,
+        "seed": 20261001,
+        "delta_rate_pp_95_interval": [
+          0.0,
+          4.878048780487805
+        ],
+        "interpretation": "consumed-development counterfactual; not acceptance evidence"
+      },
+      "strict_exact": {
+        "method": "paired writer-cluster bootstrap; writers sampled with replacement",
+        "iterations": 10000,
+        "seed": 20261001,
+        "delta_rate_pp_95_interval": [
+          0.0,
+          0.0
+        ],
+        "interpretation": "consumed-development counterfactual; not acceptance evidence"
+      }
+    }
+  },
+  "verification": {
+    "all_fast_and_challenger_partitions_cover_same_strokes": true,
+    "all_fast_and_challenger_decoders_accepted": true,
+    "all_local_group_increases_are_rejected": true,
+    "source_formula_hash_matches_frozen_cohort": true,
+    "all_report_ids_exist_in_hashed_formula_source": true,
+    "ownership_hash_matches_frozen_cohort": true,
+    "formula_count_is_149": true,
+    "accepted_writer_count_is_9": true,
+    "gated_group_exact_never_regresses_vs_fast": true,
+    "gated_strict_exact_never_regresses_vs_fast": true,
+    "all_checks_pass": true
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "schema": "aiflow-hwr-affine-tta-shadow/v1",
+  "status": "consumed_development_frozen_inference_shadow_only",
+  "scope": "gold groups; no training, no thresholds, no CROHME, no product change",
+  "inputs": {
+    "summary_path": "artifacts\\hwr_failure_cause_microscope_20260928\\group_mean_geometry_prior_shadow_20261001\\summary.json",
+    "summary_sha256": "aef4636afef850a0b9b74736e42ad9487884103684e5827854a7bafd692f9282",
+    "trace_path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\formula_traces.jsonl",
+    "trace_sha256": "785e909f569e3c6346b4fcecc83173445b1ef016ad31ee13e7188700990c76e7",
+    "dataset_root": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\frozen_dataset",
+    "formulas_valid_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "ownership_train_sha256": "b7c21e4798ba60ef5d8c985a54fb68a363165b481de56ae9b96e6d63878bf354",
+    "checkpoint_path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-head-calibration-20260819-r1\\final_all_writers_steps250_lr1e-3\\project_symbol_head_checkpoint.pt",
+    "checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "formula_count": 149,
+    "glyph_group_count": 579,
+    "writer_count": 9,
+    "device": "cuda"
+  },
+  "policy": {
+    "fixed_views": [
+      "identity",
+      "x_compress_0.95",
+      "x_expand_1.05",
+      "rotate_m2deg",
+      "rotate_p2deg"
+    ],
+    "aggregators": [
+      "mean softmax probabilities",
+      "plurality of view Top-1 votes, ties resolved by original Top-5 order"
+    ],
+    "selection": "restrict each final winner to the original identity Top-5",
+    "view_fit_or_threshold_search": false,
+    "candidate_creation_or_deletion": false
+  },
+  "metrics": {
+    "identity_replay": {
+      "formula_exact": 76,
+      "token_hits": 470,
+      "token_count": 579,
+      "identity_top5_target_symbol_hits": 562,
+      "identity_top5_formula_exact": 137,
+      "identity_top1_symbol_mismatches_vs_trace": 0
+    },
+    "fixed_affine_tta": {
+      "formula_exact": 77,
+      "token_hits": 471,
+      "token_count": 579,
+      "delta_formula_exact": 1,
+      "delta_token_hits": 1,
+      "transition": {
+        "both_wrong": 72,
+        "both_exact": 76,
+        "tta_recovery": 1
+      },
+      "recovered_formula_ids": [
+        "aiflow_0073"
+      ],
+      "regressed_formula_ids": [],
+      "paired_writer_cluster_bootstrap": {
+        "method": "paired writer-cluster bootstrap; writers sampled with replacement",
+        "iterations": 10000,
+        "seed": 20261002,
+        "writer_clusters": 9,
+        "delta_formula_exact_pp_95_interval": [
+          0.0,
+          3.333333333333334
+        ],
+        "scope": "consumed-development exploratory shadow only"
+      }
+    },
+    "fixed_affine_vote": {
+      "formula_exact": 76,
+      "token_hits": 470,
+      "token_count": 579,
+      "delta_formula_exact": 0,
+      "delta_token_hits": 0,
+      "transition": {
+        "both_wrong": 73,
+        "both_exact": 76
+      },
+      "recovered_formula_ids": [],
+      "regressed_formula_ids": [],
+      "paired_writer_cluster_bootstrap": {
+        "method": "paired writer-cluster bootstrap; writers sampled with replacement",
+        "iterations": 10000,
+        "seed": 20261002,
+        "writer_clusters": 9,
+        "delta_formula_exact_pp_95_interval": [
+          0.0,
+          0.0
+        ],
+        "scope": "consumed-development exploratory shadow only"
+      }
+    },
+    "per_view_top1": {
+      "identity": {
+        "token_hits": 470,
+        "token_count": 579,
+        "formula_exact": 76,
+        "changed_tokens_vs_identity": 0,
+        "formula_transition_vs_identity": {
+          "both_wrong": 73,
+          "both_exact": 76
+        },
+        "recovered_formula_ids": [],
+        "regressed_formula_ids": [],
+        "paired_writer_cluster_bootstrap_vs_identity": {
+          "method": "paired writer-cluster bootstrap; writers sampled with replacement",
+          "iterations": 10000,
+          "seed": 20261002,
+          "writer_clusters": 9,
+          "delta_formula_exact_pp_95_interval": [
+            0.0,
+            0.0
+          ],
+          "scope": "consumed-development exploratory shadow only"
+        }
+      },
+      "x_compress_0.95": {
+        "token_hits": 464,
+        "token_count": 579,
+        "formula_exact": 73,
+        "changed_tokens_vs_identity": 14,
+        "formula_transition_vs_identity": {
+          "both_wrong": 73,
+          "both_exact": 73,
+          "view_regression": 3
+        },
+        "recovered_formula_ids": [],
+        "regressed_formula_ids": [
+          "aiflow_0076",
+          "aiflow_0080",
+          "aiflow_0129"
+        ],
+        "paired_writer_cluster_bootstrap_vs_identity": {
+          "method": "paired writer-cluster bootstrap; writers sampled with replacement",
+          "iterations": 10000,
+          "seed": 20261002,
+          "writer_clusters": 9,
+          "delta_formula_exact_pp_95_interval": [
+            -7.222222222222223,
+            0.0
+          ],
+          "scope": "consumed-development exploratory shadow only"
+        }
+      },
+      "x_expand_1.05": {
+        "token_hits": 468,
+        "token_count": 579,
+        "formula_exact": 73,
+        "changed_tokens_vs_identity": 12,
+        "formula_transition_vs_identity": {
+          "both_wrong": 72,
+          "both_exact": 72,
+          "view_regression": 4,
+          "view_recovery": 1
+        },
+        "recovered_formula_ids": [
+          "aiflow_0073"
+        ],
+        "regressed_formula_ids": [
+          "aiflow_0018",
+          "aiflow_0030",
+          "aiflow_0041",
+          "aiflow_0102"
+        ],
+        "paired_writer_cluster_bootstrap_vs_identity": {
+          "method": "paired writer-cluster bootstrap; writers sampled with replacement",
+          "iterations": 10000,
+          "seed": 20261002,
+          "writer_clusters": 9,
+          "delta_formula_exact_pp_95_interval": [
+            -3.292911367445529,
+            2.8798185941043086
+          ],
+          "scope": "consumed-development exploratory shadow only"
+        }
+      },
+      "rotate_m2deg": {
+        "token_hits": 466,
+        "token_count": 579,
+        "formula_exact": 72,
+        "changed_tokens_vs_identity": 25,
+        "formula_transition_vs_identity": {
+          "both_wrong": 73,
+          "both_exact": 72,
+          "view_regression": 4
+        },
+        "recovered_formula_ids": [],
+        "regressed_formula_ids": [
+          "aiflow_0041",
+          "aiflow_0076",
+          "aiflow_0080",
+          "aiflow_0102"
+        ],
+        "paired_writer_cluster_bootstrap_vs_identity": {
+          "method": "paired writer-cluster bootstrap; writers sampled with replacement",
+          "iterations": 10000,
+          "seed": 20261002,
+          "writer_clusters": 9,
+          "delta_formula_exact_pp_95_interval": [
+            -7.120181405895693,
+            0.0
+          ],
+          "scope": "consumed-development exploratory shadow only"
+        }
+      },
+      "rotate_p2deg": {
+        "token_hits": 475,
+        "token_count": 579,
+        "formula_exact": 78,
+        "changed_tokens_vs_identity": 30,
+        "formula_transition_vs_identity": {
+          "both_wrong": 67,
+          "both_exact": 72,
+          "view_recovery": 6,
+          "view_regression": 4
+        },
+        "recovered_formula_ids": [
+          "aiflow_0019",
+          "aiflow_0073",
+          "aiflow_0108",
+          "aiflow_0113",
+          "aiflow_0118",
+          "aiflow_0124"
+        ],
+        "regressed_formula_ids": [
+          "aiflow_0018",
+          "aiflow_0030",
+          "aiflow_0063",
+          "aiflow_0129"
+        ],
+        "paired_writer_cluster_bootstrap_vs_identity": {
+          "method": "paired writer-cluster bootstrap; writers sampled with replacement",
+          "iterations": 10000,
+          "seed": 20261002,
+          "writer_clusters": 9,
+          "delta_formula_exact_pp_95_interval": [
+            -1.5942028985507246,
+            4.109484373459518
+          ],
+          "scope": "consumed-development exploratory shadow only"
+        }
+      }
+    },
+    "changed_token_count": 1,
+    "changed_formula_count": 1,
+    "inference_seconds_all_views": 0.9073590000043623,
+    "inference_ms_per_glyph_all_views": 1.5671139896448398,
+    "timing_device_note": "local research hardware only; not Android latency evidence"
+  },
+  "changed_formulas": [
+    {
+      "sample_id": "aiflow_0073",
+      "writer_id": "writer_001",
+      "target_tokens": [
+        "1",
+        "\\times",
+        "5"
+      ],
+      "baseline_top1": [
+        "|",
+        "\\times",
+        "5"
+      ],
+      "tta_top1": [
+        "1",
+        "\\times",
+        "5"
+      ],
+      "formula_exact_before": false,
+      "formula_exact_after": true,
+      "view_top1": {
+        "identity": [
+          "|",
+          "\\times",
+          "5"
+        ],
+        "x_compress_0.95": [
+          "|",
+          "X",
+          "5"
+        ],
+        "x_expand_1.05": [
+          "1",
+          "\\times",
+          "5"
+        ],
+        "rotate_m2deg": [
+          "|",
+          "x",
+          "5"
+        ],
+        "rotate_p2deg": [
+          "1",
+          "\\times",
+          "5"
+        ]
+      }
+    }
+  ],
+  "checks": {
+    "source_data_hashes_match_frozen_run": true,
+    "checkpoint_hash_matches_frozen_run": true,
+    "all_149_formula_ids_replayed": true,
+    "identity_replay_matches_frozen_formula_metric": true,
+    "identity_top1_replay_matches_frozen_trace": true,
+    "identity_top5_replay_matches_frozen_formula_metric": true,
+    "tta_output_preserves_identity_top5": true,
+    "all_checks_pass": true
+  },
+  "product_default_enabled": false,
+  "crohme_training_or_tuning": false,
+  "promotion_eligible": false
+}

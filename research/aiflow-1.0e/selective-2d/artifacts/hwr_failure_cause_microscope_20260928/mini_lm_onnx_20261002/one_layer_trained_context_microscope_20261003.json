@@ -1,0 +1,3062 @@
+{
+  "schema": "aiflow-mini-lm-layer-activation-microscope/v1",
+  "generated_at": "2026-10-02T22:42:19.660988+00:00",
+  "status": "consumed_development_activation_diagnostic",
+  "protocol": {
+    "training_performed": false,
+    "threshold_or_architecture_selection_performed": false,
+    "crohme_rows_loaded": 0,
+    "consumed_formula_count": 149,
+    "writer_count": 9,
+    "fusion_weight": 0.5,
+    "fusion_weight_source": "frozen teacher value; not retuned in this layer diagnostic",
+    "candidate_policy": "rerank only original HWR Top-5; no new classes or grouping mutations",
+    "warning": "Consumed development data only; layerwise projection is diagnostic, not independent acceptance or product evidence.",
+    "crohme_training_or_tuning": false,
+    "product_adopted": false
+  },
+  "provenance": {
+    "checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_distill_20261003_one_layer\\mini_formula_lm.pt",
+    "checkpoint_sha256": "2c448199c2b4d65c4d786348ad2f3ba09322fedb5337b35d503f48d0462d01f2",
+    "distillation_report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_distill_20261003_one_layer\\mini_formula_lm_distillation_report.json",
+    "distillation_report_sha256": "4d2112c2fea5d1b6de74d2fbf627b76a89db6c883df255c35adf2fab2914a1cf",
+    "summary": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\group_mean_geometry_prior_shadow_20261001\\summary.json",
+    "summary_sha256": "aef4636afef850a0b9b74736e42ad9487884103684e5827854a7bafd692f9282",
+    "formula_data": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\frozen_dataset\\data\\formulas_valid.jsonl",
+    "formula_data_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "checkpoint_parameters": 90548,
+    "architecture": {
+      "layers": 1,
+      "hidden": 64,
+      "heads": 2,
+      "feedforward": 128
+    }
+  },
+  "verification": {
+    "input_group_count": 599,
+    "exact_group_formula_count": 125,
+    "model_forward_vs_manual_layer_trace_max_abs_error": 0.0,
+    "parity_tolerance": 1e-05,
+    "finite_logits": true,
+    "all_checks_passed": true
+  },
+  "metrics_by_stage": {
+    "layer_1": {
+      "aligned_exact_group_tokens": 469,
+      "context_unrestricted_top1_hits": 115,
+      "context_unrestricted_top1_accuracy": 0.24520255863539445,
+      "target_in_hwr_top5": 464,
+      "target_outside_hwr_top5": 5,
+      "context_target_rank_within_hwr_top5": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4
+      },
+      "fused_hwr_top5_top1_hits": 434,
+      "fused_token_accuracy_on_exact_groups": 0.9253731343283582,
+      "symbol_sequence_exact_over_all_149_grouping_fails_as_misses": 94,
+      "symbol_sequence_exact_over_all_149_rate": 0.6308724832214765,
+      "symbol_sequence_exact_on_group_exact_subset": 94,
+      "group_exact_formula_count": 125,
+      "symbol_sequence_transitions_vs_fast": {
+        "wrong_to_exact": 29,
+        "exact_to_wrong": 3,
+        "exact_to_exact": 65,
+        "wrong_to_wrong": 28
+      }
+    }
+  },
+  "decoder_constrained_symbol_sequence_metrics_by_stage": {
+    "layer_1": {
+      "symbol_sequence_exact_over_all_149_grouping_fails_as_misses": 94,
+      "symbol_sequence_exact_rate": 0.6308724832214765,
+      "group_exact_formula_count": 125,
+      "baseline_decoder_symbol_sequence_exact": 68,
+      "delta_vs_fast_top1_symbol_sequence_exact": 26,
+      "delta_vs_baseline_decoder_symbol_sequence_exact": 26,
+      "stage_decoder_accepted_formulas": 149,
+      "baseline_decoder_accepted_formulas": 149,
+      "candidate_preservation_rate": 1.0,
+      "changed_improved_regressed_tokens_vs_baseline_decoder": [
+        66,
+        52,
+        8
+      ],
+      "relation_graph_changes_vs_baseline_decoder": 2,
+      "symbol_sequence_transitions_vs_baseline_decoder": {
+        "wrong_to_exact_vs_baseline_decoder": 29,
+        "exact_to_wrong_vs_baseline_decoder": 3,
+        "exact_to_exact_vs_baseline_decoder": 65
+      },
+      "symbol_sequence_transitions_vs_fast_top1": {
+        "wrong_to_exact": 29,
+        "exact_to_wrong": 3
+      },
+      "grouping_mutations": 0
+    }
+  },
+  "adjacent_layer_transitions": {},
+  "decoder_constrained_symbol_sequence_layer_transitions": {},
+  "nontrivial_token_cases": [
+    {
+      "record_id": "aiflow_0140:0",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -7.7555389404296875,
+            -9.853263854980469,
+            -2.0049309730529785,
+            -8.260880470275879,
+            -11.319525718688965
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "I",
+        "\\prime"
+      ],
+      "hwr_top5_probabilities": [
+        0.4413362145423889,
+        0.19416339695453644,
+        0.1897623986005783,
+        0.060225583612918854,
+        0.040425561368465424
+      ]
+    },
+    {
+      "record_id": "aiflow_0140:2",
+      "truth": "1",
+      "fast_top1": ")",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "y",
+          "context_truth_rank_in_hwr_top5": 5,
+          "fused_top1": ")",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -5.100255489349365,
+            -12.122405052185059,
+            -7.5258378982543945,
+            -12.222419738769531,
+            -3.7550692558288574
+          ]
+        }
+      },
+      "hwr_top5": [
+        ")",
+        "\\rfloor",
+        "|",
+        "\\prime",
+        "1"
+      ],
+      "hwr_top5_probabilities": [
+        0.4855055809020996,
+        0.24159881472587585,
+        0.08785289525985718,
+        0.050786666572093964,
+        0.030616875737905502
+      ]
+    },
+    {
+      "record_id": "aiflow_0142:2",
+      "truth": "1",
+      "fast_top1": ")",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "+",
+          "context_truth_rank_in_hwr_top5": null,
+          "fused_top1": ")",
+          "fused_truth_rank_in_hwr_top5": null,
+          "context_top5_log_probs": [
+            -6.49729061126709,
+            -9.39319133758545,
+            -11.187864303588867,
+            -13.800552368164062,
+            -14.521368980407715
+          ]
+        }
+      },
+      "hwr_top5": [
+        ")",
+        "]",
+        "\\}",
+        "\\rangle",
+        "\\rfloor"
+      ],
+      "hwr_top5_probabilities": [
+        0.9957557916641235,
+        0.003653289983049035,
+        0.00020421644148882478,
+        0.0001330005470663309,
+        6.959654274396598e-05
+      ]
+    },
+    {
+      "record_id": "aiflow_0144:0",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "(",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -8.098373413085938,
+            -8.657242774963379,
+            -2.75131893157959,
+            -8.581324577331543,
+            -8.376562118530273
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "\\cdot",
+        "i"
+      ],
+      "hwr_top5_probabilities": [
+        0.42926880717277527,
+        0.3060067296028137,
+        0.13820719718933105,
+        0.030598146840929985,
+        0.027915967628359795
+      ]
+    },
+    {
+      "record_id": "aiflow_0144:5",
+      "truth": "1",
+      "fast_top1": "\\rfloor",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "3",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -13.32911491394043,
+            -7.54918909072876,
+            -2.1548171043395996,
+            -12.337425231933594,
+            -12.060856819152832
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\rfloor",
+        "|",
+        "1",
+        "\\prime",
+        "\\int"
+      ],
+      "hwr_top5_probabilities": [
+        0.9078563451766968,
+        0.02969731017947197,
+        0.021344687789678574,
+        0.009255203418433666,
+        0.008556961081922054
+      ]
+    },
+    {
+      "record_id": "aiflow_0145:0",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -6.668128967285156,
+            -10.02939510345459,
+            -0.25344371795654297,
+            -9.821592330932617,
+            -10.057510375976562
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "I",
+        "i"
+      ],
+      "hwr_top5_probabilities": [
+        0.4234828054904938,
+        0.315866619348526,
+        0.16458722949028015,
+        0.02137155458331108,
+        0.021184945479035378
+      ]
+    },
+    {
+      "record_id": "aiflow_0146:1",
+      "truth": "x",
+      "fast_top1": "\\chi",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "b",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "x",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -11.222677230834961,
+            -2.103527069091797,
+            -6.346271514892578,
+            -6.317078590393066,
+            -11.654903411865234
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\chi",
+        "x",
+        "\\mathcal{X}",
+        "X",
+        "\\lambda"
+      ],
+      "hwr_top5_probabilities": [
+        0.7375233769416809,
+        0.24987752735614777,
+        0.0078933946788311,
+        0.001842544530518353,
+        0.001662041642703116
+      ]
+    },
+    {
+      "record_id": "aiflow_0016:1",
+      "truth": "+",
+      "fast_top1": "\\bot",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "\\times",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "+",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -12.566734313964844,
+            -11.602724075317383,
+            -1.2506351470947266,
+            -13.343737602233887,
+            -12.110387802124023
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\bot",
+        "\\perp",
+        "+",
+        "\\dag",
+        "\\dashv"
+      ],
+      "hwr_top5_probabilities": [
+        0.625241219997406,
+        0.34143492579460144,
+        0.012044497765600681,
+        0.006840243935585022,
+        0.0034753382205963135
+      ]
+    },
+    {
+      "record_id": "aiflow_0017:2",
+      "truth": "0",
+      "fast_top1": "O",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "+",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "O",
+          "fused_truth_rank_in_hwr_top5": 3,
+          "context_top5_log_probs": [
+            -8.506775856018066,
+            -9.79216194152832,
+            -9.293156623840332,
+            -11.55375862121582,
+            -14.240779876708984
+          ]
+        }
+      },
+      "hwr_top5": [
+        "O",
+        "0",
+        "o",
+        "\\mathcal{O}",
+        "\\circ"
+      ],
+      "hwr_top5_probabilities": [
+        0.3199877142906189,
+        0.2893308401107788,
+        0.25894322991371155,
+        0.05344406142830849,
+        0.04477691277861595
+      ]
+    },
+    {
+      "record_id": "aiflow_0017:4",
+      "truth": "0",
+      "fast_top1": "\\mathcal{O}",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "0",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -10.966402053833008,
+            -3.5669965744018555,
+            -8.307137489318848,
+            -8.742650985717773,
+            -13.809406280517578
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\mathcal{O}",
+        "0",
+        "O",
+        "o",
+        "\\leftmoon"
+      ],
+      "hwr_top5_probabilities": [
+        0.6773898601531982,
+        0.19317100942134857,
+        0.10431035608053207,
+        0.014414645731449127,
+        0.005285135470330715
+      ]
+    },
+    {
+      "record_id": "aiflow_0019:0",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -4.012436866760254,
+            -9.320018768310547,
+            -0.2766599655151367,
+            -10.638290405273438,
+            -10.326045989990234
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "I",
+        "l"
+      ],
+      "hwr_top5_probabilities": [
+        0.4020013213157654,
+        0.257305383682251,
+        0.22617170214653015,
+        0.03522329777479172,
+        0.02330845780670643
+      ]
+    },
+    {
+      "record_id": "aiflow_0020:0",
+      "truth": "1",
+      "fast_top1": "/",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "|",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "/",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -5.602229118347168,
+            -10.814141273498535,
+            -1.1297554969787598,
+            -4.7962422370910645,
+            -9.496728897094727
+          ]
+        }
+      },
+      "hwr_top5": [
+        "/",
+        "\\prime",
+        "1",
+        "7",
+        "i"
+      ],
+      "hwr_top5_probabilities": [
+        0.986078679561615,
+        0.013694067485630512,
+        0.0001436237507732585,
+        2.3377546312985942e-05,
+        8.45611884869868e-06
+      ]
+    },
+    {
+      "record_id": "aiflow_0020:1",
+      "truth": "0",
+      "fast_top1": "o",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "0",
+          "context_truth_rank_in_hwr_top5": 4,
+          "fused_top1": "0",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -4.859376907348633,
+            -14.04796028137207,
+            -9.993928909301758,
+            -1.6379709243774414,
+            -4.667332649230957
+          ]
+        }
+      },
+      "hwr_top5": [
+        "o",
+        "\\circ",
+        "\\diamond",
+        "0",
+        "6"
+      ],
+      "hwr_top5_probabilities": [
+        0.4359561800956726,
+        0.13877184689044952,
+        0.10529975593090057,
+        0.0932314470410347,
+        0.05095680058002472
+      ]
+    },
+    {
+      "record_id": "aiflow_0021:0",
+      "truth": "1",
+      "fast_top1": "/",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "/",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -5.350019454956055,
+            -12.311071395874023,
+            -0.2654147148132324,
+            -9.873700141906738,
+            -10.09032154083252
+          ]
+        }
+      },
+      "hwr_top5": [
+        "/",
+        "\\prime",
+        "1",
+        "j",
+        "i"
+      ],
+      "hwr_top5_probabilities": [
+        0.9753515124320984,
+        0.023361166939139366,
+        0.0010224261786788702,
+        0.00012850681378040463,
+        4.080961662111804e-05
+      ]
+    },
+    {
+      "record_id": "aiflow_0021:3",
+      "truth": "1",
+      "fast_top1": "/",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "4",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -7.589730262756348,
+            -2.2514920234680176,
+            -13.818094253540039,
+            -8.056676864624023,
+            -12.987494468688965
+          ]
+        }
+      },
+      "hwr_top5": [
+        "/",
+        "1",
+        "\\prime",
+        "(",
+        "i"
+      ],
+      "hwr_top5_probabilities": [
+        0.6848797798156738,
+        0.23763512074947357,
+        0.044427402317523956,
+        0.008922843262553215,
+        0.008115467615425587
+      ]
+    },
+    {
+      "record_id": "aiflow_0022:2",
+      "truth": "1",
+      "fast_top1": "/",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "+",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "/",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -3.8491101264953613,
+            -7.868447780609131,
+            -15.087837219238281,
+            -13.13547134399414,
+            -11.353252410888672
+          ]
+        }
+      },
+      "hwr_top5": [
+        "/",
+        "1",
+        "\\prime",
+        "i",
+        "\\mid"
+      ],
+      "hwr_top5_probabilities": [
+        0.751498818397522,
+        0.17555072903633118,
+        0.052427735179662704,
+        0.004922478925436735,
+        0.0033785046543926
+      ]
+    },
+    {
+      "record_id": "aiflow_0023:1",
+      "truth": "0",
+      "fast_top1": "6",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "(",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "6",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -4.52524471282959,
+            -10.419779777526855,
+            -2.201019287109375,
+            -12.281515121459961,
+            -11.730712890625
+          ]
+        }
+      },
+      "hwr_top5": [
+        "6",
+        "\\diamond",
+        "0",
+        "\\lozenge",
+        "\\supset"
+      ],
+      "hwr_top5_probabilities": [
+        0.3974400460720062,
+        0.38745254278182983,
+        0.07329513877630234,
+        0.027381209656596184,
+        0.02692774496972561
+      ]
+    },
+    {
+      "record_id": "aiflow_0152:2",
+      "truth": "0",
+      "fast_top1": "\\mathcal{O}",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "+",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "0",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -11.55375862121582,
+            -9.79216194152832,
+            -10.375200271606445,
+            -14.240779876708984,
+            -8.506775856018066
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\mathcal{O}",
+        "0",
+        "\\degree",
+        "\\circ",
+        "O"
+      ],
+      "hwr_top5_probabilities": [
+        0.5653307437896729,
+        0.36246955394744873,
+        0.02806432917714119,
+        0.016119632869958878,
+        0.014735533855855465
+      ]
+    },
+    {
+      "record_id": "aiflow_0152:4",
+      "truth": "0",
+      "fast_top1": "\\mathcal{O}",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "0",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -10.971102714538574,
+            -3.5468459129333496,
+            -8.312928199768066,
+            -8.745365142822266,
+            -13.810543060302734
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\mathcal{O}",
+        "0",
+        "O",
+        "o",
+        "\\leftmoon"
+      ],
+      "hwr_top5_probabilities": [
+        0.8699988126754761,
+        0.12246137112379074,
+        0.003695693099871278,
+        0.0014732970157638192,
+        0.0004944636602886021
+      ]
+    },
+    {
+      "record_id": "aiflow_0153:2",
+      "truth": "1",
+      "fast_top1": "/",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "-",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "/",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -3.909137725830078,
+            -15.259441375732422,
+            -7.54158353805542,
+            -13.234415054321289,
+            -6.219931125640869
+          ]
+        }
+      },
+      "hwr_top5": [
+        "/",
+        "\\prime",
+        "1",
+        "i",
+        "("
+      ],
+      "hwr_top5_probabilities": [
+        0.9545129537582397,
+        0.026680033653974533,
+        0.016692738980054855,
+        0.0006585189839825034,
+        0.0005343417869880795
+      ]
+    },
+    {
+      "record_id": "aiflow_0155:2",
+      "truth": "1",
+      "fast_top1": "(",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "+",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "/",
+          "fused_truth_rank_in_hwr_top5": 3,
+          "context_top5_log_probs": [
+            -6.4612016677856445,
+            -15.40299129486084,
+            -8.15932846069336,
+            -19.249528884887695,
+            -3.6466503143310547
+          ]
+        }
+      },
+      "hwr_top5": [
+        "(",
+        "\\prime",
+        "1",
+        "\\lceil",
+        "/"
+      ],
+      "hwr_top5_probabilities": [
+        0.32602038979530334,
+        0.15608564019203186,
+        0.1528402864933014,
+        0.1335592120885849,
+        0.09087886661291122
+      ]
+    },
+    {
+      "record_id": "aiflow_0155:4",
+      "truth": "1",
+      "fast_top1": "/",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": ")",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "/",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -5.667276382446289,
+            -13.67151165008545,
+            -2.9683403968811035,
+            -12.174015045166016,
+            -11.830306053161621
+          ]
+        }
+      },
+      "hwr_top5": [
+        "/",
+        "\\prime",
+        "1",
+        "i",
+        "j"
+      ],
+      "hwr_top5_probabilities": [
+        0.9467230439186096,
+        0.032931819558143616,
+        0.01829744502902031,
+        0.0006288861623033881,
+        0.0006232339073903859
+      ]
+    },
+    {
+      "record_id": "aiflow_0124:1",
+      "truth": "\\times",
+      "fast_top1": "x",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "\\times",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "\\times",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -6.9745965003967285,
+            -0.7735071182250977,
+            -9.540633201599121,
+            -17.322887420654297,
+            -12.51531982421875
+          ]
+        }
+      },
+      "hwr_top5": [
+        "x",
+        "\\times",
+        "X",
+        "\\aleph",
+        "\\chi"
+      ],
+      "hwr_top5_probabilities": [
+        0.5612386465072632,
+        0.36936190724372864,
+        0.03908107802271843,
+        0.019307292997837067,
+        0.005235346499830484
+      ]
+    },
+    {
+      "record_id": "aiflow_0125:4",
+      "truth": "7",
+      "fast_top1": "\\eta",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "7",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -13.994892120361328,
+            -3.1901683807373047,
+            -12.441038131713867,
+            -8.475714683532715,
+            -3.5249176025390625
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\eta",
+        "7",
+        "\\uparrow",
+        "\\}",
+        "9"
+      ],
+      "hwr_top5_probabilities": [
+        0.9584307670593262,
+        0.0379403755068779,
+        0.0005030872416682541,
+        0.00032047933200374246,
+        0.0002943200815934688
+      ]
+    },
+    {
+      "record_id": "aiflow_0126:4",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -5.375849723815918,
+            -9.501615524291992,
+            -1.5412492752075195,
+            -12.623889923095703,
+            -10.895336151123047
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "\\prime",
+        "I"
+      ],
+      "hwr_top5_probabilities": [
+        0.4870006740093231,
+        0.24092009663581848,
+        0.11565735191106796,
+        0.0399700365960598,
+        0.03166356310248375
+      ]
+    },
+    {
+      "record_id": "aiflow_0126:5",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "3",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -6.527612209320068,
+            -11.262896537780762,
+            -2.477914333343506,
+            -11.213184356689453,
+            -11.881427764892578
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "i",
+        "\\prime"
+      ],
+      "hwr_top5_probabilities": [
+        0.45085859298706055,
+        0.23789459466934204,
+        0.1282525360584259,
+        0.04956259950995445,
+        0.03923395276069641
+      ]
+    },
+    {
+      "record_id": "aiflow_0127:0",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -4.281538963317871,
+            -9.396885871887207,
+            -0.2790255546569824,
+            -10.610112190246582,
+            -10.538668632507324
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "I",
+        "i"
+      ],
+      "hwr_top5_probabilities": [
+        0.4300399720668793,
+        0.30881646275520325,
+        0.17495019733905792,
+        0.019154682755470276,
+        0.0188299510627985
+      ]
+    },
+    {
+      "record_id": "aiflow_0128:0",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "x",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -7.011855602264404,
+            -8.560778617858887,
+            -2.96224308013916,
+            -8.365691184997559,
+            -8.55754280090332
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "i",
+        "I"
+      ],
+      "hwr_top5_probabilities": [
+        0.35155779123306274,
+        0.33671489357948303,
+        0.228797048330307,
+        0.021365936845541,
+        0.016853269189596176
+      ]
+    },
+    {
+      "record_id": "aiflow_0128:4",
+      "truth": "=",
+      "fast_top1": "\\simeq",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "+",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -11.464168548583984,
+            -10.079540252685547,
+            -13.655240058898926,
+            -16.50080680847168,
+            -2.015157699584961
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\simeq",
+        "=",
+        "\\Xi",
+        "\\approx",
+        "1"
+      ],
+      "hwr_top5_probabilities": [
+        0.2828772962093353,
+        0.28210222721099854,
+        0.18968242406845093,
+        0.09138599783182144,
+        0.04787395894527435
+      ]
+    },
+    {
+      "record_id": "aiflow_0128:5",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "3",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -6.747299671173096,
+            -11.366829872131348,
+            -2.1881232261657715,
+            -11.16476058959961,
+            -11.367595672607422
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "I",
+        "i"
+      ],
+      "hwr_top5_probabilities": [
+        0.4125789403915405,
+        0.2924445569515228,
+        0.19129881262779236,
+        0.02845049276947975,
+        0.019633188843727112
+      ]
+    },
+    {
+      "record_id": "aiflow_0129:2",
+      "truth": "\\div",
+      "fast_top1": "\\div",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "x",
+          "context_truth_rank_in_hwr_top5": 1,
+          "fused_top1": "+",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -11.954334259033203,
+            -3.619537353515625,
+            -11.61862564086914,
+            -11.667579650878906,
+            -12.318994522094727
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\div",
+        "+",
+        "\\Leftarrow",
+        "\\preccurlyeq",
+        "\\fint"
+      ],
+      "hwr_top5_probabilities": [
+        0.8825241327285767,
+        0.042529549449682236,
+        0.009965002536773682,
+        0.00810018740594387,
+        0.00733156967908144
+      ]
+    },
+    {
+      "record_id": "aiflow_0132:1",
+      "truth": "\\times",
+      "fast_top1": "x",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "x",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "x",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -1.3921799659729004,
+            -3.6696672439575195,
+            -5.5671305656433105,
+            -11.541367530822754,
+            -9.096415519714355
+          ]
+        }
+      },
+      "hwr_top5": [
+        "x",
+        "\\times",
+        "X",
+        "\\aleph",
+        "\\chi"
+      ],
+      "hwr_top5_probabilities": [
+        0.4340851902961731,
+        0.34659287333488464,
+        0.2136865258216858,
+        0.0033968465868383646,
+        0.0006159355980344117
+      ]
+    },
+    {
+      "record_id": "aiflow_0132:4",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "|",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -2.1628832817077637,
+            -10.554990768432617,
+            -0.7625665664672852,
+            -11.33212661743164,
+            -8.878146171569824
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "i",
+        "\\cdot"
+      ],
+      "hwr_top5_probabilities": [
+        0.4275073707103729,
+        0.336495578289032,
+        0.1333329677581787,
+        0.028356974944472313,
+        0.02636810950934887
+      ]
+    },
+    {
+      "record_id": "aiflow_0134:4",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -8.15528678894043,
+            -12.357419967651367,
+            -0.2686748504638672,
+            -12.548567771911621,
+            -12.728702545166016
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "I",
+        "l"
+      ],
+      "hwr_top5_probabilities": [
+        0.42056962847709656,
+        0.25723448395729065,
+        0.22066082060337067,
+        0.030214723199605942,
+        0.018684007227420807
+      ]
+    },
+    {
+      "record_id": "aiflow_0136:1",
+      "truth": "\\times",
+      "fast_top1": "X",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "x",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "x",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -5.558260440826416,
+            -1.3880906105041504,
+            -3.614271879196167,
+            -11.536178588867188,
+            -9.098358154296875
+          ]
+        }
+      },
+      "hwr_top5": [
+        "X",
+        "x",
+        "\\times",
+        "\\aleph",
+        "\\chi"
+      ],
+      "hwr_top5_probabilities": [
+        0.41315433382987976,
+        0.39991089701652527,
+        0.18177621066570282,
+        0.003426603740081191,
+        0.0010538905626162887
+      ]
+    },
+    {
+      "record_id": "aiflow_0136:4",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -6.283258438110352,
+            -11.91557502746582,
+            -0.26628589630126953,
+            -12.069099426269531,
+            -11.68354606628418
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "I",
+        "l"
+      ],
+      "hwr_top5_probabilities": [
+        0.45191746950149536,
+        0.2833680510520935,
+        0.16608475148677826,
+        0.024933354929089546,
+        0.019856872037053108
+      ]
+    },
+    {
+      "record_id": "aiflow_0046:0",
+      "truth": "5",
+      "fast_top1": "\\hbar",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "7",
+          "context_truth_rank_in_hwr_top5": null,
+          "fused_top1": "H",
+          "fused_truth_rank_in_hwr_top5": null,
+          "context_top5_log_probs": [
+            -13.338735580444336,
+            -11.10928726196289,
+            -12.155498504638672,
+            -12.742324829101562,
+            -12.053915023803711
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\hbar",
+        "H",
+        "\\Pi",
+        "\\dag",
+        "\\pi"
+      ],
+      "hwr_top5_probabilities": [
+        0.1978556215763092,
+        0.18274378776550293,
+        0.1442379206418991,
+        0.10714447498321533,
+        0.1052471175789833
+      ]
+    },
+    {
+      "record_id": "aiflow_0050:1",
+      "truth": "\\times",
+      "fast_top1": "X",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "\\times",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "\\times",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -7.134471893310547,
+            -0.21054887771606445,
+            -3.893099784851074,
+            -11.07834529876709,
+            -7.169098377227783
+          ]
+        }
+      },
+      "hwr_top5": [
+        "X",
+        "\\times",
+        "x",
+        "\\chi",
+        "\\mathcal{X}"
+      ],
+      "hwr_top5_probabilities": [
+        0.5978207588195801,
+        0.2857917547225952,
+        0.10840058326721191,
+        0.004107876215130091,
+        0.0033639539033174515
+      ]
+    },
+    {
+      "record_id": "aiflow_0051:4",
+      "truth": "1",
+      "fast_top1": "(",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "+",
+          "context_truth_rank_in_hwr_top5": 4,
+          "fused_top1": "(",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -3.5128908157348633,
+            -6.017831802368164,
+            -12.629613876342773,
+            -2.3234992027282715,
+            -9.232102394104004
+          ]
+        }
+      },
+      "hwr_top5": [
+        "(",
+        "|",
+        "i",
+        "1",
+        "\\mid"
+      ],
+      "hwr_top5_probabilities": [
+        0.4995976984500885,
+        0.2000422477722168,
+        0.09316501021385193,
+        0.09287811815738678,
+        0.07323087006807327
+      ]
+    },
+    {
+      "record_id": "aiflow_0052:1",
+      "truth": "\\times",
+      "fast_top1": "X",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "(",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "\\times",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -6.40201473236084,
+            -3.8178794384002686,
+            -1.9862446784973145,
+            -6.275448322296143,
+            -11.562332153320312
+          ]
+        }
+      },
+      "hwr_top5": [
+        "X",
+        "\\times",
+        "x",
+        "\\mathcal{X}",
+        "\\chi"
+      ],
+      "hwr_top5_probabilities": [
+        0.48982128500938416,
+        0.3583000898361206,
+        0.14049777388572693,
+        0.007749214768409729,
+        0.00311822397634387
+      ]
+    },
+    {
+      "record_id": "aiflow_0052:4",
+      "truth": "1",
+      "fast_top1": "(",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "+",
+          "context_truth_rank_in_hwr_top5": 4,
+          "fused_top1": "(",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -2.9234304428100586,
+            -12.961003303527832,
+            -12.637223243713379,
+            -4.403438091278076,
+            -13.65056037902832
+          ]
+        }
+      },
+      "hwr_top5": [
+        "(",
+        "i",
+        "I",
+        "1",
+        "l"
+      ],
+      "hwr_top5_probabilities": [
+        0.2635788023471832,
+        0.21070121228694916,
+        0.19479207694530487,
+        0.1494636833667755,
+        0.0615311861038208
+      ]
+    },
+    {
+      "record_id": "aiflow_0053:0",
+      "truth": "5",
+      "fast_top1": "\\hbar",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "n",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "5",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -11.389603614807129,
+            -4.6460371017456055,
+            -8.481635093688965,
+            -10.034144401550293,
+            -6.081276893615723
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\hbar",
+        "5",
+        "E",
+        "\\Pi",
+        "N"
+      ],
+      "hwr_top5_probabilities": [
+        0.5544866323471069,
+        0.43543243408203125,
+        0.0018924885662272573,
+        0.0008720312616787851,
+        0.0008471590117551386
+      ]
+    },
+    {
+      "record_id": "aiflow_0056:3",
+      "truth": "=",
+      "fast_top1": "\\triangledown",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "y",
+          "context_truth_rank_in_hwr_top5": 4,
+          "fused_top1": "\\triangledown",
+          "fused_truth_rank_in_hwr_top5": 5,
+          "context_top5_log_probs": [
+            -11.502860069274902,
+            -13.357442855834961,
+            -11.696460723876953,
+            -11.40400505065918,
+            -8.469917297363281
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\triangledown",
+        "\\tau",
+        "\\mp",
+        "=",
+        "T"
+      ],
+      "hwr_top5_probabilities": [
+        0.3429378271102905,
+        0.19391867518424988,
+        0.13010470569133759,
+        0.06219838559627533,
+        0.05183035880327225
+      ]
+    },
+    {
+      "record_id": "aiflow_0058:0",
+      "truth": "1",
+      "fast_top1": "\\lfloor",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -13.36355972290039,
+            -1.1698665618896484,
+            -5.839826583862305,
+            -8.915773391723633,
+            -9.289785385131836
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\lfloor",
+        "1",
+        "|",
+        "I",
+        "\\mid"
+      ],
+      "hwr_top5_probabilities": [
+        0.5264788269996643,
+        0.1657966822385788,
+        0.12181368470191956,
+        0.05457444489002228,
+        0.03899761289358139
+      ]
+    },
+    {
+      "record_id": "aiflow_0058:1",
+      "truth": "8",
+      "fast_top1": "\\mathscr{C}",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "/",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "\\mathscr{C}",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -10.771677017211914,
+            -11.376913070678711,
+            -5.806808948516846,
+            -10.49379825592041,
+            -14.695680618286133
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\mathscr{C}",
+        "\\mathscr{E}",
+        "8",
+        "\\mathcal{C}",
+        "\\zeta"
+      ],
+      "hwr_top5_probabilities": [
+        0.9600080847740173,
+        0.01834082417190075,
+        0.01118632685393095,
+        0.0055005052126944065,
+        0.0008858945220708847
+      ]
+    },
+    {
+      "record_id": "aiflow_0058:2",
+      "truth": "\\div",
+      "fast_top1": "\\div",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "x",
+          "context_truth_rank_in_hwr_top5": 1,
+          "fused_top1": "+",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -11.980022430419922,
+            -9.729510307312012,
+            -9.54188346862793,
+            -3.6368730068206787,
+            -10.721348762512207
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\div",
+        "\\pm",
+        "\\Psi",
+        "+",
+        "\\doteq"
+      ],
+      "hwr_top5_probabilities": [
+        0.8005144000053406,
+        0.059472981840372086,
+        0.04056409001350403,
+        0.03250972181558609,
+        0.01661476492881775
+      ]
+    },
+    {
+      "record_id": "aiflow_0060:1",
+      "truth": "\\times",
+      "fast_top1": "X",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "\\times",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "\\times",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -7.699802398681641,
+            -4.435459136962891,
+            -0.16357994079589844,
+            -7.729438304901123,
+            -11.528565406799316
+          ]
+        }
+      },
+      "hwr_top5": [
+        "X",
+        "x",
+        "\\times",
+        "\\mathcal{X}",
+        "\\chi"
+      ],
+      "hwr_top5_probabilities": [
+        0.5165914297103882,
+        0.2384055256843567,
+        0.23451294004917145,
+        0.004148213658481836,
+        0.003972328267991543
+      ]
+    },
+    {
+      "record_id": "aiflow_0061:1",
+      "truth": "\\times",
+      "fast_top1": "X",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "\\times",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "\\times",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -7.702268600463867,
+            -4.432701587677002,
+            -0.16962909698486328,
+            -13.202529907226562,
+            -11.530694961547852
+          ]
+        }
+      },
+      "hwr_top5": [
+        "X",
+        "x",
+        "\\times",
+        "\\lambda",
+        "\\chi"
+      ],
+      "hwr_top5_probabilities": [
+        0.5628844499588013,
+        0.3499605357646942,
+        0.06210840120911598,
+        0.012052532285451889,
+        0.0077377865090966225
+      ]
+    },
+    {
+      "record_id": "aiflow_0064:2",
+      "truth": "t",
+      "fast_top1": "\\mathcal{A}",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "x",
+          "context_truth_rank_in_hwr_top5": null,
+          "fused_top1": "\\mathcal{A}",
+          "fused_truth_rank_in_hwr_top5": null,
+          "context_top5_log_probs": [
+            -7.629692077636719,
+            -10.207147598266602,
+            -10.983402252197266,
+            -12.243429183959961,
+            -12.637475967407227
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\mathcal{A}",
+        "\\pm",
+        "\\hbar",
+        "\\chi",
+        "\\lesssim"
+      ],
+      "hwr_top5_probabilities": [
+        0.5148227214813232,
+        0.2829480469226837,
+        0.12400898337364197,
+        0.018345113843679428,
+        0.011702475138008595
+      ]
+    },
+    {
+      "record_id": "aiflow_0161:1",
+      "truth": "\\times",
+      "fast_top1": "X",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "\\times",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "\\times",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -7.963942527770996,
+            -0.22299766540527344,
+            -4.902322769165039,
+            -13.869199752807617,
+            -12.0604248046875
+          ]
+        }
+      },
+      "hwr_top5": [
+        "X",
+        "\\times",
+        "x",
+        "\\barwedge",
+        "k"
+      ],
+      "hwr_top5_probabilities": [
+        0.4261328876018524,
+        0.33848342299461365,
+        0.16916432976722717,
+        0.012856347486376762,
+        0.01058173831552267
+      ]
+    },
+    {
+      "record_id": "aiflow_0162:3",
+      "truth": "=",
+      "fast_top1": "=",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "y",
+          "context_truth_rank_in_hwr_top5": 1,
+          "fused_top1": "2",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -11.439538955688477,
+            -3.1780519485473633,
+            -12.340259552001953,
+            -8.99439525604248,
+            -12.989343643188477
+          ]
+        }
+      },
+      "hwr_top5": [
+        "=",
+        "2",
+        "\\supset",
+        "I",
+        "\\supseteq"
+      ],
+      "hwr_top5_probabilities": [
+        0.8950855731964111,
+        0.03660353645682335,
+        0.032524362206459045,
+        0.011308328248560429,
+        0.007481536827981472
+      ]
+    },
+    {
+      "record_id": "aiflow_0004:1",
+      "truth": "+",
+      "fast_top1": "4",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "\\times",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "+",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -9.163366317749023,
+            -1.2609148025512695,
+            -16.301040649414062,
+            -12.534147262573242,
+            -16.499181747436523
+          ]
+        }
+      },
+      "hwr_top5": [
+        "4",
+        "+",
+        "\\phi",
+        "\\div",
+        "\\Phi"
+      ],
+      "hwr_top5_probabilities": [
+        0.6453323364257812,
+        0.22155244648456573,
+        0.04391135275363922,
+        0.02609270066022873,
+        0.013822131790220737
+      ]
+    },
+    {
+      "record_id": "aiflow_0006:1",
+      "truth": "\\times",
+      "fast_top1": "x",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "x",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "x",
+          "fused_truth_rank_in_hwr_top5": 3,
+          "context_top5_log_probs": [
+            -1.767977237701416,
+            -6.431839942932129,
+            -6.5721845626831055,
+            -6.377743721008301,
+            -10.986703872680664
+          ]
+        }
+      },
+      "hwr_top5": [
+        "x",
+        "X",
+        "\\times",
+        "\\mathcal{X}",
+        "\\chi"
+      ],
+      "hwr_top5_probabilities": [
+        0.6350929737091064,
+        0.29646599292755127,
+        0.024863233789801598,
+        0.02090047486126423,
+        0.018945803865790367
+      ]
+    },
+    {
+      "record_id": "aiflow_0006:5",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "3",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -5.776036739349365,
+            -2.607901096343994,
+            -10.682233810424805,
+            -11.237488746643066,
+            -11.69327163696289
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "1",
+        "\\mid",
+        "I",
+        "\\prime"
+      ],
+      "hwr_top5_probabilities": [
+        0.4257550835609436,
+        0.2724533677101135,
+        0.20734433829784393,
+        0.022421181201934814,
+        0.020000262185931206
+      ]
+    },
+    {
+      "record_id": "aiflow_0009:5",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "3",
+          "context_truth_rank_in_hwr_top5": 4,
+          "fused_top1": "|",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -5.978884696960449,
+            -10.866317749023438,
+            -11.668787002563477,
+            -2.43123197555542,
+            -11.047807693481445
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "\\prime",
+        "1",
+        "I"
+      ],
+      "hwr_top5_probabilities": [
+        0.5523623824119568,
+        0.14572371542453766,
+        0.08865933865308762,
+        0.08278394490480423,
+        0.028403786942362785
+      ]
+    },
+    {
+      "record_id": "aiflow_0072:0",
+      "truth": "\\times",
+      "fast_top1": "\\times",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "7",
+          "context_truth_rank_in_hwr_top5": 1,
+          "fused_top1": "x",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -6.168814182281494,
+            -7.543753147125244,
+            -3.9594318866729736,
+            -7.402121543884277,
+            -11.847105026245117
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\times",
+        "X",
+        "x",
+        "\\mathcal{X}",
+        "\\chi"
+      ],
+      "hwr_top5_probabilities": [
+        0.4624316394329071,
+        0.34379029273986816,
+        0.19013500213623047,
+        0.002050996758043766,
+        0.000990710104815662
+      ]
+    },
+    {
+      "record_id": "aiflow_0073:0",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "9",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -8.592225074768066,
+            -2.7655038833618164,
+            -10.494141578674316,
+            -11.280414581298828,
+            -11.349919319152832
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "1",
+        "\\mid",
+        "I",
+        "i"
+      ],
+      "hwr_top5_probabilities": [
+        0.3151802718639374,
+        0.2964557111263275,
+        0.2901688814163208,
+        0.029642391949892044,
+        0.023704031482338905
+      ]
+    },
+    {
+      "record_id": "aiflow_0073:1",
+      "truth": "\\times",
+      "fast_top1": "\\times",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "o",
+          "context_truth_rank_in_hwr_top5": 1,
+          "fused_top1": "x",
+          "fused_truth_rank_in_hwr_top5": 3,
+          "context_top5_log_probs": [
+            -7.308394908905029,
+            -2.534618377685547,
+            -6.40403938293457,
+            -6.368345737457275,
+            -8.884092330932617
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\times",
+        "x",
+        "X",
+        "\\mathcal{X}",
+        "\\chi"
+      ],
+      "hwr_top5_probabilities": [
+        0.33703842759132385,
+        0.31699174642562866,
+        0.30516329407691956,
+        0.023022159934043884,
+        0.017201265320181847
+      ]
+    },
+    {
+      "record_id": "aiflow_0075:0",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -6.475253105163574,
+            -10.328315734863281,
+            -0.21390581130981445,
+            -9.620476722717285,
+            -10.603611946105957
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "i",
+        "1",
+        "\\mid",
+        "l"
+      ],
+      "hwr_top5_probabilities": [
+        0.33612146973609924,
+        0.18945837020874023,
+        0.16476386785507202,
+        0.13408078253269196,
+        0.046925511211156845
+      ]
+    },
+    {
+      "record_id": "aiflow_0078:2",
+      "truth": "5",
+      "fast_top1": "S",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "7",
+          "context_truth_rank_in_hwr_top5": 4,
+          "fused_top1": "5",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -11.289510726928711,
+            -11.326711654663086,
+            -11.215185165405273,
+            -2.3964171409606934,
+            -11.322525024414062
+          ]
+        }
+      },
+      "hwr_top5": [
+        "S",
+        "s",
+        "\\mathcal{S}",
+        "5",
+        "\\mathcal{G}"
+      ],
+      "hwr_top5_probabilities": [
+        0.5807115435600281,
+        0.20573575794696808,
+        0.17009992897510529,
+        0.03325261175632477,
+        0.0027042808942496777
+      ]
+    },
+    {
+      "record_id": "aiflow_0118:0",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "7",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -9.35080337524414,
+            -2.7724146842956543,
+            -10.697823524475098,
+            -9.995534896850586,
+            -12.42687702178955
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "1",
+        "\\mid",
+        "I",
+        "\\prime"
+      ],
+      "hwr_top5_probabilities": [
+        0.39128783345222473,
+        0.2965104877948761,
+        0.19930173456668854,
+        0.03537171334028244,
+        0.027086777612566948
+      ]
+    },
+    {
+      "record_id": "aiflow_0067:0",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -8.72105598449707,
+            -9.694369316101074,
+            -1.3699026107788086,
+            -11.244680404663086,
+            -10.602502822875977
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "i",
+        "\\cdot"
+      ],
+      "hwr_top5_probabilities": [
+        0.4213470220565796,
+        0.32630297541618347,
+        0.15960852801799774,
+        0.020562531426548958,
+        0.020252913236618042
+      ]
+    },
+    {
+      "record_id": "aiflow_0067:1",
+      "truth": "\\times",
+      "fast_top1": "\\times",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "x",
+          "context_truth_rank_in_hwr_top5": 1,
+          "fused_top1": "x",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -6.761441230773926,
+            -6.257495880126953,
+            -1.5916576385498047,
+            -12.049317359924316,
+            -6.286783218383789
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\times",
+        "X",
+        "x",
+        "\\aleph",
+        "\\mathcal{X}"
+      ],
+      "hwr_top5_probabilities": [
+        0.5554131269454956,
+        0.21025387942790985,
+        0.15026424825191498,
+        0.06489267945289612,
+        0.009169211611151695
+      ]
+    },
+    {
+      "record_id": "aiflow_0032:0",
+      "truth": "0",
+      "fast_top1": "\\circlearrowright",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "7",
+          "context_truth_rank_in_hwr_top5": null,
+          "fused_top1": "a",
+          "fused_truth_rank_in_hwr_top5": null,
+          "context_top5_log_probs": [
+            -15.24023723602295,
+            -13.687925338745117,
+            -9.87033462524414,
+            -4.422098159790039,
+            -11.02872085571289
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\circlearrowright",
+        "\\fullmoon",
+        "\\partial",
+        "a",
+        "\\Omega"
+      ],
+      "hwr_top5_probabilities": [
+        0.5520474910736084,
+        0.12023486196994781,
+        0.05957827344536781,
+        0.057011231780052185,
+        0.05551431328058243
+      ]
+    },
+    {
+      "record_id": "aiflow_0036:0",
+      "truth": "8",
+      "fast_top1": "\\aa",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "7",
+          "context_truth_rank_in_hwr_top5": null,
+          "fused_top1": "\\mathfrak{A}",
+          "fused_truth_rank_in_hwr_top5": null,
+          "context_top5_log_probs": [
+            -11.935327529907227,
+            -14.003381729125977,
+            -7.875823020935059,
+            -15.356233596801758,
+            -11.491386413574219
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\aa",
+        "\\triangleleft",
+        "\\mathfrak{A}",
+        "\\diamondsuit",
+        "\\lhd"
+      ],
+      "hwr_top5_probabilities": [
+        0.20839601755142212,
+        0.17375695705413818,
+        0.1644054800271988,
+        0.049399785697460175,
+        0.032674845308065414
+      ]
+    },
+    {
+      "record_id": "aiflow_0044:0",
+      "truth": "=",
+      "fast_top1": "\\Xi",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "7",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "\\Xi",
+          "fused_truth_rank_in_hwr_top5": 3,
+          "context_top5_log_probs": [
+            -12.374468803405762,
+            -14.095519065856934,
+            -12.926488876342773,
+            -15.50800895690918,
+            -9.995534896850586
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\Xi",
+        "\\asymp",
+        "=",
+        "\\ddots",
+        "I"
+      ],
+      "hwr_top5_probabilities": [
+        0.6866129040718079,
+        0.053728826344013214,
+        0.051907774060964584,
+        0.03554868698120117,
+        0.02984645776450634
+      ]
+    },
+    {
+      "record_id": "aiflow_0086:1",
+      "truth": "\\times",
+      "fast_top1": "\\times",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "(",
+          "context_truth_rank_in_hwr_top5": 1,
+          "fused_top1": "x",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -7.522658348083496,
+            -3.015312433242798,
+            -6.357602119445801,
+            -10.49846076965332,
+            -10.199066162109375
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\times",
+        "x",
+        "X",
+        "\\chi",
+        "\\lambda"
+      ],
+      "hwr_top5_probabilities": [
+        0.6618402004241943,
+        0.19728140532970428,
+        0.12221896648406982,
+        0.013795090839266777,
+        0.001455735880881548
+      ]
+    },
+    {
+      "record_id": "aiflow_0086:2",
+      "truth": "8",
+      "fast_top1": "\\parr",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "y",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "\\parr",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -9.43304443359375,
+            -4.468800067901611,
+            -5.8243303298950195,
+            -9.13730239868164,
+            -12.122892379760742
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\parr",
+        "8",
+        "p",
+        "\\wp",
+        "\\heartsuit"
+      ],
+      "hwr_top5_probabilities": [
+        0.8731331825256348,
+        0.05604161322116852,
+        0.012939796783030033,
+        0.010990852490067482,
+        0.010518154129385948
+      ]
+    },
+    {
+      "record_id": "aiflow_0086:5",
+      "truth": "8",
+      "fast_top1": "\\parr",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "3",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "8",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -11.009660720825195,
+            -3.393913745880127,
+            -11.01229190826416,
+            -10.829837799072266,
+            -10.781116485595703
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\parr",
+        "8",
+        "\\gamma",
+        "\\wp",
+        "\\mathcal{D}"
+      ],
+      "hwr_top5_probabilities": [
+        0.54456627368927,
+        0.3416079878807068,
+        0.049520257860422134,
+        0.023229697719216347,
+        0.005010594613850117
+      ]
+    },
+    {
+      "record_id": "aiflow_0087:0",
+      "truth": "9",
+      "fast_top1": "q",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "(",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "q",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -2.912524700164795,
+            -4.611733436584473,
+            -11.996927261352539,
+            -3.8031177520751953,
+            -11.284612655639648
+          ]
+        }
+      },
+      "hwr_top5": [
+        "q",
+        "9",
+        "\\uparrow",
+        "1",
+        "\\{"
+      ],
+      "hwr_top5_probabilities": [
+        0.48836269974708557,
+        0.44571349024772644,
+        0.017107367515563965,
+        0.016718711704015732,
+        0.006113668903708458
+      ]
+    },
+    {
+      "record_id": "aiflow_0087:2",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "6",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -7.2816667556762695,
+            -11.129463195800781,
+            -3.263913869857788,
+            -9.317976951599121,
+            -9.167352676391602
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "i",
+        "I"
+      ],
+      "hwr_top5_probabilities": [
+        0.3730507791042328,
+        0.26547756791114807,
+        0.23630671203136444,
+        0.04484623298048973,
+        0.02853173017501831
+      ]
+    },
+    {
+      "record_id": "aiflow_0087:4",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -5.611750602722168,
+            -1.5023727416992188,
+            -9.699991226196289,
+            -11.258790016174316,
+            -10.992965698242188
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "1",
+        "\\mid",
+        "i",
+        "I"
+      ],
+      "hwr_top5_probabilities": [
+        0.3592926263809204,
+        0.2639090120792389,
+        0.2402942031621933,
+        0.06019352003931999,
+        0.028247511014342308
+      ]
+    },
+    {
+      "record_id": "aiflow_0087:5",
+      "truth": "0",
+      "fast_top1": "\\circ",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "3",
+          "context_truth_rank_in_hwr_top5": 5,
+          "fused_top1": "0",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -14.874798774719238,
+            -12.43069839477539,
+            -11.483295440673828,
+            -8.951077461242676,
+            -3.2388973236083984
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\circ",
+        "\\fullmoon",
+        "\\diamond",
+        "\\degree",
+        "0"
+      ],
+      "hwr_top5_probabilities": [
+        0.5208693742752075,
+        0.2299782782793045,
+        0.09486350417137146,
+        0.06049758195877075,
+        0.027979759499430656
+      ]
+    },
+    {
+      "record_id": "aiflow_0089:0",
+      "truth": "1",
+      "fast_top1": "I",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -10.531129837036133,
+            -0.24172496795654297,
+            -9.488485336303711,
+            -16.24557876586914,
+            -3.897021532058716
+          ]
+        }
+      },
+      "hwr_top5": [
+        "I",
+        "1",
+        "\\mid",
+        "\\lceil",
+        "|"
+      ],
+      "hwr_top5_probabilities": [
+        0.21137449145317078,
+        0.19520795345306396,
+        0.16612030565738678,
+        0.13596917688846588,
+        0.12137196958065033
+      ]
+    },
+    {
+      "record_id": "aiflow_0090:0",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -6.9567551612854,
+            -0.23984479904174805,
+            -10.138216972351074,
+            -4.450175762176514,
+            -9.924444198608398
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "1",
+        "i",
+        "(",
+        "I"
+      ],
+      "hwr_top5_probabilities": [
+        0.2584451735019684,
+        0.1743251085281372,
+        0.1538310945034027,
+        0.11380533128976822,
+        0.07089134305715561
+      ]
+    },
+    {
+      "record_id": "aiflow_0095:1",
+      "truth": "(",
+      "fast_top1": "L",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "(",
+          "context_truth_rank_in_hwr_top5": 5,
+          "fused_top1": "(",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -9.496953964233398,
+            -12.851553916931152,
+            -13.45730972290039,
+            -9.572267532348633,
+            -0.18572139739990234
+          ]
+        }
+      },
+      "hwr_top5": [
+        "L",
+        "\\iota",
+        "\\lfloor",
+        "l",
+        "("
+      ],
+      "hwr_top5_probabilities": [
+        0.35376498103141785,
+        0.2945812940597534,
+        0.22042424976825714,
+        0.11812566220760345,
+        0.006069478578865528
+      ]
+    },
+    {
+      "record_id": "aiflow_0095:2",
+      "truth": "x",
+      "fast_top1": "\\between",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "x",
+          "context_truth_rank_in_hwr_top5": 4,
+          "fused_top1": "x",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -11.765718460083008,
+            -6.566412925720215,
+            -7.5949578285217285,
+            -1.1487646102905273,
+            -7.6051225662231445
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\between",
+        "\\mathfrak{X}",
+        "\\mathbb{1}",
+        "x",
+        "\\mathds{1}"
+      ],
+      "hwr_top5_probabilities": [
+        0.5688814520835876,
+        0.15741413831710815,
+        0.09764432907104492,
+        0.07501064985990524,
+        0.04011865332722664
+      ]
+    },
+    {
+      "record_id": "aiflow_0096:2",
+      "truth": "y",
+      "fast_top1": "\\zeta",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "O",
+          "context_truth_rank_in_hwr_top5": 5,
+          "fused_top1": "y",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -12.50849723815918,
+            -7.77057409286499,
+            -13.162182807922363,
+            -3.511758804321289,
+            -1.7693076133728027
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\zeta",
+        "\\mathscr{S}",
+        "\\xi",
+        "q",
+        "y"
+      ],
+      "hwr_top5_probabilities": [
+        0.46950504183769226,
+        0.16574347019195557,
+        0.12161234021186829,
+        0.07168015837669373,
+        0.06276530027389526
+      ]
+    },
+    {
+      "record_id": "aiflow_0099:1",
+      "truth": "(",
+      "fast_top1": "\\iota",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "0",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "(",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -12.684239387512207,
+            -9.848742485046387,
+            -2.2454700469970703,
+            -9.507993698120117,
+            -8.823801040649414
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\iota",
+        "l",
+        "(",
+        "L",
+        "C"
+      ],
+      "hwr_top5_probabilities": [
+        0.650598406791687,
+        0.11607259511947632,
+        0.11134237051010132,
+        0.039920248091220856,
+        0.02380366437137127
+      ]
+    },
+    {
+      "record_id": "aiflow_0100:0",
+      "truth": "y",
+      "fast_top1": "y",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "1",
+          "context_truth_rank_in_hwr_top5": 1,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 2,
+          "context_top5_log_probs": [
+            -4.421664237976074,
+            -9.425033569335938,
+            -0.35794782638549805,
+            -4.912640571594238,
+            -10.149931907653809
+          ]
+        }
+      },
+      "hwr_top5": [
+        "y",
+        "J",
+        "1",
+        "f",
+        "\\mathscr{S}"
+      ],
+      "hwr_top5_probabilities": [
+        0.41932767629623413,
+        0.13704591989517212,
+        0.10044150799512863,
+        0.07614699751138687,
+        0.05874433368444443
+      ]
+    },
+    {
+      "record_id": "aiflow_0100:2",
+      "truth": "+",
+      "fast_top1": "\\dag",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "-",
+          "context_truth_rank_in_hwr_top5": 4,
+          "fused_top1": "+",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -11.469501495361328,
+            -10.350421905517578,
+            -10.466379165649414,
+            -1.830002784729004,
+            -4.858788013458252
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\dag",
+        "\\psi",
+        "\\Psi",
+        "+",
+        "4"
+      ],
+      "hwr_top5_probabilities": [
+        0.7130528688430786,
+        0.12088067829608917,
+        0.10210704058408737,
+        0.03243885934352875,
+        0.009894661605358124
+      ]
+    },
+    {
+      "record_id": "aiflow_0100:3",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "4",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -8.98093318939209,
+            -12.418386459350586,
+            -2.2692556381225586,
+            -13.831395149230957,
+            -12.9882173538208
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "\\prime",
+        "i"
+      ],
+      "hwr_top5_probabilities": [
+        0.4355916678905487,
+        0.167369544506073,
+        0.12963175773620605,
+        0.08596700429916382,
+        0.061128273606300354
+      ]
+    },
+    {
+      "record_id": "aiflow_0105:0",
+      "truth": "f",
+      "fast_top1": "\\fint",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "g",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "f",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -12.4442138671875,
+            -1.3504152297973633,
+            -5.434344291687012,
+            -12.633895874023438,
+            -9.978793144226074
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\fint",
+        "f",
+        "\\mathcal{F}",
+        "\\pounds",
+        "\\oiint"
+      ],
+      "hwr_top5_probabilities": [
+        0.9812294244766235,
+        0.008415212854743004,
+        0.006816640496253967,
+        0.0011410332517698407,
+        0.0008416982018388808
+      ]
+    },
+    {
+      "record_id": "aiflow_0105:3",
+      "truth": "(",
+      "fast_top1": "\\iota",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": ")",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "(",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -12.272287368774414,
+            -3.0488243103027344,
+            -9.44847583770752,
+            -8.927547454833984,
+            -13.427776336669922
+          ]
+        }
+      },
+      "hwr_top5": [
+        "\\iota",
+        "(",
+        "l",
+        "L",
+        "\\lfloor"
+      ],
+      "hwr_top5_probabilities": [
+        0.5113475322723389,
+        0.2667362093925476,
+        0.12647713720798492,
+        0.05955396965146065,
+        0.01934037357568741
+      ]
+    },
+    {
+      "record_id": "aiflow_0108:0",
+      "truth": "(",
+      "fast_top1": "[",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "(",
+          "context_truth_rank_in_hwr_top5": 2,
+          "fused_top1": "(",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -10.461915969848633,
+            -0.20851755142211914,
+            -12.056453704833984,
+            -13.553781509399414,
+            -12.35433578491211
+          ]
+        }
+      },
+      "hwr_top5": [
+        "[",
+        "(",
+        "\\{",
+        "\\llbracket",
+        "\\iota"
+      ],
+      "hwr_top5_probabilities": [
+        0.4746290445327759,
+        0.18671680986881256,
+        0.15400943160057068,
+        0.1196480244398117,
+        0.0447222925722599
+      ]
+    },
+    {
+      "record_id": "aiflow_0113:0",
+      "truth": "8",
+      "fast_top1": "p",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "m",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "8",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -6.169844150543213,
+            -12.851714134216309,
+            -3.026944398880005,
+            -13.409183502197266,
+            -10.309964179992676
+          ]
+        }
+      },
+      "hwr_top5": [
+        "p",
+        "\\heartsuit",
+        "8",
+        "\\clubsuit",
+        "\\parr"
+      ],
+      "hwr_top5_probabilities": [
+        0.22239182889461517,
+        0.11136502772569656,
+        0.08766917139291763,
+        0.08290082216262817,
+        0.07600535452365875
+      ]
+    },
+    {
+      "record_id": "aiflow_0115:5",
+      "truth": "1",
+      "fast_top1": "|",
+      "layers": {
+        "layer_1": {
+          "context_unrestricted_top1": "3",
+          "context_truth_rank_in_hwr_top5": 3,
+          "fused_top1": "1",
+          "fused_truth_rank_in_hwr_top5": 1,
+          "context_top5_log_probs": [
+            -6.475143909454346,
+            -11.063523292541504,
+            -2.2456746101379395,
+            -11.064109802246094,
+            -10.295652389526367
+          ]
+        }
+      },
+      "hwr_top5": [
+        "|",
+        "\\mid",
+        "1",
+        "i",
+        "l"
+      ],
+      "hwr_top5_probabilities": [
+        0.4181102216243744,
+        0.19693121314048767,
+        0.15999312698841095,
+        0.0905754417181015,
+        0.040374208241701126
+      ]
+    }
+  ]
+}

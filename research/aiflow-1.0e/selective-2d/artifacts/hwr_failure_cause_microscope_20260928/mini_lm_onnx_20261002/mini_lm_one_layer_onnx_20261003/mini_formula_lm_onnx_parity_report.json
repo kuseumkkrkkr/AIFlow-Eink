@@ -1,0 +1,174 @@
+{
+  "schema": "aiflow-mini-formula-lm-onnx-parity/v1",
+  "generated_at": "2026-10-02T22:43:57.302470+00:00",
+  "status": "shadow_only_consumed_development_diagnostic",
+  "protocol": {
+    "training_performed": false,
+    "crohme_rows_loaded": 0,
+    "crohme_training_or_tuning": false,
+    "formula_examples": 599,
+    "candidate_selection_or_threshold_tuning": false,
+    "evaluation_warning": "The frozen 149-formula development set is consumed data; this is parity evidence only, not independent product acceptance."
+  },
+  "provenance": {
+    "checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_distill_20261003_one_layer\\mini_formula_lm.pt",
+    "checkpoint_sha256": "2c448199c2b4d65c4d786348ad2f3ba09322fedb5337b35d503f48d0462d01f2",
+    "distillation_report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_distill_20261003_one_layer\\mini_formula_lm_distillation_report.json",
+    "distillation_report_sha256": "4d2112c2fea5d1b6de74d2fbf627b76a89db6c883df255c35adf2fab2914a1cf",
+    "summary_sha256": "aef4636afef850a0b9b74736e42ad9487884103684e5827854a7bafd692f9282",
+    "formula_data_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401"
+  },
+  "contract": {
+    "inputs": {
+      "input_ids": "int64[N,S]",
+      "attention_mask": "bool[N,S]",
+      "mask_positions": "int64[N]"
+    },
+    "output": "float32[N,372] logits",
+    "dynamic_batch": true,
+    "dynamic_sequence": true,
+    "opset": 17,
+    "max_positions": 129
+  },
+  "fp32": {
+    "status": "passed",
+    "manual_wrapper_max_abs_error_vs_pytorch": 3.814697265625e-06,
+    "onnxruntime_max_abs_error_vs_pytorch": 5.7220458984375e-06,
+    "max_abs_error_gate": 0.0001,
+    "model_bytes": 380479,
+    "pytorch_checkpoint_bytes": 374736,
+    "onnxruntime_version": "1.29.0",
+    "formula_exact_metrics_diagnostic_only": {
+      "formulas": 149,
+      "group_exact_formulas": 125,
+      "baseline_top1_formula_exact": 68,
+      "reranked_formula_exact": 84,
+      "delta_formula_exact": 16,
+      "formula_exact_transitions": {
+        "exact_to_exact": 66,
+        "exact_to_wrong": 2,
+        "wrong_to_exact": 18,
+        "wrong_to_wrong": 63
+      },
+      "writer_bootstrap": {
+        "writers": 9,
+        "formulas_by_writer": {
+          "writer_001": 10,
+          "writer_002": 23,
+          "writer_003": 20,
+          "writer_004": 10,
+          "writer_006": 20,
+          "writer_007": 8,
+          "writer_008": 5,
+          "writer_010": 4,
+          "writer_012": 49
+        },
+        "replicates": 20000,
+        "delta_formula_exact_pp_95_ci": [
+          5.084745762711864,
+          14.5
+        ]
+      },
+      "exact_group_tokens": 469,
+      "baseline_top1_token_hits": 390,
+      "reranked_top1_token_hits": 414,
+      "token_top5_hits": 464,
+      "token_top5_recall": 0.9893390191897654,
+      "target_rank_histogram_on_exact_groups": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4
+      },
+      "top5_complete_formula_count_on_exact_groups": 120,
+      "top5_complete_formula_count_over_all_149": 120,
+      "changed_tokens": 38,
+      "improved_tokens": 28,
+      "regressed_tokens": 4,
+      "candidate_preserved_tokens": 469,
+      "candidate_preservation_rate": 1.0,
+      "new_tokens": 0,
+      "grouping_mutations": 0,
+      "grouping_wrong_formulas_counted_as_failures": 24
+    },
+    "host_latency": {
+      "batch_size": 32,
+      "median_batch_ms_host_not_mobile": 1.0498999981791712,
+      "p95_batch_ms_host_not_mobile": 1.3936349998402873,
+      "iterations": 40
+    }
+  },
+  "int8": {
+    "status": "diagnostic_only",
+    "weight_type": "QInt8 dynamic",
+    "max_abs_logit_error_vs_fp32": 0.614311695098877,
+    "token_argmax_agreement_vs_fp32": 0.986644407345576,
+    "formula_exact_metrics": {
+      "formulas": 149,
+      "group_exact_formulas": 125,
+      "baseline_top1_formula_exact": 68,
+      "reranked_formula_exact": 84,
+      "delta_formula_exact": 16,
+      "formula_exact_transitions": {
+        "exact_to_exact": 66,
+        "exact_to_wrong": 2,
+        "wrong_to_exact": 18,
+        "wrong_to_wrong": 63
+      },
+      "writer_bootstrap": {
+        "writers": 9,
+        "formulas_by_writer": {
+          "writer_001": 10,
+          "writer_002": 23,
+          "writer_003": 20,
+          "writer_004": 10,
+          "writer_006": 20,
+          "writer_007": 8,
+          "writer_008": 5,
+          "writer_010": 4,
+          "writer_012": 49
+        },
+        "replicates": 20000,
+        "delta_formula_exact_pp_95_ci": [
+          5.084745762711864,
+          14.5
+        ]
+      },
+      "exact_group_tokens": 469,
+      "baseline_top1_token_hits": 390,
+      "reranked_top1_token_hits": 414,
+      "token_top5_hits": 464,
+      "token_top5_recall": 0.9893390191897654,
+      "target_rank_histogram_on_exact_groups": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4
+      },
+      "top5_complete_formula_count_on_exact_groups": 120,
+      "top5_complete_formula_count_over_all_149": 120,
+      "changed_tokens": 38,
+      "improved_tokens": 28,
+      "regressed_tokens": 4,
+      "candidate_preserved_tokens": 469,
+      "candidate_preservation_rate": 1.0,
+      "new_tokens": 0,
+      "grouping_mutations": 0,
+      "grouping_wrong_formulas_counted_as_failures": 24
+    },
+    "model_bytes": 215046,
+    "host_latency": {
+      "batch_size": 32,
+      "median_batch_ms_host_not_mobile": 1.1797500046668574,
+      "p95_batch_ms_host_not_mobile": 1.3456349923217203,
+      "iterations": 40
+    }
+  },
+  "decision": {
+    "automatic_default_replacement": false,
+    "android_latency_verified": false,
+    "next_gate": "fresh writer/formula-disjoint acceptance and real-device Android ORT profiling"
+  }
+}

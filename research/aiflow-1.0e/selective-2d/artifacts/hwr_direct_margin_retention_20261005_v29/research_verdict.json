@@ -1,0 +1,66 @@
+{
+  "schema": "aiflow-direct-margin-retention-verdict/v29",
+  "status": "completed_verified_six_formula_recovery_still_below_canonical_not_promoted",
+  "comparison_sha256": "43ee0238034289056fa9b6771c6bb6e639416d388e9d4a5ab62739c83d716a01",
+  "verification": "independent_verification.json",
+  "checkpoint": "margin_retained_main/main_trained.pt",
+  "checkpoint_sha256": "2205216c9b24da8c815d068347447d8d42b9449be8338a72cce917c3fd7653b2",
+  "training": {
+    "steps": 2400,
+    "batch_size": 64,
+    "all_parameter_tensors_trainable_and_changed": 57,
+    "encoder_layers": 4,
+    "augmented_hard_target_exposures": 115200,
+    "original_exposures": 38400,
+    "unique_changed_augmented_views": 68726,
+    "positive_target_classes": 371,
+    "changed_augmented_classes": 366,
+    "hard_ce_weight": 1.0,
+    "feature_retention_weight": 0.7412244467384174,
+    "gap_retention_weight": 0.4730254546092819,
+    "kl_weight": 0.0,
+    "gap_mask": "Canonical teacher predicts inherited TRAIN ground-truth correctly; teacher-wrong rows still receive full hard-label CE",
+    "gap_regularizer_row_exposures": 123974,
+    "coefficient_source": "Eight fixed TRAIN batches, all-57-gradient norm ratio; evaluation cases not used",
+    "same_v25_data_and_schedule": true,
+    "generated_labels_human_verified": false,
+    "label_invariance_assumption": true
+  },
+  "counts": {
+    "canonical": {"internal_top1_of_5936": 4765, "owned_token_top1_of_579": 470, "owned_formula_top1_of_149": 76, "owned_formula_top5_complete_of_149": 137},
+    "real_paired_control": {"internal_top1_of_5936": 4949, "owned_token_top1_of_579": 414, "owned_formula_top1_of_149": 54, "owned_formula_top5_complete_of_149": 120},
+    "augmented_main": {"internal_top1_of_5936": 4935, "owned_token_top1_of_579": 408, "owned_formula_top1_of_149": 52, "owned_formula_top5_complete_of_149": 121},
+    "feature_retained_main": {"internal_top1_of_5936": 4893, "owned_token_top1_of_579": 433, "owned_formula_top1_of_149": 56, "owned_formula_top5_complete_of_149": 122},
+    "margin_retained_main": {"internal_top1_of_5936": 4875, "owned_token_top1_of_579": 438, "owned_formula_top1_of_149": 62, "owned_formula_top5_complete_of_149": 122}
+  },
+  "paired_formula_results": {
+    "versus_canonical": {"wins": 0, "losses": 14, "net": -14},
+    "versus_direct_augmented": {"wins": 12, "losses": 2, "net": 10},
+    "versus_feature_retained": {"wins": 6, "losses": 0, "net": 6},
+    "cohort_hits_canonical_augmented_feature_margin": {"legacy_96": [49, 30, 35, 39], "codex_reviewed_53": [27, 22, 21, 23]}
+  },
+  "train_probe_gap_preservation": {
+    "feature_only_baseline": 0.0982638169080019,
+    "margin_retained": 0.007924708595965058,
+    "loss_reduction_percent": 91.93527297704662,
+    "limit": "Eight fixed TRAIN probes, not an independent accuracy benchmark"
+  },
+  "interpretation": "Joint correct-class gap preservation recovers six formula hits with no losses versus feature retention on this consumed diagnostic. Internal balanced-character accuracy decreases by 18 hits versus feature retention. All 62 correctly read formulas were already correct for canonical; the original model remains the champion. This is partial retention recovery, not proof of augmentation superiority or fresh-writer generalization.",
+  "verification_scope": "All 2400 recorded loss formulas, 57 gradients and four layers checked. TRAIN coefficient independently reproduced; gap loss checked in NumPy double; CE/gap gradient direction and teacher-wrong masking verified. Final logits reloaded bit-exact and counts recounted. Historical intermediate forwards not fully replayed.",
+  "next_safe_diagnostic": "Inspect class/family exposure balance versus original admitted TRAIN population frequencies before changing sampling or augmentation volume. Keep diagnostic ownership labels out of any prior fitting, weighting or optimizer.",
+  "limits": {
+    "all_evaluation_cases_already_consumed": true,
+    "owned_groups_given_as_ground_truth": true,
+    "historical_canonical_calibration_formulas_in_owned_diagnostic": 95,
+    "additional_codex_reviewed_annotations": 53,
+    "new_human_acceptance": false,
+    "not_official_expression_rate": true,
+    "missing_positive_target_labels": ["="]
+  },
+  "owned_optimizer_rows": 0,
+  "crohme_rows": 0,
+  "canonical_checkpoint_unchanged": true,
+  "product_adopted": false,
+  "collection_or_deployment_resumed": false,
+  "goal_complete": false
+}

@@ -1,0 +1,778 @@
+{
+  "schema": "aiflow-hwr-decoder-survivor-layer-microscope/v1",
+  "scope": "frozen consumed-development forensic replay; no fitting, threshold selection, CROHME, or promotion",
+  "inputs": {
+    "trace_path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\formula_traces.jsonl",
+    "trace_sha256": "785e909f569e3c6346b4fcecc83173445b1ef016ad31ee13e7188700990c76e7",
+    "cause_matrix_path": "artifacts\\hwr_failure_cause_microscope_20260928\\failure_cause_matrix_microscope_20261001_v3.json",
+    "cause_matrix_sha256": "ee43eae06765576dd32d421426b243843f0f3b17c3e9876d577b90c2c52c1bbf",
+    "formula_count": 149,
+    "survivor_count": 11,
+    "mismatch_count": 12
+  },
+  "findings": {
+    "score_gap_source": "HWR token log probability only; relation component is zero for all survivors",
+    "mean_formula_token_score_gap": 0.7078705537382234,
+    "coarse_class_confusions": [
+      {
+        "target_class": "arithmetic_operator",
+        "selected_class": "digit",
+        "count": 1
+      },
+      {
+        "target_class": "arithmetic_operator",
+        "selected_class": "named_symbol",
+        "count": 1
+      },
+      {
+        "target_class": "digit",
+        "selected_class": "fence",
+        "count": 3
+      },
+      {
+        "target_class": "digit",
+        "selected_class": "latin_letter",
+        "count": 3
+      },
+      {
+        "target_class": "digit",
+        "selected_class": "named_symbol",
+        "count": 1
+      },
+      {
+        "target_class": "latin_letter",
+        "selected_class": "named_symbol",
+        "count": 2
+      },
+      {
+        "target_class": "relation",
+        "selected_class": "named_symbol",
+        "count": 1
+      }
+    ],
+    "layer_summary": {
+      "encoder.input": {
+        "mismatch_glyphs": 12,
+        "target_top1_count": 0,
+        "target_top5_count": 0,
+        "mean_target_rank": 157.83333333333334,
+        "median_target_rank": 132.5,
+        "mean_target_minus_best_other_logit": -1.066214216252168,
+        "median_target_minus_best_other_logit": -0.9819480292499065
+      },
+      "encoder.block_0.output": {
+        "mismatch_glyphs": 12,
+        "target_top1_count": 0,
+        "target_top5_count": 0,
+        "mean_target_rank": 121.66666666666667,
+        "median_target_rank": 78.0,
+        "mean_target_minus_best_other_logit": -1.9402237868246932,
+        "median_target_minus_best_other_logit": -1.6672911643981934
+      },
+      "encoder.block_1.output": {
+        "mismatch_glyphs": 12,
+        "target_top1_count": 0,
+        "target_top5_count": 1,
+        "mean_target_rank": 55.083333333333336,
+        "median_target_rank": 67.5,
+        "mean_target_minus_best_other_logit": -1.7910985847314198,
+        "median_target_minus_best_other_logit": -1.8993802070617676
+      },
+      "encoder.block_2.output": {
+        "mismatch_glyphs": 12,
+        "target_top1_count": 1,
+        "target_top5_count": 5,
+        "mean_target_rank": 9.75,
+        "median_target_rank": 6.5,
+        "mean_target_minus_best_other_logit": -1.388349970181783,
+        "median_target_minus_best_other_logit": -1.490624189376831
+      },
+      "encoder.block_3.output": {
+        "mismatch_glyphs": 12,
+        "target_top1_count": 0,
+        "target_top5_count": 12,
+        "mean_target_rank": 2.9166666666666665,
+        "median_target_rank": 3.0,
+        "mean_target_minus_best_other_logit": -1.8624273538589478,
+        "median_target_minus_best_other_logit": -1.5267095565795898
+      },
+      "encoder.output": {
+        "mismatch_glyphs": 12,
+        "target_top1_count": 0,
+        "target_top5_count": 12,
+        "mean_target_rank": 2.9166666666666665,
+        "median_target_rank": 3.0,
+        "mean_target_minus_best_other_logit": -1.8624273538589478,
+        "median_target_minus_best_other_logit": -1.5267095565795898
+      }
+    },
+    "target_rank_improved_input_to_final_count": 12,
+    "target_margin_improved_input_to_final_count": 4,
+    "details": [
+      {
+        "sample_id": "aiflow_0146",
+        "target_tokens": [
+          "(",
+          "x",
+          "+",
+          "9",
+          ")"
+        ],
+        "selected_tokens": [
+          "(",
+          "\\chi",
+          "+",
+          "9",
+          ")"
+        ],
+        "target_beam_rank": 2,
+        "target_to_selected_score_gap": 0.216465375601683,
+        "token_log_probability_component": 0.216465375601683,
+        "relation_component": 0.0,
+        "mismatches": [
+          {
+            "position": 1,
+            "target": "x",
+            "selected_top1": "\\chi",
+            "target_class": "latin_letter",
+            "selected_class": "named_symbol",
+            "target_hwr_rank": 2,
+            "target_probability": 0.24987752735614777,
+            "selected_probability": 0.7375233769416809,
+            "raw_point_count": 23,
+            "raw_bbox": {
+              "left": 105.0,
+              "top": 126.0,
+              "right": 135.0,
+              "bottom": 160.0
+            },
+            "layer_target_ranks": [
+              138,
+              233,
+              29,
+              3,
+              2,
+              2
+            ],
+            "layer_target_minus_best_other_logits": [
+              -0.9816480651497841,
+              -2.7038669884204865,
+              -1.510117530822754,
+              -0.4868927001953125,
+              -1.082326889038086,
+              -1.082326889038086
+            ],
+            "first_stage_in_top5": "encoder.block_2.output",
+            "target_rank_improved_input_to_final": true,
+            "target_margin_improved_input_to_final": false
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0016",
+        "target_tokens": [
+          "1",
+          "+",
+          "5"
+        ],
+        "selected_tokens": [
+          "1",
+          "\\bot",
+          "5"
+        ],
+        "target_beam_rank": 10,
+        "target_to_selected_score_gap": 1.3165098628597145,
+        "token_log_probability_component": 1.3165098628597145,
+        "relation_component": 0.0,
+        "mismatches": [
+          {
+            "position": 1,
+            "target": "+",
+            "selected_top1": "\\bot",
+            "target_class": "arithmetic_operator",
+            "selected_class": "named_symbol",
+            "target_hwr_rank": 3,
+            "target_probability": 0.012044497765600681,
+            "selected_probability": 0.625241219997406,
+            "raw_point_count": 35,
+            "raw_bbox": {
+              "left": 110.445,
+              "top": 175.191,
+              "right": 146.987,
+              "bottom": 206.113
+            },
+            "layer_target_ranks": [
+              236,
+              48,
+              15,
+              7,
+              3,
+              3
+            ],
+            "layer_target_minus_best_other_logits": [
+              -1.2075547873973846,
+              -1.3947213888168335,
+              -1.3204036951065063,
+              -1.0964624881744385,
+              -3.9495296478271484,
+              -3.9495296478271484
+            ],
+            "first_stage_in_top5": "encoder.block_3.output",
+            "target_rank_improved_input_to_final": true,
+            "target_margin_improved_input_to_final": false
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0058",
+        "target_tokens": [
+          "1",
+          "8",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "selected_tokens": [
+          "\\lfloor",
+          "\\mathscr{C}",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "target_beam_rank": 29,
+        "target_to_selected_score_gap": 0.9346163957407683,
+        "token_log_probability_component": 0.9346163957407683,
+        "relation_component": 0.0,
+        "mismatches": [
+          {
+            "position": 0,
+            "target": "1",
+            "selected_top1": "\\lfloor",
+            "target_class": "digit",
+            "selected_class": "fence",
+            "target_hwr_rank": 2,
+            "target_probability": 0.1657966822385788,
+            "selected_probability": 0.5264788269996643,
+            "raw_point_count": 12,
+            "raw_bbox": {
+              "left": 218.066,
+              "top": 171.769,
+              "right": 224.647,
+              "bottom": 245.716
+            },
+            "layer_target_ranks": [
+              40,
+              77,
+              90,
+              18,
+              2,
+              2
+            ],
+            "layer_target_minus_best_other_logits": [
+              -0.6501449048519135,
+              -1.6417486071586609,
+              -2.182392716407776,
+              -2.470817804336548,
+              -1.1554489135742188,
+              -1.1554489135742188
+            ],
+            "first_stage_in_top5": "encoder.block_3.output",
+            "target_rank_improved_input_to_final": true,
+            "target_margin_improved_input_to_final": false
+          },
+          {
+            "position": 1,
+            "target": "8",
+            "selected_top1": "\\mathscr{C}",
+            "target_class": "digit",
+            "selected_class": "named_symbol",
+            "target_hwr_rank": 3,
+            "target_probability": 0.01118632685393095,
+            "selected_probability": 0.9600080847740173,
+            "raw_point_count": 29,
+            "raw_bbox": {
+              "left": 236.453,
+              "top": 184.766,
+              "right": 264.53,
+              "bottom": 244.79
+            },
+            "layer_target_ranks": [
+              216,
+              136,
+              8,
+              7,
+              3,
+              3
+            ],
+            "layer_target_minus_best_other_logits": [
+              -1.1782082691788673,
+              -2.1412754356861115,
+              -0.6975724697113037,
+              -1.7224984169006348,
+              -4.452249526977539,
+              -4.452249526977539
+            ],
+            "first_stage_in_top5": "encoder.block_3.output",
+            "target_rank_improved_input_to_final": true,
+            "target_margin_improved_input_to_final": false
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0004",
+        "target_tokens": [
+          "2",
+          "+",
+          "7"
+        ],
+        "selected_tokens": [
+          "2",
+          "4",
+          "7"
+        ],
+        "target_beam_rank": 2,
+        "target_to_selected_score_gap": 0.3563686980678553,
+        "token_log_probability_component": 0.3563686980678553,
+        "relation_component": 0.0,
+        "mismatches": [
+          {
+            "position": 1,
+            "target": "+",
+            "selected_top1": "4",
+            "target_class": "arithmetic_operator",
+            "selected_class": "digit",
+            "target_hwr_rank": 2,
+            "target_probability": 0.22155244648456573,
+            "selected_probability": 0.6453323364257812,
+            "raw_point_count": 42,
+            "raw_bbox": {
+              "left": 158.539,
+              "top": 126.047,
+              "right": 219.664,
+              "bottom": 213.391
+            },
+            "layer_target_ranks": [
+              344,
+              354,
+              72,
+              4,
+              2,
+              2
+            ],
+            "layer_target_minus_best_other_logits": [
+              -1.6307679414749146,
+              -3.7174001932144165,
+              -2.9031161069869995,
+              -1.102095127105713,
+              -1.069106101989746,
+              -1.069106101989746
+            ],
+            "first_stage_in_top5": "encoder.block_2.output",
+            "target_rank_improved_input_to_final": true,
+            "target_margin_improved_input_to_final": true
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0009",
+        "target_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "=",
+          "1"
+        ],
+        "selected_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "=",
+          "|"
+        ],
+        "target_beam_rank": 4,
+        "target_to_selected_score_gap": 0.31632836338078946,
+        "token_log_probability_component": 0.31632836338078946,
+        "relation_component": 0.0,
+        "mismatches": [
+          {
+            "position": 5,
+            "target": "1",
+            "selected_top1": "|",
+            "target_class": "digit",
+            "selected_class": "fence",
+            "target_hwr_rank": 4,
+            "target_probability": 0.08278394490480423,
+            "selected_probability": 0.5523623824119568,
+            "raw_point_count": 23,
+            "raw_bbox": {
+              "left": 260.351,
+              "top": 111.069,
+              "right": 269.162,
+              "bottom": 227.663
+            },
+            "layer_target_ranks": [
+              42,
+              72,
+              71,
+              11,
+              4,
+              4
+            ],
+            "layer_target_minus_best_other_logits": [
+              -0.6698960661888123,
+              -1.5998086333274841,
+              -1.9441895484924316,
+              -2.017552375793457,
+              -1.897970199584961,
+              -1.897970199584961
+            ],
+            "first_stage_in_top5": "encoder.block_3.output",
+            "target_rank_improved_input_to_final": true,
+            "target_margin_improved_input_to_final": false
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0078",
+        "target_tokens": [
+          "a",
+          "=",
+          "5"
+        ],
+        "selected_tokens": [
+          "a",
+          "=",
+          "S"
+        ],
+        "target_beam_rank": 5,
+        "target_to_selected_score_gap": 0.9533736125997169,
+        "token_log_probability_component": 0.9533736125997169,
+        "relation_component": 0.0,
+        "mismatches": [
+          {
+            "position": 2,
+            "target": "5",
+            "selected_top1": "S",
+            "target_class": "digit",
+            "selected_class": "latin_letter",
+            "target_hwr_rank": 4,
+            "target_probability": 0.03325261175632477,
+            "selected_probability": 0.5807115435600281,
+            "raw_point_count": 56,
+            "raw_bbox": {
+              "left": 220.136,
+              "top": 101.607,
+              "right": 288.914,
+              "bottom": 182.767
+            },
+            "layer_target_ranks": [
+              127,
+              69,
+              70,
+              6,
+              4,
+              4
+            ],
+            "layer_target_minus_best_other_logits": [
+              -0.982247993350029,
+              -1.5603489875793457,
+              -2.49259090423584,
+              -2.0836894512176514,
+              -2.8601207733154297,
+              -2.8601207733154297
+            ],
+            "first_stage_in_top5": "encoder.block_3.output",
+            "target_rank_improved_input_to_final": true,
+            "target_margin_improved_input_to_final": false
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0118",
+        "target_tokens": [
+          "1"
+        ],
+        "selected_tokens": [
+          "|"
+        ],
+        "target_beam_rank": 2,
+        "target_to_selected_score_gap": 0.277360846297078,
+        "token_log_probability_component": 0.277360846297078,
+        "relation_component": 0.0,
+        "mismatches": [
+          {
+            "position": 0,
+            "target": "1",
+            "selected_top1": "|",
+            "target_class": "digit",
+            "selected_class": "fence",
+            "target_hwr_rank": 2,
+            "target_probability": 0.2965104877948761,
+            "selected_probability": 0.39128783345222473,
+            "raw_point_count": 13,
+            "raw_bbox": {
+              "left": 156.791,
+              "top": 99.529,
+              "right": 160.658,
+              "bottom": 166.37
+            },
+            "layer_target_ranks": [
+              42,
+              50,
+              52,
+              5,
+              2,
+              2
+            ],
+            "layer_target_minus_best_other_logits": [
+              -0.6613097190856934,
+              -1.457656741142273,
+              -1.7620229721069336,
+              -1.2587499618530273,
+              -0.2773609161376953,
+              -0.2773609161376953
+            ],
+            "first_stage_in_top5": "encoder.block_2.output",
+            "target_rank_improved_input_to_final": true,
+            "target_margin_improved_input_to_final": true
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0044",
+        "target_tokens": [
+          "="
+        ],
+        "selected_tokens": [
+          "\\Xi"
+        ],
+        "target_beam_rank": 3,
+        "target_to_selected_score_gap": 2.5823021068260825,
+        "token_log_probability_component": 2.5823021068260825,
+        "relation_component": 0.0,
+        "mismatches": [
+          {
+            "position": 0,
+            "target": "=",
+            "selected_top1": "\\Xi",
+            "target_class": "relation",
+            "selected_class": "named_symbol",
+            "target_hwr_rank": 3,
+            "target_probability": 0.051907774060964584,
+            "selected_probability": 0.6866129040718079,
+            "raw_point_count": 35,
+            "raw_bbox": {
+              "left": 147.9170386904762,
+              "top": 281.7686011904762,
+              "right": 171.21949404761904,
+              "bottom": 299.4561011904762
+            },
+            "layer_target_ranks": [
+              372,
+              164,
+              116,
+              24,
+              3,
+              3
+            ],
+            "layer_target_minus_best_other_logits": [
+              -2.2066816091537476,
+              -2.3551616072654724,
+              -2.5083425641059875,
+              -2.0793533325195312,
+              -2.5823020935058594,
+              -2.5823020935058594
+            ],
+            "first_stage_in_top5": "encoder.block_3.output",
+            "target_rank_improved_input_to_final": true,
+            "target_margin_improved_input_to_final": false
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0089",
+        "target_tokens": [
+          "1",
+          "0",
+          "+",
+          "2"
+        ],
+        "selected_tokens": [
+          "I",
+          "0",
+          "+",
+          "2"
+        ],
+        "target_beam_rank": 2,
+        "target_to_selected_score_gap": 0.019891495754841504,
+        "token_log_probability_component": 0.019891495754841504,
+        "relation_component": 0.0,
+        "mismatches": [
+          {
+            "position": 0,
+            "target": "1",
+            "selected_top1": "I",
+            "target_class": "digit",
+            "selected_class": "latin_letter",
+            "target_hwr_rank": 2,
+            "target_probability": 0.19520795345306396,
+            "selected_probability": 0.21137449145317078,
+            "raw_point_count": 25,
+            "raw_bbox": {
+              "left": 124.0531994047619,
+              "top": 199.00260416666669,
+              "right": 127.14136904761904,
+              "bottom": 238.86979166666669
+            },
+            "layer_target_ranks": [
+              47,
+              79,
+              71,
+              27,
+              2,
+              2
+            ],
+            "layer_target_minus_best_other_logits": [
+              -0.6767182946205139,
+              -1.6928337216377258,
+              -1.8545708656311035,
+              -3.0835373401641846,
+              -0.07956600189208984,
+              -0.07956600189208984
+            ],
+            "first_stage_in_top5": "encoder.block_3.output",
+            "target_rank_improved_input_to_final": true,
+            "target_margin_improved_input_to_final": true
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0096",
+        "target_tokens": [
+          "f",
+          "(",
+          "y",
+          ")"
+        ],
+        "selected_tokens": [
+          "f",
+          "(",
+          "\\zeta",
+          ")"
+        ],
+        "target_beam_rank": 5,
+        "target_to_selected_score_gap": 0.5030691649931521,
+        "token_log_probability_component": 0.5030691649931521,
+        "relation_component": 0.0,
+        "mismatches": [
+          {
+            "position": 2,
+            "target": "y",
+            "selected_top1": "\\zeta",
+            "target_class": "latin_letter",
+            "selected_class": "named_symbol",
+            "target_hwr_rank": 5,
+            "target_probability": 0.06276530027389526,
+            "selected_probability": 0.46950504183769226,
+            "raw_point_count": 74,
+            "raw_bbox": {
+              "left": 176.27306547619048,
+              "top": 203.66331845238096,
+              "right": 197.55431547619048,
+              "bottom": 242.51934523809524
+            },
+            "layer_target_ranks": [
+              58,
+              9,
+              2,
+              1,
+              5,
+              5
+            ],
+            "layer_target_minus_best_other_logits": [
+              -0.7272558212280273,
+              -0.7291511297225952,
+              -0.2023639678955078,
+              0.8848075866699219,
+              -2.0122766494750977,
+              -2.0122766494750977
+            ],
+            "first_stage_in_top5": "encoder.block_1.output",
+            "target_rank_improved_input_to_final": true,
+            "target_margin_improved_input_to_final": false
+          }
+        ]
+      },
+      {
+        "sample_id": "aiflow_0113",
+        "target_tokens": [
+          "8",
+          "\\div",
+          "2"
+        ],
+        "selected_tokens": [
+          "p",
+          "\\div",
+          "2"
+        ],
+        "target_beam_rank": 3,
+        "target_to_selected_score_gap": 0.31029016899877476,
+        "token_log_probability_component": 0.31029016899877476,
+        "relation_component": 0.0,
+        "mismatches": [
+          {
+            "position": 0,
+            "target": "8",
+            "selected_top1": "p",
+            "target_class": "digit",
+            "selected_class": "latin_letter",
+            "target_hwr_rank": 3,
+            "target_probability": 0.08766917139291763,
+            "selected_probability": 0.22239182889461517,
+            "raw_point_count": 79,
+            "raw_bbox": {
+              "left": 130.90364583333334,
+              "top": 229.43638392857144,
+              "right": 154.31845238095238,
+              "bottom": 263.63206845238096
+            },
+            "layer_target_ranks": [
+              232,
+              169,
+              65,
+              4,
+              3,
+              3
+            ],
+            "layer_target_minus_best_other_logits": [
+              -1.2221371233463287,
+              -2.2887120079249144,
+              -2.1154996752738953,
+              -0.1433582305908203,
+              -0.930870532989502,
+              -0.930870532989502
+            ],
+            "first_stage_in_top5": "encoder.block_2.output",
+            "target_rank_improved_input_to_final": true,
+            "target_margin_improved_input_to_final": true
+          }
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "cause_matrix_schema_valid": true,
+    "trace_hash_matches_cause_matrix": true,
+    "formula_count_is_149": true,
+    "survivor_count_is_11": true,
+    "mismatch_count_is_12": true,
+    "all_mismatches_replayed_against_hwr_trace": true,
+    "all_survivor_relations_contribute_zero": true,
+    "all_target_score_gaps_are_token_log_probability_only": true,
+    "all_checks_pass": true
+  }
+}

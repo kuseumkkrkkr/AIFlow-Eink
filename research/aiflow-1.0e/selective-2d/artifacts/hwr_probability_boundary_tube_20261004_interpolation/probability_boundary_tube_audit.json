@@ -1,0 +1,637 @@
+{
+  "schema": "aiflow-hwr-probability-boundary-tube-audit/v1",
+  "status": "training_pool_teacher_boundary_diagnostic_only",
+  "scope": "class '2'; single-stroke topology; HWRT train fit and UJI train query",
+  "method": {
+    "shape_space": "median-centered low-rank PCA over aligned 128-point XY trajectories",
+    "neighbor_correlation": "convex interpolation between a real UJI query trajectory and a direction-compatible real HWRT same-class trajectory; no independent point noise",
+    "radius": "68th percentile of pairwise distances among low-rank standardized HWRT training shapes; this is a data-derived distance limit, not a Gaussian +/-1 SD region",
+    "sampling": "sweep 25/50/75/100% of the capped query-to-donor interpolation path; intermediate points are synthetic and human plausibility is not established by convexity alone",
+    "scales": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "softmax_temperature": 2.0,
+    "time_transform": "none; observed and ordinal timing channels are preserved byte-identically",
+    "boundary": "target logit minus strongest rival logit <= 0",
+    "geometry_gates": {
+      "path_length_ratio": [
+        0.78,
+        1.22
+      ],
+      "xy_bounds": "convex combinations of valid real inputs; no clipping",
+      "path_length_ratio_is_only_morphology_gate": true
+    }
+  },
+  "provenance": {
+    "prepared_manifest_sha256": "5d66c91b58af7faa529644bfe6915c0ce6ce13eda2c7c6dad3503cf0a6582054",
+    "teacher_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "train_features_sha256": "72061bc0fd989096729ed613a21e19cab04b92c947efffcd7991b76e139a03f4",
+    "train_labels_sha256": "fe60cece651054cf3713d7f62f103fab0bf7a210a91aea134316cd57e1742ae5",
+    "train_sources_sha256": "d3bc4479e24426f93792e90c34d82f0e0172691ea541ff81966c46649b08050c",
+    "fit_source": "HWRT official train split only",
+    "query_source": "UJI Pen v2 official writer-disjoint train split only",
+    "fit_rows": 109,
+    "query_rows": 80,
+    "class2_single_stroke_rows_after_topology_filter": {
+      "hwrt_fit": 109,
+      "uji_query": 80
+    },
+    "class2_rows_before_topology_filter": {
+      "hwrt_train": 110,
+      "uji_train": 80
+    },
+    "heldout_rows_read": 0,
+    "crohme_rows": 0
+  },
+  "empirical_tube_fit": {
+    "coverage": 0.68,
+    "pairwise_q68_radius_mahalanobis": 4.2116762309205775,
+    "fit_rows": 109,
+    "component_count": 8,
+    "explained_variance_ratio": 0.964097024785941,
+    "pairwise_distance_p50": 3.56671066937557,
+    "pairwise_distance_p68": 4.2116762309205775,
+    "pairwise_distance_p95": 6.206387726756793
+  },
+  "transform_by_scale": [
+    {
+      "interpolation_fraction_of_query_q68_limit": 0.25,
+      "generated_rows": 80,
+      "valid_rows": 80,
+      "rejected_rows": 0,
+      "rejection_reasons": {
+        "non_finite": 0,
+        "xy_out_of_range": 0,
+        "path_ratio_out_of_range": 0
+      },
+      "rms_p50": 0.03239792585372925,
+      "rms_p95": 0.04640226438641548,
+      "max_point_displacement_p95": 0.11162582039833069,
+      "mean_path_ratio": 0.960946261882782,
+      "all_non_xy_channels_unchanged": true,
+      "endpoint_displacement_p95": 0.3196775019168854,
+      "adjacent_displacement_step_p95": 0.02913970872759819
+    },
+    {
+      "interpolation_fraction_of_query_q68_limit": 0.5,
+      "generated_rows": 80,
+      "valid_rows": 76,
+      "rejected_rows": 4,
+      "rejection_reasons": {
+        "non_finite": 0,
+        "xy_out_of_range": 0,
+        "path_ratio_out_of_range": 4
+      },
+      "rms_p50": 0.0647958517074585,
+      "rms_p95": 0.09280452877283096,
+      "max_point_displacement_p95": 0.223251610994339,
+      "mean_path_ratio": 0.9484682083129883,
+      "all_non_xy_channels_unchanged": true,
+      "endpoint_displacement_p95": 0.3196775019168854,
+      "adjacent_displacement_step_p95": 0.02913970872759819
+    },
+    {
+      "interpolation_fraction_of_query_q68_limit": 0.75,
+      "generated_rows": 80,
+      "valid_rows": 65,
+      "rejected_rows": 15,
+      "rejection_reasons": {
+        "non_finite": 0,
+        "xy_out_of_range": 0,
+        "path_ratio_out_of_range": 15
+      },
+      "rms_p50": 0.09719377756118774,
+      "rms_p95": 0.13920679688453674,
+      "max_point_displacement_p95": 0.33487749099731445,
+      "mean_path_ratio": 0.9763076901435852,
+      "all_non_xy_channels_unchanged": true,
+      "endpoint_displacement_p95": 0.3196775019168854,
+      "adjacent_displacement_step_p95": 0.02913970872759819
+    },
+    {
+      "interpolation_fraction_of_query_q68_limit": 1.0,
+      "generated_rows": 80,
+      "valid_rows": 57,
+      "rejected_rows": 23,
+      "rejection_reasons": {
+        "non_finite": 0,
+        "xy_out_of_range": 0,
+        "path_ratio_out_of_range": 23
+      },
+      "rms_p50": 0.129591703414917,
+      "rms_p95": 0.18560905754566193,
+      "max_point_displacement_p95": 0.44650328159332275,
+      "mean_path_ratio": 1.0303866863250732,
+      "all_non_xy_channels_unchanged": true,
+      "endpoint_displacement_p95": 0.3196775019168854,
+      "adjacent_displacement_step_p95": 0.02913970872759819
+    }
+  ],
+  "teacher_probability_boundary_by_scale": [
+    {
+      "interpolation_fraction_of_query_q68_limit": 0.0,
+      "geometry_valid_rows": 80,
+      "complete_matched_path_rows": 57,
+      "teacher_all_valid": {
+        "rows": 80,
+        "target_top1": 77,
+        "target_top5": 80,
+        "target_softmax_probability_mean_t2": 0.712914943528892,
+        "target_softmax_probability_p10_t2": 0.39580160389548635,
+        "target_logit_margin_mean": 5.733836734294892,
+        "target_logit_margin_p10": 2.1162467002868652,
+        "target_logit_margin_p50": 6.131039619445801,
+        "target_margin_nonpositive": 3,
+        "target_rank_median": 1.0,
+        "strongest_rivals": [
+          {
+            "label": "z",
+            "count": 34
+          },
+          {
+            "label": "Z",
+            "count": 20
+          },
+          {
+            "label": "\\wr",
+            "count": 12
+          },
+          {
+            "label": "\\mathscr{L}",
+            "count": 3
+          },
+          {
+            "label": "1",
+            "count": 2
+          },
+          {
+            "label": "\\ell",
+            "count": 2
+          },
+          {
+            "label": "\\iota",
+            "count": 2
+          },
+          {
+            "label": "a",
+            "count": 2
+          },
+          {
+            "label": "R",
+            "count": 1
+          },
+          {
+            "label": "\\mathcal{L}",
+            "count": 1
+          }
+        ]
+      },
+      "teacher_complete_matched_paths": {
+        "rows": 57,
+        "target_top1": 54,
+        "target_top5": 57,
+        "target_softmax_probability_mean_t2": 0.7002611762942939,
+        "target_softmax_probability_p10_t2": 0.32232936065627377,
+        "target_logit_margin_mean": 5.693607564558063,
+        "target_logit_margin_p10": 1.3128952026367193,
+        "target_logit_margin_p50": 6.272682189941406,
+        "target_margin_nonpositive": 3,
+        "target_rank_median": 1.0,
+        "strongest_rivals": [
+          {
+            "label": "z",
+            "count": 27
+          },
+          {
+            "label": "Z",
+            "count": 14
+          },
+          {
+            "label": "\\wr",
+            "count": 6
+          },
+          {
+            "label": "\\ell",
+            "count": 2
+          },
+          {
+            "label": "\\iota",
+            "count": 2
+          },
+          {
+            "label": "\\mathscr{L}",
+            "count": 2
+          },
+          {
+            "label": "1",
+            "count": 1
+          },
+          {
+            "label": "R",
+            "count": 1
+          },
+          {
+            "label": "\\mathcal{L}",
+            "count": 1
+          },
+          {
+            "label": "a",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "interpolation_fraction_of_query_q68_limit": 0.25,
+      "geometry_valid_rows": 80,
+      "complete_matched_path_rows": 57,
+      "teacher_all_valid": {
+        "rows": 80,
+        "target_top1": 80,
+        "target_top5": 80,
+        "target_softmax_probability_mean_t2": 0.8282303163540969,
+        "target_softmax_probability_p10_t2": 0.6004770257549389,
+        "target_logit_margin_mean": 7.063959783315658,
+        "target_logit_margin_p10": 4.575664710998535,
+        "target_logit_margin_p50": 7.204202651977539,
+        "target_margin_nonpositive": 0,
+        "target_rank_median": 1.0,
+        "strongest_rivals": [
+          {
+            "label": "z",
+            "count": 35
+          },
+          {
+            "label": "\\wr",
+            "count": 20
+          },
+          {
+            "label": "Z",
+            "count": 17
+          },
+          {
+            "label": "a",
+            "count": 3
+          },
+          {
+            "label": "\\mathscr{L}",
+            "count": 2
+          },
+          {
+            "label": "\\angle",
+            "count": 1
+          },
+          {
+            "label": "\\ell",
+            "count": 1
+          },
+          {
+            "label": "\\iota",
+            "count": 1
+          }
+        ]
+      },
+      "teacher_complete_matched_paths": {
+        "rows": 57,
+        "target_top1": 57,
+        "target_top5": 57,
+        "target_softmax_probability_mean_t2": 0.8118502937909485,
+        "target_softmax_probability_p10_t2": 0.5751297057184386,
+        "target_logit_margin_mean": 6.950464031152558,
+        "target_logit_margin_p10": 3.5014646530151365,
+        "target_logit_margin_p50": 7.110679626464844,
+        "target_margin_nonpositive": 0,
+        "target_rank_median": 1.0,
+        "strongest_rivals": [
+          {
+            "label": "z",
+            "count": 28
+          },
+          {
+            "label": "Z",
+            "count": 13
+          },
+          {
+            "label": "\\wr",
+            "count": 11
+          },
+          {
+            "label": "a",
+            "count": 2
+          },
+          {
+            "label": "\\ell",
+            "count": 1
+          },
+          {
+            "label": "\\iota",
+            "count": 1
+          },
+          {
+            "label": "\\mathscr{L}",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "interpolation_fraction_of_query_q68_limit": 0.5,
+      "geometry_valid_rows": 76,
+      "complete_matched_path_rows": 57,
+      "teacher_all_valid": {
+        "rows": 76,
+        "target_top1": 76,
+        "target_top5": 76,
+        "target_softmax_probability_mean_t2": 0.888027746911991,
+        "target_softmax_probability_p10_t2": 0.7879752748894049,
+        "target_logit_margin_mean": 8.197117893319382,
+        "target_logit_margin_p10": 5.466655731201172,
+        "target_logit_margin_p50": 8.39314603805542,
+        "target_margin_nonpositive": 0,
+        "target_rank_median": 1.0,
+        "strongest_rivals": [
+          {
+            "label": "z",
+            "count": 31
+          },
+          {
+            "label": "\\wr",
+            "count": 19
+          },
+          {
+            "label": "Z",
+            "count": 17
+          },
+          {
+            "label": "a",
+            "count": 4
+          },
+          {
+            "label": "]",
+            "count": 2
+          },
+          {
+            "label": "\\angle",
+            "count": 1
+          },
+          {
+            "label": "\\iota",
+            "count": 1
+          },
+          {
+            "label": "\\mathscr{L}",
+            "count": 1
+          }
+        ]
+      },
+      "teacher_complete_matched_paths": {
+        "rows": 57,
+        "target_top1": 57,
+        "target_top5": 57,
+        "target_softmax_probability_mean_t2": 0.8787168223422291,
+        "target_softmax_probability_p10_t2": 0.7802837556642519,
+        "target_logit_margin_mean": 7.985397506178471,
+        "target_logit_margin_p10": 5.243212699890137,
+        "target_logit_margin_p50": 8.271380424499512,
+        "target_margin_nonpositive": 0,
+        "target_rank_median": 1.0,
+        "strongest_rivals": [
+          {
+            "label": "z",
+            "count": 23
+          },
+          {
+            "label": "Z",
+            "count": 15
+          },
+          {
+            "label": "\\wr",
+            "count": 13
+          },
+          {
+            "label": "a",
+            "count": 3
+          },
+          {
+            "label": "]",
+            "count": 2
+          },
+          {
+            "label": "\\iota",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "interpolation_fraction_of_query_q68_limit": 0.75,
+      "geometry_valid_rows": 65,
+      "complete_matched_path_rows": 57,
+      "teacher_all_valid": {
+        "rows": 65,
+        "target_top1": 65,
+        "target_top5": 65,
+        "target_softmax_probability_mean_t2": 0.9125518086092316,
+        "target_softmax_probability_p10_t2": 0.8398076333111267,
+        "target_logit_margin_mean": 8.835338607201209,
+        "target_logit_margin_p10": 6.5985267639160154,
+        "target_logit_margin_p50": 9.170243263244629,
+        "target_margin_nonpositive": 0,
+        "target_rank_median": 1.0,
+        "strongest_rivals": [
+          {
+            "label": "z",
+            "count": 29
+          },
+          {
+            "label": "\\wr",
+            "count": 15
+          },
+          {
+            "label": "Z",
+            "count": 10
+          },
+          {
+            "label": "]",
+            "count": 7
+          },
+          {
+            "label": "a",
+            "count": 2
+          },
+          {
+            "label": "I",
+            "count": 1
+          },
+          {
+            "label": "\\angle",
+            "count": 1
+          }
+        ]
+      },
+      "teacher_complete_matched_paths": {
+        "rows": 57,
+        "target_top1": 57,
+        "target_top5": 57,
+        "target_softmax_probability_mean_t2": 0.9088773833969832,
+        "target_softmax_probability_p10_t2": 0.8359786227053014,
+        "target_logit_margin_mean": 8.732735650581226,
+        "target_logit_margin_p10": 6.5497783660888675,
+        "target_logit_margin_p50": 9.119722366333008,
+        "target_margin_nonpositive": 0,
+        "target_rank_median": 1.0,
+        "strongest_rivals": [
+          {
+            "label": "z",
+            "count": 26
+          },
+          {
+            "label": "\\wr",
+            "count": 15
+          },
+          {
+            "label": "Z",
+            "count": 10
+          },
+          {
+            "label": "]",
+            "count": 4
+          },
+          {
+            "label": "a",
+            "count": 2
+          }
+        ]
+      }
+    },
+    {
+      "interpolation_fraction_of_query_q68_limit": 1.0,
+      "geometry_valid_rows": 57,
+      "complete_matched_path_rows": 57,
+      "teacher_all_valid": {
+        "rows": 57,
+        "target_top1": 57,
+        "target_top5": 57,
+        "target_softmax_probability_mean_t2": 0.8976017008004344,
+        "target_softmax_probability_p10_t2": 0.8271386707785605,
+        "target_logit_margin_mean": 8.782130818617972,
+        "target_logit_margin_p10": 6.452807426452637,
+        "target_logit_margin_p50": 8.911222457885742,
+        "target_margin_nonpositive": 0,
+        "target_rank_median": 1.0,
+        "strongest_rivals": [
+          {
+            "label": "z",
+            "count": 19
+          },
+          {
+            "label": "]",
+            "count": 13
+          },
+          {
+            "label": "Z",
+            "count": 11
+          },
+          {
+            "label": "\\wr",
+            "count": 8
+          },
+          {
+            "label": "\\Omega",
+            "count": 2
+          },
+          {
+            "label": "\\mathfrak{A}",
+            "count": 2
+          },
+          {
+            "label": "1",
+            "count": 1
+          },
+          {
+            "label": "a",
+            "count": 1
+          }
+        ]
+      },
+      "teacher_complete_matched_paths": {
+        "rows": 57,
+        "target_top1": 57,
+        "target_top5": 57,
+        "target_softmax_probability_mean_t2": 0.8976017008004344,
+        "target_softmax_probability_p10_t2": 0.8271386707785605,
+        "target_logit_margin_mean": 8.782130818617972,
+        "target_logit_margin_p10": 6.452807426452637,
+        "target_logit_margin_p50": 8.911222457885742,
+        "target_margin_nonpositive": 0,
+        "target_rank_median": 1.0,
+        "strongest_rivals": [
+          {
+            "label": "z",
+            "count": 19
+          },
+          {
+            "label": "]",
+            "count": 13
+          },
+          {
+            "label": "Z",
+            "count": 11
+          },
+          {
+            "label": "\\wr",
+            "count": 8
+          },
+          {
+            "label": "\\Omega",
+            "count": 2
+          },
+          {
+            "label": "\\mathfrak{A}",
+            "count": 2
+          },
+          {
+            "label": "1",
+            "count": 1
+          },
+          {
+            "label": "a",
+            "count": 1
+          }
+        ]
+      }
+    }
+  ],
+  "teacher_margin_boundary": {
+    "definition": "first tested interpolation fraction where logit(2) minus strongest rival logit is non-positive, among baseline-top1-correct rows with a complete valid path",
+    "baseline_top1_correct_rows": 77,
+    "complete_matched_paths": 57,
+    "baseline_correct_rows_on_complete_paths": 54,
+    "crossed_from_correct_rows": 0,
+    "first_crossing_count_by_fraction": {
+      "0.25": 0,
+      "0.5": 0,
+      "0.75": 0,
+      "1.0": 0
+    },
+    "rows_by_crossing": [],
+    "training_pool_boundary_only": true
+  },
+  "sample_sheet": {
+    "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_probability_boundary_tube_20261004_interpolation\\class2_empirical_tube_preview.png",
+    "rows_shown": 16,
+    "red_means_geometry_gate_reject": true
+  },
+  "interpretation_boundary": "training-pool diagnostic only; no independent performance estimate, no student training, no model selection, and no product promotion",
+  "runtime": {
+    "device": "cpu",
+    "commit_headroom_gib_after_numpy": 13.016742706298828,
+    "commit_headroom_gib_before_model_load": 13.015815734863281,
+    "commit_headroom_safety_floor_gib": 1.5
+  },
+  "seconds": 14.255300899999838
+}

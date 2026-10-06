@@ -1,0 +1,41 @@
+{
+  "schema": "aiflow-hwr-pendigits-orientation-qa/v1",
+  "status": "source_qa_pass_training_admission_pending",
+  "source_report_sha256": "fb0ae581ca7bcb98c906ec3ff87fca9b00d8fef39ab4be8dae8a10af3c4753d4",
+  "qa_image_sha256": "56844a874303441fa6945cd13ae75a42296f898cb3d67ba520c6239304425df0",
+  "visual_review": {
+    "method": "assistant visual inspection of equal-XY-scale paired native/inverted TRAIN samples",
+    "source_rows_rendered": 30,
+    "paired_renderings": 60,
+    "orientation_supported": "y-up source coordinates mapped to image y-down by inversion",
+    "chosen_candidate_feature_file": "train_features_y_up.npy",
+    "basis": "Inverted rows 1,18,19 have conventional digit-2 top curve and lower baseline; digit-5 rows 8,12,20, digit-6 rows 5,24,42, digit-7 rows 14,32,40 and digit-9 rows 10,13,17 also support inversion. Native counterparts are vertically reversed.",
+    "author_documented_orientation_verified": false,
+    "model_logits_or_test_labels_used": false,
+    "human_ambiguity_boundary_annotation": false
+  },
+  "independent_numeric_checks": {
+    "all_artifact_hashes_match": true,
+    "source_script_hash_matches": true,
+    "raw_training_archive_reparsed": true,
+    "all_7494_labels_match_raw_segments": true,
+    "all_7494_stroke_start_counts_match_raw_strokes": true,
+    "tensor_shape": [7494, 128, 5],
+    "finite_xy_in_unit_interval": true,
+    "only_y_changes_between_orientations": true,
+    "y_inversion_exact": true,
+    "train_strokes": 9433,
+    "train_points": 304216,
+    "inferred_comment_writer_groups": 30
+  },
+  "test_payloads_opened_in_qa": [],
+  "test_rows_read": 0,
+  "crohme_rows": 0,
+  "human_boundary_labels_created": 0,
+  "teacher_inference_performed": false,
+  "student_training_performed": false,
+  "accuracy_scoring_performed": false,
+  "admitted_to_training_pipeline": false,
+  "product_adopted": false,
+  "limitations": "Digits-only source QA, not population recognition probabilities, writer/device/formula acceptance, or an accuracy improvement. Orientation is a visual inference, not verified author metadata."
+}

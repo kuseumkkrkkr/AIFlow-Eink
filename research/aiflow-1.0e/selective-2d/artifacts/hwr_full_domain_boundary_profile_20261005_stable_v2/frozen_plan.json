@@ -1,0 +1,34 @@
+{
+  "schema": "aiflow-full-domain-boundary-profile-plan/v1",
+  "script_sha256": "aed85f2a5c3bf9d66fd2f6c15b4c392b947804563903b2a92cd3a448e52b41ca",
+  "dependencies": {
+    "hwr_full_domain_replay_v1.py": "e7e1e21dff248cfc40dfe46594eb57944c4f4370476c23260e9ae5faeedbe1d9",
+    "audit_hwr_full_domain_tube_v1.py": "5ba59eb39ca2728d041daa3544c3611d63850b02bca5c976921ae6814f2c0849",
+    "run_hwr_affine_distillation_experiment_v1.py": "3a36d8efee518b2fa5c3683e9fa7a4d6ff31450d48a353f355f2667834357b4a"
+  },
+  "source_report_sha256": "0e02fa389fffe23c160cb4be62ded3dc0937f54debe9d9adaa45a87af34817d5",
+  "teacher_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+  "phases": [
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0
+  ],
+  "refinement_steps": 10,
+  "selection": "one pair per available class: first geometry-valid sign-changing parent path, otherwise first original/deformed control",
+  "boundary_rule": "target minus maximum of ALL other 371 classes; local sign bracketing, no global monotonicity assumption",
+  "seed": 20261007,
+  "heldout_rows_read": 0,
+  "crohme_rows": 0,
+  "human_boundary_labels": 0,
+  "training_steps": 0,
+  "product_adopted": false,
+  "numeric_margin_band": 0.0001,
+  "prediction_batch_policy": "pad each final microbatch to 32; exclude padding outputs",
+  "numerical_stop_rule": "retain safe endpoints when midpoint lies in +/-1e-4 logit band; no human-confidence interpretation"
+}

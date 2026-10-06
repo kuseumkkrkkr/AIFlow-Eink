@@ -1,0 +1,760 @@
+{
+  "schema": "aiflow-hwr-probability-boundary-tube-audit/v1",
+  "status": "training_pool_teacher_boundary_diagnostic_only",
+  "scope": "class '2'; single-stroke topology; HWRT train fit and UJI train query",
+  "method": {
+    "shape_space": "median-centered low-rank PCA over aligned 128-point XY trajectories",
+    "neighbor_correlation": "full-trajectory PCA directions sampled from genuine same-class HWRT training residuals; no independent point noise",
+    "radius": "empirical 68th percentile of low-rank Mahalanobis radii; not coordinate-wise +/-1 SD",
+    "sampling": "sample empirical directions and sweep radial scales to the q68 shell; this probes a boundary, it is not sampling the full 68% probability mass",
+    "scales": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "softmax_temperature": 2.0,
+    "time_transform": "none; observed and ordinal timing channels are preserved byte-identically",
+    "boundary": "target logit minus strongest rival logit <= 0",
+    "geometry_gates": {
+      "xy_rms_max": 0.035,
+      "point_displacement_max": 0.105,
+      "path_length_ratio": [
+        0.78,
+        1.22
+      ],
+      "endpoint_motion": "retained from empirical trajectory covariance; not artificially pinned",
+      "clipping": false
+    }
+  },
+  "provenance": {
+    "prepared_manifest_sha256": "5d66c91b58af7faa529644bfe6915c0ce6ce13eda2c7c6dad3503cf0a6582054",
+    "teacher_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "train_features_sha256": "72061bc0fd989096729ed613a21e19cab04b92c947efffcd7991b76e139a03f4",
+    "train_labels_sha256": "fe60cece651054cf3713d7f62f103fab0bf7a210a91aea134316cd57e1742ae5",
+    "train_sources_sha256": "d3bc4479e24426f93792e90c34d82f0e0172691ea541ff81966c46649b08050c",
+    "fit_source": "HWRT official train split only",
+    "query_source": "UJI Pen v2 official writer-disjoint train split only",
+    "fit_rows": 109,
+    "query_rows": 80,
+    "class2_single_stroke_rows_after_topology_filter": {
+      "hwrt_fit": 109,
+      "uji_query": 80
+    },
+    "class2_rows_before_topology_filter": {
+      "hwrt_train": 110,
+      "uji_train": 80
+    },
+    "heldout_rows_read": 0,
+    "crohme_rows": 0
+  },
+  "empirical_tube_fit": {
+    "coverage": 0.68,
+    "coverage_radius_mahalanobis": 2.8823700203459195,
+    "fit_rows": 109,
+    "component_count": 8,
+    "explained_variance_ratio": 0.964097024785941,
+    "fit_radius_p50": 2.177578180951185,
+    "fit_radius_p68": 2.8823700203459195,
+    "fit_radius_p95": 4.588352306543821
+  },
+  "transform_by_scale": [
+    {
+      "scale_of_empirical_q68_radius": 0.25,
+      "generated_rows": 80,
+      "valid_rows": 17,
+      "rejected_rows": 63,
+      "rejection_reasons": {
+        "non_finite": 0,
+        "xy_out_of_range": 63,
+        "rms_over_limit": 0,
+        "point_over_limit": 0,
+        "path_ratio_out_of_range": 0
+      },
+      "rms_p50": 0.02381809800863266,
+      "rms_p95": 0.030461618676781654,
+      "mean_path_ratio": 1.0004411935806274,
+      "all_non_xy_channels_unchanged": true,
+      "endpoint_displacement_p95": 0.06078191474080086,
+      "adjacent_displacement_step_p95": 0.004040889907628298
+    },
+    {
+      "scale_of_empirical_q68_radius": 0.5,
+      "generated_rows": 80,
+      "valid_rows": 0,
+      "rejected_rows": 80,
+      "rejection_reasons": {
+        "non_finite": 0,
+        "xy_out_of_range": 65,
+        "rms_over_limit": 77,
+        "point_over_limit": 50,
+        "path_ratio_out_of_range": 0
+      },
+      "rms_p50": 0.04763619974255562,
+      "rms_p95": 0.06092323735356331,
+      "mean_path_ratio": 1.0084807872772217,
+      "all_non_xy_channels_unchanged": true,
+      "endpoint_displacement_p95": 0.12156382948160172,
+      "adjacent_displacement_step_p95": 0.008081779815256596
+    },
+    {
+      "scale_of_empirical_q68_radius": 0.75,
+      "generated_rows": 80,
+      "valid_rows": 0,
+      "rejected_rows": 80,
+      "rejection_reasons": {
+        "non_finite": 0,
+        "xy_out_of_range": 66,
+        "rms_over_limit": 80,
+        "point_over_limit": 78,
+        "path_ratio_out_of_range": 4
+      },
+      "rms_p50": 0.07145429402589798,
+      "rms_p95": 0.09138485789299011,
+      "mean_path_ratio": 1.0248537063598633,
+      "all_non_xy_channels_unchanged": true,
+      "endpoint_displacement_p95": 0.18234573304653168,
+      "adjacent_displacement_step_p95": 0.012122672982513905
+    },
+    {
+      "scale_of_empirical_q68_radius": 1.0,
+      "generated_rows": 80,
+      "valid_rows": 0,
+      "rejected_rows": 80,
+      "rejection_reasons": {
+        "non_finite": 0,
+        "xy_out_of_range": 68,
+        "rms_over_limit": 80,
+        "point_over_limit": 79,
+        "path_ratio_out_of_range": 14
+      },
+      "rms_p50": 0.09527239203453064,
+      "rms_p95": 0.12184647470712662,
+      "mean_path_ratio": 1.0501629114151,
+      "all_non_xy_channels_unchanged": true,
+      "endpoint_displacement_p95": 0.24312765896320343,
+      "adjacent_displacement_step_p95": 0.01616355963051319
+    }
+  ],
+  "teacher_probability_boundary_by_scale": [
+    {
+      "scale_of_empirical_q68_radius": 0.0,
+      "geometry_valid_rows": 80,
+      "teacher": {
+        "rows": 80,
+        "target_top1": 77,
+        "target_top5": 80,
+        "target_softmax_probability_mean_t2": 0.712914943528892,
+        "target_softmax_probability_p10_t2": 0.39580160389548635,
+        "target_logit_margin_mean": 5.733836734294892,
+        "target_logit_margin_p10": 2.1162467002868652,
+        "target_logit_margin_p50": 6.131039619445801,
+        "target_margin_nonpositive": 3,
+        "target_rank_median": 1.0,
+        "strongest_rivals": [
+          {
+            "label": "z",
+            "count": 34
+          },
+          {
+            "label": "Z",
+            "count": 20
+          },
+          {
+            "label": "\\wr",
+            "count": 12
+          },
+          {
+            "label": "\\mathscr{L}",
+            "count": 3
+          },
+          {
+            "label": "1",
+            "count": 2
+          },
+          {
+            "label": "\\ell",
+            "count": 2
+          },
+          {
+            "label": "\\iota",
+            "count": 2
+          },
+          {
+            "label": "a",
+            "count": 2
+          },
+          {
+            "label": "R",
+            "count": 1
+          },
+          {
+            "label": "\\mathcal{L}",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "scale_of_empirical_q68_radius": 0.25,
+      "geometry_valid_rows": 17,
+      "teacher": {
+        "rows": 17,
+        "target_top1": 16,
+        "target_top5": 17,
+        "target_softmax_probability_mean_t2": 0.7322633390693645,
+        "target_softmax_probability_p10_t2": 0.4617610391037827,
+        "target_logit_margin_mean": 5.848062739652746,
+        "target_logit_margin_p10": 1.775435256958008,
+        "target_logit_margin_p50": 6.104240417480469,
+        "target_margin_nonpositive": 1,
+        "target_rank_median": 1.0,
+        "strongest_rivals": [
+          {
+            "label": "z",
+            "count": 6
+          },
+          {
+            "label": "Z",
+            "count": 4
+          },
+          {
+            "label": "\\wr",
+            "count": 4
+          },
+          {
+            "label": "a",
+            "count": 2
+          },
+          {
+            "label": "\\mathscr{L}",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "scale_of_empirical_q68_radius": 0.5,
+      "geometry_valid_rows": 0,
+      "teacher": {
+        "rows": 0
+      }
+    },
+    {
+      "scale_of_empirical_q68_radius": 0.75,
+      "geometry_valid_rows": 0,
+      "teacher": {
+        "rows": 0
+      }
+    },
+    {
+      "scale_of_empirical_q68_radius": 1.0,
+      "geometry_valid_rows": 0,
+      "teacher": {
+        "rows": 0
+      }
+    }
+  ],
+  "first_margin_crossing": {
+    "rows_with_observed_crossing": 3,
+    "crossings_on_complete_paths": 0,
+    "crossings_with_incomplete_paths": 3,
+    "query_rows": 80,
+    "by_row": [
+      {
+        "query_row_ordinal": 0,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 1,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 2,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 3,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 4,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 5,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 6,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 7,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 8,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 9,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 10,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 11,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 12,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 13,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 14,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 15,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 16,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 17,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 18,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 19,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 20,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 21,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 22,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 23,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 24,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 25,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 26,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 27,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 28,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 29,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 30,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 31,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 32,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 33,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 34,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 35,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 36,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 37,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 38,
+        "lowest_observed_nonpositive_margin_scale": 0.0,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 39,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 40,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 41,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 42,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 43,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 44,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 45,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 46,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 47,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 48,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 49,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 50,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 51,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 52,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 53,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 54,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 55,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 56,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 57,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 58,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 59,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 60,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 61,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 62,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 63,
+        "lowest_observed_nonpositive_margin_scale": 0.0,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 64,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 65,
+        "lowest_observed_nonpositive_margin_scale": 0.0,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 66,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 67,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 68,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 69,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 70,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 71,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 72,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 73,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 74,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 75,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 76,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 77,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 2,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 78,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      },
+      {
+        "query_row_ordinal": 79,
+        "lowest_observed_nonpositive_margin_scale": null,
+        "observed_scale_count": 1,
+        "path_complete": false
+      }
+    ]
+  },
+  "sample_sheet": {
+    "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_probability_boundary_tube_20261004\\class2_empirical_tube_preview.png",
+    "rows_shown": 16,
+    "red_means_geometry_gate_reject": true
+  },
+  "interpretation_boundary": "training-pool diagnostic only; no independent performance estimate, no student training, no model selection, and no product promotion",
+  "runtime": {
+    "device": "cpu",
+    "commit_headroom_gib_after_numpy": 13.128501892089844,
+    "commit_headroom_gib_before_model_load": 13.126358032226562,
+    "commit_headroom_safety_floor_gib": 1.5
+  },
+  "seconds": 18.281160400000033
+}

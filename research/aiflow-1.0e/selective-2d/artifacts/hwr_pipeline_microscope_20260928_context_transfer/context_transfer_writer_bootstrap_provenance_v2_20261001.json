@@ -1,0 +1,442 @@
+{
+  "schema": "aiflow-hwr-context-transfer-writer-bootstrap/v2",
+  "scope": "paired writer-cluster audit of saved project-owned context shadow predictions on actual Fast groups; no inference, training, CROHME, or promotion",
+  "inputs": {
+    "context_transfer_report": {
+      "path": "artifacts\\hwr_pipeline_microscope_20260928_context_transfer\\context_transfer_v3.json",
+      "sha256": "c6533f9f78809cdae90068e9b34e6bd09e98600cdd7287e3219dcdb4899920ac"
+    },
+    "context_model_report": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\owned_formula_context_20260822_r6\\owned_formula_context_report.json",
+      "sha256": "97670478331d187b37dd1006d715db8c39bbe6050f2b8794da35aed7318e8e27"
+    },
+    "trace_summary": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\summary.json",
+      "sha256": "1b26fbc501466bcb8ccd7c25d9796320173640a4aa35b82eac4ecd833ad5460e"
+    },
+    "formula_source": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\frozen_dataset\\data\\formulas_valid.jsonl",
+      "sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401"
+    },
+    "training_candidates": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\homograph_context_20260814\\direct_candidates.jsonl.gz",
+      "sha256": "8c59a21493592638f77c0a431f33b56d17c973b488d6b8da0afff4dcf7125307"
+    },
+    "current_hwr_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "context_checkpoint": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\owned_formula_context_20260822_r6\\owned_formula_context_product.pt",
+      "sha256": "7e0ff1b04ba1071867bfa6811869f242907ebe017d0996597776c6050cc2fc94"
+    }
+  },
+  "arms": {
+    "baseline": "fast_fence_infix_equation",
+    "challenger": "context_fence_infix_equation"
+  },
+  "policy": {
+    "selection_independent": false,
+    "training_data": "47 ownership-verified formulas / 211 glyphs / three writers",
+    "training_excluded_crohme": true,
+    "raw_ink_overlap_auditable": false,
+    "writer_id_overlap_auditable": false,
+    "overlapping_formula_id_strings": 42,
+    "overlapping_ids_with_same_target_sequence": 0,
+    "writer_overlap_audit": {
+      "training_writer_groups": 3,
+      "evaluation_writers": 9,
+      "overlapping_evaluation_writer_ids": [
+        "writer_001",
+        "writer_003",
+        "writer_004"
+      ],
+      "writer_disjoint_evaluation_ids": [
+        "writer_002",
+        "writer_006",
+        "writer_007",
+        "writer_008",
+        "writer_010",
+        "writer_012"
+      ]
+    },
+    "formula_id_overlap_audit": {
+      "shared_formula_id_strings": 42,
+      "same_ordered_target_sequences": 0,
+      "different_ordered_target_sequences": 42,
+      "same_id_same_writer_group": 0,
+      "different_target_examples": [
+        {
+          "formula_id": "aiflow_0005",
+          "training_target": [
+            "0",
+            "+",
+            "0"
+          ],
+          "evaluation_target": [
+            "5",
+            "+",
+            "4"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0006",
+          "training_target": [
+            "1",
+            "+",
+            "5"
+          ],
+          "evaluation_target": [
+            "7",
+            "\\times",
+            "3",
+            "=",
+            "2",
+            "1"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0007",
+          "training_target": [
+            "6",
+            "\\times",
+            "0",
+            "=",
+            "0"
+          ],
+          "evaluation_target": [
+            "1",
+            "6",
+            "\\div",
+            "8",
+            "=",
+            "2"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0008",
+          "training_target": [
+            "7",
+            "-",
+            "6",
+            "=",
+            "1"
+          ],
+          "evaluation_target": [
+            "b",
+            "=",
+            "4"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0009",
+          "training_target": [
+            "1",
+            "0",
+            "-",
+            "3"
+          ],
+          "evaluation_target": [
+            "f",
+            "(",
+            "y",
+            ")",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0010",
+          "training_target": [
+            "1",
+            "0",
+            "+",
+            "8"
+          ],
+          "evaluation_target": [
+            "x",
+            "\\neq",
+            "y"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0015",
+          "training_target": [
+            "y",
+            "/",
+            "4"
+          ],
+          "evaluation_target": [
+            "0",
+            "+",
+            "0"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0016",
+          "training_target": [
+            "b",
+            "+",
+            "4"
+          ],
+          "evaluation_target": [
+            "1",
+            "+",
+            "5"
+          ]
+        }
+      ]
+    },
+    "training_candidates_contain_raw_strokes": false,
+    "interpretation_limit": "writer-disjoint subset excludes exact hashed training writer groups; raw-ink overlap remains unauditable because training candidates contain no strokes; shared formula-id strings map to different ordered target sequences and are not valid provenance joins"
+  },
+  "summary": {
+    "formulas": 149,
+    "writers": 9,
+    "fast_group_exact_formulas": 125,
+    "formula_exact": {
+      "baseline": 79,
+      "challenger": 108,
+      "transitions": {
+        "both_exact": 78,
+        "baseline_only": 1,
+        "challenger_only": 30,
+        "both_wrong": 40
+      }
+    },
+    "token_hits_on_paired_alignable_rows": {
+      "formulas": 129,
+      "baseline_formula_rows_with_aligned_tokens": 129,
+      "challenger_formula_rows_with_aligned_tokens": 129,
+      "baseline": 420,
+      "challenger": 463,
+      "delta": 43
+    },
+    "candidate_violations": 0,
+    "writer_cluster_bootstrap": {
+      "method": "paired writer-cluster bootstrap; writers sampled with replacement, formula-weighted rate difference",
+      "iterations": 10000,
+      "seed": 20261001,
+      "formulas": 149,
+      "writers": 9,
+      "baseline_exact": 79,
+      "challenger_exact": 108,
+      "transitions": {
+        "both_exact": 78,
+        "baseline_only": 1,
+        "challenger_only": 30,
+        "both_wrong": 40
+      },
+      "delta_rate_pp_point_estimate": 19.463087248322147,
+      "delta_rate_pp_95_interval": [
+        11.594202898550725,
+        33.33333333333333
+      ],
+      "writer_rows": [
+        {
+          "writer_id": "writer_001",
+          "formulas": 10,
+          "baseline_exact": 6,
+          "challenger_exact": 10,
+          "delta_exact": 4
+        },
+        {
+          "writer_id": "writer_002",
+          "formulas": 23,
+          "baseline_exact": 16,
+          "challenger_exact": 19,
+          "delta_exact": 3
+        },
+        {
+          "writer_id": "writer_003",
+          "formulas": 20,
+          "baseline_exact": 13,
+          "challenger_exact": 13,
+          "delta_exact": 0
+        },
+        {
+          "writer_id": "writer_004",
+          "formulas": 10,
+          "baseline_exact": 3,
+          "challenger_exact": 5,
+          "delta_exact": 2
+        },
+        {
+          "writer_id": "writer_006",
+          "formulas": 20,
+          "baseline_exact": 12,
+          "challenger_exact": 20,
+          "delta_exact": 8
+        },
+        {
+          "writer_id": "writer_007",
+          "formulas": 8,
+          "baseline_exact": 3,
+          "challenger_exact": 7,
+          "delta_exact": 4
+        },
+        {
+          "writer_id": "writer_008",
+          "formulas": 5,
+          "baseline_exact": 4,
+          "challenger_exact": 5,
+          "delta_exact": 1
+        },
+        {
+          "writer_id": "writer_010",
+          "formulas": 4,
+          "baseline_exact": 2,
+          "challenger_exact": 3,
+          "delta_exact": 1
+        },
+        {
+          "writer_id": "writer_012",
+          "formulas": 49,
+          "baseline_exact": 20,
+          "challenger_exact": 26,
+          "delta_exact": 6
+        }
+      ]
+    },
+    "writer_disjoint_subset": {
+      "bootstrap_seed": 20261002,
+      "formulas": 109,
+      "writers": 6,
+      "baseline_exact": 57,
+      "challenger_exact": 80,
+      "transitions": {
+        "both_exact": 57,
+        "baseline_only": 0,
+        "challenger_only": 23,
+        "both_wrong": 29
+      },
+      "delta_rate_pp_point_estimate": 21.100917431192663,
+      "delta_rate_pp_95_interval": [
+        13.125,
+        40.0
+      ],
+      "writer_rows": [
+        {
+          "writer_id": "writer_002",
+          "formulas": 23,
+          "baseline_exact": 16,
+          "challenger_exact": 19,
+          "delta_exact": 3
+        },
+        {
+          "writer_id": "writer_006",
+          "formulas": 20,
+          "baseline_exact": 12,
+          "challenger_exact": 20,
+          "delta_exact": 8
+        },
+        {
+          "writer_id": "writer_007",
+          "formulas": 8,
+          "baseline_exact": 3,
+          "challenger_exact": 7,
+          "delta_exact": 4
+        },
+        {
+          "writer_id": "writer_008",
+          "formulas": 5,
+          "baseline_exact": 4,
+          "challenger_exact": 5,
+          "delta_exact": 1
+        },
+        {
+          "writer_id": "writer_010",
+          "formulas": 4,
+          "baseline_exact": 2,
+          "challenger_exact": 3,
+          "delta_exact": 1
+        },
+        {
+          "writer_id": "writer_012",
+          "formulas": 49,
+          "baseline_exact": 20,
+          "challenger_exact": 26,
+          "delta_exact": 6
+        }
+      ]
+    },
+    "writer_rows": [
+      {
+        "writer_id": "writer_001",
+        "formulas": 10,
+        "baseline_exact": 6,
+        "challenger_exact": 10,
+        "delta_exact": 4
+      },
+      {
+        "writer_id": "writer_002",
+        "formulas": 23,
+        "baseline_exact": 16,
+        "challenger_exact": 19,
+        "delta_exact": 3
+      },
+      {
+        "writer_id": "writer_003",
+        "formulas": 20,
+        "baseline_exact": 13,
+        "challenger_exact": 13,
+        "delta_exact": 0
+      },
+      {
+        "writer_id": "writer_004",
+        "formulas": 10,
+        "baseline_exact": 3,
+        "challenger_exact": 5,
+        "delta_exact": 2
+      },
+      {
+        "writer_id": "writer_006",
+        "formulas": 20,
+        "baseline_exact": 12,
+        "challenger_exact": 20,
+        "delta_exact": 8
+      },
+      {
+        "writer_id": "writer_007",
+        "formulas": 8,
+        "baseline_exact": 3,
+        "challenger_exact": 7,
+        "delta_exact": 4
+      },
+      {
+        "writer_id": "writer_008",
+        "formulas": 5,
+        "baseline_exact": 4,
+        "challenger_exact": 5,
+        "delta_exact": 1
+      },
+      {
+        "writer_id": "writer_010",
+        "formulas": 4,
+        "baseline_exact": 2,
+        "challenger_exact": 3,
+        "delta_exact": 1
+      },
+      {
+        "writer_id": "writer_012",
+        "formulas": 49,
+        "baseline_exact": 20,
+        "challenger_exact": 26,
+        "delta_exact": 6
+      }
+    ]
+  },
+  "verification": {
+    "formula_source_hash_matches_trace_summary": true,
+    "training_candidates_hash_matches_training_report": true,
+    "context_checkpoint_hash_matches_report": true,
+    "context_checkpoint_hash_matches_training_report": true,
+    "training_report_excludes_crohme": true,
+    "current_hwr_hash_matches_trace_summary": true,
+    "149_unique_formula_cases": true,
+    "all_formula_cases_have_writer": true,
+    "candidate_violations_zero": true,
+    "aggregate_counts_reconcile": true,
+    "writer_disjoint_subset_excludes_training_writers": true,
+    "formula_id_overlap_audit_reconciles_training_report": true,
+    "raw_ink_disjointness_proven": false,
+    "all_checks_pass": true
+  }
+}

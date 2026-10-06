@@ -1,0 +1,59 @@
+{
+  "schema": "aiflow-full-domain-replay-independent-verification/v1",
+  "result_sha256": "8675e605ed1c24157fee1f09fdd863051980c9686e31114be31fa6c17aaa5ee9",
+  "plan_and_dependency_hashes_pass": true,
+  "source_cache_and_geometry_reverified": true,
+  "selected_pairs_seed_reproduced": true,
+  "all_370_classes_selected_once": true,
+  "ten_cycle_each_class_10": true,
+  "microbatch_loss_reproduced": true,
+  "fp64_gradient_norm_layer_sum_pass": true,
+  "layers_per_case": 57,
+  "gradient_rechecks": [
+    {
+      "case": "deterministic_view_full",
+      "independent_loss": -7.691788462616877e-9,
+      "gradient_norm_fp64": 2.454145379798994e-6,
+      "layer_sum_fp64": 2.454145379798871e-6,
+      "fp32_relative_norm_reduction_error": -2.3581475106117954e-5
+    },
+    {
+      "case": "stochastic_view_full",
+      "independent_loss": 0.16820803268535717,
+      "gradient_norm_fp64": 1.2685914112921628,
+      "layer_sum_fp64": 1.2685914112921055,
+      "fp32_relative_norm_reduction_error": -3.627812417623085e-5
+    },
+    {
+      "case": "deterministic_original_full",
+      "independent_loss": 0.3042719149106258,
+      "gradient_norm_fp64": 2.2442821041322696,
+      "layer_sum_fp64": 2.2442821041321546,
+      "fp32_relative_norm_reduction_error": -4.891072340993317e-5
+    },
+    {
+      "case": "deterministic_view_top5",
+      "independent_loss": 1.2786962812011307,
+      "gradient_norm_fp64": 2.7402546992595496,
+      "layer_sum_fp64": 2.7402546992594234,
+      "fp32_relative_norm_reduction_error": -3.264866127706755e-5
+    }
+  ],
+  "fp64_non_tiny_gradient_cosines": [
+    {"first": "stochastic_view_full", "second": "deterministic_original_full", "cosine": -0.5101706255184849},
+    {"first": "stochastic_view_full", "second": "deterministic_view_top5", "cosine": 0.5033393570449964},
+    {"first": "deterministic_original_full", "second": "deterministic_view_top5", "cosine": -0.47410454770279237}
+  ],
+  "tiny_gradient_cosines_not_interpreted": true,
+  "top5_loss_pairs_recomputed": [28, 56, 806],
+  "top5_loss_original_dataset_labels": ["8", "I", "\\pi"],
+  "top5_loss_visual_pairs_inspected": 3,
+  "visual_inspection_is_not_human_training_annotation": true,
+  "model_weights_unchanged": true,
+  "canonical_checkpoint_unchanged": true,
+  "optimizer_steps": 0,
+  "human_labels": 0,
+  "heldout_rows_read": 0,
+  "crohme_rows": 0,
+  "product_adopted": false
+}

@@ -1,0 +1,128 @@
+{
+  "schema": "aiflow-directional-guard-independent-verification/v1",
+  "status": "pass",
+  "scope": "TRAINING/integrity only, not independent performance or promotion",
+  "directional_result_sha256": "01408d0f3786c681307528a1ca75d5926324eead85dc85715ba534c4f66c620b",
+  "frozen_plan_sha256": "0c3f427c9354d96b16a41e871be689141bd6d090664452378a42aacd4cdf4010",
+  "checkpoint_sha256": "b0aa6411b1e299ec14773cd44eadf54341d55582af68b0dc973c846c6e1d8963",
+  "logits_sha256": {
+    "replay": "9c3e29764cf385700c0e27bf47faf1ff5e8a3b089042c8ee4106e8cc2f38b58b",
+    "probe": "c7e6207534278576d7f9f3d892475d2c1ef41aa3b640dfcb002b287ac73a9d9f"
+  },
+  "reload_logits_bitwise_identical": true,
+  "source_train_probe_hits": 958,
+  "old_train_replay_hits": 841,
+  "old_train_rescued": 10,
+  "old_train_regressed": 0,
+  "old_train_top5": {
+    "before_hits": 1005,
+    "after_hits": 1004,
+    "rescued": 2,
+    "regressed": 3
+  },
+  "protected_margin": {
+    "rows": 831,
+    "before_quantiles_0_1_5_50_percent": [
+      0.010746955871582031,
+      0.06897611618041992,
+      0.26492929458618164,
+      4.055967330932617
+    ],
+    "after_quantiles_0_1_5_50_percent": [
+      0.0000019073486328125,
+      0.001000022888183594,
+      0.23534679412841797,
+      4.0283203125
+    ],
+    "after_exact_zero": 0,
+    "retains_half_original_margin_rows": 798,
+    "weakest": [
+      {
+        "replay_row": 782,
+        "truth": "m",
+        "before": 0.5874423980712891,
+        "after": 0.0000019073486328125
+      },
+      {
+        "replay_row": 642,
+        "truth": "J",
+        "before": 0.560664176940918,
+        "after": 0.000011444091796875
+      },
+      {
+        "replay_row": 852,
+        "truth": "\\sqrt{}",
+        "before": 0.010746955871582031,
+        "after": 0.000026702880859375
+      },
+      {
+        "replay_row": 652,
+        "truth": "\\xi",
+        "before": 0.4128608703613281,
+        "after": 0.000034332275390625
+      },
+      {
+        "replay_row": 952,
+        "truth": "\\mathsection",
+        "before": 0.06801795959472656,
+        "after": 0.0001010894775390625
+      },
+      {
+        "replay_row": 675,
+        "truth": "\\diamond",
+        "before": 0.33389854431152344,
+        "after": 0.0001506805419921875
+      },
+      {
+        "replay_row": 55,
+        "truth": "\\Delta",
+        "before": 0.029422760009765625,
+        "after": 0.000530242919921875
+      },
+      {
+        "replay_row": 767,
+        "truth": "\\mathds{R}",
+        "before": 0.15702056884765625,
+        "after": 0.000682830810546875
+      },
+      {
+        "replay_row": 324,
+        "truth": "\\amalg",
+        "before": 0.0583038330078125,
+        "after": 0.0008077621459960938
+      },
+      {
+        "replay_row": 72,
+        "truth": "O",
+        "before": 1.2572669982910156,
+        "after": 0.0014486312866210938
+      },
+      {
+        "replay_row": 88,
+        "truth": "\\bowtie",
+        "before": 0.016847610473632812,
+        "after": 0.001605987548828125
+      },
+      {
+        "replay_row": 667,
+        "truth": "\\mathcal{X}",
+        "before": 0.1576681137084961,
+        "after": 0.00205230712890625
+      }
+    ],
+    "after_below_1e_minus4": 4
+  },
+  "steps": 64,
+  "layer_snapshots": 4,
+  "accepted_steps": 60,
+  "rejected_steps": 4,
+  "candidate_checks": 277,
+  "direction_corrections": 645,
+  "accepted_checks_keep_all_protected_top1": true,
+  "update_norm_caps_passed": true,
+  "canonical_checkpoint_unchanged": true,
+  "held_inputs_forwarded": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0,
+  "product_adopted": false
+}

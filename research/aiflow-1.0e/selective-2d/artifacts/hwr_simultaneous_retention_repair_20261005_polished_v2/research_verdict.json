@@ -1,0 +1,53 @@
+{
+  "schema": "aiflow-simultaneous-retention-research-verdict/v1",
+  "result_sha256": "06caae482aa82201bc6eaa98366d65f40a685cbaf7b2803e04d2eb04c257a7b6",
+  "checkpoint_sha256": "2bf041e52d031065c7ec31431698035a08c0975574ddf5b478dc5051dec053e6",
+  "status": "verified_no_improvement_under_frozen_budget",
+  "comparison": {
+    "same_initial_parent": true,
+    "same_train_rows": 2048,
+    "old_math_class_coverage": 371,
+    "source_digit_classes": 10,
+    "same_max_rounds": 32,
+    "same_gradient_direction_budget_used": 512,
+    "same_immutable_masks_and_half_reference_margin_floors": true,
+    "sequential": {"old_top1_hits": 843, "source_top1_hits": 958, "top1_floor_violations": 16, "top5_floor_violations": 1},
+    "simultaneous": {"old_top1_hits": 843, "source_top1_hits": 958, "top1_floor_violations": 19, "top5_floor_violations": 1},
+    "protected_rank_regressions": 0,
+    "gain_retention": 1.0,
+    "strict_train_gate_pass": false
+  },
+  "numerical_correction": {
+    "v1_updates_applied": 0,
+    "v1_rejection_reason": "primal residual -2.9825801652668543e-9 below unchanged -1e-9 tolerance",
+    "v2_change": "one FP64 active-set linear solve after the dual optimizer",
+    "v2_linearized_solves_certified": 32,
+    "tolerances_and_model_acceptance_floors_unchanged": true
+  },
+  "first_step_microscope": {
+    "reconstructed_gradient_gram_bit_exact": true,
+    "actual_first_step_rank_metrics_replayed_exact": true,
+    "selected_constraints": 16,
+    "selected_actual_constraints_pass": 9,
+    "nonlinear_fixed_rival_margin_failures": 6,
+    "additional_changed_rival_failure": 1,
+    "max_absolute_selected_linearization_error": 0.02854789962768567,
+    "correction_slack": 0.0001,
+    "newly_broken_previously_safe_unselected_constraints": {"old_math": 7, "source_digits": 31},
+    "interpretation": "Solving the selected linearized constraints precisely does not protect unselected safe constraints, does not account for all rival switches, and does not bound the real nonlinear margin error."
+  },
+  "verification": {
+    "parameter_tensors": 57,
+    "batch32_checkpoint_reload_bit_exact": true,
+    "batch1_16_32_rank_and_violation_counts_equal": true,
+    "canonical_and_parent_checkpoints_unchanged": true
+  },
+  "next_bounded_hypothesis": "Protect near-floor currently safe constraints as an active set, include alternative rivals, and use actual nonlinear validation for a trust-region step. Preserve all original floors and compare under a declared finite gradient budget.",
+  "not_proven": ["architecture insufficiency", "global infeasibility", "independent recognition accuracy improvement", "human recognition probabilities"],
+  "all_domain_human_boundary_distillation_performed": false,
+  "human_boundary_labels": 0,
+  "held_inputs_forwarded": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "deployment_resumed": false
+}

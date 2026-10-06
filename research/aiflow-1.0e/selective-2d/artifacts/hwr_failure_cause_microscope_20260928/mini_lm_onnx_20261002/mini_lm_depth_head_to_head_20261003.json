@@ -1,0 +1,736 @@
+{
+  "schema": "aiflow-mini-lm-depth-head-to-head/v1",
+  "generated_at": "2026-10-03T00:36:19.628643+00:00",
+  "status": "consumed_development_matched_depth_diagnostic",
+  "protocol": {
+    "training_performed": false,
+    "threshold_selection_performed_in_source_reports": true,
+    "crohme_rows_loaded": 0,
+    "product_adopted": false,
+    "warning": "Both thresholds were selected by nested writer-LOFO on this consumed 149-formula cohort; this is not independent acceptance.",
+    "arm": "mini_lm_margin_gated"
+  },
+  "provenance": {
+    "one_layer_report_sha256": "15021a7686674bd58f0db27f9dbfbd21badf46045077721147cc204047c8e144",
+    "two_layer_report_sha256": "317d922a84ad927451c779b1fad2383af25e5644ee2810272d5d6f345d66b5a7",
+    "summary_sha256": "aef4636afef850a0b9b74736e42ad9487884103684e5827854a7bafd692f9282",
+    "formula_data_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "one_layer_checkpoint_sha256": "2c448199c2b4d65c4d786348ad2f3ba09322fedb5337b35d503f48d0462d01f2",
+    "two_layer_checkpoint_sha256": "dd2889e84c82c9d04f6dacf42cf99de02938902fc220022987de64b8b1567a72"
+  },
+  "models": {
+    "one_layer": {
+      "layers": 1,
+      "candidate_preservation_rate": 1.0,
+      "grouping_mutations": 0
+    },
+    "two_layer": {
+      "layers": 2,
+      "candidate_preservation_rate": 1.0,
+      "grouping_mutations": 0
+    }
+  },
+  "comparison": {
+    "formulas": 149,
+    "writers": 9,
+    "group_exact_formulas": 125,
+    "formula_exact": {
+      "rows": 149,
+      "one_layer_hits": 95,
+      "two_layer_hits": 95,
+      "delta_two_minus_one_percentage_points": 0.0,
+      "one_layer_only_exact": 5,
+      "two_layer_only_exact": 5,
+      "exact_to_exact": 90,
+      "wrong_to_wrong": 49,
+      "two_sided_exact_mcnemar_p": 1.0,
+      "writer_cluster_bootstrap": {
+        "writer_clusters": 9,
+        "draws": 20000,
+        "seed": 20261004,
+        "delta_two_minus_one_percentage_points_percentile_95_interval": [
+          -3.4722222222222223,
+          4.464285714285714
+        ],
+        "bootstrap_fraction_two_layer_better": 0.4146,
+        "per_writer": [
+          {
+            "writer_hash": "1a6e30b7f331",
+            "formulas": 20,
+            "one_layer_exact": 16,
+            "two_layer_exact": 16
+          },
+          {
+            "writer_hash": "2806613abcb1",
+            "formulas": 4,
+            "one_layer_exact": 1,
+            "two_layer_exact": 2
+          },
+          {
+            "writer_hash": "29e970274233",
+            "formulas": 10,
+            "one_layer_exact": 4,
+            "two_layer_exact": 5
+          },
+          {
+            "writer_hash": "3e154070bbf2",
+            "formulas": 49,
+            "one_layer_exact": 28,
+            "two_layer_exact": 28
+          },
+          {
+            "writer_hash": "4d947afbc905",
+            "formulas": 5,
+            "one_layer_exact": 2,
+            "two_layer_exact": 3
+          },
+          {
+            "writer_hash": "888592ae00b1",
+            "formulas": 8,
+            "one_layer_exact": 6,
+            "two_layer_exact": 5
+          },
+          {
+            "writer_hash": "89dca579c408",
+            "formulas": 23,
+            "one_layer_exact": 16,
+            "two_layer_exact": 15
+          },
+          {
+            "writer_hash": "dd17fb6b404e",
+            "formulas": 10,
+            "one_layer_exact": 8,
+            "two_layer_exact": 7
+          },
+          {
+            "writer_hash": "e4227aebe599",
+            "formulas": 20,
+            "one_layer_exact": 14,
+            "two_layer_exact": 14
+          }
+        ],
+        "interpretation_limit": "nine writers from consumed development data; not independent formula or device acceptance"
+      }
+    },
+    "exact_group_token_comparison": {
+      "tokens": 469,
+      "one_layer_hits": 434,
+      "two_layer_hits": 432,
+      "delta_hits": -2,
+      "one_layer_top1": 0.9253731343283582,
+      "two_layer_top1": 0.9211087420042644,
+      "predictions_changed": 19,
+      "one_layer_wrong_two_layer_correct": 8,
+      "one_layer_correct_two_layer_wrong": 10
+    },
+    "changed_formula_details": [
+      {
+        "formula_id": "aiflow_0007",
+        "writer_hash": "29e970274233",
+        "group_exact": false,
+        "one_layer_exact": false,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "1",
+          "6",
+          "\\div",
+          "o",
+          "O",
+          "=",
+          "2"
+        ],
+        "two_layer_tokens": [
+          "|",
+          "6",
+          "\\div",
+          "o",
+          "O",
+          "=",
+          "2"
+        ],
+        "truth_tokens": [
+          "1",
+          "6",
+          "\\div",
+          "8",
+          "=",
+          "2"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0008",
+        "writer_hash": "29e970274233",
+        "group_exact": false,
+        "one_layer_exact": false,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "\\setminus",
+          ")",
+          "=",
+          "4"
+        ],
+        "two_layer_tokens": [
+          "|",
+          ")",
+          "=",
+          "4"
+        ],
+        "truth_tokens": [
+          "b",
+          "=",
+          "4"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0009",
+        "writer_hash": "29e970274233",
+        "group_exact": true,
+        "one_layer_exact": false,
+        "two_layer_exact": true,
+        "one_layer_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "=",
+          "|"
+        ],
+        "two_layer_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "=",
+          "1"
+        ],
+        "truth_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "=",
+          "1"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0046",
+        "writer_hash": "e4227aebe599",
+        "group_exact": true,
+        "one_layer_exact": false,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "H"
+        ],
+        "two_layer_tokens": [
+          "\\hbar"
+        ],
+        "truth_tokens": [
+          "5"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0067",
+        "writer_hash": "2806613abcb1",
+        "group_exact": true,
+        "one_layer_exact": false,
+        "two_layer_exact": true,
+        "one_layer_tokens": [
+          "1",
+          "x",
+          "4",
+          "=",
+          "4"
+        ],
+        "two_layer_tokens": [
+          "1",
+          "\\times",
+          "4",
+          "=",
+          "4"
+        ],
+        "truth_tokens": [
+          "1",
+          "\\times",
+          "4",
+          "=",
+          "4"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0068",
+        "writer_hash": "2806613abcb1",
+        "group_exact": false,
+        "one_layer_exact": false,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "2",
+          "o",
+          "\\div",
+          "\\mathcal{L}",
+          "(",
+          "\\rightrightarrows",
+          "5"
+        ],
+        "two_layer_tokens": [
+          "2",
+          "o",
+          "\\div",
+          "\\mathcal{L}",
+          "(",
+          "\\asymp",
+          "5"
+        ],
+        "truth_tokens": [
+          "2",
+          "0",
+          "\\div",
+          "4",
+          "=",
+          "5"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0072",
+        "writer_hash": "dd17fb6b404e",
+        "group_exact": true,
+        "one_layer_exact": true,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "\\times"
+        ],
+        "two_layer_tokens": [
+          "x"
+        ],
+        "truth_tokens": [
+          "\\times"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0073",
+        "writer_hash": "dd17fb6b404e",
+        "group_exact": true,
+        "one_layer_exact": false,
+        "two_layer_exact": true,
+        "one_layer_tokens": [
+          "1",
+          "x",
+          "5"
+        ],
+        "two_layer_tokens": [
+          "1",
+          "\\times",
+          "5"
+        ],
+        "truth_tokens": [
+          "1",
+          "\\times",
+          "5"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0075",
+        "writer_hash": "dd17fb6b404e",
+        "group_exact": true,
+        "one_layer_exact": true,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "1",
+          "1",
+          "+",
+          "0"
+        ],
+        "two_layer_tokens": [
+          "1",
+          "|",
+          "+",
+          "0"
+        ],
+        "truth_tokens": [
+          "1",
+          "1",
+          "+",
+          "0"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0086",
+        "writer_hash": "3e154070bbf2",
+        "group_exact": true,
+        "one_layer_exact": false,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "6",
+          "x",
+          "\\parr",
+          "=",
+          "4",
+          "8"
+        ],
+        "two_layer_tokens": [
+          "6",
+          "\\times",
+          "\\parr",
+          "=",
+          "4",
+          "8"
+        ],
+        "truth_tokens": [
+          "6",
+          "\\times",
+          "8",
+          "=",
+          "4",
+          "8"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0087",
+        "writer_hash": "3e154070bbf2",
+        "group_exact": true,
+        "one_layer_exact": false,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "q",
+          "+",
+          "1",
+          "=",
+          "1",
+          "0"
+        ],
+        "two_layer_tokens": [
+          "q",
+          "+",
+          "|",
+          "=",
+          "|",
+          "0"
+        ],
+        "truth_tokens": [
+          "9",
+          "+",
+          "1",
+          "=",
+          "1",
+          "0"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0100",
+        "writer_hash": "3e154070bbf2",
+        "group_exact": true,
+        "one_layer_exact": false,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "1",
+          "2",
+          "+",
+          "1"
+        ],
+        "two_layer_tokens": [
+          "y",
+          "2",
+          "\\dag",
+          "1"
+        ],
+        "truth_tokens": [
+          "y",
+          "2",
+          "+",
+          "1"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0110",
+        "writer_hash": "3e154070bbf2",
+        "group_exact": false,
+        "one_layer_exact": false,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "3",
+          "x",
+          "(",
+          "7",
+          "L",
+          "+",
+          "(",
+          ")"
+        ],
+        "two_layer_tokens": [
+          "3",
+          "\\times",
+          "(",
+          "7",
+          "L",
+          "+",
+          "(",
+          ")"
+        ],
+        "truth_tokens": [
+          "3",
+          "\\times",
+          "(",
+          "x",
+          "+",
+          "1",
+          ")"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0111",
+        "writer_hash": "3e154070bbf2",
+        "group_exact": false,
+        "one_layer_exact": false,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "(",
+          "7",
+          "L",
+          "\\Psi",
+          "1",
+          ")",
+          "\\times",
+          "2"
+        ],
+        "two_layer_tokens": [
+          "(",
+          "7",
+          "L",
+          "\\Psi",
+          "|",
+          ")",
+          "x",
+          "2"
+        ],
+        "truth_tokens": [
+          "(",
+          "x",
+          "+",
+          "1",
+          ")",
+          "\\times",
+          "2"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0126",
+        "writer_hash": "1a6e30b7f331",
+        "group_exact": true,
+        "one_layer_exact": true,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "7",
+          "+",
+          "4",
+          "=",
+          "1",
+          "1"
+        ],
+        "two_layer_tokens": [
+          "7",
+          "+",
+          "4",
+          "=",
+          "|",
+          "1"
+        ],
+        "truth_tokens": [
+          "7",
+          "+",
+          "4",
+          "=",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0128",
+        "writer_hash": "1a6e30b7f331",
+        "group_exact": true,
+        "one_layer_exact": false,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "1",
+          "2",
+          "-",
+          "0",
+          "1",
+          "1",
+          "2"
+        ],
+        "two_layer_tokens": [
+          "|",
+          "2",
+          "-",
+          "0",
+          "1",
+          "1",
+          "2"
+        ],
+        "truth_tokens": [
+          "1",
+          "2",
+          "-",
+          "0",
+          "=",
+          "1",
+          "2"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0132",
+        "writer_hash": "1a6e30b7f331",
+        "group_exact": true,
+        "one_layer_exact": false,
+        "two_layer_exact": true,
+        "one_layer_tokens": [
+          "4",
+          "x",
+          "a",
+          "+",
+          "|"
+        ],
+        "two_layer_tokens": [
+          "4",
+          "\\times",
+          "a",
+          "+",
+          "1"
+        ],
+        "truth_tokens": [
+          "4",
+          "\\times",
+          "a",
+          "+",
+          "1"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0144",
+        "writer_hash": "888592ae00b1",
+        "group_exact": true,
+        "one_layer_exact": true,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "1",
+          "2",
+          "+",
+          "5",
+          "=",
+          "1",
+          "7"
+        ],
+        "two_layer_tokens": [
+          "|",
+          "2",
+          "+",
+          "5",
+          "=",
+          "1",
+          "7"
+        ],
+        "truth_tokens": [
+          "1",
+          "2",
+          "+",
+          "5",
+          "=",
+          "1",
+          "7"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0152",
+        "writer_hash": "89dca579c408",
+        "group_exact": true,
+        "one_layer_exact": true,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "6",
+          "\\times",
+          "0",
+          "=",
+          "0"
+        ],
+        "two_layer_tokens": [
+          "6",
+          "\\times",
+          "\\mathcal{O}",
+          "=",
+          "0"
+        ],
+        "truth_tokens": [
+          "6",
+          "\\times",
+          "0",
+          "=",
+          "0"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0155",
+        "writer_hash": "89dca579c408",
+        "group_exact": true,
+        "one_layer_exact": false,
+        "two_layer_exact": false,
+        "one_layer_tokens": [
+          "1",
+          "\\div",
+          "(",
+          "=",
+          "/"
+        ],
+        "two_layer_tokens": [
+          "1",
+          "\\div",
+          "(",
+          "1",
+          "/"
+        ],
+        "truth_tokens": [
+          "1",
+          "\\div",
+          "1",
+          "=",
+          "1"
+        ]
+      },
+      {
+        "formula_id": "aiflow_0162",
+        "writer_hash": "4d947afbc905",
+        "group_exact": true,
+        "one_layer_exact": false,
+        "two_layer_exact": true,
+        "one_layer_tokens": [
+          "8",
+          "+",
+          "5",
+          "2",
+          "1",
+          "3"
+        ],
+        "two_layer_tokens": [
+          "8",
+          "+",
+          "5",
+          "=",
+          "1",
+          "3"
+        ],
+        "truth_tokens": [
+          "8",
+          "+",
+          "5",
+          "=",
+          "1",
+          "3"
+        ]
+      }
+    ]
+  },
+  "decision": {
+    "independent_acceptance": false,
+    "android_latency_verified": false,
+    "promotion_eligible": false,
+    "interpretation": "depth comparison only; retain one layer as the smaller shadow candidate if the paired outcome is non-inferior, then require fresh writer/formula/device acceptance"
+  }
+}

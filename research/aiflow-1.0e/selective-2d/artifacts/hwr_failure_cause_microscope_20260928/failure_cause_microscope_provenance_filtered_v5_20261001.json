@@ -1,0 +1,2298 @@
+{
+  "schema": "aiflow-hwr-provenance-filtered-failure-microscope/v1",
+  "scope": "posthoc forensic replay on the 49 formulas remaining after excluding the 53 frozen acceptance formulas and 47 exact raw-ink duplicates; not independent acceptance, not for tuning or promotion; CROHME not accessed",
+  "interpretation_limits": {
+    "decoder": "decoder causes use oracle/target grouping to isolate the HWR/decoder ceiling; they are not current Fast end-to-end formula accuracy",
+    "local_search_skip": "the sole local_search_not_run case has no saved runtime skip_reason; its region_budget cause is inferred from region size and replay configuration, not confirmed by the original runtime trace",
+    "cohort": "all retained cases were already seen during development; posthoc only"
+  },
+  "inputs": {
+    "failure_matrix": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\failure_cause_matrix_microscope_20261001_v3.json",
+      "sha256": "ee43eae06765576dd32d421426b243843f0f3b17c3e9876d577b90c2c52c1bbf"
+    },
+    "grouping_replay": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\local_partition_cause_microscope_replay_20261001.json",
+      "sha256": "34fc4a3ab509e515f609644f8f8107bf8323808dc8a3b319f93d3c81032ecfdc"
+    },
+    "provenance_audit": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_pipeline_microscope_20260928_context_transfer\\context_transfer_contamination_and_acceptance_audit_20261001.json",
+      "sha256": "8c468af65f3903e1fb71677722e64cda4ad0c98c2323bf8c83b2a7409ed00aa7"
+    },
+    "layer_traces": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\formula_traces.jsonl",
+      "sha256": "785e909f569e3c6346b4fcecc83173445b1ef016ad31ee13e7188700990c76e7"
+    },
+    "semantic_guard_audit": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\semantic_guard_saved_tournament_arithmetic_expression_shadow_verified_20261001.json",
+      "sha256": "81d1ee7a41cef5e2cb1384da74d832798a3167f498f69a8015740321c54bc1d8"
+    },
+    "acceptance_ownership": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\ownership_fresh_acceptance.jsonl",
+      "sha256": "feff42afb42fb9a3f93ec462ca65d63ec4f01d8017b87b5d6efe191caaa9ca9c"
+    }
+  },
+  "cohort": {
+    "source_formulas": 149,
+    "excluded_frozen_acceptance": 53,
+    "excluded_exact_raw_ink_duplicates": 47,
+    "retained_posthoc_formulas": 49,
+    "retained_ids": [
+      "aiflow_0001",
+      "aiflow_0002",
+      "aiflow_0003",
+      "aiflow_0004",
+      "aiflow_0005",
+      "aiflow_0006",
+      "aiflow_0007",
+      "aiflow_0008",
+      "aiflow_0009",
+      "aiflow_0010",
+      "aiflow_0046",
+      "aiflow_0047",
+      "aiflow_0048",
+      "aiflow_0049",
+      "aiflow_0050",
+      "aiflow_0051",
+      "aiflow_0052",
+      "aiflow_0053",
+      "aiflow_0054",
+      "aiflow_0055",
+      "aiflow_0056",
+      "aiflow_0057",
+      "aiflow_0058",
+      "aiflow_0059",
+      "aiflow_0060",
+      "aiflow_0061",
+      "aiflow_0062",
+      "aiflow_0063",
+      "aiflow_0064",
+      "aiflow_0065",
+      "aiflow_0071",
+      "aiflow_0072",
+      "aiflow_0073",
+      "aiflow_0074",
+      "aiflow_0075",
+      "aiflow_0076",
+      "aiflow_0077",
+      "aiflow_0078",
+      "aiflow_0079",
+      "aiflow_0080",
+      "aiflow_0118",
+      "aiflow_0119",
+      "aiflow_0120",
+      "aiflow_0121",
+      "aiflow_0160",
+      "aiflow_0161",
+      "aiflow_0162",
+      "aiflow_0163",
+      "aiflow_0164"
+    ]
+  },
+  "grouping_failure_microscope": {
+    "outcome_counts": {
+      "fast_partition_exact": 42,
+      "gold_partition_reachable_but_not_promoted": 5,
+      "local_search_not_run": 1,
+      "router_not_triggered": 1
+    },
+    "error_shape_counts": {
+      "oversegmentation": 4,
+      "same_count_wrong_partition": 3
+    },
+    "fast_partition_exact": 42
+  },
+  "decoder_failure_microscope_with_oracle_groups": {
+    "outcome_counts": {
+      "survives_but_loses": 5,
+      "top5_missing": 2
+    },
+    "oracle_group_decoder_exact": 42,
+    "residuals_also_having_fast_group_error": 0,
+    "interpretation": "decoder causes are measured with target/oracle grouping, so they isolate the HWR/decoder ceiling and are not an end-to-end Fast prediction"
+  },
+  "fixed_semantic_guard_replay": {
+    "fast_group_exact_formulas": 42,
+    "strict_exact_counts_by_stage": {
+      "after_arithmetic_expression_guard": 28,
+      "after_boundary_bar_as_unit_guard": 35,
+      "after_equation_guard": 28,
+      "after_fence_guard": 24,
+      "after_infix_guard": 28,
+      "after_unique_bar_equation_guard": 29,
+      "after_unique_exact_equation_candidates_guard": 33,
+      "decoder": 24
+    },
+    "interpretation": "hash-linked replay of the already-frozen shadow guard; no threshold or policy was selected on this cohort"
+  },
+  "failure_rows": [
+    {
+      "sample_id": "aiflow_0003",
+      "grouping": {
+        "outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "fast_groups": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "target_groups": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": 2,
+        "target_partition_score": 11.696490435375487,
+        "fast_partition_score": 11.780174388516338,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [
+          "partition_margin",
+          "spatial_overlap_low_confidence",
+          "structural_layout",
+          "symbol_margin"
+        ],
+        "risk_strokes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "local_region_seed_strokes": 5,
+        "local_region_strokes": 5,
+        "local_region_fraction": 1.0,
+        "local_candidate_count": 31,
+        "target_partition_reachable": true,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 2,
+          "target_score_delta_vs_fast": -0.08368395314085042,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "decoder_arm_exact_with_oracle_groups"
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": false,
+        "formula_exact_by_stage": null,
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": []
+      }
+    },
+    {
+      "sample_id": "aiflow_0004",
+      "grouping": {
+        "outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "fast_groups": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "target_groups": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": 1,
+        "target_partition_score": 14.793706457424616,
+        "fast_partition_score": 14.793706457424616,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [],
+        "risk_strokes": [],
+        "local_region_seed_strokes": 0,
+        "local_region_strokes": 0,
+        "local_region_fraction": 0.0,
+        "local_candidate_count": 0,
+        "target_partition_reachable": true,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": null,
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_fast": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "survives_but_loses",
+        "candidate_complete": null,
+        "target_beam_rank": 2,
+        "first_lost_position": null,
+        "first_lost_reason": null,
+        "target_tokens": [
+          "2",
+          "+",
+          "7"
+        ],
+        "selected_tokens": [
+          "2",
+          "4",
+          "7"
+        ],
+        "score_gap_decomposition": {
+          "token_log_probability_component": 0.3563686980678553,
+          "relation_component": 0.0,
+          "reconstructed_total": 0.3563686980678553
+        },
+        "missing_glyphs": [],
+        "token_level_selection": [
+          {
+            "position": 2,
+            "target": "+",
+            "selected": "4",
+            "mismatch": true,
+            "target_hwr_rank": 2,
+            "selected_hwr_rank": 1,
+            "target_probability": 0.22155244648456573,
+            "selected_probability": 0.6453323364257812,
+            "selected_minus_target_log_probability": 1.069106094203566,
+            "hwr_layer_evidence": {
+              "target": "+",
+              "stroke_indices": [
+                1,
+                2
+              ],
+              "raw_point_count": 42,
+              "raw_points_per_stroke": [
+                19,
+                23
+              ],
+              "top1": "4",
+              "top1_probability": 0.6453323364257812,
+              "target_rank": 2,
+              "target_probability": 0.22155244648456573,
+              "top5": [
+                "4",
+                "+",
+                "\\phi",
+                "\\div",
+                "\\Phi"
+              ],
+              "top5_probabilities": [
+                0.6453323364257812,
+                0.22155244648456573,
+                0.04391135275363922,
+                0.02609270066022873,
+                0.013822131790220737
+              ],
+              "layer_trajectory": [
+                {
+                  "stage": "encoder.input",
+                  "top1": "\\vDash",
+                  "target_rank": 344,
+                  "target_minus_best_other_logit": -1.6307679414749146
+                },
+                {
+                  "stage": "encoder.block_0.output",
+                  "top1": "\\circlearrowright",
+                  "target_rank": 354,
+                  "target_minus_best_other_logit": -3.7174001932144165
+                },
+                {
+                  "stage": "encoder.block_1.output",
+                  "top1": "\\div",
+                  "target_rank": 72,
+                  "target_minus_best_other_logit": -2.9031161069869995
+                },
+                {
+                  "stage": "encoder.block_2.output",
+                  "top1": "4",
+                  "target_rank": 4,
+                  "target_minus_best_other_logit": -1.102095127105713
+                },
+                {
+                  "stage": "encoder.block_3.output",
+                  "top1": "4",
+                  "target_rank": 2,
+                  "target_minus_best_other_logit": -1.069106101989746
+                },
+                {
+                  "stage": "encoder.output",
+                  "top1": "4",
+                  "target_rank": 2,
+                  "target_minus_best_other_logit": -1.069106101989746
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": true,
+        "formula_exact_by_stage": {
+          "decoder": false,
+          "after_fence_guard": false,
+          "after_infix_guard": false,
+          "after_equation_guard": false,
+          "after_arithmetic_expression_guard": false,
+          "after_unique_bar_equation_guard": false,
+          "after_unique_exact_equation_candidates_guard": false,
+          "after_boundary_bar_as_unit_guard": false
+        },
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": [
+          {
+            "stroke_indices": [
+              1,
+              2
+            ],
+            "target": "+",
+            "prediction": "4",
+            "target_hwr_rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "aiflow_0007",
+      "grouping": {
+        "outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "fast_groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            9
+          ]
+        ],
+        "target_groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            9
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": 2,
+        "target_partition_score": 26.150206151126845,
+        "fast_partition_score": 26.356393987445514,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [
+          "partition_margin",
+          "spatial_overlap_low_confidence",
+          "structural_layout",
+          "symbol_margin"
+        ],
+        "risk_strokes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "local_region_seed_strokes": 10,
+        "local_region_strokes": 10,
+        "local_region_fraction": 1.0,
+        "local_candidate_count": 190,
+        "target_partition_reachable": true,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 2,
+          "target_score_delta_vs_fast": -0.20618783631866933,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "decoder_arm_exact_with_oracle_groups"
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": false,
+        "formula_exact_by_stage": null,
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": []
+      }
+    },
+    {
+      "sample_id": "aiflow_0008",
+      "grouping": {
+        "outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "fast_groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "target_groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": 2,
+        "target_partition_score": 17.724445358115453,
+        "fast_partition_score": 20.697825721386064,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [
+          "spatial_overlap_low_confidence",
+          "structural_layout",
+          "symbol_margin"
+        ],
+        "risk_strokes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "local_region_seed_strokes": 6,
+        "local_region_strokes": 6,
+        "local_region_fraction": 1.0,
+        "local_candidate_count": 58,
+        "target_partition_reachable": true,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 2,
+          "target_score_delta_vs_fast": -2.9733803632706106,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "decoder_arm_exact_with_oracle_groups"
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": false,
+        "formula_exact_by_stage": null,
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": []
+      }
+    },
+    {
+      "sample_id": "aiflow_0009",
+      "grouping": {
+        "outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "fast_groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "target_groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": 1,
+        "target_partition_score": 28.89121972520369,
+        "fast_partition_score": 28.89121972520369,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [
+          "structural_layout"
+        ],
+        "risk_strokes": [
+          3,
+          4,
+          5
+        ],
+        "local_region_seed_strokes": 6,
+        "local_region_strokes": 8,
+        "local_region_fraction": 0.8888888888888888,
+        "local_candidate_count": 126,
+        "target_partition_reachable": true,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": null,
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_fast": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "survives_but_loses",
+        "candidate_complete": null,
+        "target_beam_rank": 4,
+        "first_lost_position": null,
+        "first_lost_reason": null,
+        "target_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "=",
+          "1"
+        ],
+        "selected_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "=",
+          "|"
+        ],
+        "score_gap_decomposition": {
+          "token_log_probability_component": 0.31632836338078946,
+          "relation_component": 0.0,
+          "reconstructed_total": 0.31632836338078946
+        },
+        "missing_glyphs": [],
+        "token_level_selection": [
+          {
+            "position": 6,
+            "target": "1",
+            "selected": "|",
+            "mismatch": true,
+            "target_hwr_rank": 4,
+            "selected_hwr_rank": 1,
+            "target_probability": 0.08278394490480423,
+            "selected_probability": 0.5523623824119568,
+            "selected_minus_target_log_probability": 1.8979701802847369,
+            "hwr_layer_evidence": {
+              "target": "1",
+              "stroke_indices": [
+                8
+              ],
+              "raw_point_count": 23,
+              "raw_points_per_stroke": [
+                23
+              ],
+              "top1": "|",
+              "top1_probability": 0.5523623824119568,
+              "target_rank": 4,
+              "target_probability": 0.08278394490480423,
+              "top5": [
+                "|",
+                "\\mid",
+                "\\prime",
+                "1",
+                "I"
+              ],
+              "top5_probabilities": [
+                0.5523623824119568,
+                0.14572371542453766,
+                0.08865933865308762,
+                0.08278394490480423,
+                0.028403786942362785
+              ],
+              "layer_trajectory": [
+                {
+                  "stage": "encoder.input",
+                  "top1": "\\vDash",
+                  "target_rank": 42,
+                  "target_minus_best_other_logit": -0.6698960661888123
+                },
+                {
+                  "stage": "encoder.block_0.output",
+                  "top1": "\\mathds{1}",
+                  "target_rank": 72,
+                  "target_minus_best_other_logit": -1.5998086333274841
+                },
+                {
+                  "stage": "encoder.block_1.output",
+                  "top1": "\\{",
+                  "target_rank": 71,
+                  "target_minus_best_other_logit": -1.9441895484924316
+                },
+                {
+                  "stage": "encoder.block_2.output",
+                  "top1": "\\}",
+                  "target_rank": 11,
+                  "target_minus_best_other_logit": -2.017552375793457
+                },
+                {
+                  "stage": "encoder.block_3.output",
+                  "top1": "|",
+                  "target_rank": 4,
+                  "target_minus_best_other_logit": -1.897970199584961
+                },
+                {
+                  "stage": "encoder.output",
+                  "top1": "|",
+                  "target_rank": 4,
+                  "target_minus_best_other_logit": -1.897970199584961
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": true,
+        "formula_exact_by_stage": {
+          "decoder": false,
+          "after_fence_guard": false,
+          "after_infix_guard": false,
+          "after_equation_guard": false,
+          "after_arithmetic_expression_guard": false,
+          "after_unique_bar_equation_guard": false,
+          "after_unique_exact_equation_candidates_guard": false,
+          "after_boundary_bar_as_unit_guard": false
+        },
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": [
+          {
+            "stroke_indices": [
+              8
+            ],
+            "target": "1",
+            "prediction": "|",
+            "target_hwr_rank": 4
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "aiflow_0010",
+      "grouping": {
+        "outcome": "router_not_triggered",
+        "partition_error_shape": "oversegmentation",
+        "fast_groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "target_groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": 3,
+        "target_partition_score": 17.10008944813984,
+        "fast_partition_score": 21.761582919355792,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [],
+        "risk_strokes": [],
+        "local_region_seed_strokes": 0,
+        "local_region_strokes": 0,
+        "local_region_fraction": 0.0,
+        "local_candidate_count": 0,
+        "target_partition_reachable": null,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": {
+          "fast_partition_search_mode": "beam",
+          "fast_top1_top2_partition_score_gap": 2.073057586069204,
+          "partition_margin_threshold": 0.25,
+          "partition_margin_triggered": false,
+          "minimum_fast_group_hwr_margin": 0.3462309241294861,
+          "symbol_margin_threshold": 0.15,
+          "symbol_margin_triggered": false,
+          "replayed_risk_reasons": [],
+          "replay_matches_trace_risk_reasons": true
+        },
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_fast": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "decoder_arm_exact_with_oracle_groups"
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": false,
+        "formula_exact_by_stage": null,
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": []
+      }
+    },
+    {
+      "sample_id": "aiflow_0046",
+      "grouping": {
+        "outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "fast_groups": [
+          [
+            0,
+            1
+          ]
+        ],
+        "target_groups": [
+          [
+            0,
+            1
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": 1,
+        "target_partition_score": 4.054717003514659,
+        "fast_partition_score": 4.054717003514659,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [
+          "spatial_overlap_low_confidence",
+          "symbol_margin"
+        ],
+        "risk_strokes": [
+          0,
+          1
+        ],
+        "local_region_seed_strokes": 2,
+        "local_region_strokes": 2,
+        "local_region_fraction": 1.0,
+        "local_candidate_count": 3,
+        "target_partition_reachable": true,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": null,
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_fast": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "top5_missing",
+        "candidate_complete": null,
+        "target_beam_rank": null,
+        "first_lost_position": 1,
+        "first_lost_reason": "target_missing_from_top5",
+        "target_tokens": [
+          "5"
+        ],
+        "selected_tokens": [
+          "\\hbar"
+        ],
+        "score_gap_decomposition": null,
+        "missing_glyphs": [
+          {
+            "target": "5",
+            "in_checkpoint_vocabulary": true,
+            "stroke_indices": [
+              0,
+              1
+            ],
+            "raw_point_count": 35,
+            "raw_points_per_stroke": [
+              23,
+              12
+            ],
+            "target_rank": 6,
+            "target_probability": 0.03592102229595184,
+            "top1": "\\hbar",
+            "top1_probability": 0.1978556215763092,
+            "top5": [
+              "\\hbar",
+              "H",
+              "\\Pi",
+              "\\dag",
+              "\\pi"
+            ],
+            "layer_trajectory": [
+              {
+                "stage": "encoder.input",
+                "top1": "\\vDash",
+                "target_rank": 141,
+                "target_margin_logit": -1.0184946358203888
+              },
+              {
+                "stage": "encoder.block_0.output",
+                "top1": "\\div",
+                "target_rank": 81,
+                "target_margin_logit": -1.5063623785972595
+              },
+              {
+                "stage": "encoder.block_1.output",
+                "top1": "\\$",
+                "target_rank": 10,
+                "target_margin_logit": -1.9427636861801147
+              },
+              {
+                "stage": "encoder.block_2.output",
+                "top1": "\\mapsfrom",
+                "target_rank": 32,
+                "target_margin_logit": -1.9770233631134033
+              },
+              {
+                "stage": "encoder.block_3.output",
+                "top1": "\\hbar",
+                "target_rank": 6,
+                "target_margin_logit": -1.7062149047851562
+              },
+              {
+                "stage": "encoder.output",
+                "top1": "\\hbar",
+                "target_rank": 6,
+                "target_margin_logit": -1.7062149047851562
+              }
+            ],
+            "hwr_layer_evidence": {
+              "target": "5",
+              "stroke_indices": [
+                0,
+                1
+              ],
+              "raw_point_count": 35,
+              "raw_points_per_stroke": [
+                23,
+                12
+              ],
+              "top1": "\\hbar",
+              "top1_probability": 0.1978556215763092,
+              "target_rank": 6,
+              "target_probability": 0.03592102229595184,
+              "top5": [
+                "\\hbar",
+                "H",
+                "\\Pi",
+                "\\dag",
+                "\\pi"
+              ],
+              "top5_probabilities": [
+                0.1978556215763092,
+                0.18274378776550293,
+                0.1442379206418991,
+                0.10714447498321533,
+                0.1052471175789833
+              ],
+              "layer_trajectory": [
+                {
+                  "stage": "encoder.input",
+                  "top1": "\\vDash",
+                  "target_rank": 141,
+                  "target_minus_best_other_logit": -1.0184946358203888
+                },
+                {
+                  "stage": "encoder.block_0.output",
+                  "top1": "\\div",
+                  "target_rank": 81,
+                  "target_minus_best_other_logit": -1.5063623785972595
+                },
+                {
+                  "stage": "encoder.block_1.output",
+                  "top1": "\\$",
+                  "target_rank": 10,
+                  "target_minus_best_other_logit": -1.9427636861801147
+                },
+                {
+                  "stage": "encoder.block_2.output",
+                  "top1": "\\mapsfrom",
+                  "target_rank": 32,
+                  "target_minus_best_other_logit": -1.9770233631134033
+                },
+                {
+                  "stage": "encoder.block_3.output",
+                  "top1": "\\hbar",
+                  "target_rank": 6,
+                  "target_minus_best_other_logit": -1.7062149047851562
+                },
+                {
+                  "stage": "encoder.output",
+                  "top1": "\\hbar",
+                  "target_rank": 6,
+                  "target_minus_best_other_logit": -1.7062149047851562
+                }
+              ]
+            }
+          }
+        ],
+        "token_level_selection": []
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": true,
+        "formula_exact_by_stage": {
+          "decoder": false,
+          "after_fence_guard": false,
+          "after_infix_guard": false,
+          "after_equation_guard": false,
+          "after_arithmetic_expression_guard": false,
+          "after_unique_bar_equation_guard": false,
+          "after_unique_exact_equation_candidates_guard": false,
+          "after_boundary_bar_as_unit_guard": false
+        },
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": [
+          {
+            "stroke_indices": [
+              0,
+              1
+            ],
+            "target": "5",
+            "prediction": "\\hbar",
+            "target_hwr_rank": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "aiflow_0058",
+      "grouping": {
+        "outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "fast_groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "target_groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": 1,
+        "target_partition_score": 18.5577297698086,
+        "fast_partition_score": 18.5577297698086,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [],
+        "risk_strokes": [],
+        "local_region_seed_strokes": 0,
+        "local_region_strokes": 0,
+        "local_region_fraction": 0.0,
+        "local_candidate_count": 0,
+        "target_partition_reachable": true,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": null,
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_fast": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "survives_but_loses",
+        "candidate_complete": null,
+        "target_beam_rank": 29,
+        "first_lost_position": null,
+        "first_lost_reason": null,
+        "target_tokens": [
+          "1",
+          "8",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "selected_tokens": [
+          "\\lfloor",
+          "\\mathscr{C}",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "score_gap_decomposition": {
+          "token_log_probability_component": 0.9346163957407683,
+          "relation_component": 0.0,
+          "reconstructed_total": 0.9346163957407683
+        },
+        "missing_glyphs": [],
+        "token_level_selection": [
+          {
+            "position": 1,
+            "target": "1",
+            "selected": "\\lfloor",
+            "mismatch": true,
+            "target_hwr_rank": 2,
+            "selected_hwr_rank": 1,
+            "target_probability": 0.1657966822385788,
+            "selected_probability": 0.5264788269996643,
+            "selected_minus_target_log_probability": 1.1554488842626731,
+            "hwr_layer_evidence": {
+              "target": "1",
+              "stroke_indices": [
+                0
+              ],
+              "raw_point_count": 12,
+              "raw_points_per_stroke": [
+                12
+              ],
+              "top1": "\\lfloor",
+              "top1_probability": 0.5264788269996643,
+              "target_rank": 2,
+              "target_probability": 0.1657966822385788,
+              "top5": [
+                "\\lfloor",
+                "1",
+                "|",
+                "I",
+                "\\mid"
+              ],
+              "top5_probabilities": [
+                0.5264788269996643,
+                0.1657966822385788,
+                0.12181368470191956,
+                0.05457444489002228,
+                0.03899761289358139
+              ],
+              "layer_trajectory": [
+                {
+                  "stage": "encoder.input",
+                  "top1": "\\vDash",
+                  "target_rank": 40,
+                  "target_minus_best_other_logit": -0.6501449048519135
+                },
+                {
+                  "stage": "encoder.block_0.output",
+                  "top1": "\\mathds{1}",
+                  "target_rank": 77,
+                  "target_minus_best_other_logit": -1.6417486071586609
+                },
+                {
+                  "stage": "encoder.block_1.output",
+                  "top1": "\\{",
+                  "target_rank": 90,
+                  "target_minus_best_other_logit": -2.182392716407776
+                },
+                {
+                  "stage": "encoder.block_2.output",
+                  "top1": "\\{",
+                  "target_rank": 18,
+                  "target_minus_best_other_logit": -2.470817804336548
+                },
+                {
+                  "stage": "encoder.block_3.output",
+                  "top1": "\\lfloor",
+                  "target_rank": 2,
+                  "target_minus_best_other_logit": -1.1554489135742188
+                },
+                {
+                  "stage": "encoder.output",
+                  "top1": "\\lfloor",
+                  "target_rank": 2,
+                  "target_minus_best_other_logit": -1.1554489135742188
+                }
+              ]
+            }
+          },
+          {
+            "position": 2,
+            "target": "8",
+            "selected": "\\mathscr{C}",
+            "mismatch": true,
+            "target_hwr_rank": 3,
+            "selected_hwr_rank": 1,
+            "target_probability": 0.01118632685393095,
+            "selected_probability": 0.9600080847740173,
+            "selected_minus_target_log_probability": 4.452249490181937,
+            "hwr_layer_evidence": {
+              "target": "8",
+              "stroke_indices": [
+                1
+              ],
+              "raw_point_count": 29,
+              "raw_points_per_stroke": [
+                29
+              ],
+              "top1": "\\mathscr{C}",
+              "top1_probability": 0.9600080847740173,
+              "target_rank": 3,
+              "target_probability": 0.01118632685393095,
+              "top5": [
+                "\\mathscr{C}",
+                "\\mathscr{E}",
+                "8",
+                "\\mathcal{C}",
+                "\\zeta"
+              ],
+              "top5_probabilities": [
+                0.9600080847740173,
+                0.01834082417190075,
+                0.01118632685393095,
+                0.0055005052126944065,
+                0.0008858945220708847
+              ],
+              "layer_trajectory": [
+                {
+                  "stage": "encoder.input",
+                  "top1": "\\vDash",
+                  "target_rank": 216,
+                  "target_minus_best_other_logit": -1.1782082691788673
+                },
+                {
+                  "stage": "encoder.block_0.output",
+                  "top1": "\\mathds{1}",
+                  "target_rank": 136,
+                  "target_minus_best_other_logit": -2.1412754356861115
+                },
+                {
+                  "stage": "encoder.block_1.output",
+                  "top1": "\\circlearrowright",
+                  "target_rank": 8,
+                  "target_minus_best_other_logit": -0.6975724697113037
+                },
+                {
+                  "stage": "encoder.block_2.output",
+                  "top1": "\\mathscr{C}",
+                  "target_rank": 7,
+                  "target_minus_best_other_logit": -1.7224984169006348
+                },
+                {
+                  "stage": "encoder.block_3.output",
+                  "top1": "\\mathscr{C}",
+                  "target_rank": 3,
+                  "target_minus_best_other_logit": -4.452249526977539
+                },
+                {
+                  "stage": "encoder.output",
+                  "top1": "\\mathscr{C}",
+                  "target_rank": 3,
+                  "target_minus_best_other_logit": -4.452249526977539
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": true,
+        "formula_exact_by_stage": {
+          "decoder": false,
+          "after_fence_guard": false,
+          "after_infix_guard": false,
+          "after_equation_guard": false,
+          "after_arithmetic_expression_guard": false,
+          "after_unique_bar_equation_guard": false,
+          "after_unique_exact_equation_candidates_guard": false,
+          "after_boundary_bar_as_unit_guard": false
+        },
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": [
+          {
+            "stroke_indices": [
+              0
+            ],
+            "target": "1",
+            "prediction": "\\lfloor",
+            "target_hwr_rank": 2
+          },
+          {
+            "stroke_indices": [
+              1
+            ],
+            "target": "8",
+            "prediction": "\\mathscr{C}",
+            "target_hwr_rank": 3
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "aiflow_0064",
+      "grouping": {
+        "outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "fast_groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "target_groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": 1,
+        "target_partition_score": 10.121395064095285,
+        "fast_partition_score": 10.121395064095285,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [],
+        "risk_strokes": [],
+        "local_region_seed_strokes": 0,
+        "local_region_strokes": 0,
+        "local_region_fraction": 0.0,
+        "local_candidate_count": 0,
+        "target_partition_reachable": true,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": null,
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_fast": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "top5_missing",
+        "candidate_complete": null,
+        "target_beam_rank": null,
+        "first_lost_position": 3,
+        "first_lost_reason": "target_missing_from_top5",
+        "target_tokens": [
+          "f",
+          "(",
+          "t",
+          ")",
+          "+",
+          "2"
+        ],
+        "selected_tokens": [
+          "f",
+          "(",
+          "\\mathcal{A}",
+          ")",
+          "+",
+          "2"
+        ],
+        "score_gap_decomposition": null,
+        "missing_glyphs": [
+          {
+            "target": "t",
+            "in_checkpoint_vocabulary": false,
+            "stroke_indices": [
+              2,
+              3
+            ],
+            "raw_point_count": 32,
+            "raw_points_per_stroke": [
+              23,
+              9
+            ],
+            "target_rank": null,
+            "target_probability": null,
+            "top1": "\\mathcal{A}",
+            "top1_probability": 0.5148227214813232,
+            "top5": [
+              "\\mathcal{A}",
+              "\\pm",
+              "\\hbar",
+              "\\chi",
+              "\\lesssim"
+            ],
+            "layer_trajectory": [
+              {
+                "stage": "encoder.input",
+                "top1": "\\vDash",
+                "target_rank": null,
+                "target_margin_logit": null
+              },
+              {
+                "stage": "encoder.block_0.output",
+                "top1": "\\div",
+                "target_rank": null,
+                "target_margin_logit": null
+              },
+              {
+                "stage": "encoder.block_1.output",
+                "top1": "\\div",
+                "target_rank": null,
+                "target_margin_logit": null
+              },
+              {
+                "stage": "encoder.block_2.output",
+                "top1": "\\hbar",
+                "target_rank": null,
+                "target_margin_logit": null
+              },
+              {
+                "stage": "encoder.block_3.output",
+                "top1": "\\mathcal{A}",
+                "target_rank": null,
+                "target_margin_logit": null
+              },
+              {
+                "stage": "encoder.output",
+                "top1": "\\mathcal{A}",
+                "target_rank": null,
+                "target_margin_logit": null
+              }
+            ],
+            "hwr_layer_evidence": {
+              "target": "t",
+              "stroke_indices": [
+                2,
+                3
+              ],
+              "raw_point_count": 32,
+              "raw_points_per_stroke": [
+                23,
+                9
+              ],
+              "top1": "\\mathcal{A}",
+              "top1_probability": 0.5148227214813232,
+              "target_rank": null,
+              "target_probability": null,
+              "top5": [
+                "\\mathcal{A}",
+                "\\pm",
+                "\\hbar",
+                "\\chi",
+                "\\lesssim"
+              ],
+              "top5_probabilities": [
+                0.5148227214813232,
+                0.2829480469226837,
+                0.12400898337364197,
+                0.018345113843679428,
+                0.011702475138008595
+              ],
+              "layer_trajectory": [
+                {
+                  "stage": "encoder.input",
+                  "top1": "\\vDash",
+                  "target_rank": null,
+                  "target_minus_best_other_logit": null
+                },
+                {
+                  "stage": "encoder.block_0.output",
+                  "top1": "\\div",
+                  "target_rank": null,
+                  "target_minus_best_other_logit": null
+                },
+                {
+                  "stage": "encoder.block_1.output",
+                  "top1": "\\div",
+                  "target_rank": null,
+                  "target_minus_best_other_logit": null
+                },
+                {
+                  "stage": "encoder.block_2.output",
+                  "top1": "\\hbar",
+                  "target_rank": null,
+                  "target_minus_best_other_logit": null
+                },
+                {
+                  "stage": "encoder.block_3.output",
+                  "top1": "\\mathcal{A}",
+                  "target_rank": null,
+                  "target_minus_best_other_logit": null
+                },
+                {
+                  "stage": "encoder.output",
+                  "top1": "\\mathcal{A}",
+                  "target_rank": null,
+                  "target_minus_best_other_logit": null
+                }
+              ]
+            }
+          }
+        ],
+        "token_level_selection": []
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": true,
+        "formula_exact_by_stage": {
+          "decoder": false,
+          "after_fence_guard": false,
+          "after_infix_guard": false,
+          "after_equation_guard": false,
+          "after_arithmetic_expression_guard": false,
+          "after_unique_bar_equation_guard": false,
+          "after_unique_exact_equation_candidates_guard": false,
+          "after_boundary_bar_as_unit_guard": false
+        },
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": [
+          {
+            "stroke_indices": [
+              2,
+              3
+            ],
+            "target": "t",
+            "prediction": "\\mathcal{A}",
+            "target_hwr_rank": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "aiflow_0074",
+      "grouping": {
+        "outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "same_count_wrong_partition",
+        "fast_groups": [
+          [
+            0,
+            3
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "target_groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": 8,
+        "target_partition_score": -8.380076014279961,
+        "fast_partition_score": 5.29699467279986,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [
+          "structural_layout"
+        ],
+        "risk_strokes": [
+          1,
+          2
+        ],
+        "local_region_seed_strokes": 4,
+        "local_region_strokes": 4,
+        "local_region_fraction": 1.0,
+        "local_candidate_count": 15,
+        "target_partition_reachable": true,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_below_acceptance_margin",
+          "target_rank": 9,
+          "target_score_delta_vs_fast": -13.677070687079821,
+          "target_in_geometry_shortlist": true
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "decoder_arm_exact_with_oracle_groups"
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": false,
+        "formula_exact_by_stage": null,
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": []
+      }
+    },
+    {
+      "sample_id": "aiflow_0078",
+      "grouping": {
+        "outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "fast_groups": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "target_groups": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": 1,
+        "target_partition_score": 16.610298421792887,
+        "fast_partition_score": 16.610298421792887,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [],
+        "risk_strokes": [],
+        "local_region_seed_strokes": 0,
+        "local_region_strokes": 0,
+        "local_region_fraction": 0.0,
+        "local_candidate_count": 0,
+        "target_partition_reachable": true,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": null,
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_fast": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "survives_but_loses",
+        "candidate_complete": null,
+        "target_beam_rank": 5,
+        "first_lost_position": null,
+        "first_lost_reason": null,
+        "target_tokens": [
+          "a",
+          "=",
+          "5"
+        ],
+        "selected_tokens": [
+          "a",
+          "=",
+          "S"
+        ],
+        "score_gap_decomposition": {
+          "token_log_probability_component": 0.9533736125997169,
+          "relation_component": 0.0,
+          "reconstructed_total": 0.9533736125997169
+        },
+        "missing_glyphs": [],
+        "token_level_selection": [
+          {
+            "position": 3,
+            "target": "5",
+            "selected": "S",
+            "mismatch": true,
+            "target_hwr_rank": 4,
+            "selected_hwr_rank": 1,
+            "target_probability": 0.03325261175632477,
+            "selected_probability": 0.5807115435600281,
+            "selected_minus_target_log_probability": 2.8601208377991507,
+            "hwr_layer_evidence": {
+              "target": "5",
+              "stroke_indices": [
+                3
+              ],
+              "raw_point_count": 56,
+              "raw_points_per_stroke": [
+                56
+              ],
+              "top1": "S",
+              "top1_probability": 0.5807115435600281,
+              "target_rank": 4,
+              "target_probability": 0.03325261175632477,
+              "top5": [
+                "S",
+                "s",
+                "\\mathcal{S}",
+                "5",
+                "\\mathcal{G}"
+              ],
+              "top5_probabilities": [
+                0.5807115435600281,
+                0.20573575794696808,
+                0.17009992897510529,
+                0.03325261175632477,
+                0.0027042808942496777
+              ],
+              "layer_trajectory": [
+                {
+                  "stage": "encoder.input",
+                  "top1": "\\vDash",
+                  "target_rank": 127,
+                  "target_minus_best_other_logit": -0.982247993350029
+                },
+                {
+                  "stage": "encoder.block_0.output",
+                  "top1": "\\rightleftarrows",
+                  "target_rank": 69,
+                  "target_minus_best_other_logit": -1.5603489875793457
+                },
+                {
+                  "stage": "encoder.block_1.output",
+                  "top1": "\\with",
+                  "target_rank": 70,
+                  "target_minus_best_other_logit": -2.49259090423584
+                },
+                {
+                  "stage": "encoder.block_2.output",
+                  "top1": "S",
+                  "target_rank": 6,
+                  "target_minus_best_other_logit": -2.0836894512176514
+                },
+                {
+                  "stage": "encoder.block_3.output",
+                  "top1": "S",
+                  "target_rank": 4,
+                  "target_minus_best_other_logit": -2.8601207733154297
+                },
+                {
+                  "stage": "encoder.output",
+                  "top1": "S",
+                  "target_rank": 4,
+                  "target_minus_best_other_logit": -2.8601207733154297
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": true,
+        "formula_exact_by_stage": {
+          "decoder": false,
+          "after_fence_guard": false,
+          "after_infix_guard": false,
+          "after_equation_guard": false,
+          "after_arithmetic_expression_guard": false,
+          "after_unique_bar_equation_guard": false,
+          "after_unique_exact_equation_candidates_guard": false,
+          "after_boundary_bar_as_unit_guard": false
+        },
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": [
+          {
+            "stroke_indices": [
+              3
+            ],
+            "target": "5",
+            "prediction": "S",
+            "target_hwr_rank": 4
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "aiflow_0118",
+      "grouping": {
+        "outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "fast_groups": [
+          [
+            0
+          ]
+        ],
+        "target_groups": [
+          [
+            0
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": 1,
+        "target_partition_score": -0.054010130415235516,
+        "fast_partition_score": -0.054010130415235516,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [
+          "symbol_margin"
+        ],
+        "risk_strokes": [
+          0
+        ],
+        "local_region_seed_strokes": 1,
+        "local_region_strokes": 1,
+        "local_region_fraction": 1.0,
+        "local_candidate_count": 1,
+        "target_partition_reachable": true,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": null,
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_fast": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "survives_but_loses",
+        "candidate_complete": null,
+        "target_beam_rank": 2,
+        "first_lost_position": null,
+        "first_lost_reason": null,
+        "target_tokens": [
+          "1"
+        ],
+        "selected_tokens": [
+          "|"
+        ],
+        "score_gap_decomposition": {
+          "token_log_probability_component": 0.277360846297078,
+          "relation_component": 0.0,
+          "reconstructed_total": 0.277360846297078
+        },
+        "missing_glyphs": [],
+        "token_level_selection": [
+          {
+            "position": 1,
+            "target": "1",
+            "selected": "|",
+            "mismatch": true,
+            "target_hwr_rank": 2,
+            "selected_hwr_rank": 1,
+            "target_probability": 0.2965104877948761,
+            "selected_probability": 0.39128783345222473,
+            "selected_minus_target_log_probability": 0.277360846297078,
+            "hwr_layer_evidence": {
+              "target": "1",
+              "stroke_indices": [
+                0
+              ],
+              "raw_point_count": 13,
+              "raw_points_per_stroke": [
+                13
+              ],
+              "top1": "|",
+              "top1_probability": 0.39128783345222473,
+              "target_rank": 2,
+              "target_probability": 0.2965104877948761,
+              "top5": [
+                "|",
+                "1",
+                "\\mid",
+                "I",
+                "\\prime"
+              ],
+              "top5_probabilities": [
+                0.39128783345222473,
+                0.2965104877948761,
+                0.19930173456668854,
+                0.03537171334028244,
+                0.027086777612566948
+              ],
+              "layer_trajectory": [
+                {
+                  "stage": "encoder.input",
+                  "top1": "\\vDash",
+                  "target_rank": 42,
+                  "target_minus_best_other_logit": -0.6613097190856934
+                },
+                {
+                  "stage": "encoder.block_0.output",
+                  "top1": "\\Downarrow",
+                  "target_rank": 50,
+                  "target_minus_best_other_logit": -1.457656741142273
+                },
+                {
+                  "stage": "encoder.block_1.output",
+                  "top1": "\\{",
+                  "target_rank": 52,
+                  "target_minus_best_other_logit": -1.7620229721069336
+                },
+                {
+                  "stage": "encoder.block_2.output",
+                  "top1": "|",
+                  "target_rank": 5,
+                  "target_minus_best_other_logit": -1.2587499618530273
+                },
+                {
+                  "stage": "encoder.block_3.output",
+                  "top1": "|",
+                  "target_rank": 2,
+                  "target_minus_best_other_logit": -0.2773609161376953
+                },
+                {
+                  "stage": "encoder.output",
+                  "top1": "|",
+                  "target_rank": 2,
+                  "target_minus_best_other_logit": -0.2773609161376953
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": true,
+        "formula_exact_by_stage": {
+          "decoder": false,
+          "after_fence_guard": false,
+          "after_infix_guard": false,
+          "after_equation_guard": false,
+          "after_arithmetic_expression_guard": false,
+          "after_unique_bar_equation_guard": false,
+          "after_unique_exact_equation_candidates_guard": false,
+          "after_boundary_bar_as_unit_guard": false
+        },
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": [
+          {
+            "stroke_indices": [
+              0
+            ],
+            "target": "1",
+            "prediction": "|",
+            "target_hwr_rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "aiflow_0163",
+      "grouping": {
+        "outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "same_count_wrong_partition",
+        "fast_groups": [
+          [
+            0
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          [
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10
+          ]
+        ],
+        "target_groups": [
+          [
+            0
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            8,
+            9
+          ],
+          [
+            10
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": null,
+        "target_partition_score": 0.28116758997384217,
+        "fast_partition_score": 21.88336500693341,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [
+          "structural_layout"
+        ],
+        "risk_strokes": [
+          7,
+          8,
+          9
+        ],
+        "local_region_seed_strokes": 6,
+        "local_region_strokes": 10,
+        "local_region_fraction": 0.9090909090909091,
+        "local_candidate_count": 265,
+        "target_partition_reachable": true,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": null,
+        "skip_reason_source": "saved_trace",
+        "replay_region_cap_violations": [],
+        "instrumentation_gap": null,
+        "router_cues": null,
+        "search": {
+          "outcome": "target_partition_ranked_below_exact_capped_top32",
+          "target_rank": null,
+          "target_score_delta_vs_fast": -21.602197416959566,
+          "target_in_geometry_shortlist": false
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "decoder_arm_exact_with_oracle_groups"
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": false,
+        "formula_exact_by_stage": null,
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": []
+      }
+    },
+    {
+      "sample_id": "aiflow_0164",
+      "grouping": {
+        "outcome": "local_search_not_run",
+        "partition_error_shape": "same_count_wrong_partition",
+        "fast_groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          [
+            9
+          ],
+          [
+            10,
+            11,
+            12
+          ],
+          [
+            13
+          ]
+        ],
+        "target_groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7,
+            8,
+            9
+          ],
+          [
+            10,
+            11,
+            12,
+            13
+          ]
+        ],
+        "target_partition_rank_in_fast_top32": null,
+        "target_partition_score": -13.984203797738182,
+        "fast_partition_score": 18.61245618406711,
+        "target_group_candidate_recall": 1.0,
+        "risk_reasons": [
+          "partition_margin",
+          "symbol_margin"
+        ],
+        "risk_strokes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "local_region_seed_strokes": 12,
+        "local_region_strokes": 13,
+        "local_region_fraction": 0.9285714285714286,
+        "local_candidate_count": 0,
+        "target_partition_reachable": null,
+        "target_groups_crossing_region": [],
+        "saved_skip_reason": null,
+        "derived_skip_reason": "region_budget_under_replay_config",
+        "skip_reason_source": "inferred_not_saved_in_runtime_trace",
+        "replay_region_cap_violations": [
+          "max_region_strokes",
+          "max_region_fraction"
+        ],
+        "instrumentation_gap": "skip_reason_missing_in_source_trace",
+        "router_cues": null,
+        "search": {
+          "outcome": null,
+          "target_rank": null,
+          "target_score_delta_vs_fast": null,
+          "target_in_geometry_shortlist": null
+        }
+      },
+      "decoder_with_oracle_groups": {
+        "outcome": "decoder_arm_exact_with_oracle_groups"
+      },
+      "fixed_semantic_guard_replay": {
+        "fast_group_exact": false,
+        "formula_exact_by_stage": null,
+        "final_guard_stage": "after_boundary_bar_as_unit_guard",
+        "residual_glyph_errors_after_guard": []
+      }
+    }
+  ],
+  "verification": {
+    "checks": {
+      "provenance_reconciliation_passes": true,
+      "acceptance_ids_unique_and_count_53": true,
+      "raw_ink_duplicate_ids_union_count_47": true,
+      "acceptance_and_raw_ink_exclusions_disjoint": true,
+      "source_formula_ids_reconcile_at_149": true,
+      "retained_formula_ids_reconcile_at_49": true,
+      "retained_ids_exclude_acceptance_and_ink_duplicates": true,
+      "grouping_causes_reconcile": true,
+      "decoder_residual_causes_reconcile": true,
+      "semantic_guard_ids_reconcile_at_149": true,
+      "oracle_decoder_residuals_have_exact_fast_groups": true,
+      "layer_trace_hash_matches_failure_matrix": true,
+      "layer_trace_ids_reconcile_at_149": true,
+      "decoder_mismatches_join_to_layer_trace": true,
+      "top5_misses_join_to_layer_trace": true,
+      "all_retained_failure_rows_join_both_sources": true
+    },
+    "all_checks_pass": true
+  }
+}

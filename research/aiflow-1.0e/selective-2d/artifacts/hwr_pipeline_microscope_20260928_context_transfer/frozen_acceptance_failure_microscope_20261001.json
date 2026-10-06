@@ -1,0 +1,1607 @@
+{
+  "schema": "aiflow-hwr-frozen-acceptance-failure-microscope/v1",
+  "scope": "post-hoc failure microscope on the frozen acceptance subset; no fitting, CROHME use, threshold selection, or promotion",
+  "inputs": {
+    "provenance_audit": {
+      "path": "artifacts\\hwr_pipeline_microscope_20260928_context_transfer\\context_transfer_contamination_and_acceptance_audit_20261001.json",
+      "sha256": "8c468af65f3903e1fb71677722e64cda4ad0c98c2323bf8c83b2a7409ed00aa7"
+    },
+    "acceptance_manifest": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\frozen_acceptance_manifest.json",
+      "sha256": "2b7dad97aa417bee25213e127c36cd1790c4c6f36f946bc798a7c2770b41e54f"
+    },
+    "acceptance_ownership": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\ownership_fresh_acceptance.jsonl",
+      "sha256": "feff42afb42fb9a3f93ec462ca65d63ec4f01d8017b87b5d6efe191caaa9ca9c"
+    },
+    "formula_source": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\frozen_dataset\\data\\formulas_valid.jsonl",
+      "sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401"
+    },
+    "trace_summary": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\summary.json",
+      "sha256": "1b26fbc501466bcb8ccd7c25d9796320173640a4aa35b82eac4ecd833ad5460e"
+    },
+    "trace_file": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\formula_traces.jsonl",
+      "sha256": "785e909f569e3c6346b4fcecc83173445b1ef016ad31ee13e7188700990c76e7"
+    },
+    "grouping_tournament": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\grouping_hwr_tournament_geometry_prior_20260928\\summary.json",
+      "sha256": "b9d00a4ec5b93269c3568187f668ce0d2f3f50b1a28b510e5f178a6684a1b994"
+    },
+    "partition_failure_audit": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\local_partition_failure_score_features_20261001.json",
+      "sha256": "d39327d37358716ead740daeb2360fdc0414514634c1d9833344d890fb550016"
+    },
+    "decoder_failure_matrix": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\failure_cause_matrix_microscope_20261001_v3.json",
+      "sha256": "ee43eae06765576dd32d421426b243843f0f3b17c3e9876d577b90c2c52c1bbf"
+    },
+    "hwr_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e"
+  },
+  "summary": {
+    "formulas": 53,
+    "writers": 2,
+    "target_symbols": 186,
+    "oracle_group_hwr": {
+      "top1_correct_symbols": 144,
+      "top1_symbol_accuracy": 0.7741935483870968,
+      "top5_correct_symbols": 178,
+      "top5_symbol_recall": 0.956989247311828,
+      "top1_formula_exact": 27,
+      "top5_formula_complete": 47,
+      "top5_complete_by_fast_group_status": {
+        "True": {
+          "formulas": 36,
+          "complete": 34,
+          "incomplete": 2
+        },
+        "False": {
+          "formulas": 17,
+          "complete": 13,
+          "incomplete": 4
+        }
+      }
+    },
+    "strict_formula_exact": {
+      "fast_selected": 21,
+      "after_guards": 22,
+      "after_context": 29,
+      "context_net_gain": 7,
+      "context_rescues": 7,
+      "context_regressions": 0,
+      "by_fast_group_status": {
+        "group_exact": {
+          "formulas": 36,
+          "context_exact": 28,
+          "context_errors": 8
+        },
+        "group_wrong": {
+          "formulas": 17,
+          "context_exact": 1,
+          "context_errors": 16
+        }
+      }
+    },
+    "grouping_failures": {
+      "fast_group_exact": 36,
+      "fast_group_errors": 17,
+      "error_shapes": {
+        "oversegmentation": 16,
+        "same_count_wrong_partition": 1
+      },
+      "root_causes": {
+        "gold_partition_reachable_but_not_promoted": 13,
+        "router_not_triggered": 2,
+        "gold_partition_blocked_by_locked_boundary": 2
+      },
+      "gold_reachable_score_gaps": {
+        "count": 13,
+        "min": -11.834421115536978,
+        "median": -5.717894139804805,
+        "max": -0.2203336770208395,
+        "candidate_cap_exclusions": 0,
+        "formula_details": [
+          {
+            "sample_id": "aiflow_0038",
+            "target_rank_in_fast_top32": 2,
+            "target_score_delta_vs_fast": -5.717894139804805,
+            "target_excluded_by_candidate_cap": false
+          },
+          {
+            "sample_id": "aiflow_0068",
+            "target_rank_in_fast_top32": 2,
+            "target_score_delta_vs_fast": -1.5392886629291382,
+            "target_excluded_by_candidate_cap": false
+          },
+          {
+            "sample_id": "aiflow_0092",
+            "target_rank_in_fast_top32": 2,
+            "target_score_delta_vs_fast": -6.337526357682192,
+            "target_excluded_by_candidate_cap": false
+          },
+          {
+            "sample_id": "aiflow_0093",
+            "target_rank_in_fast_top32": 2,
+            "target_score_delta_vs_fast": -6.067535091723805,
+            "target_excluded_by_candidate_cap": false
+          },
+          {
+            "sample_id": "aiflow_0098",
+            "target_rank_in_fast_top32": 3,
+            "target_score_delta_vs_fast": -11.834421115536978,
+            "target_excluded_by_candidate_cap": false
+          },
+          {
+            "sample_id": "aiflow_0101",
+            "target_rank_in_fast_top32": 3,
+            "target_score_delta_vs_fast": -5.894136950941327,
+            "target_excluded_by_candidate_cap": false
+          },
+          {
+            "sample_id": "aiflow_0102",
+            "target_rank_in_fast_top32": 2,
+            "target_score_delta_vs_fast": -4.3363028409277184,
+            "target_excluded_by_candidate_cap": false
+          },
+          {
+            "sample_id": "aiflow_0103",
+            "target_rank_in_fast_top32": 2,
+            "target_score_delta_vs_fast": -3.2855031074512695,
+            "target_excluded_by_candidate_cap": false
+          },
+          {
+            "sample_id": "aiflow_0106",
+            "target_rank_in_fast_top32": 2,
+            "target_score_delta_vs_fast": -1.982636619269286,
+            "target_excluded_by_candidate_cap": false
+          },
+          {
+            "sample_id": "aiflow_0109",
+            "target_rank_in_fast_top32": 3,
+            "target_score_delta_vs_fast": -3.8637506277002167,
+            "target_excluded_by_candidate_cap": false
+          },
+          {
+            "sample_id": "aiflow_0110",
+            "target_rank_in_fast_top32": 2,
+            "target_score_delta_vs_fast": -5.7489942051560625,
+            "target_excluded_by_candidate_cap": false
+          },
+          {
+            "sample_id": "aiflow_0111",
+            "target_rank_in_fast_top32": 2,
+            "target_score_delta_vs_fast": -0.2203336770208395,
+            "target_excluded_by_candidate_cap": false
+          },
+          {
+            "sample_id": "aiflow_0112",
+            "target_rank_in_fast_top32": 3,
+            "target_score_delta_vs_fast": -6.177027290749336,
+            "target_excluded_by_candidate_cap": false
+          }
+        ]
+      },
+      "failed_formula_details": [
+        {
+          "sample_id": "aiflow_0038",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "x"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": false,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 0,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0068",
+          "writer_id": "writer_010",
+          "target_tokens": [
+            "2",
+            "0",
+            "\\div",
+            "4",
+            "=",
+            "5"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": false,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 2,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": "top5_missing"
+        },
+        {
+          "sample_id": "aiflow_0069",
+          "writer_id": "writer_010",
+          "target_tokens": [
+            "y",
+            "=",
+            "5"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": false,
+          "fast_selected_exact": true,
+          "guarded_exact": true,
+          "context_exact": true,
+          "context_changes": 0,
+          "candidate_violations": 0,
+          "grouping_outcome": "router_not_triggered",
+          "partition_error_shape": "same_count_wrong_partition",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0092",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "2",
+            "\\times",
+            "x",
+            "+",
+            "1"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 2,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0093",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "x",
+            "/",
+            "2"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 0,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0097",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "g",
+            "(",
+            "x",
+            ")"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 1,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_blocked_by_locked_boundary",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0098",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "x",
+            "2"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 0,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0101",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "7",
+            "=",
+            "7"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 0,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0102",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "x",
+            "=",
+            "y"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 0,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0103",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "x",
+            "+",
+            "y",
+            "=",
+            "5"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 1,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0104",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "f",
+            "(",
+            "x",
+            ")",
+            "+",
+            "g",
+            "(",
+            "y",
+            ")"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": false,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 2,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_blocked_by_locked_boundary",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0106",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "(",
+            "x",
+            ")"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 1,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0109",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "(",
+            "x",
+            "+",
+            "(",
+            "y",
+            "-",
+            "1",
+            ")",
+            ")"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 2,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0110",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "3",
+            "\\times",
+            "(",
+            "x",
+            "+",
+            "1",
+            ")"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 1,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0111",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "(",
+            "x",
+            "+",
+            "1",
+            ")",
+            "\\times",
+            "2"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 1,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": "beam_pruned"
+        },
+        {
+          "sample_id": "aiflow_0112",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "x",
+            "\\times",
+            "y",
+            "+",
+            "2"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 0,
+          "candidate_violations": 0,
+          "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        },
+        {
+          "sample_id": "aiflow_0116",
+          "writer_id": "writer_012",
+          "target_tokens": [
+            "f",
+            "(",
+            "x",
+            ")",
+            "=",
+            "y"
+          ],
+          "fast_group_exact": false,
+          "oracle_hwr_top5_complete": true,
+          "fast_selected_exact": false,
+          "guarded_exact": false,
+          "context_exact": false,
+          "context_changes": 1,
+          "candidate_violations": 0,
+          "grouping_outcome": "router_not_triggered",
+          "partition_error_shape": "oversegmentation",
+          "decoder_residual_cause": null
+        }
+      ]
+    },
+    "oracle_group_decoder_residuals": {
+      "formulas": 12,
+      "causes": {
+        "top5_missing": 3,
+        "survives_but_loses": 4,
+        "beam_pruned": 5
+      },
+      "interpretation": "residual causes use oracle target groups and the saved guarded decoder; they isolate decoder/HWR from grouping"
+    },
+    "selection_policy": {
+      "original_freeze_excluded_acceptance_specific_training_and_pre_freeze_predictions": true,
+      "post_freeze_development_reuse": true,
+      "independent_acceptance_claim_permitted_now": false,
+      "reason": "the frozen 53 cases have been included in the later 149-case development microscope; use this only to diagnose, not tune or promote"
+    },
+    "formula_level_details": [
+      {
+        "sample_id": "aiflow_0032",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "0"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": false,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": "top5_missing"
+      },
+      {
+        "sample_id": "aiflow_0033",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "4"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0034",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "5"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0035",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "6"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0036",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "8"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": false,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": "top5_missing"
+      },
+      {
+        "sample_id": "aiflow_0037",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "9"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0038",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "x"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": false,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0039",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "y"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0040",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "f"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0041",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "g"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0042",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "+"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0043",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "-"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0044",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "="
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": "survives_but_loses"
+      },
+      {
+        "sample_id": "aiflow_0066",
+        "writer_id": "writer_010",
+        "target_tokens": [
+          "f"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0067",
+        "writer_id": "writer_010",
+        "target_tokens": [
+          "1",
+          "\\times",
+          "4",
+          "=",
+          "4"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": true,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0068",
+        "writer_id": "writer_010",
+        "target_tokens": [
+          "2",
+          "0",
+          "\\div",
+          "4",
+          "=",
+          "5"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": false,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 2,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": "top5_missing"
+      },
+      {
+        "sample_id": "aiflow_0069",
+        "writer_id": "writer_010",
+        "target_tokens": [
+          "y",
+          "=",
+          "5"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": false,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "router_not_triggered",
+        "partition_error_shape": "same_count_wrong_partition",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0081",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "\\times"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0082",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "("
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0083",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          ")"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0084",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "4",
+          "\\times",
+          "6"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0085",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "6",
+          "+",
+          "3"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0086",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "6",
+          "\\times",
+          "8",
+          "=",
+          "4",
+          "8"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": true,
+        "context_changes": 2,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0087",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "9",
+          "+",
+          "1",
+          "=",
+          "1",
+          "0"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 3,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": "beam_pruned"
+      },
+      {
+        "sample_id": "aiflow_0088",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "9",
+          "-",
+          "4"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0089",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "1",
+          "0",
+          "+",
+          "2"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": true,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": "survives_but_loses"
+      },
+      {
+        "sample_id": "aiflow_0090",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "1",
+          "2",
+          "-",
+          "5"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": true,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0091",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "x",
+          "+",
+          "2"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0092",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "2",
+          "\\times",
+          "x",
+          "+",
+          "1"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 2,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0093",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "x",
+          "/",
+          "2"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0094",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "y",
+          "-",
+          "3"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0095",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "+",
+          "2"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": "beam_pruned"
+      },
+      {
+        "sample_id": "aiflow_0096",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "f",
+          "(",
+          "y",
+          ")"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": true,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": "survives_but_loses"
+      },
+      {
+        "sample_id": "aiflow_0097",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "g",
+          "(",
+          "x",
+          ")"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_blocked_by_locked_boundary",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0098",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "x",
+          "2"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0099",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "\\sqrt{}",
+          "(",
+          "x",
+          ")"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0100",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "y",
+          "2",
+          "+",
+          "1"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 2,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": "beam_pruned"
+      },
+      {
+        "sample_id": "aiflow_0101",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "7",
+          "=",
+          "7"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0102",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "x",
+          "=",
+          "y"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0103",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "x",
+          "+",
+          "y",
+          "=",
+          "5"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0104",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "+",
+          "g",
+          "(",
+          "y",
+          ")"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": false,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 2,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_blocked_by_locked_boundary",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0105",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "f",
+          "(",
+          "g",
+          "(",
+          "x",
+          ")",
+          ")"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 3,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": "beam_pruned"
+      },
+      {
+        "sample_id": "aiflow_0106",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "(",
+          "x",
+          ")"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0107",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "(",
+          "y",
+          "-",
+          "2",
+          ")"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0108",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "(",
+          "3",
+          "+",
+          "5",
+          ")"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": true,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0109",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "(",
+          "x",
+          "+",
+          "(",
+          "y",
+          "-",
+          "1",
+          ")",
+          ")"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 2,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0110",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "3",
+          "\\times",
+          "(",
+          "x",
+          "+",
+          "1",
+          ")"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0111",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "(",
+          "x",
+          "+",
+          "1",
+          ")",
+          "\\times",
+          "2"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": "beam_pruned"
+      },
+      {
+        "sample_id": "aiflow_0112",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "x",
+          "\\times",
+          "y",
+          "+",
+          "2"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "gold_partition_reachable_but_not_promoted",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0113",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "8",
+          "\\div",
+          "2"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": "survives_but_loses"
+      },
+      {
+        "sample_id": "aiflow_0114",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "3",
+          "\\times",
+          "y",
+          "-",
+          "2"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": true,
+        "guarded_exact": true,
+        "context_exact": true,
+        "context_changes": 0,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0115",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "g",
+          "(",
+          "y",
+          ")",
+          "-",
+          "1"
+        ],
+        "fast_group_exact": true,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": true,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "fast_partition_exact",
+        "partition_error_shape": "exact",
+        "decoder_residual_cause": null
+      },
+      {
+        "sample_id": "aiflow_0116",
+        "writer_id": "writer_012",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "=",
+          "y"
+        ],
+        "fast_group_exact": false,
+        "oracle_hwr_top5_complete": true,
+        "fast_selected_exact": false,
+        "guarded_exact": false,
+        "context_exact": false,
+        "context_changes": 1,
+        "candidate_violations": 0,
+        "grouping_outcome": "router_not_triggered",
+        "partition_error_shape": "oversegmentation",
+        "decoder_residual_cause": null
+      }
+    ]
+  },
+  "verification": {
+    "acceptance_formula_count_matches_freeze": true,
+    "accepted_targets_match_raw_and_layer_trace": true,
+    "all_diagnostics_share_exact_trace_hash": true,
+    "fast_group_outcomes_match_across_reports": true,
+    "grouping_failure_buckets_reconcile": true,
+    "decoder_failure_buckets_reconcile": true,
+    "context_candidate_violations_zero": true,
+    "partition_cap_did_not_exclude_reachable_targets": true,
+    "all_reachable_target_deltas_below_zero": true,
+    "final_formula_failure_counts_reconcile": true,
+    "all_checks_pass": true
+  }
+}

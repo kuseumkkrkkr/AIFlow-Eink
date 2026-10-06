@@ -1,0 +1,3167 @@
+{
+  "schema": "aiflow-mini-formula-lm-relation-augmentation-probe/v1",
+  "status": "exploratory_synthetic_relation_ablation_not_acceptance",
+  "protocol": {
+    "crohme_rows_loaded": 0,
+    "crohme_training_or_tuning": false,
+    "consumed_149_formula_set_loaded": false,
+    "project_owned_prompt_corpus_only_for_real_examples": true,
+    "synthetic_generator": "balanced subclass of train_owned_formula_context_v1.FormulaGenerator; uniform within semantic roles and a 0.5 common-token mix",
+    "training_objective": "masked-symbol cross-entropy; no teacher and no external pretrained context weights",
+    "early_stopping": "equal mean weighted cross-entropy on held-out project-owned prompt formulas and a separate generated relation split",
+    "synthetic_test_used_for_selection": false,
+    "handwritten_acceptance_evidence": false,
+    "product_adopted": false,
+    "synthetic_structure_note": "A stacked fraction-like template uses the existing '-' HWR glyph class with adjacent below relations; the vocabulary has no dedicated \\frac class, and this chain is only a coarse proxy for a 2-D relation graph.",
+    "root_structure_note": "Root tokens are generated, but the frozen mini-LM relation vocabulary has no contains edge; root/radicand containment is not tested by this probe.",
+    "warning": "This probes 2-D relation representation on generated contexts only; it is not evidence of handwritten formula improvement or independent product acceptance."
+  },
+  "data": {
+    "corpus_sha256": "353be67265f16a3d8591760163714ed664a5c777113d5100ffe8a8407d6d425f",
+    "audit_sha256": "aab228c3741e4b6f1e08b33305013538b2a7826aab2691b147c93952263a0a87",
+    "raw_formulas": 595,
+    "admitted_formulas": 584,
+    "admitted_records": 2084,
+    "fit_formulas": 467,
+    "validation_formulas": 117,
+    "fit_records": 1652,
+    "validation_records": 432,
+    "fit_formula_ids_sha256": "86d224d89fe8d19644b2789f082f4ea27225b22e19fc7906a01f1a70cc38ec11",
+    "validation_formula_ids_sha256": "a990b99b45f44a321fdf2fc6ab9f06968591286d1c407632097e9d1ddb163cfa",
+    "admission": {
+      "admitted_formulas": 584,
+      "admitted_records": 2084,
+      "excluded_unsupported_formulas": 11,
+      "unsupported_labels": [
+        "t"
+      ]
+    },
+    "base_label_contract_checkpoint_sha256": "dd2889e84c82c9d04f6dacf42cf99de02938902fc220022987de64b8b1567a72",
+    "base_distillation_report_sha256": "907195a153f076c880e2216f671cbbffa674b59f289780089a7026528d3d3bf9",
+    "crohme_rows": 0,
+    "prompt_training_relation_edge_counts": {
+      "right": 1185
+    },
+    "prompt_training_target_context_relation_counts": {
+      "right": 1652
+    },
+    "synthetic_train": {
+      "formulas": 2500,
+      "masked_examples": 2500,
+      "generation_attempts": 2517,
+      "rejected_duplicate_formulas": 17,
+      "unique_formula_hashes_sha256": "c99daed18a13305e9ab67570d4c1ea57458239d6299ea9913318743c6121383b",
+      "distinct_labels": 362,
+      "label_count": 372,
+      "label_coverage_rate": 0.9731182795698925,
+      "missing_label_count": 10,
+      "missing_labels": [
+        "\\O",
+        "\\ae",
+        "\\blacksquare",
+        "\\diamondsuit",
+        "\\leftmoon",
+        "\\mars",
+        "\\o",
+        "\\triangle",
+        "\\vartriangle",
+        "\\venus"
+      ],
+      "relation_edge_counts": {
+        "above": 1263,
+        "below": 5818,
+        "right": 46126,
+        "subscript": 1266,
+        "superscript": 1275
+      },
+      "formulas_with_relation_type": {
+        "above": 967,
+        "below": 1827,
+        "right": 2428,
+        "subscript": 970,
+        "superscript": 980
+      },
+      "distinct_relation_types": 5,
+      "formulas_with_stacked_bar_template": 1447,
+      "formulas_with_root_token": 163,
+      "formulas_with_subscript_or_superscript": 1530
+    },
+    "synthetic_validation": {
+      "formulas": 400,
+      "masked_examples": 9913,
+      "generation_attempts": 404,
+      "rejected_duplicate_formulas": 4,
+      "unique_formula_hashes_sha256": "4f7a23efc7f000533dbdf17270ee7c271ec916524a5fca03b67bebc1b48b9130",
+      "distinct_labels": 334,
+      "label_count": 372,
+      "label_coverage_rate": 0.8978494623655914,
+      "missing_label_count": 38,
+      "missing_labels": [
+        "\\#",
+        "\\$",
+        "\\%",
+        "\\&",
+        "\\AA",
+        "\\AE",
+        "\\Bowtie",
+        "\\L",
+        "\\O",
+        "\\aa",
+        "\\ae",
+        "\\angle",
+        "\\astrosun",
+        "\\blacktriangleright",
+        "\\celsius",
+        "\\checked",
+        "\\checkmark",
+        "\\circledR",
+        "\\clubsuit",
+        "\\copyright",
+        "\\diameter",
+        "\\diamondsuit",
+        "\\female",
+        "\\flat",
+        "\\guillemotleft",
+        "\\leftmoon",
+        "\\male",
+        "\\mars",
+        "\\o",
+        "\\ohm",
+        "\\sphericalangle",
+        "\\square",
+        "\\sun",
+        "\\triangle",
+        "\\triangledown",
+        "\\triangleleft",
+        "\\triangleright",
+        "\\venus"
+      ],
+      "relation_edge_counts": {
+        "above": 229,
+        "below": 1010,
+        "right": 7863,
+        "subscript": 214,
+        "superscript": 197
+      },
+      "formulas_with_relation_type": {
+        "above": 163,
+        "below": 293,
+        "right": 394,
+        "subscript": 162,
+        "superscript": 147
+      },
+      "distinct_relation_types": 5,
+      "formulas_with_stacked_bar_template": 243,
+      "formulas_with_root_token": 31,
+      "formulas_with_subscript_or_superscript": 252
+    },
+    "synthetic_test": {
+      "formulas": 600,
+      "masked_examples": 14042,
+      "generation_attempts": 608,
+      "rejected_duplicate_formulas": 8,
+      "unique_formula_hashes_sha256": "2a5f920de98bf7f7084b594fced6451845fc02e2eaeba83d00540fba6c7c0b75",
+      "distinct_labels": 344,
+      "label_count": 372,
+      "label_coverage_rate": 0.9247311827956989,
+      "missing_label_count": 28,
+      "missing_labels": [
+        "\\#",
+        "\\$",
+        "\\AA",
+        "\\AE",
+        "\\Bowtie",
+        "\\L",
+        "\\O",
+        "\\S",
+        "\\angle",
+        "\\astrosun",
+        "\\blacksquare",
+        "\\blacktriangleright",
+        "\\celsius",
+        "\\checked",
+        "\\checkmark",
+        "\\copyright",
+        "\\diamondsuit",
+        "\\female",
+        "\\heartsuit",
+        "\\lozenge",
+        "\\o",
+        "\\ohm",
+        "\\sphericalangle",
+        "\\ss",
+        "\\triangledown",
+        "\\triangleleft",
+        "\\triangleright",
+        "\\venus"
+      ],
+      "relation_edge_counts": {
+        "above": 276,
+        "below": 1348,
+        "right": 11210,
+        "subscript": 309,
+        "superscript": 299
+      },
+      "formulas_with_relation_type": {
+        "above": 211,
+        "below": 433,
+        "right": 576,
+        "subscript": 235,
+        "superscript": 232
+      },
+      "distinct_relation_types": 5,
+      "formulas_with_stacked_bar_template": 344,
+      "formulas_with_root_token": 32,
+      "formulas_with_subscript_or_superscript": 357
+    },
+    "probe_source_sha256": "35e5df47bce37c6d34d4ac80ae7ecf6925d3393901aa168d1caeb6737b7dda7f",
+    "generator_source_sha256": "de870f6fdaa2db66523419790819ba41997b9380522c3466ca1f60e8738412c8",
+    "cross_split_formula_overlap": 0,
+    "synthetic_prompt_formula_overlap": 0
+  },
+  "architecture": {
+    "layers": 2,
+    "hidden": 64,
+    "heads": 2,
+    "feedforward": 128,
+    "max_positions": 129,
+    "parameters": 124020,
+    "output_classes": 372,
+    "relations": [
+      "right",
+      "left",
+      "above",
+      "below",
+      "superscript",
+      "subscript",
+      "overlap"
+    ]
+  },
+  "arms": {
+    "prompt_only": {
+      "20261003": {
+        "fit": {
+          "epochs_run": 7,
+          "selected_epoch": 2,
+          "best_selection_score": 4.789101107478874,
+          "history": [
+            {
+              "epoch": 1,
+              "train_weighted_ce": 4.995530114624171,
+              "selection_score_equal_prompt_and_synthetic_ce": 5.034360055531609,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.16435185185185186,
+                "formula_exact": 0.0,
+                "weighted_ce": 4.11584119852706,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.16435185185185186
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.028043982649046707,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.952878912536159,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.024017467248908297
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.06111111111111111
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.01976882359295668
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.009345794392523364
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.01020408163265306
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 2,
+              "train_weighted_ce": 3.645641712530473,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.789101107478874,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.21064814814814814,
+                "formula_exact": 0.0,
+                "weighted_ce": 3.2028798422241156,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.21064814814814814
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.02088167053364269,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.375322372733633,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.03056768558951965
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.027777777777777776
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.017932375499621907
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.011682242990654205
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.01020408163265306
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 3,
+              "train_weighted_ce": 2.9902987387798023,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.800076295005139,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.27314814814814814,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.721040327320817,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.27314814814814814
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.013013214970241098,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.879112262689462,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.008733624454148471
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.0030864197530864196
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.01382737387922653
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.002336448598130841
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.01020408163265306
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 4,
+              "train_weighted_ce": 2.616126166706224,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.802482290794065,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.32407407407407407,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.3791771068988767,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.32407407407407407
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.01432462423080803,
+                "formula_exact": 0.0,
+                "weighted_ce": 7.225787474689253,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.008733624454148471
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.004320987654320987
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.014907637463541104
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.009345794392523364
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.00510204081632653
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 5,
+              "train_weighted_ce": 2.3782212705358177,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.82003058758668,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3333333333333333,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.170728689502034,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3333333333333333
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.014526379501664482,
+                "formula_exact": 0.0,
+                "weighted_ce": 7.469332485671325,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.008733624454148471
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.006172839506172839
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.014799611105109647
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.011682242990654205
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.00510204081632653
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 6,
+              "train_weighted_ce": 2.190706797142583,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.852849857634956,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.375,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.040738213176664,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.375
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.014829012407949158,
+                "formula_exact": 0.0,
+                "weighted_ce": 7.664961502093249,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.010917030567685589
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.009259259259259259
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.014691584746678189
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.009345794392523364
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.017857142857142856
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 7,
+              "train_weighted_ce": 2.069964986159207,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.904143735251915,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.35185185185185186,
+                "formula_exact": 0.008547008547008548,
+                "weighted_ce": 1.9605707225294722,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.35185185185185186
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.01543427822051851,
+                "formula_exact": 0.0,
+                "weighted_ce": 7.847716747974357,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.010917030567685589
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.008024691358024692
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.015663821972561304
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.014018691588785047
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.025510204081632654
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "metrics": {
+          "prompt_validation": {
+            "context_mode": "each target masked separately with all other symbols kept at ground truth",
+            "masked_examples": 432,
+            "formulas": 117,
+            "masked_symbol_top1": 0.21064814814814814,
+            "formula_exact": 0.0,
+            "weighted_ce": 3.2028798422241156,
+            "accuracy_by_target_context_relation": {
+              "right": {
+                "examples": 432,
+                "top1": 0.21064814814814814
+              }
+            }
+          },
+          "synthetic_validation": {
+            "context_mode": "each target masked separately with all other symbols kept at ground truth",
+            "masked_examples": 9913,
+            "formulas": 400,
+            "masked_symbol_top1": 0.02088167053364269,
+            "formula_exact": 0.0,
+            "weighted_ce": 6.375322372733633,
+            "accuracy_by_target_context_relation": {
+              "above": {
+                "examples": 458,
+                "top1": 0.03056768558951965
+              },
+              "below": {
+                "examples": 1620,
+                "top1": 0.027777777777777776
+              },
+              "right": {
+                "examples": 9257,
+                "top1": 0.017932375499621907
+              },
+              "subscript": {
+                "examples": 428,
+                "top1": 0.011682242990654205
+              },
+              "superscript": {
+                "examples": 392,
+                "top1": 0.01020408163265306
+              }
+            }
+          },
+          "synthetic_test": {
+            "context_mode": "each target masked separately with all other symbols kept at ground truth",
+            "masked_examples": 14042,
+            "formulas": 600,
+            "masked_symbol_top1": 0.022646346674262924,
+            "formula_exact": 0.0,
+            "weighted_ce": 6.384744268253727,
+            "accuracy_by_target_context_relation": {
+              "above": {
+                "examples": 551,
+                "top1": 0.0054446460980036296
+              },
+              "below": {
+                "examples": 2170,
+                "top1": 0.02857142857142857
+              },
+              "right": {
+                "examples": 13149,
+                "top1": 0.019925469617461403
+              },
+              "subscript": {
+                "examples": 618,
+                "top1": 0.009708737864077669
+              },
+              "superscript": {
+                "examples": 596,
+                "top1": 0.015100671140939598
+              }
+            }
+          }
+        },
+        "training_examples": 1652,
+        "elapsed_seconds": 39.463633799998206,
+        "parameters": 124020,
+        "test_relation_rows": {
+          "above": {
+            "examples": 551,
+            "top1": 0.0054446460980036296
+          },
+          "below": {
+            "examples": 2170,
+            "top1": 0.02857142857142857
+          },
+          "right": {
+            "examples": 13149,
+            "top1": 0.019925469617461403
+          },
+          "subscript": {
+            "examples": 618,
+            "top1": 0.009708737864077669
+          },
+          "superscript": {
+            "examples": 596,
+            "top1": 0.015100671140939598
+          }
+        }
+      },
+      "20261004": {
+        "fit": {
+          "epochs_run": 13,
+          "selected_epoch": 8,
+          "best_selection_score": 4.683873046376893,
+          "history": [
+            {
+              "epoch": 1,
+              "train_weighted_ce": 4.957157697285059,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.93934584125676,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.16898148148148148,
+                "formula_exact": 0.0,
+                "weighted_ce": 3.946796132786932,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.16898148148148148
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.04287299505699586,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.931895549726587,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.043668122270742356
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.028395061728395062
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.042994490655719995
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.04205607476635514
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.04336734693877551
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 2,
+              "train_weighted_ce": 3.525427081105784,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.7674311053082805,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.19675925925925927,
+                "formula_exact": 0.0,
+                "weighted_ce": 3.1334592725068293,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.19675925925925927
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.02380712196106123,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.401402938109732,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.028384279475982533
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.016666666666666666
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.023657772496489142
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.018691588785046728
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.007653061224489796
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 3,
+              "train_weighted_ce": 2.9676215250324685,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.759105592419992,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.2847222222222222,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.751797808604693,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.2847222222222222
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.014122868959951579,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.766413376235291,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.015283842794759825
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.012345679012345678
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.013287242087069245
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.011682242990654205
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.01020408163265306
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 4,
+              "train_weighted_ce": 2.662990533122139,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.704444436083667,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3402777777777778,
+                "formula_exact": 0.008547008547008548,
+                "weighted_ce": 2.434233362912544,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3402777777777778
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.016039544033087865,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.974655509254789,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.017467248908296942
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.013580246913580247
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.01544776925569839
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.009345794392523364
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.02040816326530612
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 5,
+              "train_weighted_ce": 2.383740117417121,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.6905045597609165,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.35648148148148145,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.200159150588394,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.35648148148148145
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.02138605871078382,
+                "formula_exact": 0.0,
+                "weighted_ce": 7.180849968933439,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.019650655021834062
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.014814814814814815
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.020741060818839797
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.018691588785046728
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.02806122448979592
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 6,
+              "train_weighted_ce": 2.2098363167437167,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.709947909311842,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3611111111111111,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.0284586316023447,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3611111111111111
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.01795621910622415,
+                "formula_exact": 0.0,
+                "weighted_ce": 7.39143718702134,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.013100436681222707
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.012345679012345678
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.017608296424327537
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.014018691588785047
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.030612244897959183
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 7,
+              "train_weighted_ce": 2.0631442762748957,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.719262287482945,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.375,
+                "formula_exact": 0.0,
+                "weighted_ce": 1.9561228560031911,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.375
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.0181579743770806,
+                "formula_exact": 0.0,
+                "weighted_ce": 7.482401718962699,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.017467248908296942
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.008641975308641974
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.01836448093334774
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.016355140186915886
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.02295918367346939
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 8,
+              "train_weighted_ce": 1.980326206285786,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.683873046376893,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3587962962962963,
+                "formula_exact": 0.0,
+                "weighted_ce": 1.9172888832547534,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3587962962962963
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.01321497024109755,
+                "formula_exact": 0.0,
+                "weighted_ce": 7.4504572094990325,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.010917030567685589
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.009259259259259259
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.013395268445500702
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.016355140186915886
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.015306122448979591
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 9,
+              "train_weighted_ce": 1.9069528735578782,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.747327737853027,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.33564814814814814,
+                "formula_exact": 0.0,
+                "weighted_ce": 1.8542389994811659,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.33564814814814814
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.017855341470795923,
+                "formula_exact": 0.0,
+                "weighted_ce": 7.640416476224889,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.015283842794759825
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.009876543209876543
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.01814842821648482
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.011682242990654205
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.030612244897959183
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 10,
+              "train_weighted_ce": 1.8865119579629228,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.750727281610686,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3611111111111111,
+                "formula_exact": 0.0,
+                "weighted_ce": 1.8181868594906723,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3611111111111111
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.014223746595379805,
+                "formula_exact": 0.0,
+                "weighted_ce": 7.683267703730701,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.006550218340611353
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.010493827160493827
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.01425947931295236
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.014018691588785047
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.02040816326530612
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 11,
+              "train_weighted_ce": 1.8341260755899167,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.798124161107083,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3402777777777778,
+                "formula_exact": 0.0,
+                "weighted_ce": 1.819093627191248,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3402777777777778
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.01704832038737012,
+                "formula_exact": 0.0,
+                "weighted_ce": 7.777154695022919,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.013100436681222707
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.008641975308641974
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.017608296424327537
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.018691588785046728
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.02295918367346939
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 12,
+              "train_weighted_ce": 1.8168702913542925,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.805592876196137,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3587962962962963,
+                "formula_exact": 0.0,
+                "weighted_ce": 1.807646073505475,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3587962962962963
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.020377282356501564,
+                "formula_exact": 0.0,
+                "weighted_ce": 7.803539678886798,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.015283842794759825
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.009259259259259259
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.02106513989413417
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.02102803738317757
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.025510204081632654
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 13,
+              "train_weighted_ce": 1.7671362447392276,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.937855722979055,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3449074074074074,
+                "formula_exact": 0.0,
+                "weighted_ce": 1.8185467126121067,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3449074074074074
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.016140421668516088,
+                "formula_exact": 0.0,
+                "weighted_ce": 8.057164733346003,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.008733624454148471
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.008641975308641974
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.016528032840012963
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.02102803738317757
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.02040816326530612
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "metrics": {
+          "prompt_validation": {
+            "context_mode": "each target masked separately with all other symbols kept at ground truth",
+            "masked_examples": 432,
+            "formulas": 117,
+            "masked_symbol_top1": 0.3587962962962963,
+            "formula_exact": 0.0,
+            "weighted_ce": 1.9172888832547534,
+            "accuracy_by_target_context_relation": {
+              "right": {
+                "examples": 432,
+                "top1": 0.3587962962962963
+              }
+            }
+          },
+          "synthetic_validation": {
+            "context_mode": "each target masked separately with all other symbols kept at ground truth",
+            "masked_examples": 9913,
+            "formulas": 400,
+            "masked_symbol_top1": 0.01321497024109755,
+            "formula_exact": 0.0,
+            "weighted_ce": 7.4504572094990325,
+            "accuracy_by_target_context_relation": {
+              "above": {
+                "examples": 458,
+                "top1": 0.010917030567685589
+              },
+              "below": {
+                "examples": 1620,
+                "top1": 0.009259259259259259
+              },
+              "right": {
+                "examples": 9257,
+                "top1": 0.013395268445500702
+              },
+              "subscript": {
+                "examples": 428,
+                "top1": 0.016355140186915886
+              },
+              "superscript": {
+                "examples": 392,
+                "top1": 0.015306122448979591
+              }
+            }
+          },
+          "synthetic_test": {
+            "context_mode": "each target masked separately with all other symbols kept at ground truth",
+            "masked_examples": 14042,
+            "formulas": 600,
+            "masked_symbol_top1": 0.014171770403076486,
+            "formula_exact": 0.0,
+            "weighted_ce": 7.4723980800247665,
+            "accuracy_by_target_context_relation": {
+              "above": {
+                "examples": 551,
+                "top1": 0.010889292196007259
+              },
+              "below": {
+                "examples": 2170,
+                "top1": 0.011981566820276499
+              },
+              "right": {
+                "examples": 13149,
+                "top1": 0.013841356757167845
+              },
+              "subscript": {
+                "examples": 618,
+                "top1": 0.009708737864077669
+              },
+              "superscript": {
+                "examples": 596,
+                "top1": 0.020134228187919462
+              }
+            }
+          }
+        },
+        "training_examples": 1652,
+        "elapsed_seconds": 61.59202430000005,
+        "parameters": 124020,
+        "test_relation_rows": {
+          "above": {
+            "examples": 551,
+            "top1": 0.010889292196007259
+          },
+          "below": {
+            "examples": 2170,
+            "top1": 0.011981566820276499
+          },
+          "right": {
+            "examples": 13149,
+            "top1": 0.013841356757167845
+          },
+          "subscript": {
+            "examples": 618,
+            "top1": 0.009708737864077669
+          },
+          "superscript": {
+            "examples": 596,
+            "top1": 0.020134228187919462
+          }
+        }
+      }
+    },
+    "prompt_plus_synthetic_2d": {
+      "20261003": {
+        "fit": {
+          "epochs_run": 13,
+          "selected_epoch": 8,
+          "best_selection_score": 4.177838193114139,
+          "history": [
+            {
+              "epoch": 1,
+              "train_weighted_ce": 5.739949972413638,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.976883785441791,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.16203703703703703,
+                "formula_exact": 0.0,
+                "weighted_ce": 4.179990845432664,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.16203703703703703
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.03742560274387168,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.773776725450917,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.06768558951965066
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.027777777777777776
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.03705304094198984
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.04205607476635514
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.04336734693877551
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 2,
+              "train_weighted_ce": 5.295282111232221,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.746549875773589,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.2013888888888889,
+                "formula_exact": 0.0,
+                "weighted_ce": 3.7095567106161016,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.2013888888888889
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.040552809442146676,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.783543040931075,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.03711790393013101
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.04506172839506173
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.037809225451010044
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.05841121495327103
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.05357142857142857
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 3,
+              "train_weighted_ce": 5.070519178129575,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.574440743695123,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.24074074074074073,
+                "formula_exact": 0.0,
+                "weighted_ce": 3.3210529511435105,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.24074074074074073
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.03298698678502976,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.827828536246736,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.028384279475982533
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.04567901234567901
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.028735011342767635
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.037383177570093455
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.02295918367346939
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 4,
+              "train_weighted_ce": 4.842248526152389,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.433935077899073,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.2824074074074074,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.9987754468132106,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.2824074074074074
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.03318874205588621,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.869094708984935,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.028384279475982533
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.059876543209876544
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.026250405098844118
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.035046728971962614
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.015306122448979591
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 5,
+              "train_weighted_ce": 4.619375894065078,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.334037661315068,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.30787037037037035,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.7450327959778678,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.30787037037037035
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.023100978513063655,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.923042526652268,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.019650655021834062
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.044444444444444446
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.018040401858053366
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.016355140186915886
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.007653061224489796
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 6,
+              "train_weighted_ce": 4.415426761428745,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.257584148691862,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3194444444444444,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.5517042142975495,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3194444444444444
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.026934328659336225,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.963464083086175,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.024017467248908297
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.047530864197530866
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.02138921896942854
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.018691588785046728
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.01020408163265306
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 7,
+              "train_weighted_ce": 4.232387873938088,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.204928401101995,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3287037037037037,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.3718484374098754,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3287037037037037
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.017350953293654797,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.038008364794115,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.017467248908296942
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.03148148148148148
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.01382737387922653
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.009345794392523364
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.007653061224489796
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 8,
+              "train_weighted_ce": 4.0581967394246306,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.177838193114139,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.33796296296296297,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.2643066782176646,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.33796296296296297
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.02138605871078382,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.091369708010615,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.017467248908296942
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.044444444444444446
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.015879874689424218
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.014018691588785047
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.012755102040816327
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 9,
+              "train_weighted_ce": 3.894554904430588,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.1865138186035455,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3449074074074074,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.207689716469437,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3449074074074074
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.01634217693937254,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.165337920737653,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.017467248908296942
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.025925925925925925
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.013719347520795074
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.011682242990654205
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.007653061224489796
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 10,
+              "train_weighted_ce": 3.72189960130607,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.188774964421056,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3449074074074074,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.1453249947344815,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3449074074074074
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.01543427822051851,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.232224934107631,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.013100436681222707
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.03209876543209877
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.011342767635303013
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.007009345794392523
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.002551020408163265
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 11,
+              "train_weighted_ce": 3.5516251543813127,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.195669085359923,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3449074074074074,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.083442196437772,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3449074074074074
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.01543427822051851,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.307895974282075,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.008733624454148471
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.03641975308641975
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.010478556767851355
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.002336448598130841
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.007653061224489796
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 12,
+              "train_weighted_ce": 3.386398447271946,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.232270252389436,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3449074074074074,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.07446854465868,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3449074074074074
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.015535155855946737,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.390071960120193,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.013100436681222707
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.027777777777777776
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.012206978502754672
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.009345794392523364
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.01020408163265306
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 13,
+              "train_weighted_ce": 3.232037908079996,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.2503317139387455,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3333333333333333,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.019963371134277,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3333333333333333
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.020780792898214467,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.480700056743213,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.019650655021834062
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.03950617283950617
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.015771848330992762
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.018691588785046728
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.01020408163265306
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "metrics": {
+          "prompt_validation": {
+            "context_mode": "each target masked separately with all other symbols kept at ground truth",
+            "masked_examples": 432,
+            "formulas": 117,
+            "masked_symbol_top1": 0.33796296296296297,
+            "formula_exact": 0.0,
+            "weighted_ce": 2.2643066782176646,
+            "accuracy_by_target_context_relation": {
+              "right": {
+                "examples": 432,
+                "top1": 0.33796296296296297
+              }
+            }
+          },
+          "synthetic_validation": {
+            "context_mode": "each target masked separately with all other symbols kept at ground truth",
+            "masked_examples": 9913,
+            "formulas": 400,
+            "masked_symbol_top1": 0.02138605871078382,
+            "formula_exact": 0.0,
+            "weighted_ce": 6.091369708010615,
+            "accuracy_by_target_context_relation": {
+              "above": {
+                "examples": 458,
+                "top1": 0.017467248908296942
+              },
+              "below": {
+                "examples": 1620,
+                "top1": 0.044444444444444446
+              },
+              "right": {
+                "examples": 9257,
+                "top1": 0.015879874689424218
+              },
+              "subscript": {
+                "examples": 428,
+                "top1": 0.014018691588785047
+              },
+              "superscript": {
+                "examples": 392,
+                "top1": 0.012755102040816327
+              }
+            }
+          },
+          "synthetic_test": {
+            "context_mode": "each target masked separately with all other symbols kept at ground truth",
+            "masked_examples": 14042,
+            "formulas": 600,
+            "masked_symbol_top1": 0.02307363623415468,
+            "formula_exact": 0.0,
+            "weighted_ce": 6.100832331679578,
+            "accuracy_by_target_context_relation": {
+              "above": {
+                "examples": 551,
+                "top1": 0.012704174228675136
+              },
+              "below": {
+                "examples": 2170,
+                "top1": 0.04930875576036867
+              },
+              "right": {
+                "examples": 13149,
+                "top1": 0.016959464598068293
+              },
+              "subscript": {
+                "examples": 618,
+                "top1": 0.016181229773462782
+              },
+              "superscript": {
+                "examples": 596,
+                "top1": 0.013422818791946308
+              }
+            }
+          }
+        },
+        "training_examples": 4152,
+        "elapsed_seconds": 79.36911800000235,
+        "parameters": 124020,
+        "test_relation_rows": {
+          "above": {
+            "examples": 551,
+            "top1": 0.012704174228675136
+          },
+          "below": {
+            "examples": 2170,
+            "top1": 0.04930875576036867
+          },
+          "right": {
+            "examples": 13149,
+            "top1": 0.016959464598068293
+          },
+          "subscript": {
+            "examples": 618,
+            "top1": 0.016181229773462782
+          },
+          "superscript": {
+            "examples": 596,
+            "top1": 0.013422818791946308
+          }
+        }
+      },
+      "20261004": {
+        "fit": {
+          "epochs_run": 15,
+          "selected_epoch": 10,
+          "best_selection_score": 4.16348198472472,
+          "history": [
+            {
+              "epoch": 1,
+              "train_weighted_ce": 5.737609034558481,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.947299235788909,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.13194444444444445,
+                "formula_exact": 0.0,
+                "weighted_ce": 4.13556162995097,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.13194444444444445
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.0398466659941491,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.75903684162685,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.03711790393013101
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.03148148148148148
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.039321594469050446
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.037383177570093455
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.06377551020408163
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 2,
+              "train_weighted_ce": 5.27824102614886,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.677234823629925,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.24537037037037038,
+                "formula_exact": 0.0,
+                "weighted_ce": 3.570051672548777,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.24537037037037038
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.035609805306163624,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.784417974711072,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.04585152838427948
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.020987654320987655
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.035864750999243813
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.0630841121495327
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.03316326530612245
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 3,
+              "train_weighted_ce": 5.02695129372481,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.519331622707815,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.27314814814814814,
+                "formula_exact": 0.0,
+                "weighted_ce": 3.2118614766107303,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.27314814814814814
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.03581156057702008,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.826801768804899,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.043668122270742356
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.03333333333333333
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.03370422383061467
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.0514018691588785
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.030612244897959183
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 4,
+              "train_weighted_ce": 4.806418153362237,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.388965107823303,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.30787037037037035,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.9138917892559117,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.30787037037037035
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.03258347624331686,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.864038426390695,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.034934497816593885
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.04691358024691358
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.028843037701199094
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.028037383177570093
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.030612244897959183
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 5,
+              "train_weighted_ce": 4.612774295843635,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.291159923603354,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.33101851851851855,
+                "formula_exact": 0.008547008547008548,
+                "weighted_ce": 2.6762857322793794,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.33101851851851855
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.030162412993039442,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.906034114927329,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.03275109170305677
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.037654320987654324
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.027546721400021606
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.037383177570093455
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.025510204081632654
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 6,
+              "train_weighted_ce": 4.423203648399985,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.234651381048881,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.34953703703703703,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.5064491168286755,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.34953703703703703
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.021486936346212043,
+                "formula_exact": 0.0,
+                "weighted_ce": 5.962853645269085,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.021834061135371178
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.037654320987654324
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.01750027006589608
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.016355140186915886
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.01020408163265306
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 7,
+              "train_weighted_ce": 4.240386792001008,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.196350318648186,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3680555555555556,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.3697793172829,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3680555555555556
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.02158781398164027,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.022921320013472,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.024017467248908297
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.016049382716049384
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.021281192610997084
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.035046728971962614
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.02040816326530612
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 8,
+              "train_weighted_ce": 4.046480161376541,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.171164031929112,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.36342592592592593,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.2497199817841134,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.36342592592592593
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.012407949157671743,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.09260808207411,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.017467248908296942
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.012962962962962963
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.011342767635303013
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.009345794392523364
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.00510204081632653
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 9,
+              "train_weighted_ce": 3.891212139974899,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.16673034968467,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.36574074074074076,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.154969821328404,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.36574074074074076
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.009482497730253203,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.178490878040936,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.008733624454148471
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.009876543209876543
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.00907421410824241
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.007009345794392523
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.007653061224489796
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 10,
+              "train_weighted_ce": 3.734192895062397,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.16348198472472,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3680555555555556,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.0956361592482162,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3680555555555556
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.0177544638353677,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.231327810201224,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.026200873362445413
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.017901234567901235
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.01631198012315005
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.018691588785046728
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.01020408163265306
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 11,
+              "train_weighted_ce": 3.5556896481670166,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.198874056847583,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3726851851851852,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.095095178642809,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3726851851851852
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.01634217693937254,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.302652935052356,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.026200873362445413
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.016666666666666666
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.014907637463541104
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.009345794392523364
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.015306122448979591
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 12,
+              "train_weighted_ce": 3.387853064288983,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.217132144478449,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.3680555555555556,
+                "formula_exact": 0.0,
+                "weighted_ce": 2.0383267592792778,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.3680555555555556
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.016644809845657218,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.39593752967762,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.024017467248908297
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.021604938271604937
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.014691584746678189
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.009345794392523364
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.012755102040816327
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 13,
+              "train_weighted_ce": 3.2309031243039463,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.244552921565795,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.38425925925925924,
+                "formula_exact": 0.008547008547008548,
+                "weighted_ce": 2.011979209475313,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.38425925925925924
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.014929890043377383,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.477126633656278,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.021834061135371178
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.01728395061728395
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.013611321162363616
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.009345794392523364
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.017857142857142856
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 14,
+              "train_weighted_ce": 3.074617152039486,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.276656170025378,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.375,
+                "formula_exact": 0.0,
+                "weighted_ce": 1.9866169112388086,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.375
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.01704832038737012,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.566695428811948,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.028384279475982533
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.020987654320987655
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.015339742897266933
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.009345794392523364
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.017857142857142856
+                  }
+                }
+              }
+            },
+            {
+              "epoch": 15,
+              "train_weighted_ce": 2.9019758485415537,
+              "selection_score_equal_prompt_and_synthetic_ce": 4.328593802515877,
+              "prompt_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 432,
+                "formulas": 117,
+                "masked_symbol_top1": 0.36574074074074076,
+                "formula_exact": 0.0,
+                "weighted_ce": 1.9843301414323786,
+                "accuracy_by_target_context_relation": {
+                  "right": {
+                    "examples": 432,
+                    "top1": 0.36574074074074076
+                  }
+                }
+              },
+              "synthetic_validation": {
+                "context_mode": "each target masked separately with all other symbols kept at ground truth",
+                "masked_examples": 9913,
+                "formulas": 400,
+                "masked_symbol_top1": 0.010289518813679007,
+                "formula_exact": 0.0,
+                "weighted_ce": 6.672857463599376,
+                "accuracy_by_target_context_relation": {
+                  "above": {
+                    "examples": 458,
+                    "top1": 0.004366812227074236
+                  },
+                  "below": {
+                    "examples": 1620,
+                    "top1": 0.014197530864197531
+                  },
+                  "right": {
+                    "examples": 9257,
+                    "top1": 0.009398293183536783
+                  },
+                  "subscript": {
+                    "examples": 428,
+                    "top1": 0.004672897196261682
+                  },
+                  "superscript": {
+                    "examples": 392,
+                    "top1": 0.01020408163265306
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "metrics": {
+          "prompt_validation": {
+            "context_mode": "each target masked separately with all other symbols kept at ground truth",
+            "masked_examples": 432,
+            "formulas": 117,
+            "masked_symbol_top1": 0.3680555555555556,
+            "formula_exact": 0.0,
+            "weighted_ce": 2.0956361592482162,
+            "accuracy_by_target_context_relation": {
+              "right": {
+                "examples": 432,
+                "top1": 0.3680555555555556
+              }
+            }
+          },
+          "synthetic_validation": {
+            "context_mode": "each target masked separately with all other symbols kept at ground truth",
+            "masked_examples": 9913,
+            "formulas": 400,
+            "masked_symbol_top1": 0.0177544638353677,
+            "formula_exact": 0.0,
+            "weighted_ce": 6.231327810201224,
+            "accuracy_by_target_context_relation": {
+              "above": {
+                "examples": 458,
+                "top1": 0.026200873362445413
+              },
+              "below": {
+                "examples": 1620,
+                "top1": 0.017901234567901235
+              },
+              "right": {
+                "examples": 9257,
+                "top1": 0.01631198012315005
+              },
+              "subscript": {
+                "examples": 428,
+                "top1": 0.018691588785046728
+              },
+              "superscript": {
+                "examples": 392,
+                "top1": 0.01020408163265306
+              }
+            }
+          },
+          "synthetic_test": {
+            "context_mode": "each target masked separately with all other symbols kept at ground truth",
+            "masked_examples": 14042,
+            "formulas": 600,
+            "masked_symbol_top1": 0.014955134596211365,
+            "formula_exact": 0.0,
+            "weighted_ce": 6.235244541952433,
+            "accuracy_by_target_context_relation": {
+              "above": {
+                "examples": 551,
+                "top1": 0.009074410163339383
+              },
+              "below": {
+                "examples": 2170,
+                "top1": 0.018433179723502304
+              },
+              "right": {
+                "examples": 13149,
+                "top1": 0.013765305346414175
+              },
+              "subscript": {
+                "examples": 618,
+                "top1": 0.0048543689320388345
+              },
+              "superscript": {
+                "examples": 596,
+                "top1": 0.025167785234899327
+              }
+            }
+          }
+        },
+        "training_examples": 4152,
+        "elapsed_seconds": 92.71857270000328,
+        "parameters": 124020,
+        "test_relation_rows": {
+          "above": {
+            "examples": 551,
+            "top1": 0.009074410163339383
+          },
+          "below": {
+            "examples": 2170,
+            "top1": 0.018433179723502304
+          },
+          "right": {
+            "examples": 13149,
+            "top1": 0.013765305346414175
+          },
+          "subscript": {
+            "examples": 618,
+            "top1": 0.0048543689320388345
+          },
+          "superscript": {
+            "examples": 596,
+            "top1": 0.025167785234899327
+          }
+        }
+      }
+    }
+  },
+  "paired_by_seed": {
+    "20261003": {
+      "prompt_validation_top1_delta_pp": 12.731481481481483,
+      "prompt_validation_weighted_ce_delta": -0.938573164006451,
+      "synthetic_test_top1_delta_pp": 0.04272895598917553,
+      "synthetic_test_formula_exact_delta_pp": 0.0,
+      "candidate_test_relation_accuracy": {
+        "above": {
+          "examples": 551,
+          "top1": 0.012704174228675136
+        },
+        "below": {
+          "examples": 2170,
+          "top1": 0.04930875576036867
+        },
+        "right": {
+          "examples": 13149,
+          "top1": 0.016959464598068293
+        },
+        "subscript": {
+          "examples": 618,
+          "top1": 0.016181229773462782
+        },
+        "superscript": {
+          "examples": 596,
+          "top1": 0.013422818791946308
+        }
+      },
+      "baseline_test_relation_accuracy": {
+        "above": {
+          "examples": 551,
+          "top1": 0.0054446460980036296
+        },
+        "below": {
+          "examples": 2170,
+          "top1": 0.02857142857142857
+        },
+        "right": {
+          "examples": 13149,
+          "top1": 0.019925469617461403
+        },
+        "subscript": {
+          "examples": 618,
+          "top1": 0.009708737864077669
+        },
+        "superscript": {
+          "examples": 596,
+          "top1": 0.015100671140939598
+        }
+      }
+    },
+    "20261004": {
+      "prompt_validation_top1_delta_pp": 0.92592592592593,
+      "prompt_validation_weighted_ce_delta": 0.17834727599346278,
+      "synthetic_test_top1_delta_pp": 0.07833641931348795,
+      "synthetic_test_formula_exact_delta_pp": 0.0,
+      "candidate_test_relation_accuracy": {
+        "above": {
+          "examples": 551,
+          "top1": 0.009074410163339383
+        },
+        "below": {
+          "examples": 2170,
+          "top1": 0.018433179723502304
+        },
+        "right": {
+          "examples": 13149,
+          "top1": 0.013765305346414175
+        },
+        "subscript": {
+          "examples": 618,
+          "top1": 0.0048543689320388345
+        },
+        "superscript": {
+          "examples": 596,
+          "top1": 0.025167785234899327
+        }
+      },
+      "baseline_test_relation_accuracy": {
+        "above": {
+          "examples": 551,
+          "top1": 0.010889292196007259
+        },
+        "below": {
+          "examples": 2170,
+          "top1": 0.011981566820276499
+        },
+        "right": {
+          "examples": 13149,
+          "top1": 0.013841356757167845
+        },
+        "subscript": {
+          "examples": 618,
+          "top1": 0.009708737864077669
+        },
+        "superscript": {
+          "examples": 596,
+          "top1": 0.020134228187919462
+        }
+      }
+    }
+  },
+  "checkpoints": {
+    "prompt_only_seed20261003": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_relation_aug_20261003\\prompt_only_seed20261003.pt",
+      "bytes": 512958,
+      "sha256": "250f1fa69786756708af9cba9a225a518f4d9a3ccae80b6ebfcb2e2b455049c0"
+    },
+    "prompt_plus_synthetic_2d_seed20261003": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_relation_aug_20261003\\prompt_plus_synthetic_2d_seed20261003.pt",
+      "bytes": 513464,
+      "sha256": "f3011736033f6f663ae8a8caac098fd3a9ad3b5c9069df9d596421f873927c0b"
+    },
+    "prompt_only_seed20261004": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_relation_aug_20261003\\prompt_only_seed20261004.pt",
+      "bytes": 512958,
+      "sha256": "731d0ebbd2e66d6428899c176fa8f6b8ed2fb2ee482865290a5cd441efda97dc"
+    },
+    "prompt_plus_synthetic_2d_seed20261004": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_relation_aug_20261003\\prompt_plus_synthetic_2d_seed20261004.pt",
+      "bytes": 513464,
+      "sha256": "34b2826fa4c8889cc0667210edf7c2a6456a6f6ac203e80cd9d83ddb9d48bc5f"
+    }
+  },
+  "decision": {
+    "handwritten_performance_claim": false,
+    "product_promotion_eligible": false,
+    "next_required_gate": "independent project-owned formula cohort from unseen writers; retain candidate-preserving inference and then measure on-device latency"
+  }
+}

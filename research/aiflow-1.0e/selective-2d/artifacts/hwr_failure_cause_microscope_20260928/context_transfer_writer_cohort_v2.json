@@ -1,0 +1,462 @@
+{
+  "schema": "aiflow-hwr-context-lineage-audit/v1",
+  "scope": "provenance-only audit; no model loading, inference, training, CROHME, or runtime changes",
+  "inputs": {
+    "traces": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_pipeline_microscope_20260928_semantic_guard_final\\formula_traces.jsonl",
+      "sha256": "7ef6c6a9e8d6dad7606cf4168aeedbb19cb9200972bfc06567731d92125cba93"
+    },
+    "training_candidates": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\homograph_context_20260814\\direct_candidates.jsonl.gz",
+      "sha256": "8c59a21493592638f77c0a431f33b56d17c973b488d6b8da0afff4dcf7125307"
+    },
+    "evaluation_ownership": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\frozen_dataset\\data\\ownership_train.jsonl",
+      "sha256": "b7c21e4798ba60ef5d8c985a54fb68a363165b481de56ae9b96e6d63878bf354"
+    }
+  },
+  "training_identity_audit": {
+    "training_formula_count": 47,
+    "evaluation_formula_count": 149,
+    "shared_formula_id_strings": 42,
+    "same_ordered_target_sequences_on_shared_ids": 0,
+    "shared_ids_with_different_target_sequences": 42,
+    "target_mismatch_examples": [
+      {
+        "formula_id_string": "aiflow_0005",
+        "training_target": [
+          "0",
+          "+",
+          "0"
+        ],
+        "evaluation_target": [
+          "5",
+          "+",
+          "4"
+        ]
+      },
+      {
+        "formula_id_string": "aiflow_0006",
+        "training_target": [
+          "1",
+          "+",
+          "5"
+        ],
+        "evaluation_target": [
+          "7",
+          "\\times",
+          "3",
+          "=",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "formula_id_string": "aiflow_0007",
+        "training_target": [
+          "6",
+          "\\times",
+          "0",
+          "=",
+          "0"
+        ],
+        "evaluation_target": [
+          "1",
+          "6",
+          "\\div",
+          "8",
+          "=",
+          "2"
+        ]
+      },
+      {
+        "formula_id_string": "aiflow_0008",
+        "training_target": [
+          "7",
+          "-",
+          "6",
+          "=",
+          "1"
+        ],
+        "evaluation_target": [
+          "b",
+          "=",
+          "4"
+        ]
+      },
+      {
+        "formula_id_string": "aiflow_0009",
+        "training_target": [
+          "1",
+          "0",
+          "-",
+          "3"
+        ],
+        "evaluation_target": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "=",
+          "1"
+        ]
+      },
+      {
+        "formula_id_string": "aiflow_0010",
+        "training_target": [
+          "1",
+          "0",
+          "+",
+          "8"
+        ],
+        "evaluation_target": [
+          "x",
+          "\\neq",
+          "y"
+        ]
+      },
+      {
+        "formula_id_string": "aiflow_0015",
+        "training_target": [
+          "y",
+          "/",
+          "4"
+        ],
+        "evaluation_target": [
+          "0",
+          "+",
+          "0"
+        ]
+      },
+      {
+        "formula_id_string": "aiflow_0016",
+        "training_target": [
+          "b",
+          "+",
+          "4"
+        ],
+        "evaluation_target": [
+          "1",
+          "+",
+          "5"
+        ]
+      }
+    ],
+    "raw_ink_overlap_auditable": false,
+    "writer_id_overlap_auditable": true,
+    "writer_group_hash_contract": "character_tensor_v1._digest(['project_owned_writer', writer_id])[:24]",
+    "training_writer_group_count": 3,
+    "evaluation_writer_group_count": 9,
+    "evaluation_accepted_ownership_rows": 149,
+    "evaluation_sample_ids_match_trace_ids": true,
+    "training_rows_have_writer_group": true,
+    "writer_group_overlap_auditable": true,
+    "writer_group_overlap_count": 3,
+    "writer_group_overlap_hashes": [
+      "3e41b56c75d3f1af3cc89494",
+      "baed3dc87cbfa8c20bdde074",
+      "ed6789e0639f68e05d5e2d1b"
+    ],
+    "writer_group_disjointness_verified": false,
+    "evaluation_ownership_sha256": "b7c21e4798ba60ef5d8c985a54fb68a363165b481de56ae9b96e6d63878bf354",
+    "same_target_sequence_is_proof_of_same_ink": false,
+    "interpretation": "training and evaluation share writer groups; this transfer result is not writer-disjoint"
+  },
+  "writer_cohort_replay": {
+    "scope": "post-hoc subgroup analysis of stored replay; consumed development data; no model selection",
+    "inputs": {
+      "context_transfer_report_sha256": "c6533f9f78809cdae90068e9b34e6bd09e98600cdd7287e3219dcdb4899920ac",
+      "training_writer_group_count": 3,
+      "evaluation_writer_group_count": 9
+    },
+    "stages": {
+      "baseline": "fast_fence_infix_equation",
+      "context_shadow": "context_fence_infix_equation"
+    },
+    "cohorts": {
+      "writer_disjoint": {
+        "formula_count": 109,
+        "writer_group_count": 6,
+        "fast_group_exact_formulas": 90,
+        "baseline_formula_exact": 57,
+        "context_formula_exact": 80,
+        "formula_gain_transitions": 23,
+        "formula_regressions": 0,
+        "exact_group_baseline_formula_exact": 55,
+        "exact_group_context_formula_exact": 77,
+        "exact_group_gain_transitions": 22,
+        "exact_group_regressions": 0,
+        "exact_group_baseline_token_hits": 282,
+        "exact_group_context_token_hits": 317,
+        "exact_group_target_tokens": 332,
+        "candidate_violations": 0
+      },
+      "training_writer_overlap": {
+        "formula_count": 40,
+        "writer_group_count": 3,
+        "fast_group_exact_formulas": 35,
+        "baseline_formula_exact": 22,
+        "context_formula_exact": 28,
+        "formula_gain_transitions": 7,
+        "formula_regressions": 1,
+        "exact_group_baseline_formula_exact": 22,
+        "exact_group_context_formula_exact": 27,
+        "exact_group_gain_transitions": 6,
+        "exact_group_regressions": 1,
+        "exact_group_baseline_token_hits": 123,
+        "exact_group_context_token_hits": 129,
+        "exact_group_target_tokens": 137,
+        "candidate_violations": 0
+      }
+    },
+    "per_writer": {
+      "writer_disjoint": {
+        "2108826fd653f869fdd991c5": {
+          "formula_count": 23,
+          "writer_group_count": 1,
+          "fast_group_exact_formulas": 23,
+          "baseline_formula_exact": 16,
+          "context_formula_exact": 19,
+          "formula_gain_transitions": 3,
+          "formula_regressions": 0,
+          "exact_group_baseline_formula_exact": 16,
+          "exact_group_context_formula_exact": 19,
+          "exact_group_gain_transitions": 3,
+          "exact_group_regressions": 0,
+          "exact_group_baseline_token_hits": 88,
+          "exact_group_context_token_hits": 96,
+          "exact_group_target_tokens": 100,
+          "candidate_violations": 0
+        },
+        "27f66571c13bf39a3d4ef022": {
+          "formula_count": 49,
+          "writer_group_count": 1,
+          "fast_group_exact_formulas": 34,
+          "baseline_formula_exact": 20,
+          "context_formula_exact": 26,
+          "formula_gain_transitions": 6,
+          "formula_regressions": 0,
+          "exact_group_baseline_formula_exact": 20,
+          "exact_group_context_formula_exact": 26,
+          "exact_group_gain_transitions": 6,
+          "exact_group_regressions": 0,
+          "exact_group_baseline_token_hits": 80,
+          "exact_group_context_token_hits": 89,
+          "exact_group_target_tokens": 99,
+          "candidate_violations": 0
+        },
+        "50768ec7799073826818d9b6": {
+          "formula_count": 5,
+          "writer_group_count": 1,
+          "fast_group_exact_formulas": 3,
+          "baseline_formula_exact": 4,
+          "context_formula_exact": 5,
+          "formula_gain_transitions": 1,
+          "formula_regressions": 0,
+          "exact_group_baseline_formula_exact": 3,
+          "exact_group_context_formula_exact": 3,
+          "exact_group_gain_transitions": 0,
+          "exact_group_regressions": 0,
+          "exact_group_baseline_token_hits": 12,
+          "exact_group_context_token_hits": 12,
+          "exact_group_target_tokens": 12,
+          "candidate_violations": 0
+        },
+        "6253df366faf0937d94146d3": {
+          "formula_count": 20,
+          "writer_group_count": 1,
+          "fast_group_exact_formulas": 20,
+          "baseline_formula_exact": 12,
+          "context_formula_exact": 20,
+          "formula_gain_transitions": 8,
+          "formula_regressions": 0,
+          "exact_group_baseline_formula_exact": 12,
+          "exact_group_context_formula_exact": 20,
+          "exact_group_gain_transitions": 8,
+          "exact_group_regressions": 0,
+          "exact_group_baseline_token_hits": 69,
+          "exact_group_context_token_hits": 80,
+          "exact_group_target_tokens": 80,
+          "candidate_violations": 0
+        },
+        "6654957a88583df48a89c20d": {
+          "formula_count": 8,
+          "writer_group_count": 1,
+          "fast_group_exact_formulas": 8,
+          "baseline_formula_exact": 3,
+          "context_formula_exact": 7,
+          "formula_gain_transitions": 4,
+          "formula_regressions": 0,
+          "exact_group_baseline_formula_exact": 3,
+          "exact_group_context_formula_exact": 7,
+          "exact_group_gain_transitions": 4,
+          "exact_group_regressions": 0,
+          "exact_group_baseline_token_hits": 28,
+          "exact_group_context_token_hits": 34,
+          "exact_group_target_tokens": 35,
+          "candidate_violations": 0
+        },
+        "ca031f8f1de952920a57a4f7": {
+          "formula_count": 4,
+          "writer_group_count": 1,
+          "fast_group_exact_formulas": 2,
+          "baseline_formula_exact": 2,
+          "context_formula_exact": 3,
+          "formula_gain_transitions": 1,
+          "formula_regressions": 0,
+          "exact_group_baseline_formula_exact": 1,
+          "exact_group_context_formula_exact": 2,
+          "exact_group_gain_transitions": 1,
+          "exact_group_regressions": 0,
+          "exact_group_baseline_token_hits": 5,
+          "exact_group_context_token_hits": 6,
+          "exact_group_target_tokens": 6,
+          "candidate_violations": 0
+        }
+      },
+      "training_writer_overlap": {
+        "3e41b56c75d3f1af3cc89494": {
+          "formula_count": 10,
+          "writer_group_count": 1,
+          "fast_group_exact_formulas": 6,
+          "baseline_formula_exact": 3,
+          "context_formula_exact": 5,
+          "formula_gain_transitions": 2,
+          "formula_regressions": 0,
+          "exact_group_baseline_formula_exact": 3,
+          "exact_group_context_formula_exact": 5,
+          "exact_group_gain_transitions": 2,
+          "exact_group_regressions": 0,
+          "exact_group_baseline_token_hits": 17,
+          "exact_group_context_token_hits": 19,
+          "exact_group_target_tokens": 20,
+          "candidate_violations": 0
+        },
+        "baed3dc87cbfa8c20bdde074": {
+          "formula_count": 20,
+          "writer_group_count": 1,
+          "fast_group_exact_formulas": 20,
+          "baseline_formula_exact": 13,
+          "context_formula_exact": 13,
+          "formula_gain_transitions": 1,
+          "formula_regressions": 1,
+          "exact_group_baseline_formula_exact": 13,
+          "exact_group_context_formula_exact": 13,
+          "exact_group_gain_transitions": 1,
+          "exact_group_regressions": 1,
+          "exact_group_baseline_token_hits": 80,
+          "exact_group_context_token_hits": 81,
+          "exact_group_target_tokens": 88,
+          "candidate_violations": 0
+        },
+        "ed6789e0639f68e05d5e2d1b": {
+          "formula_count": 10,
+          "writer_group_count": 1,
+          "fast_group_exact_formulas": 9,
+          "baseline_formula_exact": 6,
+          "context_formula_exact": 10,
+          "formula_gain_transitions": 4,
+          "formula_regressions": 0,
+          "exact_group_baseline_formula_exact": 6,
+          "exact_group_context_formula_exact": 9,
+          "exact_group_gain_transitions": 3,
+          "exact_group_regressions": 0,
+          "exact_group_baseline_token_hits": 26,
+          "exact_group_context_token_hits": 29,
+          "exact_group_target_tokens": 29,
+          "candidate_violations": 0
+        }
+      }
+    },
+    "writer_disjoint_loo_sensitivity": {
+      "method": "leave-one-context-training-disjoint-evaluation-writer-group-out; descriptive sensitivity, not a confidence interval",
+      "fold_count": 6,
+      "all_formula_exact_deltas_positive": true,
+      "minimum_formula_exact_delta_pp": 16.853932584269664,
+      "maximum_formula_exact_delta_pp": 28.333333333333332,
+      "folds": [
+        {
+          "excluded_writer_group": "2108826fd653f869fdd991c5",
+          "excluded_formula_count": 23,
+          "remaining_formula_count": 86,
+          "baseline_formula_exact": 41,
+          "context_formula_exact": 61,
+          "formula_exact_delta": 20,
+          "formula_exact_delta_pp": 23.25581395348837
+        },
+        {
+          "excluded_writer_group": "27f66571c13bf39a3d4ef022",
+          "excluded_formula_count": 49,
+          "remaining_formula_count": 60,
+          "baseline_formula_exact": 37,
+          "context_formula_exact": 54,
+          "formula_exact_delta": 17,
+          "formula_exact_delta_pp": 28.333333333333332
+        },
+        {
+          "excluded_writer_group": "50768ec7799073826818d9b6",
+          "excluded_formula_count": 5,
+          "remaining_formula_count": 104,
+          "baseline_formula_exact": 53,
+          "context_formula_exact": 75,
+          "formula_exact_delta": 22,
+          "formula_exact_delta_pp": 21.153846153846153
+        },
+        {
+          "excluded_writer_group": "6253df366faf0937d94146d3",
+          "excluded_formula_count": 20,
+          "remaining_formula_count": 89,
+          "baseline_formula_exact": 45,
+          "context_formula_exact": 60,
+          "formula_exact_delta": 15,
+          "formula_exact_delta_pp": 16.853932584269664
+        },
+        {
+          "excluded_writer_group": "6654957a88583df48a89c20d",
+          "excluded_formula_count": 8,
+          "remaining_formula_count": 101,
+          "baseline_formula_exact": 54,
+          "context_formula_exact": 73,
+          "formula_exact_delta": 19,
+          "formula_exact_delta_pp": 18.81188118811881
+        },
+        {
+          "excluded_writer_group": "ca031f8f1de952920a57a4f7",
+          "excluded_formula_count": 4,
+          "remaining_formula_count": 105,
+          "baseline_formula_exact": 55,
+          "context_formula_exact": 77,
+          "formula_exact_delta": 22,
+          "formula_exact_delta_pp": 20.952380952380953
+        }
+      ]
+    },
+    "verification": {
+      "checks": {
+        "replay_formula_ids_match_accepted_ownership": true,
+        "training_and_disjoint_cohorts_cover_all_replay_rows": true,
+        "top5_candidate_contract_preserved": true,
+        "per_writer_formula_counts_reconcile": true,
+        "writer_disjoint_loo_covers_each_disjoint_writer": true
+      },
+      "all_checks_pass": true
+    }
+  },
+  "promotion_gate": {
+    "eligible": false,
+    "reasons": [
+      "evaluation is the consumed 149-formula development set",
+      "training and evaluation writer groups overlap",
+      "raw-ink overlap cannot be audited from these candidate rows"
+    ]
+  },
+  "verification": {
+    "checks": {
+      "evaluation_ownership_ids_match_trace_ids": true,
+      "all_training_rows_have_writer_group": true,
+      "writer_group_overlap_comparison_ran": true,
+      "stored_replay_cohort_audit_passes": true
+    },
+    "all_checks_pass": true
+  }
+}

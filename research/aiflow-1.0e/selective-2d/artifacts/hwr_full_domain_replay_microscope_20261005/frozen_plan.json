@@ -1,0 +1,30 @@
+{
+  "schema": "aiflow-full-domain-replay-microscope-plan/v1",
+  "source_report_sha256": "0e02fa389fffe23c160cb4be62ded3dc0937f54debe9d9adaa45a87af34817d5",
+  "canonical_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+  "script_sha256": "19c1596889e12f6e188a80c82a776445e81635d54f6f1d4119aff521f5144b49",
+  "dependencies": {
+    "hwr_full_domain_replay_v1.py": "e7e1e21dff248cfc40dfe46594eb57944c4f4370476c23260e9ae5faeedbe1d9",
+    "audit_hwr_full_domain_tube_v1.py": "5ba59eb39ca2728d041daa3544c3611d63850b02bca5c976921ae6814f2c0849",
+    "run_hwr_affine_distillation_experiment_v1.py": "3a36d8efee518b2fa5c3683e9fa7a4d6ff31450d48a353f355f2667834357b4a"
+  },
+  "seed": 20261006,
+  "cases": [
+    "deterministic_view_full",
+    "stochastic_view_full",
+    "deterministic_original_full",
+    "deterministic_view_top5"
+  ],
+  "sample_classes": 370,
+  "microbatch": 32,
+  "temperature": 2.0,
+  "training_steps": 0,
+  "optimizer_created": false,
+  "heldout_rows_read": 0,
+  "crohme_rows": 0,
+  "original_target_policy": "diagnostic only: forcing original teacher probabilities onto changed inputs is an unverified semantic invariance assumption",
+  "view_target_policy": "teacher self-replay, not new human knowledge",
+  "hard_synthetic_labels_assigned": 0,
+  "human_boundary_labels": 0,
+  "product_adopted": false
+}

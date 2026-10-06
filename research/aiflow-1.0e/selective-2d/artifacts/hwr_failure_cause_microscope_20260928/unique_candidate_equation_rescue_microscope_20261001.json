@@ -1,0 +1,1096 @@
+{
+  "schema": "aiflow-hwr-unique-candidate-equation-rescue/v1",
+  "scope": "frozen consumed-development candidate-lattice shadow; no training, CROHME, or product promotion",
+  "inputs": {
+    "trace_sha256": "785e909f569e3c6346b4fcecc83173445b1ef016ad31ee13e7188700990c76e7",
+    "ownership_sha256": "b7c21e4798ba60ef5d8c985a54fb68a363165b481de56ae9b96e6d63878bf354",
+    "cause_matrix_sha256": "ee43eae06765576dd32d421426b243843f0f3b17c3e9876d577b90c2c52c1bbf",
+    "writer_reference_sha256": "a0f61fb062ffb28c696cd9d69eb355b6a8a433bd7a49e8ab22c77df672cdf76c",
+    "formulas": 149,
+    "writers": 9,
+    "tokens": 579
+  },
+  "policy": {
+    "description": "for flat 3-12-token formulas with one Top-1 '=', replace every non-arithmetic Top-1 only when its own Top-5 has arithmetic alternatives and exactly one resulting Top-5 sequence is a true arithmetic equation",
+    "maximum_changed_glyphs": 3,
+    "candidate_vocabulary": [
+      "+",
+      "-",
+      "/",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "=",
+      "\\cdot",
+      "\\div",
+      "\\times"
+    ],
+    "mathematical_truth_used_as_shadow_signal": true,
+    "false_user_written_equations_are_a_known_risk": true
+  },
+  "summary": {
+    "status_counts": {
+      "changed_shadow_only:unique_exact_candidate_equation": 15,
+      "skipped:baseline_already_in_arithmetic_vocabulary": 14,
+      "skipped:no_exact_candidate": 2,
+      "skipped:not_flat_single_top1_equality": 108,
+      "skipped:unknown_symbol_count_exceeds_edit_budget": 4,
+      "skipped:unsupported_symbol_has_no_arithmetic_top5_alternative": 6
+    },
+    "changed_formulas": 15,
+    "baseline": {
+      "formula_exact": 76,
+      "token_hits": 470,
+      "tokens": 579
+    },
+    "challenger": {
+      "formula_exact": 91,
+      "token_hits": 494,
+      "tokens": 579
+    },
+    "delta": {
+      "formula_exact": 15,
+      "token_hits": 24,
+      "recovered_formula_ids": [
+        "aiflow_0140",
+        "aiflow_0144",
+        "aiflow_0017",
+        "aiflow_0152",
+        "aiflow_0125",
+        "aiflow_0126",
+        "aiflow_0050",
+        "aiflow_0051",
+        "aiflow_0052",
+        "aiflow_0053",
+        "aiflow_0058",
+        "aiflow_0006",
+        "aiflow_0007",
+        "aiflow_0067",
+        "aiflow_0086"
+      ],
+      "regressed_formula_ids": [],
+      "changed_formula_ids": [
+        "aiflow_0140",
+        "aiflow_0144",
+        "aiflow_0017",
+        "aiflow_0152",
+        "aiflow_0125",
+        "aiflow_0126",
+        "aiflow_0050",
+        "aiflow_0051",
+        "aiflow_0052",
+        "aiflow_0053",
+        "aiflow_0058",
+        "aiflow_0006",
+        "aiflow_0007",
+        "aiflow_0067",
+        "aiflow_0086"
+      ],
+      "recovered_tokens": [
+        {
+          "sample_id": "aiflow_0140",
+          "position": 0,
+          "target": "1",
+          "before": "|",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0140",
+          "position": 2,
+          "target": "1",
+          "before": ")",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0144",
+          "position": 0,
+          "target": "1",
+          "before": "|",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0144",
+          "position": 5,
+          "target": "1",
+          "before": "\\rfloor",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0017",
+          "position": 2,
+          "target": "0",
+          "before": "O",
+          "after": "0"
+        },
+        {
+          "sample_id": "aiflow_0017",
+          "position": 4,
+          "target": "0",
+          "before": "\\mathcal{O}",
+          "after": "0"
+        },
+        {
+          "sample_id": "aiflow_0152",
+          "position": 2,
+          "target": "0",
+          "before": "\\mathcal{O}",
+          "after": "0"
+        },
+        {
+          "sample_id": "aiflow_0152",
+          "position": 4,
+          "target": "0",
+          "before": "\\mathcal{O}",
+          "after": "0"
+        },
+        {
+          "sample_id": "aiflow_0125",
+          "position": 4,
+          "target": "7",
+          "before": "\\eta",
+          "after": "7"
+        },
+        {
+          "sample_id": "aiflow_0126",
+          "position": 4,
+          "target": "1",
+          "before": "|",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0126",
+          "position": 5,
+          "target": "1",
+          "before": "|",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0050",
+          "position": 1,
+          "target": "\\times",
+          "before": "X",
+          "after": "\\times"
+        },
+        {
+          "sample_id": "aiflow_0051",
+          "position": 4,
+          "target": "1",
+          "before": "(",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0052",
+          "position": 1,
+          "target": "\\times",
+          "before": "X",
+          "after": "\\times"
+        },
+        {
+          "sample_id": "aiflow_0052",
+          "position": 4,
+          "target": "1",
+          "before": "(",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0053",
+          "position": 0,
+          "target": "5",
+          "before": "\\hbar",
+          "after": "5"
+        },
+        {
+          "sample_id": "aiflow_0058",
+          "position": 0,
+          "target": "1",
+          "before": "\\lfloor",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0058",
+          "position": 1,
+          "target": "8",
+          "before": "\\mathscr{C}",
+          "after": "8"
+        },
+        {
+          "sample_id": "aiflow_0006",
+          "position": 1,
+          "target": "\\times",
+          "before": "x",
+          "after": "\\times"
+        },
+        {
+          "sample_id": "aiflow_0006",
+          "position": 5,
+          "target": "1",
+          "before": "|",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "position": 0,
+          "target": "1",
+          "before": "|",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0067",
+          "position": 0,
+          "target": "1",
+          "before": "|",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0086",
+          "position": 2,
+          "target": "8",
+          "before": "\\parr",
+          "after": "8"
+        },
+        {
+          "sample_id": "aiflow_0086",
+          "position": 5,
+          "target": "8",
+          "before": "\\parr",
+          "after": "8"
+        }
+      ],
+      "regressed_tokens": []
+    },
+    "writer_stratified": [
+      {
+        "writer_id": "writer_001",
+        "formulas": 10,
+        "baseline_exact": 6,
+        "challenger_exact": 6,
+        "exact_delta": 0
+      },
+      {
+        "writer_id": "writer_002",
+        "formulas": 23,
+        "baseline_exact": 13,
+        "challenger_exact": 15,
+        "exact_delta": 2
+      },
+      {
+        "writer_id": "writer_003",
+        "formulas": 20,
+        "baseline_exact": 10,
+        "challenger_exact": 15,
+        "exact_delta": 5
+      },
+      {
+        "writer_id": "writer_004",
+        "formulas": 10,
+        "baseline_exact": 4,
+        "challenger_exact": 6,
+        "exact_delta": 2
+      },
+      {
+        "writer_id": "writer_006",
+        "formulas": 20,
+        "baseline_exact": 11,
+        "challenger_exact": 13,
+        "exact_delta": 2
+      },
+      {
+        "writer_id": "writer_007",
+        "formulas": 8,
+        "baseline_exact": 3,
+        "challenger_exact": 5,
+        "exact_delta": 2
+      },
+      {
+        "writer_id": "writer_008",
+        "formulas": 5,
+        "baseline_exact": 2,
+        "challenger_exact": 2,
+        "exact_delta": 0
+      },
+      {
+        "writer_id": "writer_010",
+        "formulas": 4,
+        "baseline_exact": 1,
+        "challenger_exact": 2,
+        "exact_delta": 1
+      },
+      {
+        "writer_id": "writer_012",
+        "formulas": 49,
+        "baseline_exact": 26,
+        "challenger_exact": 27,
+        "exact_delta": 1
+      }
+    ],
+    "writer_cluster_bootstrap": {
+      "method": "paired writer-cluster bootstrap; writers sampled with replacement",
+      "iterations": 10000,
+      "seed": 20261001,
+      "delta_exact_rate_pp_95_interval": [
+        4.7368421052631575,
+        18.75
+      ],
+      "interpretation": "consumed-development exploratory shadow only"
+    },
+    "changed_cases": [
+      {
+        "sample_id": "aiflow_0140",
+        "targets": [
+          "1",
+          "+",
+          "1",
+          "=",
+          "2"
+        ],
+        "before": [
+          "|",
+          "+",
+          ")",
+          "=",
+          "2"
+        ],
+        "after": [
+          "1",
+          "+",
+          "1",
+          "=",
+          "2"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 0,
+              "record_id": "aiflow_0140:0",
+              "before": "|",
+              "after": "1",
+              "candidate_rank": 3,
+              "candidate_probability": 0.1897623986005783,
+              "selected_minus_top1_log_probability": -0.8440342203172565
+            },
+            {
+              "position": 2,
+              "record_id": "aiflow_0140:2",
+              "before": ")",
+              "after": "1",
+              "candidate_rank": 5,
+              "candidate_probability": 0.030616875737905502,
+              "selected_minus_top1_log_probability": -2.7636394311854504
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -3.607673651502707
+        }
+      },
+      {
+        "sample_id": "aiflow_0144",
+        "targets": [
+          "1",
+          "2",
+          "+",
+          "5",
+          "=",
+          "1",
+          "7"
+        ],
+        "before": [
+          "|",
+          "2",
+          "+",
+          "5",
+          "=",
+          "\\rfloor",
+          "7"
+        ],
+        "after": [
+          "1",
+          "2",
+          "+",
+          "5",
+          "=",
+          "1",
+          "7"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 2,
+          "changes": [
+            {
+              "position": 0,
+              "record_id": "aiflow_0144:0",
+              "before": "|",
+              "after": "1",
+              "candidate_rank": 3,
+              "candidate_probability": 0.13820719718933105,
+              "selected_minus_top1_log_probability": -1.1333293248007381
+            },
+            {
+              "position": 5,
+              "record_id": "aiflow_0144:5",
+              "before": "\\rfloor",
+              "after": "1",
+              "candidate_rank": 3,
+              "candidate_probability": 0.021344687789678574,
+              "selected_minus_top1_log_probability": -3.750283262683724
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -4.883612587484462
+        }
+      },
+      {
+        "sample_id": "aiflow_0017",
+        "targets": [
+          "6",
+          "\\times",
+          "0",
+          "=",
+          "0"
+        ],
+        "before": [
+          "6",
+          "\\times",
+          "O",
+          "=",
+          "\\mathcal{O}"
+        ],
+        "after": [
+          "6",
+          "\\times",
+          "0",
+          "=",
+          "0"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 2,
+              "record_id": "aiflow_0017:2",
+              "before": "O",
+              "after": "0",
+              "candidate_rank": 2,
+              "candidate_probability": 0.2893308401107788,
+              "selected_minus_top1_log_probability": -0.10071179338846425
+            },
+            {
+              "position": 4,
+              "record_id": "aiflow_0017:4",
+              "before": "\\mathcal{O}",
+              "after": "0",
+              "candidate_rank": 2,
+              "candidate_probability": 0.19317100942134857,
+              "selected_minus_top1_log_probability": -1.2546711157345283
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -1.3553829091229925
+        }
+      },
+      {
+        "sample_id": "aiflow_0152",
+        "targets": [
+          "6",
+          "\\times",
+          "0",
+          "=",
+          "0"
+        ],
+        "before": [
+          "6",
+          "\\times",
+          "\\mathcal{O}",
+          "=",
+          "\\mathcal{O}"
+        ],
+        "after": [
+          "6",
+          "\\times",
+          "0",
+          "=",
+          "0"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 2,
+              "record_id": "aiflow_0152:2",
+              "before": "\\mathcal{O}",
+              "after": "0",
+              "candidate_rank": 2,
+              "candidate_probability": 0.36246955394744873,
+              "selected_minus_top1_log_probability": -0.44447046545556734
+            },
+            {
+              "position": 4,
+              "record_id": "aiflow_0152:4",
+              "before": "\\mathcal{O}",
+              "after": "0",
+              "candidate_rank": 2,
+              "candidate_probability": 0.12246137112379074,
+              "selected_minus_top1_log_probability": -1.9606962044164657
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -2.405166669872033
+        }
+      },
+      {
+        "sample_id": "aiflow_0125",
+        "targets": [
+          "5",
+          "+",
+          "2",
+          "=",
+          "7"
+        ],
+        "before": [
+          "5",
+          "+",
+          "2",
+          "=",
+          "\\eta"
+        ],
+        "after": [
+          "5",
+          "+",
+          "2",
+          "=",
+          "7"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 2,
+          "changes": [
+            {
+              "position": 4,
+              "record_id": "aiflow_0125:4",
+              "before": "\\eta",
+              "after": "7",
+              "candidate_rank": 2,
+              "candidate_probability": 0.0379403755068779,
+              "selected_minus_top1_log_probability": -3.229281467524961
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -3.229281467524961
+        }
+      },
+      {
+        "sample_id": "aiflow_0126",
+        "targets": [
+          "7",
+          "+",
+          "4",
+          "=",
+          "1",
+          "1"
+        ],
+        "before": [
+          "7",
+          "+",
+          "4",
+          "=",
+          "|",
+          "|"
+        ],
+        "after": [
+          "7",
+          "+",
+          "4",
+          "=",
+          "1",
+          "1"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 4,
+              "record_id": "aiflow_0126:4",
+              "before": "|",
+              "after": "1",
+              "candidate_rank": 3,
+              "candidate_probability": 0.11565735191106796,
+              "selected_minus_top1_log_probability": -1.4376335500766277
+            },
+            {
+              "position": 5,
+              "record_id": "aiflow_0126:5",
+              "before": "|",
+              "after": "1",
+              "candidate_rank": 3,
+              "candidate_probability": 0.1282525360584259,
+              "selected_minus_top1_log_probability": -1.2571524910996863
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -2.694786041176314
+        }
+      },
+      {
+        "sample_id": "aiflow_0050",
+        "targets": [
+          "0",
+          "\\times",
+          "7",
+          "=",
+          "0"
+        ],
+        "before": [
+          "0",
+          "X",
+          "7",
+          "=",
+          "0"
+        ],
+        "after": [
+          "0",
+          "\\times",
+          "7",
+          "=",
+          "0"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 1,
+              "record_id": "aiflow_0050:1",
+              "before": "X",
+              "after": "\\times",
+              "candidate_rank": 2,
+              "candidate_probability": 0.2857917547225952,
+              "selected_minus_top1_log_probability": -0.7380275593422446
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -0.7380275593422446
+        }
+      },
+      {
+        "sample_id": "aiflow_0051",
+        "targets": [
+          "2",
+          "\\times",
+          "5",
+          "=",
+          "1",
+          "0"
+        ],
+        "before": [
+          "2",
+          "\\times",
+          "5",
+          "=",
+          "(",
+          "0"
+        ],
+        "after": [
+          "2",
+          "\\times",
+          "5",
+          "=",
+          "1",
+          "0"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 4,
+              "record_id": "aiflow_0051:4",
+              "before": "(",
+              "after": "1",
+              "candidate_rank": 4,
+              "candidate_probability": 0.09287811815738678,
+              "selected_minus_top1_log_probability": -1.6825150952812287
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -1.6825150952812287
+        }
+      },
+      {
+        "sample_id": "aiflow_0052",
+        "targets": [
+          "2",
+          "\\times",
+          "8",
+          "=",
+          "1",
+          "6"
+        ],
+        "before": [
+          "2",
+          "X",
+          "8",
+          "=",
+          "(",
+          "6"
+        ],
+        "after": [
+          "2",
+          "\\times",
+          "8",
+          "=",
+          "1",
+          "6"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 1,
+              "record_id": "aiflow_0052:1",
+              "before": "X",
+              "after": "\\times",
+              "candidate_rank": 2,
+              "candidate_probability": 0.3583000898361206,
+              "selected_minus_top1_log_probability": -0.31266972506622803
+            },
+            {
+              "position": 4,
+              "record_id": "aiflow_0052:4",
+              "before": "(",
+              "after": "1",
+              "candidate_rank": 4,
+              "candidate_probability": 0.1494636833667755,
+              "selected_minus_top1_log_probability": -0.5672989407157876
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -0.8799686657820156
+        }
+      },
+      {
+        "sample_id": "aiflow_0053",
+        "targets": [
+          "5",
+          "+",
+          "0",
+          "=",
+          "5"
+        ],
+        "before": [
+          "\\hbar",
+          "+",
+          "0",
+          "=",
+          "5"
+        ],
+        "after": [
+          "5",
+          "+",
+          "0",
+          "=",
+          "5"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 0,
+              "record_id": "aiflow_0053:0",
+              "before": "\\hbar",
+              "after": "5",
+              "candidate_rank": 2,
+              "candidate_probability": 0.43543243408203125,
+              "selected_minus_top1_log_probability": -0.2417030602850433
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -0.2417030602850433
+        }
+      },
+      {
+        "sample_id": "aiflow_0058",
+        "targets": [
+          "1",
+          "8",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "before": [
+          "\\lfloor",
+          "\\mathscr{C}",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "after": [
+          "1",
+          "8",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 0,
+              "record_id": "aiflow_0058:0",
+              "before": "\\lfloor",
+              "after": "1",
+              "candidate_rank": 2,
+              "candidate_probability": 0.1657966822385788,
+              "selected_minus_top1_log_probability": -1.1554488842626731
+            },
+            {
+              "position": 1,
+              "record_id": "aiflow_0058:1",
+              "before": "\\mathscr{C}",
+              "after": "8",
+              "candidate_rank": 3,
+              "candidate_probability": 0.01118632685393095,
+              "selected_minus_top1_log_probability": -4.452249490181937
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -5.60769837444461
+        }
+      },
+      {
+        "sample_id": "aiflow_0006",
+        "targets": [
+          "7",
+          "\\times",
+          "3",
+          "=",
+          "2",
+          "1"
+        ],
+        "before": [
+          "7",
+          "x",
+          "3",
+          "=",
+          "2",
+          "|"
+        ],
+        "after": [
+          "7",
+          "\\times",
+          "3",
+          "=",
+          "2",
+          "1"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 1,
+              "record_id": "aiflow_0006:1",
+              "before": "x",
+              "after": "\\times",
+              "candidate_rank": 3,
+              "candidate_probability": 0.024863233789801598,
+              "selected_minus_top1_log_probability": -3.240381245801771
+            },
+            {
+              "position": 5,
+              "record_id": "aiflow_0006:5",
+              "before": "|",
+              "after": "1",
+              "candidate_rank": 2,
+              "candidate_probability": 0.2724533677101135,
+              "selected_minus_top1_log_probability": -0.44639678793037296
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -3.686778033732144
+        }
+      },
+      {
+        "sample_id": "aiflow_0007",
+        "targets": [
+          "1",
+          "6",
+          "\\div",
+          "8",
+          "=",
+          "2"
+        ],
+        "before": [
+          "|",
+          "6",
+          "\\div",
+          "8",
+          "=",
+          "2"
+        ],
+        "after": [
+          "1",
+          "6",
+          "\\div",
+          "8",
+          "=",
+          "2"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 0,
+              "record_id": "aiflow_0007:0",
+              "before": "|",
+              "after": "1",
+              "candidate_rank": 3,
+              "candidate_probability": 0.1500188708305359,
+              "selected_minus_top1_log_probability": -1.0813646537883748
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -1.0813646537883748
+        }
+      },
+      {
+        "sample_id": "aiflow_0067",
+        "targets": [
+          "1",
+          "\\times",
+          "4",
+          "=",
+          "4"
+        ],
+        "before": [
+          "|",
+          "\\times",
+          "4",
+          "=",
+          "4"
+        ],
+        "after": [
+          "1",
+          "\\times",
+          "4",
+          "=",
+          "4"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 2,
+          "changes": [
+            {
+              "position": 0,
+              "record_id": "aiflow_0067:0",
+              "before": "|",
+              "after": "1",
+              "candidate_rank": 3,
+              "candidate_probability": 0.15960852801799774,
+              "selected_minus_top1_log_probability": -0.9707326572843658
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -0.9707326572843658
+        }
+      },
+      {
+        "sample_id": "aiflow_0086",
+        "targets": [
+          "6",
+          "\\times",
+          "8",
+          "=",
+          "4",
+          "8"
+        ],
+        "before": [
+          "6",
+          "\\times",
+          "\\parr",
+          "=",
+          "4",
+          "\\parr"
+        ],
+        "after": [
+          "6",
+          "\\times",
+          "8",
+          "=",
+          "4",
+          "8"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 2,
+              "record_id": "aiflow_0086:2",
+              "before": "\\parr",
+              "after": "8",
+              "candidate_rank": 2,
+              "candidate_probability": 0.05604161322116852,
+              "selected_minus_top1_log_probability": -2.74599359349383
+            },
+            {
+              "position": 5,
+              "record_id": "aiflow_0086:5",
+              "before": "\\parr",
+              "after": "8",
+              "candidate_rank": 2,
+              "candidate_probability": 0.3416079878807068,
+              "selected_minus_top1_log_probability": -0.4663258043641315
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -3.2123193978579616
+        }
+      }
+    ]
+  },
+  "verification": {
+    "formula_count_is_149": true,
+    "token_count_is_579": true,
+    "trace_hash_matches_failure_matrix": true,
+    "ownership_hash_matches_writer_reference": true,
+    "ownership_ids_exactly_match_trace": true,
+    "writer_count_is_9": true,
+    "baseline_replays_76_formula_470_token_top1": true,
+    "all_changes_are_top5_members": true,
+    "every_change_is_unique_exact_arithmetic_equation": true,
+    "all_checks_pass": true
+  }
+}

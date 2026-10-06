@@ -1,0 +1,292 @@
+{
+  "schema": "aiflow-prompt-mini-lm-distillation/v1",
+  "generated_at": "2026-10-02T08:10:25.217227+00:00",
+  "status": "shadow_only_consumed_development_diagnostic",
+  "protocol": {
+    "teacher_frozen": true,
+    "student_trained_only_on_project_owned_prompt_corpus": true,
+    "current_149_used_for_training_or_epoch_selection": false,
+    "prompt_current_exact_sequence_overlap": 0,
+    "current_149_threshold_tuning": false,
+    "teacher_lambda_selected_on_current_overlap_cache": true,
+    "teacher_lambda_source_current_formula_overlap": 42,
+    "crohme_rows_loaded": 0,
+    "crohme_training_or_tuning": false,
+    "fusion_lambda_frozen_from_teacher": 0.5,
+    "product_policy": "candidate-preserving HWR Top-5 plus strict HWR Top-1 homograph lock",
+    "promotion_eligible": false,
+    "warning": "current149 is consumed development data, and the frozen teacher lambda was selected on a direct-candidate cache sharing formula IDs; this is not independent acceptance or mobile latency evidence"
+  },
+  "provenance": {
+    "prompt_corpus": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\prompt_context_corpus_20260820_r2\\prompt_context_corpus.jsonl",
+    "prompt_corpus_sha256": "353be67265f16a3d8591760163714ed664a5c777113d5100ffe8a8407d6d425f",
+    "prompt_corpus_raw_rows": 595,
+    "prompt_admission": {
+      "admitted_formulas": 584,
+      "admitted_records": 2084,
+      "excluded_unsupported_formulas": 11,
+      "unsupported_labels": [
+        "t"
+      ]
+    },
+    "prompt_fit_formulas": 467,
+    "prompt_validation_formulas": 117,
+    "teacher_report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\prompt_context_bert_tiny_20260820_r3_epoch3_shadow\\prompt_context_report.json",
+    "teacher_checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\prompt_context_bert_tiny_20260820_r3_epoch3_shadow\\masked_context_product.pt",
+    "teacher_checkpoint_sha256": "7df614d1ae76003923dd0336d823353e463b25a3145946237d26bae842ba1c3f",
+    "teacher_lambda_source": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\homograph_context_20260814\\direct_candidates.jsonl.gz",
+    "teacher_lambda_source_sha256": "8c59a21493592638f77c0a431f33b56d17c973b488d6b8da0afff4dcf7125307",
+    "teacher_lambda_source_candidate_rows": 211,
+    "teacher_lambda_source_formulas": 47,
+    "teacher_lambda_source_shared_formula_ids_with_current149": [
+      "aiflow_0005",
+      "aiflow_0006",
+      "aiflow_0007",
+      "aiflow_0008",
+      "aiflow_0009",
+      "aiflow_0010",
+      "aiflow_0015",
+      "aiflow_0016",
+      "aiflow_0017",
+      "aiflow_0018",
+      "aiflow_0019",
+      "aiflow_0020",
+      "aiflow_0082",
+      "aiflow_0083",
+      "aiflow_0084",
+      "aiflow_0085",
+      "aiflow_0086",
+      "aiflow_0087",
+      "aiflow_0088",
+      "aiflow_0089",
+      "aiflow_0090",
+      "aiflow_0091",
+      "aiflow_0092",
+      "aiflow_0093",
+      "aiflow_0094",
+      "aiflow_0095",
+      "aiflow_0096",
+      "aiflow_0097",
+      "aiflow_0100",
+      "aiflow_0101",
+      "aiflow_0102",
+      "aiflow_0103",
+      "aiflow_0104",
+      "aiflow_0105",
+      "aiflow_0106",
+      "aiflow_0107",
+      "aiflow_0111",
+      "aiflow_0112",
+      "aiflow_0113",
+      "aiflow_0114",
+      "aiflow_0115",
+      "aiflow_0116"
+    ],
+    "current_summary": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\group_mean_geometry_prior_shadow_20261001\\summary.json",
+    "current_summary_sha256": "aef4636afef850a0b9b74736e42ad9487884103684e5827854a7bafd692f9282",
+    "current_formula_data_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401"
+  },
+  "student": {
+    "architecture": {
+      "layers": 2,
+      "hidden": 64,
+      "heads": 2,
+      "feedforward": 128
+    },
+    "parameters": 124020,
+    "checkpoint_bytes": 512524,
+    "checkpoint_sha256": "dd2889e84c82c9d04f6dacf42cf99de02938902fc220022987de64b8b1567a72",
+    "training": {
+      "seed": 20261002,
+      "distill_temperature": 2.0,
+      "distill_weight": 0.5,
+      "max_epochs": 40,
+      "selected_epoch": 25,
+      "experiment_elapsed_ms_host_not_mobile": 27264.134999997623,
+      "selection_validation": {
+        "records": 432,
+        "formulas": 117,
+        "masked_symbol_top1": 0.3472222222222222,
+        "formula_exact": 0.0,
+        "weighted_ce": 1.8498956839206726
+      },
+      "refit_epochs": 25
+    },
+    "validation": {
+      "records": 432,
+      "formulas": 117,
+      "masked_symbol_top1": 0.3472222222222222,
+      "formula_exact": 0.0,
+      "weighted_ce": 1.8498956839206726
+    }
+  },
+  "current149_evaluation": {
+    "baseline_fast": {
+      "formulas": 149,
+      "group_exact_formulas": 125,
+      "baseline_top1_formula_exact": 68,
+      "reranked_formula_exact": 68,
+      "delta_formula_exact": 0,
+      "formula_exact_transitions": {
+        "exact_to_exact": 68,
+        "wrong_to_wrong": 81
+      },
+      "writer_bootstrap": {
+        "writers": 9,
+        "formulas_by_writer": {
+          "writer_001": 10,
+          "writer_002": 23,
+          "writer_003": 20,
+          "writer_004": 10,
+          "writer_006": 20,
+          "writer_007": 8,
+          "writer_008": 5,
+          "writer_010": 4,
+          "writer_012": 49
+        },
+        "replicates": 20000,
+        "delta_formula_exact_pp_95_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "exact_group_tokens": 469,
+      "baseline_top1_token_hits": 390,
+      "reranked_top1_token_hits": 390,
+      "token_top5_hits": 464,
+      "token_top5_recall": 0.9893390191897654,
+      "target_rank_histogram_on_exact_groups": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4
+      },
+      "top5_complete_formula_count_on_exact_groups": 120,
+      "top5_complete_formula_count_over_all_149": 120,
+      "changed_tokens": 0,
+      "improved_tokens": 0,
+      "regressed_tokens": 0,
+      "candidate_preserved_tokens": 469,
+      "candidate_preservation_rate": 1.0,
+      "new_tokens": 0,
+      "grouping_mutations": 0,
+      "grouping_wrong_formulas_counted_as_failures": 24
+    },
+    "frozen_teacher_product": {
+      "formulas": 149,
+      "group_exact_formulas": 125,
+      "baseline_top1_formula_exact": 68,
+      "reranked_formula_exact": 83,
+      "delta_formula_exact": 15,
+      "formula_exact_transitions": {
+        "exact_to_exact": 67,
+        "exact_to_wrong": 1,
+        "wrong_to_exact": 16,
+        "wrong_to_wrong": 65
+      },
+      "writer_bootstrap": {
+        "writers": 9,
+        "formulas_by_writer": {
+          "writer_001": 10,
+          "writer_002": 23,
+          "writer_003": 20,
+          "writer_004": 10,
+          "writer_006": 20,
+          "writer_007": 8,
+          "writer_008": 5,
+          "writer_010": 4,
+          "writer_012": 49
+        },
+        "replicates": 20000,
+        "delta_formula_exact_pp_95_ci": [
+          5.813953488372093,
+          12.871287128712872
+        ]
+      },
+      "exact_group_tokens": 469,
+      "baseline_top1_token_hits": 390,
+      "reranked_top1_token_hits": 412,
+      "token_top5_hits": 464,
+      "token_top5_recall": 0.9893390191897654,
+      "target_rank_histogram_on_exact_groups": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4
+      },
+      "top5_complete_formula_count_on_exact_groups": 120,
+      "top5_complete_formula_count_over_all_149": 120,
+      "changed_tokens": 34,
+      "improved_tokens": 25,
+      "regressed_tokens": 3,
+      "candidate_preserved_tokens": 469,
+      "candidate_preservation_rate": 1.0,
+      "new_tokens": 0,
+      "grouping_mutations": 0,
+      "grouping_wrong_formulas_counted_as_failures": 24
+    },
+    "distilled_student_product": {
+      "formulas": 149,
+      "group_exact_formulas": 125,
+      "baseline_top1_formula_exact": 68,
+      "reranked_formula_exact": 84,
+      "delta_formula_exact": 16,
+      "formula_exact_transitions": {
+        "exact_to_exact": 67,
+        "exact_to_wrong": 1,
+        "wrong_to_exact": 17,
+        "wrong_to_wrong": 64
+      },
+      "writer_bootstrap": {
+        "writers": 9,
+        "formulas_by_writer": {
+          "writer_001": 10,
+          "writer_002": 23,
+          "writer_003": 20,
+          "writer_004": 10,
+          "writer_006": 20,
+          "writer_007": 8,
+          "writer_008": 5,
+          "writer_010": 4,
+          "writer_012": 49
+        },
+        "replicates": 20000,
+        "delta_formula_exact_pp_95_ci": [
+          5.853658536585366,
+          13.77245508982036
+        ]
+      },
+      "exact_group_tokens": 469,
+      "baseline_top1_token_hits": 390,
+      "reranked_top1_token_hits": 413,
+      "token_top5_hits": 464,
+      "token_top5_recall": 0.9893390191897654,
+      "target_rank_histogram_on_exact_groups": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4
+      },
+      "top5_complete_formula_count_on_exact_groups": 120,
+      "top5_complete_formula_count_over_all_149": 120,
+      "changed_tokens": 36,
+      "improved_tokens": 27,
+      "regressed_tokens": 4,
+      "candidate_preserved_tokens": 469,
+      "candidate_preservation_rate": 1.0,
+      "new_tokens": 0,
+      "grouping_mutations": 0,
+      "grouping_wrong_formulas_counted_as_failures": 24
+    },
+    "student_minus_fast_formula_exact": 16,
+    "student_minus_teacher_formula_exact": 1
+  },
+  "decision": {
+    "automatic_default_replacement": false,
+    "runtime_status": "shadow",
+    "next_gate": "fresh writer/formula-disjoint acceptance, multi-seed stability, FP32 parity, INT8 and target-device profiling"
+  }
+}

@@ -1,0 +1,5403 @@
+{
+  "schema": "aiflow-hwr-group-ranker-feature-ablation/v1",
+  "scope": "post-hoc exploratory development slice with frozen acceptance and exact training-ink duplicates excluded; not writer-disjoint or acceptance evidence; no fitting, CROHME, threshold selection, or promotion",
+  "inputs": {
+    "trace": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_budgeted_region_cues_final_20261001\\formula_traces.jsonl",
+      "sha256": "dcdd888bd5b525e8b923dd577a2400a9506baec683e12845b119d5ec6f4d13f6"
+    },
+    "reachability": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_budgeted_region_cues_final_20261001\\group_partition_reachability.json",
+      "sha256": "c474515e619653ac1350322256ab74fe2e4b36bc8a243c94c104b4c8ede3f233"
+    },
+    "budget_replay": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\region_budget_skip_replay_20261001_verified.json",
+      "sha256": "85969331e23c21e83887807ae295deb74d8faeb5a997d212cde6cecd73ef3d08"
+    },
+    "raw_formula_source": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\frozen_dataset\\data\\formulas_valid.jsonl",
+      "sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401"
+    },
+    "ranker": {
+      "path": "artifacts\\partition_context_ranker_20260819_r12_selected_shadow\\partition_context_ranker.joblib",
+      "sha256": "0d283d40b40f60d58131dec213efb84074f9119ac82b32fcb893ca931aeb0582"
+    },
+    "provenance_audit": {
+      "path": "artifacts\\hwr_pipeline_microscope_20260928_context_transfer\\context_transfer_contamination_and_acceptance_audit_20261001.json",
+      "sha256": "8c468af65f3903e1fb71677722e64cda4ad0c98c2323bf8c83b2a7409ed00aa7"
+    },
+    "audit_script_sha256": "d3de46402c89fb911bc4331d258865c760a72bb4ef9e3819bddda8ceabe83441"
+  },
+  "data_scope": {
+    "trace_formulas_available": 149,
+    "frozen_acceptance_formulas_excluded": 53,
+    "exact_training_ink_duplicates_excluded": 47,
+    "formulas_retained": 49,
+    "retained_formula_ids": [
+      "aiflow_0001",
+      "aiflow_0002",
+      "aiflow_0003",
+      "aiflow_0004",
+      "aiflow_0005",
+      "aiflow_0006",
+      "aiflow_0007",
+      "aiflow_0008",
+      "aiflow_0009",
+      "aiflow_0010",
+      "aiflow_0046",
+      "aiflow_0047",
+      "aiflow_0048",
+      "aiflow_0049",
+      "aiflow_0050",
+      "aiflow_0051",
+      "aiflow_0052",
+      "aiflow_0053",
+      "aiflow_0054",
+      "aiflow_0055",
+      "aiflow_0056",
+      "aiflow_0057",
+      "aiflow_0058",
+      "aiflow_0059",
+      "aiflow_0060",
+      "aiflow_0061",
+      "aiflow_0062",
+      "aiflow_0063",
+      "aiflow_0064",
+      "aiflow_0065",
+      "aiflow_0071",
+      "aiflow_0072",
+      "aiflow_0073",
+      "aiflow_0074",
+      "aiflow_0075",
+      "aiflow_0076",
+      "aiflow_0077",
+      "aiflow_0078",
+      "aiflow_0079",
+      "aiflow_0080",
+      "aiflow_0118",
+      "aiflow_0119",
+      "aiflow_0120",
+      "aiflow_0121",
+      "aiflow_0160",
+      "aiflow_0161",
+      "aiflow_0162",
+      "aiflow_0163",
+      "aiflow_0164"
+    ],
+    "writer_independence_verified": false,
+    "cohort_already_inspected_during_development": true
+  },
+  "policy": {
+    "ablation": "for one feature at a time, replace each formula's candidate values by that formula's candidate mean; leave frozen ranker and all other features unchanged",
+    "interpretation_limit": "sensitivity-only counterfactual; per-formula mean replacement may leave the feature manifold and is not causal evidence or a deployable setting",
+    "selection_is_label_blind": true,
+    "posthoc_metric": "Fast partition exact match against owned target grouping",
+    "writer_ids": [
+      "writer_001",
+      "writer_003",
+      "writer_004",
+      "writer_006",
+      "writer_008"
+    ]
+  },
+  "ranker_feature_usage": {
+    "interpretation_limit": "frozen HistGradientBoosting split gain summarizes fitted-tree usage; it is not causal importance",
+    "feature_count": 22,
+    "split_count_total": 2235,
+    "features_by_training_split_gain": [
+      {
+        "feature": "pair_gap_max_ref",
+        "split_count": 78,
+        "training_split_gain_sum": 5569.035108655136
+      },
+      {
+        "feature": "width_ref",
+        "split_count": 120,
+        "training_split_gain_sum": 3717.222846675521
+      },
+      {
+        "feature": "path_length_ref",
+        "split_count": 184,
+        "training_split_gain_sum": 1051.4602107686023
+      },
+      {
+        "feature": "stroke_height_mean_ref",
+        "split_count": 141,
+        "training_split_gain_sum": 735.1044484549849
+      },
+      {
+        "feature": "candidate_width_formula",
+        "split_count": 202,
+        "training_split_gain_sum": 602.5805581925679
+      },
+      {
+        "feature": "point_count_log",
+        "split_count": 206,
+        "training_split_gain_sum": 520.6326102894764
+      },
+      {
+        "feature": "x_overlap_mean",
+        "split_count": 138,
+        "training_split_gain_sum": 495.4395962025
+      },
+      {
+        "feature": "aspect_log",
+        "split_count": 211,
+        "training_split_gain_sum": 482.53010244618173
+      },
+      {
+        "feature": "temporal_span",
+        "split_count": 11,
+        "training_split_gain_sum": 414.4740899392925
+      },
+      {
+        "feature": "endpoint_gap_mean_ref",
+        "split_count": 75,
+        "training_split_gain_sum": 407.1145015349628
+      },
+      {
+        "feature": "stroke_width_mean_ref",
+        "split_count": 179,
+        "training_split_gain_sum": 390.02306442398964
+      },
+      {
+        "feature": "candidate_cx_formula",
+        "split_count": 271,
+        "training_split_gain_sum": 327.9580528322194
+      },
+      {
+        "feature": "candidate_cy_formula",
+        "split_count": 202,
+        "training_split_gain_sum": 294.92843351172843
+      },
+      {
+        "feature": "stroke_height_std_ref",
+        "split_count": 52,
+        "training_split_gain_sum": 153.54968894709847
+      },
+      {
+        "feature": "height_ref",
+        "split_count": 90,
+        "training_split_gain_sum": 151.37507357031828
+      },
+      {
+        "feature": "temporal_contiguous",
+        "split_count": 20,
+        "training_split_gain_sum": 137.35216268908516
+      },
+      {
+        "feature": "y_overlap_mean",
+        "split_count": 18,
+        "training_split_gain_sum": 108.23132901083028
+      },
+      {
+        "feature": "pair_gap_mean_ref",
+        "split_count": 9,
+        "training_split_gain_sum": 41.048018910991765
+      },
+      {
+        "feature": "singleton",
+        "split_count": 3,
+        "training_split_gain_sum": 21.647056969595212
+      },
+      {
+        "feature": "stroke_count",
+        "split_count": 3,
+        "training_split_gain_sum": 20.813579588370796
+      },
+      {
+        "feature": "stroke_width_std_ref",
+        "split_count": 22,
+        "training_split_gain_sum": 15.340401860306804
+      },
+      {
+        "feature": "has_spatial_pair",
+        "split_count": 0,
+        "training_split_gain_sum": 0.0
+      }
+    ]
+  },
+  "summary": {
+    "formulas": 49,
+    "candidate_rows": 1416,
+    "baseline_fast_group_exact": 42,
+    "fast_group_errors": 7,
+    "budget_skip_error_ids": [
+      "aiflow_0003",
+      "aiflow_0007",
+      "aiflow_0008"
+    ],
+    "best_ablation_delta_exact": 2,
+    "ablation_features_with_positive_exact_delta": 5,
+    "ablation_features_with_zero_regressions_and_positive_delta": 2,
+    "top_ablation_effects": [
+      {
+        "feature": "singleton",
+        "delta_exact": 2,
+        "recovered_budget_skip_ids": [
+          "aiflow_0003",
+          "aiflow_0007"
+        ],
+        "regressed_budget_skip_ids": []
+      },
+      {
+        "feature": "stroke_count",
+        "delta_exact": 2,
+        "recovered_budget_skip_ids": [
+          "aiflow_0003",
+          "aiflow_0007"
+        ],
+        "regressed_budget_skip_ids": []
+      },
+      {
+        "feature": "height_ref",
+        "delta_exact": 1,
+        "recovered_budget_skip_ids": [
+          "aiflow_0003",
+          "aiflow_0007"
+        ],
+        "regressed_budget_skip_ids": []
+      },
+      {
+        "feature": "stroke_height_std_ref",
+        "delta_exact": 1,
+        "recovered_budget_skip_ids": [
+          "aiflow_0003",
+          "aiflow_0007"
+        ],
+        "regressed_budget_skip_ids": []
+      },
+      {
+        "feature": "y_overlap_mean",
+        "delta_exact": 1,
+        "recovered_budget_skip_ids": [
+          "aiflow_0003",
+          "aiflow_0007"
+        ],
+        "regressed_budget_skip_ids": []
+      },
+      {
+        "feature": "candidate_cx_formula",
+        "delta_exact": 0,
+        "recovered_budget_skip_ids": [],
+        "regressed_budget_skip_ids": []
+      },
+      {
+        "feature": "has_spatial_pair",
+        "delta_exact": 0,
+        "recovered_budget_skip_ids": [],
+        "regressed_budget_skip_ids": []
+      },
+      {
+        "feature": "pair_gap_mean_ref",
+        "delta_exact": 0,
+        "recovered_budget_skip_ids": [],
+        "regressed_budget_skip_ids": []
+      }
+    ]
+  },
+  "ablations": [
+    {
+      "feature": "singleton",
+      "formula_exact": 44,
+      "delta_exact": 2,
+      "recovered_formula_ids": [
+        "aiflow_0003",
+        "aiflow_0007"
+      ],
+      "regressed_formula_ids": [],
+      "changed_partition_formula_ids": [
+        "aiflow_0003",
+        "aiflow_0007"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 20,
+          "delta": 0
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 8,
+          "delta": 2
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "stroke_count",
+      "formula_exact": 44,
+      "delta_exact": 2,
+      "recovered_formula_ids": [
+        "aiflow_0003",
+        "aiflow_0007"
+      ],
+      "regressed_formula_ids": [],
+      "changed_partition_formula_ids": [
+        "aiflow_0003",
+        "aiflow_0007"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 20,
+          "delta": 0
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 8,
+          "delta": 2
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "height_ref",
+      "formula_exact": 43,
+      "delta_exact": 1,
+      "recovered_formula_ids": [
+        "aiflow_0003",
+        "aiflow_0007"
+      ],
+      "regressed_formula_ids": [
+        "aiflow_0052"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0052",
+        "aiflow_0003",
+        "aiflow_0007"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 19,
+          "delta": -1
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 8,
+          "delta": 2
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "stroke_height_std_ref",
+      "formula_exact": 43,
+      "delta_exact": 1,
+      "recovered_formula_ids": [
+        "aiflow_0003",
+        "aiflow_0007"
+      ],
+      "regressed_formula_ids": [
+        "aiflow_0058"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0058",
+        "aiflow_0003",
+        "aiflow_0007"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 19,
+          "delta": -1
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 8,
+          "delta": 2
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "y_overlap_mean",
+      "formula_exact": 43,
+      "delta_exact": 1,
+      "recovered_formula_ids": [
+        "aiflow_0003",
+        "aiflow_0007"
+      ],
+      "regressed_formula_ids": [
+        "aiflow_0058"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0058",
+        "aiflow_0003",
+        "aiflow_0007"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 19,
+          "delta": -1
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 8,
+          "delta": 2
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "candidate_cx_formula",
+      "formula_exact": 42,
+      "delta_exact": 0,
+      "recovered_formula_ids": [],
+      "regressed_formula_ids": [],
+      "changed_partition_formula_ids": [
+        "aiflow_0164",
+        "aiflow_0010"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 20,
+          "delta": 0
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 6,
+          "delta": 0
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "has_spatial_pair",
+      "formula_exact": 42,
+      "delta_exact": 0,
+      "recovered_formula_ids": [],
+      "regressed_formula_ids": [],
+      "changed_partition_formula_ids": [],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 20,
+          "delta": 0
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 6,
+          "delta": 0
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "pair_gap_mean_ref",
+      "formula_exact": 42,
+      "delta_exact": 0,
+      "recovered_formula_ids": [],
+      "regressed_formula_ids": [],
+      "changed_partition_formula_ids": [],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 20,
+          "delta": 0
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 6,
+          "delta": 0
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "stroke_height_mean_ref",
+      "formula_exact": 42,
+      "delta_exact": 0,
+      "recovered_formula_ids": [
+        "aiflow_0003",
+        "aiflow_0007",
+        "aiflow_0008"
+      ],
+      "regressed_formula_ids": [
+        "aiflow_0052",
+        "aiflow_0058",
+        "aiflow_0075"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0052",
+        "aiflow_0058",
+        "aiflow_0003",
+        "aiflow_0007",
+        "aiflow_0008",
+        "aiflow_0075"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 8,
+          "delta": -1
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 18,
+          "delta": -2
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 9,
+          "delta": 3
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "stroke_width_std_ref",
+      "formula_exact": 42,
+      "delta_exact": 0,
+      "recovered_formula_ids": [],
+      "regressed_formula_ids": [],
+      "changed_partition_formula_ids": [],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 20,
+          "delta": 0
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 6,
+          "delta": 0
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "temporal_contiguous",
+      "formula_exact": 42,
+      "delta_exact": 0,
+      "recovered_formula_ids": [],
+      "regressed_formula_ids": [],
+      "changed_partition_formula_ids": [],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 20,
+          "delta": 0
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 6,
+          "delta": 0
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "aspect_log",
+      "formula_exact": 41,
+      "delta_exact": -1,
+      "recovered_formula_ids": [
+        "aiflow_0003",
+        "aiflow_0007",
+        "aiflow_0008"
+      ],
+      "regressed_formula_ids": [
+        "aiflow_0052",
+        "aiflow_0058",
+        "aiflow_0064",
+        "aiflow_0076"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0052",
+        "aiflow_0058",
+        "aiflow_0064",
+        "aiflow_0164",
+        "aiflow_0003",
+        "aiflow_0007",
+        "aiflow_0008",
+        "aiflow_0076"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 8,
+          "delta": -1
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 17,
+          "delta": -3
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 9,
+          "delta": 3
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "candidate_cy_formula",
+      "formula_exact": 41,
+      "delta_exact": -1,
+      "recovered_formula_ids": [],
+      "regressed_formula_ids": [
+        "aiflow_0004"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0164",
+        "aiflow_0004"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 20,
+          "delta": 0
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 5,
+          "delta": -1
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "stroke_width_mean_ref",
+      "formula_exact": 41,
+      "delta_exact": -1,
+      "recovered_formula_ids": [],
+      "regressed_formula_ids": [
+        "aiflow_0052"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0052",
+        "aiflow_0164"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 19,
+          "delta": -1
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 6,
+          "delta": 0
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "temporal_span",
+      "formula_exact": 41,
+      "delta_exact": -1,
+      "recovered_formula_ids": [
+        "aiflow_0003",
+        "aiflow_0007"
+      ],
+      "regressed_formula_ids": [
+        "aiflow_0052",
+        "aiflow_0064",
+        "aiflow_0075"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0052",
+        "aiflow_0064",
+        "aiflow_0003",
+        "aiflow_0007",
+        "aiflow_0075"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 8,
+          "delta": -1
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 18,
+          "delta": -2
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 8,
+          "delta": 2
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "width_ref",
+      "formula_exact": 41,
+      "delta_exact": -1,
+      "recovered_formula_ids": [
+        "aiflow_0007"
+      ],
+      "regressed_formula_ids": [
+        "aiflow_0052",
+        "aiflow_0058"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0052",
+        "aiflow_0058",
+        "aiflow_0007"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 9,
+          "delta": 0
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 18,
+          "delta": -2
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 7,
+          "delta": 1
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "candidate_width_formula",
+      "formula_exact": 39,
+      "delta_exact": -3,
+      "recovered_formula_ids": [],
+      "regressed_formula_ids": [
+        "aiflow_0004",
+        "aiflow_0058",
+        "aiflow_0076"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0058",
+        "aiflow_0164",
+        "aiflow_0004",
+        "aiflow_0076"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 8,
+          "delta": -1
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 19,
+          "delta": -1
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 5,
+          "delta": -1
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "path_length_ref",
+      "formula_exact": 38,
+      "delta_exact": -4,
+      "recovered_formula_ids": [],
+      "regressed_formula_ids": [
+        "aiflow_0004",
+        "aiflow_0006",
+        "aiflow_0058",
+        "aiflow_0076"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0058",
+        "aiflow_0163",
+        "aiflow_0164",
+        "aiflow_0004",
+        "aiflow_0006",
+        "aiflow_0074",
+        "aiflow_0076"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 8,
+          "delta": -1
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 19,
+          "delta": -1
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 4,
+          "delta": -2
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "endpoint_gap_mean_ref",
+      "formula_exact": 37,
+      "delta_exact": -5,
+      "recovered_formula_ids": [
+        "aiflow_0003",
+        "aiflow_0007",
+        "aiflow_0008"
+      ],
+      "regressed_formula_ids": [
+        "aiflow_0052",
+        "aiflow_0055",
+        "aiflow_0057",
+        "aiflow_0059",
+        "aiflow_0062",
+        "aiflow_0064",
+        "aiflow_0065",
+        "aiflow_0075"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0052",
+        "aiflow_0055",
+        "aiflow_0057",
+        "aiflow_0059",
+        "aiflow_0062",
+        "aiflow_0064",
+        "aiflow_0065",
+        "aiflow_0164",
+        "aiflow_0003",
+        "aiflow_0007",
+        "aiflow_0008",
+        "aiflow_0075"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 8,
+          "delta": -1
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 13,
+          "delta": -7
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 9,
+          "delta": 3
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "point_count_log",
+      "formula_exact": 37,
+      "delta_exact": -5,
+      "recovered_formula_ids": [],
+      "regressed_formula_ids": [
+        "aiflow_0058",
+        "aiflow_0060",
+        "aiflow_0061",
+        "aiflow_0073",
+        "aiflow_0076"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0058",
+        "aiflow_0060",
+        "aiflow_0061",
+        "aiflow_0164",
+        "aiflow_0073",
+        "aiflow_0076"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 7,
+          "delta": -2
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 17,
+          "delta": -3
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 6,
+          "delta": 0
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 3,
+          "delta": 0
+        }
+      }
+    },
+    {
+      "feature": "pair_gap_max_ref",
+      "formula_exact": 35,
+      "delta_exact": -7,
+      "recovered_formula_ids": [
+        "aiflow_0003",
+        "aiflow_0008",
+        "aiflow_0010"
+      ],
+      "regressed_formula_ids": [
+        "aiflow_0009",
+        "aiflow_0051",
+        "aiflow_0052",
+        "aiflow_0055",
+        "aiflow_0062",
+        "aiflow_0063",
+        "aiflow_0064",
+        "aiflow_0075",
+        "aiflow_0077",
+        "aiflow_0161"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0051",
+        "aiflow_0052",
+        "aiflow_0055",
+        "aiflow_0062",
+        "aiflow_0063",
+        "aiflow_0064",
+        "aiflow_0161",
+        "aiflow_0003",
+        "aiflow_0007",
+        "aiflow_0008",
+        "aiflow_0009",
+        "aiflow_0010",
+        "aiflow_0075",
+        "aiflow_0077"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": true
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 7,
+          "delta": -2
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 14,
+          "delta": -6
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 8,
+          "delta": 2
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 2,
+          "delta": -1
+        }
+      }
+    },
+    {
+      "feature": "x_overlap_mean",
+      "formula_exact": 29,
+      "delta_exact": -13,
+      "recovered_formula_ids": [],
+      "regressed_formula_ids": [
+        "aiflow_0001",
+        "aiflow_0004",
+        "aiflow_0006",
+        "aiflow_0046",
+        "aiflow_0050",
+        "aiflow_0051",
+        "aiflow_0053",
+        "aiflow_0062",
+        "aiflow_0063",
+        "aiflow_0064",
+        "aiflow_0073",
+        "aiflow_0076",
+        "aiflow_0162"
+      ],
+      "changed_partition_formula_ids": [
+        "aiflow_0046",
+        "aiflow_0050",
+        "aiflow_0051",
+        "aiflow_0053",
+        "aiflow_0062",
+        "aiflow_0063",
+        "aiflow_0064",
+        "aiflow_0162",
+        "aiflow_0164",
+        "aiflow_0001",
+        "aiflow_0003",
+        "aiflow_0004",
+        "aiflow_0006",
+        "aiflow_0008",
+        "aiflow_0010",
+        "aiflow_0073",
+        "aiflow_0076"
+      ],
+      "budget_skip_error_case_effects": [
+        {
+          "sample_id": "aiflow_0003",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0007",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9
+            ]
+          ],
+          "partition_changed": false,
+          "exact_before": false,
+          "exact_after": false
+        },
+        {
+          "sample_id": "aiflow_0008",
+          "writer_id": "writer_004",
+          "target_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "baseline_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "ablated_fast_groups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4
+            ],
+            [
+              5
+            ]
+          ],
+          "partition_changed": true,
+          "exact_before": false,
+          "exact_after": false
+        }
+      ],
+      "writer_deltas": {
+        "writer_001": {
+          "baseline_exact": 9,
+          "ablated_exact": 7,
+          "delta": -2
+        },
+        "writer_003": {
+          "baseline_exact": 20,
+          "ablated_exact": 13,
+          "delta": -7
+        },
+        "writer_004": {
+          "baseline_exact": 6,
+          "ablated_exact": 3,
+          "delta": -3
+        },
+        "writer_006": {
+          "baseline_exact": 4,
+          "ablated_exact": 4,
+          "delta": 0
+        },
+        "writer_008": {
+          "baseline_exact": 3,
+          "ablated_exact": 2,
+          "delta": -1
+        }
+      }
+    }
+  ],
+  "verification": {
+    "checks": {
+      "trace_hash_matches_reachability": true,
+      "trace_hash_matches_budget_replay": true,
+      "ranker_hash_matches_reachability": true,
+      "raw_formula_hash_matches_reachability": true,
+      "baseline_fast_partition_replays_all_formulas": true,
+      "all_baseline_and_ablation_partitions_preserve_exact_cover": true,
+      "singleton_is_exact_stroke_count_indicator": true,
+      "region_budget_skip_cohort_reconciles": true,
+      "region_budget_fast_error_cohort_reconciles": true,
+      "provenance_filtered_rows_exclude_acceptance_and_exact_training_ink": true,
+      "no_target_data_used_to_construct_ablated_features": true
+    },
+    "all_checks_pass": true
+  }
+}

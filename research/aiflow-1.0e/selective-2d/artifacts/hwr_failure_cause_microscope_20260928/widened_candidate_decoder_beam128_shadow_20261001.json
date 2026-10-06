@@ -1,0 +1,8355 @@
+{
+  "schema": "aiflow-hwr-widened-candidate-shadow-audit/v1",
+  "scope": "posthoc consumed-development shadow only; oracle grouping; no training, CROHME, threshold selection, or promotion",
+  "inputs": {
+    "widened_topk_traces": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\topk20_trace_20261001\\formula_traces.jsonl",
+      "sha256": "14335f9f9f0d27140078133414c7a22e98e4df333a1d83663d29052d9d4dff0f"
+    },
+    "top5_baseline_traces": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\formula_traces.jsonl",
+      "sha256": "785e909f569e3c6346b4fcecc83173445b1ef016ad31ee13e7188700990c76e7"
+    }
+  },
+  "configuration": {
+    "candidate_ks": [
+      5,
+      20
+    ],
+    "beam_width": 128,
+    "selection_score": "mean token log-probability + existing strict decoder relation score",
+    "decoder_ast": "existing selective_decoder_v1._strict_latex"
+  },
+  "summary": {
+    "formulas": 149,
+    "target_tokens": 579,
+    "baseline_exact_at_k5": 76,
+    "candidate_expansion_metrics": {
+      "5": {
+        "candidate_complete_formulas": 137,
+        "strict_ast_accepted_formulas": 149,
+        "strict_formula_exact": 76,
+        "recovered_vs_top5": [],
+        "regressed_vs_top5": [],
+        "changed_selection_vs_top5": 0,
+        "branch_evaluations_total": 140775,
+        "mean_branch_evaluations_per_formula": 944.7986577181208,
+        "target_rank_histogram": {
+          "1": 470,
+          "2": 33,
+          "3": 44,
+          "4": 11,
+          "5": 4,
+          "6": 2,
+          "7": 1,
+          "8": 1,
+          "13": 1,
+          "14": 1,
+          "16": 1,
+          "19": 1,
+          "20": 1,
+          "22": 1,
+          "42": 1,
+          "79": 1,
+          "87": 1,
+          "156": 1,
+          "268": 1,
+          "296": 1,
+          "oov": 1
+        }
+      },
+      "20": {
+        "candidate_complete_formulas": 143,
+        "strict_ast_accepted_formulas": 149,
+        "strict_formula_exact": 76,
+        "recovered_vs_top5": [],
+        "regressed_vs_top5": [],
+        "changed_selection_vs_top5": 0,
+        "branch_evaluations_total": 846740,
+        "mean_branch_evaluations_per_formula": 5682.818791946309,
+        "target_rank_histogram": {
+          "1": 470,
+          "2": 33,
+          "3": 44,
+          "4": 11,
+          "5": 4,
+          "6": 2,
+          "7": 1,
+          "8": 1,
+          "13": 1,
+          "14": 1,
+          "16": 1,
+          "19": 1,
+          "20": 1,
+          "22": 1,
+          "42": 1,
+          "79": 1,
+          "87": 1,
+          "156": 1,
+          "268": 1,
+          "296": 1,
+          "oov": 1
+        }
+      }
+    }
+  },
+  "formula_level_by_k": {
+    "5": [
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "+",
+          ")",
+          "=",
+          "2"
+        ],
+        "latex": "|+)=2",
+        "target_tokens": [
+          "1",
+          "+",
+          "1",
+          "=",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          5,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0140"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "+",
+          "9"
+        ],
+        "latex": "3+9",
+        "target_tokens": [
+          "3",
+          "+",
+          "9"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0141"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5",
+          "\\times",
+          ")",
+          "=",
+          "5"
+        ],
+        "latex": "5\\times)=5",
+        "target_tokens": [
+          "5",
+          "\\times",
+          "1",
+          "=",
+          "5"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          1,
+          14,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0142"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "9",
+          "+",
+          "3"
+        ],
+        "latex": "9+3",
+        "target_tokens": [
+          "9",
+          "+",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0143"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "2",
+          "+",
+          "5",
+          "=",
+          "\\rfloor",
+          "7"
+        ],
+        "latex": "|2+5=\\rfloor7",
+        "target_tokens": [
+          "1",
+          "2",
+          "+",
+          "5",
+          "=",
+          "1",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1,
+          1,
+          3,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2700,
+        "sample_id": "aiflow_0144"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "2",
+          "+",
+          "8"
+        ],
+        "latex": "|2+8",
+        "target_tokens": [
+          "1",
+          "2",
+          "+",
+          "8"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0145"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "\\chi",
+          "+",
+          "9",
+          ")"
+        ],
+        "latex": "(\\chi+9)",
+        "target_tokens": [
+          "(",
+          "x",
+          "+",
+          "9",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0146"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "b",
+          "/",
+          "3"
+        ],
+        "latex": "b/3",
+        "target_tokens": [
+          "b",
+          "/",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0147"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "0",
+          "+",
+          "0"
+        ],
+        "latex": "0+0",
+        "target_tokens": [
+          "0",
+          "+",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0015"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "1",
+          "\\bot",
+          "5"
+        ],
+        "latex": "1\\bot5",
+        "target_tokens": [
+          "1",
+          "+",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0016"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "\\times",
+          "O",
+          "=",
+          "\\mathcal{O}"
+        ],
+        "latex": "6\\timesO=\\mathcal{O}",
+        "target_tokens": [
+          "6",
+          "\\times",
+          "0",
+          "=",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0017"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "7",
+          "-",
+          "6",
+          "=",
+          "1"
+        ],
+        "latex": "7-6=1",
+        "target_tokens": [
+          "7",
+          "-",
+          "6",
+          "=",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0018"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "0",
+          "-",
+          "3"
+        ],
+        "latex": "|0-3",
+        "target_tokens": [
+          "1",
+          "0",
+          "-",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0019"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "/",
+          "o",
+          "+",
+          "8"
+        ],
+        "latex": "/o+8",
+        "target_tokens": [
+          "1",
+          "0",
+          "+",
+          "8"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          4,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0020"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "/",
+          "2",
+          "-",
+          "/"
+        ],
+        "latex": "/2-/",
+        "target_tokens": [
+          "1",
+          "2",
+          "-",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          2
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0021"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "\\div",
+          "/",
+          "=",
+          "3"
+        ],
+        "latex": "3\\div/=3",
+        "target_tokens": [
+          "3",
+          "\\div",
+          "1",
+          "=",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0022"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "6",
+          "\\div",
+          "6",
+          "=",
+          "5"
+        ],
+        "latex": "36\\div6=5",
+        "target_tokens": [
+          "3",
+          "0",
+          "\\div",
+          "6",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0023"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "4",
+          "8",
+          "\\div",
+          "8",
+          "=",
+          "6"
+        ],
+        "latex": "48\\div8=6",
+        "target_tokens": [
+          "4",
+          "8",
+          "\\div",
+          "8",
+          "=",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0024"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "y",
+          "/",
+          "4"
+        ],
+        "latex": "y/4",
+        "target_tokens": [
+          "y",
+          "/",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0025"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "b",
+          "+",
+          "4"
+        ],
+        "latex": "b+4",
+        "target_tokens": [
+          "b",
+          "+",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0026"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "m",
+          "/",
+          "4"
+        ],
+        "latex": "m/4",
+        "target_tokens": [
+          "m",
+          "/",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0027"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "n",
+          "+",
+          "5",
+          ")"
+        ],
+        "latex": "(n+5)",
+        "target_tokens": [
+          "(",
+          "n",
+          "+",
+          "5",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0028"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "+",
+          "2"
+        ],
+        "latex": "f(y)+2",
+        "target_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "+",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0029"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "+",
+          "4"
+        ],
+        "latex": "f(y)+4",
+        "target_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "+",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0030"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "-",
+          "0",
+          "=",
+          "2"
+        ],
+        "latex": "2-0=2",
+        "target_tokens": [
+          "2",
+          "-",
+          "0",
+          "=",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0151"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "\\times",
+          "\\mathcal{O}",
+          "=",
+          "\\mathcal{O}"
+        ],
+        "latex": "6\\times\\mathcal{O}=\\mathcal{O}",
+        "target_tokens": [
+          "6",
+          "\\times",
+          "0",
+          "=",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0152"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "7",
+          "-",
+          "/",
+          "=",
+          "6"
+        ],
+        "latex": "7-/=6",
+        "target_tokens": [
+          "7",
+          "-",
+          "1",
+          "=",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          3,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0153"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "8",
+          "+",
+          "9"
+        ],
+        "latex": "8+9",
+        "target_tokens": [
+          "8",
+          "+",
+          "9"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0154"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "1",
+          "\\div",
+          "(",
+          "=",
+          "/"
+        ],
+        "latex": "1\\div(=/",
+        "target_tokens": [
+          "1",
+          "\\div",
+          "1",
+          "=",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          3,
+          1,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0155"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "+",
+          "6"
+        ],
+        "latex": "x+6",
+        "target_tokens": [
+          "x",
+          "+",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0156"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "b",
+          "+",
+          "7"
+        ],
+        "latex": "b+7",
+        "target_tokens": [
+          "b",
+          "+",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0157"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "+",
+          "0",
+          "=",
+          "2"
+        ],
+        "latex": "2+0=2",
+        "target_tokens": [
+          "2",
+          "+",
+          "0",
+          "=",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0122"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5",
+          "-",
+          "0"
+        ],
+        "latex": "5-0",
+        "target_tokens": [
+          "5",
+          "-",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0123"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5",
+          "x",
+          "0"
+        ],
+        "latex": "5x0",
+        "target_tokens": [
+          "5",
+          "\\times",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0124"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5",
+          "+",
+          "2",
+          "=",
+          "\\eta"
+        ],
+        "latex": "5+2=\\eta",
+        "target_tokens": [
+          "5",
+          "+",
+          "2",
+          "=",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0125"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "7",
+          "+",
+          "4",
+          "=",
+          "|",
+          "|"
+        ],
+        "latex": "7+4=||",
+        "target_tokens": [
+          "7",
+          "+",
+          "4",
+          "=",
+          "1",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          3,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0126"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "0",
+          "-",
+          "7"
+        ],
+        "latex": "|0-7",
+        "target_tokens": [
+          "1",
+          "0",
+          "-",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0127"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "2",
+          "-",
+          "0",
+          "\\simeq",
+          "|",
+          "2"
+        ],
+        "latex": "|2-0\\simeq|2",
+        "target_tokens": [
+          "1",
+          "2",
+          "-",
+          "0",
+          "=",
+          "1",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1,
+          2,
+          3,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2700,
+        "sample_id": "aiflow_0128"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "0",
+          "\\div",
+          "5",
+          "=",
+          "6"
+        ],
+        "latex": "30\\div5=6",
+        "target_tokens": [
+          "3",
+          "0",
+          "\\div",
+          "5",
+          "=",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0129"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "8",
+          "\\div",
+          "7",
+          "=",
+          "4"
+        ],
+        "latex": "28\\div7=4",
+        "target_tokens": [
+          "2",
+          "8",
+          "\\div",
+          "7",
+          "=",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0130"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "y",
+          "=",
+          "3"
+        ],
+        "latex": "y=3",
+        "target_tokens": [
+          "y",
+          "=",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0131"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "4",
+          "x",
+          "a",
+          "+",
+          "|"
+        ],
+        "latex": "4xa+|",
+        "target_tokens": [
+          "4",
+          "\\times",
+          "a",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1,
+          1,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0132"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "a",
+          "=",
+          "5"
+        ],
+        "latex": "a=5",
+        "target_tokens": [
+          "a",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0133"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "\\times",
+          "b",
+          "+",
+          "|"
+        ],
+        "latex": "3\\timesb+|",
+        "target_tokens": [
+          "3",
+          "\\times",
+          "b",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0134"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "b",
+          "+",
+          "4",
+          ")"
+        ],
+        "latex": "(b+4)",
+        "target_tokens": [
+          "(",
+          "b",
+          "+",
+          "4",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0135"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5",
+          "X",
+          "m",
+          "+",
+          "|"
+        ],
+        "latex": "5Xm+|",
+        "target_tokens": [
+          "5",
+          "\\times",
+          "m",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1,
+          1,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0136"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "n",
+          "+",
+          "9",
+          ")"
+        ],
+        "latex": "(n+9)",
+        "target_tokens": [
+          "(",
+          "n",
+          "+",
+          "9",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0137"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\hbar"
+        ],
+        "latex": "\\hbar",
+        "target_tokens": [
+          "5"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          6
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0046"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "n"
+        ],
+        "latex": "n",
+        "target_tokens": [
+          "n"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0047"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "="
+        ],
+        "latex": "=",
+        "target_tokens": [
+          "="
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0048"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "/"
+        ],
+        "latex": "/",
+        "target_tokens": [
+          "/"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0049"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "0",
+          "X",
+          "7",
+          "=",
+          "0"
+        ],
+        "latex": "0X7=0",
+        "target_tokens": [
+          "0",
+          "\\times",
+          "7",
+          "=",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0050"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "\\times",
+          "5",
+          "=",
+          "(",
+          "0"
+        ],
+        "latex": "2\\times5=(0",
+        "target_tokens": [
+          "2",
+          "\\times",
+          "5",
+          "=",
+          "1",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          4,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0051"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "X",
+          "8",
+          "=",
+          "(",
+          "6"
+        ],
+        "latex": "2X8=(6",
+        "target_tokens": [
+          "2",
+          "\\times",
+          "8",
+          "=",
+          "1",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1,
+          1,
+          4,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0052"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\hbar",
+          "+",
+          "0",
+          "=",
+          "5"
+        ],
+        "latex": "\\hbar+0=5",
+        "target_tokens": [
+          "5",
+          "+",
+          "0",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0053"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "+",
+          "3",
+          "=",
+          "9"
+        ],
+        "latex": "6+3=9",
+        "target_tokens": [
+          "6",
+          "+",
+          "3",
+          "=",
+          "9"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0054"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "\\times",
+          "6",
+          "=",
+          "3",
+          "6"
+        ],
+        "latex": "6\\times6=36",
+        "target_tokens": [
+          "6",
+          "\\times",
+          "6",
+          "=",
+          "3",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0055"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "+",
+          "8",
+          "\\triangledown",
+          "1",
+          "4"
+        ],
+        "latex": "6+8\\triangledown14",
+        "target_tokens": [
+          "6",
+          "+",
+          "8",
+          "=",
+          "1",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          4,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0056"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "1",
+          "2",
+          "+",
+          "2"
+        ],
+        "latex": "12+2",
+        "target_tokens": [
+          "1",
+          "2",
+          "+",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0057"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\lfloor",
+          "\\mathscr{C}",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "latex": "\\lfloor\\mathscr{C}\\div3=6",
+        "target_tokens": [
+          "1",
+          "8",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0058"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "n",
+          "/",
+          "2"
+        ],
+        "latex": "n/2",
+        "target_tokens": [
+          "n",
+          "/",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0059"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "X",
+          "n",
+          "+",
+          "1"
+        ],
+        "latex": "6Xn+1",
+        "target_tokens": [
+          "6",
+          "\\times",
+          "n",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0060"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "8",
+          "X",
+          "n",
+          "+",
+          "1"
+        ],
+        "latex": "8Xn+1",
+        "target_tokens": [
+          "8",
+          "\\times",
+          "n",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0061"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "+",
+          "1"
+        ],
+        "latex": "f(x)+1",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0062"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "=",
+          "4"
+        ],
+        "latex": "f(x)=4",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "=",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0063"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "\\mathcal{A}",
+          ")",
+          "+",
+          "2"
+        ],
+        "latex": "f(\\mathcal{A})+2",
+        "target_tokens": [
+          "f",
+          "(",
+          "t",
+          ")",
+          "+",
+          "2"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0064"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\sqrt{}",
+          "(",
+          "a",
+          ")"
+        ],
+        "latex": "\\sqrt{(a)}",
+        "target_tokens": [
+          "\\sqrt{}",
+          "(",
+          "a",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 61,
+        "relation_count": 3,
+        "relation_score": -0.05129329438755057,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0065"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "/"
+        ],
+        "latex": "/",
+        "target_tokens": [
+          "/"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0160"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "X",
+          "2",
+          "=",
+          "4"
+        ],
+        "latex": "2X2=4",
+        "target_tokens": [
+          "2",
+          "\\times",
+          "2",
+          "=",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0161"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "8",
+          "+",
+          "5",
+          "=",
+          "1",
+          "3"
+        ],
+        "latex": "8+5=13",
+        "target_tokens": [
+          "8",
+          "+",
+          "5",
+          "=",
+          "1",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0162"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "\\div",
+          "\\vdots",
+          "\\%",
+          "3"
+        ],
+        "latex": "6\\div\\vdots\\%3",
+        "target_tokens": [
+          "6",
+          "\\div",
+          "2",
+          "=",
+          "3"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          1,
+          20,
+          42,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0163"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "4",
+          "\\mathcal{S}",
+          "\\leadsto",
+          "\\cdot",
+          "\\%",
+          "\\Pi"
+        ],
+        "latex": "4\\mathcal{S}\\leadsto\\%\\cdot\\Pi",
+        "target_tokens": [
+          "4",
+          "5",
+          "\\div",
+          "5",
+          "=",
+          "9"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          3,
+          3,
+          156,
+          296,
+          13
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0164"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f"
+        ],
+        "latex": "f",
+        "target_tokens": [
+          "f"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0001"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "-"
+        ],
+        "latex": "-",
+        "target_tokens": [
+          "-"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0002"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "0",
+          "x",
+          "7"
+        ],
+        "latex": "0x7",
+        "target_tokens": [
+          "0",
+          "\\times",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0003"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "4",
+          "7"
+        ],
+        "latex": "247",
+        "target_tokens": [
+          "2",
+          "+",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0004"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5",
+          "+",
+          "4"
+        ],
+        "latex": "5+4",
+        "target_tokens": [
+          "5",
+          "+",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0005"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "7",
+          "x",
+          "3",
+          "=",
+          "2",
+          "|"
+        ],
+        "latex": "7x3=2|",
+        "target_tokens": [
+          "7",
+          "\\times",
+          "3",
+          "=",
+          "2",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0006"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "6",
+          "\\div",
+          "8",
+          "=",
+          "2"
+        ],
+        "latex": "|6\\div8=2",
+        "target_tokens": [
+          "1",
+          "6",
+          "\\div",
+          "8",
+          "=",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0007"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "b",
+          "=",
+          "4"
+        ],
+        "latex": "b=4",
+        "target_tokens": [
+          "b",
+          "=",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0008"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "=",
+          "|"
+        ],
+        "latex": "f(y)=|",
+        "target_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "=",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          4
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0009"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "X",
+          "\\neq",
+          "y"
+        ],
+        "latex": "X\\neqy",
+        "target_tokens": [
+          "x",
+          "\\neq",
+          "y"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0010"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "="
+        ],
+        "latex": "=",
+        "target_tokens": [
+          "="
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0071"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\times"
+        ],
+        "latex": "\\times",
+        "target_tokens": [
+          "\\times"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0072"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "\\times",
+          "5"
+        ],
+        "latex": "|\\times5",
+        "target_tokens": [
+          "1",
+          "\\times",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0073"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "7",
+          "-",
+          "\\longmapsto"
+        ],
+        "latex": "7\\longmapsto-",
+        "target_tokens": [
+          "7",
+          "-",
+          "0"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          1,
+          16
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0074"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "1",
+          "+",
+          "0"
+        ],
+        "latex": "|1+0",
+        "target_tokens": [
+          "1",
+          "1",
+          "+",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0075"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "4",
+          "0",
+          "\\div",
+          "8",
+          "=",
+          "5"
+        ],
+        "latex": "40\\div8=5",
+        "target_tokens": [
+          "4",
+          "0",
+          "\\div",
+          "8",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0076"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "y",
+          "+",
+          "7",
+          ")"
+        ],
+        "latex": "(y+7)",
+        "target_tokens": [
+          "(",
+          "y",
+          "+",
+          "7",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0077"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "a",
+          "=",
+          "S"
+        ],
+        "latex": "a=S",
+        "target_tokens": [
+          "a",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          4
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0078"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "b",
+          "/",
+          "4"
+        ],
+        "latex": "b/4",
+        "target_tokens": [
+          "b",
+          "/",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0079"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "n",
+          "/",
+          "3"
+        ],
+        "latex": "n/3",
+        "target_tokens": [
+          "n",
+          "/",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0080"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|"
+        ],
+        "latex": "|",
+        "target_tokens": [
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0118"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "m"
+        ],
+        "latex": "m",
+        "target_tokens": [
+          "m"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0119"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "+"
+        ],
+        "latex": "+",
+        "target_tokens": [
+          "+"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0120"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "="
+        ],
+        "latex": "=",
+        "target_tokens": [
+          "="
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0121"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f"
+        ],
+        "latex": "f",
+        "target_tokens": [
+          "f"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0066"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "\\times",
+          "4",
+          "=",
+          "4"
+        ],
+        "latex": "|\\times4=4",
+        "target_tokens": [
+          "1",
+          "\\times",
+          "4",
+          "=",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0067"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "\\circ",
+          "\\div",
+          "4",
+          "\\asymp",
+          "5"
+        ],
+        "latex": "2\\circ\\div4\\asymp5",
+        "target_tokens": [
+          "2",
+          "0",
+          "\\div",
+          "4",
+          "=",
+          "5"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          7,
+          1,
+          1,
+          3,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0068"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "y",
+          "\\triangle",
+          "-"
+        ],
+        "latex": "y\\triangle-",
+        "target_tokens": [
+          "y",
+          "=",
+          "5"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          268,
+          87
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0069"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\circlearrowright"
+        ],
+        "latex": "\\circlearrowright",
+        "target_tokens": [
+          "0"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          19
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0032"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "4"
+        ],
+        "latex": "4",
+        "target_tokens": [
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0033"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5"
+        ],
+        "latex": "5",
+        "target_tokens": [
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0034"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6"
+        ],
+        "latex": "6",
+        "target_tokens": [
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0035"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\aa"
+        ],
+        "latex": "\\aa",
+        "target_tokens": [
+          "8"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          79
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0036"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "9"
+        ],
+        "latex": "9",
+        "target_tokens": [
+          "9"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0037"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\mathfrak{X}"
+        ],
+        "latex": "\\mathfrak{X}",
+        "target_tokens": [
+          "x"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          8
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0038"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "y"
+        ],
+        "latex": "y",
+        "target_tokens": [
+          "y"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0039"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f"
+        ],
+        "latex": "f",
+        "target_tokens": [
+          "f"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0040"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "g"
+        ],
+        "latex": "g",
+        "target_tokens": [
+          "g"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0041"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "+"
+        ],
+        "latex": "+",
+        "target_tokens": [
+          "+"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0042"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "-"
+        ],
+        "latex": "-",
+        "target_tokens": [
+          "-"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0043"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\Xi"
+        ],
+        "latex": "\\Xi",
+        "target_tokens": [
+          "="
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0044"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\times"
+        ],
+        "latex": "\\times",
+        "target_tokens": [
+          "\\times"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0081"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "("
+        ],
+        "latex": "(",
+        "target_tokens": [
+          "("
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0082"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          ")"
+        ],
+        "latex": ")",
+        "target_tokens": [
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 5,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5,
+        "sample_id": "aiflow_0083"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "4",
+          "\\times",
+          "6"
+        ],
+        "latex": "4\\times6",
+        "target_tokens": [
+          "4",
+          "\\times",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0084"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "+",
+          "3"
+        ],
+        "latex": "6+3",
+        "target_tokens": [
+          "6",
+          "+",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0085"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "\\times",
+          "\\parr",
+          "=",
+          "4",
+          "\\parr"
+        ],
+        "latex": "6\\times\\parr=4\\parr",
+        "target_tokens": [
+          "6",
+          "\\times",
+          "8",
+          "=",
+          "4",
+          "8"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0086"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "q",
+          "+",
+          "|",
+          "=",
+          "|",
+          "\\circ"
+        ],
+        "latex": "q+|=|\\circ",
+        "target_tokens": [
+          "9",
+          "+",
+          "1",
+          "=",
+          "1",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          3,
+          1,
+          2,
+          5
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0087"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "9",
+          "-",
+          "4"
+        ],
+        "latex": "9-4",
+        "target_tokens": [
+          "9",
+          "-",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0088"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "I",
+          "0",
+          "+",
+          "2"
+        ],
+        "latex": "I0+2",
+        "target_tokens": [
+          "1",
+          "0",
+          "+",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0089"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "2",
+          "-",
+          "5"
+        ],
+        "latex": "|2-5",
+        "target_tokens": [
+          "1",
+          "2",
+          "-",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0090"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "+",
+          "2"
+        ],
+        "latex": "x+2",
+        "target_tokens": [
+          "x",
+          "+",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0091"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "x",
+          "\\between",
+          "+",
+          "|"
+        ],
+        "latex": "2x\\between+|",
+        "target_tokens": [
+          "2",
+          "\\times",
+          "x",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          2,
+          1,
+          4
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0092"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "/",
+          "2"
+        ],
+        "latex": "x/2",
+        "target_tokens": [
+          "x",
+          "/",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0093"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "y",
+          "-",
+          "3"
+        ],
+        "latex": "y-3",
+        "target_tokens": [
+          "y",
+          "-",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0094"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "L",
+          "\\between",
+          ")",
+          "+",
+          "2"
+        ],
+        "latex": "fL\\between)+2",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "+",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0095"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "\\zeta",
+          ")"
+        ],
+        "latex": "f(\\zeta)",
+        "target_tokens": [
+          "f",
+          "(",
+          "y",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          5,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0096"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "g",
+          "L",
+          "x",
+          ")"
+        ],
+        "latex": "gLx)",
+        "target_tokens": [
+          "g",
+          "(",
+          "x",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          4,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0097"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "2"
+        ],
+        "latex": "x^{2}",
+        "target_tokens": [
+          "x",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1
+        ],
+        "valid_beam_candidates": 25,
+        "relation_count": 1,
+        "relation_score": -0.2231435513142097,
+        "branch_evaluations": 30,
+        "sample_id": "aiflow_0098"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\sqrt{}",
+          "\\iota",
+          "x",
+          ")"
+        ],
+        "latex": "\\sqrt{\\iotax})",
+        "target_tokens": [
+          "\\sqrt{}",
+          "(",
+          "x",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 51,
+        "relation_count": 2,
+        "relation_score": -0.05129329438755058,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0099"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "y",
+          "2",
+          "\\dag",
+          "|"
+        ],
+        "latex": "y^{2}\\dag|",
+        "target_tokens": [
+          "y",
+          "2",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          4,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 1,
+        "relation_score": -0.2231435513142097,
+        "branch_evaluations": 780,
+        "sample_id": "aiflow_0100"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "7",
+          "=",
+          "7"
+        ],
+        "latex": "7=7",
+        "target_tokens": [
+          "7",
+          "=",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0101"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "=",
+          "y"
+        ],
+        "latex": "x=y",
+        "target_tokens": [
+          "x",
+          "=",
+          "y"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0102"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "+",
+          "y",
+          "=",
+          "5"
+        ],
+        "latex": "x+y=5",
+        "target_tokens": [
+          "x",
+          "+",
+          "y",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0103"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "L",
+          "x",
+          ")",
+          "+",
+          "g",
+          "(",
+          "\\zeta",
+          ")"
+        ],
+        "latex": "fLx)+g^{(}\\zeta)",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "+",
+          "g",
+          "(",
+          "y",
+          ")"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          6,
+          1,
+          1,
+          1,
+          1,
+          1,
+          22,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 1,
+        "relation_score": -0.2231435513142097,
+        "branch_evaluations": 3980,
+        "sample_id": "aiflow_0104"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\fint",
+          "(",
+          "g",
+          "\\iota",
+          "x",
+          ")",
+          ")"
+        ],
+        "latex": "\\fint(g\\iotax))",
+        "target_tokens": [
+          "f",
+          "(",
+          "g",
+          "(",
+          "x",
+          ")",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2700,
+        "sample_id": "aiflow_0105"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "x",
+          ")"
+        ],
+        "latex": "(x)",
+        "target_tokens": [
+          "(",
+          "x",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0106"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "y",
+          "-",
+          "2",
+          ")"
+        ],
+        "latex": "(y-2)",
+        "target_tokens": [
+          "(",
+          "y",
+          "-",
+          "2",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0107"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "[",
+          "3",
+          "+",
+          "5",
+          ")"
+        ],
+        "latex": "[3+5)",
+        "target_tokens": [
+          "(",
+          "3",
+          "+",
+          "5",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0108"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "\\kappa",
+          "4",
+          "(",
+          "y",
+          "-",
+          "|",
+          ")",
+          ")"
+        ],
+        "latex": "(\\kappa4(y-|))",
+        "target_tokens": [
+          "(",
+          "x",
+          "+",
+          "(",
+          "y",
+          "-",
+          "1",
+          ")",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          3,
+          1,
+          1,
+          1,
+          3,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 3980,
+        "sample_id": "aiflow_0109"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "\\times",
+          "(",
+          "x",
+          "+",
+          "i",
+          ")"
+        ],
+        "latex": "3\\times(x+i)",
+        "target_tokens": [
+          "3",
+          "\\times",
+          "(",
+          "x",
+          "+",
+          "1",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          3,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2700,
+        "sample_id": "aiflow_0110"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "x",
+          "\\Psi",
+          "\\prime",
+          ")",
+          "\\times",
+          "2"
+        ],
+        "latex": "(x\\Psi\\prime)\\times2",
+        "target_tokens": [
+          "(",
+          "x",
+          "+",
+          "1",
+          ")",
+          "\\times",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          3,
+          4,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2700,
+        "sample_id": "aiflow_0111"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "\\times",
+          "y",
+          "+",
+          "2"
+        ],
+        "latex": "x\\timesy+2",
+        "target_tokens": [
+          "x",
+          "\\times",
+          "y",
+          "+",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0112"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "p",
+          "\\div",
+          "2"
+        ],
+        "latex": "p\\div2",
+        "target_tokens": [
+          "8",
+          "\\div",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 155,
+        "sample_id": "aiflow_0113"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "\\times",
+          "y",
+          "-",
+          "2"
+        ],
+        "latex": "3\\timesy-2",
+        "target_tokens": [
+          "3",
+          "\\times",
+          "y",
+          "-",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 1420,
+        "sample_id": "aiflow_0114"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "g",
+          "(",
+          "y",
+          ")",
+          "-",
+          "|"
+        ],
+        "latex": "g(y)-|",
+        "target_tokens": [
+          "g",
+          "(",
+          "y",
+          ")",
+          "-",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0115"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\fint",
+          "\\iota",
+          "x",
+          ")",
+          "=",
+          "y"
+        ],
+        "latex": "\\fint\\iotax)=y",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "=",
+          "y"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2060,
+        "sample_id": "aiflow_0116"
+      }
+    ],
+    "20": [
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "+",
+          ")",
+          "=",
+          "2"
+        ],
+        "latex": "|+)=2",
+        "target_tokens": [
+          "1",
+          "+",
+          "1",
+          "=",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          5,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0140"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "+",
+          "9"
+        ],
+        "latex": "3+9",
+        "target_tokens": [
+          "3",
+          "+",
+          "9"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0141"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5",
+          "\\times",
+          ")",
+          "=",
+          "5"
+        ],
+        "latex": "5\\times)=5",
+        "target_tokens": [
+          "5",
+          "\\times",
+          "1",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          14,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0142"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "9",
+          "+",
+          "3"
+        ],
+        "latex": "9+3",
+        "target_tokens": [
+          "9",
+          "+",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0143"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "2",
+          "+",
+          "5",
+          "=",
+          "\\rfloor",
+          "7"
+        ],
+        "latex": "|2+5=\\rfloor7",
+        "target_tokens": [
+          "1",
+          "2",
+          "+",
+          "5",
+          "=",
+          "1",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1,
+          1,
+          3,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 13220,
+        "sample_id": "aiflow_0144"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "2",
+          "+",
+          "8"
+        ],
+        "latex": "|2+8",
+        "target_tokens": [
+          "1",
+          "2",
+          "+",
+          "8"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0145"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "\\chi",
+          "+",
+          "9",
+          ")"
+        ],
+        "latex": "(\\chi+9)",
+        "target_tokens": [
+          "(",
+          "x",
+          "+",
+          "9",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0146"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "b",
+          "/",
+          "3"
+        ],
+        "latex": "b/3",
+        "target_tokens": [
+          "b",
+          "/",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0147"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "0",
+          "+",
+          "0"
+        ],
+        "latex": "0+0",
+        "target_tokens": [
+          "0",
+          "+",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0015"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "1",
+          "\\bot",
+          "5"
+        ],
+        "latex": "1\\bot5",
+        "target_tokens": [
+          "1",
+          "+",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0016"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "\\times",
+          "O",
+          "=",
+          "\\mathcal{O}"
+        ],
+        "latex": "6\\timesO=\\mathcal{O}",
+        "target_tokens": [
+          "6",
+          "\\times",
+          "0",
+          "=",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0017"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "7",
+          "-",
+          "6",
+          "=",
+          "1"
+        ],
+        "latex": "7-6=1",
+        "target_tokens": [
+          "7",
+          "-",
+          "6",
+          "=",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0018"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "0",
+          "-",
+          "3"
+        ],
+        "latex": "|0-3",
+        "target_tokens": [
+          "1",
+          "0",
+          "-",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0019"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "/",
+          "o",
+          "+",
+          "8"
+        ],
+        "latex": "/o+8",
+        "target_tokens": [
+          "1",
+          "0",
+          "+",
+          "8"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          4,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0020"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "/",
+          "2",
+          "-",
+          "/"
+        ],
+        "latex": "/2-/",
+        "target_tokens": [
+          "1",
+          "2",
+          "-",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          2
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0021"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "\\div",
+          "/",
+          "=",
+          "3"
+        ],
+        "latex": "3\\div/=3",
+        "target_tokens": [
+          "3",
+          "\\div",
+          "1",
+          "=",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          2,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0022"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "6",
+          "\\div",
+          "6",
+          "=",
+          "5"
+        ],
+        "latex": "36\\div6=5",
+        "target_tokens": [
+          "3",
+          "0",
+          "\\div",
+          "6",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0023"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "4",
+          "8",
+          "\\div",
+          "8",
+          "=",
+          "6"
+        ],
+        "latex": "48\\div8=6",
+        "target_tokens": [
+          "4",
+          "8",
+          "\\div",
+          "8",
+          "=",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0024"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "y",
+          "/",
+          "4"
+        ],
+        "latex": "y/4",
+        "target_tokens": [
+          "y",
+          "/",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0025"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "b",
+          "+",
+          "4"
+        ],
+        "latex": "b+4",
+        "target_tokens": [
+          "b",
+          "+",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0026"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "m",
+          "/",
+          "4"
+        ],
+        "latex": "m/4",
+        "target_tokens": [
+          "m",
+          "/",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0027"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "n",
+          "+",
+          "5",
+          ")"
+        ],
+        "latex": "(n+5)",
+        "target_tokens": [
+          "(",
+          "n",
+          "+",
+          "5",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0028"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "+",
+          "2"
+        ],
+        "latex": "f(y)+2",
+        "target_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "+",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0029"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "+",
+          "4"
+        ],
+        "latex": "f(y)+4",
+        "target_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "+",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0030"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "-",
+          "0",
+          "=",
+          "2"
+        ],
+        "latex": "2-0=2",
+        "target_tokens": [
+          "2",
+          "-",
+          "0",
+          "=",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0151"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "\\times",
+          "\\mathcal{O}",
+          "=",
+          "\\mathcal{O}"
+        ],
+        "latex": "6\\times\\mathcal{O}=\\mathcal{O}",
+        "target_tokens": [
+          "6",
+          "\\times",
+          "0",
+          "=",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          2,
+          1,
+          2
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0152"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "7",
+          "-",
+          "/",
+          "=",
+          "6"
+        ],
+        "latex": "7-/=6",
+        "target_tokens": [
+          "7",
+          "-",
+          "1",
+          "=",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          3,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0153"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "8",
+          "+",
+          "9"
+        ],
+        "latex": "8+9",
+        "target_tokens": [
+          "8",
+          "+",
+          "9"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0154"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "1",
+          "\\div",
+          "(",
+          "=",
+          "/"
+        ],
+        "latex": "1\\div(=/",
+        "target_tokens": [
+          "1",
+          "\\div",
+          "1",
+          "=",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          3,
+          1,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0155"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "+",
+          "6"
+        ],
+        "latex": "x+6",
+        "target_tokens": [
+          "x",
+          "+",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0156"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "b",
+          "+",
+          "7"
+        ],
+        "latex": "b+7",
+        "target_tokens": [
+          "b",
+          "+",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0157"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "+",
+          "0",
+          "=",
+          "2"
+        ],
+        "latex": "2+0=2",
+        "target_tokens": [
+          "2",
+          "+",
+          "0",
+          "=",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0122"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5",
+          "-",
+          "0"
+        ],
+        "latex": "5-0",
+        "target_tokens": [
+          "5",
+          "-",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 126,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0123"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5",
+          "x",
+          "0"
+        ],
+        "latex": "5x0",
+        "target_tokens": [
+          "5",
+          "\\times",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0124"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5",
+          "+",
+          "2",
+          "=",
+          "\\eta"
+        ],
+        "latex": "5+2=\\eta",
+        "target_tokens": [
+          "5",
+          "+",
+          "2",
+          "=",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0125"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "7",
+          "+",
+          "4",
+          "=",
+          "|",
+          "|"
+        ],
+        "latex": "7+4=||",
+        "target_tokens": [
+          "7",
+          "+",
+          "4",
+          "=",
+          "1",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          3,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0126"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "0",
+          "-",
+          "7"
+        ],
+        "latex": "|0-7",
+        "target_tokens": [
+          "1",
+          "0",
+          "-",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0127"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "2",
+          "-",
+          "0",
+          "\\simeq",
+          "|",
+          "2"
+        ],
+        "latex": "|2-0\\simeq|2",
+        "target_tokens": [
+          "1",
+          "2",
+          "-",
+          "0",
+          "=",
+          "1",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1,
+          2,
+          3,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 13220,
+        "sample_id": "aiflow_0128"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "0",
+          "\\div",
+          "5",
+          "=",
+          "6"
+        ],
+        "latex": "30\\div5=6",
+        "target_tokens": [
+          "3",
+          "0",
+          "\\div",
+          "5",
+          "=",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 126,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0129"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "8",
+          "\\div",
+          "7",
+          "=",
+          "4"
+        ],
+        "latex": "28\\div7=4",
+        "target_tokens": [
+          "2",
+          "8",
+          "\\div",
+          "7",
+          "=",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0130"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "y",
+          "=",
+          "3"
+        ],
+        "latex": "y=3",
+        "target_tokens": [
+          "y",
+          "=",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0131"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "4",
+          "x",
+          "a",
+          "+",
+          "|"
+        ],
+        "latex": "4xa+|",
+        "target_tokens": [
+          "4",
+          "\\times",
+          "a",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1,
+          1,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0132"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "a",
+          "=",
+          "5"
+        ],
+        "latex": "a=5",
+        "target_tokens": [
+          "a",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0133"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "\\times",
+          "b",
+          "+",
+          "|"
+        ],
+        "latex": "3\\timesb+|",
+        "target_tokens": [
+          "3",
+          "\\times",
+          "b",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0134"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "b",
+          "+",
+          "4",
+          ")"
+        ],
+        "latex": "(b+4)",
+        "target_tokens": [
+          "(",
+          "b",
+          "+",
+          "4",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0135"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5",
+          "X",
+          "m",
+          "+",
+          "|"
+        ],
+        "latex": "5Xm+|",
+        "target_tokens": [
+          "5",
+          "\\times",
+          "m",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1,
+          1,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0136"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "n",
+          "+",
+          "9",
+          ")"
+        ],
+        "latex": "(n+9)",
+        "target_tokens": [
+          "(",
+          "n",
+          "+",
+          "9",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0137"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\hbar"
+        ],
+        "latex": "\\hbar",
+        "target_tokens": [
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          6
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0046"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "n"
+        ],
+        "latex": "n",
+        "target_tokens": [
+          "n"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0047"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "="
+        ],
+        "latex": "=",
+        "target_tokens": [
+          "="
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0048"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "/"
+        ],
+        "latex": "/",
+        "target_tokens": [
+          "/"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0049"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "0",
+          "X",
+          "7",
+          "=",
+          "0"
+        ],
+        "latex": "0X7=0",
+        "target_tokens": [
+          "0",
+          "\\times",
+          "7",
+          "=",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0050"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "\\times",
+          "5",
+          "=",
+          "(",
+          "0"
+        ],
+        "latex": "2\\times5=(0",
+        "target_tokens": [
+          "2",
+          "\\times",
+          "5",
+          "=",
+          "1",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          4,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0051"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "X",
+          "8",
+          "=",
+          "(",
+          "6"
+        ],
+        "latex": "2X8=(6",
+        "target_tokens": [
+          "2",
+          "\\times",
+          "8",
+          "=",
+          "1",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1,
+          1,
+          4,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0052"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\hbar",
+          "+",
+          "0",
+          "=",
+          "5"
+        ],
+        "latex": "\\hbar+0=5",
+        "target_tokens": [
+          "5",
+          "+",
+          "0",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 125,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0053"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "+",
+          "3",
+          "=",
+          "9"
+        ],
+        "latex": "6+3=9",
+        "target_tokens": [
+          "6",
+          "+",
+          "3",
+          "=",
+          "9"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0054"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "\\times",
+          "6",
+          "=",
+          "3",
+          "6"
+        ],
+        "latex": "6\\times6=36",
+        "target_tokens": [
+          "6",
+          "\\times",
+          "6",
+          "=",
+          "3",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 126,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0055"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "+",
+          "8",
+          "\\triangledown",
+          "1",
+          "4"
+        ],
+        "latex": "6+8\\triangledown14",
+        "target_tokens": [
+          "6",
+          "+",
+          "8",
+          "=",
+          "1",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          4,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0056"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "1",
+          "2",
+          "+",
+          "2"
+        ],
+        "latex": "12+2",
+        "target_tokens": [
+          "1",
+          "2",
+          "+",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0057"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\lfloor",
+          "\\mathscr{C}",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "latex": "\\lfloor\\mathscr{C}\\div3=6",
+        "target_tokens": [
+          "1",
+          "8",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0058"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "n",
+          "/",
+          "2"
+        ],
+        "latex": "n/2",
+        "target_tokens": [
+          "n",
+          "/",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0059"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "X",
+          "n",
+          "+",
+          "1"
+        ],
+        "latex": "6Xn+1",
+        "target_tokens": [
+          "6",
+          "\\times",
+          "n",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0060"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "8",
+          "X",
+          "n",
+          "+",
+          "1"
+        ],
+        "latex": "8Xn+1",
+        "target_tokens": [
+          "8",
+          "\\times",
+          "n",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0061"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "+",
+          "1"
+        ],
+        "latex": "f(x)+1",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0062"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "=",
+          "4"
+        ],
+        "latex": "f(x)=4",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "=",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0063"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "\\mathcal{A}",
+          ")",
+          "+",
+          "2"
+        ],
+        "latex": "f(\\mathcal{A})+2",
+        "target_tokens": [
+          "f",
+          "(",
+          "t",
+          ")",
+          "+",
+          "2"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0064"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\sqrt{}",
+          "(",
+          "a",
+          ")"
+        ],
+        "latex": "\\sqrt{(a)}",
+        "target_tokens": [
+          "\\sqrt{}",
+          "(",
+          "a",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 67,
+        "relation_count": 3,
+        "relation_score": -0.05129329438755057,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0065"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "/"
+        ],
+        "latex": "/",
+        "target_tokens": [
+          "/"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0160"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "X",
+          "2",
+          "=",
+          "4"
+        ],
+        "latex": "2X2=4",
+        "target_tokens": [
+          "2",
+          "\\times",
+          "2",
+          "=",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0161"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "8",
+          "+",
+          "5",
+          "=",
+          "1",
+          "3"
+        ],
+        "latex": "8+5=13",
+        "target_tokens": [
+          "8",
+          "+",
+          "5",
+          "=",
+          "1",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0162"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "\\div",
+          "\\vdots",
+          "\\%",
+          "3"
+        ],
+        "latex": "6\\div\\vdots\\%3",
+        "target_tokens": [
+          "6",
+          "\\div",
+          "2",
+          "=",
+          "3"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          1,
+          20,
+          42,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0163"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "4",
+          "\\mathcal{S}",
+          "\\leadsto",
+          "\\cdot",
+          "\\%",
+          "\\Pi"
+        ],
+        "latex": "4\\mathcal{S}\\leadsto\\%\\cdot\\Pi",
+        "target_tokens": [
+          "4",
+          "5",
+          "\\div",
+          "5",
+          "=",
+          "9"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          3,
+          3,
+          156,
+          296,
+          13
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0164"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f"
+        ],
+        "latex": "f",
+        "target_tokens": [
+          "f"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0001"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "-"
+        ],
+        "latex": "-",
+        "target_tokens": [
+          "-"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0002"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "0",
+          "x",
+          "7"
+        ],
+        "latex": "0x7",
+        "target_tokens": [
+          "0",
+          "\\times",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0003"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "4",
+          "7"
+        ],
+        "latex": "247",
+        "target_tokens": [
+          "2",
+          "+",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0004"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5",
+          "+",
+          "4"
+        ],
+        "latex": "5+4",
+        "target_tokens": [
+          "5",
+          "+",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0005"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "7",
+          "x",
+          "3",
+          "=",
+          "2",
+          "|"
+        ],
+        "latex": "7x3=2|",
+        "target_tokens": [
+          "7",
+          "\\times",
+          "3",
+          "=",
+          "2",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1,
+          1,
+          1,
+          2
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0006"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "6",
+          "\\div",
+          "8",
+          "=",
+          "2"
+        ],
+        "latex": "|6\\div8=2",
+        "target_tokens": [
+          "1",
+          "6",
+          "\\div",
+          "8",
+          "=",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0007"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "b",
+          "=",
+          "4"
+        ],
+        "latex": "b=4",
+        "target_tokens": [
+          "b",
+          "=",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0008"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "=",
+          "|"
+        ],
+        "latex": "f(y)=|",
+        "target_tokens": [
+          "f",
+          "(",
+          "y",
+          ")",
+          "=",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          4
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0009"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "X",
+          "\\neq",
+          "y"
+        ],
+        "latex": "X\\neqy",
+        "target_tokens": [
+          "x",
+          "\\neq",
+          "y"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0010"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "="
+        ],
+        "latex": "=",
+        "target_tokens": [
+          "="
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0071"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\times"
+        ],
+        "latex": "\\times",
+        "target_tokens": [
+          "\\times"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0072"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "\\times",
+          "5"
+        ],
+        "latex": "|\\times5",
+        "target_tokens": [
+          "1",
+          "\\times",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0073"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "7",
+          "-",
+          "\\longmapsto"
+        ],
+        "latex": "7\\longmapsto-",
+        "target_tokens": [
+          "7",
+          "-",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          16
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0074"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "1",
+          "+",
+          "0"
+        ],
+        "latex": "|1+0",
+        "target_tokens": [
+          "1",
+          "1",
+          "+",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0075"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "4",
+          "0",
+          "\\div",
+          "8",
+          "=",
+          "5"
+        ],
+        "latex": "40\\div8=5",
+        "target_tokens": [
+          "4",
+          "0",
+          "\\div",
+          "8",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0076"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "y",
+          "+",
+          "7",
+          ")"
+        ],
+        "latex": "(y+7)",
+        "target_tokens": [
+          "(",
+          "y",
+          "+",
+          "7",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0077"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "a",
+          "=",
+          "S"
+        ],
+        "latex": "a=S",
+        "target_tokens": [
+          "a",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          4
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0078"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "b",
+          "/",
+          "4"
+        ],
+        "latex": "b/4",
+        "target_tokens": [
+          "b",
+          "/",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0079"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "n",
+          "/",
+          "3"
+        ],
+        "latex": "n/3",
+        "target_tokens": [
+          "n",
+          "/",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0080"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|"
+        ],
+        "latex": "|",
+        "target_tokens": [
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0118"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "m"
+        ],
+        "latex": "m",
+        "target_tokens": [
+          "m"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0119"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "+"
+        ],
+        "latex": "+",
+        "target_tokens": [
+          "+"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0120"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "="
+        ],
+        "latex": "=",
+        "target_tokens": [
+          "="
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0121"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f"
+        ],
+        "latex": "f",
+        "target_tokens": [
+          "f"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0066"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "\\times",
+          "4",
+          "=",
+          "4"
+        ],
+        "latex": "|\\times4=4",
+        "target_tokens": [
+          "1",
+          "\\times",
+          "4",
+          "=",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0067"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "\\circ",
+          "\\div",
+          "4",
+          "\\asymp",
+          "5"
+        ],
+        "latex": "2\\circ\\div4\\asymp5",
+        "target_tokens": [
+          "2",
+          "0",
+          "\\div",
+          "4",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          7,
+          1,
+          1,
+          3,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0068"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "y",
+          "\\triangle",
+          "-"
+        ],
+        "latex": "y\\triangle-",
+        "target_tokens": [
+          "y",
+          "=",
+          "5"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          268,
+          87
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0069"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\circlearrowright"
+        ],
+        "latex": "\\circlearrowright",
+        "target_tokens": [
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          19
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0032"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "4"
+        ],
+        "latex": "4",
+        "target_tokens": [
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0033"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "5"
+        ],
+        "latex": "5",
+        "target_tokens": [
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0034"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6"
+        ],
+        "latex": "6",
+        "target_tokens": [
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0035"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\aa"
+        ],
+        "latex": "\\aa",
+        "target_tokens": [
+          "8"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          79
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0036"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "9"
+        ],
+        "latex": "9",
+        "target_tokens": [
+          "9"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0037"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\mathfrak{X}"
+        ],
+        "latex": "\\mathfrak{X}",
+        "target_tokens": [
+          "x"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          8
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0038"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "y"
+        ],
+        "latex": "y",
+        "target_tokens": [
+          "y"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0039"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f"
+        ],
+        "latex": "f",
+        "target_tokens": [
+          "f"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0040"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "g"
+        ],
+        "latex": "g",
+        "target_tokens": [
+          "g"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0041"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "+"
+        ],
+        "latex": "+",
+        "target_tokens": [
+          "+"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0042"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "-"
+        ],
+        "latex": "-",
+        "target_tokens": [
+          "-"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0043"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\Xi"
+        ],
+        "latex": "\\Xi",
+        "target_tokens": [
+          "="
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0044"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\times"
+        ],
+        "latex": "\\times",
+        "target_tokens": [
+          "\\times"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0081"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "("
+        ],
+        "latex": "(",
+        "target_tokens": [
+          "("
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0082"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          ")"
+        ],
+        "latex": ")",
+        "target_tokens": [
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1
+        ],
+        "valid_beam_candidates": 20,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 20,
+        "sample_id": "aiflow_0083"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "4",
+          "\\times",
+          "6"
+        ],
+        "latex": "4\\times6",
+        "target_tokens": [
+          "4",
+          "\\times",
+          "6"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0084"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "+",
+          "3"
+        ],
+        "latex": "6+3",
+        "target_tokens": [
+          "6",
+          "+",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0085"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "6",
+          "\\times",
+          "\\parr",
+          "=",
+          "4",
+          "\\parr"
+        ],
+        "latex": "6\\times\\parr=4\\parr",
+        "target_tokens": [
+          "6",
+          "\\times",
+          "8",
+          "=",
+          "4",
+          "8"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          2,
+          1,
+          1,
+          2
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0086"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "q",
+          "+",
+          "|",
+          "=",
+          "|",
+          "\\circ"
+        ],
+        "latex": "q+|=|\\circ",
+        "target_tokens": [
+          "9",
+          "+",
+          "1",
+          "=",
+          "1",
+          "0"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          3,
+          1,
+          2,
+          5
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0087"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "9",
+          "-",
+          "4"
+        ],
+        "latex": "9-4",
+        "target_tokens": [
+          "9",
+          "-",
+          "4"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0088"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "I",
+          "0",
+          "+",
+          "2"
+        ],
+        "latex": "I0+2",
+        "target_tokens": [
+          "1",
+          "0",
+          "+",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0089"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "|",
+          "2",
+          "-",
+          "5"
+        ],
+        "latex": "|2-5",
+        "target_tokens": [
+          "1",
+          "2",
+          "-",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0090"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "+",
+          "2"
+        ],
+        "latex": "x+2",
+        "target_tokens": [
+          "x",
+          "+",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0091"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "2",
+          "x",
+          "\\between",
+          "+",
+          "|"
+        ],
+        "latex": "2x\\between+|",
+        "target_tokens": [
+          "2",
+          "\\times",
+          "x",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          2,
+          2,
+          1,
+          4
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0092"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "/",
+          "2"
+        ],
+        "latex": "x/2",
+        "target_tokens": [
+          "x",
+          "/",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0093"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "y",
+          "-",
+          "3"
+        ],
+        "latex": "y-3",
+        "target_tokens": [
+          "y",
+          "-",
+          "3"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0094"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "L",
+          "\\between",
+          ")",
+          "+",
+          "2"
+        ],
+        "latex": "fL\\between)+2",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "+",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0095"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "(",
+          "\\zeta",
+          ")"
+        ],
+        "latex": "f(\\zeta)",
+        "target_tokens": [
+          "f",
+          "(",
+          "y",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          5,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0096"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "g",
+          "L",
+          "x",
+          ")"
+        ],
+        "latex": "gLx)",
+        "target_tokens": [
+          "g",
+          "(",
+          "x",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          4,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0097"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "2"
+        ],
+        "latex": "x^{2}",
+        "target_tokens": [
+          "x",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 1,
+        "relation_score": -0.2231435513142097,
+        "branch_evaluations": 420,
+        "sample_id": "aiflow_0098"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\sqrt{}",
+          "\\iota",
+          "x",
+          ")"
+        ],
+        "latex": "\\sqrt{\\iotax})",
+        "target_tokens": [
+          "\\sqrt{}",
+          "(",
+          "x",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 105,
+        "relation_count": 2,
+        "relation_score": -0.05129329438755058,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0099"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "y",
+          "2",
+          "\\dag",
+          "|"
+        ],
+        "latex": "y^{2}\\dag|",
+        "target_tokens": [
+          "y",
+          "2",
+          "+",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          4,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 1,
+        "relation_score": -0.2231435513142097,
+        "branch_evaluations": 5540,
+        "sample_id": "aiflow_0100"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "7",
+          "=",
+          "7"
+        ],
+        "latex": "7=7",
+        "target_tokens": [
+          "7",
+          "=",
+          "7"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0101"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "=",
+          "y"
+        ],
+        "latex": "x=y",
+        "target_tokens": [
+          "x",
+          "=",
+          "y"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0102"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "+",
+          "y",
+          "=",
+          "5"
+        ],
+        "latex": "x+y=5",
+        "target_tokens": [
+          "x",
+          "+",
+          "y",
+          "=",
+          "5"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0103"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "f",
+          "L",
+          "x",
+          ")",
+          "+",
+          "g",
+          "(",
+          "\\zeta",
+          ")"
+        ],
+        "latex": "fLx)+g^{(}\\zeta)",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "+",
+          "g",
+          "(",
+          "y",
+          ")"
+        ],
+        "candidate_complete": false,
+        "target_ranks": [
+          1,
+          6,
+          1,
+          1,
+          1,
+          1,
+          1,
+          22,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 1,
+        "relation_score": -0.2231435513142097,
+        "branch_evaluations": 18340,
+        "sample_id": "aiflow_0104"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\fint",
+          "(",
+          "g",
+          "\\iota",
+          "x",
+          ")",
+          ")"
+        ],
+        "latex": "\\fint(g\\iotax))",
+        "target_tokens": [
+          "f",
+          "(",
+          "g",
+          "(",
+          "x",
+          ")",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 13220,
+        "sample_id": "aiflow_0105"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "x",
+          ")"
+        ],
+        "latex": "(x)",
+        "target_tokens": [
+          "(",
+          "x",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0106"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "y",
+          "-",
+          "2",
+          ")"
+        ],
+        "latex": "(y-2)",
+        "target_tokens": [
+          "(",
+          "y",
+          "-",
+          "2",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0107"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "[",
+          "3",
+          "+",
+          "5",
+          ")"
+        ],
+        "latex": "[3+5)",
+        "target_tokens": [
+          "(",
+          "3",
+          "+",
+          "5",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0108"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "\\kappa",
+          "4",
+          "(",
+          "y",
+          "-",
+          "|",
+          ")",
+          ")"
+        ],
+        "latex": "(\\kappa4(y-|))",
+        "target_tokens": [
+          "(",
+          "x",
+          "+",
+          "(",
+          "y",
+          "-",
+          "1",
+          ")",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          3,
+          3,
+          1,
+          1,
+          1,
+          3,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 18340,
+        "sample_id": "aiflow_0109"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "\\times",
+          "(",
+          "x",
+          "+",
+          "i",
+          ")"
+        ],
+        "latex": "3\\times(x+i)",
+        "target_tokens": [
+          "3",
+          "\\times",
+          "(",
+          "x",
+          "+",
+          "1",
+          ")"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          3,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 13220,
+        "sample_id": "aiflow_0110"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "(",
+          "x",
+          "\\Psi",
+          "\\prime",
+          ")",
+          "\\times",
+          "2"
+        ],
+        "latex": "(x\\Psi\\prime)\\times2",
+        "target_tokens": [
+          "(",
+          "x",
+          "+",
+          "1",
+          ")",
+          "\\times",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          3,
+          4,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 13220,
+        "sample_id": "aiflow_0111"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "x",
+          "\\times",
+          "y",
+          "+",
+          "2"
+        ],
+        "latex": "x\\timesy+2",
+        "target_tokens": [
+          "x",
+          "\\times",
+          "y",
+          "+",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0112"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "p",
+          "\\div",
+          "2"
+        ],
+        "latex": "p\\div2",
+        "target_tokens": [
+          "8",
+          "\\div",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          3,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 2980,
+        "sample_id": "aiflow_0113"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "3",
+          "\\times",
+          "y",
+          "-",
+          "2"
+        ],
+        "latex": "3\\timesy-2",
+        "target_tokens": [
+          "3",
+          "\\times",
+          "y",
+          "-",
+          "2"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 8100,
+        "sample_id": "aiflow_0114"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "g",
+          "(",
+          "y",
+          ")",
+          "-",
+          "|"
+        ],
+        "latex": "g(y)-|",
+        "target_tokens": [
+          "g",
+          "(",
+          "y",
+          ")",
+          "-",
+          "1"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          3
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0115"
+      },
+      {
+        "accepted": true,
+        "tokens": [
+          "\\fint",
+          "\\iota",
+          "x",
+          ")",
+          "=",
+          "y"
+        ],
+        "latex": "\\fint\\iotax)=y",
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "=",
+          "y"
+        ],
+        "candidate_complete": true,
+        "target_ranks": [
+          2,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "valid_beam_candidates": 128,
+        "relation_count": 0,
+        "relation_score": 0.0,
+        "branch_evaluations": 10660,
+        "sample_id": "aiflow_0116"
+      }
+    ]
+  },
+  "verification": {
+    "checks": {
+      "formula_ID_sets_match": true,
+      "source_targets_and_top5_logits_match_baseline": true,
+      "k5_shadow_decoder_matches_saved_decoder": true,
+      "candidate_completeness_is_monotonic": true,
+      "recovery_and_regression_ids_reconcile": true,
+      "oov_symbol_remains_unreachable": true
+    },
+    "all_checks_pass": true
+  }
+}

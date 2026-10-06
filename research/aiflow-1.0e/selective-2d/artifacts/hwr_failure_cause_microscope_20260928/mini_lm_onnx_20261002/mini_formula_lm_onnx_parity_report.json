@@ -1,0 +1,174 @@
+{
+  "schema": "aiflow-mini-formula-lm-onnx-parity/v1",
+  "generated_at": "2026-10-02T08:22:00.090067+00:00",
+  "status": "shadow_only_consumed_development_diagnostic",
+  "protocol": {
+    "training_performed": false,
+    "crohme_rows_loaded": 0,
+    "crohme_training_or_tuning": false,
+    "formula_examples": 599,
+    "candidate_selection_or_threshold_tuning": false,
+    "evaluation_warning": "The frozen 149-formula development set is consumed data; this is parity evidence only, not independent product acceptance."
+  },
+  "provenance": {
+    "checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_distill_20261002_r2\\mini_formula_lm.pt",
+    "checkpoint_sha256": "dd2889e84c82c9d04f6dacf42cf99de02938902fc220022987de64b8b1567a72",
+    "distillation_report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_distill_20261002_r2\\mini_formula_lm_distillation_report.json",
+    "distillation_report_sha256": "907195a153f076c880e2216f671cbbffa674b59f289780089a7026528d3d3bf9",
+    "summary_sha256": "aef4636afef850a0b9b74736e42ad9487884103684e5827854a7bafd692f9282",
+    "formula_data_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401"
+  },
+  "contract": {
+    "inputs": {
+      "input_ids": "int64[N,S]",
+      "attention_mask": "bool[N,S]",
+      "mask_positions": "int64[N]"
+    },
+    "output": "float32[N,372] logits",
+    "dynamic_batch": true,
+    "dynamic_sequence": true,
+    "opset": 17,
+    "max_positions": 129
+  },
+  "fp32": {
+    "status": "passed",
+    "manual_wrapper_max_abs_error_vs_pytorch": 3.337860107421875e-06,
+    "onnxruntime_max_abs_error_vs_pytorch": 4.291534423828125e-06,
+    "max_abs_error_gate": 0.0001,
+    "model_bytes": 526093,
+    "pytorch_checkpoint_bytes": 512524,
+    "onnxruntime_version": "1.29.0",
+    "formula_exact_metrics_diagnostic_only": {
+      "formulas": 149,
+      "group_exact_formulas": 125,
+      "baseline_top1_formula_exact": 68,
+      "reranked_formula_exact": 84,
+      "delta_formula_exact": 16,
+      "formula_exact_transitions": {
+        "exact_to_exact": 67,
+        "exact_to_wrong": 1,
+        "wrong_to_exact": 17,
+        "wrong_to_wrong": 64
+      },
+      "writer_bootstrap": {
+        "writers": 9,
+        "formulas_by_writer": {
+          "writer_001": 10,
+          "writer_002": 23,
+          "writer_003": 20,
+          "writer_004": 10,
+          "writer_006": 20,
+          "writer_007": 8,
+          "writer_008": 5,
+          "writer_010": 4,
+          "writer_012": 49
+        },
+        "replicates": 20000,
+        "delta_formula_exact_pp_95_ci": [
+          5.853658536585366,
+          13.77245508982036
+        ]
+      },
+      "exact_group_tokens": 469,
+      "baseline_top1_token_hits": 390,
+      "reranked_top1_token_hits": 413,
+      "token_top5_hits": 464,
+      "token_top5_recall": 0.9893390191897654,
+      "target_rank_histogram_on_exact_groups": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4
+      },
+      "top5_complete_formula_count_on_exact_groups": 120,
+      "top5_complete_formula_count_over_all_149": 120,
+      "changed_tokens": 36,
+      "improved_tokens": 27,
+      "regressed_tokens": 4,
+      "candidate_preserved_tokens": 469,
+      "candidate_preservation_rate": 1.0,
+      "new_tokens": 0,
+      "grouping_mutations": 0,
+      "grouping_wrong_formulas_counted_as_failures": 24
+    },
+    "host_latency": {
+      "batch_size": 32,
+      "median_batch_ms_host_not_mobile": 2.034750003076624,
+      "p95_batch_ms_host_not_mobile": 2.5547750050463947,
+      "iterations": 40
+    }
+  },
+  "int8": {
+    "status": "diagnostic_only",
+    "weight_type": "QInt8 dynamic",
+    "max_abs_logit_error_vs_fp32": 0.5304012298583984,
+    "token_argmax_agreement_vs_fp32": 0.988313856427379,
+    "formula_exact_metrics": {
+      "formulas": 149,
+      "group_exact_formulas": 125,
+      "baseline_top1_formula_exact": 68,
+      "reranked_formula_exact": 84,
+      "delta_formula_exact": 16,
+      "formula_exact_transitions": {
+        "exact_to_exact": 67,
+        "exact_to_wrong": 1,
+        "wrong_to_exact": 17,
+        "wrong_to_wrong": 64
+      },
+      "writer_bootstrap": {
+        "writers": 9,
+        "formulas_by_writer": {
+          "writer_001": 10,
+          "writer_002": 23,
+          "writer_003": 20,
+          "writer_004": 10,
+          "writer_006": 20,
+          "writer_007": 8,
+          "writer_008": 5,
+          "writer_010": 4,
+          "writer_012": 49
+        },
+        "replicates": 20000,
+        "delta_formula_exact_pp_95_ci": [
+          5.853658536585366,
+          13.77245508982036
+        ]
+      },
+      "exact_group_tokens": 469,
+      "baseline_top1_token_hits": 390,
+      "reranked_top1_token_hits": 413,
+      "token_top5_hits": 464,
+      "token_top5_recall": 0.9893390191897654,
+      "target_rank_histogram_on_exact_groups": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4
+      },
+      "top5_complete_formula_count_on_exact_groups": 120,
+      "top5_complete_formula_count_over_all_149": 120,
+      "changed_tokens": 36,
+      "improved_tokens": 27,
+      "regressed_tokens": 4,
+      "candidate_preserved_tokens": 469,
+      "candidate_preservation_rate": 1.0,
+      "new_tokens": 0,
+      "grouping_mutations": 0,
+      "grouping_wrong_formulas_counted_as_failures": 24
+    },
+    "model_bytes": 265665,
+    "host_latency": {
+      "batch_size": 32,
+      "median_batch_ms_host_not_mobile": 2.2282000027189497,
+      "p95_batch_ms_host_not_mobile": 2.844145002745789,
+      "iterations": 40
+    }
+  },
+  "decision": {
+    "automatic_default_replacement": false,
+    "android_latency_verified": false,
+    "next_gate": "fresh writer/formula-disjoint acceptance and real-device Android ORT profiling"
+  }
+}

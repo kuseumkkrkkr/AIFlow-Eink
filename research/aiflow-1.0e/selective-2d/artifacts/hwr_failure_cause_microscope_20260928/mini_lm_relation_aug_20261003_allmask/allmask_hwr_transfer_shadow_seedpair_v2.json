@@ -1,0 +1,3295 @@
+{
+  "schema": "aiflow-mini-lm-allmask-hwr-transfer-shadow/v2",
+  "generated_at": "2026-10-03T05:16:15.315801+00:00",
+  "status": "posthoc_consumed_development_transfer_diagnostic",
+  "protocol": {
+    "training_performed": false,
+    "threshold_selection_performed": false,
+    "threshold_policy": "fixed unconditional Top-5 context and fixed HWR-Top-1-agreement lock only; no margin sweep",
+    "context_weight": 0.5,
+    "context_weight_source": "frozen baseline teacher lambda; not retuned for all-position checkpoints",
+    "model_input_contains_truth": false,
+    "candidate_policy": "existing HWR Top-5 only; no new classes or regrouping",
+    "grouping_mutations": 0,
+    "crohme_rows_loaded": 0,
+    "consumed_formula_count": 149,
+    "writer_count": 9,
+    "product_adopted": false,
+    "warning": "The 149-formula cohort is consumed development data. The base context weight was historically calibrated on overlapping development material. This transfer replay is not independent handwriting acceptance or Android latency evidence."
+  },
+  "provenance": {
+    "augmentation_report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_relation_aug_20261003_allmask\\relation_augmentation_report.json",
+    "augmentation_report_sha256": "a642635b0c317bab30389ef93a5ad97355cbf3acf3c9851275144a9fc52beb56",
+    "base_report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_distill_20261002_r2\\mini_formula_lm_distillation_report.json",
+    "base_report_sha256": "907195a153f076c880e2216f671cbbffa674b59f289780089a7026528d3d3bf9",
+    "summary_sha256": "aef4636afef850a0b9b74736e42ad9487884103684e5827854a7bafd692f9282",
+    "formula_data_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "audit_script_sha256": "c8318a6c32013a7ce2f1179ada1a0855c153da369f4470a805c32c1b13dcc838"
+  },
+  "inference": {
+    "formulas": 149,
+    "selected_groups": 599,
+    "fast_group_exact_formulas": 125,
+    "fixed_context_policy_arms": [
+      "frozen_prompt_baseline",
+      "allmask_seed20261003",
+      "allmask_seed20261004"
+    ],
+    "arms": {
+      "frozen_prompt_baseline": {
+        "model": {
+          "kind": "frozen_prompt_distillation_baseline",
+          "checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_distill_20261002_r2\\mini_formula_lm.pt",
+          "checkpoint_sha256": "dd2889e84c82c9d04f6dacf42cf99de02938902fc220022987de64b8b1567a72",
+          "report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_distill_20261002_r2\\mini_formula_lm_distillation_report.json",
+          "report_sha256": "907195a153f076c880e2216f671cbbffa674b59f289780089a7026528d3d3bf9",
+          "layers": 2,
+          "parameters": 124020,
+          "checkpoint_bytes": 512524
+        },
+        "accepted_structural_decodes": {
+          "decoder": 149,
+          "mini_lm_unlocked": 149,
+          "mini_lm_top1_agreement_lock": 149
+        },
+        "metrics": {
+          "fast": {
+            "formulas": 149,
+            "group_exact_formulas": 125,
+            "baseline_top1_formula_exact": 68,
+            "reranked_formula_exact": 68,
+            "delta_formula_exact": 0,
+            "formula_exact_transitions": {
+              "exact_to_exact": 68,
+              "wrong_to_wrong": 81
+            },
+            "writer_bootstrap": {
+              "writers": 9,
+              "formulas_by_writer": {
+                "writer_001": 10,
+                "writer_002": 23,
+                "writer_003": 20,
+                "writer_004": 10,
+                "writer_006": 20,
+                "writer_007": 8,
+                "writer_008": 5,
+                "writer_010": 4,
+                "writer_012": 49
+              },
+              "replicates": 20000,
+              "delta_formula_exact_pp_95_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "exact_group_tokens": 469,
+            "baseline_top1_token_hits": 390,
+            "reranked_top1_token_hits": 390,
+            "token_top5_hits": 464,
+            "token_top5_recall": 0.9893390191897654,
+            "target_rank_histogram_on_exact_groups": {
+              "1": 390,
+              "2": 29,
+              "3": 33,
+              "4": 8,
+              "5": 4
+            },
+            "top5_complete_formula_count_on_exact_groups": 120,
+            "top5_complete_formula_count_over_all_149": 120,
+            "changed_tokens": 0,
+            "improved_tokens": 0,
+            "regressed_tokens": 0,
+            "candidate_preserved_tokens": 469,
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "grouping_mutations": 0,
+            "grouping_wrong_formulas_counted_as_failures": 24
+          },
+          "decoder": {
+            "formulas": 149,
+            "group_exact_formulas": 125,
+            "baseline_top1_formula_exact": 68,
+            "reranked_formula_exact": 68,
+            "delta_formula_exact": 0,
+            "formula_exact_transitions": {
+              "exact_to_exact": 68,
+              "wrong_to_wrong": 81
+            },
+            "writer_bootstrap": {
+              "writers": 9,
+              "formulas_by_writer": {
+                "writer_001": 10,
+                "writer_002": 23,
+                "writer_003": 20,
+                "writer_004": 10,
+                "writer_006": 20,
+                "writer_007": 8,
+                "writer_008": 5,
+                "writer_010": 4,
+                "writer_012": 49
+              },
+              "replicates": 20000,
+              "delta_formula_exact_pp_95_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "exact_group_tokens": 469,
+            "baseline_top1_token_hits": 390,
+            "reranked_top1_token_hits": 390,
+            "token_top5_hits": 464,
+            "token_top5_recall": 0.9893390191897654,
+            "target_rank_histogram_on_exact_groups": {
+              "1": 390,
+              "2": 29,
+              "3": 33,
+              "4": 8,
+              "5": 4
+            },
+            "top5_complete_formula_count_on_exact_groups": 120,
+            "top5_complete_formula_count_over_all_149": 120,
+            "changed_tokens": 0,
+            "improved_tokens": 0,
+            "regressed_tokens": 0,
+            "candidate_preserved_tokens": 469,
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "grouping_mutations": 0,
+            "grouping_wrong_formulas_counted_as_failures": 24
+          },
+          "mini_lm_unlocked": {
+            "formulas": 149,
+            "group_exact_formulas": 125,
+            "baseline_top1_formula_exact": 68,
+            "reranked_formula_exact": 95,
+            "delta_formula_exact": 27,
+            "formula_exact_transitions": {
+              "exact_to_exact": 66,
+              "exact_to_wrong": 2,
+              "wrong_to_exact": 29,
+              "wrong_to_wrong": 52
+            },
+            "writer_bootstrap": {
+              "writers": 9,
+              "formulas_by_writer": {
+                "writer_001": 10,
+                "writer_002": 23,
+                "writer_003": 20,
+                "writer_004": 10,
+                "writer_006": 20,
+                "writer_007": 8,
+                "writer_008": 5,
+                "writer_010": 4,
+                "writer_012": 49
+              },
+              "replicates": 20000,
+              "delta_formula_exact_pp_95_ci": [
+                13.592233009708737,
+                23.008849557522122
+              ]
+            },
+            "exact_group_tokens": 469,
+            "baseline_top1_token_hits": 390,
+            "reranked_top1_token_hits": 433,
+            "token_top5_hits": 464,
+            "token_top5_recall": 0.9893390191897654,
+            "target_rank_histogram_on_exact_groups": {
+              "1": 390,
+              "2": 29,
+              "3": 33,
+              "4": 8,
+              "5": 4
+            },
+            "top5_complete_formula_count_on_exact_groups": 120,
+            "top5_complete_formula_count_over_all_149": 120,
+            "changed_tokens": 62,
+            "improved_tokens": 50,
+            "regressed_tokens": 7,
+            "candidate_preserved_tokens": 469,
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "grouping_mutations": 0,
+            "grouping_wrong_formulas_counted_as_failures": 24
+          },
+          "mini_lm_top1_agreement_lock": {
+            "formulas": 149,
+            "group_exact_formulas": 125,
+            "baseline_top1_formula_exact": 68,
+            "reranked_formula_exact": 68,
+            "delta_formula_exact": 0,
+            "formula_exact_transitions": {
+              "exact_to_exact": 68,
+              "wrong_to_wrong": 81
+            },
+            "writer_bootstrap": {
+              "writers": 9,
+              "formulas_by_writer": {
+                "writer_001": 10,
+                "writer_002": 23,
+                "writer_003": 20,
+                "writer_004": 10,
+                "writer_006": 20,
+                "writer_007": 8,
+                "writer_008": 5,
+                "writer_010": 4,
+                "writer_012": 49
+              },
+              "replicates": 20000,
+              "delta_formula_exact_pp_95_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "exact_group_tokens": 469,
+            "baseline_top1_token_hits": 390,
+            "reranked_top1_token_hits": 390,
+            "token_top5_hits": 464,
+            "token_top5_recall": 0.9893390191897654,
+            "target_rank_histogram_on_exact_groups": {
+              "1": 390,
+              "2": 29,
+              "3": 33,
+              "4": 8,
+              "5": 4
+            },
+            "top5_complete_formula_count_on_exact_groups": 120,
+            "top5_complete_formula_count_over_all_149": 120,
+            "changed_tokens": 0,
+            "improved_tokens": 0,
+            "regressed_tokens": 0,
+            "candidate_preserved_tokens": 469,
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "grouping_mutations": 0,
+            "grouping_wrong_formulas_counted_as_failures": 24
+          }
+        }
+      },
+      "allmask_seed20261003": {
+        "model": {
+          "kind": "all_position_synthetic_relation_augmentation",
+          "checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_relation_aug_20261003_allmask\\prompt_plus_synthetic_2d_seed20261003.pt",
+          "checkpoint_sha256": "08efd7f9a74d589e09a3c2ea8cf4f75ad2da5bd299afa3360c0eb892256bae39",
+          "report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_relation_aug_20261003_allmask\\relation_augmentation_report.json",
+          "report_sha256": "a642635b0c317bab30389ef93a5ad97355cbf3acf3c9851275144a9fc52beb56",
+          "layers": 2,
+          "parameters": 124020,
+          "checkpoint_bytes": 513464,
+          "seed": 20261003,
+          "training_examples": 59900
+        },
+        "accepted_structural_decodes": {
+          "decoder": 149,
+          "mini_lm_unlocked": 149,
+          "mini_lm_top1_agreement_lock": 149
+        },
+        "metrics": {
+          "fast": {
+            "formulas": 149,
+            "group_exact_formulas": 125,
+            "baseline_top1_formula_exact": 68,
+            "reranked_formula_exact": 68,
+            "delta_formula_exact": 0,
+            "formula_exact_transitions": {
+              "exact_to_exact": 68,
+              "wrong_to_wrong": 81
+            },
+            "writer_bootstrap": {
+              "writers": 9,
+              "formulas_by_writer": {
+                "writer_001": 10,
+                "writer_002": 23,
+                "writer_003": 20,
+                "writer_004": 10,
+                "writer_006": 20,
+                "writer_007": 8,
+                "writer_008": 5,
+                "writer_010": 4,
+                "writer_012": 49
+              },
+              "replicates": 20000,
+              "delta_formula_exact_pp_95_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "exact_group_tokens": 469,
+            "baseline_top1_token_hits": 390,
+            "reranked_top1_token_hits": 390,
+            "token_top5_hits": 464,
+            "token_top5_recall": 0.9893390191897654,
+            "target_rank_histogram_on_exact_groups": {
+              "1": 390,
+              "2": 29,
+              "3": 33,
+              "4": 8,
+              "5": 4
+            },
+            "top5_complete_formula_count_on_exact_groups": 120,
+            "top5_complete_formula_count_over_all_149": 120,
+            "changed_tokens": 0,
+            "improved_tokens": 0,
+            "regressed_tokens": 0,
+            "candidate_preserved_tokens": 469,
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "grouping_mutations": 0,
+            "grouping_wrong_formulas_counted_as_failures": 24
+          },
+          "decoder": {
+            "formulas": 149,
+            "group_exact_formulas": 125,
+            "baseline_top1_formula_exact": 68,
+            "reranked_formula_exact": 68,
+            "delta_formula_exact": 0,
+            "formula_exact_transitions": {
+              "exact_to_exact": 68,
+              "wrong_to_wrong": 81
+            },
+            "writer_bootstrap": {
+              "writers": 9,
+              "formulas_by_writer": {
+                "writer_001": 10,
+                "writer_002": 23,
+                "writer_003": 20,
+                "writer_004": 10,
+                "writer_006": 20,
+                "writer_007": 8,
+                "writer_008": 5,
+                "writer_010": 4,
+                "writer_012": 49
+              },
+              "replicates": 20000,
+              "delta_formula_exact_pp_95_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "exact_group_tokens": 469,
+            "baseline_top1_token_hits": 390,
+            "reranked_top1_token_hits": 390,
+            "token_top5_hits": 464,
+            "token_top5_recall": 0.9893390191897654,
+            "target_rank_histogram_on_exact_groups": {
+              "1": 390,
+              "2": 29,
+              "3": 33,
+              "4": 8,
+              "5": 4
+            },
+            "top5_complete_formula_count_on_exact_groups": 120,
+            "top5_complete_formula_count_over_all_149": 120,
+            "changed_tokens": 0,
+            "improved_tokens": 0,
+            "regressed_tokens": 0,
+            "candidate_preserved_tokens": 469,
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "grouping_mutations": 0,
+            "grouping_wrong_formulas_counted_as_failures": 24
+          },
+          "mini_lm_unlocked": {
+            "formulas": 149,
+            "group_exact_formulas": 125,
+            "baseline_top1_formula_exact": 68,
+            "reranked_formula_exact": 92,
+            "delta_formula_exact": 24,
+            "formula_exact_transitions": {
+              "exact_to_exact": 64,
+              "exact_to_wrong": 4,
+              "wrong_to_exact": 28,
+              "wrong_to_wrong": 53
+            },
+            "writer_bootstrap": {
+              "writers": 9,
+              "formulas_by_writer": {
+                "writer_001": 10,
+                "writer_002": 23,
+                "writer_003": 20,
+                "writer_004": 10,
+                "writer_006": 20,
+                "writer_007": 8,
+                "writer_008": 5,
+                "writer_010": 4,
+                "writer_012": 49
+              },
+              "replicates": 20000,
+              "delta_formula_exact_pp_95_ci": [
+                13.114754098360656,
+                20.833333333333332
+              ]
+            },
+            "exact_group_tokens": 469,
+            "baseline_top1_token_hits": 390,
+            "reranked_top1_token_hits": 426,
+            "token_top5_hits": 464,
+            "token_top5_recall": 0.9893390191897654,
+            "target_rank_histogram_on_exact_groups": {
+              "1": 390,
+              "2": 29,
+              "3": 33,
+              "4": 8,
+              "5": 4
+            },
+            "top5_complete_formula_count_on_exact_groups": 120,
+            "top5_complete_formula_count_over_all_149": 120,
+            "changed_tokens": 54,
+            "improved_tokens": 41,
+            "regressed_tokens": 5,
+            "candidate_preserved_tokens": 469,
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "grouping_mutations": 0,
+            "grouping_wrong_formulas_counted_as_failures": 24
+          },
+          "mini_lm_top1_agreement_lock": {
+            "formulas": 149,
+            "group_exact_formulas": 125,
+            "baseline_top1_formula_exact": 68,
+            "reranked_formula_exact": 68,
+            "delta_formula_exact": 0,
+            "formula_exact_transitions": {
+              "exact_to_exact": 68,
+              "wrong_to_wrong": 81
+            },
+            "writer_bootstrap": {
+              "writers": 9,
+              "formulas_by_writer": {
+                "writer_001": 10,
+                "writer_002": 23,
+                "writer_003": 20,
+                "writer_004": 10,
+                "writer_006": 20,
+                "writer_007": 8,
+                "writer_008": 5,
+                "writer_010": 4,
+                "writer_012": 49
+              },
+              "replicates": 20000,
+              "delta_formula_exact_pp_95_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "exact_group_tokens": 469,
+            "baseline_top1_token_hits": 390,
+            "reranked_top1_token_hits": 390,
+            "token_top5_hits": 464,
+            "token_top5_recall": 0.9893390191897654,
+            "target_rank_histogram_on_exact_groups": {
+              "1": 390,
+              "2": 29,
+              "3": 33,
+              "4": 8,
+              "5": 4
+            },
+            "top5_complete_formula_count_on_exact_groups": 120,
+            "top5_complete_formula_count_over_all_149": 120,
+            "changed_tokens": 0,
+            "improved_tokens": 0,
+            "regressed_tokens": 0,
+            "candidate_preserved_tokens": 469,
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "grouping_mutations": 0,
+            "grouping_wrong_formulas_counted_as_failures": 24
+          }
+        }
+      },
+      "allmask_seed20261004": {
+        "model": {
+          "kind": "all_position_synthetic_relation_augmentation",
+          "checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_relation_aug_20261003_allmask\\prompt_plus_synthetic_2d_seed20261004.pt",
+          "checkpoint_sha256": "00fc1bc99e2338deaf1b337231f7ee5556bf74525580baad5245a4add94ee2c4",
+          "report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_failure_cause_microscope_20260928\\mini_lm_relation_aug_20261003_allmask\\relation_augmentation_report.json",
+          "report_sha256": "a642635b0c317bab30389ef93a5ad97355cbf3acf3c9851275144a9fc52beb56",
+          "layers": 2,
+          "parameters": 124020,
+          "checkpoint_bytes": 513464,
+          "seed": 20261004,
+          "training_examples": 59900
+        },
+        "accepted_structural_decodes": {
+          "decoder": 149,
+          "mini_lm_unlocked": 149,
+          "mini_lm_top1_agreement_lock": 149
+        },
+        "metrics": {
+          "fast": {
+            "formulas": 149,
+            "group_exact_formulas": 125,
+            "baseline_top1_formula_exact": 68,
+            "reranked_formula_exact": 68,
+            "delta_formula_exact": 0,
+            "formula_exact_transitions": {
+              "exact_to_exact": 68,
+              "wrong_to_wrong": 81
+            },
+            "writer_bootstrap": {
+              "writers": 9,
+              "formulas_by_writer": {
+                "writer_001": 10,
+                "writer_002": 23,
+                "writer_003": 20,
+                "writer_004": 10,
+                "writer_006": 20,
+                "writer_007": 8,
+                "writer_008": 5,
+                "writer_010": 4,
+                "writer_012": 49
+              },
+              "replicates": 20000,
+              "delta_formula_exact_pp_95_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "exact_group_tokens": 469,
+            "baseline_top1_token_hits": 390,
+            "reranked_top1_token_hits": 390,
+            "token_top5_hits": 464,
+            "token_top5_recall": 0.9893390191897654,
+            "target_rank_histogram_on_exact_groups": {
+              "1": 390,
+              "2": 29,
+              "3": 33,
+              "4": 8,
+              "5": 4
+            },
+            "top5_complete_formula_count_on_exact_groups": 120,
+            "top5_complete_formula_count_over_all_149": 120,
+            "changed_tokens": 0,
+            "improved_tokens": 0,
+            "regressed_tokens": 0,
+            "candidate_preserved_tokens": 469,
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "grouping_mutations": 0,
+            "grouping_wrong_formulas_counted_as_failures": 24
+          },
+          "decoder": {
+            "formulas": 149,
+            "group_exact_formulas": 125,
+            "baseline_top1_formula_exact": 68,
+            "reranked_formula_exact": 68,
+            "delta_formula_exact": 0,
+            "formula_exact_transitions": {
+              "exact_to_exact": 68,
+              "wrong_to_wrong": 81
+            },
+            "writer_bootstrap": {
+              "writers": 9,
+              "formulas_by_writer": {
+                "writer_001": 10,
+                "writer_002": 23,
+                "writer_003": 20,
+                "writer_004": 10,
+                "writer_006": 20,
+                "writer_007": 8,
+                "writer_008": 5,
+                "writer_010": 4,
+                "writer_012": 49
+              },
+              "replicates": 20000,
+              "delta_formula_exact_pp_95_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "exact_group_tokens": 469,
+            "baseline_top1_token_hits": 390,
+            "reranked_top1_token_hits": 390,
+            "token_top5_hits": 464,
+            "token_top5_recall": 0.9893390191897654,
+            "target_rank_histogram_on_exact_groups": {
+              "1": 390,
+              "2": 29,
+              "3": 33,
+              "4": 8,
+              "5": 4
+            },
+            "top5_complete_formula_count_on_exact_groups": 120,
+            "top5_complete_formula_count_over_all_149": 120,
+            "changed_tokens": 0,
+            "improved_tokens": 0,
+            "regressed_tokens": 0,
+            "candidate_preserved_tokens": 469,
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "grouping_mutations": 0,
+            "grouping_wrong_formulas_counted_as_failures": 24
+          },
+          "mini_lm_unlocked": {
+            "formulas": 149,
+            "group_exact_formulas": 125,
+            "baseline_top1_formula_exact": 68,
+            "reranked_formula_exact": 93,
+            "delta_formula_exact": 25,
+            "formula_exact_transitions": {
+              "exact_to_exact": 64,
+              "exact_to_wrong": 4,
+              "wrong_to_exact": 29,
+              "wrong_to_wrong": 52
+            },
+            "writer_bootstrap": {
+              "writers": 9,
+              "formulas_by_writer": {
+                "writer_001": 10,
+                "writer_002": 23,
+                "writer_003": 20,
+                "writer_004": 10,
+                "writer_006": 20,
+                "writer_007": 8,
+                "writer_008": 5,
+                "writer_010": 4,
+                "writer_012": 49
+              },
+              "replicates": 20000,
+              "delta_formula_exact_pp_95_ci": [
+                12.068965517241379,
+                23.893805309734514
+              ]
+            },
+            "exact_group_tokens": 469,
+            "baseline_top1_token_hits": 390,
+            "reranked_top1_token_hits": 428,
+            "token_top5_hits": 464,
+            "token_top5_recall": 0.9893390191897654,
+            "target_rank_histogram_on_exact_groups": {
+              "1": 390,
+              "2": 29,
+              "3": 33,
+              "4": 8,
+              "5": 4
+            },
+            "top5_complete_formula_count_on_exact_groups": 120,
+            "top5_complete_formula_count_over_all_149": 120,
+            "changed_tokens": 61,
+            "improved_tokens": 46,
+            "regressed_tokens": 8,
+            "candidate_preserved_tokens": 469,
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "grouping_mutations": 0,
+            "grouping_wrong_formulas_counted_as_failures": 24
+          },
+          "mini_lm_top1_agreement_lock": {
+            "formulas": 149,
+            "group_exact_formulas": 125,
+            "baseline_top1_formula_exact": 68,
+            "reranked_formula_exact": 68,
+            "delta_formula_exact": 0,
+            "formula_exact_transitions": {
+              "exact_to_exact": 68,
+              "wrong_to_wrong": 81
+            },
+            "writer_bootstrap": {
+              "writers": 9,
+              "formulas_by_writer": {
+                "writer_001": 10,
+                "writer_002": 23,
+                "writer_003": 20,
+                "writer_004": 10,
+                "writer_006": 20,
+                "writer_007": 8,
+                "writer_008": 5,
+                "writer_010": 4,
+                "writer_012": 49
+              },
+              "replicates": 20000,
+              "delta_formula_exact_pp_95_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "exact_group_tokens": 469,
+            "baseline_top1_token_hits": 390,
+            "reranked_top1_token_hits": 390,
+            "token_top5_hits": 464,
+            "token_top5_recall": 0.9893390191897654,
+            "target_rank_histogram_on_exact_groups": {
+              "1": 390,
+              "2": 29,
+              "3": 33,
+              "4": 8,
+              "5": 4
+            },
+            "top5_complete_formula_count_on_exact_groups": 120,
+            "top5_complete_formula_count_over_all_149": 120,
+            "changed_tokens": 0,
+            "improved_tokens": 0,
+            "regressed_tokens": 0,
+            "candidate_preserved_tokens": 469,
+            "candidate_preservation_rate": 1.0,
+            "new_tokens": 0,
+            "grouping_mutations": 0,
+            "grouping_wrong_formulas_counted_as_failures": 24
+          }
+        }
+      }
+    },
+    "allmask_vs_frozen_prompt_unlocked": {
+      "allmask_seed20261003": {
+        "formula_exact_recovered": 7,
+        "formula_exact_regressed": 10,
+        "formula_exact_delta": -3,
+        "formula_exact_transitions": {
+          "exact_to_exact": 85,
+          "wrong_to_wrong": 47,
+          "exact_to_wrong": 10,
+          "wrong_to_exact": 7
+        },
+        "writer_cluster_bootstrap_delta_pp_95_ci": [
+          -6.818181818181818,
+          4.587155963302752
+        ],
+        "changed_tokens": 63,
+        "improved_tokens": 13,
+        "regressed_tokens": 20,
+        "by_target_class": {
+          "1": {
+            "changed": 17,
+            "improved": 6,
+            "regressed": 10
+          },
+          "/": {
+            "changed": 1,
+            "improved": 0,
+            "regressed": 1
+          },
+          "7": {
+            "changed": 2,
+            "improved": 1,
+            "regressed": 1
+          },
+          "=": {
+            "changed": 4,
+            "improved": 1,
+            "regressed": 1
+          },
+          "\\div": {
+            "changed": 2,
+            "improved": 2,
+            "regressed": 0
+          },
+          "\\times": {
+            "changed": 4,
+            "improved": 2,
+            "regressed": 1
+          },
+          "5": {
+            "changed": 1,
+            "improved": 0,
+            "regressed": 1
+          },
+          "8": {
+            "changed": 2,
+            "improved": 1,
+            "regressed": 1
+          },
+          "0": {
+            "changed": 1,
+            "improved": 0,
+            "regressed": 1
+          },
+          "x": {
+            "changed": 1,
+            "improved": 0,
+            "regressed": 1
+          },
+          "+": {
+            "changed": 1,
+            "improved": 0,
+            "regressed": 0
+          },
+          "f": {
+            "changed": 1,
+            "improved": 0,
+            "regressed": 1
+          },
+          "(": {
+            "changed": 1,
+            "improved": 0,
+            "regressed": 1
+          }
+        },
+        "changed_formula_details": [
+          {
+            "formula_id": "aiflow_0003",
+            "writer_hash": "29e970274233",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": "/",
+                "allmask": "1",
+                "hwr_top5": [
+                  "/",
+                  "1",
+                  "\\prime",
+                  "i",
+                  "I"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0007",
+            "writer_hash": "29e970274233",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": null,
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "I",
+                  "l"
+                ]
+              },
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": "b",
+                "allmask": "6",
+                "hwr_top5": [
+                  "6",
+                  "b",
+                  "\\flat",
+                  "\\downarrow",
+                  "\\wp"
+                ]
+              },
+              {
+                "ordinal": 3,
+                "truth": null,
+                "baseline": "O",
+                "allmask": "o",
+                "hwr_top5": [
+                  "o",
+                  "O",
+                  "\\circ",
+                  "\\fullmoon",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0008",
+            "writer_hash": "29e970274233",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": null,
+                "baseline": "|",
+                "allmask": "\\setminus",
+                "hwr_top5": [
+                  "\\backslash",
+                  "\\setminus",
+                  "\\prime",
+                  "|",
+                  "/"
+                ]
+              },
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": ")",
+                "allmask": "\\supset",
+                "hwr_top5": [
+                  ")",
+                  "\\supset",
+                  ">",
+                  "I",
+                  "J"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0009",
+            "writer_hash": "29e970274233",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 5,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "\\prime",
+                  "1",
+                  "I"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0010",
+            "writer_hash": "29e970274233",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": "/",
+                "allmask": "1",
+                "hwr_top5": [
+                  "/",
+                  "1",
+                  "\\prime",
+                  "\\int",
+                  "|"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0022",
+            "writer_hash": "89dca579c408",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "1",
+                "baseline": "/",
+                "allmask": "1",
+                "hwr_top5": [
+                  "/",
+                  "1",
+                  "\\prime",
+                  "i",
+                  "\\mid"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0049",
+            "writer_hash": "e4227aebe599",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "/",
+                "baseline": "/",
+                "allmask": "1",
+                "hwr_top5": [
+                  "/",
+                  "\\prime",
+                  "1",
+                  "\\int",
+                  "I"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0050",
+            "writer_hash": "e4227aebe599",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "7",
+                "baseline": "q",
+                "allmask": "7",
+                "hwr_top5": [
+                  "7",
+                  "q",
+                  "3",
+                  "9",
+                  "f"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0051",
+            "writer_hash": "e4227aebe599",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": "1",
+                "baseline": "(",
+                "allmask": "1",
+                "hwr_top5": [
+                  "(",
+                  "|",
+                  "i",
+                  "1",
+                  "\\mid"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0052",
+            "writer_hash": "e4227aebe599",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": "1",
+                "baseline": "(",
+                "allmask": "1",
+                "hwr_top5": [
+                  "(",
+                  "i",
+                  "I",
+                  "1",
+                  "l"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0056",
+            "writer_hash": "e4227aebe599",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 3,
+                "truth": "=",
+                "baseline": "\\triangledown",
+                "allmask": "\\mp",
+                "hwr_top5": [
+                  "\\triangledown",
+                  "\\tau",
+                  "\\mp",
+                  "=",
+                  "T"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0058",
+            "writer_hash": "e4227aebe599",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "\\lfloor",
+                  "1",
+                  "|",
+                  "I",
+                  "\\mid"
+                ]
+              },
+              {
+                "ordinal": 2,
+                "truth": "\\div",
+                "baseline": "+",
+                "allmask": "\\div",
+                "hwr_top5": [
+                  "\\div",
+                  "\\pm",
+                  "\\Psi",
+                  "+",
+                  "\\doteq"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0068",
+            "writer_hash": "2806613abcb1",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": null,
+                "baseline": "(",
+                "allmask": "|",
+                "hwr_top5": [
+                  "(",
+                  "|",
+                  "1",
+                  "\\mid",
+                  "i"
+                ]
+              },
+              {
+                "ordinal": 5,
+                "truth": null,
+                "baseline": "\\rightrightarrows",
+                "allmask": "\\asymp",
+                "hwr_top5": [
+                  "\\asymp",
+                  "\\rightrightarrows",
+                  "=",
+                  "I",
+                  "]"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0072",
+            "writer_hash": "dd17fb6b404e",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "\\times",
+                "baseline": "x",
+                "allmask": "X",
+                "hwr_top5": [
+                  "\\times",
+                  "X",
+                  "x",
+                  "\\mathcal{X}",
+                  "\\chi"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0073",
+            "writer_hash": "dd17fb6b404e",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": "\\times",
+                "baseline": "x",
+                "allmask": "\\times",
+                "hwr_top5": [
+                  "\\times",
+                  "x",
+                  "X",
+                  "\\mathcal{X}",
+                  "\\chi"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0074",
+            "writer_hash": "dd17fb6b404e",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": "0",
+                "allmask": "\\mathcal{D}",
+                "hwr_top5": [
+                  "\\mathcal{D}",
+                  "0",
+                  "\\partial",
+                  "D",
+                  "\\mathcal{O}"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0075",
+            "writer_hash": "dd17fb6b404e",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": "1",
+                "baseline": "|",
+                "allmask": "1",
+                "hwr_top5": [
+                  "1",
+                  "|",
+                  "\\mid",
+                  "i",
+                  "I"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0078",
+            "writer_hash": "dd17fb6b404e",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "5",
+                "baseline": "5",
+                "allmask": "S",
+                "hwr_top5": [
+                  "S",
+                  "s",
+                  "\\mathcal{S}",
+                  "5",
+                  "\\mathcal{G}"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0081",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "\\times",
+                "baseline": "\\times",
+                "allmask": "x",
+                "hwr_top5": [
+                  "\\times",
+                  "x",
+                  "X",
+                  "\\chi",
+                  "\\succ"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0086",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "8",
+                "baseline": "\\parr",
+                "allmask": "8",
+                "hwr_top5": [
+                  "\\parr",
+                  "8",
+                  "p",
+                  "\\wp",
+                  "\\heartsuit"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0087",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "1",
+                "baseline": "|",
+                "allmask": "1",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "i",
+                  "I"
+                ]
+              },
+              {
+                "ordinal": 4,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "1",
+                  "\\mid",
+                  "i",
+                  "I"
+                ]
+              },
+              {
+                "ordinal": 5,
+                "truth": "0",
+                "baseline": "0",
+                "allmask": "\\fullmoon",
+                "hwr_top5": [
+                  "\\circ",
+                  "\\fullmoon",
+                  "\\diamond",
+                  "\\degree",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0092",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": ")",
+                "allmask": "\\rangle",
+                "hwr_top5": [
+                  ")",
+                  ">",
+                  "\\rangle",
+                  "7",
+                  "1"
+                ]
+              },
+              {
+                "ordinal": 5,
+                "truth": null,
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\prime",
+                  "\\mid",
+                  "1",
+                  "I"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0093",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": "(",
+                "allmask": "L",
+                "hwr_top5": [
+                  "L",
+                  "\\iota",
+                  "(",
+                  "l",
+                  "C"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0095",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "x",
+                "baseline": "x",
+                "allmask": "\\between",
+                "hwr_top5": [
+                  "\\between",
+                  "\\mathfrak{X}",
+                  "\\mathbb{1}",
+                  "x",
+                  "\\mathds{1}"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0097",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 3,
+                "truth": null,
+                "baseline": "L",
+                "allmask": "\\L",
+                "hwr_top5": [
+                  "L",
+                  "\\L",
+                  "\\iota",
+                  "\\angle",
+                  "l"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0098",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": "(",
+                "allmask": "l",
+                "hwr_top5": [
+                  "L",
+                  "\\iota",
+                  "l",
+                  "\\lfloor",
+                  "("
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0100",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "+",
+                "baseline": "\\dag",
+                "allmask": "\\psi",
+                "hwr_top5": [
+                  "\\dag",
+                  "\\psi",
+                  "\\Psi",
+                  "+",
+                  "4"
+                ]
+              },
+              {
+                "ordinal": 3,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "\\prime",
+                  "i"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0103",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": null,
+                "baseline": ")",
+                "allmask": "7",
+                "hwr_top5": [
+                  ")",
+                  "7",
+                  "\\supset",
+                  "]",
+                  ">"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0104",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 8,
+                "truth": null,
+                "baseline": "q",
+                "allmask": "\\zeta",
+                "hwr_top5": [
+                  "\\zeta",
+                  "q",
+                  "\\mathscr{C}",
+                  "\\mathcal{C}",
+                  "\\eta"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0105",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "f",
+                "baseline": "f",
+                "allmask": "\\fint",
+                "hwr_top5": [
+                  "\\fint",
+                  "f",
+                  "\\mathcal{F}",
+                  "\\pounds",
+                  "\\oiint"
+                ]
+              },
+              {
+                "ordinal": 3,
+                "truth": "(",
+                "baseline": "(",
+                "allmask": "\\iota",
+                "hwr_top5": [
+                  "\\iota",
+                  "(",
+                  "l",
+                  "L",
+                  "\\lfloor"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0106",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": "\\L",
+                "allmask": "\\iota",
+                "hwr_top5": [
+                  "\\L",
+                  "L",
+                  "\\iota",
+                  "l",
+                  "\\angle"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0109",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": "C",
+                "allmask": "\\subset",
+                "hwr_top5": [
+                  "C",
+                  "\\mathcal{C}",
+                  "c",
+                  "\\subset",
+                  "("
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0111",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": "L",
+                "allmask": "\\iota",
+                "hwr_top5": [
+                  "\\iota",
+                  "L",
+                  "l",
+                  "\\mathcal{L}",
+                  "\\angle"
+                ]
+              },
+              {
+                "ordinal": 4,
+                "truth": null,
+                "baseline": "|",
+                "allmask": "\\prime",
+                "hwr_top5": [
+                  "\\prime",
+                  "|",
+                  "l",
+                  "1",
+                  "i"
+                ]
+              },
+              {
+                "ordinal": 6,
+                "truth": null,
+                "baseline": "x",
+                "allmask": "\\times",
+                "hwr_top5": [
+                  "\\times",
+                  "X",
+                  "x",
+                  "\\chi",
+                  "\\aleph"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0112",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": "x",
+                "allmask": "\\times",
+                "hwr_top5": [
+                  "\\times",
+                  "x",
+                  "X",
+                  "\\aleph",
+                  "\\searrow"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0113",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "8",
+                "baseline": "8",
+                "allmask": "p",
+                "hwr_top5": [
+                  "p",
+                  "\\heartsuit",
+                  "8",
+                  "\\clubsuit",
+                  "\\parr"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0116",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 3,
+                "truth": null,
+                "baseline": "\\L",
+                "allmask": "\\iota",
+                "hwr_top5": [
+                  "\\iota",
+                  "\\L",
+                  "L",
+                  "l",
+                  "i"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0125",
+            "writer_hash": "1a6e30b7f331",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": "7",
+                "baseline": "7",
+                "allmask": "\\eta",
+                "hwr_top5": [
+                  "\\eta",
+                  "7",
+                  "\\uparrow",
+                  "\\}",
+                  "9"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0126",
+            "writer_hash": "1a6e30b7f331",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 5,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "i",
+                  "\\prime"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0128",
+            "writer_hash": "1a6e30b7f331",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": "=",
+                "baseline": "1",
+                "allmask": "=",
+                "hwr_top5": [
+                  "\\simeq",
+                  "=",
+                  "\\Xi",
+                  "\\approx",
+                  "1"
+                ]
+              },
+              {
+                "ordinal": 5,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "I",
+                  "i"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0129",
+            "writer_hash": "1a6e30b7f331",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "\\div",
+                "baseline": "+",
+                "allmask": "\\div",
+                "hwr_top5": [
+                  "\\div",
+                  "+",
+                  "\\Leftarrow",
+                  "\\preccurlyeq",
+                  "\\fint"
+                ]
+              },
+              {
+                "ordinal": 4,
+                "truth": "=",
+                "baseline": "=",
+                "allmask": "\\rightrightarrows",
+                "hwr_top5": [
+                  "=",
+                  "\\rightrightarrows",
+                  "\\Xi",
+                  "\\curvearrowright",
+                  "\\tau"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0132",
+            "writer_hash": "1a6e30b7f331",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "i",
+                  "\\cdot"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0136",
+            "writer_hash": "1a6e30b7f331",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": "\\times",
+                "baseline": "x",
+                "allmask": "\\times",
+                "hwr_top5": [
+                  "X",
+                  "x",
+                  "\\times",
+                  "\\aleph",
+                  "\\chi"
+                ]
+              },
+              {
+                "ordinal": 4,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "I",
+                  "l"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0140",
+            "writer_hash": "888592ae00b1",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "I",
+                  "\\prime"
+                ]
+              },
+              {
+                "ordinal": 2,
+                "truth": "1",
+                "baseline": ")",
+                "allmask": "|",
+                "hwr_top5": [
+                  ")",
+                  "\\rfloor",
+                  "|",
+                  "\\prime",
+                  "1"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0144",
+            "writer_hash": "888592ae00b1",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "\\cdot",
+                  "i"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0155",
+            "writer_hash": "89dca579c408",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "1",
+                "baseline": "(",
+                "allmask": "1",
+                "hwr_top5": [
+                  "(",
+                  "\\prime",
+                  "1",
+                  "\\lceil",
+                  "/"
+                ]
+              },
+              {
+                "ordinal": 3,
+                "truth": "=",
+                "baseline": "1",
+                "allmask": "]",
+                "hwr_top5": [
+                  "=",
+                  "1",
+                  "\\supseteq",
+                  "I",
+                  "]"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0163",
+            "writer_hash": "4d947afbc905",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": "\\mathds{1}",
+                "allmask": "\\div",
+                "hwr_top5": [
+                  "\\mathds{1}",
+                  "\\div",
+                  "\\uparrow",
+                  "\\mathbb{1}",
+                  "\\twoheadrightarrow"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "allmask_seed20261004": {
+        "formula_exact_recovered": 8,
+        "formula_exact_regressed": 10,
+        "formula_exact_delta": -2,
+        "formula_exact_transitions": {
+          "exact_to_exact": 85,
+          "wrong_to_wrong": 46,
+          "exact_to_wrong": 10,
+          "wrong_to_exact": 8
+        },
+        "writer_cluster_bootstrap_delta_pp_95_ci": [
+          -6.410256410256411,
+          6.140350877192983
+        ],
+        "changed_tokens": 60,
+        "improved_tokens": 13,
+        "regressed_tokens": 18,
+        "by_target_class": {
+          "1": {
+            "changed": 13,
+            "improved": 6,
+            "regressed": 7
+          },
+          "/": {
+            "changed": 1,
+            "improved": 0,
+            "regressed": 1
+          },
+          "7": {
+            "changed": 2,
+            "improved": 1,
+            "regressed": 1
+          },
+          "=": {
+            "changed": 3,
+            "improved": 1,
+            "regressed": 1
+          },
+          "\\div": {
+            "changed": 2,
+            "improved": 2,
+            "regressed": 0
+          },
+          "\\times": {
+            "changed": 5,
+            "improved": 2,
+            "regressed": 3
+          },
+          "8": {
+            "changed": 1,
+            "improved": 1,
+            "regressed": 0
+          },
+          "0": {
+            "changed": 3,
+            "improved": 0,
+            "regressed": 3
+          },
+          "x": {
+            "changed": 1,
+            "improved": 0,
+            "regressed": 1
+          },
+          "+": {
+            "changed": 1,
+            "improved": 0,
+            "regressed": 0
+          },
+          "f": {
+            "changed": 1,
+            "improved": 0,
+            "regressed": 1
+          }
+        },
+        "changed_formula_details": [
+          {
+            "formula_id": "aiflow_0007",
+            "writer_hash": "29e970274233",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": null,
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "I",
+                  "l"
+                ]
+              },
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": "b",
+                "allmask": "6",
+                "hwr_top5": [
+                  "6",
+                  "b",
+                  "\\flat",
+                  "\\downarrow",
+                  "\\wp"
+                ]
+              },
+              {
+                "ordinal": 3,
+                "truth": null,
+                "baseline": "O",
+                "allmask": "o",
+                "hwr_top5": [
+                  "o",
+                  "O",
+                  "\\circ",
+                  "\\fullmoon",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0008",
+            "writer_hash": "29e970274233",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": null,
+                "baseline": "|",
+                "allmask": "\\backslash",
+                "hwr_top5": [
+                  "\\backslash",
+                  "\\setminus",
+                  "\\prime",
+                  "|",
+                  "/"
+                ]
+              },
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": ")",
+                "allmask": "\\supset",
+                "hwr_top5": [
+                  ")",
+                  "\\supset",
+                  ">",
+                  "I",
+                  "J"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0009",
+            "writer_hash": "29e970274233",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 5,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "\\prime",
+                  "1",
+                  "I"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0010",
+            "writer_hash": "29e970274233",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": null,
+                "baseline": "X",
+                "allmask": "x",
+                "hwr_top5": [
+                  "X",
+                  "x",
+                  "\\times",
+                  "\\mathcal{X}",
+                  "\\chi"
+                ]
+              },
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": "/",
+                "allmask": "1",
+                "hwr_top5": [
+                  "/",
+                  "1",
+                  "\\prime",
+                  "\\int",
+                  "|"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0022",
+            "writer_hash": "89dca579c408",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "1",
+                "baseline": "/",
+                "allmask": "1",
+                "hwr_top5": [
+                  "/",
+                  "1",
+                  "\\prime",
+                  "i",
+                  "\\mid"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0049",
+            "writer_hash": "e4227aebe599",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "/",
+                "baseline": "/",
+                "allmask": "1",
+                "hwr_top5": [
+                  "/",
+                  "\\prime",
+                  "1",
+                  "\\int",
+                  "I"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0050",
+            "writer_hash": "e4227aebe599",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "7",
+                "baseline": "q",
+                "allmask": "7",
+                "hwr_top5": [
+                  "7",
+                  "q",
+                  "3",
+                  "9",
+                  "f"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0051",
+            "writer_hash": "e4227aebe599",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": "1",
+                "baseline": "(",
+                "allmask": "1",
+                "hwr_top5": [
+                  "(",
+                  "|",
+                  "i",
+                  "1",
+                  "\\mid"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0052",
+            "writer_hash": "e4227aebe599",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": "1",
+                "baseline": "(",
+                "allmask": "1",
+                "hwr_top5": [
+                  "(",
+                  "i",
+                  "I",
+                  "1",
+                  "l"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0056",
+            "writer_hash": "e4227aebe599",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 3,
+                "truth": "=",
+                "baseline": "\\triangledown",
+                "allmask": "\\mp",
+                "hwr_top5": [
+                  "\\triangledown",
+                  "\\tau",
+                  "\\mp",
+                  "=",
+                  "T"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0058",
+            "writer_hash": "e4227aebe599",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "\\lfloor",
+                  "1",
+                  "|",
+                  "I",
+                  "\\mid"
+                ]
+              },
+              {
+                "ordinal": 2,
+                "truth": "\\div",
+                "baseline": "+",
+                "allmask": "\\div",
+                "hwr_top5": [
+                  "\\div",
+                  "\\pm",
+                  "\\Psi",
+                  "+",
+                  "\\doteq"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0067",
+            "writer_hash": "2806613abcb1",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": "\\times",
+                "baseline": "\\times",
+                "allmask": "x",
+                "hwr_top5": [
+                  "\\times",
+                  "X",
+                  "x",
+                  "\\aleph",
+                  "\\mathcal{X}"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0068",
+            "writer_hash": "2806613abcb1",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": "o",
+                "allmask": "\\circ",
+                "hwr_top5": [
+                  "\\circ",
+                  "\\degree",
+                  "o",
+                  "D",
+                  "\\fullmoon"
+                ]
+              },
+              {
+                "ordinal": 4,
+                "truth": null,
+                "baseline": "(",
+                "allmask": "1",
+                "hwr_top5": [
+                  "(",
+                  "|",
+                  "1",
+                  "\\mid",
+                  "i"
+                ]
+              },
+              {
+                "ordinal": 5,
+                "truth": null,
+                "baseline": "\\rightrightarrows",
+                "allmask": "\\asymp",
+                "hwr_top5": [
+                  "\\asymp",
+                  "\\rightrightarrows",
+                  "=",
+                  "I",
+                  "]"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0073",
+            "writer_hash": "dd17fb6b404e",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": "\\times",
+                "baseline": "x",
+                "allmask": "\\times",
+                "hwr_top5": [
+                  "\\times",
+                  "x",
+                  "X",
+                  "\\mathcal{X}",
+                  "\\chi"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0074",
+            "writer_hash": "dd17fb6b404e",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": "0",
+                "allmask": "\\mathcal{D}",
+                "hwr_top5": [
+                  "\\mathcal{D}",
+                  "0",
+                  "\\partial",
+                  "D",
+                  "\\mathcal{O}"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0075",
+            "writer_hash": "dd17fb6b404e",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": "1",
+                "baseline": "|",
+                "allmask": "1",
+                "hwr_top5": [
+                  "1",
+                  "|",
+                  "\\mid",
+                  "i",
+                  "I"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0081",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "\\times",
+                "baseline": "\\times",
+                "allmask": "x",
+                "hwr_top5": [
+                  "\\times",
+                  "x",
+                  "X",
+                  "\\chi",
+                  "\\succ"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0086",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": "\\times",
+                "baseline": "\\times",
+                "allmask": "x",
+                "hwr_top5": [
+                  "\\times",
+                  "x",
+                  "X",
+                  "\\chi",
+                  "\\lambda"
+                ]
+              },
+              {
+                "ordinal": 2,
+                "truth": "8",
+                "baseline": "\\parr",
+                "allmask": "8",
+                "hwr_top5": [
+                  "\\parr",
+                  "8",
+                  "p",
+                  "\\wp",
+                  "\\heartsuit"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0087",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "1",
+                  "\\mid",
+                  "i",
+                  "I"
+                ]
+              },
+              {
+                "ordinal": 5,
+                "truth": "0",
+                "baseline": "0",
+                "allmask": "\\fullmoon",
+                "hwr_top5": [
+                  "\\circ",
+                  "\\fullmoon",
+                  "\\diamond",
+                  "\\degree",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0089",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": "0",
+                "baseline": "0",
+                "allmask": "\\circlearrowleft",
+                "hwr_top5": [
+                  "0",
+                  "\\circlearrowleft",
+                  "\\varpi",
+                  "\\mathcal{O}",
+                  "\\rtimes"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0093",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": "(",
+                "allmask": "\\iota",
+                "hwr_top5": [
+                  "L",
+                  "\\iota",
+                  "(",
+                  "l",
+                  "C"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0095",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "x",
+                "baseline": "x",
+                "allmask": "\\between",
+                "hwr_top5": [
+                  "\\between",
+                  "\\mathfrak{X}",
+                  "\\mathbb{1}",
+                  "x",
+                  "\\mathds{1}"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0098",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": "(",
+                "allmask": "L",
+                "hwr_top5": [
+                  "L",
+                  "\\iota",
+                  "l",
+                  "\\lfloor",
+                  "("
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0100",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "+",
+                "baseline": "\\dag",
+                "allmask": "\\psi",
+                "hwr_top5": [
+                  "\\dag",
+                  "\\psi",
+                  "\\Psi",
+                  "+",
+                  "4"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0103",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": null,
+                "baseline": ")",
+                "allmask": "7",
+                "hwr_top5": [
+                  ")",
+                  "7",
+                  "\\supset",
+                  "]",
+                  ">"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0104",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": "L",
+                "allmask": "\\lfloor",
+                "hwr_top5": [
+                  "L",
+                  "\\iota",
+                  "\\lfloor",
+                  "l",
+                  "\\mathcal{L}"
+                ]
+              },
+              {
+                "ordinal": 3,
+                "truth": null,
+                "baseline": "\\L",
+                "allmask": "\\iota",
+                "hwr_top5": [
+                  "\\L",
+                  "\\iota",
+                  "L",
+                  "\\mathcal{L}",
+                  "\\angle"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0105",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "f",
+                "baseline": "f",
+                "allmask": "\\fint",
+                "hwr_top5": [
+                  "\\fint",
+                  "f",
+                  "\\mathcal{F}",
+                  "\\pounds",
+                  "\\oiint"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0106",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": ")",
+                "allmask": "7",
+                "hwr_top5": [
+                  ")",
+                  "7",
+                  ">",
+                  "\\supset",
+                  "\\lambda"
+                ]
+              },
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": "\\L",
+                "allmask": "\\iota",
+                "hwr_top5": [
+                  "\\L",
+                  "L",
+                  "\\iota",
+                  "l",
+                  "\\angle"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0110",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": null,
+                "baseline": "L",
+                "allmask": "\\iota",
+                "hwr_top5": [
+                  "L",
+                  "\\iota",
+                  "l",
+                  "\\angle",
+                  "\\lfloor"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0111",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": "L",
+                "allmask": "\\iota",
+                "hwr_top5": [
+                  "\\iota",
+                  "L",
+                  "l",
+                  "\\mathcal{L}",
+                  "\\angle"
+                ]
+              },
+              {
+                "ordinal": 3,
+                "truth": null,
+                "baseline": "\\Psi",
+                "allmask": "\\psi",
+                "hwr_top5": [
+                  "\\Psi",
+                  "\\psi",
+                  "+",
+                  "\\Phi",
+                  "4"
+                ]
+              },
+              {
+                "ordinal": 4,
+                "truth": null,
+                "baseline": "|",
+                "allmask": "\\prime",
+                "hwr_top5": [
+                  "\\prime",
+                  "|",
+                  "l",
+                  "1",
+                  "i"
+                ]
+              },
+              {
+                "ordinal": 6,
+                "truth": null,
+                "baseline": "x",
+                "allmask": "\\times",
+                "hwr_top5": [
+                  "\\times",
+                  "X",
+                  "x",
+                  "\\chi",
+                  "\\aleph"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0112",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": "x",
+                "allmask": "\\times",
+                "hwr_top5": [
+                  "\\times",
+                  "x",
+                  "X",
+                  "\\aleph",
+                  "\\searrow"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0116",
+            "writer_hash": "3e154070bbf2",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": null,
+                "baseline": ")",
+                "allmask": "7",
+                "hwr_top5": [
+                  ")",
+                  "7",
+                  "]",
+                  "\\supset",
+                  "\\eta"
+                ]
+              },
+              {
+                "ordinal": 3,
+                "truth": null,
+                "baseline": "\\L",
+                "allmask": "\\iota",
+                "hwr_top5": [
+                  "\\iota",
+                  "\\L",
+                  "L",
+                  "l",
+                  "i"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0125",
+            "writer_hash": "1a6e30b7f331",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": "7",
+                "baseline": "7",
+                "allmask": "\\eta",
+                "hwr_top5": [
+                  "\\eta",
+                  "7",
+                  "\\uparrow",
+                  "\\}",
+                  "9"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0126",
+            "writer_hash": "1a6e30b7f331",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 5,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "i",
+                  "\\prime"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0128",
+            "writer_hash": "1a6e30b7f331",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": "=",
+                "baseline": "1",
+                "allmask": "=",
+                "hwr_top5": [
+                  "\\simeq",
+                  "=",
+                  "\\Xi",
+                  "\\approx",
+                  "1"
+                ]
+              },
+              {
+                "ordinal": 5,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "I",
+                  "i"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0129",
+            "writer_hash": "1a6e30b7f331",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "\\div",
+                "baseline": "+",
+                "allmask": "\\div",
+                "hwr_top5": [
+                  "\\div",
+                  "+",
+                  "\\Leftarrow",
+                  "\\preccurlyeq",
+                  "\\fint"
+                ]
+              },
+              {
+                "ordinal": 4,
+                "truth": "=",
+                "baseline": "=",
+                "allmask": "\\rightrightarrows",
+                "hwr_top5": [
+                  "=",
+                  "\\rightrightarrows",
+                  "\\Xi",
+                  "\\curvearrowright",
+                  "\\tau"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0136",
+            "writer_hash": "1a6e30b7f331",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": "\\times",
+                "baseline": "x",
+                "allmask": "\\times",
+                "hwr_top5": [
+                  "X",
+                  "x",
+                  "\\times",
+                  "\\aleph",
+                  "\\chi"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0140",
+            "writer_hash": "888592ae00b1",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": true,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "1",
+                "baseline": ")",
+                "allmask": "1",
+                "hwr_top5": [
+                  ")",
+                  "\\rfloor",
+                  "|",
+                  "\\prime",
+                  "1"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0144",
+            "writer_hash": "888592ae00b1",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 0,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "|",
+                "hwr_top5": [
+                  "|",
+                  "\\mid",
+                  "1",
+                  "\\cdot",
+                  "i"
+                ]
+              },
+              {
+                "ordinal": 5,
+                "truth": "1",
+                "baseline": "1",
+                "allmask": "\\rfloor",
+                "hwr_top5": [
+                  "\\rfloor",
+                  "|",
+                  "1",
+                  "\\prime",
+                  "\\int"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0152",
+            "writer_hash": "89dca579c408",
+            "group_exact": true,
+            "baseline_formula_exact": true,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 4,
+                "truth": "0",
+                "baseline": "0",
+                "allmask": "\\mathcal{O}",
+                "hwr_top5": [
+                  "\\mathcal{O}",
+                  "0",
+                  "O",
+                  "o",
+                  "\\leftmoon"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0155",
+            "writer_hash": "89dca579c408",
+            "group_exact": true,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 2,
+                "truth": "1",
+                "baseline": "(",
+                "allmask": "1",
+                "hwr_top5": [
+                  "(",
+                  "\\prime",
+                  "1",
+                  "\\lceil",
+                  "/"
+                ]
+              }
+            ]
+          },
+          {
+            "formula_id": "aiflow_0163",
+            "writer_hash": "4d947afbc905",
+            "group_exact": false,
+            "baseline_formula_exact": false,
+            "allmask_formula_exact": false,
+            "token_changes": [
+              {
+                "ordinal": 1,
+                "truth": null,
+                "baseline": "\\mathds{1}",
+                "allmask": "\\div",
+                "hwr_top5": [
+                  "\\mathds{1}",
+                  "\\div",
+                  "\\uparrow",
+                  "\\mathbb{1}",
+                  "\\twoheadrightarrow"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "decision": {
+    "independent_acceptance": false,
+    "android_latency_verified": false,
+    "automatic_default_replacement": false,
+    "next_gate": "repeat on a fresh project-owned formula cohort from unseen writers, then export/profile on Android"
+  }
+}

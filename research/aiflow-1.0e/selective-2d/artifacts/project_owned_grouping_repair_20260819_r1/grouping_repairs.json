@@ -1,0 +1,27 @@
+{
+  "schema": "aiflow-project-owned-grouping-repair/v1",
+  "status": "audited_manual_correction",
+  "repairs": [
+    {
+      "sample_id": "aiflow_0074",
+      "labels": ["7", "-", "0"],
+      "old_groups": [[0], [1], [2, 3]],
+      "new_groups": [[0, 3], [1], [2]],
+      "reason": "stroke 3 overlaps the left 7 and is spatially disjoint from the right 0"
+    },
+    {
+      "sample_id": "aiflow_0163",
+      "labels": ["6", "\\div", "2", "=", "3"],
+      "old_groups": [[0], [1, 2, 3, 4], [5, 6], [7, 8, 9], [10]],
+      "new_groups": [[0], [1, 2, 3, 4, 5, 6], [7], [8, 9], [10]],
+      "reason": "strokes 5 and 6 are division-dot fragments; stroke 7 is the complete 2; strokes 8 and 9 are the equality sign"
+    },
+    {
+      "sample_id": "aiflow_0164",
+      "labels": ["4", "5", "\\div", "5", "=", "9"],
+      "old_groups": [[0, 1], [2], [3, 4, 5], [6], [7, 8, 9], [10, 11, 12, 13]],
+      "new_groups": [[0, 1], [2, 3], [4, 5, 6, 7, 8], [9], [10, 11, 12], [13]],
+      "reason": "left-to-right ownership boundaries were shifted after the first 5; no stroke is added, removed, or reordered"
+    }
+  ]
+}

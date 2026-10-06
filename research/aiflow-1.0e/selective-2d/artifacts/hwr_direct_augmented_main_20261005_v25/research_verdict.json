@@ -1,0 +1,81 @@
+{
+  "schema": "aiflow-direct-augmented-main-verdict/v25",
+  "status": "direct_full_main_training_completed_verified_regression_not_promoted",
+  "comparison_sha256": "da6ea3103dc2bceb0684b4f4b157447fb59941887d91d3e712e28d7ca7a3fe65",
+  "verification": "independent_verification.json",
+  "training": {
+    "initial_model": "current canonical main HWR, original checkpoint preserved",
+    "updated_parameter_tensors": 57,
+    "updated_encoder_layers": 4,
+    "steps_per_arm": 2400,
+    "batch_size": 64,
+    "target_exposures_per_arm": 153600,
+    "unique_changed_augmented_views": 68726,
+    "direct_augmented_hard_target_exposures": 115200,
+    "augmented_fraction": 0.75,
+    "original_fraction": 0.25,
+    "objective": "Direct hard-label CrossEntropy only; no teacher KL; no frozen backbone",
+    "label_source": "Original TRAIN class inherited through same-class, same-topology constrained deformation",
+    "label_invariance_assumption": true,
+    "generated_labels_human_verified": false,
+    "control": "Same source indices, target labels, initialization, optimizer and budget; originals substituted for augmented inputs"
+  },
+  "models": {
+    "canonical": {
+      "checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+      "internal_top1_of_5936": 4765,
+      "internal_top5_of_5936": 5870,
+      "owned_token_top1_of_579": 470,
+      "owned_formula_top1_of_149": 76,
+      "owned_formula_top5_complete_of_149": 137
+    },
+    "real_paired_control": {
+      "checkpoint": "real_paired_control/main_trained.pt",
+      "checkpoint_sha256": "c7ea2ded557a158a559c74e3face4dc6cf89bc7b931a3a51510f6a4c7fa48cd2",
+      "internal_top1_of_5936": 4949,
+      "internal_top5_of_5936": 5886,
+      "owned_token_top1_of_579": 414,
+      "owned_formula_top1_of_149": 54,
+      "owned_formula_top5_complete_of_149": 120
+    },
+    "augmented_main": {
+      "checkpoint": "augmented_main/main_trained.pt",
+      "checkpoint_sha256": "e17cf21e1aadff80b835fdf104d23a17c0fcdd5df4e1c86488ae0a4e4493f7e4",
+      "internal_top1_of_5936": 4935,
+      "internal_top5_of_5936": 5884,
+      "owned_token_top1_of_579": 408,
+      "owned_formula_top1_of_149": 52,
+      "owned_formula_top5_complete_of_149": 121,
+      "formula_wins_vs_canonical": 2,
+      "formula_losses_vs_canonical": 26,
+      "formula_wins_vs_paired_control": 1,
+      "formula_losses_vs_paired_control": 3
+    }
+  },
+  "augmentation_effect_in_this_run": {
+    "internal_top1_net_vs_paired_control": -14,
+    "internal_top1_delta_percentage_points": -0.2358490566037736,
+    "owned_formula_top1_net_vs_paired_control": -2,
+    "owned_formula_top5_complete_net_vs_paired_control": 1,
+    "limit": "These small paired differences do not establish universal harm from augmentation. Both real-only and augmented retraining regress substantially on owned inputs."
+  },
+  "data_limits": {
+    "positive_training_classes": 371,
+    "changed_augmented_classes": 366,
+    "missing_positive_training_target_labels": ["="],
+    "all_evaluation_cases_already_consumed": true,
+    "owned_groups_given_as_ground_truth": true,
+    "historical_canonical_calibration_formulas_in_owned_diagnostic": 95,
+    "additional_codex_reviewed_owned_annotations": 53,
+    "new_human_acceptance": false,
+    "formula_token_exact_not_official_expression_rate": true
+  },
+  "verification_scope": "All 4800 recorded CE loss formulas and 57-gradient scopes checked; all four encoder layers updated in both arms. Final internal/owned logits reloaded bit-exact. Historical intermediate forwards not fully replayed.",
+  "interpretation": "The user's requested direct supervised augmented full-main training was actually performed. Internal isolated-character gains are accompanied by severe owned-input regression. Current data, augmentation and training recipe do not justify replacing the original main model.",
+  "owned_optimizer_rows": 0,
+  "crohme_rows": 0,
+  "canonical_checkpoint_unchanged": true,
+  "trained_model_deployed": false,
+  "models_adopted": false,
+  "goal_complete": false
+}

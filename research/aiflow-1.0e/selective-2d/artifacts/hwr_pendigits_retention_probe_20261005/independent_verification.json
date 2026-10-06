@@ -1,0 +1,58 @@
+{
+  "schema": "aiflow-math-retention-independent-verification/v1",
+  "status": "pass",
+  "scope": "TRAINING/integrity only, not independent accuracy or product selection",
+  "retention_result_sha256": "46784fa83bee32d99210dbe3fc8ed96015599ad6105211f418c86c1880172854",
+  "frozen_plan_sha256": "9fe875c3ca37523869dcaa975e725640b7bde9910e0392e968b57a65c6a6552e",
+  "canonical_checkpoint_unchanged": true,
+  "checks": {
+    "stochastic_replay": {
+      "checkpoint_and_logits_sha256": {
+        "stochastic_replay.pt": "781beab16afcb777c4c2d383c047012e148d55a12abda0f1419c3945f83e5ebe",
+        "stochastic_replay_train_replay_logits.npy": "aa4d57c47c02a654e89e759b6bccf3ff5175b28f45a3044bdef27a0ea9711936",
+        "stochastic_replay_train_probe_logits.npy": "c026fe5d7fd39dd02031a737e964ba89e042cdde09ca3d96f9e5578a755abc02"
+      },
+      "reload_predictions_bitwise_identical": true,
+      "old_train_regressed": 18,
+      "source_train_probe_hits": 958,
+      "steps": 64,
+      "layer_snapshots": 4
+    },
+    "deterministic_replay": {
+      "checkpoint_and_logits_sha256": {
+        "deterministic_replay.pt": "ca5692ce4b4100742e2a45e0accc7e69d79f326555af6dbdb9f703c150542056",
+        "deterministic_replay_train_replay_logits.npy": "e8c4a4aabce492f882922f468441555a5cbea733c4e5bb7c7b4a15aa8611212a",
+        "deterministic_replay_train_probe_logits.npy": "1d011b3ef5e43088ecac6ce9fa2a98dd4ecaa7f0c3b214e45e5f3f238bfb2b2a"
+      },
+      "reload_predictions_bitwise_identical": true,
+      "old_train_regressed": 16,
+      "source_train_probe_hits": 963,
+      "steps": 64,
+      "layer_snapshots": 4
+    },
+    "deterministic_guarded": {
+      "checkpoint_and_logits_sha256": {
+        "deterministic_guarded.pt": "f78ca02cb47bc8cb944afa7fe11ebb42752ca47f36ffe98ee609aecd9c4ad1fd",
+        "deterministic_guarded_train_replay_logits.npy": "c85b963368a4b52e28fed0d776f49563c052cc4c5b2ed3589b31e5ea8da3e731",
+        "deterministic_guarded_train_probe_logits.npy": "ed825fa4af13443de2d28e41a45eb7f7130eebec09cf764a4398410806377df3"
+      },
+      "reload_predictions_bitwise_identical": true,
+      "old_train_regressed": 0,
+      "source_train_probe_hits": 858,
+      "steps": 64,
+      "layer_snapshots": 4
+    }
+  },
+  "held_inputs_forwarded": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "guard": {
+    "accepted_steps": 4,
+    "full_rejections": 60,
+    "accepted_fraction_sum": 2.125,
+    "candidate_checks": 372,
+    "all_accepted_checks_lost_zero": true,
+    "all_rejections_record_optimizer_rollback": true
+  }
+}

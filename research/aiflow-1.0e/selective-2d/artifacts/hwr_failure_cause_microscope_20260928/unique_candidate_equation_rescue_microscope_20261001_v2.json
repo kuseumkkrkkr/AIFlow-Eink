@@ -1,0 +1,330 @@
+{
+  "schema": "aiflow-hwr-unique-candidate-equation-rescue/v1",
+  "scope": "frozen consumed-development candidate-lattice shadow; no training, CROHME, or product promotion",
+  "inputs": {
+    "trace_sha256": "785e909f569e3c6346b4fcecc83173445b1ef016ad31ee13e7188700990c76e7",
+    "ownership_sha256": "b7c21e4798ba60ef5d8c985a54fb68a363165b481de56ae9b96e6d63878bf354",
+    "cause_matrix_sha256": "ee43eae06765576dd32d421426b243843f0f3b17c3e9876d577b90c2c52c1bbf",
+    "grouping_audit_sha256": "34fc4a3ab509e515f609644f8f8107bf8323808dc8a3b319f93d3c81032ecfdc",
+    "writer_reference_sha256": "a0f61fb062ffb28c696cd9d69eb355b6a8a433bd7a49e8ab22c77df672cdf76c",
+    "semantic_reference_sha256": "81d1ee7a41cef5e2cb1384da74d832798a3167f498f69a8015740321c54bc1d8",
+    "formulas": 149,
+    "writers": 9,
+    "tokens": 579,
+    "fast_exact_group_formulas": 125,
+    "fast_exact_group_tokens": 469
+  },
+  "policy": {
+    "description": "append after the frozen candidate-preserving semantic shadow stack; for flat 3-12-token formulas with one selected '=', replace every non-arithmetic token only when its own Top-5 has arithmetic alternatives and exactly one resulting sequence is a true arithmetic equation",
+    "maximum_changed_glyphs": 3,
+    "candidate_vocabulary": [
+      "+",
+      "-",
+      "/",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "=",
+      "\\cdot",
+      "\\div",
+      "\\times"
+    ],
+    "mathematical_truth_used_as_shadow_signal": true,
+    "false_user_written_equations_are_a_known_risk": true
+  },
+  "summary": {
+    "status_counts": {
+      "changed_shadow_only:unique_exact_candidate_equation": 1,
+      "skipped:baseline_already_in_arithmetic_vocabulary": 31,
+      "skipped:no_exact_candidate": 1,
+      "skipped:not_flat_single_top1_equality": 106,
+      "skipped:unknown_symbol_count_exceeds_edit_budget": 4,
+      "skipped:unsupported_symbol_has_no_arithmetic_top5_alternative": 6
+    },
+    "changed_formulas": 1,
+    "raw_hwr_top1": {
+      "formula_exact": 76,
+      "token_hits": 470,
+      "tokens": 579
+    },
+    "existing_shadow_stack": {
+      "formula_exact": 115,
+      "token_hits": 527,
+      "tokens": 579
+    },
+    "new_shadow": {
+      "formula_exact": 116,
+      "token_hits": 529,
+      "tokens": 579
+    },
+    "delta": {
+      "formula_exact": 1,
+      "token_hits": 2,
+      "recovered_formula_ids": [
+        "aiflow_0058"
+      ],
+      "regressed_formula_ids": [],
+      "changed_formula_ids": [
+        "aiflow_0058"
+      ],
+      "recovered_tokens": [
+        {
+          "sample_id": "aiflow_0058",
+          "position": 0,
+          "target": "1",
+          "before": "\\lfloor",
+          "after": "1"
+        },
+        {
+          "sample_id": "aiflow_0058",
+          "position": 1,
+          "target": "8",
+          "before": "\\mathscr{C}",
+          "after": "8"
+        }
+      ],
+      "regressed_tokens": []
+    },
+    "writer_stratified": [
+      {
+        "writer_id": "writer_001",
+        "formulas": 10,
+        "baseline_exact": 8,
+        "challenger_exact": 8,
+        "exact_delta": 0
+      },
+      {
+        "writer_id": "writer_002",
+        "formulas": 23,
+        "baseline_exact": 21,
+        "challenger_exact": 21,
+        "exact_delta": 0
+      },
+      {
+        "writer_id": "writer_003",
+        "formulas": 20,
+        "baseline_exact": 17,
+        "challenger_exact": 18,
+        "exact_delta": 1
+      },
+      {
+        "writer_id": "writer_004",
+        "formulas": 10,
+        "baseline_exact": 7,
+        "challenger_exact": 7,
+        "exact_delta": 0
+      },
+      {
+        "writer_id": "writer_006",
+        "formulas": 20,
+        "baseline_exact": 19,
+        "challenger_exact": 19,
+        "exact_delta": 0
+      },
+      {
+        "writer_id": "writer_007",
+        "formulas": 8,
+        "baseline_exact": 6,
+        "challenger_exact": 6,
+        "exact_delta": 0
+      },
+      {
+        "writer_id": "writer_008",
+        "formulas": 5,
+        "baseline_exact": 3,
+        "challenger_exact": 3,
+        "exact_delta": 0
+      },
+      {
+        "writer_id": "writer_010",
+        "formulas": 4,
+        "baseline_exact": 2,
+        "challenger_exact": 2,
+        "exact_delta": 0
+      },
+      {
+        "writer_id": "writer_012",
+        "formulas": 49,
+        "baseline_exact": 32,
+        "challenger_exact": 32,
+        "exact_delta": 0
+      }
+    ],
+    "writer_cluster_bootstrap": {
+      "method": "paired writer-cluster bootstrap; writers sampled with replacement",
+      "iterations": 10000,
+      "seed": 20261001,
+      "delta_exact_rate_pp_95_interval": [
+        0.0,
+        2.2988505747126435
+      ],
+      "interpretation": "consumed-development exploratory shadow only"
+    },
+    "fast_exact_group_subset": {
+      "formulas": 125,
+      "tokens": 469,
+      "existing_shadow_stack": {
+        "formula_exact": 104,
+        "token_hits": 442
+      },
+      "new_shadow": {
+        "formula_exact": 105,
+        "token_hits": 444
+      },
+      "delta": {
+        "formula_exact": 1,
+        "token_hits": 2,
+        "changed_formula_ids": [
+          "aiflow_0058"
+        ],
+        "regressed_formula_ids": []
+      },
+      "writer_stratified": [
+        {
+          "writer_id": "writer_001",
+          "formulas": 9,
+          "baseline_exact": 8,
+          "challenger_exact": 8
+        },
+        {
+          "writer_id": "writer_002",
+          "formulas": 23,
+          "baseline_exact": 21,
+          "challenger_exact": 21
+        },
+        {
+          "writer_id": "writer_003",
+          "formulas": 20,
+          "baseline_exact": 17,
+          "challenger_exact": 18
+        },
+        {
+          "writer_id": "writer_004",
+          "formulas": 6,
+          "baseline_exact": 4,
+          "challenger_exact": 4
+        },
+        {
+          "writer_id": "writer_006",
+          "formulas": 20,
+          "baseline_exact": 19,
+          "challenger_exact": 19
+        },
+        {
+          "writer_id": "writer_007",
+          "formulas": 8,
+          "baseline_exact": 6,
+          "challenger_exact": 6
+        },
+        {
+          "writer_id": "writer_008",
+          "formulas": 3,
+          "baseline_exact": 3,
+          "challenger_exact": 3
+        },
+        {
+          "writer_id": "writer_010",
+          "formulas": 2,
+          "baseline_exact": 2,
+          "challenger_exact": 2
+        },
+        {
+          "writer_id": "writer_012",
+          "formulas": 34,
+          "baseline_exact": 24,
+          "challenger_exact": 24
+        }
+      ],
+      "writer_cluster_bootstrap": {
+        "method": "paired writer-cluster bootstrap; writers sampled with replacement",
+        "iterations": 10000,
+        "seed": 20261001,
+        "delta_exact_rate_pp_95_interval": [
+          0.0,
+          2.586206896551724
+        ],
+        "interpretation": "consumed-development exploratory shadow only"
+      }
+    },
+    "changed_cases": [
+      {
+        "sample_id": "aiflow_0058",
+        "targets": [
+          "1",
+          "8",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "before": [
+          "\\lfloor",
+          "\\mathscr{C}",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "after": [
+          "1",
+          "8",
+          "\\div",
+          "3",
+          "=",
+          "6"
+        ],
+        "audit": {
+          "status": "changed_shadow_only",
+          "reason": "unique_exact_candidate_equation",
+          "valid_candidate_count": 1,
+          "candidate_sequences_checked": 1,
+          "changes": [
+            {
+              "position": 0,
+              "record_id": "aiflow_0058:0",
+              "before": "\\lfloor",
+              "after": "1",
+              "candidate_rank": 2,
+              "candidate_probability": 0.1657966822385788,
+              "selected_minus_top1_log_probability": -1.1554488842626731
+            },
+            {
+              "position": 1,
+              "record_id": "aiflow_0058:1",
+              "before": "\\mathscr{C}",
+              "after": "8",
+              "candidate_rank": 3,
+              "candidate_probability": 0.01118632685393095,
+              "selected_minus_top1_log_probability": -4.452249490181937
+            }
+          ],
+          "score_delta_vs_hwr_top1_nats": -5.60769837444461
+        }
+      }
+    ]
+  },
+  "verification": {
+    "formula_count_is_149": true,
+    "token_count_is_579": true,
+    "trace_hash_matches_failure_matrix": true,
+    "grouping_hash_matches_failure_matrix": true,
+    "ownership_hash_matches_writer_reference": true,
+    "ownership_ids_exactly_match_trace": true,
+    "writer_count_is_9": true,
+    "raw_top1_replays_76_formula_470_token_baseline": true,
+    "fast_exact_group_count_is_125": true,
+    "fast_exact_group_token_count_matches_reference": true,
+    "existing_shadow_stack_replays_saved_exact_group_metrics": true,
+    "one_writer_bootstrap_subset_reconciles": true,
+    "all_changes_are_top5_members": true,
+    "every_change_is_unique_exact_arithmetic_equation": true,
+    "all_checks_pass": true
+  }
+}

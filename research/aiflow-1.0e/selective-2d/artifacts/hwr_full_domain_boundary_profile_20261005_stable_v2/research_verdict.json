@@ -1,0 +1,34 @@
+{
+  "schema": "aiflow-full-domain-boundary-profile-verdict/v1",
+  "status": "nonmonotonic_teacher_paths_and_numerically_stable_review_pairs_prepared",
+  "previous_failure_preserved": "../hwr_full_domain_boundary_profile_20261005/failure_record.json",
+  "findings": {
+    "classes_in_model_scope": 372,
+    "real_supported_scanned_classes": 370,
+    "paths_scanned": 1121,
+    "grid_inputs_scored": 10089,
+    "teacher_sign_crossing_paths": 433,
+    "endpoint_only_missed_reentrant_paths": 12,
+    "class_balanced_teacher_boundary_pairs": 262,
+    "class_balanced_control_pairs": 108,
+    "numerically_weak_classes_not_claimed_as_brackets": 2,
+    "batch_sizes_independently_tested": [1, 16, 32],
+    "global_sign_failures_in_these_batch_checks": 0
+  },
+  "review_budget": {"classes": 370, "rows_per_class": 2, "total_rows": 740},
+  "limits": [
+    "Teacher crossings are not human recognition boundaries or human probabilities.",
+    "A nine-point profile cannot prove absence of unsampled crossings.",
+    "Stopping in a numerical band yields variable bracket widths; not every bracket is finely localized.",
+    "Numeric-band guarantees use the fixed padded batch contract; variable-batch checks verify signs, not identical margins.",
+    "The prior failed run did not persist its final logits, so its exact failure cause remains unproven.",
+    "The equals sign lacks admitted real TRAIN data; mathbb N lacks adequate same-topology fit support."
+  ],
+  "required_next_evidence": "Independent blind human votes on originals, controls and teacher-boundary candidates; fresh writer/device acceptance before any product promotion.",
+  "human_boundary_labels": 0,
+  "heldout_rows_read": 0,
+  "crohme_rows": 0,
+  "new_training_performed": false,
+  "product_adopted": false,
+  "goal_complete": false
+}

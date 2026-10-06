@@ -1,0 +1,1536 @@
+{
+  "schema": "aiflow-hwr-failure-cause-microscope/v1",
+  "scope": "forensic replay only; no fitting, threshold selection, CROHME access, or promotion",
+  "inputs": {
+    "traces": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\formula_traces.jsonl",
+      "sha256": "785e909f569e3c6346b4fcecc83173445b1ef016ad31ee13e7188700990c76e7"
+    },
+    "decoder_audit": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\decoder_failure_cause_microscope_replay_20261001.json",
+      "sha256": "6f644b164568ce480093f1e0cbe054ea3a38248db6163f2c809f1ae0ec33ca1f"
+    },
+    "grouping_audit": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\local_partition_cause_microscope_replay_20261001.json",
+      "sha256": "34fc4a3ab509e515f609644f8f8107bf8323808dc8a3b319f93d3c81032ecfdc"
+    },
+    "checkpoint": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-head-calibration-20260819-r1\\final_all_writers_steps250_lr1e-3\\project_symbol_head_checkpoint.pt",
+      "sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e"
+    },
+    "wide_beam_audit": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\decoder_failure_beam128_microscope_20261001.json",
+      "sha256": "c90000fb1e177353d586fc258afb352afa1de67475e54bd007829d0b42045d46"
+    }
+  },
+  "checkpoint_vocabulary": {
+    "classes": 372,
+    "oov_target_token_count": 1
+  },
+  "summary": {
+    "formulas": 149,
+    "target_tokens": 579,
+    "layer_trace_failed_checks": {},
+    "all_formula_residuals": 23,
+    "decoder_failure_causes": {
+      "beam_pruned": 6,
+      "survives_but_loses": 11,
+      "top5_missing": 6
+    },
+    "all_trace_top5_missing_glyphs_by_vocabulary_status": {
+      "in_vocab": 16,
+      "oov": 1
+    },
+    "residual_top5_missing_glyphs_by_vocabulary_status": {
+      "in_vocab": 5,
+      "oov": 1
+    },
+    "surviving_valid_targets": 11,
+    "survivor_relation_component_nonzero_count": 0,
+    "survivor_score_decomposition_max_abs_error": 1.1102230246251565e-16,
+    "grouping_fast_exact": 125,
+    "grouping_fast_errors": 24,
+    "grouping_failure_outcomes": {
+      "fast_partition_exact": 125,
+      "gold_partition_blocked_by_locked_boundary": 2,
+      "gold_partition_reachable_but_not_promoted": 18,
+      "local_search_not_run": 1,
+      "router_not_triggered": 3
+    },
+    "grouping_local_partitions_enumerated": 451,
+    "grouping_local_exact_cover_partitions": 451
+  },
+  "oov_target_details": [
+    {
+      "sample_id": "aiflow_0064",
+      "target": "t",
+      "stroke_indices": [
+        2,
+        3
+      ],
+      "top1": "\\mathcal{A}",
+      "top5": [
+        "\\mathcal{A}",
+        "\\pm",
+        "\\hbar",
+        "\\chi",
+        "\\lesssim"
+      ],
+      "stage_ranks": [
+        {
+          "stage": "encoder.input",
+          "rank": null
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "rank": null
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "rank": null
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "rank": null
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "rank": null
+        },
+        {
+          "stage": "encoder.output",
+          "rank": null
+        }
+      ]
+    }
+  ],
+  "residual_details": [
+    {
+      "sample_id": "aiflow_0142",
+      "cause": "top5_missing",
+      "target_tokens": [
+        "5",
+        "\\times",
+        "1",
+        "=",
+        "5"
+      ],
+      "selected_tokens": [
+        "5",
+        "\\times",
+        ")",
+        "=",
+        "5"
+      ],
+      "target_beam_rank": null,
+      "first_lost_position": 3,
+      "first_lost_reason": "target_missing_from_top5",
+      "missing_glyphs": [
+        {
+          "target": "1",
+          "in_checkpoint_vocabulary": true,
+          "stroke_indices": [
+            4
+          ],
+          "raw_point_count": 13,
+          "raw_points_per_stroke": [
+            13
+          ],
+          "target_rank": 14,
+          "target_probability": 3.84719533030875e-06,
+          "top1": ")",
+          "top1_probability": 0.9957557916641235,
+          "top5": [
+            ")",
+            "]",
+            "\\}",
+            "\\rangle",
+            "\\rfloor"
+          ],
+          "layer_trajectory": [
+            {
+              "stage": "encoder.input",
+              "top1": "\\vDash",
+              "target_rank": 40,
+              "target_margin_logit": -0.6405416429042816
+            },
+            {
+              "stage": "encoder.block_0.output",
+              "top1": "\\mathds{1}",
+              "target_rank": 44,
+              "target_margin_logit": -1.4421131014823914
+            },
+            {
+              "stage": "encoder.block_1.output",
+              "top1": "\\between",
+              "target_rank": 74,
+              "target_margin_logit": -1.8991693258285522
+            },
+            {
+              "stage": "encoder.block_2.output",
+              "top1": "\\}",
+              "target_rank": 21,
+              "target_margin_logit": -3.1324952840805054
+            },
+            {
+              "stage": "encoder.block_3.output",
+              "top1": ")",
+              "target_rank": 14,
+              "target_margin_logit": -12.463912963867188
+            },
+            {
+              "stage": "encoder.output",
+              "top1": ")",
+              "target_rank": 14,
+              "target_margin_logit": -12.463912963867188
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0146",
+      "cause": "survives_but_loses",
+      "target_tokens": [
+        "(",
+        "x",
+        "+",
+        "9",
+        ")"
+      ],
+      "selected_tokens": [
+        "(",
+        "\\chi",
+        "+",
+        "9",
+        ")"
+      ],
+      "target_beam_rank": 2,
+      "first_lost_position": null,
+      "first_lost_reason": null,
+      "score_gap_decomposition": {
+        "token_log_probability_component": 0.216465375601683,
+        "relation_component": 0.0,
+        "reconstructed_total": 0.216465375601683
+      },
+      "token_level_selection": [
+        {
+          "position": 1,
+          "target": "(",
+          "selected": "(",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9821773767471313,
+          "selected_probability": 0.9821773767471313,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 2,
+          "target": "x",
+          "selected": "\\chi",
+          "mismatch": true,
+          "target_hwr_rank": 2,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.24987752735614777,
+          "selected_probability": 0.7375233769416809,
+          "selected_minus_target_log_probability": 1.082326878008415
+        },
+        {
+          "position": 3,
+          "target": "+",
+          "selected": "+",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9227795600891113,
+          "selected_probability": 0.9227795600891113,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 4,
+          "target": "9",
+          "selected": "9",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.8666167855262756,
+          "selected_probability": 0.8666167855262756,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 5,
+          "target": ")",
+          "selected": ")",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9905288815498352,
+          "selected_probability": 0.9905288815498352,
+          "selected_minus_target_log_probability": 0.0
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0016",
+      "cause": "survives_but_loses",
+      "target_tokens": [
+        "1",
+        "+",
+        "5"
+      ],
+      "selected_tokens": [
+        "1",
+        "\\bot",
+        "5"
+      ],
+      "target_beam_rank": 10,
+      "first_lost_position": null,
+      "first_lost_reason": null,
+      "score_gap_decomposition": {
+        "token_log_probability_component": 1.3165098628597145,
+        "relation_component": 0.0,
+        "reconstructed_total": 1.3165098628597145
+      },
+      "token_level_selection": [
+        {
+          "position": 1,
+          "target": "1",
+          "selected": "1",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.597597599029541,
+          "selected_probability": 0.597597599029541,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 2,
+          "target": "+",
+          "selected": "\\bot",
+          "mismatch": true,
+          "target_hwr_rank": 3,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.012044497765600681,
+          "selected_probability": 0.625241219997406,
+          "selected_minus_target_log_probability": 3.9495295885791437
+        },
+        {
+          "position": 3,
+          "target": "5",
+          "selected": "5",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9967852830886841,
+          "selected_probability": 0.9967852830886841,
+          "selected_minus_target_log_probability": 0.0
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0020",
+      "cause": "beam_pruned",
+      "target_tokens": [
+        "1",
+        "0",
+        "+",
+        "8"
+      ],
+      "selected_tokens": [
+        "/",
+        "o",
+        "+",
+        "8"
+      ],
+      "target_beam_rank": null,
+      "first_lost_position": 3,
+      "first_lost_reason": "pruned_by_score_only_beam"
+    },
+    {
+      "sample_id": "aiflow_0046",
+      "cause": "top5_missing",
+      "target_tokens": [
+        "5"
+      ],
+      "selected_tokens": [
+        "\\hbar"
+      ],
+      "target_beam_rank": null,
+      "first_lost_position": 1,
+      "first_lost_reason": "target_missing_from_top5",
+      "missing_glyphs": [
+        {
+          "target": "5",
+          "in_checkpoint_vocabulary": true,
+          "stroke_indices": [
+            0,
+            1
+          ],
+          "raw_point_count": 35,
+          "raw_points_per_stroke": [
+            23,
+            12
+          ],
+          "target_rank": 6,
+          "target_probability": 0.03592102229595184,
+          "top1": "\\hbar",
+          "top1_probability": 0.1978556215763092,
+          "top5": [
+            "\\hbar",
+            "H",
+            "\\Pi",
+            "\\dag",
+            "\\pi"
+          ],
+          "layer_trajectory": [
+            {
+              "stage": "encoder.input",
+              "top1": "\\vDash",
+              "target_rank": 141,
+              "target_margin_logit": -1.0184946358203888
+            },
+            {
+              "stage": "encoder.block_0.output",
+              "top1": "\\div",
+              "target_rank": 81,
+              "target_margin_logit": -1.5063623785972595
+            },
+            {
+              "stage": "encoder.block_1.output",
+              "top1": "\\$",
+              "target_rank": 10,
+              "target_margin_logit": -1.9427636861801147
+            },
+            {
+              "stage": "encoder.block_2.output",
+              "top1": "\\mapsfrom",
+              "target_rank": 32,
+              "target_margin_logit": -1.9770233631134033
+            },
+            {
+              "stage": "encoder.block_3.output",
+              "top1": "\\hbar",
+              "target_rank": 6,
+              "target_margin_logit": -1.7062149047851562
+            },
+            {
+              "stage": "encoder.output",
+              "top1": "\\hbar",
+              "target_rank": 6,
+              "target_margin_logit": -1.7062149047851562
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0058",
+      "cause": "survives_but_loses",
+      "target_tokens": [
+        "1",
+        "8",
+        "\\div",
+        "3",
+        "=",
+        "6"
+      ],
+      "selected_tokens": [
+        "\\lfloor",
+        "\\mathscr{C}",
+        "\\div",
+        "3",
+        "=",
+        "6"
+      ],
+      "target_beam_rank": 29,
+      "first_lost_position": null,
+      "first_lost_reason": null,
+      "score_gap_decomposition": {
+        "token_log_probability_component": 0.9346163957407683,
+        "relation_component": 0.0,
+        "reconstructed_total": 0.9346163957407683
+      },
+      "token_level_selection": [
+        {
+          "position": 1,
+          "target": "1",
+          "selected": "\\lfloor",
+          "mismatch": true,
+          "target_hwr_rank": 2,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.1657966822385788,
+          "selected_probability": 0.5264788269996643,
+          "selected_minus_target_log_probability": 1.1554488842626731
+        },
+        {
+          "position": 2,
+          "target": "8",
+          "selected": "\\mathscr{C}",
+          "mismatch": true,
+          "target_hwr_rank": 3,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.01118632685393095,
+          "selected_probability": 0.9600080847740173,
+          "selected_minus_target_log_probability": 4.452249490181937
+        },
+        {
+          "position": 3,
+          "target": "\\div",
+          "selected": "\\div",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.8005144000053406,
+          "selected_probability": 0.8005144000053406,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 4,
+          "target": "3",
+          "selected": "3",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9927710890769958,
+          "selected_probability": 0.9927710890769958,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 5,
+          "target": "=",
+          "selected": "=",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9926812052726746,
+          "selected_probability": 0.9926812052726746,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 6,
+          "target": "6",
+          "selected": "6",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9996137022972107,
+          "selected_probability": 0.9996137022972107,
+          "selected_minus_target_log_probability": 0.0
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0064",
+      "cause": "top5_missing",
+      "target_tokens": [
+        "f",
+        "(",
+        "t",
+        ")",
+        "+",
+        "2"
+      ],
+      "selected_tokens": [
+        "f",
+        "(",
+        "\\mathcal{A}",
+        ")",
+        "+",
+        "2"
+      ],
+      "target_beam_rank": null,
+      "first_lost_position": 3,
+      "first_lost_reason": "target_missing_from_top5",
+      "missing_glyphs": [
+        {
+          "target": "t",
+          "in_checkpoint_vocabulary": false,
+          "stroke_indices": [
+            2,
+            3
+          ],
+          "raw_point_count": 32,
+          "raw_points_per_stroke": [
+            23,
+            9
+          ],
+          "target_rank": null,
+          "target_probability": null,
+          "top1": "\\mathcal{A}",
+          "top1_probability": 0.5148227214813232,
+          "top5": [
+            "\\mathcal{A}",
+            "\\pm",
+            "\\hbar",
+            "\\chi",
+            "\\lesssim"
+          ],
+          "layer_trajectory": [
+            {
+              "stage": "encoder.input",
+              "top1": "\\vDash",
+              "target_rank": null,
+              "target_margin_logit": null
+            },
+            {
+              "stage": "encoder.block_0.output",
+              "top1": "\\div",
+              "target_rank": null,
+              "target_margin_logit": null
+            },
+            {
+              "stage": "encoder.block_1.output",
+              "top1": "\\div",
+              "target_rank": null,
+              "target_margin_logit": null
+            },
+            {
+              "stage": "encoder.block_2.output",
+              "top1": "\\hbar",
+              "target_rank": null,
+              "target_margin_logit": null
+            },
+            {
+              "stage": "encoder.block_3.output",
+              "top1": "\\mathcal{A}",
+              "target_rank": null,
+              "target_margin_logit": null
+            },
+            {
+              "stage": "encoder.output",
+              "top1": "\\mathcal{A}",
+              "target_rank": null,
+              "target_margin_logit": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0004",
+      "cause": "survives_but_loses",
+      "target_tokens": [
+        "2",
+        "+",
+        "7"
+      ],
+      "selected_tokens": [
+        "2",
+        "4",
+        "7"
+      ],
+      "target_beam_rank": 2,
+      "first_lost_position": null,
+      "first_lost_reason": null,
+      "score_gap_decomposition": {
+        "token_log_probability_component": 0.3563686980678553,
+        "relation_component": 0.0,
+        "reconstructed_total": 0.3563686980678553
+      },
+      "token_level_selection": [
+        {
+          "position": 1,
+          "target": "2",
+          "selected": "2",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9998815059661865,
+          "selected_probability": 0.9998815059661865,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 2,
+          "target": "+",
+          "selected": "4",
+          "mismatch": true,
+          "target_hwr_rank": 2,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.22155244648456573,
+          "selected_probability": 0.6453323364257812,
+          "selected_minus_target_log_probability": 1.069106094203566
+        },
+        {
+          "position": 3,
+          "target": "7",
+          "selected": "7",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9951843619346619,
+          "selected_probability": 0.9951843619346619,
+          "selected_minus_target_log_probability": 0.0
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0009",
+      "cause": "survives_but_loses",
+      "target_tokens": [
+        "f",
+        "(",
+        "y",
+        ")",
+        "=",
+        "1"
+      ],
+      "selected_tokens": [
+        "f",
+        "(",
+        "y",
+        ")",
+        "=",
+        "|"
+      ],
+      "target_beam_rank": 4,
+      "first_lost_position": null,
+      "first_lost_reason": null,
+      "score_gap_decomposition": {
+        "token_log_probability_component": 0.31632836338078946,
+        "relation_component": 0.0,
+        "reconstructed_total": 0.31632836338078946
+      },
+      "token_level_selection": [
+        {
+          "position": 1,
+          "target": "f",
+          "selected": "f",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9876261353492737,
+          "selected_probability": 0.9876261353492737,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 2,
+          "target": "(",
+          "selected": "(",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.7795591950416565,
+          "selected_probability": 0.7795591950416565,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 3,
+          "target": "y",
+          "selected": "y",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9137768745422363,
+          "selected_probability": 0.9137768745422363,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 4,
+          "target": ")",
+          "selected": ")",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9968904852867126,
+          "selected_probability": 0.9968904852867126,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 5,
+          "target": "=",
+          "selected": "=",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9515562653541565,
+          "selected_probability": 0.9515562653541565,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 6,
+          "target": "1",
+          "selected": "|",
+          "mismatch": true,
+          "target_hwr_rank": 4,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.08278394490480423,
+          "selected_probability": 0.5523623824119568,
+          "selected_minus_target_log_probability": 1.8979701802847369
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0078",
+      "cause": "survives_but_loses",
+      "target_tokens": [
+        "a",
+        "=",
+        "5"
+      ],
+      "selected_tokens": [
+        "a",
+        "=",
+        "S"
+      ],
+      "target_beam_rank": 5,
+      "first_lost_position": null,
+      "first_lost_reason": null,
+      "score_gap_decomposition": {
+        "token_log_probability_component": 0.9533736125997169,
+        "relation_component": 0.0,
+        "reconstructed_total": 0.9533736125997169
+      },
+      "token_level_selection": [
+        {
+          "position": 1,
+          "target": "a",
+          "selected": "a",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9010639190673828,
+          "selected_probability": 0.9010639190673828,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 2,
+          "target": "=",
+          "selected": "=",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9998248219490051,
+          "selected_probability": 0.9998248219490051,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 3,
+          "target": "5",
+          "selected": "S",
+          "mismatch": true,
+          "target_hwr_rank": 4,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.03325261175632477,
+          "selected_probability": 0.5807115435600281,
+          "selected_minus_target_log_probability": 2.8601208377991507
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0118",
+      "cause": "survives_but_loses",
+      "target_tokens": [
+        "1"
+      ],
+      "selected_tokens": [
+        "|"
+      ],
+      "target_beam_rank": 2,
+      "first_lost_position": null,
+      "first_lost_reason": null,
+      "score_gap_decomposition": {
+        "token_log_probability_component": 0.277360846297078,
+        "relation_component": 0.0,
+        "reconstructed_total": 0.277360846297078
+      },
+      "token_level_selection": [
+        {
+          "position": 1,
+          "target": "1",
+          "selected": "|",
+          "mismatch": true,
+          "target_hwr_rank": 2,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.2965104877948761,
+          "selected_probability": 0.39128783345222473,
+          "selected_minus_target_log_probability": 0.277360846297078
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0068",
+      "cause": "top5_missing",
+      "target_tokens": [
+        "2",
+        "0",
+        "\\div",
+        "4",
+        "=",
+        "5"
+      ],
+      "selected_tokens": [
+        "2",
+        "\\circ",
+        "\\div",
+        "4",
+        "\\asymp",
+        "5"
+      ],
+      "target_beam_rank": null,
+      "first_lost_position": 2,
+      "first_lost_reason": "target_missing_from_top5",
+      "missing_glyphs": [
+        {
+          "target": "0",
+          "in_checkpoint_vocabulary": true,
+          "stroke_indices": [
+            1
+          ],
+          "raw_point_count": 28,
+          "raw_points_per_stroke": [
+            28
+          ],
+          "target_rank": 7,
+          "target_probability": 0.04138585180044174,
+          "top1": "\\circ",
+          "top1_probability": 0.4428849220275879,
+          "top5": [
+            "\\circ",
+            "\\degree",
+            "o",
+            "D",
+            "\\fullmoon"
+          ],
+          "layer_trajectory": [
+            {
+              "stage": "encoder.input",
+              "top1": "\\vDash",
+              "target_rank": 227,
+              "target_margin_logit": -1.2165365815162659
+            },
+            {
+              "stage": "encoder.block_0.output",
+              "top1": "\\rightleftarrows",
+              "target_rank": 257,
+              "target_margin_logit": -2.4988781809806824
+            },
+            {
+              "stage": "encoder.block_1.output",
+              "top1": "\\circlearrowright",
+              "target_rank": 162,
+              "target_margin_logit": -3.117179572582245
+            },
+            {
+              "stage": "encoder.block_2.output",
+              "top1": "\\circ",
+              "target_rank": 41,
+              "target_margin_logit": -2.1656994819641113
+            },
+            {
+              "stage": "encoder.block_3.output",
+              "top1": "\\circ",
+              "target_rank": 7,
+              "target_margin_logit": -2.370370864868164
+            },
+            {
+              "stage": "encoder.output",
+              "top1": "\\circ",
+              "target_rank": 7,
+              "target_margin_logit": -2.370370864868164
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0032",
+      "cause": "top5_missing",
+      "target_tokens": [
+        "0"
+      ],
+      "selected_tokens": [
+        "\\circlearrowright"
+      ],
+      "target_beam_rank": null,
+      "first_lost_position": 1,
+      "first_lost_reason": "target_missing_from_top5",
+      "missing_glyphs": [
+        {
+          "target": "0",
+          "in_checkpoint_vocabulary": true,
+          "stroke_indices": [
+            0
+          ],
+          "raw_point_count": 46,
+          "raw_points_per_stroke": [
+            46
+          ],
+          "target_rank": 19,
+          "target_probability": 0.001744606764987111,
+          "top1": "\\circlearrowright",
+          "top1_probability": 0.5520474910736084,
+          "top5": [
+            "\\circlearrowright",
+            "\\fullmoon",
+            "\\partial",
+            "a",
+            "\\Omega"
+          ],
+          "layer_trajectory": [
+            {
+              "stage": "encoder.input",
+              "top1": "\\vDash",
+              "target_rank": 230,
+              "target_margin_logit": -1.2167303711175919
+            },
+            {
+              "stage": "encoder.block_0.output",
+              "top1": "\\circlearrowright",
+              "target_rank": 257,
+              "target_margin_logit": -2.9352710843086243
+            },
+            {
+              "stage": "encoder.block_1.output",
+              "top1": "\\circlearrowright",
+              "target_rank": 105,
+              "target_margin_logit": -3.0254992246627808
+            },
+            {
+              "stage": "encoder.block_2.output",
+              "top1": "\\circlearrowright",
+              "target_rank": 35,
+              "target_margin_logit": -2.245129346847534
+            },
+            {
+              "stage": "encoder.block_3.output",
+              "top1": "\\circlearrowright",
+              "target_rank": 19,
+              "target_margin_logit": -5.757104873657227
+            },
+            {
+              "stage": "encoder.output",
+              "top1": "\\circlearrowright",
+              "target_rank": 19,
+              "target_margin_logit": -5.757104873657227
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0036",
+      "cause": "top5_missing",
+      "target_tokens": [
+        "8"
+      ],
+      "selected_tokens": [
+        "\\aa"
+      ],
+      "target_beam_rank": null,
+      "first_lost_position": 1,
+      "first_lost_reason": "target_missing_from_top5",
+      "missing_glyphs": [
+        {
+          "target": "8",
+          "in_checkpoint_vocabulary": true,
+          "stroke_indices": [
+            0
+          ],
+          "raw_point_count": 64,
+          "raw_points_per_stroke": [
+            64
+          ],
+          "target_rank": 79,
+          "target_probability": 0.00036796642234548926,
+          "top1": "\\aa",
+          "top1_probability": 0.20839601755142212,
+          "top5": [
+            "\\aa",
+            "\\triangleleft",
+            "\\mathfrak{A}",
+            "\\diamondsuit",
+            "\\lhd"
+          ],
+          "layer_trajectory": [
+            {
+              "stage": "encoder.input",
+              "top1": "\\vDash",
+              "target_rank": 261,
+              "target_margin_logit": -1.2864601165056229
+            },
+            {
+              "stage": "encoder.block_0.output",
+              "top1": "\\aa",
+              "target_rank": 289,
+              "target_margin_logit": -2.6614546179771423
+            },
+            {
+              "stage": "encoder.block_1.output",
+              "top1": "\\circlearrowright",
+              "target_rank": 99,
+              "target_margin_logit": -2.2570560574531555
+            },
+            {
+              "stage": "encoder.block_2.output",
+              "top1": "4",
+              "target_rank": 174,
+              "target_margin_logit": -4.558147948235273
+            },
+            {
+              "stage": "encoder.block_3.output",
+              "top1": "\\aa",
+              "target_rank": 79,
+              "target_margin_logit": -6.339203596115112
+            },
+            {
+              "stage": "encoder.output",
+              "top1": "\\aa",
+              "target_rank": 79,
+              "target_margin_logit": -6.339203596115112
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0044",
+      "cause": "survives_but_loses",
+      "target_tokens": [
+        "="
+      ],
+      "selected_tokens": [
+        "\\Xi"
+      ],
+      "target_beam_rank": 3,
+      "first_lost_position": null,
+      "first_lost_reason": null,
+      "score_gap_decomposition": {
+        "token_log_probability_component": 2.5823021068260825,
+        "relation_component": 0.0,
+        "reconstructed_total": 2.5823021068260825
+      },
+      "token_level_selection": [
+        {
+          "position": 1,
+          "target": "=",
+          "selected": "\\Xi",
+          "mismatch": true,
+          "target_hwr_rank": 3,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.051907774060964584,
+          "selected_probability": 0.6866129040718079,
+          "selected_minus_target_log_probability": 2.5823021068260825
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0087",
+      "cause": "beam_pruned",
+      "target_tokens": [
+        "9",
+        "+",
+        "1",
+        "=",
+        "1",
+        "0"
+      ],
+      "selected_tokens": [
+        "q",
+        "+",
+        "|",
+        "=",
+        "|",
+        "\\circ"
+      ],
+      "target_beam_rank": null,
+      "first_lost_position": 6,
+      "first_lost_reason": "pruned_by_score_only_beam"
+    },
+    {
+      "sample_id": "aiflow_0089",
+      "cause": "survives_but_loses",
+      "target_tokens": [
+        "1",
+        "0",
+        "+",
+        "2"
+      ],
+      "selected_tokens": [
+        "I",
+        "0",
+        "+",
+        "2"
+      ],
+      "target_beam_rank": 2,
+      "first_lost_position": null,
+      "first_lost_reason": null,
+      "score_gap_decomposition": {
+        "token_log_probability_component": 0.019891495754841504,
+        "relation_component": 0.0,
+        "reconstructed_total": 0.019891495754841504
+      },
+      "token_level_selection": [
+        {
+          "position": 1,
+          "target": "1",
+          "selected": "I",
+          "mismatch": true,
+          "target_hwr_rank": 2,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.19520795345306396,
+          "selected_probability": 0.21137449145317078,
+          "selected_minus_target_log_probability": 0.07956598301936602
+        },
+        {
+          "position": 2,
+          "target": "0",
+          "selected": "0",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.3100517988204956,
+          "selected_probability": 0.3100517988204956,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 3,
+          "target": "+",
+          "selected": "+",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.6573721766471863,
+          "selected_probability": 0.6573721766471863,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 4,
+          "target": "2",
+          "selected": "2",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.5038224458694458,
+          "selected_probability": 0.5038224458694458,
+          "selected_minus_target_log_probability": 0.0
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0095",
+      "cause": "beam_pruned",
+      "target_tokens": [
+        "f",
+        "(",
+        "x",
+        ")",
+        "+",
+        "2"
+      ],
+      "selected_tokens": [
+        "f",
+        "L",
+        "\\between",
+        ")",
+        "+",
+        "2"
+      ],
+      "target_beam_rank": null,
+      "first_lost_position": 3,
+      "first_lost_reason": "pruned_by_score_only_beam"
+    },
+    {
+      "sample_id": "aiflow_0096",
+      "cause": "survives_but_loses",
+      "target_tokens": [
+        "f",
+        "(",
+        "y",
+        ")"
+      ],
+      "selected_tokens": [
+        "f",
+        "(",
+        "\\zeta",
+        ")"
+      ],
+      "target_beam_rank": 5,
+      "first_lost_position": null,
+      "first_lost_reason": null,
+      "score_gap_decomposition": {
+        "token_log_probability_component": 0.5030691649931521,
+        "relation_component": 0.0,
+        "reconstructed_total": 0.5030691649931521
+      },
+      "token_level_selection": [
+        {
+          "position": 1,
+          "target": "f",
+          "selected": "f",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9324615597724915,
+          "selected_probability": 0.9324615597724915,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 2,
+          "target": "(",
+          "selected": "(",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.8159109354019165,
+          "selected_probability": 0.8159109354019165,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 3,
+          "target": "y",
+          "selected": "\\zeta",
+          "mismatch": true,
+          "target_hwr_rank": 5,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.06276530027389526,
+          "selected_probability": 0.46950504183769226,
+          "selected_minus_target_log_probability": 2.0122766599726085
+        },
+        {
+          "position": 4,
+          "target": ")",
+          "selected": ")",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9999802112579346,
+          "selected_probability": 0.9999802112579346,
+          "selected_minus_target_log_probability": 0.0
+        }
+      ]
+    },
+    {
+      "sample_id": "aiflow_0100",
+      "cause": "beam_pruned",
+      "target_tokens": [
+        "y",
+        "2",
+        "+",
+        "1"
+      ],
+      "selected_tokens": [
+        "y",
+        "2",
+        "\\dag",
+        "|"
+      ],
+      "target_beam_rank": null,
+      "first_lost_position": 4,
+      "first_lost_reason": "pruned_by_score_only_beam"
+    },
+    {
+      "sample_id": "aiflow_0105",
+      "cause": "beam_pruned",
+      "target_tokens": [
+        "f",
+        "(",
+        "g",
+        "(",
+        "x",
+        ")",
+        ")"
+      ],
+      "selected_tokens": [
+        "\\fint",
+        "(",
+        "g",
+        "\\iota",
+        "x",
+        ")",
+        ")"
+      ],
+      "target_beam_rank": null,
+      "first_lost_position": 4,
+      "first_lost_reason": "pruned_by_score_only_beam"
+    },
+    {
+      "sample_id": "aiflow_0111",
+      "cause": "beam_pruned",
+      "target_tokens": [
+        "(",
+        "x",
+        "+",
+        "1",
+        ")",
+        "\\times",
+        "2"
+      ],
+      "selected_tokens": [
+        "(",
+        "x",
+        "\\Psi",
+        "\\prime",
+        ")",
+        "\\times",
+        "2"
+      ],
+      "target_beam_rank": null,
+      "first_lost_position": 4,
+      "first_lost_reason": "pruned_by_score_only_beam"
+    },
+    {
+      "sample_id": "aiflow_0113",
+      "cause": "survives_but_loses",
+      "target_tokens": [
+        "8",
+        "\\div",
+        "2"
+      ],
+      "selected_tokens": [
+        "p",
+        "\\div",
+        "2"
+      ],
+      "target_beam_rank": 3,
+      "first_lost_position": null,
+      "first_lost_reason": null,
+      "score_gap_decomposition": {
+        "token_log_probability_component": 0.31029016899877476,
+        "relation_component": 0.0,
+        "reconstructed_total": 0.31029016899877476
+      },
+      "token_level_selection": [
+        {
+          "position": 1,
+          "target": "8",
+          "selected": "p",
+          "mismatch": true,
+          "target_hwr_rank": 3,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.08766917139291763,
+          "selected_probability": 0.22239182889461517,
+          "selected_minus_target_log_probability": 0.9308705069963243
+        },
+        {
+          "position": 2,
+          "target": "\\div",
+          "selected": "\\div",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9980195760726929,
+          "selected_probability": 0.9980195760726929,
+          "selected_minus_target_log_probability": 0.0
+        },
+        {
+          "position": 3,
+          "target": "2",
+          "selected": "2",
+          "mismatch": false,
+          "target_hwr_rank": 1,
+          "selected_hwr_rank": 1,
+          "target_probability": 0.9803206920623779,
+          "selected_probability": 0.9803206920623779,
+          "selected_minus_target_log_probability": 0.0
+        }
+      ]
+    }
+  ],
+  "beam_width_comparison": {
+    "narrow_beam_width": 32,
+    "wide_beam_width": 128,
+    "prior_pruned_formula_count": 6,
+    "prior_pruned_targets_reaching_wide_beam": 3,
+    "prior_pruned_targets_still_pruned": 3,
+    "newly_reached_targets_selected_exactly": 0,
+    "newly_reached_but_not_selected": [
+      {
+        "sample_id": "aiflow_0095",
+        "wide_beam_target_rank": 68,
+        "selected_tokens": [
+          "f",
+          "L",
+          "\\between",
+          ")",
+          "+",
+          "2"
+        ],
+        "target_tokens": [
+          "f",
+          "(",
+          "x",
+          ")",
+          "+",
+          "2"
+        ],
+        "score_gap_decomposition": {
+          "token_log_probability_component": 1.0152336772899286,
+          "relation_component": 0.0,
+          "reconstructed_total": 1.0152336772899286
+        }
+      },
+      {
+        "sample_id": "aiflow_0100",
+        "wide_beam_target_rank": 53,
+        "selected_tokens": [
+          "y",
+          "2",
+          "\\dag",
+          "|"
+        ],
+        "target_tokens": [
+          "y",
+          "2",
+          "+",
+          "1"
+        ],
+        "score_gap_decomposition": {
+          "token_log_probability_component": 1.075551491436765,
+          "relation_component": 0.0,
+          "reconstructed_total": 1.075551491436765
+        }
+      },
+      {
+        "sample_id": "aiflow_0105",
+        "wide_beam_target_rank": 56,
+        "selected_tokens": [
+          "\\fint",
+          "(",
+          "g",
+          "\\iota",
+          "x",
+          ")",
+          ")"
+        ],
+        "target_tokens": [
+          "f",
+          "(",
+          "g",
+          "(",
+          "x",
+          ")",
+          ")"
+        ],
+        "score_gap_decomposition": {
+          "token_log_probability_component": 0.7727934927566019,
+          "relation_component": 0.0,
+          "reconstructed_total": 0.7727934927566019
+        }
+      }
+    ],
+    "all_prior_residuals_exactly_selected_at_wide_width": 0
+  },
+  "verification": {
+    "checks": {
+      "trace_ids_unique": true,
+      "oracle_symbol_count_matches_target_token_count": true,
+      "decoder_trace_hash_matches": true,
+      "grouping_trace_hash_matches": true,
+      "decoder_replay_parity_all_formulas": true,
+      "decoder_failure_buckets_reconcile": true,
+      "top5_missing_formula_rows_have_missing_glyph_evidence": true,
+      "checkpoint_and_trace_vocab_agree": true,
+      "survivor_score_gaps_reconcile": true,
+      "survivor_relation_component_is_zero": true,
+      "all_surviving_targets_are_strict_ast_valid": true,
+      "grouping_failure_outcomes_reconcile": true,
+      "local_partition_enumeration_is_exact_cover_only": true,
+      "grouping_replay_all_checks_pass": true,
+      "critical_layer_trace_checks_all_pass": true,
+      "wide_beam_same_arm_and_inputs": true,
+      "wide_beam_does_not_promote_any_prior_residual": true
+    },
+    "all_checks_pass": true
+  }
+}

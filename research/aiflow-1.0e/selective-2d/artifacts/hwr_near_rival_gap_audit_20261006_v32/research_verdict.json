@@ -1,0 +1,46 @@
+{
+  "schema": "aiflow-near-rival-gap-verdict/v32",
+  "status": "verified_near_decision_gaps_remain_train_only_diagnostic",
+  "result_sha256": "ec448fe9bb5ad58456d87f8254e7997617f241b0834ff64f1c9fa5aa7f12e630",
+  "scope": "Same eight fixed admitted TRAIN batches, 512 exposures, 423 canonical-teacher-correct rows; no evaluation or ownership GT",
+  "near_definition": "Union of canonical and detached student Top-5; ground truth excluded; teacher-correct rows only",
+  "feature_only_vs_all_gap": {
+    "mean_all_gap_loss": [0.0982638169080019, 0.007924708595965058],
+    "all_gap_reduction_percent": 91.93527297704662,
+    "mean_near_gap_loss": [0.22237381152808666, 0.09941947739571333],
+    "near_gap_reduction_percent": 55.29173300015309,
+    "teacher_correct_student_wrong_rows": [10, 9],
+    "closest_margin_reduced_rows": [173, 144],
+    "student_total_correct_rows": [435, 435]
+  },
+  "all_gap_remaining_loss": {
+    "near_squared_deficit_energy_fraction": 0.14717134050328423,
+    "far_squared_deficit_energy_fraction": 0.8528286594967158,
+    "mean_all_gap_main_gradient_l2": 1.027662679553032,
+    "mean_near_gap_main_gradient_l2": 4.475385159254074,
+    "gradient_limit": "Energy fraction is NOT a fraction of gradient norm or causal learning effect. Near loss uses a different denominator; its larger gradient also reflects rescaling."
+  },
+  "interpretation": "The all-class average regularizer substantially reduces broad logit-gap drift, while decision-near gap preservation remains incomplete. Nine teacher-correct TRAIN cases still flip, and most remaining squared-deficit energy lies outside the union of Top-5 candidates. This supports a controlled near-rival objective experiment, not a claim that it will improve fresh handwriting or that the existing loss is numerically incorrect.",
+  "next_controlled_candidate": {
+    "change": "Replace only the all-371-rival averaged gap auxiliary loss with a teacher-correct near-rival Top-5-union gap auxiliary loss",
+    "keep": "V29 original data/schedule, 75% augmented hard labels, hard CE coefficient 1, frozen V27 feature coefficient, canonical cold start, all 57 tensors and 2400-step budget; do not keep the failed V31 sampler",
+    "coefficient_rule": "Derive and seal new near-gap weight from fixed eight TRAIN gradient norms, not from the 149-formula diagnostic",
+    "gates": "Direction/masking/shift-invariance/empty-mask checks, independent NumPy arithmetic, actual per-step gradient/margin scope and final same-input comparison",
+    "product": "Canonical remains champion; no deployment or activation"
+  },
+  "verification": {
+    "three_eight_batch_summaries_independently_recounted": true,
+    "near_loss_numpy_double_max_delta": 2.6440570399799412e-08,
+    "all_57_main_gradient_scopes_finite": true,
+    "near_gap_correct_class_direction_and_wrong_teacher_mask_verified": true,
+    "checkpoint_files_unchanged": true
+  },
+  "limits": "Already fitted TRAIN probes, not accuracy acceptance. Detached predicted-score masks are a diagnostic definition. No near-rival model was trained in this audit.",
+  "optimizer_steps": 0,
+  "coefficient_selection": false,
+  "evaluation_inputs_read": 0,
+  "owned_labels_read": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "goal_complete": false
+}

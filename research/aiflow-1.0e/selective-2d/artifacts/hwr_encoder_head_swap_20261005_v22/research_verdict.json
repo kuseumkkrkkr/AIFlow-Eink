@@ -1,0 +1,42 @@
+{
+  "schema": "aiflow-component-swap-verdict/v22",
+  "status": "verified_encoder_path_larger_regression_not_architecture_proof",
+  "result_sha256": "718b9920b87a9350269416529d48b7ccee845878ec10329c6c490509c47be654",
+  "scope": "Same consumed 149-formula oracle-group diagnostic; 96 legacy and 53 Codex-reviewed cases. No training or product replacement.",
+  "formula_top1_exact_matrix_of_149": {
+    "canonical_encoder": {"canonical_head": 76, "v16_head": 75, "v20_head": 75},
+    "v16_encoder": {"canonical_head": 70, "v16_head": 66, "v20_head": 66},
+    "v20_encoder": {"canonical_head": 68, "v16_head": 66, "v20_head": 66}
+  },
+  "linear_margin_diagnostic": {
+    "rival": "Final challenger's highest nontruth rival, fixed for all three decomposition terms",
+    "v16_regressed_tokens": 25,
+    "v20_regressed_tokens": 26,
+    "v16_regressed_mean_encoder_contribution": -0.9014852675130556,
+    "v16_regressed_mean_head_contribution": -0.25439524056312857,
+    "v16_regressed_mean_interaction_contribution": 0.004063692936488082,
+    "v20_regressed_mean_encoder_contribution": -1.0706488269823227,
+    "v20_regressed_mean_head_contribution": -0.29845651028734604,
+    "v20_regressed_mean_interaction_contribution": 0.003971466285704855,
+    "encoder_contribution_negative_on_every_regressed_token": true,
+    "maximum_reconstruction_delta": 1.6805364730254624e-5,
+    "limit": "Exact linear decomposition up to FP32 rounding, not an accuracy-attribution percentage or causal architecture proof."
+  },
+  "verification": {
+    "all_55_encoder_pooling_tensors_unchanged_during_head_swap": true,
+    "only_two_head_tensors_replaced": true,
+    "all_nine_full_forwards_match_independent_double_affine_top5": true,
+    "all_diagonal_outputs_bit_exact_with_v21": true,
+    "all_nine_saved_metric_cells_independently_recounted": true,
+    "model_memory_restored": true,
+    "checkpoint_files_unchanged": true
+  },
+  "next_controlled_experiment": "Cold canonical, identical V16 broad real inputs/views/schedule/2400-step budget/loss, freeze all 55 encoder/pooling tensors and train only the two head tensors. Compare both internal development and owned-input nonregression; do not train on the 149 acceptance-derived cases.",
+  "interpretation": "In this diagnostic encoder/pooling updates have a larger negative effect than the head-only update. Freezing the backbone is the next smaller controlled learning intervention; no evidence establishes that the architecture lacks representational capacity.",
+  "models_adopted": false,
+  "training_performed": false,
+  "product_checkpoint_changed": false,
+  "crohme_rows": 0,
+  "fresh_human_acceptance": false,
+  "goal_complete": false
+}

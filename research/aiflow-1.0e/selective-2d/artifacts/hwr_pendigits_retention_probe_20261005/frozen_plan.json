@@ -1,0 +1,41 @@
+{
+  "schema": "aiflow-math-retention-probe-plan/v1",
+  "steps": 64,
+  "seed": 20261005,
+  "learning_rate": 1e-05,
+  "parent_plan_sha256": "e14da1c5e5106b647f1cd0f7f81c341a47783802e5fd6ac4997ec9e62865c2e3",
+  "script_sha256": "dfe777af1709eab5946b5140e43aaa7e6a38a8c9e2bef8372155c63cf1d137b2",
+  "checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+  "dependencies": {
+    "hwr_boundary_distillation_v1.py": "b983d481ae982335d8c888657565896d31bcdb31e65614a05a906956385f62f9",
+    "run_hwr_pendigits_tube_probe_v1.py": "5ffe3f89a29baeb81b45d588ecf4b1a352aa8147b7bf38a7004ef5e93ac5e80c",
+    "run_hwr_affine_distillation_experiment_v1.py": "3a36d8efee518b2fa5c3683e9fa7a4d6ff31450d48a353f355f2667834357b4a",
+    "train_character_classifier_v1.py": "7be87058f02733e6c4ba80123b4935c10cb4b298964609e8dca82a5781e4fb59",
+    "evaluate_48hz_prefix_v1.py": "c82c453670ea436015143c70545f342c035e3e7492e5d1840cfa03eb81c129eb"
+  },
+  "arms": {
+    "stochastic_replay": "parent original-consistency objective, byte-reproducibility control",
+    "deterministic_replay": "same objective; old replay KL forward dropout off, autograd on",
+    "deterministic_guarded": "deterministic replay plus backtracking veto if any of 831 canonical-correct TRAIN anchors loses global Top-1"
+  },
+  "optimizer_guard_fractions": [
+    1.0,
+    0.5,
+    0.25,
+    0.125,
+    0.0625,
+    0.03125
+  ],
+  "full_rejection": "restore all model weights AND optimizer moments/counters",
+  "fractional_acceptance": "interpolated floating weights; proposed Adam moments retained",
+  "source_train_probe_rows": 1024,
+  "old_train_replay_rows": 1024,
+  "protected_train_anchor_rows": 831,
+  "held_inputs_forwarded": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0,
+  "human_boundary_labels": 0,
+  "model_selection": false,
+  "product_adopted": false,
+  "limitations": "TRAINING/integrity only; finite supervised anchors, not whole-domain or independent acceptance nonregression. Training guard is not a mobile inference stage."
+}

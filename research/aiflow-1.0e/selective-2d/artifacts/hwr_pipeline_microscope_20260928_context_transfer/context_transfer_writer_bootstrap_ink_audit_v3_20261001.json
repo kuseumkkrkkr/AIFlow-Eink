@@ -1,0 +1,1739 @@
+{
+  "schema": "aiflow-hwr-context-transfer-writer-bootstrap/v2",
+  "scope": "paired writer-cluster audit of saved project-owned context shadow predictions on actual Fast groups; no inference, training, CROHME, or promotion",
+  "inputs": {
+    "context_transfer_report": {
+      "path": "artifacts\\hwr_pipeline_microscope_20260928_context_transfer\\context_transfer_v3.json",
+      "sha256": "c6533f9f78809cdae90068e9b34e6bd09e98600cdd7287e3219dcdb4899920ac"
+    },
+    "context_model_report": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\owned_formula_context_20260822_r6\\owned_formula_context_report.json",
+      "sha256": "97670478331d187b37dd1006d715db8c39bbe6050f2b8794da35aed7318e8e27"
+    },
+    "trace_summary": {
+      "path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\summary.json",
+      "sha256": "1b26fbc501466bcb8ccd7c25d9796320173640a4aa35b82eac4ecd833ad5460e"
+    },
+    "formula_source": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\frozen_dataset\\data\\formulas_valid.jsonl",
+      "sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401"
+    },
+    "training_candidates": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\homograph_context_20260814\\direct_candidates.jsonl.gz",
+      "sha256": "8c59a21493592638f77c0a431f33b56d17c973b488d6b8da0afff4dcf7125307"
+    },
+    "training_formula_source": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\hf-dataset\\data\\formulas_valid.jsonl",
+      "sha256": "e2de4f23677e1ecb4a25d2ac2bebc6feaf6a18c57ef8f280cff6e825baecb7b7"
+    },
+    "current_hwr_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "context_checkpoint": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\owned_formula_context_20260822_r6\\owned_formula_context_product.pt",
+      "sha256": "7e0ff1b04ba1071867bfa6811869f242907ebe017d0996597776c6050cc2fc94"
+    }
+  },
+  "arms": {
+    "baseline": "fast_fence_infix_equation",
+    "challenger": "context_fence_infix_equation"
+  },
+  "policy": {
+    "selection_independent": false,
+    "training_data": "47 ownership-verified formulas / 211 glyphs / three writers",
+    "training_excluded_crohme": true,
+    "raw_ink_overlap_auditable": false,
+    "writer_id_overlap_auditable": false,
+    "overlapping_formula_id_strings": 42,
+    "overlapping_ids_with_same_target_sequence": 0,
+    "writer_overlap_audit": {
+      "training_writer_groups": 3,
+      "evaluation_writers": 9,
+      "overlapping_evaluation_writer_ids": [
+        "writer_001",
+        "writer_003",
+        "writer_004"
+      ],
+      "writer_disjoint_evaluation_ids": [
+        "writer_002",
+        "writer_006",
+        "writer_007",
+        "writer_008",
+        "writer_010",
+        "writer_012"
+      ]
+    },
+    "formula_id_overlap_audit": {
+      "shared_formula_id_strings": 42,
+      "same_ordered_target_sequences": 0,
+      "different_ordered_target_sequences": 42,
+      "same_id_same_writer_group": 0,
+      "different_target_examples": [
+        {
+          "formula_id": "aiflow_0005",
+          "training_target": [
+            "0",
+            "+",
+            "0"
+          ],
+          "evaluation_target": [
+            "5",
+            "+",
+            "4"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0006",
+          "training_target": [
+            "1",
+            "+",
+            "5"
+          ],
+          "evaluation_target": [
+            "7",
+            "\\times",
+            "3",
+            "=",
+            "2",
+            "1"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0007",
+          "training_target": [
+            "6",
+            "\\times",
+            "0",
+            "=",
+            "0"
+          ],
+          "evaluation_target": [
+            "1",
+            "6",
+            "\\div",
+            "8",
+            "=",
+            "2"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0008",
+          "training_target": [
+            "7",
+            "-",
+            "6",
+            "=",
+            "1"
+          ],
+          "evaluation_target": [
+            "b",
+            "=",
+            "4"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0009",
+          "training_target": [
+            "1",
+            "0",
+            "-",
+            "3"
+          ],
+          "evaluation_target": [
+            "f",
+            "(",
+            "y",
+            ")",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0010",
+          "training_target": [
+            "1",
+            "0",
+            "+",
+            "8"
+          ],
+          "evaluation_target": [
+            "x",
+            "\\neq",
+            "y"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0015",
+          "training_target": [
+            "y",
+            "/",
+            "4"
+          ],
+          "evaluation_target": [
+            "0",
+            "+",
+            "0"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0016",
+          "training_target": [
+            "b",
+            "+",
+            "4"
+          ],
+          "evaluation_target": [
+            "1",
+            "+",
+            "5"
+          ]
+        }
+      ]
+    },
+    "training_candidates_contain_raw_strokes": false,
+    "candidate_to_source_reconciliation": {
+      "candidate_formula_count": 47,
+      "missing_source_formula_ids": [],
+      "target_sequence_mismatch_count": 0,
+      "writer_group_mismatch_count": 0
+    },
+    "raw_ink_overlap_audit": {
+      "training_formulas_with_raw_strokes": 47,
+      "evaluation_formulas_with_raw_strokes": 149,
+      "signature_method": "ordered stroke trajectories: exact x/y, exact x/y/time, and bbox-normalized x/y rounded to 1e-6; cross-ID comparisons included",
+      "raw_xy": {
+        "matching_signature_count": 47,
+        "matching_formula_pair_count": 47,
+        "matching_formula_pairs": [
+          {
+            "training_id": "aiflow_0005",
+            "evaluation_id": "aiflow_0015"
+          },
+          {
+            "training_id": "aiflow_0006",
+            "evaluation_id": "aiflow_0016"
+          },
+          {
+            "training_id": "aiflow_0007",
+            "evaluation_id": "aiflow_0017"
+          },
+          {
+            "training_id": "aiflow_0008",
+            "evaluation_id": "aiflow_0018"
+          },
+          {
+            "training_id": "aiflow_0009",
+            "evaluation_id": "aiflow_0019"
+          },
+          {
+            "training_id": "aiflow_0010",
+            "evaluation_id": "aiflow_0020"
+          },
+          {
+            "training_id": "aiflow_0011",
+            "evaluation_id": "aiflow_0021"
+          },
+          {
+            "training_id": "aiflow_0012",
+            "evaluation_id": "aiflow_0022"
+          },
+          {
+            "training_id": "aiflow_0013",
+            "evaluation_id": "aiflow_0023"
+          },
+          {
+            "training_id": "aiflow_0014",
+            "evaluation_id": "aiflow_0024"
+          },
+          {
+            "training_id": "aiflow_0015",
+            "evaluation_id": "aiflow_0025"
+          },
+          {
+            "training_id": "aiflow_0016",
+            "evaluation_id": "aiflow_0026"
+          },
+          {
+            "training_id": "aiflow_0017",
+            "evaluation_id": "aiflow_0027"
+          },
+          {
+            "training_id": "aiflow_0018",
+            "evaluation_id": "aiflow_0028"
+          },
+          {
+            "training_id": "aiflow_0019",
+            "evaluation_id": "aiflow_0029"
+          },
+          {
+            "training_id": "aiflow_0020",
+            "evaluation_id": "aiflow_0030"
+          },
+          {
+            "training_id": "aiflow_0082",
+            "evaluation_id": "aiflow_0122"
+          },
+          {
+            "training_id": "aiflow_0083",
+            "evaluation_id": "aiflow_0123"
+          },
+          {
+            "training_id": "aiflow_0084",
+            "evaluation_id": "aiflow_0124"
+          },
+          {
+            "training_id": "aiflow_0085",
+            "evaluation_id": "aiflow_0125"
+          },
+          {
+            "training_id": "aiflow_0086",
+            "evaluation_id": "aiflow_0126"
+          },
+          {
+            "training_id": "aiflow_0087",
+            "evaluation_id": "aiflow_0127"
+          },
+          {
+            "training_id": "aiflow_0088",
+            "evaluation_id": "aiflow_0128"
+          },
+          {
+            "training_id": "aiflow_0089",
+            "evaluation_id": "aiflow_0129"
+          },
+          {
+            "training_id": "aiflow_0090",
+            "evaluation_id": "aiflow_0130"
+          },
+          {
+            "training_id": "aiflow_0091",
+            "evaluation_id": "aiflow_0131"
+          },
+          {
+            "training_id": "aiflow_0092",
+            "evaluation_id": "aiflow_0132"
+          },
+          {
+            "training_id": "aiflow_0093",
+            "evaluation_id": "aiflow_0133"
+          },
+          {
+            "training_id": "aiflow_0094",
+            "evaluation_id": "aiflow_0134"
+          },
+          {
+            "training_id": "aiflow_0095",
+            "evaluation_id": "aiflow_0135"
+          },
+          {
+            "training_id": "aiflow_0096",
+            "evaluation_id": "aiflow_0136"
+          },
+          {
+            "training_id": "aiflow_0097",
+            "evaluation_id": "aiflow_0137"
+          },
+          {
+            "training_id": "aiflow_0100",
+            "evaluation_id": "aiflow_0140"
+          },
+          {
+            "training_id": "aiflow_0101",
+            "evaluation_id": "aiflow_0141"
+          },
+          {
+            "training_id": "aiflow_0102",
+            "evaluation_id": "aiflow_0142"
+          },
+          {
+            "training_id": "aiflow_0103",
+            "evaluation_id": "aiflow_0143"
+          },
+          {
+            "training_id": "aiflow_0104",
+            "evaluation_id": "aiflow_0144"
+          },
+          {
+            "training_id": "aiflow_0105",
+            "evaluation_id": "aiflow_0145"
+          },
+          {
+            "training_id": "aiflow_0106",
+            "evaluation_id": "aiflow_0146"
+          },
+          {
+            "training_id": "aiflow_0107",
+            "evaluation_id": "aiflow_0147"
+          },
+          {
+            "training_id": "aiflow_0111",
+            "evaluation_id": "aiflow_0151"
+          },
+          {
+            "training_id": "aiflow_0112",
+            "evaluation_id": "aiflow_0152"
+          },
+          {
+            "training_id": "aiflow_0113",
+            "evaluation_id": "aiflow_0153"
+          },
+          {
+            "training_id": "aiflow_0114",
+            "evaluation_id": "aiflow_0154"
+          },
+          {
+            "training_id": "aiflow_0115",
+            "evaluation_id": "aiflow_0155"
+          },
+          {
+            "training_id": "aiflow_0116",
+            "evaluation_id": "aiflow_0156"
+          },
+          {
+            "training_id": "aiflow_0117",
+            "evaluation_id": "aiflow_0157"
+          }
+        ]
+      },
+      "raw_xyt": {
+        "matching_signature_count": 47,
+        "matching_formula_pair_count": 47,
+        "matching_formula_pairs": [
+          {
+            "training_id": "aiflow_0005",
+            "evaluation_id": "aiflow_0015"
+          },
+          {
+            "training_id": "aiflow_0006",
+            "evaluation_id": "aiflow_0016"
+          },
+          {
+            "training_id": "aiflow_0007",
+            "evaluation_id": "aiflow_0017"
+          },
+          {
+            "training_id": "aiflow_0008",
+            "evaluation_id": "aiflow_0018"
+          },
+          {
+            "training_id": "aiflow_0009",
+            "evaluation_id": "aiflow_0019"
+          },
+          {
+            "training_id": "aiflow_0010",
+            "evaluation_id": "aiflow_0020"
+          },
+          {
+            "training_id": "aiflow_0011",
+            "evaluation_id": "aiflow_0021"
+          },
+          {
+            "training_id": "aiflow_0012",
+            "evaluation_id": "aiflow_0022"
+          },
+          {
+            "training_id": "aiflow_0013",
+            "evaluation_id": "aiflow_0023"
+          },
+          {
+            "training_id": "aiflow_0014",
+            "evaluation_id": "aiflow_0024"
+          },
+          {
+            "training_id": "aiflow_0015",
+            "evaluation_id": "aiflow_0025"
+          },
+          {
+            "training_id": "aiflow_0016",
+            "evaluation_id": "aiflow_0026"
+          },
+          {
+            "training_id": "aiflow_0017",
+            "evaluation_id": "aiflow_0027"
+          },
+          {
+            "training_id": "aiflow_0018",
+            "evaluation_id": "aiflow_0028"
+          },
+          {
+            "training_id": "aiflow_0019",
+            "evaluation_id": "aiflow_0029"
+          },
+          {
+            "training_id": "aiflow_0020",
+            "evaluation_id": "aiflow_0030"
+          },
+          {
+            "training_id": "aiflow_0082",
+            "evaluation_id": "aiflow_0122"
+          },
+          {
+            "training_id": "aiflow_0083",
+            "evaluation_id": "aiflow_0123"
+          },
+          {
+            "training_id": "aiflow_0084",
+            "evaluation_id": "aiflow_0124"
+          },
+          {
+            "training_id": "aiflow_0085",
+            "evaluation_id": "aiflow_0125"
+          },
+          {
+            "training_id": "aiflow_0086",
+            "evaluation_id": "aiflow_0126"
+          },
+          {
+            "training_id": "aiflow_0087",
+            "evaluation_id": "aiflow_0127"
+          },
+          {
+            "training_id": "aiflow_0088",
+            "evaluation_id": "aiflow_0128"
+          },
+          {
+            "training_id": "aiflow_0089",
+            "evaluation_id": "aiflow_0129"
+          },
+          {
+            "training_id": "aiflow_0090",
+            "evaluation_id": "aiflow_0130"
+          },
+          {
+            "training_id": "aiflow_0091",
+            "evaluation_id": "aiflow_0131"
+          },
+          {
+            "training_id": "aiflow_0092",
+            "evaluation_id": "aiflow_0132"
+          },
+          {
+            "training_id": "aiflow_0093",
+            "evaluation_id": "aiflow_0133"
+          },
+          {
+            "training_id": "aiflow_0094",
+            "evaluation_id": "aiflow_0134"
+          },
+          {
+            "training_id": "aiflow_0095",
+            "evaluation_id": "aiflow_0135"
+          },
+          {
+            "training_id": "aiflow_0096",
+            "evaluation_id": "aiflow_0136"
+          },
+          {
+            "training_id": "aiflow_0097",
+            "evaluation_id": "aiflow_0137"
+          },
+          {
+            "training_id": "aiflow_0100",
+            "evaluation_id": "aiflow_0140"
+          },
+          {
+            "training_id": "aiflow_0101",
+            "evaluation_id": "aiflow_0141"
+          },
+          {
+            "training_id": "aiflow_0102",
+            "evaluation_id": "aiflow_0142"
+          },
+          {
+            "training_id": "aiflow_0103",
+            "evaluation_id": "aiflow_0143"
+          },
+          {
+            "training_id": "aiflow_0104",
+            "evaluation_id": "aiflow_0144"
+          },
+          {
+            "training_id": "aiflow_0105",
+            "evaluation_id": "aiflow_0145"
+          },
+          {
+            "training_id": "aiflow_0106",
+            "evaluation_id": "aiflow_0146"
+          },
+          {
+            "training_id": "aiflow_0107",
+            "evaluation_id": "aiflow_0147"
+          },
+          {
+            "training_id": "aiflow_0111",
+            "evaluation_id": "aiflow_0151"
+          },
+          {
+            "training_id": "aiflow_0112",
+            "evaluation_id": "aiflow_0152"
+          },
+          {
+            "training_id": "aiflow_0113",
+            "evaluation_id": "aiflow_0153"
+          },
+          {
+            "training_id": "aiflow_0114",
+            "evaluation_id": "aiflow_0154"
+          },
+          {
+            "training_id": "aiflow_0115",
+            "evaluation_id": "aiflow_0155"
+          },
+          {
+            "training_id": "aiflow_0116",
+            "evaluation_id": "aiflow_0156"
+          },
+          {
+            "training_id": "aiflow_0117",
+            "evaluation_id": "aiflow_0157"
+          }
+        ]
+      },
+      "normalized_xy": {
+        "matching_signature_count": 47,
+        "matching_formula_pair_count": 47,
+        "matching_formula_pairs": [
+          {
+            "training_id": "aiflow_0005",
+            "evaluation_id": "aiflow_0015"
+          },
+          {
+            "training_id": "aiflow_0006",
+            "evaluation_id": "aiflow_0016"
+          },
+          {
+            "training_id": "aiflow_0007",
+            "evaluation_id": "aiflow_0017"
+          },
+          {
+            "training_id": "aiflow_0008",
+            "evaluation_id": "aiflow_0018"
+          },
+          {
+            "training_id": "aiflow_0009",
+            "evaluation_id": "aiflow_0019"
+          },
+          {
+            "training_id": "aiflow_0010",
+            "evaluation_id": "aiflow_0020"
+          },
+          {
+            "training_id": "aiflow_0011",
+            "evaluation_id": "aiflow_0021"
+          },
+          {
+            "training_id": "aiflow_0012",
+            "evaluation_id": "aiflow_0022"
+          },
+          {
+            "training_id": "aiflow_0013",
+            "evaluation_id": "aiflow_0023"
+          },
+          {
+            "training_id": "aiflow_0014",
+            "evaluation_id": "aiflow_0024"
+          },
+          {
+            "training_id": "aiflow_0015",
+            "evaluation_id": "aiflow_0025"
+          },
+          {
+            "training_id": "aiflow_0016",
+            "evaluation_id": "aiflow_0026"
+          },
+          {
+            "training_id": "aiflow_0017",
+            "evaluation_id": "aiflow_0027"
+          },
+          {
+            "training_id": "aiflow_0018",
+            "evaluation_id": "aiflow_0028"
+          },
+          {
+            "training_id": "aiflow_0019",
+            "evaluation_id": "aiflow_0029"
+          },
+          {
+            "training_id": "aiflow_0020",
+            "evaluation_id": "aiflow_0030"
+          },
+          {
+            "training_id": "aiflow_0082",
+            "evaluation_id": "aiflow_0122"
+          },
+          {
+            "training_id": "aiflow_0083",
+            "evaluation_id": "aiflow_0123"
+          },
+          {
+            "training_id": "aiflow_0084",
+            "evaluation_id": "aiflow_0124"
+          },
+          {
+            "training_id": "aiflow_0085",
+            "evaluation_id": "aiflow_0125"
+          },
+          {
+            "training_id": "aiflow_0086",
+            "evaluation_id": "aiflow_0126"
+          },
+          {
+            "training_id": "aiflow_0087",
+            "evaluation_id": "aiflow_0127"
+          },
+          {
+            "training_id": "aiflow_0088",
+            "evaluation_id": "aiflow_0128"
+          },
+          {
+            "training_id": "aiflow_0089",
+            "evaluation_id": "aiflow_0129"
+          },
+          {
+            "training_id": "aiflow_0090",
+            "evaluation_id": "aiflow_0130"
+          },
+          {
+            "training_id": "aiflow_0091",
+            "evaluation_id": "aiflow_0131"
+          },
+          {
+            "training_id": "aiflow_0092",
+            "evaluation_id": "aiflow_0132"
+          },
+          {
+            "training_id": "aiflow_0093",
+            "evaluation_id": "aiflow_0133"
+          },
+          {
+            "training_id": "aiflow_0094",
+            "evaluation_id": "aiflow_0134"
+          },
+          {
+            "training_id": "aiflow_0095",
+            "evaluation_id": "aiflow_0135"
+          },
+          {
+            "training_id": "aiflow_0096",
+            "evaluation_id": "aiflow_0136"
+          },
+          {
+            "training_id": "aiflow_0097",
+            "evaluation_id": "aiflow_0137"
+          },
+          {
+            "training_id": "aiflow_0100",
+            "evaluation_id": "aiflow_0140"
+          },
+          {
+            "training_id": "aiflow_0101",
+            "evaluation_id": "aiflow_0141"
+          },
+          {
+            "training_id": "aiflow_0102",
+            "evaluation_id": "aiflow_0142"
+          },
+          {
+            "training_id": "aiflow_0103",
+            "evaluation_id": "aiflow_0143"
+          },
+          {
+            "training_id": "aiflow_0104",
+            "evaluation_id": "aiflow_0144"
+          },
+          {
+            "training_id": "aiflow_0105",
+            "evaluation_id": "aiflow_0145"
+          },
+          {
+            "training_id": "aiflow_0106",
+            "evaluation_id": "aiflow_0146"
+          },
+          {
+            "training_id": "aiflow_0107",
+            "evaluation_id": "aiflow_0147"
+          },
+          {
+            "training_id": "aiflow_0111",
+            "evaluation_id": "aiflow_0151"
+          },
+          {
+            "training_id": "aiflow_0112",
+            "evaluation_id": "aiflow_0152"
+          },
+          {
+            "training_id": "aiflow_0113",
+            "evaluation_id": "aiflow_0153"
+          },
+          {
+            "training_id": "aiflow_0114",
+            "evaluation_id": "aiflow_0154"
+          },
+          {
+            "training_id": "aiflow_0115",
+            "evaluation_id": "aiflow_0155"
+          },
+          {
+            "training_id": "aiflow_0116",
+            "evaluation_id": "aiflow_0156"
+          },
+          {
+            "training_id": "aiflow_0117",
+            "evaluation_id": "aiflow_0157"
+          }
+        ]
+      },
+      "exact_raw_xy_pair_details": [
+        {
+          "training_id": "aiflow_0005",
+          "evaluation_id": "aiflow_0015",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0006",
+          "evaluation_id": "aiflow_0016",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0007",
+          "evaluation_id": "aiflow_0017",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0008",
+          "evaluation_id": "aiflow_0018",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0009",
+          "evaluation_id": "aiflow_0019",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0010",
+          "evaluation_id": "aiflow_0020",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0011",
+          "evaluation_id": "aiflow_0021",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0012",
+          "evaluation_id": "aiflow_0022",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0013",
+          "evaluation_id": "aiflow_0023",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0014",
+          "evaluation_id": "aiflow_0024",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0015",
+          "evaluation_id": "aiflow_0025",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0016",
+          "evaluation_id": "aiflow_0026",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0017",
+          "evaluation_id": "aiflow_0027",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0018",
+          "evaluation_id": "aiflow_0028",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0019",
+          "evaluation_id": "aiflow_0029",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0020",
+          "evaluation_id": "aiflow_0030",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0082",
+          "evaluation_id": "aiflow_0122",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0083",
+          "evaluation_id": "aiflow_0123",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0084",
+          "evaluation_id": "aiflow_0124",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0085",
+          "evaluation_id": "aiflow_0125",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0086",
+          "evaluation_id": "aiflow_0126",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0087",
+          "evaluation_id": "aiflow_0127",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0088",
+          "evaluation_id": "aiflow_0128",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0089",
+          "evaluation_id": "aiflow_0129",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0090",
+          "evaluation_id": "aiflow_0130",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0091",
+          "evaluation_id": "aiflow_0131",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0092",
+          "evaluation_id": "aiflow_0132",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0093",
+          "evaluation_id": "aiflow_0133",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0094",
+          "evaluation_id": "aiflow_0134",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0095",
+          "evaluation_id": "aiflow_0135",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0096",
+          "evaluation_id": "aiflow_0136",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0097",
+          "evaluation_id": "aiflow_0137",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_003",
+          "evaluation_writer_id": "writer_006",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0100",
+          "evaluation_id": "aiflow_0140",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_004",
+          "evaluation_writer_id": "writer_007",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0101",
+          "evaluation_id": "aiflow_0141",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_004",
+          "evaluation_writer_id": "writer_007",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0102",
+          "evaluation_id": "aiflow_0142",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_004",
+          "evaluation_writer_id": "writer_007",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0103",
+          "evaluation_id": "aiflow_0143",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_004",
+          "evaluation_writer_id": "writer_007",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0104",
+          "evaluation_id": "aiflow_0144",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_004",
+          "evaluation_writer_id": "writer_007",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0105",
+          "evaluation_id": "aiflow_0145",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_004",
+          "evaluation_writer_id": "writer_007",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0106",
+          "evaluation_id": "aiflow_0146",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_004",
+          "evaluation_writer_id": "writer_007",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0107",
+          "evaluation_id": "aiflow_0147",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_004",
+          "evaluation_writer_id": "writer_007",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0111",
+          "evaluation_id": "aiflow_0151",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0112",
+          "evaluation_id": "aiflow_0152",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0113",
+          "evaluation_id": "aiflow_0153",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0114",
+          "evaluation_id": "aiflow_0154",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0115",
+          "evaluation_id": "aiflow_0155",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0116",
+          "evaluation_id": "aiflow_0156",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        },
+        {
+          "training_id": "aiflow_0117",
+          "evaluation_id": "aiflow_0157",
+          "target_sequence_equal": true,
+          "training_writer_id": "writer_001",
+          "evaluation_writer_id": "writer_002",
+          "writer_id_equal": false
+        }
+      ]
+    },
+    "evaluation_independent_of_context_training": false,
+    "acceptance_readiness": {
+      "eligible": false,
+      "blockers": [
+        "47 evaluation formulas are exact raw-ink copies of training formulas",
+        "3 evaluation writer IDs overlap training writer groups",
+        "the evaluation cohort was inspected during development",
+        "approximate near-duplicate trajectories are not covered by exact-signature matching"
+      ]
+    },
+    "interpretation_limit": "all exact ink copies are excluded in the exact-ink-disjoint slice; these repeated-split results remain exploratory because this evaluation cohort has been inspected during development, and signature matching does not rule out approximate near-duplicates"
+  },
+  "summary": {
+    "formulas": 149,
+    "writers": 9,
+    "fast_group_exact_formulas": 125,
+    "formula_exact": {
+      "baseline": 79,
+      "challenger": 108,
+      "transitions": {
+        "both_exact": 78,
+        "baseline_only": 1,
+        "challenger_only": 30,
+        "both_wrong": 40
+      }
+    },
+    "token_hits_on_paired_alignable_rows": {
+      "formulas": 129,
+      "baseline_formula_rows_with_aligned_tokens": 129,
+      "challenger_formula_rows_with_aligned_tokens": 129,
+      "baseline": 420,
+      "challenger": 463,
+      "delta": 43
+    },
+    "candidate_violations": 0,
+    "writer_cluster_bootstrap": {
+      "method": "paired writer-cluster bootstrap; writers sampled with replacement, formula-weighted rate difference",
+      "iterations": 10000,
+      "seed": 20261001,
+      "formulas": 149,
+      "writers": 9,
+      "baseline_exact": 79,
+      "challenger_exact": 108,
+      "transitions": {
+        "both_exact": 78,
+        "baseline_only": 1,
+        "challenger_only": 30,
+        "both_wrong": 40
+      },
+      "delta_rate_pp_point_estimate": 19.463087248322147,
+      "delta_rate_pp_95_interval": [
+        11.594202898550725,
+        33.33333333333333
+      ],
+      "writer_rows": [
+        {
+          "writer_id": "writer_001",
+          "formulas": 10,
+          "baseline_exact": 6,
+          "challenger_exact": 10,
+          "delta_exact": 4
+        },
+        {
+          "writer_id": "writer_002",
+          "formulas": 23,
+          "baseline_exact": 16,
+          "challenger_exact": 19,
+          "delta_exact": 3
+        },
+        {
+          "writer_id": "writer_003",
+          "formulas": 20,
+          "baseline_exact": 13,
+          "challenger_exact": 13,
+          "delta_exact": 0
+        },
+        {
+          "writer_id": "writer_004",
+          "formulas": 10,
+          "baseline_exact": 3,
+          "challenger_exact": 5,
+          "delta_exact": 2
+        },
+        {
+          "writer_id": "writer_006",
+          "formulas": 20,
+          "baseline_exact": 12,
+          "challenger_exact": 20,
+          "delta_exact": 8
+        },
+        {
+          "writer_id": "writer_007",
+          "formulas": 8,
+          "baseline_exact": 3,
+          "challenger_exact": 7,
+          "delta_exact": 4
+        },
+        {
+          "writer_id": "writer_008",
+          "formulas": 5,
+          "baseline_exact": 4,
+          "challenger_exact": 5,
+          "delta_exact": 1
+        },
+        {
+          "writer_id": "writer_010",
+          "formulas": 4,
+          "baseline_exact": 2,
+          "challenger_exact": 3,
+          "delta_exact": 1
+        },
+        {
+          "writer_id": "writer_012",
+          "formulas": 49,
+          "baseline_exact": 20,
+          "challenger_exact": 26,
+          "delta_exact": 6
+        }
+      ]
+    },
+    "writer_disjoint_subset": {
+      "bootstrap_seed": 20261002,
+      "formulas": 109,
+      "writers": 6,
+      "baseline_exact": 57,
+      "challenger_exact": 80,
+      "transitions": {
+        "both_exact": 57,
+        "baseline_only": 0,
+        "challenger_only": 23,
+        "both_wrong": 29
+      },
+      "delta_rate_pp_point_estimate": 21.100917431192663,
+      "delta_rate_pp_95_interval": [
+        13.125,
+        40.0
+      ],
+      "writer_rows": [
+        {
+          "writer_id": "writer_002",
+          "formulas": 23,
+          "baseline_exact": 16,
+          "challenger_exact": 19,
+          "delta_exact": 3
+        },
+        {
+          "writer_id": "writer_006",
+          "formulas": 20,
+          "baseline_exact": 12,
+          "challenger_exact": 20,
+          "delta_exact": 8
+        },
+        {
+          "writer_id": "writer_007",
+          "formulas": 8,
+          "baseline_exact": 3,
+          "challenger_exact": 7,
+          "delta_exact": 4
+        },
+        {
+          "writer_id": "writer_008",
+          "formulas": 5,
+          "baseline_exact": 4,
+          "challenger_exact": 5,
+          "delta_exact": 1
+        },
+        {
+          "writer_id": "writer_010",
+          "formulas": 4,
+          "baseline_exact": 2,
+          "challenger_exact": 3,
+          "delta_exact": 1
+        },
+        {
+          "writer_id": "writer_012",
+          "formulas": 49,
+          "baseline_exact": 20,
+          "challenger_exact": 26,
+          "delta_exact": 6
+        }
+      ]
+    },
+    "contamination_sensitivity_slices": {
+      "bootstrap_method": "paired writer-cluster bootstrap; formula-weighted rate difference; exploratory sensitivity only",
+      "iterations": 10000,
+      "slices": {
+        "all_saved_evaluation": {
+          "formulas": 149,
+          "writers": 9,
+          "baseline_exact": 79,
+          "challenger_exact": 108,
+          "transitions": {
+            "both_exact": 78,
+            "baseline_only": 1,
+            "challenger_only": 30,
+            "both_wrong": 40
+          },
+          "delta_rate_pp_point_estimate": 19.463087248322147,
+          "delta_rate_pp_95_interval": [
+            11.25807119205298,
+            33.00970873786408
+          ],
+          "writer_rows": [
+            {
+              "writer_id": "writer_001",
+              "formulas": 10,
+              "baseline_exact": 6,
+              "challenger_exact": 10,
+              "delta_exact": 4
+            },
+            {
+              "writer_id": "writer_002",
+              "formulas": 23,
+              "baseline_exact": 16,
+              "challenger_exact": 19,
+              "delta_exact": 3
+            },
+            {
+              "writer_id": "writer_003",
+              "formulas": 20,
+              "baseline_exact": 13,
+              "challenger_exact": 13,
+              "delta_exact": 0
+            },
+            {
+              "writer_id": "writer_004",
+              "formulas": 10,
+              "baseline_exact": 3,
+              "challenger_exact": 5,
+              "delta_exact": 2
+            },
+            {
+              "writer_id": "writer_006",
+              "formulas": 20,
+              "baseline_exact": 12,
+              "challenger_exact": 20,
+              "delta_exact": 8
+            },
+            {
+              "writer_id": "writer_007",
+              "formulas": 8,
+              "baseline_exact": 3,
+              "challenger_exact": 7,
+              "delta_exact": 4
+            },
+            {
+              "writer_id": "writer_008",
+              "formulas": 5,
+              "baseline_exact": 4,
+              "challenger_exact": 5,
+              "delta_exact": 1
+            },
+            {
+              "writer_id": "writer_010",
+              "formulas": 4,
+              "baseline_exact": 2,
+              "challenger_exact": 3,
+              "delta_exact": 1
+            },
+            {
+              "writer_id": "writer_012",
+              "formulas": 49,
+              "baseline_exact": 20,
+              "challenger_exact": 26,
+              "delta_exact": 6
+            }
+          ]
+        },
+        "writer_disjoint_only": {
+          "formulas": 109,
+          "writers": 6,
+          "baseline_exact": 57,
+          "challenger_exact": 80,
+          "transitions": {
+            "both_exact": 57,
+            "baseline_only": 0,
+            "challenger_only": 23,
+            "both_wrong": 29
+          },
+          "delta_rate_pp_point_estimate": 21.100917431192663,
+          "delta_rate_pp_95_interval": [
+            13.157894736842104,
+            39.58333333333333
+          ],
+          "writer_rows": [
+            {
+              "writer_id": "writer_002",
+              "formulas": 23,
+              "baseline_exact": 16,
+              "challenger_exact": 19,
+              "delta_exact": 3
+            },
+            {
+              "writer_id": "writer_006",
+              "formulas": 20,
+              "baseline_exact": 12,
+              "challenger_exact": 20,
+              "delta_exact": 8
+            },
+            {
+              "writer_id": "writer_007",
+              "formulas": 8,
+              "baseline_exact": 3,
+              "challenger_exact": 7,
+              "delta_exact": 4
+            },
+            {
+              "writer_id": "writer_008",
+              "formulas": 5,
+              "baseline_exact": 4,
+              "challenger_exact": 5,
+              "delta_exact": 1
+            },
+            {
+              "writer_id": "writer_010",
+              "formulas": 4,
+              "baseline_exact": 2,
+              "challenger_exact": 3,
+              "delta_exact": 1
+            },
+            {
+              "writer_id": "writer_012",
+              "formulas": 49,
+              "baseline_exact": 20,
+              "challenger_exact": 26,
+              "delta_exact": 6
+            }
+          ]
+        },
+        "exact_ink_disjoint_only": {
+          "formulas": 102,
+          "writers": 7,
+          "baseline_exact": 51,
+          "challenger_exact": 66,
+          "transitions": {
+            "both_exact": 50,
+            "baseline_only": 1,
+            "challenger_only": 16,
+            "both_wrong": 35
+          },
+          "delta_rate_pp_point_estimate": 14.705882352941178,
+          "delta_rate_pp_95_interval": [
+            7.751937984496124,
+            29.78723404255319
+          ],
+          "writer_rows": [
+            {
+              "writer_id": "writer_001",
+              "formulas": 10,
+              "baseline_exact": 6,
+              "challenger_exact": 10,
+              "delta_exact": 4
+            },
+            {
+              "writer_id": "writer_003",
+              "formulas": 20,
+              "baseline_exact": 13,
+              "challenger_exact": 13,
+              "delta_exact": 0
+            },
+            {
+              "writer_id": "writer_004",
+              "formulas": 10,
+              "baseline_exact": 3,
+              "challenger_exact": 5,
+              "delta_exact": 2
+            },
+            {
+              "writer_id": "writer_006",
+              "formulas": 4,
+              "baseline_exact": 3,
+              "challenger_exact": 4,
+              "delta_exact": 1
+            },
+            {
+              "writer_id": "writer_008",
+              "formulas": 5,
+              "baseline_exact": 4,
+              "challenger_exact": 5,
+              "delta_exact": 1
+            },
+            {
+              "writer_id": "writer_010",
+              "formulas": 4,
+              "baseline_exact": 2,
+              "challenger_exact": 3,
+              "delta_exact": 1
+            },
+            {
+              "writer_id": "writer_012",
+              "formulas": 49,
+              "baseline_exact": 20,
+              "challenger_exact": 26,
+              "delta_exact": 6
+            }
+          ]
+        },
+        "exact_ink_and_writer_disjoint": {
+          "formulas": 62,
+          "writers": 4,
+          "baseline_exact": 29,
+          "challenger_exact": 38,
+          "transitions": {
+            "both_exact": 29,
+            "baseline_only": 0,
+            "challenger_only": 9,
+            "both_wrong": 24
+          },
+          "delta_rate_pp_point_estimate": 14.516129032258066,
+          "delta_rate_pp_95_interval": [
+            12.582781456953644,
+            25.0
+          ],
+          "writer_rows": [
+            {
+              "writer_id": "writer_006",
+              "formulas": 4,
+              "baseline_exact": 3,
+              "challenger_exact": 4,
+              "delta_exact": 1
+            },
+            {
+              "writer_id": "writer_008",
+              "formulas": 5,
+              "baseline_exact": 4,
+              "challenger_exact": 5,
+              "delta_exact": 1
+            },
+            {
+              "writer_id": "writer_010",
+              "formulas": 4,
+              "baseline_exact": 2,
+              "challenger_exact": 3,
+              "delta_exact": 1
+            },
+            {
+              "writer_id": "writer_012",
+              "formulas": 49,
+              "baseline_exact": 20,
+              "challenger_exact": 26,
+              "delta_exact": 6
+            }
+          ]
+        },
+        "exact_ink_duplicate_subset": {
+          "formulas": 47,
+          "writers": 3,
+          "baseline_exact": 28,
+          "challenger_exact": 42,
+          "transitions": {
+            "both_exact": 28,
+            "baseline_only": 0,
+            "challenger_only": 14,
+            "both_wrong": 5
+          },
+          "delta_rate_pp_point_estimate": 29.78723404255319,
+          "delta_rate_pp_95_interval": [
+            13.043478260869565,
+            50.0
+          ],
+          "writer_rows": [
+            {
+              "writer_id": "writer_002",
+              "formulas": 23,
+              "baseline_exact": 16,
+              "challenger_exact": 19,
+              "delta_exact": 3
+            },
+            {
+              "writer_id": "writer_006",
+              "formulas": 16,
+              "baseline_exact": 9,
+              "challenger_exact": 16,
+              "delta_exact": 7
+            },
+            {
+              "writer_id": "writer_007",
+              "formulas": 8,
+              "baseline_exact": 3,
+              "challenger_exact": 7,
+              "delta_exact": 4
+            }
+          ]
+        }
+      }
+    },
+    "writer_rows": [
+      {
+        "writer_id": "writer_001",
+        "formulas": 10,
+        "baseline_exact": 6,
+        "challenger_exact": 10,
+        "delta_exact": 4
+      },
+      {
+        "writer_id": "writer_002",
+        "formulas": 23,
+        "baseline_exact": 16,
+        "challenger_exact": 19,
+        "delta_exact": 3
+      },
+      {
+        "writer_id": "writer_003",
+        "formulas": 20,
+        "baseline_exact": 13,
+        "challenger_exact": 13,
+        "delta_exact": 0
+      },
+      {
+        "writer_id": "writer_004",
+        "formulas": 10,
+        "baseline_exact": 3,
+        "challenger_exact": 5,
+        "delta_exact": 2
+      },
+      {
+        "writer_id": "writer_006",
+        "formulas": 20,
+        "baseline_exact": 12,
+        "challenger_exact": 20,
+        "delta_exact": 8
+      },
+      {
+        "writer_id": "writer_007",
+        "formulas": 8,
+        "baseline_exact": 3,
+        "challenger_exact": 7,
+        "delta_exact": 4
+      },
+      {
+        "writer_id": "writer_008",
+        "formulas": 5,
+        "baseline_exact": 4,
+        "challenger_exact": 5,
+        "delta_exact": 1
+      },
+      {
+        "writer_id": "writer_010",
+        "formulas": 4,
+        "baseline_exact": 2,
+        "challenger_exact": 3,
+        "delta_exact": 1
+      },
+      {
+        "writer_id": "writer_012",
+        "formulas": 49,
+        "baseline_exact": 20,
+        "challenger_exact": 26,
+        "delta_exact": 6
+      }
+    ]
+  },
+  "verification": {
+    "formula_source_hash_matches_trace_summary": true,
+    "training_candidates_hash_matches_training_report": true,
+    "all_training_candidate_formula_ids_found": true,
+    "candidate_targets_match_training_formula_source": true,
+    "candidate_writer_groups_match_training_formula_source": true,
+    "context_checkpoint_hash_matches_report": true,
+    "context_checkpoint_hash_matches_training_report": true,
+    "training_report_excludes_crohme": true,
+    "current_hwr_hash_matches_trace_summary": true,
+    "149_unique_formula_cases": true,
+    "all_formula_cases_have_writer": true,
+    "candidate_violations_zero": true,
+    "aggregate_counts_reconcile": true,
+    "writer_disjoint_subset_excludes_training_writers": true,
+    "formula_id_overlap_audit_reconciles_training_report": true,
+    "all_exact_ink_pairs_have_matching_target_sequence": true,
+    "all_exact_ink_pairs_have_different_writer_metadata": true,
+    "exact_ink_duplicate_formula_count": 47,
+    "exact_ink_disjoint_formula_count": 102,
+    "exact_ink_duplicates_absent": false,
+    "raw_ink_and_writer_independence_pass": false,
+    "all_provenance_reconciliation_checks_pass": true
+  }
+}

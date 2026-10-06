@@ -1,0 +1,833 @@
+{
+  "schema": "aiflow-weak-ownership-review/v1",
+  "status": "unverified_manual_review_only",
+  "training_use_allowed": false,
+  "manual_review_required": true,
+  "selection_method": "exactly one exact-cover assignment using stable-mapped HWR Top-5 labels and formula token multiset",
+  "source": {
+    "dataset_validation": {
+      "records": 119,
+      "quality_status": {
+        "valid": 110,
+        "pending": 4,
+        "reject": 5
+      },
+      "ownership": 47,
+      "forbidden_keys": 0,
+      "status": "pass"
+    },
+    "valid_formulas": 110,
+    "ownership_labeled_formulas": 47,
+    "transcript_only_formulas": 63,
+    "formulas_sha256": "e2de4f23677e1ecb4a25d2ac2bebc6feaf6a18c57ef8f280cff6e825baecb7b7",
+    "ownership_sha256": "d5ac2d260396a6d3954f900da1e099551afdfec83e74118b4f1f5f77dc579edf",
+    "onnx_sha256": "7521e1df14752eaf9cdfca43735c0dc41bb0149d4e0752628585c87538f5966e",
+    "input_mode": "uniform-time",
+    "input_shape": [
+      128,
+      5
+    ],
+    "output_classes": 372
+  },
+  "vocabulary_recovery": {
+    "gold_groups": 211,
+    "gold_labels": 25,
+    "writer_folds": 3,
+    "cross_writer_scored_groups": 199,
+    "cross_writer_unscored_groups": 12,
+    "cross_writer_top1_index_consistency": 0.864321608040201,
+    "cross_writer_top5_index_consistency": 0.9547738693467337,
+    "stable_labels": 20,
+    "labels_rejected_for_collisions": 0,
+    "folds": [
+      {
+        "held_writer_groups": 100,
+        "scored_groups": 98,
+        "ambiguous_label_mappings": 0,
+        "top1_index_hits": 80,
+        "top5_index_hits": 90
+      },
+      {
+        "held_writer_groups": 76,
+        "scored_groups": 66,
+        "ambiguous_label_mappings": 2,
+        "top1_index_hits": 61,
+        "top5_index_hits": 66
+      },
+      {
+        "held_writer_groups": 35,
+        "scored_groups": 35,
+        "ambiguous_label_mappings": 0,
+        "top1_index_hits": 31,
+        "top5_index_hits": 34
+      }
+    ],
+    "target_token_classes": 27,
+    "target_classes_without_stable_mapping": [
+      "/",
+      "1",
+      "\\sqrt{}",
+      "a",
+      "f",
+      "g",
+      "x"
+    ],
+    "accepted_owned_groups": 211,
+    "owned_symbol_classes": 25,
+    "target_classes_without_owned_groups": [
+      "\\sqrt{}",
+      "g"
+    ],
+    "owned_group_support_by_label": {
+      "(": 6,
+      ")": 6,
+      "+": 24,
+      "-": 8,
+      "/": 3,
+      "0": 16,
+      "1": 25,
+      "2": 13,
+      "3": 10,
+      "4": 9,
+      "5": 12,
+      "6": 8,
+      "7": 8,
+      "8": 6,
+      "9": 5,
+      "=": 20,
+      "\\div": 6,
+      "\\times": 7,
+      "a": 2,
+      "b": 5,
+      "f": 2,
+      "m": 2,
+      "n": 2,
+      "x": 2,
+      "y": 4
+    }
+  },
+  "limits": [
+    "output-index labels are inferred from accepted ownership groups rather than a paired checkpoint vocabulary",
+    "unique cover ignores formula reading order, spatial relations, and decoder validity",
+    "candidates are proposals only and must not enter ownership training until a human verifies them"
+  ],
+  "candidates": [
+    {
+      "sample_id": "aiflow_0001",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "2"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "2"
+        }
+      ],
+      "candidate_count": 1,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0002",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "="
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0,
+            1
+          ],
+          "token": "="
+        }
+      ],
+      "candidate_count": 3,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0004",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        ")"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": ")"
+        }
+      ],
+      "candidate_count": 1,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0023",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "4"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0,
+            1
+          ],
+          "token": "4"
+        }
+      ],
+      "candidate_count": 3,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0024",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "5"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0,
+            1
+          ],
+          "token": "5"
+        }
+      ],
+      "candidate_count": 3,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0025",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "6"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "6"
+        }
+      ],
+      "candidate_count": 1,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0027",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "9"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "9"
+        }
+      ],
+      "candidate_count": 1,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0029",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "y"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "y"
+        }
+      ],
+      "candidate_count": 1,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0032",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "+"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0,
+            1
+          ],
+          "token": "+"
+        }
+      ],
+      "candidate_count": 3,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0033",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "-"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "-"
+        }
+      ],
+      "candidate_count": 1,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0034",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "="
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0,
+            1
+          ],
+          "token": "="
+        }
+      ],
+      "candidate_count": 3,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0039",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "y",
+        "=",
+        "5"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "y"
+        },
+        {
+          "stroke_indices": [
+            1,
+            2
+          ],
+          "token": "="
+        },
+        {
+          "stroke_indices": [
+            3,
+            4
+          ],
+          "token": "5"
+        }
+      ],
+      "candidate_count": 21,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0041",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "\\times"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0,
+            1
+          ],
+          "token": "\\times"
+        }
+      ],
+      "candidate_count": 3,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0042",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "("
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "("
+        }
+      ],
+      "candidate_count": 1,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0043",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        ")"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": ")"
+        }
+      ],
+      "candidate_count": 1,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0044",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "4",
+        "\\times",
+        "6"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0,
+            1
+          ],
+          "token": "4"
+        },
+        {
+          "stroke_indices": [
+            2,
+            3
+          ],
+          "token": "\\times"
+        },
+        {
+          "stroke_indices": [
+            4
+          ],
+          "token": "6"
+        }
+      ],
+      "candidate_count": 21,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0045",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "6",
+        "+",
+        "3"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "6"
+        },
+        {
+          "stroke_indices": [
+            1,
+            2
+          ],
+          "token": "+"
+        },
+        {
+          "stroke_indices": [
+            3
+          ],
+          "token": "3"
+        }
+      ],
+      "candidate_count": 13,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0046",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "6",
+        "\\times",
+        "8",
+        "=",
+        "4",
+        "8"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "6"
+        },
+        {
+          "stroke_indices": [
+            1,
+            2
+          ],
+          "token": "\\times"
+        },
+        {
+          "stroke_indices": [
+            3
+          ],
+          "token": "8"
+        },
+        {
+          "stroke_indices": [
+            4,
+            5
+          ],
+          "token": "="
+        },
+        {
+          "stroke_indices": [
+            6,
+            7
+          ],
+          "token": "4"
+        },
+        {
+          "stroke_indices": [
+            8
+          ],
+          "token": "8"
+        }
+      ],
+      "candidate_count": 52,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0048",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "9",
+        "-",
+        "4"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "9"
+        },
+        {
+          "stroke_indices": [
+            1
+          ],
+          "token": "-"
+        },
+        {
+          "stroke_indices": [
+            2,
+            3
+          ],
+          "token": "4"
+        }
+      ],
+      "candidate_count": 13,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0054",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "y",
+        "-",
+        "3"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "y"
+        },
+        {
+          "stroke_indices": [
+            1
+          ],
+          "token": "-"
+        },
+        {
+          "stroke_indices": [
+            2
+          ],
+          "token": "3"
+        }
+      ],
+      "candidate_count": 7,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0061",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "7",
+        "=",
+        "7"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0,
+            1
+          ],
+          "token": "7"
+        },
+        {
+          "stroke_indices": [
+            2,
+            3
+          ],
+          "token": "="
+        },
+        {
+          "stroke_indices": [
+            4,
+            5
+          ],
+          "token": "7"
+        }
+      ],
+      "candidate_count": 30,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0067",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "(",
+        "y",
+        "-",
+        "2",
+        ")"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "("
+        },
+        {
+          "stroke_indices": [
+            1
+          ],
+          "token": "y"
+        },
+        {
+          "stroke_indices": [
+            2
+          ],
+          "token": "-"
+        },
+        {
+          "stroke_indices": [
+            3
+          ],
+          "token": "2"
+        },
+        {
+          "stroke_indices": [
+            4
+          ],
+          "token": ")"
+        }
+      ],
+      "candidate_count": 21,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0068",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "(",
+        "3",
+        "+",
+        "5",
+        ")"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "("
+        },
+        {
+          "stroke_indices": [
+            1
+          ],
+          "token": "3"
+        },
+        {
+          "stroke_indices": [
+            2,
+            3
+          ],
+          "token": "+"
+        },
+        {
+          "stroke_indices": [
+            4,
+            5
+          ],
+          "token": "5"
+        },
+        {
+          "stroke_indices": [
+            6
+          ],
+          "token": ")"
+        }
+      ],
+      "candidate_count": 38,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0073",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "8",
+        "\\div",
+        "2"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "8"
+        },
+        {
+          "stroke_indices": [
+            1,
+            2,
+            3
+          ],
+          "token": "\\div"
+        },
+        {
+          "stroke_indices": [
+            4
+          ],
+          "token": "2"
+        }
+      ],
+      "candidate_count": 21,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0074",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "3",
+        "\\times",
+        "y",
+        "-",
+        "2"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "3"
+        },
+        {
+          "stroke_indices": [
+            1,
+            2
+          ],
+          "token": "\\times"
+        },
+        {
+          "stroke_indices": [
+            3
+          ],
+          "token": "y"
+        },
+        {
+          "stroke_indices": [
+            4
+          ],
+          "token": "-"
+        },
+        {
+          "stroke_indices": [
+            5
+          ],
+          "token": "2"
+        }
+      ],
+      "candidate_count": 30,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0098",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "8"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "8"
+        }
+      ],
+      "candidate_count": 1,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0108",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "2"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0
+          ],
+          "token": "2"
+        }
+      ],
+      "candidate_count": 1,
+      "mapped_top5_exact_cover_solutions": 1
+    },
+    {
+      "sample_id": "aiflow_0109",
+      "review_status": "unverified_manual_review_only",
+      "target_tokens": [
+        "y"
+      ],
+      "proposed_groups": [
+        {
+          "stroke_indices": [
+            0,
+            1
+          ],
+          "token": "y"
+        }
+      ],
+      "candidate_count": 3,
+      "mapped_top5_exact_cover_solutions": 1
+    }
+  ]
+}

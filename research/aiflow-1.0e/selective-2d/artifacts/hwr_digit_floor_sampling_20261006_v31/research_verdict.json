@@ -1,0 +1,47 @@
+{
+  "schema": "aiflow-digit-floor-sampling-verdict/v31",
+  "status": "completed_verified_numeric_gain_formula_nonregression_failed_not_promoted",
+  "comparison_sha256": "61d559dfc1252ace741b37bb1ea034e60c911ad91b4ea8daa89bbd9e14dfacdd",
+  "verification": "independent_verification.json",
+  "checkpoint": "margin_retained_main/main_trained.pt",
+  "checkpoint_sha256": "4a6cdc96e64cf44dba1de8d5f5b8e667f0122cc6f6234d27e4b3eb098a44a9d0",
+  "controlled_change": {
+    "replaced_original_rows": 2383,
+    "max_changes_per_batch": 1,
+    "digit_exposures_before": 4472,
+    "digit_exposures_after": 6855,
+    "digit_fraction_after": 0.04462890625,
+    "target_source": "Admitted real TRAIN population frequency only, not ownership or evaluation labels",
+    "all_augmented_inputs_and_gt_unchanged": true,
+    "augmented_hard_target_exposures": 115200,
+    "all_371_positive_classes_preserved": true,
+    "v29_training_code_and_three_loss_weights_unchanged": true,
+    "all_57_tensors_trained": true,
+    "steps": 2400,
+    "generated_labels_human_verified": false
+  },
+  "internal_top1_of_5936": {"canonical": 4765, "prior_margin": 4875, "digit_floor": 4885},
+  "internal_family_top1": {
+    "digits_of_160": {"prior_margin": 133, "digit_floor": 139},
+    "latin_of_816": {"prior_margin": 616, "digit_floor": 615},
+    "math_of_4960": {"prior_margin": 4126, "digit_floor": 4131}
+  },
+  "owned_diagnostic": {
+    "token_top1_of_579": {"canonical": 470, "prior_margin": 438, "digit_floor": 440},
+    "formula_top1_of_149": {"canonical": 76, "prior_margin": 62, "digit_floor": 61},
+    "formula_top5_complete_of_149": {"canonical": 137, "prior_margin": 122, "digit_floor": 124},
+    "paired_vs_prior_margin": {"wins": 0, "losses": 1, "net": -1},
+    "paired_vs_canonical": {"wins": 0, "losses": 15, "net": -15},
+    "cohort_formula_hits_prior_new": {"legacy_96": [39, 39], "codex_reviewed_53": [23, 22]}
+  },
+  "interpretation": "The bounded numeric sampler change improves the balanced internal digit count by six and the total internal count by ten. Owned token hits and Top-5 complete formulas also rise, but a previously correct formula is lost and no previously wrong formula is corrected. This change does not satisfy formula nonregression and is not adopted. Small consumed-diagnostic differences are not proof that numeric sampling is universally harmful.",
+  "next_research_boundary": "Keep V29 as the best directly retrained research formula reference and canonical as product champion. Do not escalate augmentation volume on the basis of isolated digit gains. Audit remaining decision-near rival preservation before another controlled objective change; all coefficient fitting remains TRAIN-only.",
+  "verification_scope": "All recorded losses and 57-gradient/four-layer scopes checked; numeric floor and unchanged augmentation independently verified; eight final TRAIN gap gradients and NumPy losses checked; final checkpoint logits reloaded bit-exact. Not a full replay of historical intermediate forwards.",
+  "limits": "Consumed 149-formula oracle-group diagnostic; 95 cases were historical canonical calibration input and 53 additional annotations were Codex-reviewed. No fresh writer/device acceptance or official Expression Rate.",
+  "owned_optimizer_rows": 0,
+  "crohme_rows": 0,
+  "canonical_checkpoint_unchanged": true,
+  "product_adopted": false,
+  "collection_or_deployment_resumed": false,
+  "goal_complete": false
+}

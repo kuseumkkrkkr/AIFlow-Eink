@@ -1,0 +1,4667 @@
+{
+  "schema": "aiflow-hwr-numeric-infix-geometry-microscope/v1",
+  "scope": "oracle-group Top-k diagnostic on consumed development; descriptive geometry only; no geometry threshold fitting or promotion",
+  "inputs": {
+    "trace_sha256": "14335f9f9f0d27140078133414c7a22e98e4df333a1d83663d29052d9d4dff0f",
+    "reference_report_sha256": "9337e369b6a808dde2dc55112716d31cff4f7394cbe2dbe1ebb0862c1ebf6f8c",
+    "formula_count": 149,
+    "top20_trace_sha256_expected": "14335f9f9f0d27140078133414c7a22e98e4df333a1d83663d29052d9d4dff0f"
+  },
+  "definitions": {
+    "numeric_infix_context": "target left and right are one-digit tokens; target center is +, -, /, times, div, or cdot",
+    "numeric_equality_context": "target left and right are one-digit tokens; target center is =",
+    "all_digit_triplet_control": "target left, center, and right are each one digit",
+    "other_numeric_neighbor_context": "target left and right are one-digit tokens; center is neither an arithmetic operator, =, nor a digit",
+    "geometry": "raw group bounding-box aspect ratio and adjacent horizontal gap divided by center height",
+    "geometry_risk_router": "descriptive only; flags a group when its raw bbox aspect ratio is at most the listed threshold"
+  },
+  "context_counts": {
+    "numeric_infix_contexts": 64,
+    "numeric_equality_contexts": 38,
+    "all_digit_triplet_controls": 0,
+    "other_numeric_neighbor_contexts": 0,
+    "numeric_infix_errors_at_hwr_top1": 10
+  },
+  "arms": {
+    "top5_unique": {
+      "candidate_k": 5,
+      "infix_policy": "unique",
+      "minimum_infix_probability_ratio": 0.0,
+      "maximum_operator_competitor_probability_ratio": 0.01,
+      "numeric_infix_contexts": {
+        "contexts": 64,
+        "target_candidate_recall": {
+          "top5": 64,
+          "top20": 64
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 54
+          },
+          "after_infix": {
+            "correct": 60
+          },
+          "after_expression": {
+            "correct": 60
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [
+            {
+              "sample_id": "aiflow_0124",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0050",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0052",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0161",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0003",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0006",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            }
+          ],
+          "after_expression": [
+            {
+              "sample_id": "aiflow_0124",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0050",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0052",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0161",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0003",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0006",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            }
+          ]
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {
+          "+": {
+            "hwr_top1": 22,
+            "after_infix": 22,
+            "after_expression": 22,
+            "count": 25
+          },
+          "\\times": {
+            "hwr_top1": 9,
+            "after_infix": 15,
+            "after_expression": 15,
+            "count": 15
+          },
+          "-": {
+            "hwr_top1": 11,
+            "after_infix": 11,
+            "after_expression": 11,
+            "count": 11
+          },
+          "\\div": {
+            "hwr_top1": 12,
+            "after_infix": 12,
+            "after_expression": 12,
+            "count": 13
+          }
+        },
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": 0.7552015396129583,
+            "median": 0.8611111111111112,
+            "p75": 1.088235294117647
+          },
+          "top1_wrong": {
+            "p25": 0.6527833193899221,
+            "median": 0.6998191060633816,
+            "p75": 0.7524690716290674
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 1,
+            "routed_fraction": 0.015625,
+            "error_contexts_captured": 1,
+            "error_recall": 0.1,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": 1.0
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 3,
+            "routed_fraction": 0.046875,
+            "error_contexts_captured": 2,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 1,
+            "false_positive_rate": 0.018518518518518517,
+            "error_precision_in_routed_set": 0.6666666666666666
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 8,
+            "routed_fraction": 0.125,
+            "error_contexts_captured": 2,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 6,
+            "false_positive_rate": 0.1111111111111111,
+            "error_precision_in_routed_set": 0.25
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 15,
+            "routed_fraction": 0.234375,
+            "error_contexts_captured": 5,
+            "error_recall": 0.5,
+            "correct_contexts_false_routed": 10,
+            "false_positive_rate": 0.18518518518518517,
+            "error_precision_in_routed_set": 0.3333333333333333
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 19,
+            "routed_fraction": 0.296875,
+            "error_contexts_captured": 6,
+            "error_recall": 0.6,
+            "correct_contexts_false_routed": 13,
+            "false_positive_rate": 0.24074074074074073,
+            "error_precision_in_routed_set": 0.3157894736842105
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 26,
+            "routed_fraction": 0.40625,
+            "error_contexts_captured": 7,
+            "error_recall": 0.7,
+            "correct_contexts_false_routed": 19,
+            "false_positive_rate": 0.35185185185185186,
+            "error_precision_in_routed_set": 0.2692307692307692
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 37,
+            "routed_fraction": 0.578125,
+            "error_contexts_captured": 7,
+            "error_recall": 0.7,
+            "correct_contexts_false_routed": 30,
+            "false_positive_rate": 0.5555555555555556,
+            "error_precision_in_routed_set": 0.1891891891891892
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 42,
+            "routed_fraction": 0.65625,
+            "error_contexts_captured": 7,
+            "error_recall": 0.7,
+            "correct_contexts_false_routed": 35,
+            "false_positive_rate": 0.6481481481481481,
+            "error_precision_in_routed_set": 0.16666666666666666
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 49,
+            "routed_fraction": 0.765625,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 40,
+            "false_positive_rate": 0.7407407407407407,
+            "error_precision_in_routed_set": 0.1836734693877551
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 51,
+            "routed_fraction": 0.796875,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 42,
+            "false_positive_rate": 0.7777777777777778,
+            "error_precision_in_routed_set": 0.17647058823529413
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 53,
+            "routed_fraction": 0.828125,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 44,
+            "false_positive_rate": 0.8148148148148148,
+            "error_precision_in_routed_set": 0.16981132075471697
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 53,
+            "routed_fraction": 0.828125,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 44,
+            "false_positive_rate": 0.8148148148148148,
+            "error_precision_in_routed_set": 0.16981132075471697
+          }
+        ],
+        "nontrivial_cases": [
+          {
+            "sample_id": "aiflow_0016",
+            "position": 1,
+            "target_triplet": [
+              "1",
+              "+",
+              "5"
+            ],
+            "target_center": "+",
+            "top1_center": "\\bot",
+            "target_rank": 3,
+            "target_probability": 0.012044497765600681,
+            "top1_probability": 0.625241219997406,
+            "target_to_top1_probability_ratio": 0.019263761537748024,
+            "bbox_aspect_ratio": 1.1817476230515491,
+            "left_gap_over_center_height": 0.5881572990104132,
+            "right_gap_over_center_height": 0.7160921027100448,
+            "predictions": {
+              "hwr_top1": "\\bot",
+              "after_infix": "\\bot",
+              "after_expression": "\\bot"
+            }
+          },
+          {
+            "sample_id": "aiflow_0124",
+            "position": 1,
+            "target_triplet": [
+              "5",
+              "\\times",
+              "0"
+            ],
+            "target_center": "\\times",
+            "top1_center": "x",
+            "target_rank": 2,
+            "target_probability": 0.36936190724372864,
+            "top1_probability": 0.5612386465072632,
+            "target_to_top1_probability_ratio": 0.6581191611489438,
+            "bbox_aspect_ratio": 0.7003279992048504,
+            "left_gap_over_center_height": 0.44405791339495726,
+            "right_gap_over_center_height": 0.4388397442268823,
+            "predictions": {
+              "hwr_top1": "x",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0050",
+            "position": 1,
+            "target_triplet": [
+              "0",
+              "\\times",
+              "7"
+            ],
+            "target_center": "\\times",
+            "top1_center": "X",
+            "target_rank": 2,
+            "target_probability": 0.2857917547225952,
+            "top1_probability": 0.5978207588195801,
+            "target_to_top1_probability_ratio": 0.47805592312803247,
+            "bbox_aspect_ratio": 0.6551463461911219,
+            "left_gap_over_center_height": 0.39230471021515806,
+            "right_gap_over_center_height": 0.5480713316534207,
+            "predictions": {
+              "hwr_top1": "X",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0052",
+            "position": 1,
+            "target_triplet": [
+              "2",
+              "\\times",
+              "8"
+            ],
+            "target_center": "\\times",
+            "top1_center": "X",
+            "target_rank": 2,
+            "target_probability": 0.3583000898361206,
+            "top1_probability": 0.48982128500938416,
+            "target_to_top1_probability_ratio": 0.7314914659726479,
+            "bbox_aspect_ratio": 1.065950402054194,
+            "left_gap_over_center_height": 0.1552807622136633,
+            "right_gap_over_center_height": 1.1988985742279894,
+            "predictions": {
+              "hwr_top1": "X",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0161",
+            "position": 1,
+            "target_triplet": [
+              "2",
+              "\\times",
+              "2"
+            ],
+            "target_center": "\\times",
+            "top1_center": "X",
+            "target_rank": 2,
+            "target_probability": 0.33848342299461365,
+            "top1_probability": 0.4261328876018524,
+            "target_to_top1_probability_ratio": 0.7943142452569114,
+            "bbox_aspect_ratio": 0.7524690716290674,
+            "left_gap_over_center_height": -0.09405492106396564,
+            "right_gap_over_center_height": 0.20792182139515542,
+            "predictions": {
+              "hwr_top1": "X",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0164",
+            "position": 2,
+            "target_triplet": [
+              "5",
+              "\\div",
+              "5"
+            ],
+            "target_center": "\\div",
+            "top1_center": "\\leadsto",
+            "target_rank": 3,
+            "target_probability": 0.007608991116285324,
+            "top1_probability": 0.949891209602356,
+            "target_to_top1_probability_ratio": 0.008010381651463649,
+            "bbox_aspect_ratio": 3.4814814814814814,
+            "left_gap_over_center_height": -0.0617407407407408,
+            "right_gap_over_center_height": -1.2345555555555554,
+            "predictions": {
+              "hwr_top1": "\\leadsto",
+              "after_infix": "\\leadsto",
+              "after_expression": "\\leadsto"
+            }
+          },
+          {
+            "sample_id": "aiflow_0003",
+            "position": 1,
+            "target_triplet": [
+              "0",
+              "\\times",
+              "7"
+            ],
+            "target_center": "\\times",
+            "top1_center": "x",
+            "target_rank": 3,
+            "target_probability": 0.0567837730050087,
+            "top1_probability": 0.47714853286743164,
+            "target_to_top1_probability_ratio": 0.11900649188579858,
+            "bbox_aspect_ratio": 0.6527833193899221,
+            "left_gap_over_center_height": 0.21449256708925937,
+            "right_gap_over_center_height": 0.32398481240749083,
+            "predictions": {
+              "hwr_top1": "x",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0004",
+            "position": 1,
+            "target_triplet": [
+              "2",
+              "+",
+              "7"
+            ],
+            "target_center": "+",
+            "top1_center": "4",
+            "target_rank": 2,
+            "target_probability": 0.22155244648456573,
+            "top1_probability": 0.6453323364257812,
+            "target_to_top1_probability_ratio": 0.34331527180498905,
+            "bbox_aspect_ratio": 0.6998191060633816,
+            "left_gap_over_center_height": 0.071372962080967,
+            "right_gap_over_center_height": 0.14006686206264896,
+            "predictions": {
+              "hwr_top1": "4",
+              "after_infix": "4",
+              "after_expression": "4"
+            }
+          },
+          {
+            "sample_id": "aiflow_0006",
+            "position": 1,
+            "target_triplet": [
+              "7",
+              "\\times",
+              "3"
+            ],
+            "target_center": "\\times",
+            "top1_center": "x",
+            "target_rank": 3,
+            "target_probability": 0.024863233789801598,
+            "top1_probability": 0.6350929737091064,
+            "target_to_top1_probability_ratio": 0.03914896687424191,
+            "bbox_aspect_ratio": 0.4644903935974146,
+            "left_gap_over_center_height": 0.3284102098008029,
+            "right_gap_over_center_height": 0.15858769471584724,
+            "predictions": {
+              "hwr_top1": "x",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0100",
+            "position": 2,
+            "target_triplet": [
+              "2",
+              "+",
+              "1"
+            ],
+            "target_center": "+",
+            "top1_center": "\\dag",
+            "target_rank": 4,
+            "target_probability": 0.03243885934352875,
+            "top1_probability": 0.7130528688430786,
+            "target_to_top1_probability_ratio": 0.04549292312105901,
+            "bbox_aspect_ratio": 0.5945381660263896,
+            "left_gap_over_center_height": 0.08402928567451698,
+            "right_gap_over_center_height": 0.5063053282111227,
+            "predictions": {
+              "hwr_top1": "\\dag",
+              "after_infix": "\\dag",
+              "after_expression": "\\dag"
+            }
+          }
+        ]
+      },
+      "numeric_equality_contexts": {
+        "contexts": 38,
+        "target_candidate_recall": {
+          "top5": 36,
+          "top20": 36
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 33
+          },
+          "after_infix": {
+            "correct": 33
+          },
+          "after_expression": {
+            "correct": 33
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {
+          "=": {
+            "hwr_top1": 33,
+            "after_infix": 33,
+            "after_expression": 33,
+            "count": 38
+          }
+        },
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": 1.3529596647459368,
+            "median": 1.7574006092322116,
+            "p75": 2.318021201413428
+          },
+          "top1_wrong": {
+            "p25": 1.2815762538382902,
+            "median": 1.287120919594855,
+            "p75": 2.053272504571033
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 2,
+            "routed_fraction": 0.05263157894736842,
+            "error_contexts_captured": 1,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 1,
+            "false_positive_rate": 0.030303030303030304,
+            "error_precision_in_routed_set": 0.5
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 5,
+            "routed_fraction": 0.13157894736842105,
+            "error_contexts_captured": 1,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 4,
+            "false_positive_rate": 0.12121212121212122,
+            "error_precision_in_routed_set": 0.2
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 16,
+            "routed_fraction": 0.42105263157894735,
+            "error_contexts_captured": 3,
+            "error_recall": 0.6,
+            "correct_contexts_false_routed": 13,
+            "false_positive_rate": 0.3939393939393939,
+            "error_precision_in_routed_set": 0.1875
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 22,
+            "routed_fraction": 0.5789473684210527,
+            "error_contexts_captured": 3,
+            "error_recall": 0.6,
+            "correct_contexts_false_routed": 19,
+            "false_positive_rate": 0.5757575757575758,
+            "error_precision_in_routed_set": 0.13636363636363635
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 36,
+            "routed_fraction": 0.9473684210526315,
+            "error_contexts_captured": 5,
+            "error_recall": 1.0,
+            "correct_contexts_false_routed": 31,
+            "false_positive_rate": 0.9393939393939394,
+            "error_precision_in_routed_set": 0.1388888888888889
+          }
+        ],
+        "nontrivial_cases": [
+          {
+            "sample_id": "aiflow_0128",
+            "position": 4,
+            "target_triplet": [
+              "0",
+              "=",
+              "1"
+            ],
+            "target_center": "=",
+            "top1_center": "\\simeq",
+            "target_rank": 2,
+            "target_probability": 0.28210222721099854,
+            "top1_probability": 0.2828772962093353,
+            "target_to_top1_probability_ratio": 0.9972600522957373,
+            "bbox_aspect_ratio": 0.91462865716429,
+            "left_gap_over_center_height": 1.0945236309077278,
+            "right_gap_over_center_height": 0.8568142035508878,
+            "predictions": {
+              "hwr_top1": "\\simeq",
+              "after_infix": "\\simeq",
+              "after_expression": "\\simeq"
+            }
+          },
+          {
+            "sample_id": "aiflow_0056",
+            "position": 3,
+            "target_triplet": [
+              "8",
+              "=",
+              "1"
+            ],
+            "target_center": "=",
+            "top1_center": "\\triangledown",
+            "target_rank": 4,
+            "target_probability": 0.06219838559627533,
+            "top1_probability": 0.3429378271102905,
+            "target_to_top1_probability_ratio": 0.1813692765256602,
+            "bbox_aspect_ratio": 2.307682367383856,
+            "left_gap_over_center_height": 2.0278477741164336,
+            "right_gap_over_center_height": 1.2479162628416371,
+            "predictions": {
+              "hwr_top1": "\\triangledown",
+              "after_infix": "\\triangledown",
+              "after_expression": "\\triangledown"
+            }
+          },
+          {
+            "sample_id": "aiflow_0163",
+            "position": 3,
+            "target_triplet": [
+              "2",
+              "=",
+              "3"
+            ],
+            "target_center": "=",
+            "top1_center": "\\%",
+            "target_rank": null,
+            "target_probability": null,
+            "top1_probability": 0.2011634260416031,
+            "target_to_top1_probability_ratio": null,
+            "bbox_aspect_ratio": 2.053272504571033,
+            "left_gap_over_center_height": 0.8816501872792146,
+            "right_gap_over_center_height": 0.08875792164450677,
+            "predictions": {
+              "hwr_top1": "\\%",
+              "after_infix": "\\%",
+              "after_expression": "\\%"
+            }
+          },
+          {
+            "sample_id": "aiflow_0164",
+            "position": 4,
+            "target_triplet": [
+              "5",
+              "=",
+              "9"
+            ],
+            "target_center": "=",
+            "top1_center": "\\%",
+            "target_rank": null,
+            "target_probability": null,
+            "top1_probability": 0.44497036933898926,
+            "target_to_top1_probability_ratio": null,
+            "bbox_aspect_ratio": 1.287120919594855,
+            "left_gap_over_center_height": -0.03960851872753737,
+            "right_gap_over_center_height": 0.02970267621112662,
+            "predictions": {
+              "hwr_top1": "\\%",
+              "after_infix": "\\%",
+              "after_expression": "\\%"
+            }
+          },
+          {
+            "sample_id": "aiflow_0068",
+            "position": 4,
+            "target_triplet": [
+              "4",
+              "=",
+              "5"
+            ],
+            "target_center": "=",
+            "top1_center": "\\asymp",
+            "target_rank": 3,
+            "target_probability": 0.1357598602771759,
+            "top1_probability": 0.4166797697544098,
+            "target_to_top1_probability_ratio": 0.3258134186768714,
+            "bbox_aspect_ratio": 1.2815762538382902,
+            "left_gap_over_center_height": 0.7586489252814672,
+            "right_gap_over_center_height": 0.7298874104401213,
+            "predictions": {
+              "hwr_top1": "\\asymp",
+              "after_infix": "\\asymp",
+              "after_expression": "\\asymp"
+            }
+          }
+        ]
+      },
+      "all_digit_triplet_controls": {
+        "contexts": 0,
+        "target_candidate_recall": {
+          "top5": 0,
+          "top20": 0
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 0
+          },
+          "after_infix": {
+            "correct": 0
+          },
+          "after_expression": {
+            "correct": 0
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {},
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          },
+          "top1_wrong": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          }
+        ],
+        "nontrivial_cases": []
+      },
+      "other_numeric_neighbor_contexts": {
+        "contexts": 0,
+        "target_candidate_recall": {
+          "top5": 0,
+          "top20": 0
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 0
+          },
+          "after_infix": {
+            "correct": 0
+          },
+          "after_expression": {
+            "correct": 0
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {},
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          },
+          "top1_wrong": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          }
+        ],
+        "nontrivial_cases": []
+      }
+    },
+    "top20_unique": {
+      "candidate_k": 20,
+      "infix_policy": "unique",
+      "minimum_infix_probability_ratio": 0.0,
+      "maximum_operator_competitor_probability_ratio": 0.01,
+      "numeric_infix_contexts": {
+        "contexts": 64,
+        "target_candidate_recall": {
+          "top5": 64,
+          "top20": 64
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 54
+          },
+          "after_infix": {
+            "correct": 59
+          },
+          "after_expression": {
+            "correct": 59
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [
+            {
+              "sample_id": "aiflow_0124",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0050",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0052",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0161",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0003",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            }
+          ],
+          "after_expression": [
+            {
+              "sample_id": "aiflow_0124",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0050",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0052",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0161",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0003",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            }
+          ]
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {
+          "+": {
+            "hwr_top1": 22,
+            "after_infix": 22,
+            "after_expression": 22,
+            "count": 25
+          },
+          "\\times": {
+            "hwr_top1": 9,
+            "after_infix": 14,
+            "after_expression": 14,
+            "count": 15
+          },
+          "-": {
+            "hwr_top1": 11,
+            "after_infix": 11,
+            "after_expression": 11,
+            "count": 11
+          },
+          "\\div": {
+            "hwr_top1": 12,
+            "after_infix": 12,
+            "after_expression": 12,
+            "count": 13
+          }
+        },
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": 0.7552015396129583,
+            "median": 0.8611111111111112,
+            "p75": 1.088235294117647
+          },
+          "top1_wrong": {
+            "p25": 0.6527833193899221,
+            "median": 0.6998191060633816,
+            "p75": 0.7524690716290674
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 1,
+            "routed_fraction": 0.015625,
+            "error_contexts_captured": 1,
+            "error_recall": 0.1,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": 1.0
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 3,
+            "routed_fraction": 0.046875,
+            "error_contexts_captured": 2,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 1,
+            "false_positive_rate": 0.018518518518518517,
+            "error_precision_in_routed_set": 0.6666666666666666
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 8,
+            "routed_fraction": 0.125,
+            "error_contexts_captured": 2,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 6,
+            "false_positive_rate": 0.1111111111111111,
+            "error_precision_in_routed_set": 0.25
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 15,
+            "routed_fraction": 0.234375,
+            "error_contexts_captured": 5,
+            "error_recall": 0.5,
+            "correct_contexts_false_routed": 10,
+            "false_positive_rate": 0.18518518518518517,
+            "error_precision_in_routed_set": 0.3333333333333333
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 19,
+            "routed_fraction": 0.296875,
+            "error_contexts_captured": 6,
+            "error_recall": 0.6,
+            "correct_contexts_false_routed": 13,
+            "false_positive_rate": 0.24074074074074073,
+            "error_precision_in_routed_set": 0.3157894736842105
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 26,
+            "routed_fraction": 0.40625,
+            "error_contexts_captured": 7,
+            "error_recall": 0.7,
+            "correct_contexts_false_routed": 19,
+            "false_positive_rate": 0.35185185185185186,
+            "error_precision_in_routed_set": 0.2692307692307692
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 37,
+            "routed_fraction": 0.578125,
+            "error_contexts_captured": 7,
+            "error_recall": 0.7,
+            "correct_contexts_false_routed": 30,
+            "false_positive_rate": 0.5555555555555556,
+            "error_precision_in_routed_set": 0.1891891891891892
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 42,
+            "routed_fraction": 0.65625,
+            "error_contexts_captured": 7,
+            "error_recall": 0.7,
+            "correct_contexts_false_routed": 35,
+            "false_positive_rate": 0.6481481481481481,
+            "error_precision_in_routed_set": 0.16666666666666666
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 49,
+            "routed_fraction": 0.765625,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 40,
+            "false_positive_rate": 0.7407407407407407,
+            "error_precision_in_routed_set": 0.1836734693877551
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 51,
+            "routed_fraction": 0.796875,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 42,
+            "false_positive_rate": 0.7777777777777778,
+            "error_precision_in_routed_set": 0.17647058823529413
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 53,
+            "routed_fraction": 0.828125,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 44,
+            "false_positive_rate": 0.8148148148148148,
+            "error_precision_in_routed_set": 0.16981132075471697
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 53,
+            "routed_fraction": 0.828125,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 44,
+            "false_positive_rate": 0.8148148148148148,
+            "error_precision_in_routed_set": 0.16981132075471697
+          }
+        ],
+        "nontrivial_cases": [
+          {
+            "sample_id": "aiflow_0016",
+            "position": 1,
+            "target_triplet": [
+              "1",
+              "+",
+              "5"
+            ],
+            "target_center": "+",
+            "top1_center": "\\bot",
+            "target_rank": 3,
+            "target_probability": 0.012044497765600681,
+            "top1_probability": 0.625241219997406,
+            "target_to_top1_probability_ratio": 0.019263761537748024,
+            "bbox_aspect_ratio": 1.1817476230515491,
+            "left_gap_over_center_height": 0.5881572990104132,
+            "right_gap_over_center_height": 0.7160921027100448,
+            "predictions": {
+              "hwr_top1": "\\bot",
+              "after_infix": "\\bot",
+              "after_expression": "\\bot"
+            }
+          },
+          {
+            "sample_id": "aiflow_0124",
+            "position": 1,
+            "target_triplet": [
+              "5",
+              "\\times",
+              "0"
+            ],
+            "target_center": "\\times",
+            "top1_center": "x",
+            "target_rank": 2,
+            "target_probability": 0.36936190724372864,
+            "top1_probability": 0.5612386465072632,
+            "target_to_top1_probability_ratio": 0.6581191611489438,
+            "bbox_aspect_ratio": 0.7003279992048504,
+            "left_gap_over_center_height": 0.44405791339495726,
+            "right_gap_over_center_height": 0.4388397442268823,
+            "predictions": {
+              "hwr_top1": "x",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0050",
+            "position": 1,
+            "target_triplet": [
+              "0",
+              "\\times",
+              "7"
+            ],
+            "target_center": "\\times",
+            "top1_center": "X",
+            "target_rank": 2,
+            "target_probability": 0.2857917547225952,
+            "top1_probability": 0.5978207588195801,
+            "target_to_top1_probability_ratio": 0.47805592312803247,
+            "bbox_aspect_ratio": 0.6551463461911219,
+            "left_gap_over_center_height": 0.39230471021515806,
+            "right_gap_over_center_height": 0.5480713316534207,
+            "predictions": {
+              "hwr_top1": "X",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0052",
+            "position": 1,
+            "target_triplet": [
+              "2",
+              "\\times",
+              "8"
+            ],
+            "target_center": "\\times",
+            "top1_center": "X",
+            "target_rank": 2,
+            "target_probability": 0.3583000898361206,
+            "top1_probability": 0.48982128500938416,
+            "target_to_top1_probability_ratio": 0.7314914659726479,
+            "bbox_aspect_ratio": 1.065950402054194,
+            "left_gap_over_center_height": 0.1552807622136633,
+            "right_gap_over_center_height": 1.1988985742279894,
+            "predictions": {
+              "hwr_top1": "X",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0161",
+            "position": 1,
+            "target_triplet": [
+              "2",
+              "\\times",
+              "2"
+            ],
+            "target_center": "\\times",
+            "top1_center": "X",
+            "target_rank": 2,
+            "target_probability": 0.33848342299461365,
+            "top1_probability": 0.4261328876018524,
+            "target_to_top1_probability_ratio": 0.7943142452569114,
+            "bbox_aspect_ratio": 0.7524690716290674,
+            "left_gap_over_center_height": -0.09405492106396564,
+            "right_gap_over_center_height": 0.20792182139515542,
+            "predictions": {
+              "hwr_top1": "X",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0164",
+            "position": 2,
+            "target_triplet": [
+              "5",
+              "\\div",
+              "5"
+            ],
+            "target_center": "\\div",
+            "top1_center": "\\leadsto",
+            "target_rank": 3,
+            "target_probability": 0.007608991116285324,
+            "top1_probability": 0.949891209602356,
+            "target_to_top1_probability_ratio": 0.008010381651463649,
+            "bbox_aspect_ratio": 3.4814814814814814,
+            "left_gap_over_center_height": -0.0617407407407408,
+            "right_gap_over_center_height": -1.2345555555555554,
+            "predictions": {
+              "hwr_top1": "\\leadsto",
+              "after_infix": "\\leadsto",
+              "after_expression": "\\leadsto"
+            }
+          },
+          {
+            "sample_id": "aiflow_0003",
+            "position": 1,
+            "target_triplet": [
+              "0",
+              "\\times",
+              "7"
+            ],
+            "target_center": "\\times",
+            "top1_center": "x",
+            "target_rank": 3,
+            "target_probability": 0.0567837730050087,
+            "top1_probability": 0.47714853286743164,
+            "target_to_top1_probability_ratio": 0.11900649188579858,
+            "bbox_aspect_ratio": 0.6527833193899221,
+            "left_gap_over_center_height": 0.21449256708925937,
+            "right_gap_over_center_height": 0.32398481240749083,
+            "predictions": {
+              "hwr_top1": "x",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0004",
+            "position": 1,
+            "target_triplet": [
+              "2",
+              "+",
+              "7"
+            ],
+            "target_center": "+",
+            "top1_center": "4",
+            "target_rank": 2,
+            "target_probability": 0.22155244648456573,
+            "top1_probability": 0.6453323364257812,
+            "target_to_top1_probability_ratio": 0.34331527180498905,
+            "bbox_aspect_ratio": 0.6998191060633816,
+            "left_gap_over_center_height": 0.071372962080967,
+            "right_gap_over_center_height": 0.14006686206264896,
+            "predictions": {
+              "hwr_top1": "4",
+              "after_infix": "4",
+              "after_expression": "4"
+            }
+          },
+          {
+            "sample_id": "aiflow_0006",
+            "position": 1,
+            "target_triplet": [
+              "7",
+              "\\times",
+              "3"
+            ],
+            "target_center": "\\times",
+            "top1_center": "x",
+            "target_rank": 3,
+            "target_probability": 0.024863233789801598,
+            "top1_probability": 0.6350929737091064,
+            "target_to_top1_probability_ratio": 0.03914896687424191,
+            "bbox_aspect_ratio": 0.4644903935974146,
+            "left_gap_over_center_height": 0.3284102098008029,
+            "right_gap_over_center_height": 0.15858769471584724,
+            "predictions": {
+              "hwr_top1": "x",
+              "after_infix": "x",
+              "after_expression": "x"
+            }
+          },
+          {
+            "sample_id": "aiflow_0100",
+            "position": 2,
+            "target_triplet": [
+              "2",
+              "+",
+              "1"
+            ],
+            "target_center": "+",
+            "top1_center": "\\dag",
+            "target_rank": 4,
+            "target_probability": 0.03243885934352875,
+            "top1_probability": 0.7130528688430786,
+            "target_to_top1_probability_ratio": 0.04549292312105901,
+            "bbox_aspect_ratio": 0.5945381660263896,
+            "left_gap_over_center_height": 0.08402928567451698,
+            "right_gap_over_center_height": 0.5063053282111227,
+            "predictions": {
+              "hwr_top1": "\\dag",
+              "after_infix": "\\dag",
+              "after_expression": "\\dag"
+            }
+          }
+        ]
+      },
+      "numeric_equality_contexts": {
+        "contexts": 38,
+        "target_candidate_recall": {
+          "top5": 36,
+          "top20": 36
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 33
+          },
+          "after_infix": {
+            "correct": 33
+          },
+          "after_expression": {
+            "correct": 34
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [],
+          "after_expression": [
+            {
+              "sample_id": "aiflow_0056",
+              "position": 3,
+              "target": "=",
+              "before": "\\triangledown",
+              "after": "="
+            }
+          ]
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {
+          "=": {
+            "hwr_top1": 33,
+            "after_infix": 33,
+            "after_expression": 34,
+            "count": 38
+          }
+        },
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": 1.3529596647459368,
+            "median": 1.7574006092322116,
+            "p75": 2.318021201413428
+          },
+          "top1_wrong": {
+            "p25": 1.2815762538382902,
+            "median": 1.287120919594855,
+            "p75": 2.053272504571033
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 2,
+            "routed_fraction": 0.05263157894736842,
+            "error_contexts_captured": 1,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 1,
+            "false_positive_rate": 0.030303030303030304,
+            "error_precision_in_routed_set": 0.5
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 5,
+            "routed_fraction": 0.13157894736842105,
+            "error_contexts_captured": 1,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 4,
+            "false_positive_rate": 0.12121212121212122,
+            "error_precision_in_routed_set": 0.2
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 16,
+            "routed_fraction": 0.42105263157894735,
+            "error_contexts_captured": 3,
+            "error_recall": 0.6,
+            "correct_contexts_false_routed": 13,
+            "false_positive_rate": 0.3939393939393939,
+            "error_precision_in_routed_set": 0.1875
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 22,
+            "routed_fraction": 0.5789473684210527,
+            "error_contexts_captured": 3,
+            "error_recall": 0.6,
+            "correct_contexts_false_routed": 19,
+            "false_positive_rate": 0.5757575757575758,
+            "error_precision_in_routed_set": 0.13636363636363635
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 36,
+            "routed_fraction": 0.9473684210526315,
+            "error_contexts_captured": 5,
+            "error_recall": 1.0,
+            "correct_contexts_false_routed": 31,
+            "false_positive_rate": 0.9393939393939394,
+            "error_precision_in_routed_set": 0.1388888888888889
+          }
+        ],
+        "nontrivial_cases": [
+          {
+            "sample_id": "aiflow_0128",
+            "position": 4,
+            "target_triplet": [
+              "0",
+              "=",
+              "1"
+            ],
+            "target_center": "=",
+            "top1_center": "\\simeq",
+            "target_rank": 2,
+            "target_probability": 0.28210222721099854,
+            "top1_probability": 0.2828772962093353,
+            "target_to_top1_probability_ratio": 0.9972600522957373,
+            "bbox_aspect_ratio": 0.91462865716429,
+            "left_gap_over_center_height": 1.0945236309077278,
+            "right_gap_over_center_height": 0.8568142035508878,
+            "predictions": {
+              "hwr_top1": "\\simeq",
+              "after_infix": "\\simeq",
+              "after_expression": "\\simeq"
+            }
+          },
+          {
+            "sample_id": "aiflow_0056",
+            "position": 3,
+            "target_triplet": [
+              "8",
+              "=",
+              "1"
+            ],
+            "target_center": "=",
+            "top1_center": "\\triangledown",
+            "target_rank": 4,
+            "target_probability": 0.06219838559627533,
+            "top1_probability": 0.3429378271102905,
+            "target_to_top1_probability_ratio": 0.1813692765256602,
+            "bbox_aspect_ratio": 2.307682367383856,
+            "left_gap_over_center_height": 2.0278477741164336,
+            "right_gap_over_center_height": 1.2479162628416371,
+            "predictions": {
+              "hwr_top1": "\\triangledown",
+              "after_infix": "\\div",
+              "after_expression": "="
+            }
+          },
+          {
+            "sample_id": "aiflow_0163",
+            "position": 3,
+            "target_triplet": [
+              "2",
+              "=",
+              "3"
+            ],
+            "target_center": "=",
+            "top1_center": "\\%",
+            "target_rank": null,
+            "target_probability": null,
+            "top1_probability": 0.2011634260416031,
+            "target_to_top1_probability_ratio": null,
+            "bbox_aspect_ratio": 2.053272504571033,
+            "left_gap_over_center_height": 0.8816501872792146,
+            "right_gap_over_center_height": 0.08875792164450677,
+            "predictions": {
+              "hwr_top1": "\\%",
+              "after_infix": "\\%",
+              "after_expression": "\\%"
+            }
+          },
+          {
+            "sample_id": "aiflow_0164",
+            "position": 4,
+            "target_triplet": [
+              "5",
+              "=",
+              "9"
+            ],
+            "target_center": "=",
+            "top1_center": "\\%",
+            "target_rank": null,
+            "target_probability": null,
+            "top1_probability": 0.44497036933898926,
+            "target_to_top1_probability_ratio": null,
+            "bbox_aspect_ratio": 1.287120919594855,
+            "left_gap_over_center_height": -0.03960851872753737,
+            "right_gap_over_center_height": 0.02970267621112662,
+            "predictions": {
+              "hwr_top1": "\\%",
+              "after_infix": "\\%",
+              "after_expression": "\\%"
+            }
+          },
+          {
+            "sample_id": "aiflow_0068",
+            "position": 4,
+            "target_triplet": [
+              "4",
+              "=",
+              "5"
+            ],
+            "target_center": "=",
+            "top1_center": "\\asymp",
+            "target_rank": 3,
+            "target_probability": 0.1357598602771759,
+            "top1_probability": 0.4166797697544098,
+            "target_to_top1_probability_ratio": 0.3258134186768714,
+            "bbox_aspect_ratio": 1.2815762538382902,
+            "left_gap_over_center_height": 0.7586489252814672,
+            "right_gap_over_center_height": 0.7298874104401213,
+            "predictions": {
+              "hwr_top1": "\\asymp",
+              "after_infix": "\\asymp",
+              "after_expression": "\\asymp"
+            }
+          }
+        ]
+      },
+      "all_digit_triplet_controls": {
+        "contexts": 0,
+        "target_candidate_recall": {
+          "top5": 0,
+          "top20": 0
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 0
+          },
+          "after_infix": {
+            "correct": 0
+          },
+          "after_expression": {
+            "correct": 0
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {},
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          },
+          "top1_wrong": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          }
+        ],
+        "nontrivial_cases": []
+      },
+      "other_numeric_neighbor_contexts": {
+        "contexts": 0,
+        "target_candidate_recall": {
+          "top5": 0,
+          "top20": 0
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 0
+          },
+          "after_infix": {
+            "correct": 0
+          },
+          "after_expression": {
+            "correct": 0
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {},
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          },
+          "top1_wrong": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          }
+        ],
+        "nontrivial_cases": []
+      }
+    },
+    "top20_relative_0003": {
+      "candidate_k": 20,
+      "infix_policy": "operator_relative",
+      "minimum_infix_probability_ratio": 0.0,
+      "maximum_operator_competitor_probability_ratio": 0.0003,
+      "numeric_infix_contexts": {
+        "contexts": 64,
+        "target_candidate_recall": {
+          "top5": 64,
+          "top20": 64
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 54
+          },
+          "after_infix": {
+            "correct": 59
+          },
+          "after_expression": {
+            "correct": 59
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [
+            {
+              "sample_id": "aiflow_0124",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0050",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0052",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0161",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0003",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            }
+          ],
+          "after_expression": [
+            {
+              "sample_id": "aiflow_0124",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0050",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0052",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0161",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0003",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            }
+          ]
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {
+          "+": {
+            "hwr_top1": 22,
+            "after_infix": 22,
+            "after_expression": 22,
+            "count": 25
+          },
+          "\\times": {
+            "hwr_top1": 9,
+            "after_infix": 14,
+            "after_expression": 14,
+            "count": 15
+          },
+          "-": {
+            "hwr_top1": 11,
+            "after_infix": 11,
+            "after_expression": 11,
+            "count": 11
+          },
+          "\\div": {
+            "hwr_top1": 12,
+            "after_infix": 12,
+            "after_expression": 12,
+            "count": 13
+          }
+        },
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": 0.7552015396129583,
+            "median": 0.8611111111111112,
+            "p75": 1.088235294117647
+          },
+          "top1_wrong": {
+            "p25": 0.6527833193899221,
+            "median": 0.6998191060633816,
+            "p75": 0.7524690716290674
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 1,
+            "routed_fraction": 0.015625,
+            "error_contexts_captured": 1,
+            "error_recall": 0.1,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": 1.0
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 3,
+            "routed_fraction": 0.046875,
+            "error_contexts_captured": 2,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 1,
+            "false_positive_rate": 0.018518518518518517,
+            "error_precision_in_routed_set": 0.6666666666666666
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 8,
+            "routed_fraction": 0.125,
+            "error_contexts_captured": 2,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 6,
+            "false_positive_rate": 0.1111111111111111,
+            "error_precision_in_routed_set": 0.25
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 15,
+            "routed_fraction": 0.234375,
+            "error_contexts_captured": 5,
+            "error_recall": 0.5,
+            "correct_contexts_false_routed": 10,
+            "false_positive_rate": 0.18518518518518517,
+            "error_precision_in_routed_set": 0.3333333333333333
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 19,
+            "routed_fraction": 0.296875,
+            "error_contexts_captured": 6,
+            "error_recall": 0.6,
+            "correct_contexts_false_routed": 13,
+            "false_positive_rate": 0.24074074074074073,
+            "error_precision_in_routed_set": 0.3157894736842105
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 26,
+            "routed_fraction": 0.40625,
+            "error_contexts_captured": 7,
+            "error_recall": 0.7,
+            "correct_contexts_false_routed": 19,
+            "false_positive_rate": 0.35185185185185186,
+            "error_precision_in_routed_set": 0.2692307692307692
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 37,
+            "routed_fraction": 0.578125,
+            "error_contexts_captured": 7,
+            "error_recall": 0.7,
+            "correct_contexts_false_routed": 30,
+            "false_positive_rate": 0.5555555555555556,
+            "error_precision_in_routed_set": 0.1891891891891892
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 42,
+            "routed_fraction": 0.65625,
+            "error_contexts_captured": 7,
+            "error_recall": 0.7,
+            "correct_contexts_false_routed": 35,
+            "false_positive_rate": 0.6481481481481481,
+            "error_precision_in_routed_set": 0.16666666666666666
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 49,
+            "routed_fraction": 0.765625,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 40,
+            "false_positive_rate": 0.7407407407407407,
+            "error_precision_in_routed_set": 0.1836734693877551
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 51,
+            "routed_fraction": 0.796875,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 42,
+            "false_positive_rate": 0.7777777777777778,
+            "error_precision_in_routed_set": 0.17647058823529413
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 53,
+            "routed_fraction": 0.828125,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 44,
+            "false_positive_rate": 0.8148148148148148,
+            "error_precision_in_routed_set": 0.16981132075471697
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 53,
+            "routed_fraction": 0.828125,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 44,
+            "false_positive_rate": 0.8148148148148148,
+            "error_precision_in_routed_set": 0.16981132075471697
+          }
+        ],
+        "nontrivial_cases": [
+          {
+            "sample_id": "aiflow_0016",
+            "position": 1,
+            "target_triplet": [
+              "1",
+              "+",
+              "5"
+            ],
+            "target_center": "+",
+            "top1_center": "\\bot",
+            "target_rank": 3,
+            "target_probability": 0.012044497765600681,
+            "top1_probability": 0.625241219997406,
+            "target_to_top1_probability_ratio": 0.019263761537748024,
+            "bbox_aspect_ratio": 1.1817476230515491,
+            "left_gap_over_center_height": 0.5881572990104132,
+            "right_gap_over_center_height": 0.7160921027100448,
+            "predictions": {
+              "hwr_top1": "\\bot",
+              "after_infix": "\\bot",
+              "after_expression": "\\bot"
+            }
+          },
+          {
+            "sample_id": "aiflow_0124",
+            "position": 1,
+            "target_triplet": [
+              "5",
+              "\\times",
+              "0"
+            ],
+            "target_center": "\\times",
+            "top1_center": "x",
+            "target_rank": 2,
+            "target_probability": 0.36936190724372864,
+            "top1_probability": 0.5612386465072632,
+            "target_to_top1_probability_ratio": 0.6581191611489438,
+            "bbox_aspect_ratio": 0.7003279992048504,
+            "left_gap_over_center_height": 0.44405791339495726,
+            "right_gap_over_center_height": 0.4388397442268823,
+            "predictions": {
+              "hwr_top1": "x",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0050",
+            "position": 1,
+            "target_triplet": [
+              "0",
+              "\\times",
+              "7"
+            ],
+            "target_center": "\\times",
+            "top1_center": "X",
+            "target_rank": 2,
+            "target_probability": 0.2857917547225952,
+            "top1_probability": 0.5978207588195801,
+            "target_to_top1_probability_ratio": 0.47805592312803247,
+            "bbox_aspect_ratio": 0.6551463461911219,
+            "left_gap_over_center_height": 0.39230471021515806,
+            "right_gap_over_center_height": 0.5480713316534207,
+            "predictions": {
+              "hwr_top1": "X",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0052",
+            "position": 1,
+            "target_triplet": [
+              "2",
+              "\\times",
+              "8"
+            ],
+            "target_center": "\\times",
+            "top1_center": "X",
+            "target_rank": 2,
+            "target_probability": 0.3583000898361206,
+            "top1_probability": 0.48982128500938416,
+            "target_to_top1_probability_ratio": 0.7314914659726479,
+            "bbox_aspect_ratio": 1.065950402054194,
+            "left_gap_over_center_height": 0.1552807622136633,
+            "right_gap_over_center_height": 1.1988985742279894,
+            "predictions": {
+              "hwr_top1": "X",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0161",
+            "position": 1,
+            "target_triplet": [
+              "2",
+              "\\times",
+              "2"
+            ],
+            "target_center": "\\times",
+            "top1_center": "X",
+            "target_rank": 2,
+            "target_probability": 0.33848342299461365,
+            "top1_probability": 0.4261328876018524,
+            "target_to_top1_probability_ratio": 0.7943142452569114,
+            "bbox_aspect_ratio": 0.7524690716290674,
+            "left_gap_over_center_height": -0.09405492106396564,
+            "right_gap_over_center_height": 0.20792182139515542,
+            "predictions": {
+              "hwr_top1": "X",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0164",
+            "position": 2,
+            "target_triplet": [
+              "5",
+              "\\div",
+              "5"
+            ],
+            "target_center": "\\div",
+            "top1_center": "\\leadsto",
+            "target_rank": 3,
+            "target_probability": 0.007608991116285324,
+            "top1_probability": 0.949891209602356,
+            "target_to_top1_probability_ratio": 0.008010381651463649,
+            "bbox_aspect_ratio": 3.4814814814814814,
+            "left_gap_over_center_height": -0.0617407407407408,
+            "right_gap_over_center_height": -1.2345555555555554,
+            "predictions": {
+              "hwr_top1": "\\leadsto",
+              "after_infix": "\\leadsto",
+              "after_expression": "\\leadsto"
+            }
+          },
+          {
+            "sample_id": "aiflow_0003",
+            "position": 1,
+            "target_triplet": [
+              "0",
+              "\\times",
+              "7"
+            ],
+            "target_center": "\\times",
+            "top1_center": "x",
+            "target_rank": 3,
+            "target_probability": 0.0567837730050087,
+            "top1_probability": 0.47714853286743164,
+            "target_to_top1_probability_ratio": 0.11900649188579858,
+            "bbox_aspect_ratio": 0.6527833193899221,
+            "left_gap_over_center_height": 0.21449256708925937,
+            "right_gap_over_center_height": 0.32398481240749083,
+            "predictions": {
+              "hwr_top1": "x",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0004",
+            "position": 1,
+            "target_triplet": [
+              "2",
+              "+",
+              "7"
+            ],
+            "target_center": "+",
+            "top1_center": "4",
+            "target_rank": 2,
+            "target_probability": 0.22155244648456573,
+            "top1_probability": 0.6453323364257812,
+            "target_to_top1_probability_ratio": 0.34331527180498905,
+            "bbox_aspect_ratio": 0.6998191060633816,
+            "left_gap_over_center_height": 0.071372962080967,
+            "right_gap_over_center_height": 0.14006686206264896,
+            "predictions": {
+              "hwr_top1": "4",
+              "after_infix": "4",
+              "after_expression": "4"
+            }
+          },
+          {
+            "sample_id": "aiflow_0006",
+            "position": 1,
+            "target_triplet": [
+              "7",
+              "\\times",
+              "3"
+            ],
+            "target_center": "\\times",
+            "top1_center": "x",
+            "target_rank": 3,
+            "target_probability": 0.024863233789801598,
+            "top1_probability": 0.6350929737091064,
+            "target_to_top1_probability_ratio": 0.03914896687424191,
+            "bbox_aspect_ratio": 0.4644903935974146,
+            "left_gap_over_center_height": 0.3284102098008029,
+            "right_gap_over_center_height": 0.15858769471584724,
+            "predictions": {
+              "hwr_top1": "x",
+              "after_infix": "x",
+              "after_expression": "x"
+            }
+          },
+          {
+            "sample_id": "aiflow_0100",
+            "position": 2,
+            "target_triplet": [
+              "2",
+              "+",
+              "1"
+            ],
+            "target_center": "+",
+            "top1_center": "\\dag",
+            "target_rank": 4,
+            "target_probability": 0.03243885934352875,
+            "top1_probability": 0.7130528688430786,
+            "target_to_top1_probability_ratio": 0.04549292312105901,
+            "bbox_aspect_ratio": 0.5945381660263896,
+            "left_gap_over_center_height": 0.08402928567451698,
+            "right_gap_over_center_height": 0.5063053282111227,
+            "predictions": {
+              "hwr_top1": "\\dag",
+              "after_infix": "\\dag",
+              "after_expression": "\\dag"
+            }
+          }
+        ]
+      },
+      "numeric_equality_contexts": {
+        "contexts": 38,
+        "target_candidate_recall": {
+          "top5": 36,
+          "top20": 36
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 33
+          },
+          "after_infix": {
+            "correct": 33
+          },
+          "after_expression": {
+            "correct": 34
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [],
+          "after_expression": [
+            {
+              "sample_id": "aiflow_0056",
+              "position": 3,
+              "target": "=",
+              "before": "\\triangledown",
+              "after": "="
+            }
+          ]
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {
+          "=": {
+            "hwr_top1": 33,
+            "after_infix": 33,
+            "after_expression": 34,
+            "count": 38
+          }
+        },
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": 1.3529596647459368,
+            "median": 1.7574006092322116,
+            "p75": 2.318021201413428
+          },
+          "top1_wrong": {
+            "p25": 1.2815762538382902,
+            "median": 1.287120919594855,
+            "p75": 2.053272504571033
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 2,
+            "routed_fraction": 0.05263157894736842,
+            "error_contexts_captured": 1,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 1,
+            "false_positive_rate": 0.030303030303030304,
+            "error_precision_in_routed_set": 0.5
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 5,
+            "routed_fraction": 0.13157894736842105,
+            "error_contexts_captured": 1,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 4,
+            "false_positive_rate": 0.12121212121212122,
+            "error_precision_in_routed_set": 0.2
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 16,
+            "routed_fraction": 0.42105263157894735,
+            "error_contexts_captured": 3,
+            "error_recall": 0.6,
+            "correct_contexts_false_routed": 13,
+            "false_positive_rate": 0.3939393939393939,
+            "error_precision_in_routed_set": 0.1875
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 22,
+            "routed_fraction": 0.5789473684210527,
+            "error_contexts_captured": 3,
+            "error_recall": 0.6,
+            "correct_contexts_false_routed": 19,
+            "false_positive_rate": 0.5757575757575758,
+            "error_precision_in_routed_set": 0.13636363636363635
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 36,
+            "routed_fraction": 0.9473684210526315,
+            "error_contexts_captured": 5,
+            "error_recall": 1.0,
+            "correct_contexts_false_routed": 31,
+            "false_positive_rate": 0.9393939393939394,
+            "error_precision_in_routed_set": 0.1388888888888889
+          }
+        ],
+        "nontrivial_cases": [
+          {
+            "sample_id": "aiflow_0128",
+            "position": 4,
+            "target_triplet": [
+              "0",
+              "=",
+              "1"
+            ],
+            "target_center": "=",
+            "top1_center": "\\simeq",
+            "target_rank": 2,
+            "target_probability": 0.28210222721099854,
+            "top1_probability": 0.2828772962093353,
+            "target_to_top1_probability_ratio": 0.9972600522957373,
+            "bbox_aspect_ratio": 0.91462865716429,
+            "left_gap_over_center_height": 1.0945236309077278,
+            "right_gap_over_center_height": 0.8568142035508878,
+            "predictions": {
+              "hwr_top1": "\\simeq",
+              "after_infix": "\\simeq",
+              "after_expression": "\\simeq"
+            }
+          },
+          {
+            "sample_id": "aiflow_0056",
+            "position": 3,
+            "target_triplet": [
+              "8",
+              "=",
+              "1"
+            ],
+            "target_center": "=",
+            "top1_center": "\\triangledown",
+            "target_rank": 4,
+            "target_probability": 0.06219838559627533,
+            "top1_probability": 0.3429378271102905,
+            "target_to_top1_probability_ratio": 0.1813692765256602,
+            "bbox_aspect_ratio": 2.307682367383856,
+            "left_gap_over_center_height": 2.0278477741164336,
+            "right_gap_over_center_height": 1.2479162628416371,
+            "predictions": {
+              "hwr_top1": "\\triangledown",
+              "after_infix": "\\div",
+              "after_expression": "="
+            }
+          },
+          {
+            "sample_id": "aiflow_0163",
+            "position": 3,
+            "target_triplet": [
+              "2",
+              "=",
+              "3"
+            ],
+            "target_center": "=",
+            "top1_center": "\\%",
+            "target_rank": null,
+            "target_probability": null,
+            "top1_probability": 0.2011634260416031,
+            "target_to_top1_probability_ratio": null,
+            "bbox_aspect_ratio": 2.053272504571033,
+            "left_gap_over_center_height": 0.8816501872792146,
+            "right_gap_over_center_height": 0.08875792164450677,
+            "predictions": {
+              "hwr_top1": "\\%",
+              "after_infix": "\\%",
+              "after_expression": "\\%"
+            }
+          },
+          {
+            "sample_id": "aiflow_0164",
+            "position": 4,
+            "target_triplet": [
+              "5",
+              "=",
+              "9"
+            ],
+            "target_center": "=",
+            "top1_center": "\\%",
+            "target_rank": null,
+            "target_probability": null,
+            "top1_probability": 0.44497036933898926,
+            "target_to_top1_probability_ratio": null,
+            "bbox_aspect_ratio": 1.287120919594855,
+            "left_gap_over_center_height": -0.03960851872753737,
+            "right_gap_over_center_height": 0.02970267621112662,
+            "predictions": {
+              "hwr_top1": "\\%",
+              "after_infix": "\\%",
+              "after_expression": "\\%"
+            }
+          },
+          {
+            "sample_id": "aiflow_0068",
+            "position": 4,
+            "target_triplet": [
+              "4",
+              "=",
+              "5"
+            ],
+            "target_center": "=",
+            "top1_center": "\\asymp",
+            "target_rank": 3,
+            "target_probability": 0.1357598602771759,
+            "top1_probability": 0.4166797697544098,
+            "target_to_top1_probability_ratio": 0.3258134186768714,
+            "bbox_aspect_ratio": 1.2815762538382902,
+            "left_gap_over_center_height": 0.7586489252814672,
+            "right_gap_over_center_height": 0.7298874104401213,
+            "predictions": {
+              "hwr_top1": "\\asymp",
+              "after_infix": "\\asymp",
+              "after_expression": "\\asymp"
+            }
+          }
+        ]
+      },
+      "all_digit_triplet_controls": {
+        "contexts": 0,
+        "target_candidate_recall": {
+          "top5": 0,
+          "top20": 0
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 0
+          },
+          "after_infix": {
+            "correct": 0
+          },
+          "after_expression": {
+            "correct": 0
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {},
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          },
+          "top1_wrong": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          }
+        ],
+        "nontrivial_cases": []
+      },
+      "other_numeric_neighbor_contexts": {
+        "contexts": 0,
+        "target_candidate_recall": {
+          "top5": 0,
+          "top20": 0
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 0
+          },
+          "after_infix": {
+            "correct": 0
+          },
+          "after_expression": {
+            "correct": 0
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {},
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          },
+          "top1_wrong": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          }
+        ],
+        "nontrivial_cases": []
+      }
+    },
+    "top20_relative_002": {
+      "candidate_k": 20,
+      "infix_policy": "operator_relative",
+      "minimum_infix_probability_ratio": 0.0,
+      "maximum_operator_competitor_probability_ratio": 0.002,
+      "numeric_infix_contexts": {
+        "contexts": 64,
+        "target_candidate_recall": {
+          "top5": 64,
+          "top20": 64
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 54
+          },
+          "after_infix": {
+            "correct": 60
+          },
+          "after_expression": {
+            "correct": 60
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [
+            {
+              "sample_id": "aiflow_0124",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0050",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0052",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0161",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0003",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0006",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            }
+          ],
+          "after_expression": [
+            {
+              "sample_id": "aiflow_0124",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0050",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0052",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0161",
+              "position": 1,
+              "target": "\\times",
+              "before": "X",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0003",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            },
+            {
+              "sample_id": "aiflow_0006",
+              "position": 1,
+              "target": "\\times",
+              "before": "x",
+              "after": "\\times"
+            }
+          ]
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {
+          "+": {
+            "hwr_top1": 22,
+            "after_infix": 22,
+            "after_expression": 22,
+            "count": 25
+          },
+          "\\times": {
+            "hwr_top1": 9,
+            "after_infix": 15,
+            "after_expression": 15,
+            "count": 15
+          },
+          "-": {
+            "hwr_top1": 11,
+            "after_infix": 11,
+            "after_expression": 11,
+            "count": 11
+          },
+          "\\div": {
+            "hwr_top1": 12,
+            "after_infix": 12,
+            "after_expression": 12,
+            "count": 13
+          }
+        },
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": 0.7552015396129583,
+            "median": 0.8611111111111112,
+            "p75": 1.088235294117647
+          },
+          "top1_wrong": {
+            "p25": 0.6527833193899221,
+            "median": 0.6998191060633816,
+            "p75": 0.7524690716290674
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 1,
+            "routed_fraction": 0.015625,
+            "error_contexts_captured": 1,
+            "error_recall": 0.1,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": 1.0
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 3,
+            "routed_fraction": 0.046875,
+            "error_contexts_captured": 2,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 1,
+            "false_positive_rate": 0.018518518518518517,
+            "error_precision_in_routed_set": 0.6666666666666666
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 8,
+            "routed_fraction": 0.125,
+            "error_contexts_captured": 2,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 6,
+            "false_positive_rate": 0.1111111111111111,
+            "error_precision_in_routed_set": 0.25
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 15,
+            "routed_fraction": 0.234375,
+            "error_contexts_captured": 5,
+            "error_recall": 0.5,
+            "correct_contexts_false_routed": 10,
+            "false_positive_rate": 0.18518518518518517,
+            "error_precision_in_routed_set": 0.3333333333333333
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 19,
+            "routed_fraction": 0.296875,
+            "error_contexts_captured": 6,
+            "error_recall": 0.6,
+            "correct_contexts_false_routed": 13,
+            "false_positive_rate": 0.24074074074074073,
+            "error_precision_in_routed_set": 0.3157894736842105
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 26,
+            "routed_fraction": 0.40625,
+            "error_contexts_captured": 7,
+            "error_recall": 0.7,
+            "correct_contexts_false_routed": 19,
+            "false_positive_rate": 0.35185185185185186,
+            "error_precision_in_routed_set": 0.2692307692307692
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 37,
+            "routed_fraction": 0.578125,
+            "error_contexts_captured": 7,
+            "error_recall": 0.7,
+            "correct_contexts_false_routed": 30,
+            "false_positive_rate": 0.5555555555555556,
+            "error_precision_in_routed_set": 0.1891891891891892
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 42,
+            "routed_fraction": 0.65625,
+            "error_contexts_captured": 7,
+            "error_recall": 0.7,
+            "correct_contexts_false_routed": 35,
+            "false_positive_rate": 0.6481481481481481,
+            "error_precision_in_routed_set": 0.16666666666666666
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 49,
+            "routed_fraction": 0.765625,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 40,
+            "false_positive_rate": 0.7407407407407407,
+            "error_precision_in_routed_set": 0.1836734693877551
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 51,
+            "routed_fraction": 0.796875,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 42,
+            "false_positive_rate": 0.7777777777777778,
+            "error_precision_in_routed_set": 0.17647058823529413
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 53,
+            "routed_fraction": 0.828125,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 44,
+            "false_positive_rate": 0.8148148148148148,
+            "error_precision_in_routed_set": 0.16981132075471697
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 53,
+            "routed_fraction": 0.828125,
+            "error_contexts_captured": 9,
+            "error_recall": 0.9,
+            "correct_contexts_false_routed": 44,
+            "false_positive_rate": 0.8148148148148148,
+            "error_precision_in_routed_set": 0.16981132075471697
+          }
+        ],
+        "nontrivial_cases": [
+          {
+            "sample_id": "aiflow_0016",
+            "position": 1,
+            "target_triplet": [
+              "1",
+              "+",
+              "5"
+            ],
+            "target_center": "+",
+            "top1_center": "\\bot",
+            "target_rank": 3,
+            "target_probability": 0.012044497765600681,
+            "top1_probability": 0.625241219997406,
+            "target_to_top1_probability_ratio": 0.019263761537748024,
+            "bbox_aspect_ratio": 1.1817476230515491,
+            "left_gap_over_center_height": 0.5881572990104132,
+            "right_gap_over_center_height": 0.7160921027100448,
+            "predictions": {
+              "hwr_top1": "\\bot",
+              "after_infix": "\\bot",
+              "after_expression": "\\bot"
+            }
+          },
+          {
+            "sample_id": "aiflow_0124",
+            "position": 1,
+            "target_triplet": [
+              "5",
+              "\\times",
+              "0"
+            ],
+            "target_center": "\\times",
+            "top1_center": "x",
+            "target_rank": 2,
+            "target_probability": 0.36936190724372864,
+            "top1_probability": 0.5612386465072632,
+            "target_to_top1_probability_ratio": 0.6581191611489438,
+            "bbox_aspect_ratio": 0.7003279992048504,
+            "left_gap_over_center_height": 0.44405791339495726,
+            "right_gap_over_center_height": 0.4388397442268823,
+            "predictions": {
+              "hwr_top1": "x",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0050",
+            "position": 1,
+            "target_triplet": [
+              "0",
+              "\\times",
+              "7"
+            ],
+            "target_center": "\\times",
+            "top1_center": "X",
+            "target_rank": 2,
+            "target_probability": 0.2857917547225952,
+            "top1_probability": 0.5978207588195801,
+            "target_to_top1_probability_ratio": 0.47805592312803247,
+            "bbox_aspect_ratio": 0.6551463461911219,
+            "left_gap_over_center_height": 0.39230471021515806,
+            "right_gap_over_center_height": 0.5480713316534207,
+            "predictions": {
+              "hwr_top1": "X",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0052",
+            "position": 1,
+            "target_triplet": [
+              "2",
+              "\\times",
+              "8"
+            ],
+            "target_center": "\\times",
+            "top1_center": "X",
+            "target_rank": 2,
+            "target_probability": 0.3583000898361206,
+            "top1_probability": 0.48982128500938416,
+            "target_to_top1_probability_ratio": 0.7314914659726479,
+            "bbox_aspect_ratio": 1.065950402054194,
+            "left_gap_over_center_height": 0.1552807622136633,
+            "right_gap_over_center_height": 1.1988985742279894,
+            "predictions": {
+              "hwr_top1": "X",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0161",
+            "position": 1,
+            "target_triplet": [
+              "2",
+              "\\times",
+              "2"
+            ],
+            "target_center": "\\times",
+            "top1_center": "X",
+            "target_rank": 2,
+            "target_probability": 0.33848342299461365,
+            "top1_probability": 0.4261328876018524,
+            "target_to_top1_probability_ratio": 0.7943142452569114,
+            "bbox_aspect_ratio": 0.7524690716290674,
+            "left_gap_over_center_height": -0.09405492106396564,
+            "right_gap_over_center_height": 0.20792182139515542,
+            "predictions": {
+              "hwr_top1": "X",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0164",
+            "position": 2,
+            "target_triplet": [
+              "5",
+              "\\div",
+              "5"
+            ],
+            "target_center": "\\div",
+            "top1_center": "\\leadsto",
+            "target_rank": 3,
+            "target_probability": 0.007608991116285324,
+            "top1_probability": 0.949891209602356,
+            "target_to_top1_probability_ratio": 0.008010381651463649,
+            "bbox_aspect_ratio": 3.4814814814814814,
+            "left_gap_over_center_height": -0.0617407407407408,
+            "right_gap_over_center_height": -1.2345555555555554,
+            "predictions": {
+              "hwr_top1": "\\leadsto",
+              "after_infix": "\\leadsto",
+              "after_expression": "\\leadsto"
+            }
+          },
+          {
+            "sample_id": "aiflow_0003",
+            "position": 1,
+            "target_triplet": [
+              "0",
+              "\\times",
+              "7"
+            ],
+            "target_center": "\\times",
+            "top1_center": "x",
+            "target_rank": 3,
+            "target_probability": 0.0567837730050087,
+            "top1_probability": 0.47714853286743164,
+            "target_to_top1_probability_ratio": 0.11900649188579858,
+            "bbox_aspect_ratio": 0.6527833193899221,
+            "left_gap_over_center_height": 0.21449256708925937,
+            "right_gap_over_center_height": 0.32398481240749083,
+            "predictions": {
+              "hwr_top1": "x",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0004",
+            "position": 1,
+            "target_triplet": [
+              "2",
+              "+",
+              "7"
+            ],
+            "target_center": "+",
+            "top1_center": "4",
+            "target_rank": 2,
+            "target_probability": 0.22155244648456573,
+            "top1_probability": 0.6453323364257812,
+            "target_to_top1_probability_ratio": 0.34331527180498905,
+            "bbox_aspect_ratio": 0.6998191060633816,
+            "left_gap_over_center_height": 0.071372962080967,
+            "right_gap_over_center_height": 0.14006686206264896,
+            "predictions": {
+              "hwr_top1": "4",
+              "after_infix": "4",
+              "after_expression": "4"
+            }
+          },
+          {
+            "sample_id": "aiflow_0006",
+            "position": 1,
+            "target_triplet": [
+              "7",
+              "\\times",
+              "3"
+            ],
+            "target_center": "\\times",
+            "top1_center": "x",
+            "target_rank": 3,
+            "target_probability": 0.024863233789801598,
+            "top1_probability": 0.6350929737091064,
+            "target_to_top1_probability_ratio": 0.03914896687424191,
+            "bbox_aspect_ratio": 0.4644903935974146,
+            "left_gap_over_center_height": 0.3284102098008029,
+            "right_gap_over_center_height": 0.15858769471584724,
+            "predictions": {
+              "hwr_top1": "x",
+              "after_infix": "\\times",
+              "after_expression": "\\times"
+            }
+          },
+          {
+            "sample_id": "aiflow_0100",
+            "position": 2,
+            "target_triplet": [
+              "2",
+              "+",
+              "1"
+            ],
+            "target_center": "+",
+            "top1_center": "\\dag",
+            "target_rank": 4,
+            "target_probability": 0.03243885934352875,
+            "top1_probability": 0.7130528688430786,
+            "target_to_top1_probability_ratio": 0.04549292312105901,
+            "bbox_aspect_ratio": 0.5945381660263896,
+            "left_gap_over_center_height": 0.08402928567451698,
+            "right_gap_over_center_height": 0.5063053282111227,
+            "predictions": {
+              "hwr_top1": "\\dag",
+              "after_infix": "\\dag",
+              "after_expression": "\\dag"
+            }
+          }
+        ]
+      },
+      "numeric_equality_contexts": {
+        "contexts": 38,
+        "target_candidate_recall": {
+          "top5": 36,
+          "top20": 36
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 33
+          },
+          "after_infix": {
+            "correct": 33
+          },
+          "after_expression": {
+            "correct": 34
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [],
+          "after_expression": [
+            {
+              "sample_id": "aiflow_0056",
+              "position": 3,
+              "target": "=",
+              "before": "\\triangledown",
+              "after": "="
+            }
+          ]
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {
+          "=": {
+            "hwr_top1": 33,
+            "after_infix": 33,
+            "after_expression": 34,
+            "count": 38
+          }
+        },
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": 1.3529596647459368,
+            "median": 1.7574006092322116,
+            "p75": 2.318021201413428
+          },
+          "top1_wrong": {
+            "p25": 1.2815762538382902,
+            "median": 1.287120919594855,
+            "p75": 2.053272504571033
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": 0.0,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": 0.0,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 2,
+            "routed_fraction": 0.05263157894736842,
+            "error_contexts_captured": 1,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 1,
+            "false_positive_rate": 0.030303030303030304,
+            "error_precision_in_routed_set": 0.5
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 5,
+            "routed_fraction": 0.13157894736842105,
+            "error_contexts_captured": 1,
+            "error_recall": 0.2,
+            "correct_contexts_false_routed": 4,
+            "false_positive_rate": 0.12121212121212122,
+            "error_precision_in_routed_set": 0.2
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 16,
+            "routed_fraction": 0.42105263157894735,
+            "error_contexts_captured": 3,
+            "error_recall": 0.6,
+            "correct_contexts_false_routed": 13,
+            "false_positive_rate": 0.3939393939393939,
+            "error_precision_in_routed_set": 0.1875
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 22,
+            "routed_fraction": 0.5789473684210527,
+            "error_contexts_captured": 3,
+            "error_recall": 0.6,
+            "correct_contexts_false_routed": 19,
+            "false_positive_rate": 0.5757575757575758,
+            "error_precision_in_routed_set": 0.13636363636363635
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 36,
+            "routed_fraction": 0.9473684210526315,
+            "error_contexts_captured": 5,
+            "error_recall": 1.0,
+            "correct_contexts_false_routed": 31,
+            "false_positive_rate": 0.9393939393939394,
+            "error_precision_in_routed_set": 0.1388888888888889
+          }
+        ],
+        "nontrivial_cases": [
+          {
+            "sample_id": "aiflow_0128",
+            "position": 4,
+            "target_triplet": [
+              "0",
+              "=",
+              "1"
+            ],
+            "target_center": "=",
+            "top1_center": "\\simeq",
+            "target_rank": 2,
+            "target_probability": 0.28210222721099854,
+            "top1_probability": 0.2828772962093353,
+            "target_to_top1_probability_ratio": 0.9972600522957373,
+            "bbox_aspect_ratio": 0.91462865716429,
+            "left_gap_over_center_height": 1.0945236309077278,
+            "right_gap_over_center_height": 0.8568142035508878,
+            "predictions": {
+              "hwr_top1": "\\simeq",
+              "after_infix": "\\simeq",
+              "after_expression": "\\simeq"
+            }
+          },
+          {
+            "sample_id": "aiflow_0056",
+            "position": 3,
+            "target_triplet": [
+              "8",
+              "=",
+              "1"
+            ],
+            "target_center": "=",
+            "top1_center": "\\triangledown",
+            "target_rank": 4,
+            "target_probability": 0.06219838559627533,
+            "top1_probability": 0.3429378271102905,
+            "target_to_top1_probability_ratio": 0.1813692765256602,
+            "bbox_aspect_ratio": 2.307682367383856,
+            "left_gap_over_center_height": 2.0278477741164336,
+            "right_gap_over_center_height": 1.2479162628416371,
+            "predictions": {
+              "hwr_top1": "\\triangledown",
+              "after_infix": "\\div",
+              "after_expression": "="
+            }
+          },
+          {
+            "sample_id": "aiflow_0163",
+            "position": 3,
+            "target_triplet": [
+              "2",
+              "=",
+              "3"
+            ],
+            "target_center": "=",
+            "top1_center": "\\%",
+            "target_rank": null,
+            "target_probability": null,
+            "top1_probability": 0.2011634260416031,
+            "target_to_top1_probability_ratio": null,
+            "bbox_aspect_ratio": 2.053272504571033,
+            "left_gap_over_center_height": 0.8816501872792146,
+            "right_gap_over_center_height": 0.08875792164450677,
+            "predictions": {
+              "hwr_top1": "\\%",
+              "after_infix": "\\%",
+              "after_expression": "\\%"
+            }
+          },
+          {
+            "sample_id": "aiflow_0164",
+            "position": 4,
+            "target_triplet": [
+              "5",
+              "=",
+              "9"
+            ],
+            "target_center": "=",
+            "top1_center": "\\%",
+            "target_rank": null,
+            "target_probability": null,
+            "top1_probability": 0.44497036933898926,
+            "target_to_top1_probability_ratio": null,
+            "bbox_aspect_ratio": 1.287120919594855,
+            "left_gap_over_center_height": -0.03960851872753737,
+            "right_gap_over_center_height": 0.02970267621112662,
+            "predictions": {
+              "hwr_top1": "\\%",
+              "after_infix": "\\%",
+              "after_expression": "\\%"
+            }
+          },
+          {
+            "sample_id": "aiflow_0068",
+            "position": 4,
+            "target_triplet": [
+              "4",
+              "=",
+              "5"
+            ],
+            "target_center": "=",
+            "top1_center": "\\asymp",
+            "target_rank": 3,
+            "target_probability": 0.1357598602771759,
+            "top1_probability": 0.4166797697544098,
+            "target_to_top1_probability_ratio": 0.3258134186768714,
+            "bbox_aspect_ratio": 1.2815762538382902,
+            "left_gap_over_center_height": 0.7586489252814672,
+            "right_gap_over_center_height": 0.7298874104401213,
+            "predictions": {
+              "hwr_top1": "\\asymp",
+              "after_infix": "\\asymp",
+              "after_expression": "\\asymp"
+            }
+          }
+        ]
+      },
+      "all_digit_triplet_controls": {
+        "contexts": 0,
+        "target_candidate_recall": {
+          "top5": 0,
+          "top20": 0
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 0
+          },
+          "after_infix": {
+            "correct": 0
+          },
+          "after_expression": {
+            "correct": 0
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {},
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          },
+          "top1_wrong": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          }
+        ],
+        "nontrivial_cases": []
+      },
+      "other_numeric_neighbor_contexts": {
+        "contexts": 0,
+        "target_candidate_recall": {
+          "top5": 0,
+          "top20": 0
+        },
+        "correct_by_stage": {
+          "hwr_top1": {
+            "correct": 0
+          },
+          "after_infix": {
+            "correct": 0
+          },
+          "after_expression": {
+            "correct": 0
+          }
+        },
+        "recovered_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "regressed_vs_top1": {
+          "after_infix": [],
+          "after_expression": []
+        },
+        "by_target_operator": {},
+        "geometry_aspect_ratio": {
+          "top1_correct": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          },
+          "top1_wrong": {
+            "p25": null,
+            "median": null,
+            "p75": null
+          }
+        },
+        "geometry_aspect_router_sweep": [
+          {
+            "route_if_aspect_at_most": 0.4,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.6,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.65,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.7,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.75,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.8,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 0.9,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.2,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 1.5,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 2.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          },
+          {
+            "route_if_aspect_at_most": 3.0,
+            "routed_contexts": 0,
+            "routed_fraction": 0.0,
+            "error_contexts_captured": 0,
+            "error_recall": null,
+            "correct_contexts_false_routed": 0,
+            "false_positive_rate": null,
+            "error_precision_in_routed_set": null
+          }
+        ],
+        "nontrivial_cases": []
+      }
+    }
+  },
+  "verification": {
+    "trace_hash_matches_frozen_reference": true,
+    "frozen_formula_count_is_149": true,
+    "top20_relative_002_replays_argmax_formula_predictions": true,
+    "all_output_tokens_preserve_candidate_membership": true,
+    "other_numeric_context_change_counts_reconciled": true,
+    "all_checks_pass": true
+  }
+}

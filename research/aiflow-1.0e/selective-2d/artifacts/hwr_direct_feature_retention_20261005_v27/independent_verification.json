@@ -1,0 +1,60 @@
+{
+  "schema": "aiflow-direct-feature-retention-verification/v27",
+  "status": "pass",
+  "verifier_sha256": "b2999688056cb6d62754592fa8eaa24fc99f739670c348f3bf7accdc99b4b440",
+  "comparison_sha256": "4aad5aca83b8a6a685e3b242729d17fb704b04f9c4fb97290d69f85ff26ec8b4",
+  "checkpoint_sha256": "eb55c74f05d73522b1b5ad377eb8650181977dc0bf5a9535c24c25eb251e3946",
+  "training_steps": 2400,
+  "augmented_hard_target_exposures": 115200,
+  "same_v25_label_schedule_verified": true,
+  "all_2400_recorded_loss_formulas_verified": true,
+  "loss_formula_max_deltas": {
+    "ce": 1.7136335372924805e-07,
+    "total": 3.725290298461914e-08,
+    "weighted_feature": 1.2384084278893592e-09
+  },
+  "all_57_gradients_finite_and_all_57_parameter_tensors_changed": true,
+  "all_four_layers_active_on_every_step": true,
+  "frozen_teacher_gradients_absent_in_every_record": true,
+  "train_only_coefficient_reproduced": true,
+  "full_weight_hard_ce_logit_gradient_verified_on_eight_final_train_batches": true,
+  "final_logits_checkpoint_reload_bit_exact": true,
+  "all_new_metrics_recounted": true,
+  "train_probe_feature_mse": {
+    "direct_baseline": 0.2399902194738388,
+    "feature_retained_main": 0.018266314640641212
+  },
+  "owned_diagnostic_feature_mse": {
+    "direct_baseline": 0.2950916718351672,
+    "feature_retained_main": 0.025997364395428973
+  },
+  "counts": {
+    "canonical": {
+      "internal_top1": 4765,
+      "owned_formula_top1": 76,
+      "owned_formula_top5": 137
+    },
+    "real_paired_control": {
+      "internal_top1": 4949,
+      "owned_formula_top1": 54,
+      "owned_formula_top5": 120
+    },
+    "augmented_main": {
+      "internal_top1": 4935,
+      "owned_formula_top1": 52,
+      "owned_formula_top5": 121
+    },
+    "feature_retained_main": {
+      "internal_top1": 4893,
+      "owned_formula_top1": 56,
+      "owned_formula_top5": 122
+    }
+  },
+  "limits": "Historical intermediate forwards not fully replayed. Consumed oracle groups are not fresh acceptance or official CROHME Expression Rate.",
+  "all_evaluation_cases_already_consumed": true,
+  "generated_labels_human_verified": false,
+  "owned_optimizer_rows": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "canonical_checkpoint_unchanged": true
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "aiflow-fixed-rank-margin-repair-verdict/v1",
+  "status": "fixed_rank_protection_pass_but_source_gain_gate_fail",
+  "scope": "Finite TRAIN constraints/repair only; not independently verified whole-domain accuracy or product promotion.",
+  "findings": {
+    "top1_fixed_margin_violations_before_after": [33, 0],
+    "top5_fixed_margin_violations_before_after": [4, 0],
+    "canonical_top5_membership_regressions_before_after": [3, 0],
+    "correction_rounds": 9,
+    "individual_direction_corrections": 61,
+    "source_train_probe_canonical_parent_repaired_hits": [853, 958, 947],
+    "source_train_gain_retained": "94/105 = 89.52%, below the prospectively frozen 90% gate",
+    "source_loss_targets_still_in_top5": "11/11"
+  },
+  "interpretation": [
+    "Canonical fixed margins repair the prior shrinking-margin defect and preserve the finite canonical-correct Top-5 anchor set.",
+    "Top-1 protection applies to 831 rows across 351 classes, Top-5 protection to 1005 rows across 370 classes; do not claim every class or unseen writer/device is protected.",
+    "Eight of the eleven source TRAIN Top-1 losses are zero-to-O/o/circle-style confusions; two are eight-to-f and one is nine-to-eight.",
+    "All eleven targets remain reachable in Top-5. This local tradeoff is ranking/selection drift, not disappearance of the target candidate; it does not prove a decoder can recover them in real formulas.",
+    "Keep the failed repair as research evidence; do not weaken the 90% gate to relabel the experiment successful."
+  ],
+  "next_hypothesis": "Retain source and prior newly rescued TRAIN examples jointly during constrained optimization, instead of protecting only canonical-correct anchors post hoc. A fresh experiment must predeclare this and still pass independent acceptance before promotion.",
+  "checkpoint_selected_for_product": false,
+  "inference_architecture_changed": false,
+  "new_human_boundary_distillation_performed": false,
+  "parameter_optimization_performed": true,
+  "held_inputs_forwarded": 0,
+  "crohme_rows": 0,
+  "human_boundary_labels": 0,
+  "product_adopted": false,
+  "goal_complete": false
+}

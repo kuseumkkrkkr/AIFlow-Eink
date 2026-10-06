@@ -1,0 +1,33 @@
+{
+  "schema": "aiflow-sampling-balance-verdict/v30",
+  "status": "verified_distribution_shift_not_proven_cause",
+  "balance_result_sha256": "2c638a1646db97a1212079318eb0be97783a15154c2342f6c4ec042e6343411d",
+  "family_comparison": {
+    "digits": {"train_percent": 4.462684928833652, "hard_target_percent": 2.9114583333333335, "relative_exposure": 0.6524006018265464},
+    "latin_letters": {"train_percent": 3.332073032405996, "hard_target_percent": 14.059244791666667, "relative_exposure": 4.2193687398006645},
+    "math_symbols": {"train_percent": 92.20524203876035, "hard_target_percent": 83.029296875, "relative_exposure": 0.9004834762008103}
+  },
+  "family_definition": "Plain ASCII digits and letters only; Greek letters, font variants and remaining math tokens are counted in math_symbols, matching the frozen prior audit rule.",
+  "interpretation": "Class-uniform sampling does not preserve the real TRAIN population mixture. Digits receive about 65% of their population-frequency exposure; ASCII letters about 4.22 times. Math exposure is LOWER than its TRAIN fraction, so symbol-overexposure relative to TRAIN is not supported. This does not establish the cause of owned-input regression or the actual application distribution.",
+  "verification": {
+    "six_saved_profiles_independently_recounted_from_372_class_rows": true,
+    "total_hard_targets": 153600,
+    "gt_schedule_matches_original_population_indices": true,
+    "family_rule_independently_crosschecked": true
+  },
+  "next_controlled_candidate": {
+    "change_only": "Raise plain-digit exposure to at least its admitted TRAIN population fraction by replacing a bounded subset of the 16 real-original rows per batch with other admitted real digit rows",
+    "keep": "All 48 augmented rows, all 68726 changed view slots, inherited ground truth, all 371 positive classes, three V29 loss weights, canonical initialization, all 57 tensors, 2400-step budget",
+    "derive_from": "TRAIN label counts only, no ownership/evaluation label frequency fitting",
+    "gate_before_training": "Freeze schedules and class coverage, verify nonzero augmentation unchanged, show stratified actual TRAIN image samples if adding newly selected originals",
+    "limit": "A predeclared sampler hypothesis, not an established fix or admission to product"
+  },
+  "missing_positive_train_labels": ["="],
+  "data_roles_reclassified": false,
+  "evaluation_inputs_read": 0,
+  "owned_labels_read": 0,
+  "optimizer_steps": 0,
+  "crohme_rows": 0,
+  "model_or_product_changed": false,
+  "goal_complete": false
+}

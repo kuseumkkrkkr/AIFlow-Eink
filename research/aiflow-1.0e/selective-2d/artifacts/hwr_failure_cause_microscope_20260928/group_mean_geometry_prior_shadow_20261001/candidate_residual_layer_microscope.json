@@ -1,0 +1,1520 @@
+{
+  "schema": "aiflow-hwr-candidate-residual-layer-microscope/v1",
+  "status": "consumed_development_forensic_shadow_only",
+  "scope": "no training, no threshold fitting, no CROHME, no promotion",
+  "inputs": {
+    "candidate_rescore_path": "artifacts\\hwr_failure_cause_microscope_20260928\\group_mean_geometry_prior_shadow_20261001\\candidate_rescore_shadow.json",
+    "candidate_rescore_sha256": "d84a4cdc2c41d27bd3c5cc7477e0f63bb261b191cb923c828e83ac73e72dfb2c",
+    "layer_trace_path": "artifacts\\hwr_failure_cause_microscope_20260928\\layer_trace_149_current_20260928\\formula_traces.jsonl",
+    "layer_trace_sha256": "785e909f569e3c6346b4fcecc83173445b1ef016ad31ee13e7188700990c76e7",
+    "candidate_formula_count": 149,
+    "trace_formula_count": 149,
+    "residual_formula_count": 14
+  },
+  "summary": {
+    "mismatch_symbol_count": 20,
+    "all_top1_wrong": true,
+    "all_targets_replayed_in_top5": true,
+    "final_target_rank_histogram": {
+      "2": 7,
+      "3": 6,
+      "4": 5,
+      "5": 2
+    },
+    "first_top5_stage_histogram": {
+      "encoder.block_2.output": 5,
+      "encoder.block_3.output": 13,
+      "encoder.block_1.output": 2
+    },
+    "class_confusions": [
+      {
+        "target_class": "arithmetic_operator",
+        "top1_class": "digit",
+        "count": 1
+      },
+      {
+        "target_class": "arithmetic_operator",
+        "top1_class": "named_symbol",
+        "count": 2
+      },
+      {
+        "target_class": "digit",
+        "top1_class": "arithmetic_operator",
+        "count": 1
+      },
+      {
+        "target_class": "digit",
+        "top1_class": "fence",
+        "count": 4
+      },
+      {
+        "target_class": "digit",
+        "top1_class": "latin_letter",
+        "count": 5
+      },
+      {
+        "target_class": "digit",
+        "top1_class": "named_symbol",
+        "count": 2
+      },
+      {
+        "target_class": "latin_letter",
+        "top1_class": "named_symbol",
+        "count": 4
+      },
+      {
+        "target_class": "relation",
+        "top1_class": "named_symbol",
+        "count": 1
+      }
+    ],
+    "rank_improved_input_to_final": 20,
+    "best_intermediate_rank_better_than_final": 2,
+    "any_intermediate_positive_target_margin": 2,
+    "mean_top1_over_target_log_probability_gap": 2.156201480439898,
+    "layer_summary": {
+      "encoder.input": {
+        "mismatch_symbols": 20,
+        "target_top1": 0,
+        "target_top5": 0,
+        "mean_target_rank": 163.7,
+        "median_target_rank": 143.5,
+        "mean_target_minus_best_other_logit": -1.067531299777329,
+        "median_target_minus_best_other_logit": -1.0067512206733227
+      },
+      "encoder.block_0.output": {
+        "mismatch_symbols": 20,
+        "target_top1": 0,
+        "target_top5": 0,
+        "mean_target_rank": 139.65,
+        "median_target_rank": 90.0,
+        "mean_target_minus_best_other_logit": -2.076508496981114,
+        "median_target_minus_best_other_logit": -1.8580799102783203
+      },
+      "encoder.block_1.output": {
+        "mismatch_symbols": 20,
+        "target_top1": 1,
+        "target_top5": 2,
+        "mean_target_rank": 65.4,
+        "median_target_rank": 67.0,
+        "mean_target_minus_best_other_logit": -2.099961020424962,
+        "median_target_minus_best_other_logit": -2.159761741757393
+      },
+      "encoder.block_2.output": {
+        "mismatch_symbols": 20,
+        "target_top1": 1,
+        "target_top5": 6,
+        "mean_target_rank": 11.35,
+        "median_target_rank": 10.0,
+        "mean_target_minus_best_other_logit": -1.6475658416748047,
+        "median_target_minus_best_other_logit": -1.840409517288208
+      },
+      "encoder.block_3.output": {
+        "mismatch_symbols": 20,
+        "target_top1": 0,
+        "target_top5": 20,
+        "mean_target_rank": 3.1,
+        "median_target_rank": 3.0,
+        "mean_target_minus_best_other_logit": -2.156201481819153,
+        "median_target_minus_best_other_logit": -1.758368968963623
+      },
+      "encoder.output": {
+        "mismatch_symbols": 20,
+        "target_top1": 0,
+        "target_top5": 20,
+        "mean_target_rank": 3.1,
+        "median_target_rank": 3.0,
+        "mean_target_minus_best_other_logit": -2.156201481819153,
+        "median_target_minus_best_other_logit": -1.758368968963623
+      }
+    }
+  },
+  "details": [
+    {
+      "sample_id": "aiflow_0146",
+      "stroke_indices": [
+        1,
+        2
+      ],
+      "target": "x",
+      "target_class": "latin_letter",
+      "hwr_top1": "\\chi",
+      "top1_class": "named_symbol",
+      "target_hwr_rank": 2,
+      "top5": [
+        "\\chi",
+        "x",
+        "\\mathcal{X}",
+        "X",
+        "\\lambda"
+      ],
+      "target_probability": 0.24987752735614777,
+      "top1_probability": 0.7375233769416809,
+      "top1_over_target_probability_log_gap": 1.082326878008415,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 138,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -0.9816480651497841
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 233,
+          "predicted_top1": "\\$",
+          "target_minus_best_other_logit": -2.7038669884204865
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 29,
+          "predicted_top1": "\\with",
+          "target_minus_best_other_logit": -1.510117530822754
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 3,
+          "predicted_top1": "\\chi",
+          "target_minus_best_other_logit": -0.4868927001953125
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 2,
+          "predicted_top1": "\\chi",
+          "target_minus_best_other_logit": -1.082326889038086
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 2,
+          "predicted_top1": "\\chi",
+          "target_minus_best_other_logit": -1.082326889038086
+        }
+      ],
+      "first_top5_stage": "encoder.block_2.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 23,
+      "raw_points_per_stroke": [
+        14,
+        9
+      ]
+    },
+    {
+      "sample_id": "aiflow_0020",
+      "stroke_indices": [
+        0
+      ],
+      "target": "1",
+      "target_class": "digit",
+      "hwr_top1": "/",
+      "top1_class": "arithmetic_operator",
+      "target_hwr_rank": 3,
+      "top5": [
+        "/",
+        "\\prime",
+        "1",
+        "7",
+        "i"
+      ],
+      "target_probability": 0.0001436237507732585,
+      "top1_probability": 0.986078679561615,
+      "top1_over_target_probability_log_gap": 8.834294388822045,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 35,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -0.629738837480545
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 21,
+          "predicted_top1": "\\Downarrow",
+          "target_minus_best_other_logit": -1.4503742456436157
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 31,
+          "predicted_top1": "8",
+          "target_minus_best_other_logit": -2.2931268215179443
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 15,
+          "predicted_top1": "/",
+          "target_minus_best_other_logit": -3.8650169372558594
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 3,
+          "predicted_top1": "/",
+          "target_minus_best_other_logit": -8.834294319152832
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 3,
+          "predicted_top1": "/",
+          "target_minus_best_other_logit": -8.834294319152832
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 18,
+      "raw_points_per_stroke": [
+        18
+      ]
+    },
+    {
+      "sample_id": "aiflow_0020",
+      "stroke_indices": [
+        1
+      ],
+      "target": "0",
+      "target_class": "digit",
+      "hwr_top1": "o",
+      "top1_class": "latin_letter",
+      "target_hwr_rank": 4,
+      "top5": [
+        "o",
+        "\\circ",
+        "\\diamond",
+        "0",
+        "6"
+      ],
+      "target_probability": 0.0932314470410347,
+      "top1_probability": 0.4359561800956726,
+      "top1_over_target_probability_log_gap": 1.5424566545469924,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 233,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -1.2272269278764725
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 234,
+          "predicted_top1": "\\circlearrowright",
+          "target_minus_best_other_logit": -2.4853332936763763
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 177,
+          "predicted_top1": "\\rightleftarrows",
+          "target_minus_best_other_logit": -3.0540053620934486
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 30,
+          "predicted_top1": "\\circ",
+          "target_minus_best_other_logit": -1.9018094539642334
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 4,
+          "predicted_top1": "o",
+          "target_minus_best_other_logit": -1.5424566268920898
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 4,
+          "predicted_top1": "o",
+          "target_minus_best_other_logit": -1.5424566268920898
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 47,
+      "raw_points_per_stroke": [
+        47
+      ]
+    },
+    {
+      "sample_id": "aiflow_0004",
+      "stroke_indices": [
+        1,
+        2
+      ],
+      "target": "+",
+      "target_class": "arithmetic_operator",
+      "hwr_top1": "4",
+      "top1_class": "digit",
+      "target_hwr_rank": 2,
+      "top5": [
+        "4",
+        "+",
+        "\\phi",
+        "\\div",
+        "\\Phi"
+      ],
+      "target_probability": 0.22155244648456573,
+      "top1_probability": 0.6453323364257812,
+      "top1_over_target_probability_log_gap": 1.069106094203566,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 344,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -1.6307679414749146
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 354,
+          "predicted_top1": "\\circlearrowright",
+          "target_minus_best_other_logit": -3.7174001932144165
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 72,
+          "predicted_top1": "\\div",
+          "target_minus_best_other_logit": -2.9031161069869995
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 4,
+          "predicted_top1": "4",
+          "target_minus_best_other_logit": -1.102095127105713
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 2,
+          "predicted_top1": "4",
+          "target_minus_best_other_logit": -1.069106101989746
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 2,
+          "predicted_top1": "4",
+          "target_minus_best_other_logit": -1.069106101989746
+        }
+      ],
+      "first_top5_stage": "encoder.block_2.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 42,
+      "raw_points_per_stroke": [
+        19,
+        23
+      ]
+    },
+    {
+      "sample_id": "aiflow_0078",
+      "stroke_indices": [
+        3
+      ],
+      "target": "5",
+      "target_class": "digit",
+      "hwr_top1": "S",
+      "top1_class": "latin_letter",
+      "target_hwr_rank": 4,
+      "top5": [
+        "S",
+        "s",
+        "\\mathcal{S}",
+        "5",
+        "\\mathcal{G}"
+      ],
+      "target_probability": 0.03325261175632477,
+      "top1_probability": 0.5807115435600281,
+      "top1_over_target_probability_log_gap": 2.8601208377991507,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 127,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -0.982247993350029
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 69,
+          "predicted_top1": "\\rightleftarrows",
+          "target_minus_best_other_logit": -1.5603489875793457
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 70,
+          "predicted_top1": "\\with",
+          "target_minus_best_other_logit": -2.49259090423584
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 6,
+          "predicted_top1": "S",
+          "target_minus_best_other_logit": -2.0836894512176514
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 4,
+          "predicted_top1": "S",
+          "target_minus_best_other_logit": -2.8601207733154297
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 4,
+          "predicted_top1": "S",
+          "target_minus_best_other_logit": -2.8601207733154297
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 56,
+      "raw_points_per_stroke": [
+        56
+      ]
+    },
+    {
+      "sample_id": "aiflow_0118",
+      "stroke_indices": [
+        0
+      ],
+      "target": "1",
+      "target_class": "digit",
+      "hwr_top1": "|",
+      "top1_class": "fence",
+      "target_hwr_rank": 2,
+      "top5": [
+        "|",
+        "1",
+        "\\mid",
+        "I",
+        "\\prime"
+      ],
+      "target_probability": 0.2965104877948761,
+      "top1_probability": 0.39128783345222473,
+      "top1_over_target_probability_log_gap": 0.277360846297078,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 42,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -0.6613097190856934
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 50,
+          "predicted_top1": "\\Downarrow",
+          "target_minus_best_other_logit": -1.457656741142273
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 52,
+          "predicted_top1": "\\{",
+          "target_minus_best_other_logit": -1.7620229721069336
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 5,
+          "predicted_top1": "|",
+          "target_minus_best_other_logit": -1.2587499618530273
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 2,
+          "predicted_top1": "|",
+          "target_minus_best_other_logit": -0.2773609161376953
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 2,
+          "predicted_top1": "|",
+          "target_minus_best_other_logit": -0.2773609161376953
+        }
+      ],
+      "first_top5_stage": "encoder.block_2.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 13,
+      "raw_points_per_stroke": [
+        13
+      ]
+    },
+    {
+      "sample_id": "aiflow_0044",
+      "stroke_indices": [
+        0,
+        1
+      ],
+      "target": "=",
+      "target_class": "relation",
+      "hwr_top1": "\\Xi",
+      "top1_class": "named_symbol",
+      "target_hwr_rank": 3,
+      "top5": [
+        "\\Xi",
+        "\\asymp",
+        "=",
+        "\\ddots",
+        "I"
+      ],
+      "target_probability": 0.051907774060964584,
+      "top1_probability": 0.6866129040718079,
+      "top1_over_target_probability_log_gap": 2.5823021068260825,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 372,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -2.2066816091537476
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 164,
+          "predicted_top1": "\\rightleftarrows",
+          "target_minus_best_other_logit": -2.3551616072654724
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 116,
+          "predicted_top1": "E",
+          "target_minus_best_other_logit": -2.5083425641059875
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 24,
+          "predicted_top1": "\\Xi",
+          "target_minus_best_other_logit": -2.0793533325195312
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 3,
+          "predicted_top1": "\\Xi",
+          "target_minus_best_other_logit": -2.5823020935058594
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 3,
+          "predicted_top1": "\\Xi",
+          "target_minus_best_other_logit": -2.5823020935058594
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 35,
+      "raw_points_per_stroke": [
+        16,
+        19
+      ]
+    },
+    {
+      "sample_id": "aiflow_0087",
+      "stroke_indices": [
+        0
+      ],
+      "target": "9",
+      "target_class": "digit",
+      "hwr_top1": "q",
+      "top1_class": "latin_letter",
+      "target_hwr_rank": 2,
+      "top5": [
+        "q",
+        "9",
+        "\\uparrow",
+        "1",
+        "\\{"
+      ],
+      "target_probability": 0.44571349024772644,
+      "top1_probability": 0.48836269974708557,
+      "top1_over_target_probability_log_gap": 0.09138201992981065,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 189,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -1.1231606043875217
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 19,
+          "predicted_top1": "\\circlearrowright",
+          "target_minus_best_other_logit": -0.9548723697662354
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 7,
+          "predicted_top1": "\\$",
+          "target_minus_best_other_logit": -1.544210433959961
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 2,
+          "predicted_top1": "q",
+          "target_minus_best_other_logit": -0.47428131103515625
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 2,
+          "predicted_top1": "q",
+          "target_minus_best_other_logit": -0.09138202667236328
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 2,
+          "predicted_top1": "q",
+          "target_minus_best_other_logit": -0.09138202667236328
+        }
+      ],
+      "first_top5_stage": "encoder.block_2.output",
+      "best_rank_stage": "encoder.block_2.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 56,
+      "raw_points_per_stroke": [
+        56
+      ]
+    },
+    {
+      "sample_id": "aiflow_0087",
+      "stroke_indices": [
+        3
+      ],
+      "target": "1",
+      "target_class": "digit",
+      "hwr_top1": "|",
+      "top1_class": "fence",
+      "target_hwr_rank": 3,
+      "top5": [
+        "|",
+        "\\mid",
+        "1",
+        "i",
+        "I"
+      ],
+      "target_probability": 0.23630671203136444,
+      "top1_probability": 0.3730507791042328,
+      "top1_over_target_probability_log_gap": 0.456583958894032,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 43,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -0.665886789560318
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 60,
+          "predicted_top1": "\\Downarrow",
+          "target_minus_best_other_logit": -1.5586936473846436
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 69,
+          "predicted_top1": "\\{",
+          "target_minus_best_other_logit": -1.917935848236084
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 11,
+          "predicted_top1": "|",
+          "target_minus_best_other_logit": -2.046549081802368
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 3,
+          "predicted_top1": "|",
+          "target_minus_best_other_logit": -0.45658397674560547
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 3,
+          "predicted_top1": "|",
+          "target_minus_best_other_logit": -0.45658397674560547
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 21,
+      "raw_points_per_stroke": [
+        21
+      ]
+    },
+    {
+      "sample_id": "aiflow_0087",
+      "stroke_indices": [
+        6
+      ],
+      "target": "1",
+      "target_class": "digit",
+      "hwr_top1": "|",
+      "top1_class": "fence",
+      "target_hwr_rank": 2,
+      "top5": [
+        "|",
+        "1",
+        "\\mid",
+        "i",
+        "I"
+      ],
+      "target_probability": 0.2639090120792389,
+      "top1_probability": 0.3592926263809204,
+      "top1_over_target_probability_log_gap": 0.30853277920399935,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 43,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -0.6661110520362854
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 60,
+          "predicted_top1": "\\Downarrow",
+          "target_minus_best_other_logit": -1.5669369101524353
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 65,
+          "predicted_top1": "\\{",
+          "target_minus_best_other_logit": -1.9630576968193054
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 15,
+          "predicted_top1": "\\{",
+          "target_minus_best_other_logit": -2.176156759262085
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 2,
+          "predicted_top1": "|",
+          "target_minus_best_other_logit": -0.30853271484375
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 2,
+          "predicted_top1": "|",
+          "target_minus_best_other_logit": -0.30853271484375
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 19,
+      "raw_points_per_stroke": [
+        19
+      ]
+    },
+    {
+      "sample_id": "aiflow_0087",
+      "stroke_indices": [
+        7
+      ],
+      "target": "0",
+      "target_class": "digit",
+      "hwr_top1": "\\circ",
+      "top1_class": "named_symbol",
+      "target_hwr_rank": 5,
+      "top5": [
+        "\\circ",
+        "\\fullmoon",
+        "\\diamond",
+        "\\degree",
+        "0"
+      ],
+      "target_probability": 0.027979759499430656,
+      "top1_probability": 0.5208693742752075,
+      "top1_over_target_probability_log_gap": 2.92401791540199,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 233,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -1.2085707038640976
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 190,
+          "predicted_top1": "\\circlearrowright",
+          "target_minus_best_other_logit": -2.481119379401207
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 123,
+          "predicted_top1": "\\circlearrowright",
+          "target_minus_best_other_logit": -3.132163554430008
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 19,
+          "predicted_top1": "\\circlearrowright",
+          "target_minus_best_other_logit": -1.7790095806121826
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 5,
+          "predicted_top1": "\\circ",
+          "target_minus_best_other_logit": -2.924017906188965
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 5,
+          "predicted_top1": "\\circ",
+          "target_minus_best_other_logit": -2.924017906188965
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 32,
+      "raw_points_per_stroke": [
+        32
+      ]
+    },
+    {
+      "sample_id": "aiflow_0089",
+      "stroke_indices": [
+        0
+      ],
+      "target": "1",
+      "target_class": "digit",
+      "hwr_top1": "I",
+      "top1_class": "latin_letter",
+      "target_hwr_rank": 2,
+      "top5": [
+        "I",
+        "1",
+        "\\mid",
+        "\\lceil",
+        "|"
+      ],
+      "target_probability": 0.19520795345306396,
+      "top1_probability": 0.21137449145317078,
+      "top1_over_target_probability_log_gap": 0.07956598301936602,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 47,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -0.6767182946205139
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 79,
+          "predicted_top1": "\\Downarrow",
+          "target_minus_best_other_logit": -1.6928337216377258
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 71,
+          "predicted_top1": "8",
+          "target_minus_best_other_logit": -1.8545708656311035
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 27,
+          "predicted_top1": "\\{",
+          "target_minus_best_other_logit": -3.0835373401641846
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 2,
+          "predicted_top1": "I",
+          "target_minus_best_other_logit": -0.07956600189208984
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 2,
+          "predicted_top1": "I",
+          "target_minus_best_other_logit": -0.07956600189208984
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 25,
+      "raw_points_per_stroke": [
+        25
+      ]
+    },
+    {
+      "sample_id": "aiflow_0095",
+      "stroke_indices": [
+        3,
+        4
+      ],
+      "target": "x",
+      "target_class": "latin_letter",
+      "hwr_top1": "\\between",
+      "top1_class": "named_symbol",
+      "target_hwr_rank": 4,
+      "top5": [
+        "\\between",
+        "\\mathfrak{X}",
+        "\\mathbb{1}",
+        "x",
+        "\\mathds{1}"
+      ],
+      "target_probability": 0.07501064985990524,
+      "top1_probability": 0.5688814520835876,
+      "top1_over_target_probability_log_gap": 2.0260419665149696,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 234,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -1.252560406923294
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 161,
+          "predicted_top1": "\\mathscr{F}",
+          "target_minus_best_other_logit": -2.139673002064228
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 82,
+          "predicted_top1": "\\$",
+          "target_minus_best_other_logit": -3.293046534061432
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 12,
+          "predicted_top1": "\\%",
+          "target_minus_best_other_logit": -2.1688311100006104
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 4,
+          "predicted_top1": "\\between",
+          "target_minus_best_other_logit": -2.0260419845581055
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 4,
+          "predicted_top1": "\\between",
+          "target_minus_best_other_logit": -2.0260419845581055
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 37,
+      "raw_points_per_stroke": [
+        18,
+        19
+      ]
+    },
+    {
+      "sample_id": "aiflow_0096",
+      "stroke_indices": [
+        3
+      ],
+      "target": "y",
+      "target_class": "latin_letter",
+      "hwr_top1": "\\zeta",
+      "top1_class": "named_symbol",
+      "target_hwr_rank": 5,
+      "top5": [
+        "\\zeta",
+        "\\mathscr{S}",
+        "\\xi",
+        "q",
+        "y"
+      ],
+      "target_probability": 0.06276530027389526,
+      "top1_probability": 0.46950504183769226,
+      "top1_over_target_probability_log_gap": 2.0122766599726085,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 58,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -0.7272558212280273
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 9,
+          "predicted_top1": "\\mathds{1}",
+          "target_minus_best_other_logit": -0.7291511297225952
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 2,
+          "predicted_top1": "\\$",
+          "target_minus_best_other_logit": -0.2023639678955078
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 1,
+          "predicted_top1": "y",
+          "target_minus_best_other_logit": 0.8848075866699219
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 5,
+          "predicted_top1": "\\zeta",
+          "target_minus_best_other_logit": -2.0122766494750977
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 5,
+          "predicted_top1": "\\zeta",
+          "target_minus_best_other_logit": -2.0122766494750977
+        }
+      ],
+      "first_top5_stage": "encoder.block_1.output",
+      "best_rank_stage": "encoder.block_2.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": true,
+      "margin_became_positive_at_any_layer": true,
+      "raw_point_count": 74,
+      "raw_points_per_stroke": [
+        74
+      ]
+    },
+    {
+      "sample_id": "aiflow_0100",
+      "stroke_indices": [
+        2,
+        3
+      ],
+      "target": "+",
+      "target_class": "arithmetic_operator",
+      "hwr_top1": "\\dag",
+      "top1_class": "named_symbol",
+      "target_hwr_rank": 4,
+      "top5": [
+        "\\dag",
+        "\\psi",
+        "\\Psi",
+        "+",
+        "4"
+      ],
+      "target_probability": 0.03243885934352875,
+      "top1_probability": 0.7130528688430786,
+      "top1_over_target_probability_log_gap": 3.09019850092308,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 336,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -1.5744646787643433
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 349,
+          "predicted_top1": "\\mathds{1}",
+          "target_minus_best_other_logit": -3.768794894218445
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 56,
+          "predicted_top1": "\\div",
+          "target_minus_best_other_logit": -2.9185246229171753
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 14,
+          "predicted_top1": "4",
+          "target_minus_best_other_logit": -2.7126214504241943
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 4,
+          "predicted_top1": "\\dag",
+          "target_minus_best_other_logit": -3.090198516845703
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 4,
+          "predicted_top1": "\\dag",
+          "target_minus_best_other_logit": -3.090198516845703
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 40,
+      "raw_points_per_stroke": [
+        16,
+        24
+      ]
+    },
+    {
+      "sample_id": "aiflow_0100",
+      "stroke_indices": [
+        4
+      ],
+      "target": "1",
+      "target_class": "digit",
+      "hwr_top1": "|",
+      "top1_class": "fence",
+      "target_hwr_rank": 3,
+      "top5": [
+        "|",
+        "\\mid",
+        "1",
+        "\\prime",
+        "i"
+      ],
+      "target_probability": 0.12963175773620605,
+      "top1_probability": 0.4355916678905487,
+      "top1_over_target_probability_log_gap": 1.2120074648239803,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 43,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -0.675853967666626
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 84,
+          "predicted_top1": "\\between",
+          "target_minus_best_other_logit": -1.670187771320343
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 86,
+          "predicted_top1": "\\{",
+          "target_minus_best_other_logit": -1.9653939604759216
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 10,
+          "predicted_top1": "|",
+          "target_minus_best_other_logit": -1.9365184307098389
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 3,
+          "predicted_top1": "|",
+          "target_minus_best_other_logit": -1.2120075225830078
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 3,
+          "predicted_top1": "|",
+          "target_minus_best_other_logit": -1.2120075225830078
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 28,
+      "raw_points_per_stroke": [
+        28
+      ]
+    },
+    {
+      "sample_id": "aiflow_0105",
+      "stroke_indices": [
+        0,
+        1
+      ],
+      "target": "f",
+      "target_class": "latin_letter",
+      "hwr_top1": "\\fint",
+      "top1_class": "named_symbol",
+      "target_hwr_rank": 2,
+      "top5": [
+        "\\fint",
+        "f",
+        "\\mathcal{F}",
+        "\\pounds",
+        "\\oiint"
+      ],
+      "target_probability": 0.008415212854743004,
+      "top1_probability": 0.9812294244766235,
+      "top1_over_target_probability_log_gap": 4.758765178186381,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 149,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -1.0312544479966164
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 96,
+          "predicted_top1": "\\mathds{1}",
+          "target_minus_best_other_logit": -2.023326098918915
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 1,
+          "predicted_top1": "f",
+          "target_minus_best_other_logit": 0.023859739303588867
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 8,
+          "predicted_top1": "\\fint",
+          "target_minus_best_other_logit": -1.5184178352355957
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 2,
+          "predicted_top1": "\\fint",
+          "target_minus_best_other_logit": -4.75876522064209
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 2,
+          "predicted_top1": "\\fint",
+          "target_minus_best_other_logit": -4.75876522064209
+        }
+      ],
+      "first_top5_stage": "encoder.block_1.output",
+      "best_rank_stage": "encoder.block_1.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": true,
+      "margin_became_positive_at_any_layer": true,
+      "raw_point_count": 60,
+      "raw_points_per_stroke": [
+        42,
+        18
+      ]
+    },
+    {
+      "sample_id": "aiflow_0111",
+      "stroke_indices": [
+        3,
+        4
+      ],
+      "target": "+",
+      "target_class": "arithmetic_operator",
+      "hwr_top1": "\\Psi",
+      "top1_class": "named_symbol",
+      "target_hwr_rank": 3,
+      "top5": [
+        "\\Psi",
+        "\\psi",
+        "+",
+        "\\Phi",
+        "4"
+      ],
+      "target_probability": 0.005072409752756357,
+      "top1_probability": 0.7615482807159424,
+      "top1_over_target_probability_log_gap": 5.011537571360255,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 330,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -1.5356362164020538
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 318,
+          "predicted_top1": "\\div",
+          "target_minus_best_other_logit": -3.2776119112968445
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 37,
+          "predicted_top1": "\\div",
+          "target_minus_best_other_logit": -2.388966917991638
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 7,
+          "predicted_top1": "\\Psi",
+          "target_minus_best_other_logit": -1.3620591163635254
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 3,
+          "predicted_top1": "\\Psi",
+          "target_minus_best_other_logit": -5.011537551879883
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 3,
+          "predicted_top1": "\\Psi",
+          "target_minus_best_other_logit": -5.011537551879883
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 35,
+      "raw_points_per_stroke": [
+        18,
+        17
+      ]
+    },
+    {
+      "sample_id": "aiflow_0111",
+      "stroke_indices": [
+        5
+      ],
+      "target": "1",
+      "target_class": "digit",
+      "hwr_top1": "\\prime",
+      "top1_class": "named_symbol",
+      "target_hwr_rank": 4,
+      "top5": [
+        "\\prime",
+        "|",
+        "l",
+        "1",
+        "i"
+      ],
+      "target_probability": 0.05483923852443695,
+      "top1_probability": 0.39492160081863403,
+      "top1_over_target_probability_log_gap": 1.974281297067833,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 46,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -0.6713947951793671
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 74,
+          "predicted_top1": "\\between",
+          "target_minus_best_other_logit": -1.6481150388717651
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 97,
+          "predicted_top1": "\\between",
+          "target_minus_best_other_logit": -2.2040238082408905
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 10,
+          "predicted_top1": "\\}",
+          "target_minus_best_other_logit": -1.657177209854126
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 4,
+          "predicted_top1": "\\prime",
+          "target_minus_best_other_logit": -1.9742813110351562
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 4,
+          "predicted_top1": "\\prime",
+          "target_minus_best_other_logit": -1.9742813110351562
+        }
+      ],
+      "first_top5_stage": "encoder.block_3.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 21,
+      "raw_points_per_stroke": [
+        21
+      ]
+    },
+    {
+      "sample_id": "aiflow_0113",
+      "stroke_indices": [
+        0
+      ],
+      "target": "8",
+      "target_class": "digit",
+      "hwr_top1": "p",
+      "top1_class": "latin_letter",
+      "target_hwr_rank": 3,
+      "top5": [
+        "p",
+        "\\heartsuit",
+        "8",
+        "\\clubsuit",
+        "\\parr"
+      ],
+      "target_probability": 0.08766917139291763,
+      "top1_probability": 0.22239182889461517,
+      "top1_over_target_probability_log_gap": 0.9308705069963243,
+      "layer_trajectory": [
+        {
+          "stage": "encoder.input",
+          "target_rank": 232,
+          "predicted_top1": "\\vDash",
+          "target_minus_best_other_logit": -1.2221371233463287
+        },
+        {
+          "stage": "encoder.block_0.output",
+          "target_rank": 169,
+          "predicted_top1": "\\circlearrowright",
+          "target_minus_best_other_logit": -2.2887120079249144
+        },
+        {
+          "stage": "encoder.block_1.output",
+          "target_rank": 65,
+          "predicted_top1": "g",
+          "target_minus_best_other_logit": -2.1154996752738953
+        },
+        {
+          "stage": "encoder.block_2.output",
+          "target_rank": 4,
+          "predicted_top1": "\\aa",
+          "target_minus_best_other_logit": -0.1433582305908203
+        },
+        {
+          "stage": "encoder.block_3.output",
+          "target_rank": 3,
+          "predicted_top1": "p",
+          "target_minus_best_other_logit": -0.930870532989502
+        },
+        {
+          "stage": "encoder.output",
+          "target_rank": 3,
+          "predicted_top1": "p",
+          "target_minus_best_other_logit": -0.930870532989502
+        }
+      ],
+      "first_top5_stage": "encoder.block_2.output",
+      "best_rank_stage": "encoder.block_3.output",
+      "rank_improved_input_to_final": true,
+      "rank_best_better_than_final": false,
+      "margin_became_positive_at_any_layer": false,
+      "raw_point_count": 79,
+      "raw_points_per_stroke": [
+        79
+      ]
+    }
+  ],
+  "checks": {
+    "candidate_schema_valid": true,
+    "trace_formula_count_matches": true,
+    "every_residual_group_matches_gold_group_trace": true,
+    "top1_top5_target_rank_and_final_layer_all_match": true,
+    "final_probability_gap_matches_logit_gap": true,
+    "all_targets_in_final_top5": true,
+    "all_checks_pass": true
+  },
+  "product_default_enabled": false,
+  "crohme_training_or_tuning": false,
+  "promotion_eligible": false
+}

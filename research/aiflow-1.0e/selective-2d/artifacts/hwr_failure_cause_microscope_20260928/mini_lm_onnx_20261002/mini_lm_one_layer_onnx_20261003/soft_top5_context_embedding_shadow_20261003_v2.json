@@ -1,0 +1,316 @@
+{
+  "schema": "aiflow-mini-lm-soft-top5-context-shadow/v1",
+  "generated_at": "2026-10-03T08:07:25.532808+00:00",
+  "status": "consumed_development_shadow_diagnostic",
+  "protocol": {
+    "training_performed": false,
+    "threshold_selection_performed": false,
+    "crohme_rows_loaded": 0,
+    "consumed_formula_count": 149,
+    "writer_count": 9,
+    "mini_lm_layers": 1,
+    "candidate_policy": "only the original HWR Top-5; no new classes, regrouping, or iterative self-feedback",
+    "context_policy": "neighbor token embedding is the normalized HWR Top-5 probability-weighted expected embedding; target stays masked; relation markers are unchanged",
+    "top5_probability_normalization": "renormalize within the provided Top-5 candidates",
+    "fusion_weight": 0.5,
+    "fusion_weight_source": "frozen distillation teacher; no current-cohort tuning",
+    "product_adopted": false,
+    "warning": "The 149-formula set is consumed development data; soft embeddings were not trained or selected on independent writers, and this is not Android latency evidence."
+  },
+  "provenance": {
+    "checkpoint_sha256": "2c448199c2b4d65c4d786348ad2f3ba09322fedb5337b35d503f48d0462d01f2",
+    "distillation_report_sha256": "4d2112c2fea5d1b6de74d2fbf627b76a89db6c883df255c35adf2fab2914a1cf",
+    "summary_sha256": "aef4636afef850a0b9b74736e42ad9487884103684e5827854a7bafd692f9282",
+    "formula_data_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "audit_script_sha256": "0da871c2d6c68b8427379b6e474f1173fa29bde233d2912f38dbaa42631afd1f"
+  },
+  "input_contract": {
+    "formula_examples": 599,
+    "softened_neighbor_positions": 2402,
+    "top_k": 5,
+    "mean_original_top5_probability_mass": 0.9764472919139153,
+    "onehot_expected_embedding_max_abs_error_vs_hard_path": 3.814697265625e-06,
+    "onehot_control_error_gate": 1e-05
+  },
+  "metrics": {
+    "fast_top1": {
+      "formulas": 149,
+      "group_exact_formulas": 125,
+      "baseline_top1_formula_exact": 68,
+      "reranked_formula_exact": 68,
+      "delta_formula_exact": 0,
+      "formula_exact_transitions": {
+        "exact_to_exact": 68,
+        "wrong_to_wrong": 81
+      },
+      "writer_bootstrap": {
+        "writers": 9,
+        "formulas_by_writer": {
+          "writer_001": 10,
+          "writer_002": 23,
+          "writer_003": 20,
+          "writer_004": 10,
+          "writer_006": 20,
+          "writer_007": 8,
+          "writer_008": 5,
+          "writer_010": 4,
+          "writer_012": 49
+        },
+        "replicates": 20000,
+        "delta_formula_exact_pp_95_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "exact_group_tokens": 469,
+      "baseline_top1_token_hits": 390,
+      "reranked_top1_token_hits": 390,
+      "token_top5_hits": 464,
+      "token_top5_recall": 0.9893390191897654,
+      "target_rank_histogram_on_exact_groups": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4
+      },
+      "top5_complete_formula_count_on_exact_groups": 120,
+      "top5_complete_formula_count_over_all_149": 120,
+      "changed_tokens": 0,
+      "improved_tokens": 0,
+      "regressed_tokens": 0,
+      "candidate_preserved_tokens": 469,
+      "candidate_preservation_rate": 1.0,
+      "new_tokens": 0,
+      "grouping_mutations": 0,
+      "grouping_wrong_formulas_counted_as_failures": 24
+    },
+    "hard_top1_context": {
+      "formulas": 149,
+      "group_exact_formulas": 125,
+      "baseline_top1_formula_exact": 68,
+      "reranked_formula_exact": 94,
+      "delta_formula_exact": 26,
+      "formula_exact_transitions": {
+        "exact_to_exact": 65,
+        "exact_to_wrong": 3,
+        "wrong_to_exact": 29,
+        "wrong_to_wrong": 52
+      },
+      "writer_bootstrap": {
+        "writers": 9,
+        "formulas_by_writer": {
+          "writer_001": 10,
+          "writer_002": 23,
+          "writer_003": 20,
+          "writer_004": 10,
+          "writer_006": 20,
+          "writer_007": 8,
+          "writer_008": 5,
+          "writer_010": 4,
+          "writer_012": 49
+        },
+        "replicates": 20000,
+        "delta_formula_exact_pp_95_ci": [
+          12.5,
+          21.59090909090909
+        ]
+      },
+      "exact_group_tokens": 469,
+      "baseline_top1_token_hits": 390,
+      "reranked_top1_token_hits": 434,
+      "token_top5_hits": 464,
+      "token_top5_recall": 0.9893390191897654,
+      "target_rank_histogram_on_exact_groups": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4
+      },
+      "top5_complete_formula_count_on_exact_groups": 120,
+      "top5_complete_formula_count_over_all_149": 120,
+      "changed_tokens": 66,
+      "improved_tokens": 52,
+      "regressed_tokens": 8,
+      "candidate_preserved_tokens": 469,
+      "candidate_preservation_rate": 1.0,
+      "new_tokens": 0,
+      "grouping_mutations": 0,
+      "grouping_wrong_formulas_counted_as_failures": 24
+    },
+    "soft_top5_expected_embedding_context": {
+      "formulas": 149,
+      "group_exact_formulas": 125,
+      "baseline_top1_formula_exact": 68,
+      "reranked_formula_exact": 97,
+      "delta_formula_exact": 29,
+      "formula_exact_transitions": {
+        "exact_to_exact": 65,
+        "exact_to_wrong": 3,
+        "wrong_to_exact": 32,
+        "wrong_to_wrong": 49
+      },
+      "writer_bootstrap": {
+        "writers": 9,
+        "formulas_by_writer": {
+          "writer_001": 10,
+          "writer_002": 23,
+          "writer_003": 20,
+          "writer_004": 10,
+          "writer_006": 20,
+          "writer_007": 8,
+          "writer_008": 5,
+          "writer_010": 4,
+          "writer_012": 49
+        },
+        "replicates": 20000,
+        "delta_formula_exact_pp_95_ci": [
+          14.018691588785046,
+          26.0
+        ]
+      },
+      "exact_group_tokens": 469,
+      "baseline_top1_token_hits": 390,
+      "reranked_top1_token_hits": 438,
+      "token_top5_hits": 464,
+      "token_top5_recall": 0.9893390191897654,
+      "target_rank_histogram_on_exact_groups": {
+        "1": 390,
+        "2": 29,
+        "3": 33,
+        "4": 8,
+        "5": 4
+      },
+      "top5_complete_formula_count_on_exact_groups": 120,
+      "top5_complete_formula_count_over_all_149": 120,
+      "changed_tokens": 64,
+      "improved_tokens": 54,
+      "regressed_tokens": 6,
+      "candidate_preserved_tokens": 469,
+      "candidate_preservation_rate": 1.0,
+      "new_tokens": 0,
+      "grouping_mutations": 0,
+      "grouping_wrong_formulas_counted_as_failures": 24
+    },
+    "paired_soft_vs_hard": {
+      "formula_exact_before": 94,
+      "formula_exact_after": 97,
+      "formula_exact_delta": 3,
+      "formula_exact_transitions": {
+        "exact_to_exact": 94,
+        "wrong_to_exact": 3,
+        "wrong_to_wrong": 52
+      },
+      "formula_exact_recovered": 3,
+      "formula_exact_regressed": 0,
+      "formula_exact_transitions_by_formula": [
+        {
+          "formula_id": "aiflow_0132",
+          "writer_hash": "1a6e30b7f331",
+          "before_exact": false,
+          "after_exact": true
+        },
+        {
+          "formula_id": "aiflow_0136",
+          "writer_hash": "1a6e30b7f331",
+          "before_exact": false,
+          "after_exact": true
+        },
+        {
+          "formula_id": "aiflow_0067",
+          "writer_hash": "2806613abcb1",
+          "before_exact": false,
+          "after_exact": true
+        }
+      ],
+      "writer_bootstrap_delta_pp_95_ci": [
+        0.0,
+        5.9405940594059405
+      ],
+      "changed_tokens": 8,
+      "improved_tokens": 5,
+      "regressed_tokens": 1,
+      "changed_token_details": [
+        {
+          "formula_id": "aiflow_0155",
+          "record_id": "aiflow_0155:2",
+          "previous": "/",
+          "soft_top5": "(",
+          "target": "1",
+          "improved": false,
+          "regressed": false
+        },
+        {
+          "formula_id": "aiflow_0132",
+          "record_id": "aiflow_0132:1",
+          "previous": "x",
+          "soft_top5": "\\times",
+          "target": "\\times",
+          "improved": true,
+          "regressed": false
+        },
+        {
+          "formula_id": "aiflow_0132",
+          "record_id": "aiflow_0132:4",
+          "previous": "|",
+          "soft_top5": "1",
+          "target": "1",
+          "improved": true,
+          "regressed": false
+        },
+        {
+          "formula_id": "aiflow_0136",
+          "record_id": "aiflow_0136:1",
+          "previous": "x",
+          "soft_top5": "\\times",
+          "target": "\\times",
+          "improved": true,
+          "regressed": false
+        },
+        {
+          "formula_id": "aiflow_0073",
+          "record_id": "aiflow_0073:0",
+          "previous": "1",
+          "soft_top5": "|",
+          "target": "1",
+          "improved": false,
+          "regressed": true
+        },
+        {
+          "formula_id": "aiflow_0073",
+          "record_id": "aiflow_0073:1",
+          "previous": "x",
+          "soft_top5": "\\times",
+          "target": "\\times",
+          "improved": true,
+          "regressed": false
+        },
+        {
+          "formula_id": "aiflow_0067",
+          "record_id": "aiflow_0067:1",
+          "previous": "x",
+          "soft_top5": "\\times",
+          "target": "\\times",
+          "improved": true,
+          "regressed": false
+        },
+        {
+          "formula_id": "aiflow_0109",
+          "record_id": "aiflow_0109:1",
+          "previous": "7",
+          "soft_top5": ")",
+          "target": null,
+          "improved": false,
+          "regressed": false
+        }
+      ]
+    }
+  },
+  "decision": {
+    "candidate_preservation_passed": true,
+    "onehot_control_passed": true,
+    "android_latency_verified": false,
+    "promotion_eligible": false
+  }
+}
