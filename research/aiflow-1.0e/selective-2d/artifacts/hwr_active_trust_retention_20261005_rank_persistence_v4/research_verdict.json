@@ -1,0 +1,58 @@
+{
+  "schema": "aiflow-rank-persistence-research-verdict/v1",
+  "status": "verified_partial_retention_recovery_train_gate_fail",
+  "result_sha256": "6cec4b27c2c5b8ce1eb4682e284b6934fe78e744dc6203e7d42d8d00e4ef0df9",
+  "checkpoint_sha256": "7a6aa4c9bd8a7072a372d5a19e6c0e009e0ef36c70c7066ac6e2f36ab87442a7",
+  "scope": {
+    "same_optimization_train_rows": 2048,
+    "old_math_classes": 371,
+    "source_digit_classes": 10,
+    "same_direction_budget_cap": 512,
+    "original_fixed_floors_rank_guards_and_solver_unchanged": true,
+    "stronger_per_step_guard_is_experimental_not_proof_of_architecture_limit": true,
+    "all_domain_human_boundary_distillation_performed": false
+  },
+  "comparison": {
+    "priority_v3": {"accepted_steps": 1, "directions_used": 128, "old_top1_hits": 841, "source_top1_hits": 958, "old_top5_hits": 1004, "floor_violations": 37},
+    "persistence_v4": {"accepted_steps": 7, "directions_used": 512, "old_top1_hits": 841, "source_top1_hits": 958, "old_top5_hits": 1005, "floor_violations": 32},
+    "note": "Same budget cap, NOT same directions consumed: v3 stopped early. Both use optimization TRAIN anchors, not independent performance samples.",
+    "new_protected_top1_losses": 0,
+    "preexisting_protected_top5_losses_remaining": 2,
+    "source_training_gain_retained_fraction": 1.0,
+    "strict_train_gate_pass": false
+  },
+  "microscope": {
+    "sqrt_row": 852,
+    "sqrt_gradient_selected_rounds": [0, 1, 2, 3, 4, 5, 6, 7],
+    "sqrt_final_top1_margin": 0.009385108947753906,
+    "sqrt_immutable_floor": 0.005373477935791016,
+    "sqrt_fixed_margin_recovered": true,
+    "final_rejected_trial_alpha": 0.03125,
+    "blocking_new_failure_row": 470,
+    "blocking_label": "\\simeq",
+    "blocking_rival": "=",
+    "blocking_fixed_floor": 0.08018302917480469,
+    "blocking_trial_margin": 0.07996749877929688,
+    "blocking_deficit": 0.0002155303955078125,
+    "blocking_constraint_was_selected": false,
+    "interpretation": "Persistence fixed the repeated omission of the rank-risk root row. A different currently-safe margin constraint outside the active set then blocked the finite backtracking search."
+  },
+  "verification": {
+    "parameter_tensors": 57,
+    "actual_model_trials": 39,
+    "every_trial_acceptance_recomputed": true,
+    "risk_persistence_reconstructed": true,
+    "batch1_16_32_rank_and_violation_counts_equal": true,
+    "batch32_checkpoint_reload_bit_exact": true,
+    "canonical_and_parent_checkpoints_unchanged": true,
+    "verifier_source_snapshot_preserved": true
+  },
+  "next_bounded_hypothesis": "Prioritize actually rejected currently-safe constraints and replan the active set, rather than dropping them behind large absolute deficits. Any smaller-step experiment must predeclare its extra forward-check budget and keep original floors unchanged.",
+  "not_proven": ["independent accuracy improvement", "human recognition probabilities", "global infeasibility", "architecture insufficiency"],
+  "human_boundary_labels": 0,
+  "held_inputs_forwarded": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "deployment_resumed": false,
+  "full_goal_completed": false
+}

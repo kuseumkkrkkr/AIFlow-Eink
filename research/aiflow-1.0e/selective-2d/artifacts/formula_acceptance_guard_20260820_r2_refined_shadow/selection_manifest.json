@@ -1,0 +1,68 @@
+{
+  "schema": "aiflow-formula-acceptance-guard-selection/v1",
+  "generated_at": "2026-08-20T00:00:00Z",
+  "status": "development_only_posthoc_shadow",
+  "decision": "reject_r2_keep_r1_selected",
+  "selection_criterion": "CROHME repeated diagnostic auto-accepted precision must not decrease from r1",
+  "selected_r1": {
+    "configuration": "../formula_acceptance_guard_20260820_r1_shadow/formula_acceptance_guard_config.json",
+    "configuration_sha256": "4cf8359750f7df44f97143c4a896fc3b4367380ad298762843c5ba4e8f6aaf88",
+    "evaluation": "../formula_acceptance_guard_20260820_r1_shadow/formula_acceptance_guard_evaluation.json",
+    "evaluation_sha256": "162da471669de0033f06ec5fecd807dab0ed7e1ea8930ac252a7e997d8308f61",
+    "project_all_159": {
+      "auto_accepted": 127,
+      "auto_accept_coverage": 0.7987421383647799,
+      "auto_accepted_precision": 1.0,
+      "remaining_auto_accept_errors": 0
+    },
+    "crohme_722": {
+      "auto_accepted": 530,
+      "auto_accept_coverage": 0.7340720221606648,
+      "auto_accepted_precision": 0.13018867924528302
+    }
+  },
+  "rejected_r2": {
+    "configuration": "formula_acceptance_guard_config.json",
+    "configuration_sha256": "c6d2c385c4e77f2509ff83e2d2c14894cc0a1b74e977d02cd77a11302bb1d606",
+    "evaluation": "formula_acceptance_guard_evaluation.json",
+    "evaluation_sha256": "7f993b3168bb593a3881ff2e7f6dd8ff462a39afa5c3fc933ef7a4aa23a736f6",
+    "project_all_159": {
+      "auto_accepted": 148,
+      "auto_accept_coverage": 0.9308176100628931,
+      "auto_accepted_precision": 1.0,
+      "remaining_auto_accept_errors": 0
+    },
+    "crohme_722": {
+      "auto_accepted": 643,
+      "auto_accept_coverage": 0.8905817174515236,
+      "auto_accepted_precision": 0.11975116640746501
+    },
+    "rejection_reason": "coverage increased but CROHME selective precision decreased by 0.01043751283781801"
+  },
+  "diagnostic_outputs": {
+    "candidate_evidence_runtime": {
+      "path": "D:/AIFlow-Workspace/PrivateData/candidate-context-runtime-20260820-r32-review-evidence-shadow.json",
+      "sha256": "47033bd2eefe2abf25d2958824974d5a69c46e704e62cf24f516e8625e62c0af"
+    },
+    "r2_project_runtime": {
+      "path": "D:/AIFlow-Workspace/PrivateData/candidate-context-runtime-20260820-r33-refined-review-shadow.json",
+      "sha256": "fef2158feee706ddc4723fc046ec3203c7db2b3fe18fe8d66e6c21153f68e83b"
+    },
+    "r2_crohme": {
+      "path": "D:/AIFlow-Workspace/PrivateData/formula-context-crohme-r34-refined-review-shadow.json",
+      "sha256": "61cb307844d05cddd56e6ce106cad286a16a5f682ff884b27be4b8d1465d2a6b"
+    }
+  },
+  "contracts": {
+    "candidate_preserving": true,
+    "token_mutations": 0,
+    "grouping_mutations": 0,
+    "arithmetic_evaluation": false,
+    "product_default_enabled": false
+  },
+  "limits": [
+    "both thresholds were inspected against the same 159 formulas",
+    "CROHME is repeated noncommercial diagnostic evidence only",
+    "r1 remains shadow-only and requires fresh commercial writer/formula-disjoint acceptance"
+  ]
+}

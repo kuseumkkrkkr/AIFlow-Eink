@@ -1,0 +1,202 @@
+{
+  "schema": "aiflow-hwr-objective-competition-partial-run/v1",
+  "status": "partial_first_arm_failed",
+  "product_adopted": false,
+  "data": {
+    "train_rows": 170441,
+    "validation_rows": 1056,
+    "validation_writer_clusters": 8,
+    "validation_present_labels": 66,
+    "crohme_rows": 0,
+    "cache_reuse_mode": "full_source_scan",
+    "cache_reuse_provenance": {
+      "mode": "full_source_scan",
+      "full_jsonl_rebuild_scan": true
+    },
+    "cache_audit_report": null,
+    "cache_audit_report_sha256": null,
+    "writer_split_sha256": "81c3491c941753ef9f2cdae88a137a8bcba84a16110f77f75f4b3b22273d8875",
+    "canonical_hwrt_sha256": "a35bb9c0793831b69b7710812df1112750eb0cb49f2206cdbbd55c63e1a95102",
+    "canonical_uji_sha256": "9c7038aa8c3eeb1fd3b93827354053e9d3f329f28111dfdaed22c941a238bf8b",
+    "curated_uji_sha256": "cda2fe17c213bc8c90ed93ec8998658ddaf9d7871c75adf521798e6e3ba3029b",
+    "prepared_cache_sha256": {
+      "train_features.npy": "63a413f95d5517ad354c49b49a8ad42f08fa65893a05f4589d6a1767c7774b25",
+      "train_labels.npy": "159ee67fd2f9e73f94f1cd8d583d1f2736f187ceec662664f08e6a76edf794bc",
+      "validation_features.npy": "e2c4b57474044ac986e95b8c1d37c6cd60f2cc1cfa7310851b7a7e346fa86bb7",
+      "validation_labels.npy": "5518a204d5860cc8d19933a4d27732c2892e3ab6dfb2c82a95c65f25054e2935"
+    }
+  },
+  "experiment": {
+    "seed": 20261101,
+    "architecture": {
+      "width": 128,
+      "layers": 4,
+      "heads": 4,
+      "feedforward": 512
+    },
+    "precision": "amp_fp16",
+    "sampler": {
+      "classes_per_batch": 12,
+      "rows_per_class": 4,
+      "batch_size": 48,
+      "microbatch_size": 12,
+      "gradient_accumulation_steps": 4
+    },
+    "activation_memory_strategy": {
+      "enabled": true,
+      "method": "two_pass_global_supcon_embedding_gradient_recompute",
+      "supcon_pair_scope": "entire_effective_PxK_batch",
+      "dropout_replay": "per-slice RNG snapshot and restore",
+      "embedding_replay_error_max_abs_gate": 1e-05
+    },
+    "epochs_requested": 2,
+    "eval_batch_size": 64,
+    "optimizer": {
+      "name": "AdamW",
+      "foreach": false,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "gradient_clip_norm": 1.0,
+      "gradient_clip_foreach": false
+    },
+    "objective": {
+      "ce": "372-way cross-entropy",
+      "supcon": "normalized embedding supervised contrastive",
+      "contrastive_weight": 0.1,
+      "temperature": 0.1,
+      "hardnegative": null,
+      "hardnegative_weight": 0.0,
+      "hardnegative_margin": null,
+      "hardnegative_gate": null
+    },
+    "product_adopted": false
+  },
+  "completed_arm": null,
+  "failed_arm": {
+    "arm": "ce_pk",
+    "completed_epochs": 1,
+    "completed_epoch_history": [
+      {
+        "epoch": 1,
+        "train_ce": 4.6209470146107225,
+        "train_supcon": 0.0,
+        "train_hardnegative": 0.0,
+        "train_total_objective": 4.6209470146107225,
+        "train_top1_on_sampled_batches": 0.12915375950436497,
+        "supcon_positive_anchor_fraction": null,
+        "supcon_replay_max_abs_embedding_error": null,
+        "hardnegative_active_example_fraction": null,
+        "hardnegative_eligible_example_fraction": null,
+        "validation": {
+          "rows": 1056,
+          "top1_hits": 415,
+          "top5_hits": 842,
+          "top1": 0.39299242424242425,
+          "top5": 0.7973484848484849
+        },
+        "seconds": 529.914680700007
+      }
+    ],
+    "failed_location": "epoch=2,batch=456,phase=gradient_norm_clip",
+    "error_type": "FloatingPointError",
+    "error": "non-finite global gradient norm",
+    "gradient_diagnostics": {
+      "nonfinite_gradient_element_count": 2,
+      "by_component": {
+        "372_class_head": {
+          "parameter_tensors": 2,
+          "gradient_elements": 47988,
+          "nonfinite_elements": 0,
+          "nan_elements": 0,
+          "positive_inf_elements": 0,
+          "negative_inf_elements": 0,
+          "finite_abs_max": 0.29023314,
+          "nonfinite_parameters": [],
+          "finite_l2_norm": 2.81896874
+        },
+        "attention_pool": {
+          "parameter_tensors": 2,
+          "gradient_elements": 129,
+          "nonfinite_elements": 0,
+          "nan_elements": 0,
+          "positive_inf_elements": 0,
+          "negative_inf_elements": 0,
+          "finite_abs_max": 0.02433681,
+          "nonfinite_parameters": [],
+          "finite_l2_norm": 0.0889422
+        },
+        "encoder_layer_0": {
+          "parameter_tensors": 12,
+          "gradient_elements": 198272,
+          "nonfinite_elements": 0,
+          "nan_elements": 0,
+          "positive_inf_elements": 0,
+          "negative_inf_elements": 0,
+          "finite_abs_max": 0.32427979,
+          "nonfinite_parameters": [],
+          "finite_l2_norm": 3.5745739
+        },
+        "encoder_layer_1": {
+          "parameter_tensors": 12,
+          "gradient_elements": 198272,
+          "nonfinite_elements": 0,
+          "nan_elements": 0,
+          "positive_inf_elements": 0,
+          "negative_inf_elements": 0,
+          "finite_abs_max": 0.06538391,
+          "nonfinite_parameters": [],
+          "finite_l2_norm": 1.78338032
+        },
+        "encoder_layer_2": {
+          "parameter_tensors": 12,
+          "gradient_elements": 198272,
+          "nonfinite_elements": 0,
+          "nan_elements": 0,
+          "positive_inf_elements": 0,
+          "negative_inf_elements": 0,
+          "finite_abs_max": 0.04151271,
+          "nonfinite_parameters": [],
+          "finite_l2_norm": 1.57999949
+        },
+        "encoder_layer_3": {
+          "parameter_tensors": 12,
+          "gradient_elements": 198272,
+          "nonfinite_elements": 0,
+          "nan_elements": 0,
+          "positive_inf_elements": 0,
+          "negative_inf_elements": 0,
+          "finite_abs_max": 0.04769594,
+          "nonfinite_parameters": [],
+          "finite_l2_norm": 1.72742802
+        },
+        "input_projection": {
+          "parameter_tensors": 4,
+          "gradient_elements": 1024,
+          "nonfinite_elements": 2,
+          "nan_elements": 0,
+          "positive_inf_elements": 2,
+          "negative_inf_elements": 0,
+          "finite_abs_max": 0.51782227,
+          "nonfinite_parameters": [
+            "input_projection.0.weight",
+            "input_projection.0.bias"
+          ],
+          "finite_l2_norm": 3.47079368
+        },
+        "position_embedding": {
+          "parameter_tensors": 1,
+          "gradient_elements": 16384,
+          "nonfinite_elements": 0,
+          "nan_elements": 0,
+          "positive_inf_elements": 0,
+          "negative_inf_elements": 0,
+          "finite_abs_max": 0.04690851,
+          "nonfinite_parameters": [],
+          "finite_l2_norm": 0.31795688
+        }
+      }
+    },
+    "paired_comparison": null
+  },
+  "interpretation_limit": "partial exploratory arm; not a paired result and not product accuracy"
+}

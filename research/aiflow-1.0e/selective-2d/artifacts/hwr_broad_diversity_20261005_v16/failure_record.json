@@ -1,0 +1,18 @@
+{
+  "status": "terminal_preparation_failure_before_training",
+  "process_session": 85067,
+  "exit_code": 1,
+  "cause": "FP16 legacy teacher cache does not meet the newly declared FP32 output parity tolerance",
+  "cache_dtype": "float16",
+  "sample_rows": 32,
+  "sample_max_logit_delta": 0.011314749717712402,
+  "sample_mean_logit_delta": 0.0014115802478045225,
+  "sample_top1_disagreements": 0,
+  "cache_corruption_or_label_mismatch_proven": false,
+  "optimizer_updates": 0,
+  "validation_examples_forwarded": 0,
+  "repair": "Recompute canonical teacher targets in actual FP32 for the entire admitted population in a new output directory; do not relax the parity threshold or change data, seed, schedule, model, loss or geometry limits",
+  "original_population_files_preserved": true,
+  "source_snapshot": "failed_entrypoint_snapshot.py",
+  "canonical_checkpoint_mutated": false
+}

@@ -1,0 +1,1298 @@
+{
+  "schema": "aiflow-hwr-affine-distillation-experiment/v1",
+  "status": "completed_exploratory_comparison",
+  "teacher": {
+    "name": "current AIFlow 1.0e 372-class calibrated checkpoint",
+    "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-head-calibration-20260819-r1\\final_all_writers_steps250_lr1e-3\\project_symbol_head_checkpoint.pt",
+    "sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "metrics": {
+      "overall": {
+        "rows": 3410,
+        "top1_hits": 2626,
+        "top5_hits": 3365,
+        "top1": 0.7700879765395895,
+        "top5": 0.9868035190615836,
+        "by_family": {
+          "arrows": {
+            "rows": 18,
+            "top1": 0.7222222222222222,
+            "top5": 1.0
+          },
+          "digits": {
+            "rows": 466,
+            "top1": 0.8583690987124464,
+            "top5": 0.9892703862660944
+          },
+          "fences": {
+            "rows": 97,
+            "top1": 0.9690721649484536,
+            "top5": 1.0
+          },
+          "greek": {
+            "rows": 163,
+            "top1": 0.8404907975460123,
+            "top5": 1.0
+          },
+          "large_ops": {
+            "rows": 14,
+            "top1": 0.7857142857142857,
+            "top5": 0.9285714285714286
+          },
+          "latin_lower": {
+            "rows": 1089,
+            "top1": 0.6740128558310376,
+            "top5": 0.9853076216712581
+          },
+          "latin_upper": {
+            "rows": 1217,
+            "top1": 0.7740345110928513,
+            "top5": 0.9827444535743632
+          },
+          "operators": {
+            "rows": 91,
+            "top1": 0.9010989010989011,
+            "top5": 1.0
+          },
+          "other_math": {
+            "rows": 96,
+            "top1": 0.8645833333333334,
+            "top5": 0.9895833333333334
+          },
+          "relations": {
+            "rows": 159,
+            "top1": 0.8176100628930818,
+            "top5": 0.9937106918238994
+          }
+        }
+      },
+      "by_source": {
+        "hwrt": {
+          "rows": 770,
+          "top1_hits": 613,
+          "top5_hits": 767,
+          "top1": 0.7961038961038961,
+          "top5": 0.9961038961038962,
+          "by_family": {
+            "arrows": {
+              "rows": 18,
+              "top1": 0.7222222222222222,
+              "top5": 1.0
+            },
+            "digits": {
+              "rows": 66,
+              "top1": 0.8636363636363636,
+              "top5": 1.0
+            },
+            "fences": {
+              "rows": 17,
+              "top1": 0.8823529411764706,
+              "top5": 1.0
+            },
+            "greek": {
+              "rows": 163,
+              "top1": 0.8404907975460123,
+              "top5": 1.0
+            },
+            "large_ops": {
+              "rows": 14,
+              "top1": 0.7857142857142857,
+              "top5": 0.9285714285714286
+            },
+            "latin_lower": {
+              "rows": 89,
+              "top1": 0.550561797752809,
+              "top5": 1.0
+            },
+            "latin_upper": {
+              "rows": 177,
+              "top1": 0.8022598870056498,
+              "top5": 0.9943502824858758
+            },
+            "operators": {
+              "rows": 51,
+              "top1": 0.8823529411764706,
+              "top5": 1.0
+            },
+            "other_math": {
+              "rows": 96,
+              "top1": 0.8645833333333334,
+              "top5": 0.9895833333333334
+            },
+            "relations": {
+              "rows": 79,
+              "top1": 0.7721518987341772,
+              "top5": 1.0
+            }
+          }
+        },
+        "uji": {
+          "rows": 2640,
+          "top1_hits": 2013,
+          "top5_hits": 2598,
+          "top1": 0.7625,
+          "top5": 0.9840909090909091,
+          "by_family": {
+            "digits": {
+              "rows": 400,
+              "top1": 0.8575,
+              "top5": 0.9875
+            },
+            "fences": {
+              "rows": 80,
+              "top1": 0.9875,
+              "top5": 1.0
+            },
+            "latin_lower": {
+              "rows": 1000,
+              "top1": 0.685,
+              "top5": 0.984
+            },
+            "latin_upper": {
+              "rows": 1040,
+              "top1": 0.7692307692307693,
+              "top5": 0.9807692307692307
+            },
+            "operators": {
+              "rows": 40,
+              "top1": 0.925,
+              "top5": 1.0
+            },
+            "relations": {
+              "rows": 80,
+              "top1": 0.8625,
+              "top5": 0.9875
+            }
+          }
+        }
+      }
+    },
+    "heldout_seconds": 1.5703997999953572
+  },
+  "student": {
+    "name": "affine augmentation + frozen-logit self-distillation challenger",
+    "checkpoint": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v9-batch-hard\\student_checkpoint_compatible.pt",
+    "metrics": {
+      "overall": {
+        "rows": 3410,
+        "top1_hits": 2716,
+        "top5_hits": 3372,
+        "top1": 0.7964809384164223,
+        "top5": 0.9888563049853373,
+        "by_family": {
+          "arrows": {
+            "rows": 18,
+            "top1": 0.7777777777777778,
+            "top5": 1.0
+          },
+          "digits": {
+            "rows": 466,
+            "top1": 0.8819742489270386,
+            "top5": 0.9914163090128756
+          },
+          "fences": {
+            "rows": 97,
+            "top1": 0.9381443298969072,
+            "top5": 1.0
+          },
+          "greek": {
+            "rows": 163,
+            "top1": 0.8343558282208589,
+            "top5": 1.0
+          },
+          "large_ops": {
+            "rows": 14,
+            "top1": 0.9285714285714286,
+            "top5": 1.0
+          },
+          "latin_lower": {
+            "rows": 1089,
+            "top1": 0.7337006427915519,
+            "top5": 0.9917355371900827
+          },
+          "latin_upper": {
+            "rows": 1217,
+            "top1": 0.7764995891536566,
+            "top5": 0.9802793755135579
+          },
+          "operators": {
+            "rows": 91,
+            "top1": 0.9010989010989011,
+            "top5": 1.0
+          },
+          "other_math": {
+            "rows": 96,
+            "top1": 0.8958333333333334,
+            "top5": 1.0
+          },
+          "relations": {
+            "rows": 159,
+            "top1": 0.8742138364779874,
+            "top5": 0.9937106918238994
+          }
+        }
+      },
+      "by_source": {
+        "hwrt": {
+          "rows": 770,
+          "top1_hits": 630,
+          "top5_hits": 767,
+          "top1": 0.8181818181818182,
+          "top5": 0.9961038961038962,
+          "by_family": {
+            "arrows": {
+              "rows": 18,
+              "top1": 0.7777777777777778,
+              "top5": 1.0
+            },
+            "digits": {
+              "rows": 66,
+              "top1": 0.8636363636363636,
+              "top5": 1.0
+            },
+            "fences": {
+              "rows": 17,
+              "top1": 0.7647058823529411,
+              "top5": 1.0
+            },
+            "greek": {
+              "rows": 163,
+              "top1": 0.8343558282208589,
+              "top5": 1.0
+            },
+            "large_ops": {
+              "rows": 14,
+              "top1": 0.9285714285714286,
+              "top5": 1.0
+            },
+            "latin_lower": {
+              "rows": 89,
+              "top1": 0.6179775280898876,
+              "top5": 1.0
+            },
+            "latin_upper": {
+              "rows": 177,
+              "top1": 0.807909604519774,
+              "top5": 0.9887005649717514
+            },
+            "operators": {
+              "rows": 51,
+              "top1": 0.8823529411764706,
+              "top5": 1.0
+            },
+            "other_math": {
+              "rows": 96,
+              "top1": 0.8958333333333334,
+              "top5": 1.0
+            },
+            "relations": {
+              "rows": 79,
+              "top1": 0.8607594936708861,
+              "top5": 0.9873417721518988
+            }
+          }
+        },
+        "uji": {
+          "rows": 2640,
+          "top1_hits": 2086,
+          "top5_hits": 2605,
+          "top1": 0.7901515151515152,
+          "top5": 0.9867424242424242,
+          "by_family": {
+            "digits": {
+              "rows": 400,
+              "top1": 0.885,
+              "top5": 0.99
+            },
+            "fences": {
+              "rows": 80,
+              "top1": 0.975,
+              "top5": 1.0
+            },
+            "latin_lower": {
+              "rows": 1000,
+              "top1": 0.744,
+              "top5": 0.991
+            },
+            "latin_upper": {
+              "rows": 1040,
+              "top1": 0.7711538461538462,
+              "top5": 0.9788461538461538
+            },
+            "operators": {
+              "rows": 40,
+              "top1": 0.925,
+              "top5": 1.0
+            },
+            "relations": {
+              "rows": 80,
+              "top1": 0.8875,
+              "top5": 1.0
+            }
+          }
+        }
+      }
+    },
+    "input_contract": {
+      "channels": [
+        "x",
+        "y",
+        "delta_t",
+        "stroke_start",
+        "observed"
+      ],
+      "observed_channel_mode": "uniform-time",
+      "math_observed_transform": "uniform-time",
+      "auxiliary_observed_transform": "uniform-time",
+      "observed_channel_policy": "constant_one_for_source_invariance",
+      "delta_t_policy": "normalized_sequence_progress:first_zero_then_1/(points-1)"
+    },
+    "epochs": 8,
+    "learning_rate": 1e-05,
+    "loss": {
+      "hard_label_cross_entropy": 0.65,
+      "teacher_kl_on_real_rows": 0.25,
+      "pairwise_rank_margin": 0.1,
+      "rank_margin_mode": "batch_hard",
+      "rank_margin_value": 1.0,
+      "rank_margin_pairs": [],
+      "temperature": 2.0,
+      "synthetic_equal_kl": "disabled; hard label only"
+    },
+    "optimizer": "AdamW",
+    "class_balanced_views_per_class_per_epoch": 128,
+    "augmented_views": 380928,
+    "changed_views": 375770,
+    "reverted_views": 5158,
+    "history": [
+      {
+        "epoch": 1,
+        "views": 47616,
+        "changed_views": 46964,
+        "reverted_views": 652,
+        "hard_loss": 0.49354479977640736,
+        "distill_loss": 0.15751266710319986,
+        "rank_margin_loss": 0.504205136529861,
+        "ranked_rows": 47616,
+        "hard_negative_rivals_top10": [
+          {
+            "label": "\\mathcal{A}",
+            "count": 394
+          },
+          {
+            "label": "x",
+            "count": 361
+          },
+          {
+            "label": "=",
+            "count": 315
+          },
+          {
+            "label": "J",
+            "count": 315
+          },
+          {
+            "label": "\\leq",
+            "count": 313
+          },
+          {
+            "label": "\\mathcal{C}",
+            "count": 311
+          },
+          {
+            "label": "\\S",
+            "count": 291
+          },
+          {
+            "label": "\\geq",
+            "count": 280
+          },
+          {
+            "label": "\\circ",
+            "count": 279
+          },
+          {
+            "label": "\\times",
+            "count": 278
+          }
+        ],
+        "wide_selected_rows_by_parameter": {
+          "rotation": 0,
+          "axis_scale": 0,
+          "shear": 0,
+          "elastic": 0
+        },
+        "seconds": 129.0520872999914
+      },
+      {
+        "epoch": 2,
+        "views": 47616,
+        "changed_views": 46984,
+        "reverted_views": 632,
+        "hard_loss": 0.4722615867021984,
+        "distill_loss": 0.1616324244707983,
+        "rank_margin_loss": 0.47894224876998576,
+        "ranked_rows": 47616,
+        "hard_negative_rivals_top10": [
+          {
+            "label": "\\mathcal{A}",
+            "count": 369
+          },
+          {
+            "label": "\\leq",
+            "count": 318
+          },
+          {
+            "label": "J",
+            "count": 312
+          },
+          {
+            "label": "x",
+            "count": 302
+          },
+          {
+            "label": "\\S",
+            "count": 302
+          },
+          {
+            "label": "\\mathds{Q}",
+            "count": 292
+          },
+          {
+            "label": "\\mathcal{C}",
+            "count": 284
+          },
+          {
+            "label": "\\mathcal{F}",
+            "count": 277
+          },
+          {
+            "label": "\\longrightarrow",
+            "count": 277
+          },
+          {
+            "label": "=",
+            "count": 273
+          }
+        ],
+        "wide_selected_rows_by_parameter": {
+          "rotation": 0,
+          "axis_scale": 0,
+          "shear": 0,
+          "elastic": 0
+        },
+        "seconds": 187.7642703000165
+      },
+      {
+        "epoch": 3,
+        "views": 47616,
+        "changed_views": 47000,
+        "reverted_views": 616,
+        "hard_loss": 0.45144984453556036,
+        "distill_loss": 0.16283233594950489,
+        "rank_margin_loss": 0.4541925246356636,
+        "ranked_rows": 47616,
+        "hard_negative_rivals_top10": [
+          {
+            "label": "\\mathcal{A}",
+            "count": 371
+          },
+          {
+            "label": "J",
+            "count": 360
+          },
+          {
+            "label": "\\geq",
+            "count": 348
+          },
+          {
+            "label": "\\leq",
+            "count": 336
+          },
+          {
+            "label": "x",
+            "count": 287
+          },
+          {
+            "label": "\\male",
+            "count": 281
+          },
+          {
+            "label": "\\mathcal{F}",
+            "count": 279
+          },
+          {
+            "label": "\\longrightarrow",
+            "count": 277
+          },
+          {
+            "label": "=",
+            "count": 274
+          },
+          {
+            "label": "\\models",
+            "count": 268
+          }
+        ],
+        "wide_selected_rows_by_parameter": {
+          "rotation": 0,
+          "axis_scale": 0,
+          "shear": 0,
+          "elastic": 0
+        },
+        "seconds": 200.5327064000012
+      },
+      {
+        "epoch": 4,
+        "views": 47616,
+        "changed_views": 46959,
+        "reverted_views": 657,
+        "hard_loss": 0.45764511077594694,
+        "distill_loss": 0.16101395795922926,
+        "rank_margin_loss": 0.4600051891419195,
+        "ranked_rows": 47616,
+        "hard_negative_rivals_top10": [
+          {
+            "label": "\\mathcal{A}",
+            "count": 384
+          },
+          {
+            "label": "x",
+            "count": 331
+          },
+          {
+            "label": "J",
+            "count": 329
+          },
+          {
+            "label": "\\mathcal{C}",
+            "count": 311
+          },
+          {
+            "label": "\\leq",
+            "count": 309
+          },
+          {
+            "label": "\\geq",
+            "count": 307
+          },
+          {
+            "label": "\\male",
+            "count": 293
+          },
+          {
+            "label": "\\amalg",
+            "count": 286
+          },
+          {
+            "label": "\\mathds{Q}",
+            "count": 285
+          },
+          {
+            "label": "\\S",
+            "count": 280
+          }
+        ],
+        "wide_selected_rows_by_parameter": {
+          "rotation": 0,
+          "axis_scale": 0,
+          "shear": 0,
+          "elastic": 0
+        },
+        "seconds": 139.3182558999979
+      },
+      {
+        "epoch": 5,
+        "views": 47616,
+        "changed_views": 46959,
+        "reverted_views": 657,
+        "hard_loss": 0.4522423442573317,
+        "distill_loss": 0.15992806742208138,
+        "rank_margin_loss": 0.45436611867720084,
+        "ranked_rows": 47616,
+        "hard_negative_rivals_top10": [
+          {
+            "label": "\\mathcal{A}",
+            "count": 388
+          },
+          {
+            "label": "\\mathds{Q}",
+            "count": 318
+          },
+          {
+            "label": "J",
+            "count": 318
+          },
+          {
+            "label": "x",
+            "count": 316
+          },
+          {
+            "label": "\\leq",
+            "count": 311
+          },
+          {
+            "label": "\\geq",
+            "count": 294
+          },
+          {
+            "label": "\\male",
+            "count": 292
+          },
+          {
+            "label": "\\Pi",
+            "count": 277
+          },
+          {
+            "label": "\\mathcal{F}",
+            "count": 276
+          },
+          {
+            "label": "\\S",
+            "count": 271
+          }
+        ],
+        "wide_selected_rows_by_parameter": {
+          "rotation": 0,
+          "axis_scale": 0,
+          "shear": 0,
+          "elastic": 0
+        },
+        "seconds": 132.66006100000232
+      },
+      {
+        "epoch": 6,
+        "views": 47616,
+        "changed_views": 46986,
+        "reverted_views": 630,
+        "hard_loss": 0.4497346356961756,
+        "distill_loss": 0.1601881327117563,
+        "rank_margin_loss": 0.45189683411711007,
+        "ranked_rows": 47616,
+        "hard_negative_rivals_top10": [
+          {
+            "label": "J",
+            "count": 357
+          },
+          {
+            "label": "\\mathcal{A}",
+            "count": 341
+          },
+          {
+            "label": "x",
+            "count": 328
+          },
+          {
+            "label": "\\geq",
+            "count": 320
+          },
+          {
+            "label": "\\mathds{Q}",
+            "count": 280
+          },
+          {
+            "label": "\\leq",
+            "count": 276
+          },
+          {
+            "label": "=",
+            "count": 276
+          },
+          {
+            "label": "\\cdot",
+            "count": 274
+          },
+          {
+            "label": "\\amalg",
+            "count": 267
+          },
+          {
+            "label": "\\times",
+            "count": 264
+          }
+        ],
+        "wide_selected_rows_by_parameter": {
+          "rotation": 0,
+          "axis_scale": 0,
+          "shear": 0,
+          "elastic": 0
+        },
+        "seconds": 130.3858333999815
+      },
+      {
+        "epoch": 7,
+        "views": 47616,
+        "changed_views": 46947,
+        "reverted_views": 669,
+        "hard_loss": 0.4470945938029677,
+        "distill_loss": 0.1622733447740796,
+        "rank_margin_loss": 0.4499507905334555,
+        "ranked_rows": 47616,
+        "hard_negative_rivals_top10": [
+          {
+            "label": "\\mathcal{A}",
+            "count": 398
+          },
+          {
+            "label": "x",
+            "count": 357
+          },
+          {
+            "label": "\\leq",
+            "count": 339
+          },
+          {
+            "label": "J",
+            "count": 326
+          },
+          {
+            "label": "\\mathds{Q}",
+            "count": 297
+          },
+          {
+            "label": "\\geq",
+            "count": 290
+          },
+          {
+            "label": "\\mathcal{F}",
+            "count": 289
+          },
+          {
+            "label": "\\mathcal{C}",
+            "count": 272
+          },
+          {
+            "label": "\\S",
+            "count": 272
+          },
+          {
+            "label": "\\cdot",
+            "count": 270
+          }
+        ],
+        "wide_selected_rows_by_parameter": {
+          "rotation": 0,
+          "axis_scale": 0,
+          "shear": 0,
+          "elastic": 0
+        },
+        "seconds": 131.56477349999477
+      },
+      {
+        "epoch": 8,
+        "views": 47616,
+        "changed_views": 46971,
+        "reverted_views": 645,
+        "hard_loss": 0.4435333491012614,
+        "distill_loss": 0.1630972329406969,
+        "rank_margin_loss": 0.4428251577961829,
+        "ranked_rows": 47616,
+        "hard_negative_rivals_top10": [
+          {
+            "label": "\\mathcal{A}",
+            "count": 345
+          },
+          {
+            "label": "\\leq",
+            "count": 319
+          },
+          {
+            "label": "x",
+            "count": 317
+          },
+          {
+            "label": "J",
+            "count": 315
+          },
+          {
+            "label": "\\mathcal{F}",
+            "count": 307
+          },
+          {
+            "label": "\\geq",
+            "count": 297
+          },
+          {
+            "label": "=",
+            "count": 293
+          },
+          {
+            "label": "\\male",
+            "count": 291
+          },
+          {
+            "label": "\\mathds{Q}",
+            "count": 282
+          },
+          {
+            "label": "\\S",
+            "count": 274
+          }
+        ],
+        "wide_selected_rows_by_parameter": {
+          "rotation": 0,
+          "axis_scale": 0,
+          "shear": 0,
+          "elastic": 0
+        },
+        "seconds": 131.200647700025
+      }
+    ],
+    "checkpoint_sha256": "b86ae43a04fe0681f2a98b60f55352e7169b49e70cba445cc769c2e91ae0ded7"
+  },
+  "paired_delta": {
+    "top1_pp": 2.639296187683282,
+    "top5_pp": 0.2052785923753686,
+    "by_source_top1_pp": {
+      "hwrt": 2.207792207792214,
+      "uji": 2.7651515151515205
+    },
+    "interpretation": "single exploratory official-split comparison; not a fresh writer/device acceptance set"
+  },
+  "data_policy": {
+    "admitted_train": "HWRT curated official train split + UJI Pen v2 official writer-disjoint train split",
+    "heldout_comparison": "HWRT curated test split + UJI Pen v2 official writer-disjoint test split; scored once after training",
+    "project_owned": "excluded from this student experiment and its comparison",
+    "crohme": "zero rows; never trained or scored",
+    "input_mode": "uniform-time"
+  },
+  "input_contract": {
+    "channels": [
+      "x",
+      "y",
+      "delta_t",
+      "stroke_start",
+      "observed"
+    ],
+    "observed_channel_mode": "uniform-time",
+    "math_observed_transform": "uniform-time",
+    "auxiliary_observed_transform": "uniform-time",
+    "observed_channel_policy": "constant_one_for_source_invariance",
+    "delta_t_policy": "normalized_sequence_progress:first_zero_then_1/(points-1)"
+  },
+  "train_data": {
+    "real_rows": 170985,
+    "synthetic_equal_rows": 512,
+    "classes": 372,
+    "synthetic_only_classes": [
+      "="
+    ],
+    "heldout_rows_by_class": {
+      "+": 9,
+      "-": 46,
+      "/": 3,
+      "0": 47,
+      "1": 46,
+      "2": 46,
+      "3": 48,
+      "4": 47,
+      "5": 48,
+      "6": 46,
+      "7": 46,
+      "8": 46,
+      "9": 46,
+      "<": 45,
+      ">": 46,
+      "A": 105,
+      "B": 46,
+      "C": 45,
+      "D": 45,
+      "E": 45,
+      "F": 44,
+      "G": 44,
+      "H": 45,
+      "I": 44,
+      "J": 44,
+      "K": 44,
+      "L": 44,
+      "M": 45,
+      "N": 44,
+      "O": 44,
+      "P": 44,
+      "Q": 44,
+      "R": 44,
+      "S": 43,
+      "T": 44,
+      "U": 44,
+      "V": 44,
+      "W": 45,
+      "X": 43,
+      "Y": 45,
+      "Z": 49,
+      "[": 1,
+      "\\$": 1,
+      "\\%": 2,
+      "\\&": 4,
+      "\\Delta": 3,
+      "\\Gamma": 3,
+      "\\Lambda": 3,
+      "\\Leftarrow": 2,
+      "\\Longleftrightarrow": 2,
+      "\\Omega": 5,
+      "\\Phi": 4,
+      "\\Pi": 4,
+      "\\Psi": 6,
+      "\\Rightarrow": 3,
+      "\\S": 1,
+      "\\Sigma": 2,
+      "\\Theta": 5,
+      "\\Xi": 6,
+      "\\alpha": 10,
+      "\\approx": 5,
+      "\\barwedge": 2,
+      "\\beta": 5,
+      "\\boxdot": 1,
+      "\\boxplus": 1,
+      "\\boxtimes": 1,
+      "\\cap": 3,
+      "\\cdot": 2,
+      "\\celsius": 3,
+      "\\chi": 3,
+      "\\circ": 2,
+      "\\circledcirc": 2,
+      "\\cong": 5,
+      "\\cup": 4,
+      "\\curvearrowright": 1,
+      "\\dashv": 1,
+      "\\degree": 1,
+      "\\delta": 5,
+      "\\div": 4,
+      "\\doteq": 1,
+      "\\dots": 2,
+      "\\dotsc": 2,
+      "\\ell": 1,
+      "\\emptyset": 1,
+      "\\epsilon": 3,
+      "\\equiv": 2,
+      "\\eta": 3,
+      "\\exists": 1,
+      "\\fint": 1,
+      "\\flat": 1,
+      "\\forall": 4,
+      "\\gamma": 5,
+      "\\geq": 4,
+      "\\hbar": 2,
+      "\\heartsuit": 2,
+      "\\iddots": 2,
+      "\\in": 1,
+      "\\infty": 2,
+      "\\int": 4,
+      "\\iota": 6,
+      "\\kappa": 3,
+      "\\lambda": 3,
+      "\\leadsto": 3,
+      "\\leftarrow": 1,
+      "\\leq": 5,
+      "\\leqslant": 1,
+      "\\lfloor": 2,
+      "\\lhd": 2,
+      "\\longmapsto": 1,
+      "\\longrightarrow": 1,
+      "\\ltimes": 1,
+      "\\male": 1,
+      "\\mapsto": 1,
+      "\\mathbb{H}": 1,
+      "\\mathbb{N}": 3,
+      "\\mathbb{Q}": 2,
+      "\\mathbb{R}": 1,
+      "\\mathbb{Z}": 2,
+      "\\mathcal{D}": 1,
+      "\\mathcal{H}": 1,
+      "\\mathcal{S}": 1,
+      "\\mathcal{U}": 1,
+      "\\mathcal{X}": 1,
+      "\\mathds{1}": 1,
+      "\\mathds{N}": 1,
+      "\\mathds{Q}": 1,
+      "\\mathscr{F}": 1,
+      "\\mathscr{S}": 2,
+      "\\mid": 1,
+      "\\models": 4,
+      "\\mu": 4,
+      "\\multimap": 2,
+      "\\nabla": 3,
+      "\\neg": 1,
+      "\\neq": 3,
+      "\\ni": 3,
+      "\\nmid": 1,
+      "\\not\\equiv": 1,
+      "\\nu": 6,
+      "\\nvDash": 1,
+      "\\odot": 1,
+      "\\ohm": 1,
+      "\\oiint": 1,
+      "\\oint": 4,
+      "\\omega": 6,
+      "\\parallel": 3,
+      "\\parr": 1,
+      "\\partial": 4,
+      "\\perp": 3,
+      "\\phi": 3,
+      "\\pi": 6,
+      "\\pitchfork": 3,
+      "\\pm": 1,
+      "\\pounds": 3,
+      "\\prec": 1,
+      "\\propto": 8,
+      "\\psi": 4,
+      "\\rceil": 3,
+      "\\rfloor": 2,
+      "\\rho": 3,
+      "\\rightarrow": 2,
+      "\\searrow": 1,
+      "\\setminus": 4,
+      "\\sharp": 1,
+      "\\sigma": 4,
+      "\\sim": 4,
+      "\\sqrt{}": 1,
+      "\\square": 2,
+      "\\subset": 4,
+      "\\subseteq": 6,
+      "\\succ": 4,
+      "\\succeq": 3,
+      "\\sum": 3,
+      "\\supset": 4,
+      "\\supseteq": 5,
+      "\\tau": 3,
+      "\\theta": 5,
+      "\\times": 5,
+      "\\triangleleft": 1,
+      "\\trianglelefteq": 1,
+      "\\triangleq": 2,
+      "\\uplus": 2,
+      "\\varepsilon": 4,
+      "\\varkappa": 3,
+      "\\varphi": 3,
+      "\\varrho": 5,
+      "\\vdash": 2,
+      "\\vdots": 1,
+      "\\vee": 2,
+      "\\wedge": 1,
+      "\\with": 1,
+      "\\xi": 3,
+      "\\zeta": 4,
+      "\\{": 2,
+      "\\|": 2,
+      "\\}": 1,
+      "]": 2,
+      "a": 43,
+      "b": 42,
+      "c": 49,
+      "d": 43,
+      "e": 42,
+      "f": 50,
+      "g": 44,
+      "h": 44,
+      "i": 42,
+      "j": 42,
+      "k": 44,
+      "l": 41,
+      "m": 41,
+      "n": 44,
+      "o": 42,
+      "p": 42,
+      "q": 43,
+      "r": 41,
+      "s": 46,
+      "u": 44,
+      "v": 41,
+      "w": 44,
+      "x": 45,
+      "y": 47,
+      "z": 43,
+      "|": 2,
+      "(": 40,
+      ")": 40
+    },
+    "classes_without_heldout_support": [
+      "\\#",
+      "\\AA",
+      "\\AE",
+      "\\Bowtie",
+      "\\Downarrow",
+      "\\Im",
+      "\\L",
+      "\\Leftrightarrow",
+      "\\Longrightarrow",
+      "\\O",
+      "\\Re",
+      "\\Vdash",
+      "\\aa",
+      "\\ae",
+      "\\aleph",
+      "\\amalg",
+      "\\angle",
+      "\\ast",
+      "\\astrosun",
+      "\\asymp",
+      "\\backsim",
+      "\\backslash",
+      "\\because",
+      "\\between",
+      "\\blacksquare",
+      "\\blacktriangleright",
+      "\\bot",
+      "\\bowtie",
+      "\\bullet",
+      "\\checked",
+      "\\checkmark",
+      "\\circlearrowleft",
+      "\\circlearrowright",
+      "\\circledR",
+      "\\circledast",
+      "\\clubsuit",
+      "\\coprod",
+      "\\copyright",
+      "\\dag",
+      "\\ddots",
+      "\\diameter",
+      "\\diamond",
+      "\\diamondsuit",
+      "\\downarrow",
+      "\\female",
+      "\\frown",
+      "\\fullmoon",
+      "\\geqslant",
+      "\\gtrless",
+      "\\gtrsim",
+      "\\guillemotleft",
+      "\\hookrightarrow",
+      "\\langle",
+      "\\lceil",
+      "\\leftmoon",
+      "\\leftrightarrow",
+      "\\lesssim",
+      "\\lightning",
+      "\\llbracket",
+      "\\lozenge",
+      "\\mapsfrom",
+      "\\mars",
+      "\\mathbb{1}",
+      "\\mathcal{A}",
+      "\\mathcal{B}",
+      "\\mathcal{C}",
+      "\\mathcal{E}",
+      "\\mathcal{F}",
+      "\\mathcal{G}",
+      "\\mathcal{L}",
+      "\\mathcal{M}",
+      "\\mathcal{N}",
+      "\\mathcal{O}",
+      "\\mathcal{P}",
+      "\\mathcal{R}",
+      "\\mathcal{T}",
+      "\\mathcal{Z}",
+      "\\mathds{C}",
+      "\\mathds{E}",
+      "\\mathds{P}",
+      "\\mathds{R}",
+      "\\mathds{Z}",
+      "\\mathfrak{A}",
+      "\\mathfrak{M}",
+      "\\mathfrak{S}",
+      "\\mathfrak{X}",
+      "\\mathscr{A}",
+      "\\mathscr{C}",
+      "\\mathscr{D}",
+      "\\mathscr{E}",
+      "\\mathscr{H}",
+      "\\mathscr{L}",
+      "\\mathscr{P}",
+      "\\mathsection",
+      "\\mp",
+      "\\nRightarrow",
+      "\\nearrow",
+      "\\nexists",
+      "\\notin",
+      "\\nrightarrow",
+      "\\nsubseteq",
+      "\\o",
+      "\\ominus",
+      "\\oplus",
+      "\\otimes",
+      "\\preccurlyeq",
+      "\\preceq",
+      "\\prime",
+      "\\prod",
+      "\\rangle",
+      "\\rightharpoonup",
+      "\\rightleftarrows",
+      "\\rightleftharpoons",
+      "\\rightrightarrows",
+      "\\rightsquigarrow",
+      "\\rrbracket",
+      "\\rtimes",
+      "\\shortrightarrow",
+      "\\simeq",
+      "\\sphericalangle",
+      "\\sqcap",
+      "\\sqcup",
+      "\\sqsubseteq",
+      "\\ss",
+      "\\star",
+      "\\subsetneq",
+      "\\sun",
+      "\\therefore",
+      "\\top",
+      "\\triangle",
+      "\\triangledown",
+      "\\triangleright",
+      "\\twoheadrightarrow",
+      "\\uparrow",
+      "\\upharpoonright",
+      "\\vDash",
+      "\\varnothing",
+      "\\varoiint",
+      "\\varpi",
+      "\\varpropto",
+      "\\varsubsetneq",
+      "\\vartheta",
+      "\\vartriangle",
+      "\\venus",
+      "\\wp",
+      "\\wr",
+      "="
+    ],
+    "source_manifest_sha256": "5d66c91b58af7faa529644bfe6915c0ce6ce13eda2c7c6dad3503cf0a6582054"
+  },
+  "augmentation": {
+    "algorithm": "orientation-preserving affine jitter",
+    "engine": "affine",
+    "parameters": {
+      "rotation_degrees": [
+        -2.5,
+        2.5
+      ],
+      "axis_scale_relative": [
+        -0.055,
+        0.055
+      ],
+      "shear": [
+        -0.025,
+        0.025
+      ],
+      "elastic_control_grid": null,
+      "elastic_max_control_displacement": null,
+      "elastic_boundary": null,
+      "elastic_jacobian_frobenius_max": null,
+      "elastic_probability": null,
+      "independent_wide_probability_by_parameter": 0.0,
+      "wide_magnitude_multiplier": null
+    },
+    "per_sample_limits": {
+      "xy_rms": 0.035,
+      "max_point_displacement": 0.105,
+      "per_stroke_path_ratio": [
+        0.78,
+        1.22
+      ]
+    },
+    "pretraining_volume_audit": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261001\\affine_distill_v9_batch_hard_retry\\full_domain_augmentation_audit.json",
+    "unit_validation": "every sampled training batch passed finite/range/spatial-limit gates; rejected transforms reverted to exact identity before optimizer step"
+  },
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "training_seconds": 1183.8469956000044,
+  "teacher_logit_precompute_seconds": 109.60880719998386,
+  "total_experiment_seconds": 1299.614656299993,
+  "inference_compatibility": "validated by evaluate_48hz_prefix_v1._load_model"
+}

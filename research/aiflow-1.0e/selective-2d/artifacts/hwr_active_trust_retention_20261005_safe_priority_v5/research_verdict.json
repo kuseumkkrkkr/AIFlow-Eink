@@ -1,0 +1,94 @@
+{
+  "schema": "aiflow-safe-priority-research-verdict/v1",
+  "status": "verified_partial_retention_recovery_train_gate_fail",
+  "result_sha256": "eb9398c544d6e6ecad9e2c80eca533f6b1318549e9cae7975adb47193ad9e72e",
+  "checkpoint_sha256": "b8e7bd123d07e4ae21757df364f1bbef47f8be7d16d4dae6a5fd55c33d4fb8d6",
+  "scope": {
+    "same_optimization_train_rows": 2048,
+    "old_math_classes": 371,
+    "source_digit_classes": 10,
+    "same_direction_budget_cap": 512,
+    "original_parent_reference_floors_rank_guards_solver_and_alphas_unchanged": true,
+    "changed_factor": "Current-slack priority for up to 16 actually rejected currently-safe bank constraints after the unchanged v4 rank-risk prefix.",
+    "all_domain_human_boundary_distillation_performed": false
+  },
+  "comparison": {
+    "persistence_v4": {
+      "accepted_steps": 7, "directions_used": 512, "actual_trials": 39,
+      "old_top1_hits": 841, "source_top1_hits": 958, "old_top5_hits": 1005,
+      "floor_violations": 32, "squared_deficit_merit": 1.1053434011560057
+    },
+    "safe_priority_v5": {
+      "accepted_steps": 8, "directions_used": 512, "actual_trials": 38,
+      "old_top1_hits": 841, "source_top1_hits": 958, "old_top5_hits": 1005,
+      "floor_violations": 28, "squared_deficit_merit": 0.9011254977990575
+    },
+    "merit_reduction_fraction": 0.18475516580944004,
+    "new_protected_top1_losses": 0,
+    "preexisting_protected_top5_losses_remaining": 2,
+    "source_training_gain_retained_fraction": 1.0,
+    "strict_train_gate_pass": false,
+    "note": "Same optimization TRAIN anchors and actual 512 directions, not independent accuracy or human recognition probabilities. Both checkpoints remain ineligible for product selection."
+  },
+  "microscope": {
+    "safe_priority_rows_per_round": [0, 16, 13, 16, 15, 16, 13, 16],
+    "previous_simeq_blocker_row": 470,
+    "simeq_priority_selected_rounds": [1, 4, 7],
+    "simeq_final_margin": 0.08153724670410156,
+    "simeq_immutable_floor": 0.08018302917480469,
+    "simeq_floor_pass": true,
+    "sqrt_row": 852,
+    "sqrt_final_margin": 0.0062103271484375,
+    "sqrt_immutable_floor": 0.005373477935791016,
+    "sqrt_floor_pass": true,
+    "final_step_accepted_alpha": 0.03125,
+    "last_larger_rejected_alpha": 0.0625,
+    "last_larger_trial_blocker": {
+      "row": 843, "label": "\\psi", "rival": "\\Psi",
+      "floor": 0.024145126342773438,
+      "trial_margin": 0.02266693115234375,
+      "deficit": 0.0014781951904296875,
+      "constraint_selected": false
+    },
+    "largest_remaining_fixed_margin_deficits": [
+      {"label": "\\mathcal{O}", "rival": "0", "deficit": 0.6418280601501465},
+      {"label": "\\backsim", "rival": "u", "deficit": 0.41056394577026367},
+      {"label": "O", "rival": "0", "deficit": 0.30297374725341797},
+      {"label": "\\varrho", "rival": "r", "rank": 5, "deficit": 0.23618125915527344}
+    ],
+    "interpretation": "Prioritizing actual rejected safe conditions allowed all eight bounded updates. Unselected safe conditions still limit larger steps; 28 original floors remain unmet, including two preexisting Top-5 membership losses. This is not a proof of global infeasibility or insufficient architecture."
+  },
+  "verification": {
+    "actual_model_trials": 38,
+    "parameter_tensors": 57,
+    "every_trial_acceptance_recomputed": true,
+    "immutable_floors_and_risk_persistence_verified": true,
+    "safe_priority_and_full_interference_bank_reconstructed": true,
+    "batch1_16_32_rank_and_violation_counts_equal": true,
+    "batch32_checkpoint_reload_bit_exact": true,
+    "canonical_and_parent_checkpoints_unchanged": true,
+    "verifier_source_snapshot_preserved": true
+  },
+  "all_domain_augmentation_state": {
+    "model_classes": 372,
+    "real_supported_classes": 371,
+    "generated_classes": 370,
+    "generated_digit_classes": 10,
+    "generated_latin_classes": 51,
+    "generated_math_symbol_classes": 309,
+    "generated_pairs": 1121,
+    "geometry_integrity_errors": 0,
+    "unsupported_or_insufficient_topology_classes": ["=", "\\mathbb{N}"],
+    "blind_boundary_review_rows": 740,
+    "completed_human_boundary_labels": 0,
+    "note": "Empirical correlated geometry and teacher paths exist for all supported families; teacher crossings and empirical q68 are not human semantic acceptance probabilities."
+  },
+  "next_bounded_hypothesis": "Within a newly frozen cost cap, persist near-floor safe constraints across accepted rounds until a predeclared safety buffer is reached; audit nonlinear prediction error before requesting more steps. Do not hardcode psi/simeq or relax original floors. Human-reviewed all-domain boundaries and fresh writer/device acceptance remain separate requirements.",
+  "human_boundary_labels": 0,
+  "held_inputs_forwarded": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "deployment_resumed": false,
+  "full_goal_completed": false
+}

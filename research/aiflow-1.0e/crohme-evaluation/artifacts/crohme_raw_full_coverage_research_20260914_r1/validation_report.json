@@ -1,0 +1,125 @@
+{
+  "schema": "aiflow-crohme-raw-full-coverage-research/v1",
+  "generated_at": "2026-09-13T15:47:14.330692+00:00",
+  "status": "noncommercial_validation_only_posthoc_shadow",
+  "training_performed": false,
+  "selection_performed": false,
+  "threshold_tuning_performed": false,
+  "crohme_rows_used_for_training": 0,
+  "crohme_gradient_updates": 0,
+  "official_lgeval_or_symlg": false,
+  "score_boundary": "Local raw grouping/layout/relation proxy only; do not call any reported score CROHME Expression Rate.",
+  "coverage": {
+    "discovered_raw_inkml_rows": 1199,
+    "evaluated_formula_rows": 1199,
+    "expected_full_test_rows": 1199,
+    "limited_run": false,
+    "unique_formula_ids": 1199,
+    "omitted_formula_rows": 0
+  },
+  "summary": {
+    "denominator": 1199,
+    "inference": {
+      "ok": 1014,
+      "error": 185,
+      "error_types": {
+        "ValueError": 185
+      },
+      "success_exact_stroke_cover": 1014
+    },
+    "truth": {
+      "parse_status": {
+        "ok": 1197,
+        "ok_with_ignored_unknown_trace_reference": 2
+      },
+      "partition_complete": 1199,
+      "ignored_unknown_trace_reference_groups": 2,
+      "formulas_with_unsupported_truth_tokens": 349,
+      "unsupported_truth_token_counts": {
+        "!": 7,
+        ",": 50,
+        ".": 15,
+        "\\cos": 71,
+        "\\lim": 41,
+        "\\log": 32,
+        "\\sin": 85,
+        "\\tan": 35,
+        "t": 65
+      },
+      "formulas_with_single_point_source_stroke": 185,
+      "single_point_source_strokes": 315
+    },
+    "all_1199_denominator_scores": {
+      "grouping_exact_count": 335,
+      "grouping_exact": 0.2793994995829858,
+      "flat_token_sequence_exact_count": 59,
+      "flat_token_sequence_exact": 0.04920767306088407,
+      "semantic_function_span_sequence_exact_count": 59,
+      "semantic_function_span_sequence_exact": 0.04920767306088407,
+      "layout_order_exact_count": 187,
+      "layout_order_exact": 0.1559633027522936,
+      "layout_token_sequence_exact_count": 59,
+      "layout_token_sequence_exact": 0.04920767306088407,
+      "strict_group_layout_relation_character_exact_count": 50,
+      "strict_group_layout_relation_character_exact": 0.041701417848206836
+    },
+    "relation_proxy_conditioned_on_grouping_exact": {
+      "parsed_formulas": 335,
+      "structural_formulas": 190,
+      "formula_exact_count": 219,
+      "formula_exact": 0.6537313432835821,
+      "formula_exact_on_structural_count": 87,
+      "formula_exact_on_structural": 0.45789473684210524,
+      "micro": {
+        "tp": 526,
+        "fp": 35,
+        "fn": 231,
+        "precision": 0.9376114081996435,
+        "recall": 0.6948480845442536,
+        "f1": 0.7981790591805766
+      }
+    }
+  },
+  "historical_non_comparable_reference": {
+    "name": "oracle_group_cache_proxy_full_1199",
+    "count": 343,
+    "denominator": 1199,
+    "score": 0.28607172643869894,
+    "source": "reports/CROHME_STANDARD_REINFORCEMENT_LOOP_20260821.md",
+    "comparison_rule": "This uses truth groups/cached character candidates and is not comparable to the raw full-coverage strict score."
+  },
+  "contracts": {
+    "one_result_per_selected_raw_inkml": true,
+    "all_selected_input_rows_retained": true,
+    "truth_not_supplied_to_runtime": true,
+    "runtime_source_fields": [
+      "formula_id",
+      "strokes"
+    ],
+    "raw_input_unchanged_rows": 1199,
+    "successful_runtime_exact_stroke_cover_rows": 1014,
+    "product_default_enabled": false,
+    "posthoc_shadow_opt_in": true,
+    "autograd_enabled": false
+  },
+  "limits": [
+    "No symLG writer or official LgEval is installed.",
+    "A source/runtime parse failure is retained as a scored failure, not excluded.",
+    "Function span composition is an output diagnostic only; it does not alter grouping, runtime tokens, or product behavior.",
+    "The frozen ranker is explicitly shadow-only and posthoc-tuned on prior project-owned data."
+  ],
+  "inputs": {
+    "partition_ranker": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\project_owned_grouping_runtime_20260822_r11_conservative_long_blend_shadow\\partition_context_ranker.joblib",
+    "partition_ranker_sha256": "69925b478d2170bafcf2a12576ee07f6372b5318311fa53b3d12905c5d9362bf",
+    "hwr_checkpoint": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-head-calibration-20260819-r1\\final_all_writers_steps250_lr1e-3\\project_symbol_head_checkpoint.pt",
+    "hwr_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "context_checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\owned_formula_context_expanded_hwr_20260820_r1_shadow\\owned_formula_context_product.pt",
+    "context_checkpoint_sha256": "125dc9cd1457a46153522f9041117d320c06071a7f71d65bf7929b5ef4c0671a",
+    "context_training_data": "project-owned 47 formulas / 211 glyphs / 3 writers plus deterministic owned formula DSL",
+    "crohme": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\datasets\\30_noncommercial_evaluation\\crohme2019\\crohme2019\\crohme2019\\test"
+  },
+  "output": {
+    "formula_results": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\crohme_raw_research_20260914\\artifacts\\crohme_raw_full_coverage_research_20260914_r1\\formula_results.jsonl.gz",
+    "formula_results_sha256": "4b826ad51d3cb540981185537bf55efbb0a02a15e81aa0380a48c4f4d411c6fe"
+  }
+}

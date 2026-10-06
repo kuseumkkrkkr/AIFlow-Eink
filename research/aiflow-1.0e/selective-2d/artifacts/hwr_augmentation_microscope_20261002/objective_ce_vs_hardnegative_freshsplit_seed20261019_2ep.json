@@ -1,0 +1,65 @@
+{
+  "schema": "aiflow-hwr-objective-competition-partial-run/v1",
+  "status": "partial_first_arm_failed",
+  "product_adopted": false,
+  "data": {
+    "train_rows": 170441,
+    "validation_rows": 1056,
+    "validation_writer_clusters": 8,
+    "validation_present_labels": 66,
+    "crohme_rows": 0,
+    "cache_reuse_mode": "full_source_scan",
+    "cache_audit_report": null,
+    "cache_audit_report_sha256": null,
+    "writer_split_sha256": null,
+    "canonical_hwrt_sha256": null,
+    "canonical_uji_sha256": null,
+    "curated_uji_sha256": null,
+    "prepared_cache_sha256": null
+  },
+  "experiment": {
+    "seed": 20261019,
+    "architecture": {
+      "width": 128,
+      "layers": 4,
+      "heads": 4,
+      "feedforward": 512
+    },
+    "precision": "fp32",
+    "sampler": {
+      "classes_per_batch": 12,
+      "rows_per_class": 4,
+      "batch_size": 48
+    },
+    "epochs_requested": 2,
+    "eval_batch_size": 64,
+    "optimizer": {
+      "name": "AdamW",
+      "foreach": false,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "gradient_clip_norm": 1.0,
+      "gradient_clip_foreach": false
+    },
+    "objective": {
+      "ce": "372-way cross-entropy",
+      "supcon": null,
+      "contrastive_weight": 0.0,
+      "temperature": null,
+      "hardnegative": "mean(relu(margin + max_wrong_logit - target_logit))",
+      "hardnegative_weight": 0.1,
+      "hardnegative_margin": 0.5
+    },
+    "product_adopted": false
+  },
+  "completed_arm": null,
+  "failed_arm": {
+    "arm": "ce_pk",
+    "completed_epochs": null,
+    "failed_location": "training_or_validation",
+    "error_type": "RuntimeError",
+    "error": "CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`",
+    "paired_comparison": null
+  },
+  "interpretation_limit": "partial exploratory arm; not a paired result and not product accuracy"
+}

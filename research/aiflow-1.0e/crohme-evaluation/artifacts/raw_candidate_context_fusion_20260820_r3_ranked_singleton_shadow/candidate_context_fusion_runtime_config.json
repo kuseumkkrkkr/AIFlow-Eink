@@ -1,0 +1,243 @@
+{
+  "schema": "aiflow-raw-candidate-context-fusion-runtime-config/v1",
+  "rescue_schema": "aiflow-singleton-shape-rescue/v1",
+  "generated_at": "2026-08-19T20:00:00Z",
+  "status": "development_only_posthoc_shadow",
+  "configuration": {
+    "auxiliary_policy": "old_new_product_probability_fusion",
+    "auxiliary_weight": 0.6,
+    "token_confidence_thresholds": {
+      "/": 0.5,
+      "\\times": 0.4
+    },
+    "token_candidate_maximum_ranks": {
+      "/": 1,
+      "\\times": 2
+    }
+  },
+  "numeric_configuration": {
+    "auxiliary_policy": "old_new_product_probability_fusion",
+    "auxiliary_weight": 0.6,
+    "maximum_operand_changes": 2
+  },
+  "wide_syntax_configuration": {
+    "candidate_width": 10,
+    "auxiliary_weight": 0.6,
+    "allowed_auxiliary_policies": ["old_new_product_probability_fusion"],
+    "minimum_baseline_digit_count": 2,
+    "maximum_changes": 2,
+    "maximum_formula_glyphs": 64,
+    "minimum_digit_probability_ratio": 0.005,
+    "equality_candidate_must_be_top1": true,
+    "allow_equality_replacement": false,
+    "literal_alpha_operand_lock": true
+  },
+  "relation_merge_configuration": {
+    "maximum_candidate_rank": 3,
+    "minimum_geometry_delta": -5.0,
+    "minimum_ranker_probability": 0.05,
+    "minimum_component_box_overlap": 0.25,
+    "required_merged_strokes": 3
+  },
+  "cross_merge_configuration": {
+    "maximum_candidate_rank": 3,
+    "minimum_geometry_delta": -12.0,
+    "maximum_pair_gap_ref": 0.3,
+    "minimum_y_overlap": 0.7,
+    "maximum_absolute_aspect_log": 0.4,
+    "required_merged_strokes": 2,
+    "preserve_merged_x_after_auxiliary_fusion": true,
+    "auxiliary_nested_expression_enabled": true,
+    "auxiliary_x_candidate_maximum_rank": 3,
+    "auxiliary_open_fence_candidate_maximum_rank": 1
+  },
+  "repeat_merge_configuration": {
+    "maximum_candidate_rank": 3,
+    "minimum_geometry_delta": -6.0,
+    "minimum_ranker_probability": 0.8,
+    "maximum_pair_gap_ref": 0.2,
+    "minimum_y_overlap": 0.95,
+    "maximum_normalized_dtw_distance": 0.1,
+    "required_merged_strokes": 2,
+    "required_formula_glyphs": 3,
+    "relation_token": "=",
+    "preserve_merged_token_after_auxiliary_fusion": true
+  },
+  "latin_t_context_configuration": {
+    "candidate_width": 5,
+    "candidate_policy": "approved_legacy_latin_auxiliary_preserve_time",
+    "target_token": "t",
+    "function_tokens": ["f", "g", "h"],
+    "maximum_candidate_rank": 2,
+    "minimum_candidate_probability": 0.25,
+    "minimum_probability_ratio_to_top1": 0.5,
+    "single_parenthesized_argument_only": true,
+    "existing_ascii_alphanumeric_lock": true,
+    "maximum_changes_per_formula": 1
+  },
+  "mode": {
+    "restricted_candidate_rerank": {
+      "enabled": true,
+      "candidate_width": 5,
+      "preserve_original_candidate_set": true,
+      "reapply_formula_context_finalizer": true
+    },
+    "singleton_shape_rescue": {
+      "enabled": true,
+      "preserve_original_candidate_set": true,
+      "token_candidate_maximum_ranks": {
+        "/": 1,
+        "\\times": 2
+      }
+    },
+    "dual_numeric_rescue": {
+      "enabled": true,
+      "maximum_operand_changes": 2,
+      "candidate_contract": "baseline_and_auxiliary_top5_union",
+      "operator_relation_or_fence_mutations": 0,
+      "arithmetic_evaluation": false
+    },
+    "wide_numeric_syntax_rescue": {
+      "enabled": true,
+      "candidate_width": 10,
+      "maximum_changes": 2,
+      "candidate_contract": "baseline_and_auxiliary_top10_union",
+      "minimum_digit_probability_ratio": 0.005,
+      "allow_equality_replacement": false,
+      "arithmetic_evaluation": false
+    },
+    "relation_merge_rescue": {
+      "enabled": true,
+      "maximum_candidate_rank": 3,
+      "exact_cover_coarsening_only": true,
+      "required_merged_strokes": 3,
+      "negated_relation_candidate_required": true,
+      "target_label_or_glyph_count_input": false,
+      "arithmetic_evaluation": false
+    },
+    "cross_merge_rescue": {
+      "enabled": true,
+      "maximum_candidate_rank": 3,
+      "exact_cover_coarsening_only": true,
+      "required_merged_strokes": 2,
+      "merged_hwr_and_context_token": "x",
+      "preserve_merged_x_after_auxiliary_fusion": true,
+      "auxiliary_nested_expression_enabled": true,
+      "auxiliary_candidate_contract": "product_fused_top20",
+      "auxiliary_x_candidate_maximum_rank": 3,
+      "auxiliary_open_fence_candidate_maximum_rank": 1,
+      "auxiliary_plus_geometry_source": "formula_role_typo",
+      "target_label_or_glyph_count_input": false,
+      "arithmetic_evaluation": false
+    },
+    "repeat_merge_rescue": {
+      "enabled": true,
+      "maximum_candidate_rank": 3,
+      "exact_cover_coarsening_only": true,
+      "required_merged_strokes": 2,
+      "required_formula_glyphs": 3,
+      "same_formula_repeated_shape_dtw_required": true,
+      "hwr_context_agreement_required": true,
+      "preserve_merged_token_after_auxiliary_fusion": true,
+      "target_label_or_glyph_count_input": false,
+      "arithmetic_evaluation": false
+    },
+    "latin_t_context_rescue": {
+      "enabled": true,
+      "candidate_width": 5,
+      "candidate_contract": "approved_legacy_latin_auxiliary_top5",
+      "target_token": "t",
+      "single_parenthesized_function_argument_only": true,
+      "insertions_or_deletions": 0,
+      "target_label_or_glyph_count_input": false,
+      "arithmetic_evaluation": false
+    },
+    "formula_placement_rescue": {
+      "enabled": true,
+      "candidate_width": 20,
+      "candidate_contract": "product_fused_top20",
+      "insertions_or_deletions": 0,
+      "arithmetic_evaluation": false
+    },
+    "straight_equality_rescue": {
+      "enabled": true,
+      "candidate_width": 20,
+      "candidate_contract": "product_fused_top20",
+      "maximum_changes_per_formula": 1,
+      "arithmetic_evaluation": false
+    }
+  },
+  "artifacts": {
+    "partition_ranker_sha256": "0d283d40b40f60d58131dec213efb84074f9119ac82b32fcb893ca931aeb0582",
+    "hwr_checkpoint_sha256": "1fed74b4580d3acc9ff48544a7d715c52170037bcb0842921b1fe0339f0abd1d",
+    "context_checkpoint_sha256": "7e0ff1b04ba1071867bfa6811869f242907ebe017d0996597776c6050cc2fc94",
+    "auxiliary_hwr_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "formula_placement_config_sha256": "fd5d4ccb6ec138aa8506aaafdb68b12d26b3acee1114d2006bd109d52b4e3d15",
+    "straight_equality_config_sha256": "617bbd53e024a5b2d50166ff942990e46e44eac2e7229aa44536636398745b4f",
+    "crohme_formula_role_diagnostic_sha256": "c352f852cda4429a27c93e206e498f73e680c615303c3598c32b6c1704e1cc27",
+    "formula_context_crohme_raw_diagnostic_sha256": "7a7af2d9c2dfa02a46e0435fbc879d30f9a437ecc2d60f9af2485835299f67cf",
+    "latin_auxiliary_checkpoint_sha256": "3fab3ab0982ec19360e593d01552cbfe466523aebc6f68cd60cd8e33590fe4c7",
+    "formula_sequence_config_sha256": "9db395a3b64b724d720a4dd7e5bfb10e7a6e16d87f4b54d32625ba2a95f67ea0",
+    "formula_syntax_rescue_config_sha256": "52506ed007780607f399ac2aff11d8185d3f6133cc53638af7ad847d36c6e942"
+  },
+  "evidence": {
+    "selected_summary": "selected_summary.json",
+    "selected_summary_sha256": "21344d66e8264575eb49175d6163681a3d6afccd46cc649b1077f3a9b18f053d",
+    "evaluation_evidence": "evaluation_evidence.json",
+    "evaluation_evidence_sha256": "a0ad71d726d4ac9121360e9dacc0faf4cf5d0aede18f5f4007c9c2a1d77fd154",
+    "baseline_formula_exact": {"count": 38, "total": 49},
+    "candidate_context_fusion_formula_exact": {"count": 41, "total": 49},
+    "dual_hwr_numeric_formula_exact": {"count": 42, "total": 49},
+    "wide_numeric_syntax_formula_exact": {"count": 43, "total": 49},
+    "formula_placement_formula_exact": {"count": 45, "total": 49},
+    "straight_equality_formula_exact": {"count": 46, "total": 49},
+    "latin_t_context_formula_exact": {"count": 47, "total": 49},
+    "improved_formula_ids": [
+      "aiflow_0004", "aiflow_0010", "aiflow_0049", "aiflow_0052",
+      "aiflow_0056", "aiflow_0058", "aiflow_0061", "aiflow_0064", "aiflow_0078"
+    ],
+    "regressed_formula_ids": []
+  },
+  "provenance": {
+    "posthoc_test_tuning": true,
+    "current_96_formula_training_overlap": true,
+    "fresh_writer_formula_disjoint_acceptance": false
+  },
+  "gate": {
+    "shadow_runtime_admitted": true,
+    "product_default_admitted": false,
+    "criteria": {
+      "formula_exact_improved": true,
+      "formula_regressions_zero": true,
+      "restricted_original_top5_preserved": true,
+      "dual_numeric_top5_union_preserved": true,
+      "wide_numeric_top10_union_preserved": true,
+      "tokens_outside_admitted_union_zero": true,
+      "deleted_glyphs_zero": true,
+      "relation_merge_exact_cover_coarsening_only": true,
+      "relation_merge_negated_relation_in_merged_top5": true,
+      "relation_merge_target_input_disabled": true,
+      "downstream_grouping_mutations_after_relation_merge_zero": true,
+      "cross_merge_exact_cover_two_singleton_coarsening_only": true,
+      "cross_merge_hwr_and_context_x_required": true,
+      "cross_merge_auxiliary_semantic_lock_candidate_preserving": true,
+      "cross_merge_nested_expression_product_fused_gate": true,
+      "repeat_merge_same_formula_shape_dtw_required": true,
+      "repeat_merge_exact_cover_two_singleton_coarsening_only": true,
+      "repeat_merge_hwr_context_agreement_required": true,
+      "latin_t_context_auxiliary_top5_candidate_preserving": true,
+      "latin_t_context_target_input_disabled": true,
+      "formula_placement_top20_candidate_preserving": true,
+      "formula_role_typo_geometry_and_role_gated": true,
+      "formula_role_typo_target_input_disabled": true,
+      "crohme_repeated_diagnostic_regressions_zero": true,
+      "singleton_ranked_candidate_original_top5_lock": true,
+      "formula_placement_insertions_or_deletions_zero": true,
+      "straight_equality_maximum_one_change_per_formula": true,
+      "dual_numeric_operator_relation_or_fence_mutations_zero": true,
+      "wide_numeric_non_digit_replacements_zero": true,
+      "layout_mutations_zero": true,
+      "arithmetic_evaluation_disabled": true
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schema": "aiflow-dual-hwr-numeric-rescue-runtime-manifest/v1",
+  "generated_at": "2026-08-19T11:29:17.792194+00:00",
+  "status": "shadow_runtime_only",
+  "shadow_runtime_admitted": true,
+  "product_default_admitted": false,
+  "training_performed": false,
+  "pipeline": [
+    "baseline HWR Top-5, context finalizer, and formula layout",
+    "0.6 auxiliary HWR fusion, context finalizer, and formula layout",
+    "baseline-order-owned numeric operand rescue"
+  ],
+  "runtime_contract": {
+    "baseline_formula_order_authoritative": true,
+    "auxiliary_order_mismatch_policy": "abstain for the complete formula",
+    "maximum_operand_changes_per_formula": 2,
+    "changed_roles": ["operand to digit"],
+    "baseline_must_be_invalid_numeric_syntax": true,
+    "challenger_must_be_valid_numeric_syntax": true,
+    "arithmetic_evaluation": false,
+    "operator_relation_or_fence_mutations": 0,
+    "deleted_glyphs": 0,
+    "grouping_mutations": 0,
+    "candidate_authority": "ordered union of baseline and auxiliary HWR Top-5"
+  },
+  "configuration": {
+    "path": "artifacts/dual_hwr_numeric_rescue_20260819_r1_shadow/dual_hwr_numeric_rescue_runtime_config.json",
+    "sha256": "a3ae4c6e196c7cfc219b83617f34f39fb8b6ecb5f1a5eabed7e8d5dc83c15b25"
+  },
+  "metrics": {
+    "direct_project_owned_writer_loo": {
+      "records": 387,
+      "formulas": 95,
+      "baseline_character_top1_count": 351,
+      "challenger_character_top1_count": 355,
+      "challenger_character_top1": 0.917312661498708,
+      "baseline_formula_exact_count": 74,
+      "challenger_formula_exact_count": 76,
+      "challenger_formula_exact": 0.8,
+      "improved_glyphs": 4,
+      "regressed_glyphs": 0,
+      "improved_formulas": 2,
+      "regressed_formulas": 0,
+      "baseline_top5_expansions": 3,
+      "tokens_outside_dual_hwr_union": 0
+    },
+    "crohme_noncommercial_diagnostic": {
+      "records": 9535,
+      "formulas": 984,
+      "baseline_character_top1_count": 7511,
+      "challenger_character_top1_count": 7513,
+      "challenger_character_top1": 0.7879391714735187,
+      "baseline_formula_exact_count": 284,
+      "challenger_formula_exact_count": 286,
+      "challenger_formula_exact": 0.29065040650406504,
+      "improved_glyphs": 2,
+      "regressed_glyphs": 0,
+      "improved_formulas": 2,
+      "regressed_formulas": 0,
+      "baseline_top5_expansions": 2,
+      "tokens_outside_dual_hwr_union": 0,
+      "auxiliary_order_mismatch_formulas_abstained": 5,
+      "product_validation": false
+    }
+  },
+  "rejected_challengers": [
+    {
+      "name": "direct-only x/X, S/5, and chi/x context rules",
+      "reason": "each matched one repeatedly observed direct formula and zero CROHME formulas"
+    },
+    {
+      "name": "complete 0.6 auxiliary stream replacement",
+      "reason": "four direct formulas improved and four regressed"
+    },
+    {
+      "name": "formula-level auxiliary stream selection before operand lock",
+      "reason": "CROHME produced two improved and two regressed glyphs"
+    }
+  ],
+  "evidence": {
+    "evaluation_sha256": "256cfd069e2ae2436213e6a22b1682b197b12edf6401ee9f824d6019c68acc73",
+    "direct_truth_sha256": "a4936b4cfabd4437d2315d7253d536d8fceb8f8ecc736bfa8dcae9eff42b4d61",
+    "direct_baseline_sha256": "cf230bab5b68fa1e577903fb4a9e2944cacc379a6648aca578eade34c2fa118b",
+    "direct_auxiliary_candidates_sha256": "99c1e3a7a4f32d4dd41a1ea1c303e7d1ef49b762196f5b03c5deb30ff305e7ce",
+    "direct_auxiliary_finalized_sha256": "b44171bb4e2eaef2ac63376ba8eebbd160fcb9f5b81c60ce7feda6f73f06b893",
+    "direct_merged_runtime_sha256": "6785a5afef6fb133f1ced28f50ae3bafddb6fe10b810dfc56a59d62ff2bde91c",
+    "crohme_truth_sha256": "2665d32b1e67f0ea5710c1096d8ede8c7205273a0d173305e836f1feefd364a6",
+    "crohme_baseline_sha256": "b8e812abba7bd1a970b41de757c844a2928cb7a37c72939085890b591ddd530d",
+    "crohme_auxiliary_candidates_sha256": "7e5c573bb2beb5ce72eaaf3f03fb8ad559611c7d68981caa5b70c4637f0789ac",
+    "crohme_auxiliary_finalized_sha256": "44132510ebe5697c1d436102380f752d2699f74d6494a084df6366d8604105c0"
+  },
+  "limits": [
+    "the direct 95 formulas are repeatedly observed development data",
+    "CROHME is CC BY-NC repeated diagnostic evidence and not product validation",
+    "three direct and two CROHME selections expand beyond the baseline Top-5",
+    "the dual path costs more inference than the single HWR path",
+    "fresh project-owned writer-disjoint formulas are required before product promotion"
+  ]
+}

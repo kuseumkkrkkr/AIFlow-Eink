@@ -1,0 +1,15 @@
+{
+  "status": "terminal_before_first_optimizer_update",
+  "failed_mode": "stage_0 real_control first CE",
+  "process_session": 94606,
+  "exit_code": 1,
+  "error": "RuntimeError: expected scalar type Long but found Short",
+  "cause": "real TRAIN cache targets retain numpy int16; CE requires torch int64",
+  "actual_optimizer_updates": 0,
+  "validation_examples_forwarded": 0,
+  "canonical_checkpoint_mutated": false,
+  "repair": "explicit target.long() conversion only; add real int16 CE selftest; new output directory, unchanged split seed/data/schedule/loss/gates",
+  "source_snapshot": "failed_entrypoint_snapshot.py",
+  "old_prepared_artifacts_preserved": true,
+  "automatic_restart_after_observation_timeout": false
+}

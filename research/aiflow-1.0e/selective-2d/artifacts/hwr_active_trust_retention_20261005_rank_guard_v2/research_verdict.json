@@ -1,0 +1,66 @@
+{
+  "schema": "aiflow-active-trust-rank-guard-research-verdict/v1",
+  "result_sha256": "73b5265033540110e8da19706aed35bd8e9d0c738491bc6ad2ebe77c5da932e4",
+  "checkpoint_sha256": "8493def5c83e86a1f891f507d362c56c149c99cbc4f8c140baf1b7f6c892f13a",
+  "status": "verified_safety_logic_repair_no_accuracy_improvement",
+  "scope": {
+    "same_optimization_train_rows": 2048,
+    "old_math_classes": 371,
+    "source_digit_classes": 10,
+    "direction_budget_cap": 512,
+    "original_fixed_masks_and_floors_unchanged": true,
+    "human_boundary_distillation_performed": false
+  },
+  "v1_failure": {
+    "result_sha256": "e18725e41d0849952bc6661d4fd6a7ed260112ea550cdfc844a2e164023b1faa",
+    "accepted_steps": 8,
+    "actual_trials": 39,
+    "directions_used": 512,
+    "old_top1_hits": 840,
+    "source_top1_hits": 958,
+    "fixed_margin_violations": 33,
+    "lost_previously_correct_top1_row": 852,
+    "lost_label": "\\sqrt{}",
+    "wrong_rival": "\\nearrow",
+    "initial_top1_margin": 0.000026702880859375,
+    "final_top1_margin": -0.008991241455078125,
+    "logic_gap": "Combined rank-and-floor safe mask excluded currently correct rows whose floor was already violated. Actual deficit reduction could hide an additional rank loss."
+  },
+  "v2_logic_fix": {
+    "separate_current_top1_and_top5_rank_guard": true,
+    "currently_correct_rank_loss_rejected_even_when_floor_already_bad": true,
+    "first_step_accepted_alpha": 0.125,
+    "accepted_steps": 1,
+    "actual_trials": 10,
+    "directions_used": 128,
+    "second_round_all_six_trial_alphas_rejected": true,
+    "sqrt_rank_loss_blocked": true,
+    "old_top1_hits": 841,
+    "source_top1_hits": 958,
+    "additional_protected_top1_losses": 0,
+    "preexisting_protected_top5_losses_remaining": 3,
+    "fixed_margin_violations_remaining": 37,
+    "strict_train_gate_pass": false
+  },
+  "selection_evidence": {
+    "sqrt_row": 852,
+    "sqrt_gradient_selected_in_either_round": false,
+    "sqrt_fixed_floor": 0.005373477935791016,
+    "second_round_sqrt_margin_at_smallest_trial_alpha": -0.000476837158203125,
+    "interpretation": "A currently correct but near-rank-boundary row was omitted by deficit/combined-safe selection. Separate rank validation exposed this omission; it did not solve the direction-selection problem."
+  },
+  "verification": {
+    "parameter_tensors": 57,
+    "every_actual_trial_rank_and_acceptance_rule_checked": true,
+    "original_fixed_constraints_rebuilt_exact": true,
+    "canonical_and_parent_checkpoints_unchanged": true,
+    "checkpoint_reload_batch32_bit_exact": true
+  },
+  "next_bounded_hypothesis": "Prioritize currently correct near-rank-boundary rows independently of fixed-floor deficit, then fill remaining active constraints within the same declared direction cap. Preserve the separate rank guard and all original floors.",
+  "not_proven": ["independent accuracy gain", "human recognition probabilities", "architecture insufficiency", "global infeasibility"],
+  "human_boundary_labels": 0,
+  "held_inputs_forwarded": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "deployment_resumed": false
+}

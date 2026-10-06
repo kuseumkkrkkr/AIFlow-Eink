@@ -1,0 +1,203 @@
+{
+  "schema": "aiflow-hwr-architecture-capacity-paired-audit/v1",
+  "status": "completed_exploratory_paired_writer_audit",
+  "data": {
+    "writer_split_sha256": "2a4db6661cffb074cb0e89cb2f02f091144964abea18960fb8bccb1404e2caf5",
+    "canonical_uji_sha256": "9c7038aa8c3eeb1fd3b93827354053e9d3f329f28111dfdaed22c941a238bf8b",
+    "curated_uji_sha256": "cda2fe17c213bc8c90ed93ec8998658ddaf9d7871c75adf521798e6e3ba3029b",
+    "validation_features_sha256": "a739ed60623b18153e0faf84de5979ca6323afcc98e76c4ce11c841995a98a70",
+    "validation_labels_sha256": "5518a204d5860cc8d19933a4d27732c2892e3ab6dfb2c82a95c65f25054e2935",
+    "rows": 1056,
+    "writer_clusters": 8,
+    "checkpoint_seed": 20263315,
+    "crohme_rows": 0
+  },
+  "arms": {
+    "d128_l4_h4": {
+      "architecture": {
+        "name": "d128_l4_h4",
+        "width": 128,
+        "layers": 4,
+        "heads": 4,
+        "feedforward": 512,
+        "parameters": 858613
+      },
+      "sha256": "3c72beffbcb3cc55b568ea82ef45f870962e7a0345e60aa940d18ad4e28efa10"
+    },
+    "d192_l4_h4": {
+      "architecture": {
+        "name": "d192_l4_h4",
+        "width": 192,
+        "layers": 4,
+        "heads": 4,
+        "feedforward": 768,
+        "parameters": 1877557
+      },
+      "sha256": "43e03fbdf484b61bd7ee75373a70f3cb56f18447b7b2cb2fd2b6dac273c1d715"
+    }
+  },
+  "paired_comparison": {
+    "top1": {
+      "rows": 1056,
+      "before_hits": 762,
+      "after_hits": 753,
+      "before_rate": 0.7215909090909091,
+      "after_rate": 0.7130681818181818,
+      "delta_percentage_points": -0.8522727272727293,
+      "recovered": 57,
+      "regressed": 66,
+      "two_sided_exact_p": 0.4708507456393825
+    },
+    "top5": {
+      "rows": 1056,
+      "before_hits": 1029,
+      "after_hits": 1028,
+      "before_rate": 0.9744318181818182,
+      "after_rate": 0.9734848484848485,
+      "delta_percentage_points": -0.09469696969697239,
+      "recovered": 11,
+      "regressed": 12,
+      "two_sided_exact_p": 1.0
+    },
+    "top1_writer_cluster_bootstrap": {
+      "writer_clusters": 8,
+      "draws": 10000,
+      "seed": 20263315,
+      "delta_percentage_points_percentile_95_interval": [
+        -2.6515151515151514,
+        0.946969696969697
+      ],
+      "bootstrap_fraction_delta_positive": 0.1748,
+      "per_writer": [
+        {
+          "writer_hash": "2a9429c3ac258a20",
+          "rows": 132,
+          "before_hits": 96,
+          "after_hits": 95,
+          "delta_percentage_points": -0.7575757575757576
+        },
+        {
+          "writer_hash": "43f3ff3cfb4515fc",
+          "rows": 132,
+          "before_hits": 99,
+          "after_hits": 95,
+          "delta_percentage_points": -3.0303030303030303
+        },
+        {
+          "writer_hash": "4bda3f1ddba53d35",
+          "rows": 132,
+          "before_hits": 97,
+          "after_hits": 93,
+          "delta_percentage_points": -3.0303030303030303
+        },
+        {
+          "writer_hash": "6ad3da87ebf793c8",
+          "rows": 132,
+          "before_hits": 90,
+          "after_hits": 83,
+          "delta_percentage_points": -5.303030303030303
+        },
+        {
+          "writer_hash": "c4323356b2a12773",
+          "rows": 132,
+          "before_hits": 98,
+          "after_hits": 102,
+          "delta_percentage_points": 3.0303030303030303
+        },
+        {
+          "writer_hash": "cd9994273f9d0476",
+          "rows": 132,
+          "before_hits": 97,
+          "after_hits": 100,
+          "delta_percentage_points": 2.272727272727273
+        },
+        {
+          "writer_hash": "d85383256c7c5196",
+          "rows": 132,
+          "before_hits": 97,
+          "after_hits": 96,
+          "delta_percentage_points": -0.7575757575757576
+        },
+        {
+          "writer_hash": "fa7b57a485031be2",
+          "rows": 132,
+          "before_hits": 88,
+          "after_hits": 89,
+          "delta_percentage_points": 0.7575757575757576
+        }
+      ],
+      "interpretation_limit": "only eight writers in one internal split; diagnostic uncertainty, not product acceptance"
+    },
+    "top5_writer_cluster_bootstrap": {
+      "writer_clusters": 8,
+      "draws": 10000,
+      "seed": 20263315,
+      "delta_percentage_points_percentile_95_interval": [
+        -0.7575757575757576,
+        0.6628787878787878
+      ],
+      "bootstrap_fraction_delta_positive": 0.3337,
+      "per_writer": [
+        {
+          "writer_hash": "2a9429c3ac258a20",
+          "rows": 132,
+          "before_hits": 128,
+          "after_hits": 126,
+          "delta_percentage_points": -1.5151515151515151
+        },
+        {
+          "writer_hash": "43f3ff3cfb4515fc",
+          "rows": 132,
+          "before_hits": 130,
+          "after_hits": 130,
+          "delta_percentage_points": 0.0
+        },
+        {
+          "writer_hash": "4bda3f1ddba53d35",
+          "rows": 132,
+          "before_hits": 131,
+          "after_hits": 130,
+          "delta_percentage_points": -0.7575757575757576
+        },
+        {
+          "writer_hash": "6ad3da87ebf793c8",
+          "rows": 132,
+          "before_hits": 123,
+          "after_hits": 126,
+          "delta_percentage_points": 2.272727272727273
+        },
+        {
+          "writer_hash": "c4323356b2a12773",
+          "rows": 132,
+          "before_hits": 131,
+          "after_hits": 130,
+          "delta_percentage_points": -0.7575757575757576
+        },
+        {
+          "writer_hash": "cd9994273f9d0476",
+          "rows": 132,
+          "before_hits": 132,
+          "after_hits": 132,
+          "delta_percentage_points": 0.0
+        },
+        {
+          "writer_hash": "d85383256c7c5196",
+          "rows": 132,
+          "before_hits": 130,
+          "after_hits": 130,
+          "delta_percentage_points": 0.0
+        },
+        {
+          "writer_hash": "fa7b57a485031be2",
+          "rows": 132,
+          "before_hits": 124,
+          "after_hits": 124,
+          "delta_percentage_points": 0.0
+        }
+      ],
+      "interpretation_limit": "only eight writers in one internal split; diagnostic uncertainty, not product acceptance"
+    }
+  },
+  "product_adopted": false,
+  "interpretation_limit": "single seed, one internal 8-writer split, 66 UJI labels overlapping the 372-class math vocabulary; not full-vocabulary acceptance"
+}

@@ -1,0 +1,72 @@
+{
+  "model_kind": "monotone_logistic",
+  "action_cost": 4.0,
+  "threshold": 0.98,
+  "minimum_global_support": 4,
+  "minimum_calibration_class_support": 2,
+  "shrinkage_prior": 8.0,
+  "self_check_chunk_size": 4,
+  "minimum_candidate_wilson_lower": 0.2,
+  "candidate_class_gate": "correct>0_and_regression=0_and_wilson>=0.20",
+  "homograph_token_groups": [
+    [
+      "1",
+      "|",
+      "/"
+    ],
+    [
+      "0",
+      "O",
+      "o"
+    ],
+    [
+      "x",
+      "\\times"
+    ],
+    [
+      "Z",
+      "\\mathcal{Z}"
+    ],
+    [
+      "\\epsilon",
+      "\\varepsilon"
+    ],
+    [
+      "\\setminus",
+      "\\backslash"
+    ],
+    [
+      "\\Rightarrow",
+      "\\Longrightarrow"
+    ],
+    [
+      "P",
+      "\\mathcal{P}"
+    ],
+    [
+      "\\parallel",
+      "|"
+    ],
+    [
+      "\\mathfrak{M}",
+      "\\ohm"
+    ]
+  ],
+  "feature_names": [
+    "candidate_relative_logit",
+    "global_cosine_advantage",
+    "writer_adjusted_cosine_advantage",
+    "candidate_calibration_vs_baseline_global_cosine",
+    "candidate_calibration_support_log1p",
+    "candidate_global_reliability",
+    "candidate_class_precision",
+    "negative_candidate_class_fpr",
+    "writer_residual_shrinkage",
+    "negative_writer_residual_dispersion",
+    "row_entropy",
+    "negative_top1_margin",
+    "candidate_minus_baseline_reliability",
+    "candidate_support_eligible"
+  ],
+  "new_styles_opened": false
+}

@@ -1,0 +1,72 @@
+{
+  "schema": "aiflow-hwr-objective-competition-partial-run/v1",
+  "status": "partial_first_arm_interrupted_no_checkpoint",
+  "product_adopted": false,
+  "data": {
+    "train_rows": 170441,
+    "validation_rows": 1056,
+    "validation_writer_clusters": 8,
+    "validation_present_labels": 66,
+    "crohme_rows": 0,
+    "cache_reuse_mode": "hash_attested_reuse",
+    "cache_audit_report": "artifacts/hwr_augmentation_microscope_20261002/objective_competition_three_way_paired_r1.json",
+    "cache_audit_report_sha256": "23c7db2a4e8fab1d590c4f452cef400aaaba55bb125d8265cc2b96b84c80473e",
+    "writer_split_sha256": "5eea91adc1779a43d7c9d531c2b4ab4a1ee2dcced0f5ef74b5070b2a63b9be6d",
+    "canonical_hwrt_sha256": "a35bb9c0793831b69b7710812df1112750eb0cb49f2206cdbbd55c63e1a95102",
+    "canonical_uji_sha256": "9c7038aa8c3eeb1fd3b93827354053e9d3f329f28111dfdaed22c941a238bf8b",
+    "curated_uji_sha256": "cda2fe17c213bc8c90ed93ec8998658ddaf9d7871c75adf521798e6e3ba3029b",
+    "prepared_cache_sha256": {
+      "train_features.npy": "2eb2495ce2669c0cbab9dbd7f87f8bdde0794d0474ea587a54a9f3bc3258de52",
+      "train_labels.npy": "159ee67fd2f9e73f94f1cd8d583d1f2736f187ceec662664f08e6a76edf794bc",
+      "validation_features.npy": "897f6e5a177338cf82ca93a56787845223be923ecb6aff8f49845ae7a510680e",
+      "validation_labels.npy": "5518a204d5860cc8d19933a4d27732c2892e3ab6dfb2c82a95c65f25054e2935"
+    }
+  },
+  "experiment": {
+    "seed": 20261004,
+    "architecture": {"width": 128, "layers": 4, "heads": 4, "feedforward": 512},
+    "precision": "fp32",
+    "sampler": {"classes_per_batch": 12, "rows_per_class": 2, "batch_size": 24},
+    "epochs_requested": 2,
+    "eval_batch_size": 32,
+    "optimizer": {
+      "name": "AdamW",
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "foreach": false,
+      "gradient_clip_norm": 1.0,
+      "gradient_clip_foreach": false
+    },
+    "objective": {"ce_weight": 1.0, "supcon_weight": 0.1, "temperature": 0.1},
+    "product_adopted": false
+  },
+  "completed_arm": null,
+  "partial_arm_metrics": {
+    "arm": "ce_pk",
+    "epoch_1": {
+      "train_ce": 5.95230736164468,
+      "train_top1_on_sampled_batches": 0.003009715573078006,
+      "validation_rows": 1056,
+      "validation_top1_hits": 0,
+      "validation_top5_hits": 0
+    },
+    "interrupted_in_epoch": 2,
+    "interrupted_batch": 500,
+    "interrupted_mean_ce": 5.939859015464783,
+    "checkpoint_written": false,
+    "gpu_memory": {
+      "allocated_mib": 29.46,
+      "reserved_mib": 176.0,
+      "driver_free_mib": 3090.75,
+      "driver_total_mib": 4095.69
+    }
+  },
+  "failed_arm": {
+    "arm": "ce_pk",
+    "failed_location": "epoch=2,batch=500,phase=training",
+    "error_type": "operator_interrupted_stalled_experiment",
+    "reason": "after one completed validation the Top-1 and Top-5 were both 0/1056 and train CE remained near log(372); the same chance-level CE persisted into epoch 2",
+    "paired_comparison": null
+  },
+  "interpretation_limit": "stalled partial diagnostic only; no checkpoint or paired result; do not compare its metrics to B48/P12xK4"
+}

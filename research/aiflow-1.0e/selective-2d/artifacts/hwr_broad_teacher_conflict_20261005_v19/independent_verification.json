@@ -1,0 +1,200 @@
+{
+  "status": "pass",
+  "schema": "aiflow-independent-teacher-conflict-verification/v19",
+  "result_sha256": "dc0956d180cbfddea18771efe87095ad4f69da60c6b449cce364628dc0ffd049",
+  "diagnostic_script_sha256": "887e83ecd0e4880c4d89859695f06d8feb68138cbdfd66d64992cf4a0b6d6a6c",
+  "verifier_script_sha256": "6e1d5b5ba7d8ea56f4756829e03496b1243c03017b2f86ecf5f1e7cba6b45504",
+  "original_train_sample_and_targets_rebuilt": true,
+  "all_rank_and_logit_conflict_counts_rebuilt": true,
+  "all_four_encoder_gradient_groups_rebuilt": true,
+  "global_parameter_alignment": [
+    {
+      "model": "canonical",
+      "category": "teacher_wrong",
+      "ce_vs_real_kl": {
+        "ce_norm": 5.6389231011958,
+        "kl_norm": 1.1462191243509436e-06,
+        "cosine": null,
+        "kl_to_ce_norm_ratio": 2.032691533083461e-07
+      },
+      "ce_vs_view_kl": {
+        "ce_norm": 5.6389231011958,
+        "kl_norm": 0.3173871144949199,
+        "cosine": -0.3519404146931263,
+        "kl_to_ce_norm_ratio": 0.0562850581217563
+      },
+      "ce_vs_combined_kl": {
+        "ce_norm": 5.6389231011958,
+        "kl_norm": 0.3173868517429572,
+        "cosine": -0.35194003331522783,
+        "kl_to_ce_norm_ratio": 0.05628501152563183
+      },
+      "ce_vs_full_objective": {
+        "ce_norm": 5.6389231011958,
+        "kl_norm": 5.535200076473962,
+        "cosine": 0.9985586583422117,
+        "kl_to_ce_norm_ratio": 0.9816058806157788
+      }
+    },
+    {
+      "model": "canonical",
+      "category": "teacher_correct",
+      "ce_vs_real_kl": {
+        "ce_norm": 1.382068221025527,
+        "kl_norm": 1.237706966615156e-06,
+        "cosine": null,
+        "kl_to_ce_norm_ratio": 8.955469402926785e-07
+      },
+      "ce_vs_view_kl": {
+        "ce_norm": 1.382068221025527,
+        "kl_norm": 0.20420532355686266,
+        "cosine": 0.12152564113710367,
+        "kl_to_ce_norm_ratio": 0.1477534324646706
+      },
+      "ce_vs_combined_kl": {
+        "ce_norm": 1.382068221025527,
+        "kl_norm": 0.2042049774941349,
+        "cosine": 0.1215252950969016,
+        "kl_to_ce_norm_ratio": 0.14775318206984747
+      },
+      "ce_vs_full_objective": {
+        "ce_norm": 1.382068221025527,
+        "kl_norm": 1.4214103011631738,
+        "cosine": 0.9897805651362349,
+        "kl_to_ce_norm_ratio": 1.0284660912819874
+      }
+    },
+    {
+      "model": "broad_real",
+      "category": "teacher_wrong",
+      "ce_vs_real_kl": {
+        "ce_norm": 5.160515933816252,
+        "kl_norm": 0.2966661253345572,
+        "cosine": -0.3056053707100425,
+        "kl_to_ce_norm_ratio": 0.05748768711099972
+      },
+      "ce_vs_view_kl": {
+        "ce_norm": 5.160515933816252,
+        "kl_norm": 0.32930561324031626,
+        "cosine": -0.42915722781821897,
+        "kl_to_ce_norm_ratio": 0.06381253685942823
+      },
+      "ce_vs_combined_kl": {
+        "ce_norm": 5.160515933816252,
+        "kl_norm": 0.5338816583547796,
+        "cosine": -0.43452821737324104,
+        "kl_to_ce_norm_ratio": 0.1034550934832535
+      },
+      "ce_vs_full_objective": {
+        "ce_norm": 5.160515933816252,
+        "kl_norm": 4.951930206430923,
+        "cosine": 0.9952743845465611,
+        "kl_to_ce_norm_ratio": 0.9595804508579285
+      }
+    },
+    {
+      "model": "broad_real",
+      "category": "teacher_correct",
+      "ce_vs_real_kl": {
+        "ce_norm": 1.1450406595819995,
+        "kl_norm": 0.3241603906507624,
+        "cosine": -0.1571416972480357,
+        "kl_to_ce_norm_ratio": 0.28309945846735096
+      },
+      "ce_vs_view_kl": {
+        "ce_norm": 1.1450406595819995,
+        "kl_norm": 0.22196168093766544,
+        "cosine": -0.06764669850228558,
+        "kl_to_ce_norm_ratio": 0.19384611286964534
+      },
+      "ce_vs_combined_kl": {
+        "ce_norm": 1.1450406595819995,
+        "kl_norm": 0.48448379462713254,
+        "cosine": -0.1361327037319326,
+        "kl_to_ce_norm_ratio": 0.4231149265948292
+      },
+      "ce_vs_full_objective": {
+        "ce_norm": 1.1450406595819995,
+        "kl_norm": 1.1810175411452688,
+        "cosine": 0.9136922468219006,
+        "kl_to_ce_norm_ratio": 1.031419741528133
+      }
+    },
+    {
+      "model": "broad_augmented",
+      "category": "teacher_wrong",
+      "ce_vs_real_kl": {
+        "ce_norm": 5.1398637204622615,
+        "kl_norm": 0.3029204628102658,
+        "cosine": -0.2760746899016469,
+        "kl_to_ce_norm_ratio": 0.05893550476918524
+      },
+      "ce_vs_view_kl": {
+        "ce_norm": 5.1398637204622615,
+        "kl_norm": 0.3233624434469127,
+        "cosine": -0.4305405489172914,
+        "kl_to_ce_norm_ratio": 0.06291264925168688
+      },
+      "ce_vs_combined_kl": {
+        "ce_norm": 5.1398637204622615,
+        "kl_norm": 0.5289054805987268,
+        "cosine": -0.4213405323079842,
+        "kl_to_ce_norm_ratio": 0.10290262726093424
+      },
+      "ce_vs_full_objective": {
+        "ce_norm": 5.1398637204622615,
+        "kl_norm": 4.940355233775027,
+        "cosine": 0.9952754753566516,
+        "kl_to_ce_norm_ratio": 0.9611840901748089
+      }
+    },
+    {
+      "model": "broad_augmented",
+      "category": "teacher_correct",
+      "ce_vs_real_kl": {
+        "ce_norm": 1.1437666446110724,
+        "kl_norm": 0.3227945677099388,
+        "cosine": -0.14998030053323136,
+        "kl_to_ce_norm_ratio": 0.28222065159078163
+      },
+      "ce_vs_view_kl": {
+        "ce_norm": 1.1437666446110724,
+        "kl_norm": 0.21720844299459321,
+        "cosine": -0.060987318066789066,
+        "kl_to_ce_norm_ratio": 0.18990625755523147
+      },
+      "ce_vs_combined_kl": {
+        "ce_norm": 1.1437666446110724,
+        "kl_norm": 0.47750070935756134,
+        "cosine": -0.12913025146767343,
+        "kl_to_ce_norm_ratio": 0.41748088354152973
+      },
+      "ce_vs_full_objective": {
+        "ce_norm": 1.1437666446110724,
+        "kl_norm": 1.181169018445573,
+        "cosine": 0.9161321039048202,
+        "kl_to_ce_norm_ratio": 1.0327010531481438
+      }
+    }
+  ],
+  "parameter_values": 858613,
+  "optimizer_steps": 0,
+  "validation_folds_read": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "limit": "Saved final diagnostic gradients, not historical optimization trajectory or causal accuracy proof.",
+  "artifacts_sha256": {
+    "frozen_plan.json": "0ce8998facf14a010aa50359c2d28b8504af801913af8630e09c70c71392fee5",
+    "inputs.npz": "40b62b354a7f2ca86b11d825c53cd4717595388bfd2573a11d49ea46f72cfeb2",
+    "canonical_logits.npz": "fced6c29f7dd4ed43c37ebfb20423db65ae0e13fab3a0f575a53554f5ebeb348",
+    "canonical_teacher_wrong_gradients.npz": "7f51ecbc814d6622458c913e6351dbd9e16f3b2ba5f467d061ca010357fb8fe1",
+    "canonical_teacher_correct_gradients.npz": "a641784be1c4fc083ae2096cca7863b03911604888a096ee1cd2fc6fa523210e",
+    "broad_real_logits.npz": "48ad3a9b3c45f42fe7374ac0442d6c89d651e0d43fc9df965bf77e66d76f7b1a",
+    "broad_real_teacher_wrong_gradients.npz": "29146e6f5c01da6d7f97dbb9d9049207ae3a989a9910eaeea66c67dace3efe0b",
+    "broad_real_teacher_correct_gradients.npz": "eb9f97ec4f6b0983e19d8476a1205fe0d5460f54440f8a21524d3b1fc0dd08be",
+    "broad_augmented_logits.npz": "356b8dc194de0ad5df1a949c3da83d0b77c972cd6ec5c833e49bad4b25d67a46",
+    "broad_augmented_teacher_wrong_gradients.npz": "aa87e9225e43e4aaa79b126160a6c42b19e1cd1b8b6cdf968ec4a120767c9c07",
+    "broad_augmented_teacher_correct_gradients.npz": "ca1f9674686991048f7d2c762faa591d7abe56323cd902c6b39f6f781e765fb4",
+    "conflict_result.json": "dc0956d180cbfddea18771efe87095ad4f69da60c6b449cce364628dc0ffd049"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "aiflow-hwr-boundary-optimization-plan/v1",
+  "fixed_before_optimizer_steps": true,
+  "seed": 20261004,
+  "steps_per_arm": 32,
+  "batch_size": 32,
+  "learning_rate": 1e-05,
+  "boundary_weight": 0.1,
+  "boundary_temperature": 1.0,
+  "boundary_policy": "full",
+  "base_loss": "0.7 CE on real train labels + 0.3 T^2 KL at T=2 on unaugmented frozen logits",
+  "arms": {
+    "base": "L_base",
+    "scaled_base": "(1-w)*L_base",
+    "boundary": "(1-w)*L_base + w*L_boundary (current student mode)",
+    "boundary_deterministic": "(1-w)*L_base + w*L_boundary (replay dropout off; autograd on)"
+  },
+  "teacher_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+  "script_sha256": "0c103e5a01ef18646a9e2e44e958d664a11344d5eff337c1d4c894ccc3746a36",
+  "source_manifest_sha256": "5d66c91b58af7faa529644bfe6915c0ce6ce13eda2c7c6dad3503cf0a6582054",
+  "boundary_report_sha256": "adba881acba550a5821ff5f9c809af0f50e8771c9be967d4c48924dd7ad405d7",
+  "training_inputs": {
+    "features": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v1\\train_features.npy",
+      "sha256": "72061bc0fd989096729ed613a21e19cab04b92c947efffcd7991b76e139a03f4"
+    },
+    "labels": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v1\\train_labels.npy",
+      "sha256": "fe60cece651054cf3713d7f62f103fab0bf7a210a91aea134316cd57e1742ae5"
+    },
+    "sources": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v1\\train_sources.npy",
+      "sha256": "d3bc4479e24426f93792e90c34d82f0e0172691ea541ff81966c46649b08050c"
+    }
+  },
+  "sampled_rows": 1024,
+  "real_classes_sampled": 371,
+  "sampled_rows_by_source": {
+    "hwrt": 920,
+    "uji": 104
+  },
+  "training_row_indices_sha256": "8fcd92985bd9c7a5b902b3aecae005cbf601141b0b7fd16781a1d1171d870d22",
+  "boundary_rows": 70,
+  "boundary_scope": "class-2 teacher-boundary pilot only",
+  "hard_synthetic_labels_assigned": 0,
+  "human_boundary_labels_available": false,
+  "heldout_rows_read": 0,
+  "crohme_rows": 0,
+  "accuracy_scoring_performed": false,
+  "eligible_for_model_selection": false,
+  "product_adopted": false,
+  "limitations": "Training/integrity only; teacher-seen data. Neither accuracy improvement nor human recognition-boundary expansion can be inferred."
+}

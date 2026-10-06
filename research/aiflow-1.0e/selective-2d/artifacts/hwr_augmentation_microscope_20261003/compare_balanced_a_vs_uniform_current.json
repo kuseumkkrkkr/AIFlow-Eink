@@ -1,0 +1,590 @@
+{
+  "schema": "aiflow-hwr-augmentation-audit-pair/v2",
+  "status": "paired_augmentation_integrity_teacher_stability_geometry_and_visual_assets_compared",
+  "paired_provenance": {
+    "prepared_manifest_sha256": "5d66c91b58af7faa529644bfe6915c0ce6ce13eda2c7c6dad3503cf0a6582054",
+    "teacher_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "training_cache_sha256": {
+      "train_features.npy": "72061bc0fd989096729ed613a21e19cab04b92c947efffcd7991b76e139a03f4",
+      "train_labels.npy": "fe60cece651054cf3713d7f62f103fab0bf7a210a91aea134316cd57e1742ae5",
+      "train_sources.npy": "d3bc4479e24426f93792e90c34d82f0e0172691ea541ff81966c46649b08050c"
+    },
+    "qa_row_indices_sha256": "6cf8f78ee2c0c99eea43ad3c6f80fdf7bb1784b2fed1538928c6280e6346b413",
+    "qa_selection_seed": 20261812,
+    "identical_across_arms": true
+  },
+  "scope": {
+    "class_count": 372,
+    "training_pool_rows": 171497,
+    "qa_rows": 2976,
+    "views_per_row": 4,
+    "crohme_rows": 0,
+    "heldout_rows_used": 0
+  },
+  "baseline": {
+    "report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_family_uniform_current_r1\\full_domain_augmentation_audit.json",
+    "report_sha256": "173993572da89da6ae6e6ddd957362a640132f1b080f3de24f313b9a7dd2e69b",
+    "augmentation_engine": "affine_elastic_mix",
+    "parameters": {
+      "rotation_degrees": [
+        -2.5,
+        2.5
+      ],
+      "axis_scale_relative": [
+        -0.055,
+        0.055
+      ],
+      "shear": [
+        -0.025,
+        0.025
+      ],
+      "elastic_control_grid": [
+        5,
+        5
+      ],
+      "elastic_max_control_displacement": 0.012,
+      "elastic_boundary": "pinned",
+      "elastic_jacobian_frobenius_max": 0.35,
+      "elastic_probability": 0.58,
+      "wide_parameter_probability_default": 0.0,
+      "wide_magnitude_multiplier_default": 1.5,
+      "independent_wide_probability_by_parameter": null,
+      "wide_magnitude_multiplier": null,
+      "resolved_wide_probability_by_parameter": {
+        "rotation": 0.28,
+        "axis_scale": 0.22,
+        "shear": 0.25,
+        "elastic": 0.2
+      },
+      "resolved_wide_multiplier_by_parameter": {
+        "rotation": 1.75,
+        "axis_scale": 1.9,
+        "shear": 1.8,
+        "elastic": 1.6
+      },
+      "stroke_local_probability": 0.65,
+      "stroke_local_rotation_degrees": 2.0,
+      "stroke_local_scale_jitter": 0.04,
+      "stroke_local_translation_jitter": 0.006,
+      "stroke_curve_probability": 0.65,
+      "stroke_curve_max_displacement": 0.025,
+      "stroke_curve_max_displacement_by_family": {
+        "arrows": 0.025,
+        "digits": 0.025,
+        "fences": 0.025,
+        "greek": 0.025,
+        "large_ops": 0.025,
+        "latin_lower": 0.025,
+        "latin_upper": 0.025,
+        "operators": 0.025,
+        "other_math": 0.025,
+        "relations": 0.025
+      },
+      "stroke_curve_max_waves": 1,
+      "stroke_curve_shape": "arc-length sinusoidal normal offset with pinned stroke endpoints and no-backtracking gate",
+      "seed": 20261813,
+      "stroke_local_seed": 20261814,
+      "stroke_curve_seed": 20261815
+    },
+    "data_unit_failures": 0,
+    "augmented_data_units_checked": 11904,
+    "wide_selected_rows_by_parameter_total": {
+      "rotation": 3316,
+      "axis_scale": 2528,
+      "shear": 3022,
+      "elastic": 1319
+    },
+    "wide_selected_any_parameter_rows_total_across_views": 7424,
+    "teacher_view_metrics": {
+      "1": {
+        "teacher_top1_label_accuracy": 0.7946908602150538,
+        "teacher_top5_label_accuracy": 0.9862231182795699,
+        "teacher_top1_agreement": 0.9647177419354839
+      },
+      "2": {
+        "teacher_top1_label_accuracy": 0.7973790322580645,
+        "teacher_top5_label_accuracy": 0.9868951612903226,
+        "teacher_top1_agreement": 0.967741935483871
+      },
+      "3": {
+        "teacher_top1_label_accuracy": 0.801747311827957,
+        "teacher_top5_label_accuracy": 0.9872311827956989,
+        "teacher_top1_agreement": 0.9603494623655914
+      },
+      "4": {
+        "teacher_top1_label_accuracy": 0.7956989247311828,
+        "teacher_top5_label_accuracy": 0.9862231182795699,
+        "teacher_top1_agreement": 0.9660618279569892
+      }
+    },
+    "teacher_view_metric_means": {
+      "teacher_top1_label_accuracy": 0.7973790322580645,
+      "teacher_top5_label_accuracy": 0.9866431451612903,
+      "teacher_top1_agreement": 0.9647177419354839
+    },
+    "geometry_diversity": {
+      "scope": "training-pool rows only; raw and global-affine-aligned XY geometry diagnostics, never used for model selection",
+      "view_count": 4,
+      "pairs_per_source_row": 6,
+      "overall": {
+        "pairwise_xy_rms_mean": 0.019901770830051194,
+        "pairwise_xy_rms_p95": 0.03843750994785156,
+        "affine_aligned_residual_xy_rms_mean": 0.005719185029169132,
+        "affine_aligned_residual_xy_rms_p95": 0.010330133068728408,
+        "identical_view_pair_fraction": 0.01310483870967742
+      },
+      "by_class_family": {
+        "arrows": {
+          "source_rows": 232,
+          "pairwise_xy_rms_mean": 0.01745411641242642,
+          "pairwise_xy_rms_p95": 0.032964808666677795,
+          "affine_aligned_residual_xy_rms_mean": 0.006372679622577728,
+          "affine_aligned_residual_xy_rms_p95": 0.0103110140338972,
+          "identical_view_pair_fraction": 0.0
+        },
+        "digits": {
+          "source_rows": 80,
+          "pairwise_xy_rms_mean": 0.01965158831259186,
+          "pairwise_xy_rms_p95": 0.03720941519296575,
+          "affine_aligned_residual_xy_rms_mean": 0.00511592059348671,
+          "affine_aligned_residual_xy_rms_p95": 0.009694081424004769,
+          "identical_view_pair_fraction": 0.0
+        },
+        "fences": {
+          "source_rows": 112,
+          "pairwise_xy_rms_mean": 0.01726061291011807,
+          "pairwise_xy_rms_p95": 0.03478375974364511,
+          "affine_aligned_residual_xy_rms_mean": 0.004539608013906091,
+          "affine_aligned_residual_xy_rms_p95": 0.008873244870855005,
+          "identical_view_pair_fraction": 0.0
+        },
+        "greek": {
+          "source_rows": 368,
+          "pairwise_xy_rms_mean": 0.019957329878650155,
+          "pairwise_xy_rms_p95": 0.03811344780711759,
+          "affine_aligned_residual_xy_rms_mean": 0.005450119644352864,
+          "affine_aligned_residual_xy_rms_p95": 0.009742232422837942,
+          "identical_view_pair_fraction": 0.0
+        },
+        "large_ops": {
+          "source_rows": 72,
+          "pairwise_xy_rms_mean": 0.018047042634435934,
+          "pairwise_xy_rms_p95": 0.03501746723941327,
+          "affine_aligned_residual_xy_rms_mean": 0.006547946874452247,
+          "affine_aligned_residual_xy_rms_p95": 0.010990735532523636,
+          "identical_view_pair_fraction": 0.0
+        },
+        "latin_lower": {
+          "source_rows": 200,
+          "pairwise_xy_rms_mean": 0.019034164415174994,
+          "pairwise_xy_rms_p95": 0.0383377381722059,
+          "affine_aligned_residual_xy_rms_mean": 0.005003920468211023,
+          "affine_aligned_residual_xy_rms_p95": 0.00912301876461743,
+          "identical_view_pair_fraction": 0.0
+        },
+        "latin_upper": {
+          "source_rows": 208,
+          "pairwise_xy_rms_mean": 0.021571497294982922,
+          "pairwise_xy_rms_p95": 0.04157565899286769,
+          "affine_aligned_residual_xy_rms_mean": 0.0057149690107879845,
+          "affine_aligned_residual_xy_rms_p95": 0.010024654552660925,
+          "identical_view_pair_fraction": 0.0
+        },
+        "operators": {
+          "source_rows": 232,
+          "pairwise_xy_rms_mean": 0.02131112252418006,
+          "pairwise_xy_rms_p95": 0.040512122440120396,
+          "affine_aligned_residual_xy_rms_mean": 0.005522195835949418,
+          "affine_aligned_residual_xy_rms_p95": 0.010227372578123999,
+          "identical_view_pair_fraction": 0.008620689655172414
+        },
+        "other_math": {
+          "source_rows": 1200,
+          "pairwise_xy_rms_mean": 0.020100896791824543,
+          "pairwise_xy_rms_p95": 0.03896520656695113,
+          "affine_aligned_residual_xy_rms_mean": 0.0057089246905285725,
+          "affine_aligned_residual_xy_rms_p95": 0.010534114677515923,
+          "identical_view_pair_fraction": 0.030833333333333334
+        },
+        "relations": {
+          "source_rows": 272,
+          "pairwise_xy_rms_mean": 0.02084688937645412,
+          "pairwise_xy_rms_p95": 0.03772982007269003,
+          "affine_aligned_residual_xy_rms_mean": 0.006712023216139006,
+          "affine_aligned_residual_xy_rms_p95": 0.011090570421082005,
+          "identical_view_pair_fraction": 0.0
+        }
+      }
+    },
+    "verified_visual_sample_manifest": {
+      "classes_visually_sampled": 372,
+      "panels_per_class": 5,
+      "page_count": 4,
+      "pages": [
+        {
+          "page": 1,
+          "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_family_uniform_current_r1\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_01.png",
+          "sha256": "6acd14b5369ee8654006a2dd93cf08e49fa15bb17a40f2d858bb7e55294e2948",
+          "bytes": 131369,
+          "width": 1728,
+          "height": 1298,
+          "classes": 96
+        },
+        {
+          "page": 2,
+          "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_family_uniform_current_r1\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_02.png",
+          "sha256": "4e2f6955670b22aa1f14175eeae6099ad474f85d92a10df24983456415ae111a",
+          "bytes": 134418,
+          "width": 1728,
+          "height": 1298,
+          "classes": 96
+        },
+        {
+          "page": 3,
+          "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_family_uniform_current_r1\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_03.png",
+          "sha256": "4ef10541df1e2fad7ffe92d9b260e5101c68beb988d3b094a10640d68b42595e",
+          "bytes": 134323,
+          "width": 1728,
+          "height": 1298,
+          "classes": 96
+        },
+        {
+          "page": 4,
+          "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_family_uniform_current_r1\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_04.png",
+          "sha256": "61504ca33a88dde642ed0bed2242b91ca55dbfbbc2930cda0fa0ee20a73b53bc",
+          "bytes": 108573,
+          "width": 1728,
+          "height": 1192,
+          "classes": 84
+        }
+      ]
+    }
+  },
+  "candidate": {
+    "report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_family_balanced_xover_a\\full_domain_augmentation_audit.json",
+    "report_sha256": "44dcb36f7d0b11af17d087b95dc737940684be4a1e2fd254966a73725fe959b7",
+    "augmentation_engine": "affine_elastic_mix",
+    "parameters": {
+      "rotation_degrees": [
+        -2.5,
+        2.5
+      ],
+      "axis_scale_relative": [
+        -0.055,
+        0.055
+      ],
+      "shear": [
+        -0.025,
+        0.025
+      ],
+      "elastic_control_grid": [
+        5,
+        5
+      ],
+      "elastic_max_control_displacement": 0.012,
+      "elastic_boundary": "pinned",
+      "elastic_jacobian_frobenius_max": 0.35,
+      "elastic_probability": 0.58,
+      "wide_parameter_probability_default": 0.0,
+      "wide_magnitude_multiplier_default": 1.5,
+      "independent_wide_probability_by_parameter": null,
+      "wide_magnitude_multiplier": null,
+      "resolved_wide_probability_by_parameter": {
+        "rotation": 0.28,
+        "axis_scale": 0.22,
+        "shear": 0.25,
+        "elastic": 0.2
+      },
+      "resolved_wide_multiplier_by_parameter": {
+        "rotation": 1.75,
+        "axis_scale": 1.9,
+        "shear": 1.8,
+        "elastic": 1.6
+      },
+      "stroke_local_probability": 0.65,
+      "stroke_local_rotation_degrees": 2.0,
+      "stroke_local_scale_jitter": 0.04,
+      "stroke_local_translation_jitter": 0.006,
+      "stroke_curve_probability": 0.65,
+      "stroke_curve_max_displacement": 0.025,
+      "stroke_curve_max_displacement_by_family": {
+        "arrows": 0.03,
+        "digits": 0.02,
+        "fences": 0.03,
+        "greek": 0.03,
+        "large_ops": 0.03,
+        "latin_lower": 0.03,
+        "latin_upper": 0.02,
+        "operators": 0.03,
+        "other_math": 0.02,
+        "relations": 0.03
+      },
+      "stroke_curve_max_waves": 1,
+      "stroke_curve_shape": "arc-length sinusoidal normal offset with pinned stroke endpoints and no-backtracking gate",
+      "seed": 20261813,
+      "stroke_local_seed": 20261814,
+      "stroke_curve_seed": 20261815
+    },
+    "data_unit_failures": 0,
+    "augmented_data_units_checked": 11904,
+    "wide_selected_rows_by_parameter_total": {
+      "rotation": 3316,
+      "axis_scale": 2528,
+      "shear": 3022,
+      "elastic": 1319
+    },
+    "wide_selected_any_parameter_rows_total_across_views": 7424,
+    "teacher_view_metrics": {
+      "1": {
+        "teacher_top1_label_accuracy": 0.7943548387096774,
+        "teacher_top5_label_accuracy": 0.9862231182795699,
+        "teacher_top1_agreement": 0.9653897849462365
+      },
+      "2": {
+        "teacher_top1_label_accuracy": 0.7973790322580645,
+        "teacher_top5_label_accuracy": 0.9868951612903226,
+        "teacher_top1_agreement": 0.967741935483871
+      },
+      "3": {
+        "teacher_top1_label_accuracy": 0.8014112903225806,
+        "teacher_top5_label_accuracy": 0.9872311827956989,
+        "teacher_top1_agreement": 0.9613575268817204
+      },
+      "4": {
+        "teacher_top1_label_accuracy": 0.7956989247311828,
+        "teacher_top5_label_accuracy": 0.9862231182795699,
+        "teacher_top1_agreement": 0.9660618279569892
+      }
+    },
+    "teacher_view_metric_means": {
+      "teacher_top1_label_accuracy": 0.7972110215053763,
+      "teacher_top5_label_accuracy": 0.9866431451612903,
+      "teacher_top1_agreement": 0.9651377688172043
+    },
+    "geometry_diversity": {
+      "scope": "training-pool rows only; raw and global-affine-aligned XY geometry diagnostics, never used for model selection",
+      "view_count": 4,
+      "pairs_per_source_row": 6,
+      "overall": {
+        "pairwise_xy_rms_mean": 0.019917683969239246,
+        "pairwise_xy_rms_p95": 0.03850617811591103,
+        "affine_aligned_residual_xy_rms_mean": 0.005723342839540259,
+        "affine_aligned_residual_xy_rms_p95": 0.01048023890556073,
+        "identical_view_pair_fraction": 0.01310483870967742
+      },
+      "by_class_family": {
+        "arrows": {
+          "source_rows": 232,
+          "pairwise_xy_rms_mean": 0.017697445705227414,
+          "pairwise_xy_rms_p95": 0.033065159472869,
+          "affine_aligned_residual_xy_rms_mean": 0.006762333649885576,
+          "affine_aligned_residual_xy_rms_p95": 0.011001275190364744,
+          "identical_view_pair_fraction": 0.0
+        },
+        "digits": {
+          "source_rows": 80,
+          "pairwise_xy_rms_mean": 0.01942636014255623,
+          "pairwise_xy_rms_p95": 0.03716885826685989,
+          "affine_aligned_residual_xy_rms_mean": 0.004728718544424388,
+          "affine_aligned_residual_xy_rms_p95": 0.00914662617579395,
+          "identical_view_pair_fraction": 0.0
+        },
+        "fences": {
+          "source_rows": 112,
+          "pairwise_xy_rms_mean": 0.017442855189761228,
+          "pairwise_xy_rms_p95": 0.034969619283821265,
+          "affine_aligned_residual_xy_rms_mean": 0.004781935295529806,
+          "affine_aligned_residual_xy_rms_p95": 0.009835544687630924,
+          "identical_view_pair_fraction": 0.0
+        },
+        "greek": {
+          "source_rows": 368,
+          "pairwise_xy_rms_mean": 0.02015623502933542,
+          "pairwise_xy_rms_p95": 0.03824623142467329,
+          "affine_aligned_residual_xy_rms_mean": 0.005823946907469668,
+          "affine_aligned_residual_xy_rms_p95": 0.010507292879723289,
+          "identical_view_pair_fraction": 0.0
+        },
+        "large_ops": {
+          "source_rows": 72,
+          "pairwise_xy_rms_mean": 0.018323568426703882,
+          "pairwise_xy_rms_p95": 0.03503549341120603,
+          "affine_aligned_residual_xy_rms_mean": 0.006993481623998251,
+          "affine_aligned_residual_xy_rms_p95": 0.011808631137205435,
+          "identical_view_pair_fraction": 0.0
+        },
+        "latin_lower": {
+          "source_rows": 200,
+          "pairwise_xy_rms_mean": 0.019251290715407623,
+          "pairwise_xy_rms_p95": 0.03847177210780139,
+          "affine_aligned_residual_xy_rms_mean": 0.005378693981725115,
+          "affine_aligned_residual_xy_rms_p95": 0.009856034947016026,
+          "identical_view_pair_fraction": 0.0
+        },
+        "latin_upper": {
+          "source_rows": 208,
+          "pairwise_xy_rms_mean": 0.02136906410001445,
+          "pairwise_xy_rms_p95": 0.041558403340196906,
+          "affine_aligned_residual_xy_rms_mean": 0.005296363988225973,
+          "affine_aligned_residual_xy_rms_p95": 0.00927793120945341,
+          "identical_view_pair_fraction": 0.0
+        },
+        "operators": {
+          "source_rows": 232,
+          "pairwise_xy_rms_mean": 0.0215103505168618,
+          "pairwise_xy_rms_p95": 0.04061819632974919,
+          "affine_aligned_residual_xy_rms_mean": 0.005901982638198714,
+          "affine_aligned_residual_xy_rms_p95": 0.01089779606854234,
+          "identical_view_pair_fraction": 0.008620689655172414
+        },
+        "other_math": {
+          "source_rows": 1200,
+          "pairwise_xy_rms_mean": 0.01991670428266446,
+          "pairwise_xy_rms_p95": 0.038847166617141216,
+          "affine_aligned_residual_xy_rms_mean": 0.0053469363815923775,
+          "affine_aligned_residual_xy_rms_p95": 0.009918459400518224,
+          "identical_view_pair_fraction": 0.030833333333333334
+        },
+        "relations": {
+          "source_rows": 272,
+          "pairwise_xy_rms_mean": 0.021100184351740946,
+          "pairwise_xy_rms_p95": 0.0379496968323314,
+          "affine_aligned_residual_xy_rms_mean": 0.007133174162865347,
+          "affine_aligned_residual_xy_rms_p95": 0.011617033670270952,
+          "identical_view_pair_fraction": 0.0
+        }
+      }
+    },
+    "verified_visual_sample_manifest": {
+      "classes_visually_sampled": 372,
+      "panels_per_class": 5,
+      "page_count": 4,
+      "pages": [
+        {
+          "page": 1,
+          "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_family_balanced_xover_a\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_01.png",
+          "sha256": "b2d7c3a14033b0af868a4137eab77c94165e01a659aef35436a3ac973540cf77",
+          "bytes": 131345,
+          "width": 1728,
+          "height": 1298,
+          "classes": 96
+        },
+        {
+          "page": 2,
+          "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_family_balanced_xover_a\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_02.png",
+          "sha256": "11b304cb14eab8d94f905593df87ab18415011d8e1df79f397edf1fe75e87651",
+          "bytes": 134415,
+          "width": 1728,
+          "height": 1298,
+          "classes": 96
+        },
+        {
+          "page": 3,
+          "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_family_balanced_xover_a\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_03.png",
+          "sha256": "2028d69600c447c29d4d156af5200261de68a22ebc19c2aa5a04986e5ecbb59a",
+          "bytes": 134225,
+          "width": 1728,
+          "height": 1298,
+          "classes": 96
+        },
+        {
+          "page": 4,
+          "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_family_balanced_xover_a\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_04.png",
+          "sha256": "753300f68c5a47c52ec8cb63b13cca4a0e57d17a6667fd496d6309fb87c869ac",
+          "bytes": 108702,
+          "width": 1728,
+          "height": 1192,
+          "classes": 84
+        }
+      ]
+    }
+  },
+  "candidate_minus_baseline_mean": {
+    "teacher_top1_label_accuracy": -0.00016801075268824128,
+    "teacher_top5_label_accuracy": 0.0,
+    "teacher_top1_agreement": 0.00042002688172038116
+  },
+  "candidate_minus_baseline_geometry_diversity": {
+    "overall": {
+      "pairwise_xy_rms_mean": 1.591313918805279e-05,
+      "pairwise_xy_rms_p95": 6.866816805947001e-05,
+      "affine_aligned_residual_xy_rms_mean": 4.157810371126398e-06,
+      "affine_aligned_residual_xy_rms_p95": 0.00015010583683232152,
+      "identical_view_pair_fraction": 0.0
+    },
+    "by_class_family": {
+      "arrows": {
+        "pairwise_xy_rms_mean": 0.00024332929280099225,
+        "pairwise_xy_rms_p95": 0.00010035080619120312,
+        "affine_aligned_residual_xy_rms_mean": 0.0003896540273078475,
+        "affine_aligned_residual_xy_rms_p95": 0.0006902611564675448,
+        "identical_view_pair_fraction": 0.0
+      },
+      "digits": {
+        "pairwise_xy_rms_mean": -0.00022522817003562887,
+        "pairwise_xy_rms_p95": -4.0556926105862756e-05,
+        "affine_aligned_residual_xy_rms_mean": -0.0003872020490623216,
+        "affine_aligned_residual_xy_rms_p95": -0.0005474552482108187,
+        "identical_view_pair_fraction": 0.0
+      },
+      "fences": {
+        "pairwise_xy_rms_mean": 0.00018224227964315845,
+        "pairwise_xy_rms_p95": 0.0001858595401761573,
+        "affine_aligned_residual_xy_rms_mean": 0.00024232728162371445,
+        "affine_aligned_residual_xy_rms_p95": 0.0009622998167759193,
+        "identical_view_pair_fraction": 0.0
+      },
+      "greek": {
+        "pairwise_xy_rms_mean": 0.00019890515068526557,
+        "pairwise_xy_rms_p95": 0.00013278361755569845,
+        "affine_aligned_residual_xy_rms_mean": 0.0003738272631168037,
+        "affine_aligned_residual_xy_rms_p95": 0.000765060456885347,
+        "identical_view_pair_fraction": 0.0
+      },
+      "large_ops": {
+        "pairwise_xy_rms_mean": 0.00027652579226794885,
+        "pairwise_xy_rms_p95": 1.802617179275795e-05,
+        "affine_aligned_residual_xy_rms_mean": 0.0004455347495460034,
+        "affine_aligned_residual_xy_rms_p95": 0.0008178956046817985,
+        "identical_view_pair_fraction": 0.0
+      },
+      "latin_lower": {
+        "pairwise_xy_rms_mean": 0.00021712630023262847,
+        "pairwise_xy_rms_p95": 0.00013403393559548865,
+        "affine_aligned_residual_xy_rms_mean": 0.0003747735135140916,
+        "affine_aligned_residual_xy_rms_p95": 0.0007330161823985958,
+        "identical_view_pair_fraction": 0.0
+      },
+      "latin_upper": {
+        "pairwise_xy_rms_mean": -0.00020243319496847031,
+        "pairwise_xy_rms_p95": -1.7255652670786215e-05,
+        "affine_aligned_residual_xy_rms_mean": -0.00041860502256201113,
+        "affine_aligned_residual_xy_rms_p95": -0.0007467233432075157,
+        "identical_view_pair_fraction": 0.0
+      },
+      "operators": {
+        "pairwise_xy_rms_mean": 0.0001992279926817421,
+        "pairwise_xy_rms_p95": 0.00010607388962879244,
+        "affine_aligned_residual_xy_rms_mean": 0.0003797868022492965,
+        "affine_aligned_residual_xy_rms_p95": 0.0006704234904183412,
+        "identical_view_pair_fraction": 0.0
+      },
+      "other_math": {
+        "pairwise_xy_rms_mean": -0.00018419250916008184,
+        "pairwise_xy_rms_p95": -0.00011803994980991162,
+        "affine_aligned_residual_xy_rms_mean": -0.0003619883089361949,
+        "affine_aligned_residual_xy_rms_p95": -0.0006156552769976988,
+        "identical_view_pair_fraction": 0.0
+      },
+      "relations": {
+        "pairwise_xy_rms_mean": 0.0002532949752868281,
+        "pairwise_xy_rms_p95": 0.00021987675964137143,
+        "affine_aligned_residual_xy_rms_mean": 0.0004211509467263409,
+        "affine_aligned_residual_xy_rms_p95": 0.0005264632491889468,
+        "identical_view_pair_fraction": 0.0
+      }
+    }
+  },
+  "interpretation_boundary": "augmentation integrity, frozen-teacher stability, and visual asset integrity only; no student training, recognition-performance claim, model selection, or product promotion",
+  "product_adopted": false
+}

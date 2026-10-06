@@ -1,0 +1,2699 @@
+{
+  "schema": "aiflow-hwr-affine-distillation-experiment/v1",
+  "status": "pass",
+  "provenance": {
+    "prepared_manifest_sha256": "5d66c91b58af7faa529644bfe6915c0ce6ce13eda2c7c6dad3503cf0a6582054",
+    "teacher_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "training_cache_sha256": {
+      "train_features.npy": "72061bc0fd989096729ed613a21e19cab04b92c947efffcd7991b76e139a03f4",
+      "train_labels.npy": "fe60cece651054cf3713d7f62f103fab0bf7a210a91aea134316cd57e1742ae5",
+      "train_sources.npy": "d3bc4479e24426f93792e90c34d82f0e0172691ea541ff81966c46649b08050c"
+    },
+    "qa_row_indices_sha256": "6cf8f78ee2c0c99eea43ad3c6f80fdf7bb1784b2fed1538928c6280e6346b413",
+    "qa_selection_seed": 20261812
+  },
+  "scope": "all 372 frozen mathematical-domain classes: digits, Latin/Greek letters, operators, relations, fences, arrows, large operators, and remaining math symbols",
+  "augmentation_engine": "affine_elastic_mix",
+  "training_pool_rows": 171497,
+  "heldout_rows_used": 0,
+  "crohme_rows": 0,
+  "class_count": 372,
+  "class_family_coverage": {
+    "arrows": 29,
+    "digits": 10,
+    "fences": 14,
+    "greek": 46,
+    "large_ops": 9,
+    "latin_lower": 25,
+    "latin_upper": 26,
+    "operators": 29,
+    "other_math": 150,
+    "relations": 34
+  },
+  "data_unit_validation": {
+    "unique_rows": 2976,
+    "rows_per_class_max": 8,
+    "augmented_views_per_row": 4,
+    "augmented_data_units_checked": 11904,
+    "unit_failures": {
+      "nonspatial_channel_changed": 0,
+      "stroke_start_changed": 0,
+      "invalid_target_id": 0
+    },
+    "unit_failure_total": 0,
+    "all_labels_immutable": true,
+    "all_nonspatial_channels_identical": true,
+    "stroke_count_and_start_positions_preserved": true,
+    "finite_xy_in_unit_square": true,
+    "per_view_transform_diagnostics": [
+      {
+        "view_index": 1,
+        "rows": 2976,
+        "changed": 2935,
+        "reverted": 41,
+        "elastic_probability_requested": 0.58,
+        "elastic_selected_rows": 1787,
+        "elastic_selected_and_changed_rows": 1757,
+        "affine_gate_reverted_rows": 175,
+        "elastic_gate_reverted_rows": 39,
+        "composite_gate_reverted_selected_rows": 39,
+        "identity_output_rows": 41,
+        "rms_mean": 0.01739678531885147,
+        "rms_p95": 0.03152404725551605,
+        "max_point_p95": 0.08013918250799179,
+        "path_ratio_min": 0.0,
+        "path_ratio_max": 1.1294609308242798,
+        "stroke_count_preserved": true,
+        "affine_stage": {
+          "rows": 2976,
+          "accepted": 2801,
+          "reverted": 175,
+          "changed": 2801,
+          "rms_mean": 0.016517139971256256,
+          "rms_p95": 0.03415820747613907,
+          "max_point_p95": 0.08520171046257019,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.1724839210510254,
+          "stroke_count_preserved": true,
+          "orientation_preserving_affine": true
+        },
+        "elastic_stage": {
+          "rows": 2976,
+          "accepted": 2937,
+          "reverted": 39,
+          "changed": 2937,
+          "rms_mean": 0.005951700732111931,
+          "rms_p95": 0.009875432588160038,
+          "max_point_p95": 0.029147159308195114,
+          "jacobian_frobenius_max": 0.3133891224861145,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.0651975870132446,
+          "stroke_count_preserved": true,
+          "orientation_preserving_bound": 0.35,
+          "boundary_pinned": true
+        },
+        "composite_fell_back_to_affine": 39,
+        "severity_mixture": {
+          "independent_wide_probability_by_parameter": null,
+          "wide_magnitude_multiplier": null,
+          "resolved_wide_probability_by_parameter": {
+            "rotation": 0.28,
+            "axis_scale": 0.22,
+            "shear": 0.25,
+            "elastic": 0.2
+          },
+          "resolved_wide_multiplier_by_parameter": {
+            "rotation": 1.75,
+            "axis_scale": 1.9,
+            "shear": 1.8,
+            "elastic": 1.6
+          },
+          "wide_selected_rows_by_parameter": {
+            "rotation": 795,
+            "axis_scale": 598,
+            "shear": 764,
+            "elastic": 338
+          },
+          "wide_selected_any_parameter_rows": 1831
+        },
+        "stroke_local": {
+          "rows": 2976,
+          "selected_rows": 1935,
+          "accepted_rows": 1914,
+          "reverted_rows": 21,
+          "changed_rows": 1914,
+          "rms_mean_selected": 0.008104680106043816,
+          "rms_p95_selected": 0.014471281319856644,
+          "orientation_preserving": true,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 21,
+            "path_ratio_high": 0
+          }
+        },
+        "stroke_curve": {
+          "rows": 2976,
+          "selected_rows": 2533,
+          "accepted_rows": 2408,
+          "reverted_rows": 125,
+          "changed_rows": 2401,
+          "changed_strokes": 4505,
+          "max_displacement_requested": 0.03,
+          "max_waves_requested": 2,
+          "rms_mean_selected": 0.0043660844676196575,
+          "rms_p95_selected": 0.007966903038322926,
+          "direction_reversal_rows": 91,
+          "direction_cosine_p05": 0.9893729090690613,
+          "boundary_attenuated_rows": 2533,
+          "boundary_scale_p05_selected": 0.10005494952201843,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 34,
+            "path_ratio_high": 0,
+            "direction_reversal": 91
+          }
+        }
+      },
+      {
+        "view_index": 2,
+        "rows": 2976,
+        "changed": 2934,
+        "reverted": 42,
+        "elastic_probability_requested": 0.58,
+        "elastic_selected_rows": 1779,
+        "elastic_selected_and_changed_rows": 1756,
+        "affine_gate_reverted_rows": 160,
+        "elastic_gate_reverted_rows": 39,
+        "composite_gate_reverted_selected_rows": 30,
+        "identity_output_rows": 42,
+        "rms_mean": 0.01741868443787098,
+        "rms_p95": 0.031949758529663086,
+        "max_point_p95": 0.08042164146900177,
+        "path_ratio_min": 0.0,
+        "path_ratio_max": 1.165419340133667,
+        "stroke_count_preserved": true,
+        "affine_stage": {
+          "rows": 2976,
+          "accepted": 2816,
+          "reverted": 160,
+          "changed": 2816,
+          "rms_mean": 0.0164045263081789,
+          "rms_p95": 0.0340118333697319,
+          "max_point_p95": 0.08300650119781494,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.1732419729232788,
+          "stroke_count_preserved": true,
+          "orientation_preserving_affine": true
+        },
+        "elastic_stage": {
+          "rows": 2976,
+          "accepted": 2937,
+          "reverted": 39,
+          "changed": 2937,
+          "rms_mean": 0.005994366481900215,
+          "rms_p95": 0.009898962453007698,
+          "max_point_p95": 0.029468229040503502,
+          "jacobian_frobenius_max": 0.31768396496772766,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.1098246574401855,
+          "stroke_count_preserved": true,
+          "orientation_preserving_bound": 0.35,
+          "boundary_pinned": true
+        },
+        "composite_fell_back_to_affine": 30,
+        "severity_mixture": {
+          "independent_wide_probability_by_parameter": null,
+          "wide_magnitude_multiplier": null,
+          "resolved_wide_probability_by_parameter": {
+            "rotation": 0.28,
+            "axis_scale": 0.22,
+            "shear": 0.25,
+            "elastic": 0.2
+          },
+          "resolved_wide_multiplier_by_parameter": {
+            "rotation": 1.75,
+            "axis_scale": 1.9,
+            "shear": 1.8,
+            "elastic": 1.6
+          },
+          "wide_selected_rows_by_parameter": {
+            "rotation": 827,
+            "axis_scale": 631,
+            "shear": 730,
+            "elastic": 374
+          },
+          "wide_selected_any_parameter_rows": 1863
+        },
+        "stroke_local": {
+          "rows": 2976,
+          "selected_rows": 1976,
+          "accepted_rows": 1951,
+          "reverted_rows": 25,
+          "changed_rows": 1951,
+          "rms_mean_selected": 0.007942811585962772,
+          "rms_p95_selected": 0.014125959947705269,
+          "orientation_preserving": true,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 25,
+            "path_ratio_high": 0
+          }
+        },
+        "stroke_curve": {
+          "rows": 2976,
+          "selected_rows": 2562,
+          "accepted_rows": 2439,
+          "reverted_rows": 123,
+          "changed_rows": 2432,
+          "changed_strokes": 4577,
+          "max_displacement_requested": 0.03,
+          "max_waves_requested": 2,
+          "rms_mean_selected": 0.004395413212478161,
+          "rms_p95_selected": 0.007921448908746243,
+          "direction_reversal_rows": 89,
+          "direction_cosine_p05": 0.9895952939987183,
+          "boundary_attenuated_rows": 2562,
+          "boundary_scale_p05_selected": 0.10361496359109879,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 33,
+            "path_ratio_high": 1,
+            "direction_reversal": 89
+          }
+        }
+      },
+      {
+        "view_index": 3,
+        "rows": 2976,
+        "changed": 2933,
+        "reverted": 43,
+        "elastic_probability_requested": 0.58,
+        "elastic_selected_rows": 1668,
+        "elastic_selected_and_changed_rows": 1645,
+        "affine_gate_reverted_rows": 175,
+        "elastic_gate_reverted_rows": 39,
+        "composite_gate_reverted_selected_rows": 36,
+        "identity_output_rows": 43,
+        "rms_mean": 0.017183223739266396,
+        "rms_p95": 0.031191745772957802,
+        "max_point_p95": 0.07865220308303833,
+        "path_ratio_min": 0.0,
+        "path_ratio_max": 1.156596064567566,
+        "stroke_count_preserved": true,
+        "affine_stage": {
+          "rows": 2976,
+          "accepted": 2801,
+          "reverted": 175,
+          "changed": 2801,
+          "rms_mean": 0.01638263277709484,
+          "rms_p95": 0.03440441936254501,
+          "max_point_p95": 0.08449845016002655,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.1723792552947998,
+          "stroke_count_preserved": true,
+          "orientation_preserving_affine": true
+        },
+        "elastic_stage": {
+          "rows": 2976,
+          "accepted": 2937,
+          "reverted": 39,
+          "changed": 2937,
+          "rms_mean": 0.006007031537592411,
+          "rms_p95": 0.010058684274554253,
+          "max_point_p95": 0.02979501709342003,
+          "jacobian_frobenius_max": 0.31907540559768677,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.0446017980575562,
+          "stroke_count_preserved": true,
+          "orientation_preserving_bound": 0.35,
+          "boundary_pinned": true
+        },
+        "composite_fell_back_to_affine": 36,
+        "severity_mixture": {
+          "independent_wide_probability_by_parameter": null,
+          "wide_magnitude_multiplier": null,
+          "resolved_wide_probability_by_parameter": {
+            "rotation": 0.28,
+            "axis_scale": 0.22,
+            "shear": 0.25,
+            "elastic": 0.2
+          },
+          "resolved_wide_multiplier_by_parameter": {
+            "rotation": 1.75,
+            "axis_scale": 1.9,
+            "shear": 1.8,
+            "elastic": 1.6
+          },
+          "wide_selected_rows_by_parameter": {
+            "rotation": 796,
+            "axis_scale": 682,
+            "shear": 751,
+            "elastic": 330
+          },
+          "wide_selected_any_parameter_rows": 1871
+        },
+        "stroke_local": {
+          "rows": 2976,
+          "selected_rows": 1938,
+          "accepted_rows": 1916,
+          "reverted_rows": 22,
+          "changed_rows": 1916,
+          "rms_mean_selected": 0.007920444011688232,
+          "rms_p95_selected": 0.014021065086126328,
+          "orientation_preserving": true,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 22,
+            "path_ratio_high": 0
+          }
+        },
+        "stroke_curve": {
+          "rows": 2976,
+          "selected_rows": 2550,
+          "accepted_rows": 2415,
+          "reverted_rows": 135,
+          "changed_rows": 2409,
+          "changed_strokes": 4504,
+          "max_displacement_requested": 0.03,
+          "max_waves_requested": 2,
+          "rms_mean_selected": 0.004420527257025242,
+          "rms_p95_selected": 0.007918257266283035,
+          "direction_reversal_rows": 101,
+          "direction_cosine_p05": 0.9896813035011292,
+          "boundary_attenuated_rows": 2550,
+          "boundary_scale_p05_selected": 0.10960142314434052,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 33,
+            "path_ratio_high": 1,
+            "direction_reversal": 101
+          }
+        }
+      },
+      {
+        "view_index": 4,
+        "rows": 2976,
+        "changed": 2934,
+        "reverted": 42,
+        "elastic_probability_requested": 0.58,
+        "elastic_selected_rows": 1720,
+        "elastic_selected_and_changed_rows": 1703,
+        "affine_gate_reverted_rows": 174,
+        "elastic_gate_reverted_rows": 39,
+        "composite_gate_reverted_selected_rows": 25,
+        "identity_output_rows": 42,
+        "rms_mean": 0.01733040250837803,
+        "rms_p95": 0.03160882368683815,
+        "max_point_p95": 0.0799487754702568,
+        "path_ratio_min": 0.0,
+        "path_ratio_max": 1.17203950881958,
+        "stroke_count_preserved": true,
+        "affine_stage": {
+          "rows": 2976,
+          "accepted": 2802,
+          "reverted": 174,
+          "changed": 2802,
+          "rms_mean": 0.01643236353993416,
+          "rms_p95": 0.034336697310209274,
+          "max_point_p95": 0.08364614844322205,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.2788194417953491,
+          "stroke_count_preserved": true,
+          "orientation_preserving_affine": true
+        },
+        "elastic_stage": {
+          "rows": 2976,
+          "accepted": 2937,
+          "reverted": 39,
+          "changed": 2937,
+          "rms_mean": 0.0060388389974832535,
+          "rms_p95": 0.00992277730256319,
+          "max_point_p95": 0.029523054137825966,
+          "jacobian_frobenius_max": 0.314564973115921,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.1520600318908691,
+          "stroke_count_preserved": true,
+          "orientation_preserving_bound": 0.35,
+          "boundary_pinned": true
+        },
+        "composite_fell_back_to_affine": 25,
+        "severity_mixture": {
+          "independent_wide_probability_by_parameter": null,
+          "wide_magnitude_multiplier": null,
+          "resolved_wide_probability_by_parameter": {
+            "rotation": 0.28,
+            "axis_scale": 0.22,
+            "shear": 0.25,
+            "elastic": 0.2
+          },
+          "resolved_wide_multiplier_by_parameter": {
+            "rotation": 1.75,
+            "axis_scale": 1.9,
+            "shear": 1.8,
+            "elastic": 1.6
+          },
+          "wide_selected_rows_by_parameter": {
+            "rotation": 822,
+            "axis_scale": 654,
+            "shear": 763,
+            "elastic": 368
+          },
+          "wide_selected_any_parameter_rows": 1873
+        },
+        "stroke_local": {
+          "rows": 2976,
+          "selected_rows": 1951,
+          "accepted_rows": 1925,
+          "reverted_rows": 26,
+          "changed_rows": 1925,
+          "rms_mean_selected": 0.007998031564056873,
+          "rms_p95_selected": 0.01438848115503788,
+          "orientation_preserving": true,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 26,
+            "path_ratio_high": 0
+          }
+        },
+        "stroke_curve": {
+          "rows": 2976,
+          "selected_rows": 2524,
+          "accepted_rows": 2406,
+          "reverted_rows": 118,
+          "changed_rows": 2400,
+          "changed_strokes": 4527,
+          "max_displacement_requested": 0.03,
+          "max_waves_requested": 2,
+          "rms_mean_selected": 0.004401291720569134,
+          "rms_p95_selected": 0.007957461290061474,
+          "direction_reversal_rows": 90,
+          "direction_cosine_p05": 0.9890708923339844,
+          "boundary_attenuated_rows": 2524,
+          "boundary_scale_p05_selected": 0.11270881444215775,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 28,
+            "path_ratio_high": 0,
+            "direction_reversal": 90
+          }
+        }
+      }
+    ],
+    "selected_rows_by_source": {
+      "hwrt": 2658,
+      "uji": 310,
+      "synthetic_equal": 8
+    }
+  },
+  "teacher_robustness_on_qa_rows": {
+    "scope": "training pool only; diagnostic, never used for model selection",
+    "views": [
+      {
+        "view_index": 1,
+        "overall": {
+          "rows": 2976,
+          "teacher_top1_agreement_with_source": 0.9606854838709677,
+          "source_teacher_top1_label_accuracy": 0.8010752688172043,
+          "augmented_teacher_top1_label_accuracy": 0.7940188172043011,
+          "source_teacher_top5_label_accuracy": 0.9865591397849462,
+          "augmented_teacher_top5_label_accuracy": 0.9865591397849462
+        },
+        "by_family": {
+          "arrows": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9870689655172413,
+            "source_teacher_top1_label_accuracy": 0.8103448275862069,
+            "augmented_teacher_top1_label_accuracy": 0.8232758620689655,
+            "source_teacher_top5_label_accuracy": 0.9956896551724138,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "digits": {
+            "rows": 80,
+            "teacher_top1_agreement_with_source": 0.95,
+            "source_teacher_top1_label_accuracy": 0.85,
+            "augmented_teacher_top1_label_accuracy": 0.85,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 0.9875
+          },
+          "fences": {
+            "rows": 112,
+            "teacher_top1_agreement_with_source": 0.9553571428571429,
+            "source_teacher_top1_label_accuracy": 0.9732142857142857,
+            "augmented_teacher_top1_label_accuracy": 0.9464285714285714,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "greek": {
+            "rows": 368,
+            "teacher_top1_agreement_with_source": 0.9755434782608695,
+            "source_teacher_top1_label_accuracy": 0.8260869565217391,
+            "augmented_teacher_top1_label_accuracy": 0.8125,
+            "source_teacher_top5_label_accuracy": 0.967391304347826,
+            "augmented_teacher_top5_label_accuracy": 0.967391304347826
+          },
+          "large_ops": {
+            "rows": 72,
+            "teacher_top1_agreement_with_source": 0.9027777777777778,
+            "source_teacher_top1_label_accuracy": 0.7638888888888888,
+            "augmented_teacher_top1_label_accuracy": 0.7361111111111112,
+            "source_teacher_top5_label_accuracy": 0.9722222222222222,
+            "augmented_teacher_top5_label_accuracy": 0.9722222222222222
+          },
+          "latin_lower": {
+            "rows": 200,
+            "teacher_top1_agreement_with_source": 0.935,
+            "source_teacher_top1_label_accuracy": 0.66,
+            "augmented_teacher_top1_label_accuracy": 0.665,
+            "source_teacher_top5_label_accuracy": 0.985,
+            "augmented_teacher_top5_label_accuracy": 0.985
+          },
+          "latin_upper": {
+            "rows": 208,
+            "teacher_top1_agreement_with_source": 0.9326923076923077,
+            "source_teacher_top1_label_accuracy": 0.8076923076923077,
+            "augmented_teacher_top1_label_accuracy": 0.7788461538461539,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 0.9951923076923077
+          },
+          "operators": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.978448275862069,
+            "source_teacher_top1_label_accuracy": 0.9008620689655172,
+            "augmented_teacher_top1_label_accuracy": 0.9008620689655172,
+            "source_teacher_top5_label_accuracy": 0.9913793103448276,
+            "augmented_teacher_top5_label_accuracy": 0.9913793103448276
+          },
+          "other_math": {
+            "rows": 1200,
+            "teacher_top1_agreement_with_source": 0.96,
+            "source_teacher_top1_label_accuracy": 0.7808333333333334,
+            "augmented_teacher_top1_label_accuracy": 0.7733333333333333,
+            "source_teacher_top5_label_accuracy": 0.9841666666666666,
+            "augmented_teacher_top5_label_accuracy": 0.985
+          },
+          "relations": {
+            "rows": 272,
+            "teacher_top1_agreement_with_source": 0.9669117647058824,
+            "source_teacher_top1_label_accuracy": 0.7867647058823529,
+            "augmented_teacher_top1_label_accuracy": 0.7867647058823529,
+            "source_teacher_top5_label_accuracy": 0.9963235294117647,
+            "augmented_teacher_top5_label_accuracy": 0.9963235294117647
+          }
+        },
+        "by_source": {
+          "hwrt": {
+            "rows": 2658,
+            "teacher_top1_agreement_with_source": 0.9642588412340105,
+            "source_teacher_top1_label_accuracy": 0.8073739653875094,
+            "augmented_teacher_top1_label_accuracy": 0.8009781790820165,
+            "source_teacher_top5_label_accuracy": 0.9853273137697517,
+            "augmented_teacher_top5_label_accuracy": 0.9860797592174567
+          },
+          "synthetic_equal": {
+            "rows": 8,
+            "teacher_top1_agreement_with_source": 1.0,
+            "source_teacher_top1_label_accuracy": 0.75,
+            "augmented_teacher_top1_label_accuracy": 0.75,
+            "source_teacher_top5_label_accuracy": 0.875,
+            "augmented_teacher_top5_label_accuracy": 0.875
+          },
+          "uji": {
+            "rows": 310,
+            "teacher_top1_agreement_with_source": 0.9290322580645162,
+            "source_teacher_top1_label_accuracy": 0.7483870967741936,
+            "augmented_teacher_top1_label_accuracy": 0.7354838709677419,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 0.9935483870967742
+          }
+        }
+      },
+      {
+        "view_index": 2,
+        "overall": {
+          "rows": 2976,
+          "teacher_top1_agreement_with_source": 0.9593413978494624,
+          "source_teacher_top1_label_accuracy": 0.8010752688172043,
+          "augmented_teacher_top1_label_accuracy": 0.800739247311828,
+          "source_teacher_top5_label_accuracy": 0.9865591397849462,
+          "augmented_teacher_top5_label_accuracy": 0.9868951612903226
+        },
+        "by_family": {
+          "arrows": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9655172413793104,
+            "source_teacher_top1_label_accuracy": 0.8103448275862069,
+            "augmented_teacher_top1_label_accuracy": 0.8103448275862069,
+            "source_teacher_top5_label_accuracy": 0.9956896551724138,
+            "augmented_teacher_top5_label_accuracy": 0.9956896551724138
+          },
+          "digits": {
+            "rows": 80,
+            "teacher_top1_agreement_with_source": 0.9625,
+            "source_teacher_top1_label_accuracy": 0.85,
+            "augmented_teacher_top1_label_accuracy": 0.8375,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 0.9875
+          },
+          "fences": {
+            "rows": 112,
+            "teacher_top1_agreement_with_source": 0.9553571428571429,
+            "source_teacher_top1_label_accuracy": 0.9732142857142857,
+            "augmented_teacher_top1_label_accuracy": 0.9464285714285714,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "greek": {
+            "rows": 368,
+            "teacher_top1_agreement_with_source": 0.9619565217391305,
+            "source_teacher_top1_label_accuracy": 0.8260869565217391,
+            "augmented_teacher_top1_label_accuracy": 0.8152173913043478,
+            "source_teacher_top5_label_accuracy": 0.967391304347826,
+            "augmented_teacher_top5_label_accuracy": 0.970108695652174
+          },
+          "large_ops": {
+            "rows": 72,
+            "teacher_top1_agreement_with_source": 1.0,
+            "source_teacher_top1_label_accuracy": 0.7638888888888888,
+            "augmented_teacher_top1_label_accuracy": 0.7638888888888888,
+            "source_teacher_top5_label_accuracy": 0.9722222222222222,
+            "augmented_teacher_top5_label_accuracy": 0.9722222222222222
+          },
+          "latin_lower": {
+            "rows": 200,
+            "teacher_top1_agreement_with_source": 0.955,
+            "source_teacher_top1_label_accuracy": 0.66,
+            "augmented_teacher_top1_label_accuracy": 0.655,
+            "source_teacher_top5_label_accuracy": 0.985,
+            "augmented_teacher_top5_label_accuracy": 0.985
+          },
+          "latin_upper": {
+            "rows": 208,
+            "teacher_top1_agreement_with_source": 0.9519230769230769,
+            "source_teacher_top1_label_accuracy": 0.8076923076923077,
+            "augmented_teacher_top1_label_accuracy": 0.7932692307692307,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "operators": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9655172413793104,
+            "source_teacher_top1_label_accuracy": 0.9008620689655172,
+            "augmented_teacher_top1_label_accuracy": 0.896551724137931,
+            "source_teacher_top5_label_accuracy": 0.9913793103448276,
+            "augmented_teacher_top5_label_accuracy": 0.9913793103448276
+          },
+          "other_math": {
+            "rows": 1200,
+            "teacher_top1_agreement_with_source": 0.9541666666666667,
+            "source_teacher_top1_label_accuracy": 0.7808333333333334,
+            "augmented_teacher_top1_label_accuracy": 0.7875,
+            "source_teacher_top5_label_accuracy": 0.9841666666666666,
+            "augmented_teacher_top5_label_accuracy": 0.985
+          },
+          "relations": {
+            "rows": 272,
+            "teacher_top1_agreement_with_source": 0.9669117647058824,
+            "source_teacher_top1_label_accuracy": 0.7867647058823529,
+            "augmented_teacher_top1_label_accuracy": 0.8014705882352942,
+            "source_teacher_top5_label_accuracy": 0.9963235294117647,
+            "augmented_teacher_top5_label_accuracy": 0.9963235294117647
+          }
+        },
+        "by_source": {
+          "hwrt": {
+            "rows": 2658,
+            "teacher_top1_agreement_with_source": 0.9589917231000753,
+            "source_teacher_top1_label_accuracy": 0.8073739653875094,
+            "augmented_teacher_top1_label_accuracy": 0.8073739653875094,
+            "source_teacher_top5_label_accuracy": 0.9853273137697517,
+            "augmented_teacher_top5_label_accuracy": 0.9860797592174567
+          },
+          "synthetic_equal": {
+            "rows": 8,
+            "teacher_top1_agreement_with_source": 0.875,
+            "source_teacher_top1_label_accuracy": 0.75,
+            "augmented_teacher_top1_label_accuracy": 0.75,
+            "source_teacher_top5_label_accuracy": 0.875,
+            "augmented_teacher_top5_label_accuracy": 0.875
+          },
+          "uji": {
+            "rows": 310,
+            "teacher_top1_agreement_with_source": 0.964516129032258,
+            "source_teacher_top1_label_accuracy": 0.7483870967741936,
+            "augmented_teacher_top1_label_accuracy": 0.7451612903225806,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 0.9967741935483871
+          }
+        }
+      },
+      {
+        "view_index": 3,
+        "overall": {
+          "rows": 2976,
+          "teacher_top1_agreement_with_source": 0.9637096774193549,
+          "source_teacher_top1_label_accuracy": 0.8010752688172043,
+          "augmented_teacher_top1_label_accuracy": 0.793010752688172,
+          "source_teacher_top5_label_accuracy": 0.9865591397849462,
+          "augmented_teacher_top5_label_accuracy": 0.9862231182795699
+        },
+        "by_family": {
+          "arrows": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9827586206896551,
+            "source_teacher_top1_label_accuracy": 0.8103448275862069,
+            "augmented_teacher_top1_label_accuracy": 0.8146551724137931,
+            "source_teacher_top5_label_accuracy": 0.9956896551724138,
+            "augmented_teacher_top5_label_accuracy": 0.9956896551724138
+          },
+          "digits": {
+            "rows": 80,
+            "teacher_top1_agreement_with_source": 0.9625,
+            "source_teacher_top1_label_accuracy": 0.85,
+            "augmented_teacher_top1_label_accuracy": 0.875,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "fences": {
+            "rows": 112,
+            "teacher_top1_agreement_with_source": 0.9732142857142857,
+            "source_teacher_top1_label_accuracy": 0.9732142857142857,
+            "augmented_teacher_top1_label_accuracy": 0.9464285714285714,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "greek": {
+            "rows": 368,
+            "teacher_top1_agreement_with_source": 0.967391304347826,
+            "source_teacher_top1_label_accuracy": 0.8260869565217391,
+            "augmented_teacher_top1_label_accuracy": 0.8125,
+            "source_teacher_top5_label_accuracy": 0.967391304347826,
+            "augmented_teacher_top5_label_accuracy": 0.9728260869565217
+          },
+          "large_ops": {
+            "rows": 72,
+            "teacher_top1_agreement_with_source": 0.9722222222222222,
+            "source_teacher_top1_label_accuracy": 0.7638888888888888,
+            "augmented_teacher_top1_label_accuracy": 0.7361111111111112,
+            "source_teacher_top5_label_accuracy": 0.9722222222222222,
+            "augmented_teacher_top5_label_accuracy": 0.9722222222222222
+          },
+          "latin_lower": {
+            "rows": 200,
+            "teacher_top1_agreement_with_source": 0.94,
+            "source_teacher_top1_label_accuracy": 0.66,
+            "augmented_teacher_top1_label_accuracy": 0.635,
+            "source_teacher_top5_label_accuracy": 0.985,
+            "augmented_teacher_top5_label_accuracy": 0.99
+          },
+          "latin_upper": {
+            "rows": 208,
+            "teacher_top1_agreement_with_source": 0.9423076923076923,
+            "source_teacher_top1_label_accuracy": 0.8076923076923077,
+            "augmented_teacher_top1_label_accuracy": 0.8028846153846154,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "operators": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9655172413793104,
+            "source_teacher_top1_label_accuracy": 0.9008620689655172,
+            "augmented_teacher_top1_label_accuracy": 0.9008620689655172,
+            "source_teacher_top5_label_accuracy": 0.9913793103448276,
+            "augmented_teacher_top5_label_accuracy": 0.9913793103448276
+          },
+          "other_math": {
+            "rows": 1200,
+            "teacher_top1_agreement_with_source": 0.9658333333333333,
+            "source_teacher_top1_label_accuracy": 0.7808333333333334,
+            "augmented_teacher_top1_label_accuracy": 0.7725,
+            "source_teacher_top5_label_accuracy": 0.9841666666666666,
+            "augmented_teacher_top5_label_accuracy": 0.9816666666666667
+          },
+          "relations": {
+            "rows": 272,
+            "teacher_top1_agreement_with_source": 0.9595588235294118,
+            "source_teacher_top1_label_accuracy": 0.7867647058823529,
+            "augmented_teacher_top1_label_accuracy": 0.7830882352941176,
+            "source_teacher_top5_label_accuracy": 0.9963235294117647,
+            "augmented_teacher_top5_label_accuracy": 0.9926470588235294
+          }
+        },
+        "by_source": {
+          "hwrt": {
+            "rows": 2658,
+            "teacher_top1_agreement_with_source": 0.9650112866817155,
+            "source_teacher_top1_label_accuracy": 0.8073739653875094,
+            "augmented_teacher_top1_label_accuracy": 0.7987208427389014,
+            "source_teacher_top5_label_accuracy": 0.9853273137697517,
+            "augmented_teacher_top5_label_accuracy": 0.9849510910458992
+          },
+          "synthetic_equal": {
+            "rows": 8,
+            "teacher_top1_agreement_with_source": 0.875,
+            "source_teacher_top1_label_accuracy": 0.75,
+            "augmented_teacher_top1_label_accuracy": 0.75,
+            "source_teacher_top5_label_accuracy": 0.875,
+            "augmented_teacher_top5_label_accuracy": 0.875
+          },
+          "uji": {
+            "rows": 310,
+            "teacher_top1_agreement_with_source": 0.9548387096774194,
+            "source_teacher_top1_label_accuracy": 0.7483870967741936,
+            "augmented_teacher_top1_label_accuracy": 0.7451612903225806,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          }
+        }
+      },
+      {
+        "view_index": 4,
+        "overall": {
+          "rows": 2976,
+          "teacher_top1_agreement_with_source": 0.9616935483870968,
+          "source_teacher_top1_label_accuracy": 0.8010752688172043,
+          "augmented_teacher_top1_label_accuracy": 0.7970430107526881,
+          "source_teacher_top5_label_accuracy": 0.9865591397849462,
+          "augmented_teacher_top5_label_accuracy": 0.9862231182795699
+        },
+        "by_family": {
+          "arrows": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9827586206896551,
+            "source_teacher_top1_label_accuracy": 0.8103448275862069,
+            "augmented_teacher_top1_label_accuracy": 0.8103448275862069,
+            "source_teacher_top5_label_accuracy": 0.9956896551724138,
+            "augmented_teacher_top5_label_accuracy": 0.9956896551724138
+          },
+          "digits": {
+            "rows": 80,
+            "teacher_top1_agreement_with_source": 0.975,
+            "source_teacher_top1_label_accuracy": 0.85,
+            "augmented_teacher_top1_label_accuracy": 0.85,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 0.9875
+          },
+          "fences": {
+            "rows": 112,
+            "teacher_top1_agreement_with_source": 0.9732142857142857,
+            "source_teacher_top1_label_accuracy": 0.9732142857142857,
+            "augmented_teacher_top1_label_accuracy": 0.9642857142857143,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "greek": {
+            "rows": 368,
+            "teacher_top1_agreement_with_source": 0.9728260869565217,
+            "source_teacher_top1_label_accuracy": 0.8260869565217391,
+            "augmented_teacher_top1_label_accuracy": 0.8233695652173914,
+            "source_teacher_top5_label_accuracy": 0.967391304347826,
+            "augmented_teacher_top5_label_accuracy": 0.967391304347826
+          },
+          "large_ops": {
+            "rows": 72,
+            "teacher_top1_agreement_with_source": 0.9305555555555556,
+            "source_teacher_top1_label_accuracy": 0.7638888888888888,
+            "augmented_teacher_top1_label_accuracy": 0.7777777777777778,
+            "source_teacher_top5_label_accuracy": 0.9722222222222222,
+            "augmented_teacher_top5_label_accuracy": 0.9722222222222222
+          },
+          "latin_lower": {
+            "rows": 200,
+            "teacher_top1_agreement_with_source": 0.92,
+            "source_teacher_top1_label_accuracy": 0.66,
+            "augmented_teacher_top1_label_accuracy": 0.64,
+            "source_teacher_top5_label_accuracy": 0.985,
+            "augmented_teacher_top5_label_accuracy": 0.985
+          },
+          "latin_upper": {
+            "rows": 208,
+            "teacher_top1_agreement_with_source": 0.9519230769230769,
+            "source_teacher_top1_label_accuracy": 0.8076923076923077,
+            "augmented_teacher_top1_label_accuracy": 0.8125,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "operators": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9612068965517241,
+            "source_teacher_top1_label_accuracy": 0.9008620689655172,
+            "augmented_teacher_top1_label_accuracy": 0.9137931034482759,
+            "source_teacher_top5_label_accuracy": 0.9913793103448276,
+            "augmented_teacher_top5_label_accuracy": 0.9913793103448276
+          },
+          "other_math": {
+            "rows": 1200,
+            "teacher_top1_agreement_with_source": 0.9641666666666666,
+            "source_teacher_top1_label_accuracy": 0.7808333333333334,
+            "augmented_teacher_top1_label_accuracy": 0.7733333333333333,
+            "source_teacher_top5_label_accuracy": 0.9841666666666666,
+            "augmented_teacher_top5_label_accuracy": 0.985
+          },
+          "relations": {
+            "rows": 272,
+            "teacher_top1_agreement_with_source": 0.9558823529411765,
+            "source_teacher_top1_label_accuracy": 0.7867647058823529,
+            "augmented_teacher_top1_label_accuracy": 0.7794117647058824,
+            "source_teacher_top5_label_accuracy": 0.9963235294117647,
+            "augmented_teacher_top5_label_accuracy": 0.9926470588235294
+          }
+        },
+        "by_source": {
+          "hwrt": {
+            "rows": 2658,
+            "teacher_top1_agreement_with_source": 0.963882618510158,
+            "source_teacher_top1_label_accuracy": 0.8073739653875094,
+            "augmented_teacher_top1_label_accuracy": 0.8036117381489842,
+            "source_teacher_top5_label_accuracy": 0.9853273137697517,
+            "augmented_teacher_top5_label_accuracy": 0.9853273137697517
+          },
+          "synthetic_equal": {
+            "rows": 8,
+            "teacher_top1_agreement_with_source": 1.0,
+            "source_teacher_top1_label_accuracy": 0.75,
+            "augmented_teacher_top1_label_accuracy": 0.75,
+            "source_teacher_top5_label_accuracy": 0.875,
+            "augmented_teacher_top5_label_accuracy": 0.875
+          },
+          "uji": {
+            "rows": 310,
+            "teacher_top1_agreement_with_source": 0.9419354838709677,
+            "source_teacher_top1_label_accuracy": 0.7483870967741936,
+            "augmented_teacher_top1_label_accuracy": 0.7419354838709677,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 0.9967741935483871
+          }
+        }
+      }
+    ]
+  },
+  "augmentation_diversity_geometry_only": {
+    "status": "measured",
+    "scope": "training-pool rows only; XY geometry diagnostic, never used for model selection",
+    "view_count": 4,
+    "pairs_per_source_row": 6,
+    "identity_tolerance_xy": 1e-08,
+    "overall": {
+      "source_rows": 2976,
+      "pairwise_xy_rms_mean": 0.02403944458183027,
+      "pairwise_xy_rms_median": 0.022367267189758767,
+      "pairwise_xy_rms_p95": 0.044142292028780825,
+      "identical_view_pair_fraction": 0.01316084229390681,
+      "source_rows_with_any_identical_pair_fraction": 0.013440860215053764,
+      "source_rows_with_all_views_distinct_fraction": 0.9865591397849462
+    },
+    "by_class_family": {
+      "arrows": {
+        "source_rows": 232,
+        "pairwise_xy_rms_mean": 0.020558083037705236,
+        "pairwise_xy_rms_median": 0.018430531308995725,
+        "pairwise_xy_rms_p95": 0.038629961546900266,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "digits": {
+        "source_rows": 80,
+        "pairwise_xy_rms_mean": 0.023902104657420674,
+        "pairwise_xy_rms_median": 0.022268880767747183,
+        "pairwise_xy_rms_p95": 0.04350595005284712,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "fences": {
+        "source_rows": 112,
+        "pairwise_xy_rms_mean": 0.021689785459914523,
+        "pairwise_xy_rms_median": 0.019404487750865194,
+        "pairwise_xy_rms_p95": 0.041782585130854706,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "greek": {
+        "source_rows": 368,
+        "pairwise_xy_rms_mean": 0.02415974776392184,
+        "pairwise_xy_rms_median": 0.022422800088936476,
+        "pairwise_xy_rms_p95": 0.044102689684650614,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "large_ops": {
+        "source_rows": 72,
+        "pairwise_xy_rms_mean": 0.022995474891006035,
+        "pairwise_xy_rms_median": 0.021533648374200277,
+        "pairwise_xy_rms_p95": 0.04109202045540894,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "latin_lower": {
+        "source_rows": 200,
+        "pairwise_xy_rms_mean": 0.02315635899557895,
+        "pairwise_xy_rms_median": 0.021091399524499357,
+        "pairwise_xy_rms_p95": 0.043139172068169106,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "latin_upper": {
+        "source_rows": 208,
+        "pairwise_xy_rms_mean": 0.025502541888818717,
+        "pairwise_xy_rms_median": 0.023927001190401823,
+        "pairwise_xy_rms_p95": 0.04496679643581224,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "operators": {
+        "source_rows": 232,
+        "pairwise_xy_rms_mean": 0.025408833778775515,
+        "pairwise_xy_rms_median": 0.023670466074362035,
+        "pairwise_xy_rms_p95": 0.04679470479447533,
+        "identical_view_pair_fraction": 0.008620689655172414,
+        "source_rows_with_any_identical_pair_fraction": 0.008620689655172414,
+        "source_rows_with_all_views_distinct_fraction": 0.9913793103448276
+      },
+      "other_math": {
+        "source_rows": 1200,
+        "pairwise_xy_rms_mean": 0.02432327744294687,
+        "pairwise_xy_rms_median": 0.022972158803163598,
+        "pairwise_xy_rms_p95": 0.044719710838765366,
+        "identical_view_pair_fraction": 0.030972222222222224,
+        "source_rows_with_any_identical_pair_fraction": 0.03166666666666667,
+        "source_rows_with_all_views_distinct_fraction": 0.9683333333333334
+      },
+      "relations": {
+        "source_rows": 272,
+        "pairwise_xy_rms_mean": 0.02524060006322529,
+        "pairwise_xy_rms_median": 0.023303558116039933,
+        "pairwise_xy_rms_p95": 0.0451989714861663,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      }
+    }
+  },
+  "teacher_visual_representative_stability": [
+    {
+      "view_index": 0,
+      "classes": 372,
+      "top1_hits": 307,
+      "prediction_changed_from_original": 0
+    },
+    {
+      "view_index": 1,
+      "classes": 372,
+      "top1_hits": 306,
+      "prediction_changed_from_original": 14,
+      "top1_delta_from_original": -1
+    },
+    {
+      "view_index": 2,
+      "classes": 372,
+      "top1_hits": 308,
+      "prediction_changed_from_original": 14,
+      "top1_delta_from_original": 1
+    },
+    {
+      "view_index": 3,
+      "classes": 372,
+      "top1_hits": 307,
+      "prediction_changed_from_original": 12,
+      "top1_delta_from_original": 0
+    },
+    {
+      "view_index": 4,
+      "classes": 372,
+      "top1_hits": 304,
+      "prediction_changed_from_original": 15,
+      "top1_delta_from_original": -3
+    }
+  ],
+  "image_sample_verification": {
+    "classes_visually_sampled": 372,
+    "panels_per_class": 5,
+    "augmentation_engine": "affine_elastic_mix",
+    "images": [
+      {
+        "label": "+",
+        "page": 1
+      },
+      {
+        "label": "-",
+        "page": 1
+      },
+      {
+        "label": "/",
+        "page": 1
+      },
+      {
+        "label": "0",
+        "page": 1
+      },
+      {
+        "label": "1",
+        "page": 1
+      },
+      {
+        "label": "2",
+        "page": 1
+      },
+      {
+        "label": "3",
+        "page": 1
+      },
+      {
+        "label": "4",
+        "page": 1
+      },
+      {
+        "label": "5",
+        "page": 1
+      },
+      {
+        "label": "6",
+        "page": 1
+      },
+      {
+        "label": "7",
+        "page": 1
+      },
+      {
+        "label": "8",
+        "page": 1
+      },
+      {
+        "label": "9",
+        "page": 1
+      },
+      {
+        "label": "<",
+        "page": 1
+      },
+      {
+        "label": ">",
+        "page": 1
+      },
+      {
+        "label": "A",
+        "page": 1
+      },
+      {
+        "label": "B",
+        "page": 1
+      },
+      {
+        "label": "C",
+        "page": 1
+      },
+      {
+        "label": "D",
+        "page": 1
+      },
+      {
+        "label": "E",
+        "page": 1
+      },
+      {
+        "label": "F",
+        "page": 1
+      },
+      {
+        "label": "G",
+        "page": 1
+      },
+      {
+        "label": "H",
+        "page": 1
+      },
+      {
+        "label": "I",
+        "page": 1
+      },
+      {
+        "label": "J",
+        "page": 1
+      },
+      {
+        "label": "K",
+        "page": 1
+      },
+      {
+        "label": "L",
+        "page": 1
+      },
+      {
+        "label": "M",
+        "page": 1
+      },
+      {
+        "label": "N",
+        "page": 1
+      },
+      {
+        "label": "O",
+        "page": 1
+      },
+      {
+        "label": "P",
+        "page": 1
+      },
+      {
+        "label": "Q",
+        "page": 1
+      },
+      {
+        "label": "R",
+        "page": 1
+      },
+      {
+        "label": "S",
+        "page": 1
+      },
+      {
+        "label": "T",
+        "page": 1
+      },
+      {
+        "label": "U",
+        "page": 1
+      },
+      {
+        "label": "V",
+        "page": 1
+      },
+      {
+        "label": "W",
+        "page": 1
+      },
+      {
+        "label": "X",
+        "page": 1
+      },
+      {
+        "label": "Y",
+        "page": 1
+      },
+      {
+        "label": "Z",
+        "page": 1
+      },
+      {
+        "label": "[",
+        "page": 1
+      },
+      {
+        "label": "\\#",
+        "page": 1
+      },
+      {
+        "label": "\\$",
+        "page": 1
+      },
+      {
+        "label": "\\%",
+        "page": 1
+      },
+      {
+        "label": "\\&",
+        "page": 1
+      },
+      {
+        "label": "\\AA",
+        "page": 1
+      },
+      {
+        "label": "\\AE",
+        "page": 1
+      },
+      {
+        "label": "\\Bowtie",
+        "page": 1
+      },
+      {
+        "label": "\\Delta",
+        "page": 1
+      },
+      {
+        "label": "\\Downarrow",
+        "page": 1
+      },
+      {
+        "label": "\\Gamma",
+        "page": 1
+      },
+      {
+        "label": "\\Im",
+        "page": 1
+      },
+      {
+        "label": "\\L",
+        "page": 1
+      },
+      {
+        "label": "\\Lambda",
+        "page": 1
+      },
+      {
+        "label": "\\Leftarrow",
+        "page": 1
+      },
+      {
+        "label": "\\Leftrightarrow",
+        "page": 1
+      },
+      {
+        "label": "\\Longleftrightarrow",
+        "page": 1
+      },
+      {
+        "label": "\\Longrightarrow",
+        "page": 1
+      },
+      {
+        "label": "\\O",
+        "page": 1
+      },
+      {
+        "label": "\\Omega",
+        "page": 1
+      },
+      {
+        "label": "\\Phi",
+        "page": 1
+      },
+      {
+        "label": "\\Pi",
+        "page": 1
+      },
+      {
+        "label": "\\Psi",
+        "page": 1
+      },
+      {
+        "label": "\\Re",
+        "page": 1
+      },
+      {
+        "label": "\\Rightarrow",
+        "page": 1
+      },
+      {
+        "label": "\\S",
+        "page": 1
+      },
+      {
+        "label": "\\Sigma",
+        "page": 1
+      },
+      {
+        "label": "\\Theta",
+        "page": 1
+      },
+      {
+        "label": "\\Vdash",
+        "page": 1
+      },
+      {
+        "label": "\\Xi",
+        "page": 1
+      },
+      {
+        "label": "\\aa",
+        "page": 1
+      },
+      {
+        "label": "\\ae",
+        "page": 1
+      },
+      {
+        "label": "\\aleph",
+        "page": 1
+      },
+      {
+        "label": "\\alpha",
+        "page": 1
+      },
+      {
+        "label": "\\amalg",
+        "page": 1
+      },
+      {
+        "label": "\\angle",
+        "page": 1
+      },
+      {
+        "label": "\\approx",
+        "page": 1
+      },
+      {
+        "label": "\\ast",
+        "page": 1
+      },
+      {
+        "label": "\\astrosun",
+        "page": 1
+      },
+      {
+        "label": "\\asymp",
+        "page": 1
+      },
+      {
+        "label": "\\backsim",
+        "page": 1
+      },
+      {
+        "label": "\\backslash",
+        "page": 1
+      },
+      {
+        "label": "\\barwedge",
+        "page": 1
+      },
+      {
+        "label": "\\because",
+        "page": 1
+      },
+      {
+        "label": "\\beta",
+        "page": 1
+      },
+      {
+        "label": "\\between",
+        "page": 1
+      },
+      {
+        "label": "\\blacksquare",
+        "page": 1
+      },
+      {
+        "label": "\\blacktriangleright",
+        "page": 1
+      },
+      {
+        "label": "\\bot",
+        "page": 1
+      },
+      {
+        "label": "\\bowtie",
+        "page": 1
+      },
+      {
+        "label": "\\boxdot",
+        "page": 1
+      },
+      {
+        "label": "\\boxplus",
+        "page": 1
+      },
+      {
+        "label": "\\boxtimes",
+        "page": 1
+      },
+      {
+        "label": "\\bullet",
+        "page": 1
+      },
+      {
+        "label": "\\cap",
+        "page": 1
+      },
+      {
+        "page_image": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261002\\stroke_curve_v27_pairwise_20261003_r1\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_01.png",
+        "classes": 96
+      },
+      {
+        "label": "\\cdot",
+        "page": 2
+      },
+      {
+        "label": "\\celsius",
+        "page": 2
+      },
+      {
+        "label": "\\checked",
+        "page": 2
+      },
+      {
+        "label": "\\checkmark",
+        "page": 2
+      },
+      {
+        "label": "\\chi",
+        "page": 2
+      },
+      {
+        "label": "\\circ",
+        "page": 2
+      },
+      {
+        "label": "\\circlearrowleft",
+        "page": 2
+      },
+      {
+        "label": "\\circlearrowright",
+        "page": 2
+      },
+      {
+        "label": "\\circledR",
+        "page": 2
+      },
+      {
+        "label": "\\circledast",
+        "page": 2
+      },
+      {
+        "label": "\\circledcirc",
+        "page": 2
+      },
+      {
+        "label": "\\clubsuit",
+        "page": 2
+      },
+      {
+        "label": "\\cong",
+        "page": 2
+      },
+      {
+        "label": "\\coprod",
+        "page": 2
+      },
+      {
+        "label": "\\copyright",
+        "page": 2
+      },
+      {
+        "label": "\\cup",
+        "page": 2
+      },
+      {
+        "label": "\\curvearrowright",
+        "page": 2
+      },
+      {
+        "label": "\\dag",
+        "page": 2
+      },
+      {
+        "label": "\\dashv",
+        "page": 2
+      },
+      {
+        "label": "\\ddots",
+        "page": 2
+      },
+      {
+        "label": "\\degree",
+        "page": 2
+      },
+      {
+        "label": "\\delta",
+        "page": 2
+      },
+      {
+        "label": "\\diameter",
+        "page": 2
+      },
+      {
+        "label": "\\diamond",
+        "page": 2
+      },
+      {
+        "label": "\\diamondsuit",
+        "page": 2
+      },
+      {
+        "label": "\\div",
+        "page": 2
+      },
+      {
+        "label": "\\doteq",
+        "page": 2
+      },
+      {
+        "label": "\\dots",
+        "page": 2
+      },
+      {
+        "label": "\\dotsc",
+        "page": 2
+      },
+      {
+        "label": "\\downarrow",
+        "page": 2
+      },
+      {
+        "label": "\\ell",
+        "page": 2
+      },
+      {
+        "label": "\\emptyset",
+        "page": 2
+      },
+      {
+        "label": "\\epsilon",
+        "page": 2
+      },
+      {
+        "label": "\\equiv",
+        "page": 2
+      },
+      {
+        "label": "\\eta",
+        "page": 2
+      },
+      {
+        "label": "\\exists",
+        "page": 2
+      },
+      {
+        "label": "\\female",
+        "page": 2
+      },
+      {
+        "label": "\\fint",
+        "page": 2
+      },
+      {
+        "label": "\\flat",
+        "page": 2
+      },
+      {
+        "label": "\\forall",
+        "page": 2
+      },
+      {
+        "label": "\\frown",
+        "page": 2
+      },
+      {
+        "label": "\\fullmoon",
+        "page": 2
+      },
+      {
+        "label": "\\gamma",
+        "page": 2
+      },
+      {
+        "label": "\\geq",
+        "page": 2
+      },
+      {
+        "label": "\\geqslant",
+        "page": 2
+      },
+      {
+        "label": "\\gtrless",
+        "page": 2
+      },
+      {
+        "label": "\\gtrsim",
+        "page": 2
+      },
+      {
+        "label": "\\guillemotleft",
+        "page": 2
+      },
+      {
+        "label": "\\hbar",
+        "page": 2
+      },
+      {
+        "label": "\\heartsuit",
+        "page": 2
+      },
+      {
+        "label": "\\hookrightarrow",
+        "page": 2
+      },
+      {
+        "label": "\\iddots",
+        "page": 2
+      },
+      {
+        "label": "\\in",
+        "page": 2
+      },
+      {
+        "label": "\\infty",
+        "page": 2
+      },
+      {
+        "label": "\\int",
+        "page": 2
+      },
+      {
+        "label": "\\iota",
+        "page": 2
+      },
+      {
+        "label": "\\kappa",
+        "page": 2
+      },
+      {
+        "label": "\\lambda",
+        "page": 2
+      },
+      {
+        "label": "\\langle",
+        "page": 2
+      },
+      {
+        "label": "\\lceil",
+        "page": 2
+      },
+      {
+        "label": "\\leadsto",
+        "page": 2
+      },
+      {
+        "label": "\\leftarrow",
+        "page": 2
+      },
+      {
+        "label": "\\leftmoon",
+        "page": 2
+      },
+      {
+        "label": "\\leftrightarrow",
+        "page": 2
+      },
+      {
+        "label": "\\leq",
+        "page": 2
+      },
+      {
+        "label": "\\leqslant",
+        "page": 2
+      },
+      {
+        "label": "\\lesssim",
+        "page": 2
+      },
+      {
+        "label": "\\lfloor",
+        "page": 2
+      },
+      {
+        "label": "\\lhd",
+        "page": 2
+      },
+      {
+        "label": "\\lightning",
+        "page": 2
+      },
+      {
+        "label": "\\llbracket",
+        "page": 2
+      },
+      {
+        "label": "\\longmapsto",
+        "page": 2
+      },
+      {
+        "label": "\\longrightarrow",
+        "page": 2
+      },
+      {
+        "label": "\\lozenge",
+        "page": 2
+      },
+      {
+        "label": "\\ltimes",
+        "page": 2
+      },
+      {
+        "label": "\\male",
+        "page": 2
+      },
+      {
+        "label": "\\mapsfrom",
+        "page": 2
+      },
+      {
+        "label": "\\mapsto",
+        "page": 2
+      },
+      {
+        "label": "\\mars",
+        "page": 2
+      },
+      {
+        "label": "\\mathbb{1}",
+        "page": 2
+      },
+      {
+        "label": "\\mathbb{H}",
+        "page": 2
+      },
+      {
+        "label": "\\mathbb{N}",
+        "page": 2
+      },
+      {
+        "label": "\\mathbb{Q}",
+        "page": 2
+      },
+      {
+        "label": "\\mathbb{R}",
+        "page": 2
+      },
+      {
+        "label": "\\mathbb{Z}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{A}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{B}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{C}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{D}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{E}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{F}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{G}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{H}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{L}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{M}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{N}",
+        "page": 2
+      },
+      {
+        "page_image": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261002\\stroke_curve_v27_pairwise_20261003_r1\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_02.png",
+        "classes": 96
+      },
+      {
+        "label": "\\mathcal{O}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{P}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{R}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{S}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{T}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{U}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{X}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{Z}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{1}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{C}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{E}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{N}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{P}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{Q}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{R}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{Z}",
+        "page": 3
+      },
+      {
+        "label": "\\mathfrak{A}",
+        "page": 3
+      },
+      {
+        "label": "\\mathfrak{M}",
+        "page": 3
+      },
+      {
+        "label": "\\mathfrak{S}",
+        "page": 3
+      },
+      {
+        "label": "\\mathfrak{X}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{A}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{C}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{D}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{E}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{F}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{H}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{L}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{P}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{S}",
+        "page": 3
+      },
+      {
+        "label": "\\mathsection",
+        "page": 3
+      },
+      {
+        "label": "\\mid",
+        "page": 3
+      },
+      {
+        "label": "\\models",
+        "page": 3
+      },
+      {
+        "label": "\\mp",
+        "page": 3
+      },
+      {
+        "label": "\\mu",
+        "page": 3
+      },
+      {
+        "label": "\\multimap",
+        "page": 3
+      },
+      {
+        "label": "\\nRightarrow",
+        "page": 3
+      },
+      {
+        "label": "\\nabla",
+        "page": 3
+      },
+      {
+        "label": "\\nearrow",
+        "page": 3
+      },
+      {
+        "label": "\\neg",
+        "page": 3
+      },
+      {
+        "label": "\\neq",
+        "page": 3
+      },
+      {
+        "label": "\\nexists",
+        "page": 3
+      },
+      {
+        "label": "\\ni",
+        "page": 3
+      },
+      {
+        "label": "\\nmid",
+        "page": 3
+      },
+      {
+        "label": "\\not\\equiv",
+        "page": 3
+      },
+      {
+        "label": "\\notin",
+        "page": 3
+      },
+      {
+        "label": "\\nrightarrow",
+        "page": 3
+      },
+      {
+        "label": "\\nsubseteq",
+        "page": 3
+      },
+      {
+        "label": "\\nu",
+        "page": 3
+      },
+      {
+        "label": "\\nvDash",
+        "page": 3
+      },
+      {
+        "label": "\\o",
+        "page": 3
+      },
+      {
+        "label": "\\odot",
+        "page": 3
+      },
+      {
+        "label": "\\ohm",
+        "page": 3
+      },
+      {
+        "label": "\\oiint",
+        "page": 3
+      },
+      {
+        "label": "\\oint",
+        "page": 3
+      },
+      {
+        "label": "\\omega",
+        "page": 3
+      },
+      {
+        "label": "\\ominus",
+        "page": 3
+      },
+      {
+        "label": "\\oplus",
+        "page": 3
+      },
+      {
+        "label": "\\otimes",
+        "page": 3
+      },
+      {
+        "label": "\\parallel",
+        "page": 3
+      },
+      {
+        "label": "\\parr",
+        "page": 3
+      },
+      {
+        "label": "\\partial",
+        "page": 3
+      },
+      {
+        "label": "\\perp",
+        "page": 3
+      },
+      {
+        "label": "\\phi",
+        "page": 3
+      },
+      {
+        "label": "\\pi",
+        "page": 3
+      },
+      {
+        "label": "\\pitchfork",
+        "page": 3
+      },
+      {
+        "label": "\\pm",
+        "page": 3
+      },
+      {
+        "label": "\\pounds",
+        "page": 3
+      },
+      {
+        "label": "\\prec",
+        "page": 3
+      },
+      {
+        "label": "\\preccurlyeq",
+        "page": 3
+      },
+      {
+        "label": "\\preceq",
+        "page": 3
+      },
+      {
+        "label": "\\prime",
+        "page": 3
+      },
+      {
+        "label": "\\prod",
+        "page": 3
+      },
+      {
+        "label": "\\propto",
+        "page": 3
+      },
+      {
+        "label": "\\psi",
+        "page": 3
+      },
+      {
+        "label": "\\rangle",
+        "page": 3
+      },
+      {
+        "label": "\\rceil",
+        "page": 3
+      },
+      {
+        "label": "\\rfloor",
+        "page": 3
+      },
+      {
+        "label": "\\rho",
+        "page": 3
+      },
+      {
+        "label": "\\rightarrow",
+        "page": 3
+      },
+      {
+        "label": "\\rightharpoonup",
+        "page": 3
+      },
+      {
+        "label": "\\rightleftarrows",
+        "page": 3
+      },
+      {
+        "label": "\\rightleftharpoons",
+        "page": 3
+      },
+      {
+        "label": "\\rightrightarrows",
+        "page": 3
+      },
+      {
+        "label": "\\rightsquigarrow",
+        "page": 3
+      },
+      {
+        "label": "\\rrbracket",
+        "page": 3
+      },
+      {
+        "label": "\\rtimes",
+        "page": 3
+      },
+      {
+        "label": "\\searrow",
+        "page": 3
+      },
+      {
+        "label": "\\setminus",
+        "page": 3
+      },
+      {
+        "label": "\\sharp",
+        "page": 3
+      },
+      {
+        "label": "\\shortrightarrow",
+        "page": 3
+      },
+      {
+        "label": "\\sigma",
+        "page": 3
+      },
+      {
+        "label": "\\sim",
+        "page": 3
+      },
+      {
+        "label": "\\simeq",
+        "page": 3
+      },
+      {
+        "label": "\\sphericalangle",
+        "page": 3
+      },
+      {
+        "label": "\\sqcap",
+        "page": 3
+      },
+      {
+        "label": "\\sqcup",
+        "page": 3
+      },
+      {
+        "page_image": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261002\\stroke_curve_v27_pairwise_20261003_r1\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_03.png",
+        "classes": 96
+      },
+      {
+        "label": "\\sqrt{}",
+        "page": 4
+      },
+      {
+        "label": "\\sqsubseteq",
+        "page": 4
+      },
+      {
+        "label": "\\square",
+        "page": 4
+      },
+      {
+        "label": "\\ss",
+        "page": 4
+      },
+      {
+        "label": "\\star",
+        "page": 4
+      },
+      {
+        "label": "\\subset",
+        "page": 4
+      },
+      {
+        "label": "\\subseteq",
+        "page": 4
+      },
+      {
+        "label": "\\subsetneq",
+        "page": 4
+      },
+      {
+        "label": "\\succ",
+        "page": 4
+      },
+      {
+        "label": "\\succeq",
+        "page": 4
+      },
+      {
+        "label": "\\sum",
+        "page": 4
+      },
+      {
+        "label": "\\sun",
+        "page": 4
+      },
+      {
+        "label": "\\supset",
+        "page": 4
+      },
+      {
+        "label": "\\supseteq",
+        "page": 4
+      },
+      {
+        "label": "\\tau",
+        "page": 4
+      },
+      {
+        "label": "\\therefore",
+        "page": 4
+      },
+      {
+        "label": "\\theta",
+        "page": 4
+      },
+      {
+        "label": "\\times",
+        "page": 4
+      },
+      {
+        "label": "\\top",
+        "page": 4
+      },
+      {
+        "label": "\\triangle",
+        "page": 4
+      },
+      {
+        "label": "\\triangledown",
+        "page": 4
+      },
+      {
+        "label": "\\triangleleft",
+        "page": 4
+      },
+      {
+        "label": "\\trianglelefteq",
+        "page": 4
+      },
+      {
+        "label": "\\triangleq",
+        "page": 4
+      },
+      {
+        "label": "\\triangleright",
+        "page": 4
+      },
+      {
+        "label": "\\twoheadrightarrow",
+        "page": 4
+      },
+      {
+        "label": "\\uparrow",
+        "page": 4
+      },
+      {
+        "label": "\\upharpoonright",
+        "page": 4
+      },
+      {
+        "label": "\\uplus",
+        "page": 4
+      },
+      {
+        "label": "\\vDash",
+        "page": 4
+      },
+      {
+        "label": "\\varepsilon",
+        "page": 4
+      },
+      {
+        "label": "\\varkappa",
+        "page": 4
+      },
+      {
+        "label": "\\varnothing",
+        "page": 4
+      },
+      {
+        "label": "\\varoiint",
+        "page": 4
+      },
+      {
+        "label": "\\varphi",
+        "page": 4
+      },
+      {
+        "label": "\\varpi",
+        "page": 4
+      },
+      {
+        "label": "\\varpropto",
+        "page": 4
+      },
+      {
+        "label": "\\varrho",
+        "page": 4
+      },
+      {
+        "label": "\\varsubsetneq",
+        "page": 4
+      },
+      {
+        "label": "\\vartheta",
+        "page": 4
+      },
+      {
+        "label": "\\vartriangle",
+        "page": 4
+      },
+      {
+        "label": "\\vdash",
+        "page": 4
+      },
+      {
+        "label": "\\vdots",
+        "page": 4
+      },
+      {
+        "label": "\\vee",
+        "page": 4
+      },
+      {
+        "label": "\\venus",
+        "page": 4
+      },
+      {
+        "label": "\\wedge",
+        "page": 4
+      },
+      {
+        "label": "\\with",
+        "page": 4
+      },
+      {
+        "label": "\\wp",
+        "page": 4
+      },
+      {
+        "label": "\\wr",
+        "page": 4
+      },
+      {
+        "label": "\\xi",
+        "page": 4
+      },
+      {
+        "label": "\\zeta",
+        "page": 4
+      },
+      {
+        "label": "\\{",
+        "page": 4
+      },
+      {
+        "label": "\\|",
+        "page": 4
+      },
+      {
+        "label": "\\}",
+        "page": 4
+      },
+      {
+        "label": "]",
+        "page": 4
+      },
+      {
+        "label": "a",
+        "page": 4
+      },
+      {
+        "label": "b",
+        "page": 4
+      },
+      {
+        "label": "c",
+        "page": 4
+      },
+      {
+        "label": "d",
+        "page": 4
+      },
+      {
+        "label": "e",
+        "page": 4
+      },
+      {
+        "label": "f",
+        "page": 4
+      },
+      {
+        "label": "g",
+        "page": 4
+      },
+      {
+        "label": "h",
+        "page": 4
+      },
+      {
+        "label": "i",
+        "page": 4
+      },
+      {
+        "label": "j",
+        "page": 4
+      },
+      {
+        "label": "k",
+        "page": 4
+      },
+      {
+        "label": "l",
+        "page": 4
+      },
+      {
+        "label": "m",
+        "page": 4
+      },
+      {
+        "label": "n",
+        "page": 4
+      },
+      {
+        "label": "o",
+        "page": 4
+      },
+      {
+        "label": "p",
+        "page": 4
+      },
+      {
+        "label": "q",
+        "page": 4
+      },
+      {
+        "label": "r",
+        "page": 4
+      },
+      {
+        "label": "s",
+        "page": 4
+      },
+      {
+        "label": "u",
+        "page": 4
+      },
+      {
+        "label": "v",
+        "page": 4
+      },
+      {
+        "label": "w",
+        "page": 4
+      },
+      {
+        "label": "x",
+        "page": 4
+      },
+      {
+        "label": "y",
+        "page": 4
+      },
+      {
+        "label": "z",
+        "page": 4
+      },
+      {
+        "label": "|",
+        "page": 4
+      },
+      {
+        "label": "(",
+        "page": 4
+      },
+      {
+        "label": ")",
+        "page": 4
+      },
+      {
+        "label": "=",
+        "page": 4
+      },
+      {
+        "page_image": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261002\\stroke_curve_v27_pairwise_20261003_r1\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_04.png",
+        "classes": 84
+      }
+    ]
+  },
+  "parameters": {
+    "rotation_degrees": [
+      -3.0,
+      3.0
+    ],
+    "axis_scale_relative": [
+      -0.08,
+      0.08
+    ],
+    "shear": [
+      -0.04,
+      0.04
+    ],
+    "elastic_control_grid": [
+      5,
+      5
+    ],
+    "elastic_max_control_displacement": 0.018,
+    "elastic_boundary": "pinned",
+    "elastic_jacobian_frobenius_max": 0.35,
+    "elastic_probability": 0.58,
+    "wide_parameter_probability_default": 0.0,
+    "wide_magnitude_multiplier_default": 1.5,
+    "independent_wide_probability_by_parameter": null,
+    "wide_magnitude_multiplier": null,
+    "resolved_wide_probability_by_parameter": {
+      "rotation": 0.28,
+      "axis_scale": 0.22,
+      "shear": 0.25,
+      "elastic": 0.2
+    },
+    "resolved_wide_multiplier_by_parameter": {
+      "rotation": 1.75,
+      "axis_scale": 1.9,
+      "shear": 1.8,
+      "elastic": 1.6
+    },
+    "stroke_local_probability": 0.65,
+    "stroke_local_rotation_degrees": 2.0,
+    "stroke_local_scale_jitter": 0.04,
+    "stroke_local_translation_jitter": 0.006,
+    "stroke_curve_probability": 0.85,
+    "stroke_curve_max_displacement": 0.03,
+    "stroke_curve_max_waves": 2,
+    "stroke_curve_shape": "arc-length sinusoidal normal offset with pinned stroke endpoints and no-backtracking gate",
+    "seed": 20261813,
+    "stroke_local_seed": 20261814,
+    "stroke_curve_seed": 20261815
+  },
+  "heldout_used_for_selection": false,
+  "product_adopted": false
+}

@@ -1,0 +1,180 @@
+{
+  "schema": "aiflow-hwr-objective-competition-partial-run/v1",
+  "status": "partial_ce_arm_complete_supcon_arm_failed",
+  "product_adopted": false,
+  "data": {
+    "train_rows": 170441,
+    "validation_rows": 1056,
+    "validation_writer_clusters": 8,
+    "validation_present_labels": 66,
+    "crohme_rows": 0,
+    "cache_reuse_mode": "full_source_scan",
+    "cache_reuse_provenance": {
+      "mode": "full_source_scan",
+      "full_jsonl_rebuild_scan": true
+    },
+    "cache_audit_report": null,
+    "cache_audit_report_sha256": null,
+    "writer_split_sha256": "81c3491c941753ef9f2cdae88a137a8bcba84a16110f77f75f4b3b22273d8875",
+    "canonical_hwrt_sha256": "a35bb9c0793831b69b7710812df1112750eb0cb49f2206cdbbd55c63e1a95102",
+    "canonical_uji_sha256": "9c7038aa8c3eeb1fd3b93827354053e9d3f329f28111dfdaed22c941a238bf8b",
+    "curated_uji_sha256": "cda2fe17c213bc8c90ed93ec8998658ddaf9d7871c75adf521798e6e3ba3029b",
+    "prepared_cache_sha256": {
+      "train_features.npy": "63a413f95d5517ad354c49b49a8ad42f08fa65893a05f4589d6a1767c7774b25",
+      "train_labels.npy": "159ee67fd2f9e73f94f1cd8d583d1f2736f187ceec662664f08e6a76edf794bc",
+      "validation_features.npy": "e2c4b57474044ac986e95b8c1d37c6cd60f2cc1cfa7310851b7a7e346fa86bb7",
+      "validation_labels.npy": "5518a204d5860cc8d19933a4d27732c2892e3ab6dfb2c82a95c65f25054e2935"
+    }
+  },
+  "experiment": {
+    "seed": 20261101,
+    "architecture": {
+      "width": 128,
+      "layers": 4,
+      "heads": 4,
+      "feedforward": 512
+    },
+    "precision": "amp_fp16",
+    "sampler": {
+      "classes_per_batch": 12,
+      "rows_per_class": 4,
+      "batch_size": 48,
+      "microbatch_size": 12,
+      "gradient_accumulation_steps": 4
+    },
+    "activation_memory_strategy": {
+      "enabled": true,
+      "method": "two_pass_global_supcon_embedding_gradient_recompute",
+      "supcon_pair_scope": "entire_effective_PxK_batch",
+      "dropout_replay": "per-slice RNG snapshot and restore",
+      "embedding_replay_error_max_abs_gate": 1e-05
+    },
+    "epochs_requested": 2,
+    "eval_batch_size": 64,
+    "optimizer": {
+      "name": "AdamW",
+      "foreach": false,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "gradient_clip_norm": 1.0,
+      "gradient_clip_foreach": false
+    },
+    "objective": {
+      "ce": "372-way cross-entropy",
+      "supcon": "normalized embedding supervised contrastive",
+      "contrastive_weight": 0.1,
+      "temperature": 0.1,
+      "hardnegative": null,
+      "hardnegative_weight": 0.0,
+      "hardnegative_margin": null,
+      "hardnegative_gate": null
+    },
+    "product_adopted": false
+  },
+  "completed_arm": {
+    "arm": "ce_pk",
+    "seed": 20261101,
+    "architecture": {
+      "width": 128,
+      "layers": 4,
+      "heads": 4,
+      "feedforward": 512,
+      "parameters": 858613
+    },
+    "objective": {
+      "ce_weight": 1.0,
+      "supcon_weight": 0.0,
+      "temperature": null,
+      "hardnegative_weight": 0.0,
+      "hardnegative_margin": null,
+      "hardnegative_gate": null
+    },
+    "sampling": {
+      "classes_per_batch": 12,
+      "rows_per_class": 4,
+      "batch_size": 48,
+      "batches_per_epoch": 3551,
+      "rows_per_epoch": 170448,
+      "train_rows": 170441,
+      "distinct_rows_within_batch": true
+    },
+    "precision": "amp_fp16",
+    "optimizer": {
+      "name": "AdamW",
+      "foreach": false,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "gradient_clip_norm": 1.0,
+      "gradient_clip_foreach": false
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_ce": 4.6209470146107225,
+        "train_supcon": 0.0,
+        "train_hardnegative": 0.0,
+        "train_total_objective": 4.6209470146107225,
+        "amp_overflow_skipped_steps": 0,
+        "amp_overflow_skip_fraction": 0.0,
+        "final_grad_scaler_scale": 131072.0,
+        "train_top1_on_sampled_batches": 0.12915375950436497,
+        "supcon_positive_anchor_fraction": null,
+        "supcon_replay_max_abs_embedding_error": null,
+        "hardnegative_active_example_fraction": null,
+        "hardnegative_eligible_example_fraction": null,
+        "validation": {
+          "rows": 1056,
+          "top1_hits": 415,
+          "top5_hits": 842,
+          "top1": 0.39299242424242425,
+          "top5": 0.7973484848484849
+        },
+        "seconds": 525.0292694000091
+      },
+      {
+        "epoch": 2,
+        "train_ce": 1.4666813965482934,
+        "train_supcon": 0.0,
+        "train_hardnegative": 0.0,
+        "train_total_objective": 1.4666813965482934,
+        "amp_overflow_skipped_steps": 3,
+        "amp_overflow_skip_fraction": 0.0008448324415657561,
+        "final_grad_scaler_scale": 65536.0,
+        "train_top1_on_sampled_batches": 0.5932014456021778,
+        "supcon_positive_anchor_fraction": null,
+        "supcon_replay_max_abs_embedding_error": null,
+        "hardnegative_active_example_fraction": null,
+        "hardnegative_eligible_example_fraction": null,
+        "validation": {
+          "rows": 1056,
+          "top1_hits": 685,
+          "top5_hits": 1011,
+          "top1": 0.6486742424242424,
+          "top5": 0.9573863636363636
+        },
+        "seconds": 533.8437754000042
+      }
+    ],
+    "final_validation": {
+      "rows": 1056,
+      "top1_hits": 685,
+      "top5_hits": 1011,
+      "top1": 0.6486742424242424,
+      "top5": 0.9573863636363636
+    },
+    "checkpoint": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-objective-competition-20261002\\last8-split-seed20261101-micro12-overflowguard\\checkpoints\\ce_pk_seed20261101.pt",
+    "checkpoint_sha256": "6fdd46410fd42d3cc7236bfe17ab691d2a5679522303f0971409d392a1fa1571",
+    "elapsed_seconds": 1059.5948839000048
+  },
+  "failed_arm": {
+    "arm": "ce_plus_supcon",
+    "completed_epochs": null,
+    "completed_epoch_history": null,
+    "failed_location": "training_or_validation",
+    "error_type": "KeyError",
+    "error": "'active'",
+    "gradient_diagnostics": null,
+    "paired_comparison": null
+  },
+  "interpretation_limit": "partial exploratory arm; not a paired result and not product accuracy"
+}

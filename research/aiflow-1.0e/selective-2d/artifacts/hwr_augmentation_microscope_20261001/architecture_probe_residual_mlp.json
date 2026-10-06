@@ -1,0 +1,593 @@
+{
+  "schema": "aiflow-hwr-frozen-encoder-readout-capacity/v1",
+  "status": "completed_exploratory_architecture_probe",
+  "frozen_encoder": {
+    "checkpoint": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-head-calibration-20260819-r1\\final_all_writers_steps250_lr1e-3\\project_symbol_head_checkpoint.pt",
+    "sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "architecture": "128-dim, 4-layer Transformer; frozen during both readout arms"
+  },
+  "readouts": {
+    "teacher_linear": {
+      "parameters": 47988,
+      "metrics": {
+        "overall": {
+          "rows": 3410,
+          "top1_hits": 2626,
+          "top5_hits": 3365,
+          "top1": 0.7700879765395895,
+          "top5": 0.9868035190615836,
+          "by_family": {
+            "arrows": {
+              "rows": 18,
+              "top1": 0.7222222222222222,
+              "top5": 1.0
+            },
+            "digits": {
+              "rows": 466,
+              "top1": 0.8583690987124464,
+              "top5": 0.9892703862660944
+            },
+            "fences": {
+              "rows": 97,
+              "top1": 0.9690721649484536,
+              "top5": 1.0
+            },
+            "greek": {
+              "rows": 163,
+              "top1": 0.8404907975460123,
+              "top5": 1.0
+            },
+            "large_ops": {
+              "rows": 14,
+              "top1": 0.7857142857142857,
+              "top5": 0.9285714285714286
+            },
+            "latin_lower": {
+              "rows": 1089,
+              "top1": 0.6740128558310376,
+              "top5": 0.9853076216712581
+            },
+            "latin_upper": {
+              "rows": 1217,
+              "top1": 0.7740345110928513,
+              "top5": 0.9827444535743632
+            },
+            "operators": {
+              "rows": 91,
+              "top1": 0.9010989010989011,
+              "top5": 1.0
+            },
+            "other_math": {
+              "rows": 96,
+              "top1": 0.8645833333333334,
+              "top5": 0.9895833333333334
+            },
+            "relations": {
+              "rows": 159,
+              "top1": 0.8176100628930818,
+              "top5": 0.9937106918238994
+            }
+          }
+        },
+        "by_source": {
+          "hwrt": {
+            "rows": 770,
+            "top1_hits": 613,
+            "top5_hits": 767,
+            "top1": 0.7961038961038961,
+            "top5": 0.9961038961038962,
+            "by_family": {
+              "arrows": {
+                "rows": 18,
+                "top1": 0.7222222222222222,
+                "top5": 1.0
+              },
+              "digits": {
+                "rows": 66,
+                "top1": 0.8636363636363636,
+                "top5": 1.0
+              },
+              "fences": {
+                "rows": 17,
+                "top1": 0.8823529411764706,
+                "top5": 1.0
+              },
+              "greek": {
+                "rows": 163,
+                "top1": 0.8404907975460123,
+                "top5": 1.0
+              },
+              "large_ops": {
+                "rows": 14,
+                "top1": 0.7857142857142857,
+                "top5": 0.9285714285714286
+              },
+              "latin_lower": {
+                "rows": 89,
+                "top1": 0.550561797752809,
+                "top5": 1.0
+              },
+              "latin_upper": {
+                "rows": 177,
+                "top1": 0.8022598870056498,
+                "top5": 0.9943502824858758
+              },
+              "operators": {
+                "rows": 51,
+                "top1": 0.8823529411764706,
+                "top5": 1.0
+              },
+              "other_math": {
+                "rows": 96,
+                "top1": 0.8645833333333334,
+                "top5": 0.9895833333333334
+              },
+              "relations": {
+                "rows": 79,
+                "top1": 0.7721518987341772,
+                "top5": 1.0
+              }
+            }
+          },
+          "uji": {
+            "rows": 2640,
+            "top1_hits": 2013,
+            "top5_hits": 2598,
+            "top1": 0.7625,
+            "top5": 0.9840909090909091,
+            "by_family": {
+              "digits": {
+                "rows": 400,
+                "top1": 0.8575,
+                "top5": 0.9875
+              },
+              "fences": {
+                "rows": 80,
+                "top1": 0.9875,
+                "top5": 1.0
+              },
+              "latin_lower": {
+                "rows": 1000,
+                "top1": 0.685,
+                "top5": 0.984
+              },
+              "latin_upper": {
+                "rows": 1040,
+                "top1": 0.7692307692307693,
+                "top5": 0.9807692307692307
+              },
+              "operators": {
+                "rows": 40,
+                "top1": 0.925,
+                "top5": 1.0
+              },
+              "relations": {
+                "rows": 80,
+                "top1": 0.8625,
+                "top5": 0.9875
+              }
+            }
+          }
+        }
+      }
+    },
+    "trained_linear": {
+      "parameters": 47988,
+      "metrics": {
+        "overall": {
+          "rows": 3410,
+          "top1_hits": 2670,
+          "top5_hits": 3367,
+          "top1": 0.782991202346041,
+          "top5": 0.9873900293255132,
+          "by_family": {
+            "arrows": {
+              "rows": 18,
+              "top1": 0.7777777777777778,
+              "top5": 1.0
+            },
+            "digits": {
+              "rows": 466,
+              "top1": 0.8626609442060086,
+              "top5": 0.9849785407725322
+            },
+            "fences": {
+              "rows": 97,
+              "top1": 0.9381443298969072,
+              "top5": 1.0
+            },
+            "greek": {
+              "rows": 163,
+              "top1": 0.8404907975460123,
+              "top5": 1.0
+            },
+            "large_ops": {
+              "rows": 14,
+              "top1": 0.9285714285714286,
+              "top5": 1.0
+            },
+            "latin_lower": {
+              "rows": 1089,
+              "top1": 0.7254361799816346,
+              "top5": 0.98989898989899
+            },
+            "latin_upper": {
+              "rows": 1217,
+              "top1": 0.7576006573541495,
+              "top5": 0.9819227608874281
+            },
+            "operators": {
+              "rows": 91,
+              "top1": 0.9010989010989011,
+              "top5": 0.978021978021978
+            },
+            "other_math": {
+              "rows": 96,
+              "top1": 0.875,
+              "top5": 0.9895833333333334
+            },
+            "relations": {
+              "rows": 159,
+              "top1": 0.8490566037735849,
+              "top5": 1.0
+            }
+          }
+        },
+        "by_source": {
+          "hwrt": {
+            "rows": 770,
+            "top1_hits": 618,
+            "top5_hits": 766,
+            "top1": 0.8025974025974026,
+            "top5": 0.9948051948051948,
+            "by_family": {
+              "arrows": {
+                "rows": 18,
+                "top1": 0.7777777777777778,
+                "top5": 1.0
+              },
+              "digits": {
+                "rows": 66,
+                "top1": 0.8636363636363636,
+                "top5": 1.0
+              },
+              "fences": {
+                "rows": 17,
+                "top1": 0.7647058823529411,
+                "top5": 1.0
+              },
+              "greek": {
+                "rows": 163,
+                "top1": 0.8404907975460123,
+                "top5": 1.0
+              },
+              "large_ops": {
+                "rows": 14,
+                "top1": 0.9285714285714286,
+                "top5": 1.0
+              },
+              "latin_lower": {
+                "rows": 89,
+                "top1": 0.5842696629213483,
+                "top5": 0.9887640449438202
+              },
+              "latin_upper": {
+                "rows": 177,
+                "top1": 0.7796610169491526,
+                "top5": 1.0
+              },
+              "operators": {
+                "rows": 51,
+                "top1": 0.8823529411764706,
+                "top5": 0.9607843137254902
+              },
+              "other_math": {
+                "rows": 96,
+                "top1": 0.875,
+                "top5": 0.9895833333333334
+              },
+              "relations": {
+                "rows": 79,
+                "top1": 0.8227848101265823,
+                "top5": 1.0
+              }
+            }
+          },
+          "uji": {
+            "rows": 2640,
+            "top1_hits": 2052,
+            "top5_hits": 2601,
+            "top1": 0.7772727272727272,
+            "top5": 0.9852272727272727,
+            "by_family": {
+              "digits": {
+                "rows": 400,
+                "top1": 0.8625,
+                "top5": 0.9825
+              },
+              "fences": {
+                "rows": 80,
+                "top1": 0.975,
+                "top5": 1.0
+              },
+              "latin_lower": {
+                "rows": 1000,
+                "top1": 0.738,
+                "top5": 0.99
+              },
+              "latin_upper": {
+                "rows": 1040,
+                "top1": 0.7538461538461538,
+                "top5": 0.9788461538461538
+              },
+              "operators": {
+                "rows": 40,
+                "top1": 0.925,
+                "top5": 1.0
+              },
+              "relations": {
+                "rows": 80,
+                "top1": 0.875,
+                "top5": 1.0
+              }
+            }
+          }
+        }
+      }
+    },
+    "zero_init_residual_mlp": {
+      "hidden_width": 256,
+      "parameters": 113908,
+      "metrics": {
+        "overall": {
+          "rows": 3410,
+          "top1_hits": 2676,
+          "top5_hits": 3365,
+          "top1": 0.78475073313783,
+          "top5": 0.9868035190615836,
+          "by_family": {
+            "arrows": {
+              "rows": 18,
+              "top1": 0.7222222222222222,
+              "top5": 1.0
+            },
+            "digits": {
+              "rows": 466,
+              "top1": 0.8583690987124464,
+              "top5": 0.9849785407725322
+            },
+            "fences": {
+              "rows": 97,
+              "top1": 0.9484536082474226,
+              "top5": 1.0
+            },
+            "greek": {
+              "rows": 163,
+              "top1": 0.8404907975460123,
+              "top5": 1.0
+            },
+            "large_ops": {
+              "rows": 14,
+              "top1": 0.9285714285714286,
+              "top5": 1.0
+            },
+            "latin_lower": {
+              "rows": 1089,
+              "top1": 0.7272727272727273,
+              "top5": 0.9889807162534435
+            },
+            "latin_upper": {
+              "rows": 1217,
+              "top1": 0.7600657354149548,
+              "top5": 0.981101068200493
+            },
+            "operators": {
+              "rows": 91,
+              "top1": 0.9120879120879121,
+              "top5": 0.978021978021978
+            },
+            "other_math": {
+              "rows": 96,
+              "top1": 0.8645833333333334,
+              "top5": 0.9895833333333334
+            },
+            "relations": {
+              "rows": 159,
+              "top1": 0.8679245283018868,
+              "top5": 1.0
+            }
+          }
+        },
+        "by_source": {
+          "hwrt": {
+            "rows": 770,
+            "top1_hits": 616,
+            "top5_hits": 765,
+            "top1": 0.8,
+            "top5": 0.9935064935064936,
+            "by_family": {
+              "arrows": {
+                "rows": 18,
+                "top1": 0.7222222222222222,
+                "top5": 1.0
+              },
+              "digits": {
+                "rows": 66,
+                "top1": 0.8636363636363636,
+                "top5": 1.0
+              },
+              "fences": {
+                "rows": 17,
+                "top1": 0.7647058823529411,
+                "top5": 1.0
+              },
+              "greek": {
+                "rows": 163,
+                "top1": 0.8404907975460123,
+                "top5": 1.0
+              },
+              "large_ops": {
+                "rows": 14,
+                "top1": 0.9285714285714286,
+                "top5": 1.0
+              },
+              "latin_lower": {
+                "rows": 89,
+                "top1": 0.5842696629213483,
+                "top5": 0.9887640449438202
+              },
+              "latin_upper": {
+                "rows": 177,
+                "top1": 0.7740112994350282,
+                "top5": 0.9943502824858758
+              },
+              "operators": {
+                "rows": 51,
+                "top1": 0.8823529411764706,
+                "top5": 0.9607843137254902
+              },
+              "other_math": {
+                "rows": 96,
+                "top1": 0.8645833333333334,
+                "top5": 0.9895833333333334
+              },
+              "relations": {
+                "rows": 79,
+                "top1": 0.8354430379746836,
+                "top5": 1.0
+              }
+            }
+          },
+          "uji": {
+            "rows": 2640,
+            "top1_hits": 2060,
+            "top5_hits": 2600,
+            "top1": 0.7803030303030303,
+            "top5": 0.9848484848484849,
+            "by_family": {
+              "digits": {
+                "rows": 400,
+                "top1": 0.8575,
+                "top5": 0.9825
+              },
+              "fences": {
+                "rows": 80,
+                "top1": 0.9875,
+                "top5": 1.0
+              },
+              "latin_lower": {
+                "rows": 1000,
+                "top1": 0.74,
+                "top5": 0.989
+              },
+              "latin_upper": {
+                "rows": 1040,
+                "top1": 0.7576923076923077,
+                "top5": 0.9788461538461538
+              },
+              "operators": {
+                "rows": 40,
+                "top1": 0.95,
+                "top5": 1.0
+              },
+              "relations": {
+                "rows": 80,
+                "top1": 0.9,
+                "top5": 1.0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "paired": {
+    "teacher_vs_trained_linear_top1": {
+      "rows": 3410,
+      "before_hits": 2626,
+      "after_hits": 2670,
+      "before_accuracy": 0.7700879765395895,
+      "after_accuracy": 0.782991202346041,
+      "recovered": 118,
+      "regressed": 74,
+      "net_rows": 44,
+      "exact_mcnemar_two_sided_p": 0.0018388607962488903
+    },
+    "teacher_vs_trained_linear_top5": {
+      "rows": 3410,
+      "before_hits": 3365,
+      "after_hits": 3367,
+      "before_accuracy": 0.9868035190615836,
+      "after_accuracy": 0.9873900293255132,
+      "recovered": 12,
+      "regressed": 10,
+      "net_rows": 2,
+      "exact_mcnemar_two_sided_p": 0.8318119049072266
+    },
+    "teacher_vs_residual_mlp_top1": {
+      "rows": 3410,
+      "before_hits": 2626,
+      "after_hits": 2676,
+      "before_accuracy": 0.7700879765395895,
+      "after_accuracy": 0.78475073313783,
+      "recovered": 127,
+      "regressed": 77,
+      "net_rows": 50,
+      "exact_mcnemar_two_sided_p": 0.0005687384738459153
+    },
+    "teacher_vs_residual_mlp_top5": {
+      "rows": 3410,
+      "before_hits": 3365,
+      "after_hits": 3365,
+      "before_accuracy": 0.9868035190615836,
+      "after_accuracy": 0.9868035190615836,
+      "recovered": 10,
+      "regressed": 10,
+      "net_rows": 0,
+      "exact_mcnemar_two_sided_p": 1.0
+    },
+    "trained_linear_vs_residual_mlp_top1": {
+      "rows": 3410,
+      "before_hits": 2670,
+      "after_hits": 2676,
+      "before_accuracy": 0.782991202346041,
+      "after_accuracy": 0.78475073313783,
+      "recovered": 19,
+      "regressed": 13,
+      "net_rows": 6,
+      "exact_mcnemar_two_sided_p": 0.37708558747544885
+    },
+    "trained_linear_vs_residual_mlp_top5": {
+      "rows": 3410,
+      "before_hits": 3367,
+      "after_hits": 3365,
+      "before_accuracy": 0.9873900293255132,
+      "after_accuracy": 0.9868035190615836,
+      "recovered": 2,
+      "regressed": 4,
+      "net_rows": -2,
+      "exact_mcnemar_two_sided_p": 0.6875
+    }
+  },
+  "training": {
+    "epochs": 8,
+    "samples_per_class_per_epoch": 128,
+    "batch_size": 256,
+    "learning_rate": 0.0001,
+    "optimizer": "AdamW",
+    "hard_label_cross_entropy": 0.7,
+    "teacher_kl_on_real_rows": 0.3,
+    "class_balanced_orders_shared_between_arms": true,
+    "encoder_trainable": false
+  },
+  "data": {
+    "train_rows": 171497,
+    "test_rows": 3410,
+    "classes": 372,
+    "source_manifest_sha256": "5d66c91b58af7faa529644bfe6915c0ce6ce13eda2c7c6dad3503cf0a6582054",
+    "heldout_policy": "previously consumed exploratory split; not fresh-writer/device acceptance"
+  },
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "elapsed_seconds": 56.572524500021245
+}

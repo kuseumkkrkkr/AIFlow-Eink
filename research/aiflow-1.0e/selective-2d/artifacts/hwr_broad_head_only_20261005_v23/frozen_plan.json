@@ -1,0 +1,57 @@
+{
+  "schema": "aiflow-broad-head-only-plan/v23",
+  "script_sha256": "bfbd1241c29292506076a28980f8e7b0ae615acde89c1dd8727fb3f760191de0",
+  "helper_sha256": {
+    "run_hwr_broad_diversity_v16.py": "304ab2a2e3b99a8a191925072ca69a1461d4ec926db64119a63a2744dafb83af",
+    "run_hwr_active_trust_head_only_v11.py": "4c2c76bcfc3ebe20c28605b469056473b666a03ca4afc2de8249f7c0a87ed04e"
+  },
+  "code_sha256": {
+    "hwr_boundary_distillation_v1.py": "b983d481ae982335d8c888657565896d31bcdb31e65614a05a906956385f62f9",
+    "run_hwr_affine_distillation_experiment_v1.py": "3a36d8efee518b2fa5c3683e9fa7a4d6ff31450d48a353f355f2667834357b4a",
+    "train_character_classifier_v1.py": "7be87058f02733e6c4ba80123b4935c10cb4b298964609e8dca82a5781e4fb59",
+    "evaluate_48hz_prefix_v1.py": "c82c453670ea436015143c70545f342c035e3e7492e5d1840cfa03eb81c129eb",
+    "audit_hwr_owned_formula_transfer_v21.py": "09a5a1c04ac57a1d3410eecaa7ef841dd349782fe2514a8f08ea3e1d4c3a3488",
+    "audit_hwr_encoder_head_swap_v22.py": "abd2e51c425eaa6b1de5acb2964abdbe7c675a56fa859b9e4fd82274835ef724"
+  },
+  "parent_plan_sha256": "449076d1d952e7c1e6cb8e71f3848a6aed768cc946edd79e671987aaf3248fe2",
+  "parent_manifest_sha256": "80959792e35f3787c61b0384c7a2816d2eda6e9c5381779ec9db116b2bb6ed14",
+  "diagnosis_sha256": "718b9920b87a9350269416529d48b7ccee845878ec10329c6c490509c47be654",
+  "canonical_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+  "control_sha256": "5911ddef5740f8c9dab909d602591db11ca415e993e472991aa89478f239d1bf",
+  "controlled_change": "detach encode output; update only math_head.weight and math_head.bias; all 55 encoder/pooling tensors bitwise fixed",
+  "cold_initialization": "same canonical as V16; no warm start, regeneration, extra steps, or new architecture",
+  "unchanged_objective": ".7 CE(real) + .2 KL(real,canonical,T=2) + .1 KL(view,original-canonical,T=2)",
+  "steps": 2400,
+  "batch_size": 32,
+  "forward_rows": 64,
+  "threads": 2,
+  "learning_rate": 1e-05,
+  "weight_decay": 0.0001,
+  "gradient_clip": 1.0,
+  "classes": 371,
+  "population_rows": 163982,
+  "real_exposures": 76800,
+  "head_names": [
+    "math_head.weight",
+    "math_head.bias"
+  ],
+  "nonhead_tensors": 55,
+  "development_folds": [
+    1,
+    2
+  ],
+  "all_development_folds_previously_consumed": true,
+  "owned_diagnostic_formulae": 149,
+  "owned_codex_reviewed_formulae": 53,
+  "owned_inputs_or_labels_in_optimizer": 0,
+  "no_interim_evaluation": true,
+  "no_best_epoch_selection": true,
+  "development_selection_bias": true,
+  "gate": "report both internal folds and owned token/formula Top1/5; include regressions, no product adoption or fresh acceptance claim",
+  "synthetic_hard_labels": 0,
+  "crohme_rows": 0,
+  "official_test_rows_read": 0,
+  "collection_or_deployment_resumed": false,
+  "product_adopted": false,
+  "cloud_upload": false
+}

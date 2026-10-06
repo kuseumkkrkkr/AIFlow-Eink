@@ -1,0 +1,3483 @@
+{
+  "schema": "aiflow-hwr-affine-distillation-experiment/v1",
+  "status": "pass",
+  "provenance": {
+    "audit_script_sha256": "c1fc70af7fe409a25a9a7194a8fcae84d7232eac56df10d7b1b2572b600ce4d5",
+    "prepared_manifest_sha256": "5d66c91b58af7faa529644bfe6915c0ce6ce13eda2c7c6dad3503cf0a6582054",
+    "teacher_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "training_cache_sha256": {
+      "train_features.npy": "72061bc0fd989096729ed613a21e19cab04b92c947efffcd7991b76e139a03f4",
+      "train_labels.npy": "fe60cece651054cf3713d7f62f103fab0bf7a210a91aea134316cd57e1742ae5",
+      "train_sources.npy": "d3bc4479e24426f93792e90c34d82f0e0172691ea541ff81966c46649b08050c"
+    },
+    "qa_row_indices_sha256": "6cf8f78ee2c0c99eea43ad3c6f80fdf7bb1784b2fed1538928c6280e6346b413",
+    "qa_selection_seed": 20261812
+  },
+  "scope": "all 372 frozen mathematical-domain classes: digits, Latin/Greek letters, operators, relations, fences, arrows, large operators, and remaining math symbols",
+  "augmentation_engine": "affine_elastic_mix",
+  "training_pool_rows": 171497,
+  "heldout_rows_used": 0,
+  "crohme_rows": 0,
+  "class_count": 372,
+  "class_family_coverage": {
+    "arrows": 29,
+    "digits": 10,
+    "fences": 14,
+    "greek": 46,
+    "large_ops": 9,
+    "latin_lower": 25,
+    "latin_upper": 26,
+    "operators": 29,
+    "other_math": 150,
+    "relations": 34
+  },
+  "data_unit_validation": {
+    "unique_rows": 2976,
+    "rows_per_class_max": 8,
+    "augmented_views_per_row": 4,
+    "augmented_data_units_checked": 11904,
+    "unit_failures": {
+      "nonspatial_channel_changed": 0,
+      "stroke_start_changed": 0,
+      "invalid_target_id": 0
+    },
+    "unit_failure_total": 0,
+    "all_labels_immutable": true,
+    "all_nonspatial_channels_identical": true,
+    "stroke_count_and_start_positions_preserved": true,
+    "finite_xy_in_unit_square": true,
+    "per_view_transform_diagnostics": [
+      {
+        "view_index": 1,
+        "rows": 2976,
+        "changed": 2930,
+        "reverted": 46,
+        "elastic_probability_requested": 0.58,
+        "elastic_selected_rows": 1722,
+        "elastic_selected_and_changed_rows": 1698,
+        "affine_gate_reverted_rows": 166,
+        "elastic_gate_reverted_rows": 39,
+        "composite_gate_reverted_selected_rows": 31,
+        "identity_output_rows": 46,
+        "rms_mean": 0.017057033255696297,
+        "rms_p95": 0.0318780243396759,
+        "max_point_p95": 0.07969522476196289,
+        "path_ratio_min": 0.0,
+        "path_ratio_max": 1.2028809785842896,
+        "stroke_count_preserved": true,
+        "affine_stage": {
+          "rows": 2976,
+          "accepted": 2810,
+          "reverted": 166,
+          "changed": 2810,
+          "rms_mean": 0.016437610611319542,
+          "rms_p95": 0.03389813005924225,
+          "max_point_p95": 0.083619624376297,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.1762992143630981,
+          "stroke_count_preserved": true,
+          "orientation_preserving_affine": true
+        },
+        "elastic_stage": {
+          "rows": 2976,
+          "accepted": 2937,
+          "reverted": 39,
+          "changed": 2937,
+          "rms_mean": 0.005904838442802429,
+          "rms_p95": 0.009753106161952019,
+          "max_point_p95": 0.02895726077258587,
+          "jacobian_frobenius_max": 0.3206389546394348,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.0526959896087646,
+          "stroke_count_preserved": true,
+          "orientation_preserving_bound": 0.35,
+          "boundary_pinned": true
+        },
+        "composite_fell_back_to_affine": 31,
+        "severity_mixture": {
+          "independent_wide_probability_by_parameter": null,
+          "wide_magnitude_multiplier": null,
+          "resolved_wide_probability_by_parameter": {
+            "rotation": 0.28,
+            "axis_scale": 0.22,
+            "shear": 0.25,
+            "elastic": 0.2
+          },
+          "resolved_wide_multiplier_by_parameter": {
+            "rotation": 1.75,
+            "axis_scale": 1.9,
+            "shear": 1.8,
+            "elastic": 1.6
+          },
+          "wide_selected_rows_by_parameter": {
+            "rotation": 827,
+            "axis_scale": 643,
+            "shear": 749,
+            "elastic": 334
+          },
+          "wide_selected_any_parameter_rows": 1835
+        },
+        "stroke_local": {
+          "rows": 2976,
+          "selected_rows": 1971,
+          "accepted_rows": 1944,
+          "reverted_rows": 27,
+          "changed_rows": 1944,
+          "rms_mean_selected": 0.008106059394776821,
+          "rms_p95_selected": 0.014227161183953285,
+          "orientation_preserving": true,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 27,
+            "path_ratio_high": 0
+          }
+        },
+        "stroke_curve": {
+          "rows": 2976,
+          "selected_rows": 1964,
+          "accepted_rows": 1884,
+          "reverted_rows": 80,
+          "changed_rows": 1881,
+          "changed_strokes": 3500,
+          "max_displacement_requested": 0.02500000037252903,
+          "max_displacement_mean_requested": 0.025000005960464478,
+          "max_displacement_p05_requested": 0.02500000037252903,
+          "max_displacement_p95_requested": 0.02500000037252903,
+          "probability_mean_requested": 0.6500000357627869,
+          "probability_p05_requested": 0.6499999761581421,
+          "probability_p95_requested": 0.6499999761581421,
+          "rows_by_family": {
+            "arrows": {
+              "rows": 232,
+              "probability_mean_requested": 0.6500000357627869,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 398,
+              "applied_wave_count_histogram": {
+                "1": 136,
+                "2": 127,
+                "3": 135
+              },
+              "mean_applied_wave_count": 1.9974874371859297,
+              "selected_rows": 152,
+              "accepted_rows": 149,
+              "changed_rows": 149,
+              "reverted_rows": 3
+            },
+            "digits": {
+              "rows": 80,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 1.0,
+              "selected_strokes": 67,
+              "applied_wave_count_histogram": {
+                "1": 67,
+                "2": 0,
+                "3": 0
+              },
+              "mean_applied_wave_count": 1.0,
+              "selected_rows": 51,
+              "accepted_rows": 51,
+              "changed_rows": 51,
+              "reverted_rows": 0
+            },
+            "fences": {
+              "rows": 112,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 89,
+              "applied_wave_count_histogram": {
+                "1": 21,
+                "2": 34,
+                "3": 34
+              },
+              "mean_applied_wave_count": 2.146067415730337,
+              "selected_rows": 82,
+              "accepted_rows": 80,
+              "changed_rows": 80,
+              "reverted_rows": 2
+            },
+            "greek": {
+              "rows": 368,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 422,
+              "applied_wave_count_histogram": {
+                "1": 136,
+                "2": 133,
+                "3": 153
+              },
+              "mean_applied_wave_count": 2.0402843601895735,
+              "selected_rows": 250,
+              "accepted_rows": 238,
+              "changed_rows": 238,
+              "reverted_rows": 12
+            },
+            "large_ops": {
+              "rows": 72,
+              "probability_mean_requested": 0.6500000357627869,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 112,
+              "applied_wave_count_histogram": {
+                "1": 36,
+                "2": 39,
+                "3": 37
+              },
+              "mean_applied_wave_count": 2.0089285714285716,
+              "selected_rows": 50,
+              "accepted_rows": 48,
+              "changed_rows": 48,
+              "reverted_rows": 2
+            },
+            "latin_lower": {
+              "rows": 200,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 189,
+              "applied_wave_count_histogram": {
+                "1": 69,
+                "2": 63,
+                "3": 57
+              },
+              "mean_applied_wave_count": 1.9365079365079365,
+              "selected_rows": 145,
+              "accepted_rows": 137,
+              "changed_rows": 137,
+              "reverted_rows": 8
+            },
+            "latin_upper": {
+              "rows": 208,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 1.0,
+              "selected_strokes": 218,
+              "applied_wave_count_histogram": {
+                "1": 218,
+                "2": 0,
+                "3": 0
+              },
+              "mean_applied_wave_count": 1.0,
+              "selected_rows": 130,
+              "accepted_rows": 128,
+              "changed_rows": 128,
+              "reverted_rows": 2
+            },
+            "operators": {
+              "rows": 232,
+              "probability_mean_requested": 0.6500000357627869,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 302,
+              "applied_wave_count_histogram": {
+                "1": 88,
+                "2": 99,
+                "3": 115
+              },
+              "mean_applied_wave_count": 2.089403973509934,
+              "selected_rows": 148,
+              "accepted_rows": 146,
+              "changed_rows": 146,
+              "reverted_rows": 2
+            },
+            "other_math": {
+              "rows": 1200,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 1.0,
+              "selected_strokes": 1632,
+              "applied_wave_count_histogram": {
+                "1": 1632,
+                "2": 0,
+                "3": 0
+              },
+              "mean_applied_wave_count": 1.0,
+              "selected_rows": 795,
+              "accepted_rows": 746,
+              "changed_rows": 743,
+              "reverted_rows": 49
+            },
+            "relations": {
+              "rows": 272,
+              "probability_mean_requested": 0.6500000953674316,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 378,
+              "applied_wave_count_histogram": {
+                "1": 121,
+                "2": 137,
+                "3": 120
+              },
+              "mean_applied_wave_count": 1.9973544973544974,
+              "selected_rows": 161,
+              "accepted_rows": 161,
+              "changed_rows": 161,
+              "reverted_rows": 0
+            }
+          },
+          "max_waves_requested": null,
+          "max_waves_min_requested": 1,
+          "max_waves_mean_requested": 2.0,
+          "max_waves_max_requested": 3,
+          "selected_strokes": 3807,
+          "applied_wave_count_histogram": {
+            "1": 2524,
+            "2": 632,
+            "3": 651
+          },
+          "mean_applied_wave_count": 1.5080115576569477,
+          "rms_mean_selected": 0.0037899049930274487,
+          "rms_p95_selected": 0.006748874206095934,
+          "direction_reversal_rows": 54,
+          "direction_cosine_p05": 0.9907775521278381,
+          "boundary_attenuated_rows": 1964,
+          "boundary_scale_p05_selected": 0.12701867520809174,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 24,
+            "path_ratio_high": 2,
+            "direction_reversal": 54
+          }
+        }
+      },
+      {
+        "view_index": 2,
+        "rows": 2976,
+        "changed": 2929,
+        "reverted": 47,
+        "elastic_probability_requested": 0.58,
+        "elastic_selected_rows": 1754,
+        "elastic_selected_and_changed_rows": 1728,
+        "affine_gate_reverted_rows": 176,
+        "elastic_gate_reverted_rows": 39,
+        "composite_gate_reverted_selected_rows": 40,
+        "identity_output_rows": 47,
+        "rms_mean": 0.016818657517433167,
+        "rms_p95": 0.031748365610837936,
+        "max_point_p95": 0.07968711853027344,
+        "path_ratio_min": 0.0,
+        "path_ratio_max": 1.16324782371521,
+        "stroke_count_preserved": true,
+        "affine_stage": {
+          "rows": 2976,
+          "accepted": 2800,
+          "reverted": 176,
+          "changed": 2800,
+          "rms_mean": 0.016346734017133713,
+          "rms_p95": 0.0342671163380146,
+          "max_point_p95": 0.08492172509431839,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.1818143129348755,
+          "stroke_count_preserved": true,
+          "orientation_preserving_affine": true
+        },
+        "elastic_stage": {
+          "rows": 2976,
+          "accepted": 2937,
+          "reverted": 39,
+          "changed": 2937,
+          "rms_mean": 0.005990700796246529,
+          "rms_p95": 0.010089129209518433,
+          "max_point_p95": 0.029269009828567505,
+          "jacobian_frobenius_max": 0.3194643259048462,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.0286892652511597,
+          "stroke_count_preserved": true,
+          "orientation_preserving_bound": 0.35,
+          "boundary_pinned": true
+        },
+        "composite_fell_back_to_affine": 40,
+        "severity_mixture": {
+          "independent_wide_probability_by_parameter": null,
+          "wide_magnitude_multiplier": null,
+          "resolved_wide_probability_by_parameter": {
+            "rotation": 0.28,
+            "axis_scale": 0.22,
+            "shear": 0.25,
+            "elastic": 0.2
+          },
+          "resolved_wide_multiplier_by_parameter": {
+            "rotation": 1.75,
+            "axis_scale": 1.9,
+            "shear": 1.8,
+            "elastic": 1.6
+          },
+          "wide_selected_rows_by_parameter": {
+            "rotation": 819,
+            "axis_scale": 660,
+            "shear": 724,
+            "elastic": 346
+          },
+          "wide_selected_any_parameter_rows": 1881
+        },
+        "stroke_local": {
+          "rows": 2976,
+          "selected_rows": 2013,
+          "accepted_rows": 1986,
+          "reverted_rows": 27,
+          "changed_rows": 1986,
+          "rms_mean_selected": 0.007863722741603851,
+          "rms_p95_selected": 0.01415326353162527,
+          "orientation_preserving": true,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 27,
+            "path_ratio_high": 0
+          }
+        },
+        "stroke_curve": {
+          "rows": 2976,
+          "selected_rows": 1913,
+          "accepted_rows": 1814,
+          "reverted_rows": 99,
+          "changed_rows": 1813,
+          "changed_strokes": 3402,
+          "max_displacement_requested": 0.02500000037252903,
+          "max_displacement_mean_requested": 0.025000005960464478,
+          "max_displacement_p05_requested": 0.02500000037252903,
+          "max_displacement_p95_requested": 0.02500000037252903,
+          "probability_mean_requested": 0.6500000357627869,
+          "probability_p05_requested": 0.6499999761581421,
+          "probability_p95_requested": 0.6499999761581421,
+          "rows_by_family": {
+            "arrows": {
+              "rows": 232,
+              "probability_mean_requested": 0.6500000357627869,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 378,
+              "applied_wave_count_histogram": {
+                "1": 126,
+                "2": 115,
+                "3": 137
+              },
+              "mean_applied_wave_count": 2.0291005291005293,
+              "selected_rows": 140,
+              "accepted_rows": 135,
+              "changed_rows": 135,
+              "reverted_rows": 5
+            },
+            "digits": {
+              "rows": 80,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 1.0,
+              "selected_strokes": 61,
+              "applied_wave_count_histogram": {
+                "1": 61,
+                "2": 0,
+                "3": 0
+              },
+              "mean_applied_wave_count": 1.0,
+              "selected_rows": 48,
+              "accepted_rows": 47,
+              "changed_rows": 47,
+              "reverted_rows": 1
+            },
+            "fences": {
+              "rows": 112,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 72,
+              "applied_wave_count_histogram": {
+                "1": 24,
+                "2": 21,
+                "3": 27
+              },
+              "mean_applied_wave_count": 2.0416666666666665,
+              "selected_rows": 65,
+              "accepted_rows": 61,
+              "changed_rows": 61,
+              "reverted_rows": 4
+            },
+            "greek": {
+              "rows": 368,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 404,
+              "applied_wave_count_histogram": {
+                "1": 140,
+                "2": 124,
+                "3": 140
+              },
+              "mean_applied_wave_count": 2.0,
+              "selected_rows": 238,
+              "accepted_rows": 226,
+              "changed_rows": 226,
+              "reverted_rows": 12
+            },
+            "large_ops": {
+              "rows": 72,
+              "probability_mean_requested": 0.6500000357627869,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 99,
+              "applied_wave_count_histogram": {
+                "1": 24,
+                "2": 39,
+                "3": 36
+              },
+              "mean_applied_wave_count": 2.121212121212121,
+              "selected_rows": 46,
+              "accepted_rows": 42,
+              "changed_rows": 42,
+              "reverted_rows": 4
+            },
+            "latin_lower": {
+              "rows": 200,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 164,
+              "applied_wave_count_histogram": {
+                "1": 52,
+                "2": 39,
+                "3": 73
+              },
+              "mean_applied_wave_count": 2.1280487804878048,
+              "selected_rows": 131,
+              "accepted_rows": 127,
+              "changed_rows": 127,
+              "reverted_rows": 4
+            },
+            "latin_upper": {
+              "rows": 208,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 1.0,
+              "selected_strokes": 213,
+              "applied_wave_count_histogram": {
+                "1": 213,
+                "2": 0,
+                "3": 0
+              },
+              "mean_applied_wave_count": 1.0,
+              "selected_rows": 131,
+              "accepted_rows": 126,
+              "changed_rows": 126,
+              "reverted_rows": 5
+            },
+            "operators": {
+              "rows": 232,
+              "probability_mean_requested": 0.6500000357627869,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 318,
+              "applied_wave_count_histogram": {
+                "1": 127,
+                "2": 103,
+                "3": 88
+              },
+              "mean_applied_wave_count": 1.8773584905660377,
+              "selected_rows": 153,
+              "accepted_rows": 149,
+              "changed_rows": 149,
+              "reverted_rows": 4
+            },
+            "other_math": {
+              "rows": 1200,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 1.0,
+              "selected_strokes": 1587,
+              "applied_wave_count_histogram": {
+                "1": 1587,
+                "2": 0,
+                "3": 0
+              },
+              "mean_applied_wave_count": 1.0,
+              "selected_rows": 780,
+              "accepted_rows": 722,
+              "changed_rows": 721,
+              "reverted_rows": 58
+            },
+            "relations": {
+              "rows": 272,
+              "probability_mean_requested": 0.6500000953674316,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 415,
+              "applied_wave_count_histogram": {
+                "1": 146,
+                "2": 134,
+                "3": 135
+              },
+              "mean_applied_wave_count": 1.9734939759036145,
+              "selected_rows": 181,
+              "accepted_rows": 179,
+              "changed_rows": 179,
+              "reverted_rows": 2
+            }
+          },
+          "max_waves_requested": null,
+          "max_waves_min_requested": 1,
+          "max_waves_mean_requested": 2.0,
+          "max_waves_max_requested": 3,
+          "selected_strokes": 3711,
+          "applied_wave_count_histogram": {
+            "1": 2500,
+            "2": 575,
+            "3": 636
+          },
+          "mean_applied_wave_count": 1.4977095122608461,
+          "rms_mean_selected": 0.003814816940575838,
+          "rms_p95_selected": 0.0067639704793691635,
+          "direction_reversal_rows": 71,
+          "direction_cosine_p05": 0.9913791418075562,
+          "boundary_attenuated_rows": 1913,
+          "boundary_scale_p05_selected": 0.1314726322889328,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 28,
+            "path_ratio_high": 0,
+            "direction_reversal": 71
+          }
+        }
+      },
+      {
+        "view_index": 3,
+        "rows": 2976,
+        "changed": 2929,
+        "reverted": 47,
+        "elastic_probability_requested": 0.58,
+        "elastic_selected_rows": 1714,
+        "elastic_selected_and_changed_rows": 1696,
+        "affine_gate_reverted_rows": 167,
+        "elastic_gate_reverted_rows": 39,
+        "composite_gate_reverted_selected_rows": 29,
+        "identity_output_rows": 47,
+        "rms_mean": 0.016873707994818687,
+        "rms_p95": 0.03158678114414215,
+        "max_point_p95": 0.07894967496395111,
+        "path_ratio_min": 0.0,
+        "path_ratio_max": 1.1883903741836548,
+        "stroke_count_preserved": true,
+        "affine_stage": {
+          "rows": 2976,
+          "accepted": 2809,
+          "reverted": 167,
+          "changed": 2809,
+          "rms_mean": 0.01634514518082142,
+          "rms_p95": 0.03423212468624115,
+          "max_point_p95": 0.08449781686067581,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.1997432708740234,
+          "stroke_count_preserved": true,
+          "orientation_preserving_affine": true
+        },
+        "elastic_stage": {
+          "rows": 2976,
+          "accepted": 2937,
+          "reverted": 39,
+          "changed": 2937,
+          "rms_mean": 0.005893428344279528,
+          "rms_p95": 0.009763022884726524,
+          "max_point_p95": 0.029393555596470833,
+          "jacobian_frobenius_max": 0.3171621263027191,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.0620746612548828,
+          "stroke_count_preserved": true,
+          "orientation_preserving_bound": 0.35,
+          "boundary_pinned": true
+        },
+        "composite_fell_back_to_affine": 29,
+        "severity_mixture": {
+          "independent_wide_probability_by_parameter": null,
+          "wide_magnitude_multiplier": null,
+          "resolved_wide_probability_by_parameter": {
+            "rotation": 0.28,
+            "axis_scale": 0.22,
+            "shear": 0.25,
+            "elastic": 0.2
+          },
+          "resolved_wide_multiplier_by_parameter": {
+            "rotation": 1.75,
+            "axis_scale": 1.9,
+            "shear": 1.8,
+            "elastic": 1.6
+          },
+          "wide_selected_rows_by_parameter": {
+            "rotation": 857,
+            "axis_scale": 634,
+            "shear": 767,
+            "elastic": 319
+          },
+          "wide_selected_any_parameter_rows": 1882
+        },
+        "stroke_local": {
+          "rows": 2976,
+          "selected_rows": 1918,
+          "accepted_rows": 1893,
+          "reverted_rows": 25,
+          "changed_rows": 1893,
+          "rms_mean_selected": 0.007884827442467213,
+          "rms_p95_selected": 0.014441797509789467,
+          "orientation_preserving": true,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 25,
+            "path_ratio_high": 0
+          }
+        },
+        "stroke_curve": {
+          "rows": 2976,
+          "selected_rows": 1934,
+          "accepted_rows": 1860,
+          "reverted_rows": 74,
+          "changed_rows": 1854,
+          "changed_strokes": 3491,
+          "max_displacement_requested": 0.02500000037252903,
+          "max_displacement_mean_requested": 0.025000005960464478,
+          "max_displacement_p05_requested": 0.02500000037252903,
+          "max_displacement_p95_requested": 0.02500000037252903,
+          "probability_mean_requested": 0.6500000357627869,
+          "probability_p05_requested": 0.6499999761581421,
+          "probability_p95_requested": 0.6499999761581421,
+          "rows_by_family": {
+            "arrows": {
+              "rows": 232,
+              "probability_mean_requested": 0.6500000357627869,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 422,
+              "applied_wave_count_histogram": {
+                "1": 156,
+                "2": 130,
+                "3": 136
+              },
+              "mean_applied_wave_count": 1.95260663507109,
+              "selected_rows": 160,
+              "accepted_rows": 153,
+              "changed_rows": 153,
+              "reverted_rows": 7
+            },
+            "digits": {
+              "rows": 80,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 1.0,
+              "selected_strokes": 59,
+              "applied_wave_count_histogram": {
+                "1": 59,
+                "2": 0,
+                "3": 0
+              },
+              "mean_applied_wave_count": 1.0,
+              "selected_rows": 45,
+              "accepted_rows": 45,
+              "changed_rows": 45,
+              "reverted_rows": 0
+            },
+            "fences": {
+              "rows": 112,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 78,
+              "applied_wave_count_histogram": {
+                "1": 25,
+                "2": 25,
+                "3": 28
+              },
+              "mean_applied_wave_count": 2.0384615384615383,
+              "selected_rows": 71,
+              "accepted_rows": 62,
+              "changed_rows": 62,
+              "reverted_rows": 9
+            },
+            "greek": {
+              "rows": 368,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 406,
+              "applied_wave_count_histogram": {
+                "1": 139,
+                "2": 124,
+                "3": 143
+              },
+              "mean_applied_wave_count": 2.0098522167487687,
+              "selected_rows": 237,
+              "accepted_rows": 233,
+              "changed_rows": 233,
+              "reverted_rows": 4
+            },
+            "large_ops": {
+              "rows": 72,
+              "probability_mean_requested": 0.6500000357627869,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 110,
+              "applied_wave_count_histogram": {
+                "1": 33,
+                "2": 39,
+                "3": 38
+              },
+              "mean_applied_wave_count": 2.0454545454545454,
+              "selected_rows": 53,
+              "accepted_rows": 50,
+              "changed_rows": 50,
+              "reverted_rows": 3
+            },
+            "latin_lower": {
+              "rows": 200,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 170,
+              "applied_wave_count_histogram": {
+                "1": 56,
+                "2": 52,
+                "3": 62
+              },
+              "mean_applied_wave_count": 2.0352941176470587,
+              "selected_rows": 129,
+              "accepted_rows": 125,
+              "changed_rows": 125,
+              "reverted_rows": 4
+            },
+            "latin_upper": {
+              "rows": 208,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 1.0,
+              "selected_strokes": 216,
+              "applied_wave_count_histogram": {
+                "1": 216,
+                "2": 0,
+                "3": 0
+              },
+              "mean_applied_wave_count": 1.0,
+              "selected_rows": 133,
+              "accepted_rows": 129,
+              "changed_rows": 129,
+              "reverted_rows": 4
+            },
+            "operators": {
+              "rows": 232,
+              "probability_mean_requested": 0.6500000357627869,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 302,
+              "applied_wave_count_histogram": {
+                "1": 105,
+                "2": 97,
+                "3": 100
+              },
+              "mean_applied_wave_count": 1.9834437086092715,
+              "selected_rows": 148,
+              "accepted_rows": 144,
+              "changed_rows": 144,
+              "reverted_rows": 4
+            },
+            "other_math": {
+              "rows": 1200,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 1.0,
+              "selected_strokes": 1599,
+              "applied_wave_count_histogram": {
+                "1": 1599,
+                "2": 0,
+                "3": 0
+              },
+              "mean_applied_wave_count": 1.0,
+              "selected_rows": 779,
+              "accepted_rows": 740,
+              "changed_rows": 734,
+              "reverted_rows": 39
+            },
+            "relations": {
+              "rows": 272,
+              "probability_mean_requested": 0.6500000953674316,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 414,
+              "applied_wave_count_histogram": {
+                "1": 150,
+                "2": 128,
+                "3": 136
+              },
+              "mean_applied_wave_count": 1.9661835748792271,
+              "selected_rows": 179,
+              "accepted_rows": 179,
+              "changed_rows": 179,
+              "reverted_rows": 0
+            }
+          },
+          "max_waves_requested": null,
+          "max_waves_min_requested": 1,
+          "max_waves_mean_requested": 2.0,
+          "max_waves_max_requested": 3,
+          "selected_strokes": 3776,
+          "applied_wave_count_histogram": {
+            "1": 2538,
+            "2": 595,
+            "3": 643
+          },
+          "mean_applied_wave_count": 1.498146186440678,
+          "rms_mean_selected": 0.0037435414269566536,
+          "rms_p95_selected": 0.00666262349113822,
+          "direction_reversal_rows": 53,
+          "direction_cosine_p05": 0.9917712211608887,
+          "boundary_attenuated_rows": 1934,
+          "boundary_scale_p05_selected": 0.13083866238594055,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 21,
+            "path_ratio_high": 0,
+            "direction_reversal": 53
+          }
+        }
+      },
+      {
+        "view_index": 4,
+        "rows": 2976,
+        "changed": 2928,
+        "reverted": 48,
+        "elastic_probability_requested": 0.58,
+        "elastic_selected_rows": 1714,
+        "elastic_selected_and_changed_rows": 1691,
+        "affine_gate_reverted_rows": 150,
+        "elastic_gate_reverted_rows": 39,
+        "composite_gate_reverted_selected_rows": 31,
+        "identity_output_rows": 48,
+        "rms_mean": 0.017248278483748436,
+        "rms_p95": 0.032121069729328156,
+        "max_point_p95": 0.08034708350896835,
+        "path_ratio_min": 0.0,
+        "path_ratio_max": 1.2055680751800537,
+        "stroke_count_preserved": true,
+        "affine_stage": {
+          "rows": 2976,
+          "accepted": 2826,
+          "reverted": 150,
+          "changed": 2826,
+          "rms_mean": 0.016394617035984993,
+          "rms_p95": 0.03333074599504471,
+          "max_point_p95": 0.08266551792621613,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.2157487869262695,
+          "stroke_count_preserved": true,
+          "orientation_preserving_affine": true
+        },
+        "elastic_stage": {
+          "rows": 2976,
+          "accepted": 2937,
+          "reverted": 39,
+          "changed": 2937,
+          "rms_mean": 0.005953584797680378,
+          "rms_p95": 0.009764933958649635,
+          "max_point_p95": 0.029307778924703598,
+          "jacobian_frobenius_max": 0.31998708844184875,
+          "path_ratio_min": 0.0,
+          "path_ratio_max": 1.0869648456573486,
+          "stroke_count_preserved": true,
+          "orientation_preserving_bound": 0.35,
+          "boundary_pinned": true
+        },
+        "composite_fell_back_to_affine": 31,
+        "severity_mixture": {
+          "independent_wide_probability_by_parameter": null,
+          "wide_magnitude_multiplier": null,
+          "resolved_wide_probability_by_parameter": {
+            "rotation": 0.28,
+            "axis_scale": 0.22,
+            "shear": 0.25,
+            "elastic": 0.2
+          },
+          "resolved_wide_multiplier_by_parameter": {
+            "rotation": 1.75,
+            "axis_scale": 1.9,
+            "shear": 1.8,
+            "elastic": 1.6
+          },
+          "wide_selected_rows_by_parameter": {
+            "rotation": 813,
+            "axis_scale": 591,
+            "shear": 782,
+            "elastic": 320
+          },
+          "wide_selected_any_parameter_rows": 1826
+        },
+        "stroke_local": {
+          "rows": 2976,
+          "selected_rows": 1925,
+          "accepted_rows": 1898,
+          "reverted_rows": 27,
+          "changed_rows": 1898,
+          "rms_mean_selected": 0.008020489476621151,
+          "rms_p95_selected": 0.01444549672305584,
+          "orientation_preserving": true,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 27,
+            "path_ratio_high": 0
+          }
+        },
+        "stroke_curve": {
+          "rows": 2976,
+          "selected_rows": 1976,
+          "accepted_rows": 1897,
+          "reverted_rows": 79,
+          "changed_rows": 1893,
+          "changed_strokes": 3540,
+          "max_displacement_requested": 0.02500000037252903,
+          "max_displacement_mean_requested": 0.025000005960464478,
+          "max_displacement_p05_requested": 0.02500000037252903,
+          "max_displacement_p95_requested": 0.02500000037252903,
+          "probability_mean_requested": 0.6500000357627869,
+          "probability_p05_requested": 0.6499999761581421,
+          "probability_p95_requested": 0.6499999761581421,
+          "rows_by_family": {
+            "arrows": {
+              "rows": 232,
+              "probability_mean_requested": 0.6500000357627869,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 401,
+              "applied_wave_count_histogram": {
+                "1": 133,
+                "2": 141,
+                "3": 127
+              },
+              "mean_applied_wave_count": 1.9850374064837906,
+              "selected_rows": 152,
+              "accepted_rows": 146,
+              "changed_rows": 146,
+              "reverted_rows": 6
+            },
+            "digits": {
+              "rows": 80,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 1.0,
+              "selected_strokes": 68,
+              "applied_wave_count_histogram": {
+                "1": 68,
+                "2": 0,
+                "3": 0
+              },
+              "mean_applied_wave_count": 1.0,
+              "selected_rows": 54,
+              "accepted_rows": 53,
+              "changed_rows": 53,
+              "reverted_rows": 1
+            },
+            "fences": {
+              "rows": 112,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 91,
+              "applied_wave_count_histogram": {
+                "1": 32,
+                "2": 25,
+                "3": 34
+              },
+              "mean_applied_wave_count": 2.021978021978022,
+              "selected_rows": 80,
+              "accepted_rows": 76,
+              "changed_rows": 76,
+              "reverted_rows": 4
+            },
+            "greek": {
+              "rows": 368,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 419,
+              "applied_wave_count_histogram": {
+                "1": 150,
+                "2": 127,
+                "3": 142
+              },
+              "mean_applied_wave_count": 1.9809069212410502,
+              "selected_rows": 247,
+              "accepted_rows": 243,
+              "changed_rows": 243,
+              "reverted_rows": 4
+            },
+            "large_ops": {
+              "rows": 72,
+              "probability_mean_requested": 0.6500000357627869,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 106,
+              "applied_wave_count_histogram": {
+                "1": 39,
+                "2": 32,
+                "3": 35
+              },
+              "mean_applied_wave_count": 1.9622641509433962,
+              "selected_rows": 48,
+              "accepted_rows": 46,
+              "changed_rows": 46,
+              "reverted_rows": 2
+            },
+            "latin_lower": {
+              "rows": 200,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 181,
+              "applied_wave_count_histogram": {
+                "1": 72,
+                "2": 53,
+                "3": 56
+              },
+              "mean_applied_wave_count": 1.9116022099447514,
+              "selected_rows": 140,
+              "accepted_rows": 134,
+              "changed_rows": 134,
+              "reverted_rows": 6
+            },
+            "latin_upper": {
+              "rows": 208,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 1.0,
+              "selected_strokes": 197,
+              "applied_wave_count_histogram": {
+                "1": 197,
+                "2": 0,
+                "3": 0
+              },
+              "mean_applied_wave_count": 1.0,
+              "selected_rows": 124,
+              "accepted_rows": 121,
+              "changed_rows": 121,
+              "reverted_rows": 3
+            },
+            "operators": {
+              "rows": 232,
+              "probability_mean_requested": 0.6500000357627869,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 295,
+              "applied_wave_count_histogram": {
+                "1": 89,
+                "2": 100,
+                "3": 106
+              },
+              "mean_applied_wave_count": 2.057627118644068,
+              "selected_rows": 150,
+              "accepted_rows": 145,
+              "changed_rows": 145,
+              "reverted_rows": 5
+            },
+            "other_math": {
+              "rows": 1200,
+              "probability_mean_requested": 0.6499999761581421,
+              "max_waves_mean_requested": 1.0,
+              "selected_strokes": 1662,
+              "applied_wave_count_histogram": {
+                "1": 1662,
+                "2": 0,
+                "3": 0
+              },
+              "mean_applied_wave_count": 1.0,
+              "selected_rows": 808,
+              "accepted_rows": 761,
+              "changed_rows": 757,
+              "reverted_rows": 47
+            },
+            "relations": {
+              "rows": 272,
+              "probability_mean_requested": 0.6500000953674316,
+              "max_waves_mean_requested": 3.0,
+              "selected_strokes": 401,
+              "applied_wave_count_histogram": {
+                "1": 125,
+                "2": 143,
+                "3": 133
+              },
+              "mean_applied_wave_count": 2.0199501246882794,
+              "selected_rows": 173,
+              "accepted_rows": 172,
+              "changed_rows": 172,
+              "reverted_rows": 1
+            }
+          },
+          "max_waves_requested": null,
+          "max_waves_min_requested": 1,
+          "max_waves_mean_requested": 2.0,
+          "max_waves_max_requested": 3,
+          "selected_strokes": 3821,
+          "applied_wave_count_histogram": {
+            "1": 2567,
+            "2": 621,
+            "3": 633
+          },
+          "mean_applied_wave_count": 1.4938497775451451,
+          "rms_mean_selected": 0.0037605231627821922,
+          "rms_p95_selected": 0.006731125991791487,
+          "direction_reversal_rows": 51,
+          "direction_cosine_p05": 0.990666925907135,
+          "boundary_attenuated_rows": 1976,
+          "boundary_scale_p05_selected": 0.1259765475988388,
+          "rejection_reasons_on_selected_rows": {
+            "non_finite": 0,
+            "out_of_bounds": 0,
+            "rms_limit": 0,
+            "point_limit": 0,
+            "path_ratio_low": 27,
+            "path_ratio_high": 1,
+            "direction_reversal": 51
+          }
+        }
+      }
+    ],
+    "selected_rows_by_source": {
+      "hwrt": 2658,
+      "uji": 310,
+      "synthetic_equal": 8
+    }
+  },
+  "teacher_robustness_on_qa_rows": {
+    "scope": "training pool only; diagnostic, never used for model selection",
+    "views": [
+      {
+        "view_index": 1,
+        "overall": {
+          "rows": 2976,
+          "teacher_top1_agreement_with_source": 0.956989247311828,
+          "source_teacher_top1_label_accuracy": 0.8010752688172043,
+          "augmented_teacher_top1_label_accuracy": 0.7943548387096774,
+          "source_teacher_top5_label_accuracy": 0.9865591397849462,
+          "augmented_teacher_top5_label_accuracy": 0.9865591397849462
+        },
+        "by_family": {
+          "arrows": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9870689655172413,
+            "source_teacher_top1_label_accuracy": 0.8103448275862069,
+            "augmented_teacher_top1_label_accuracy": 0.8103448275862069,
+            "source_teacher_top5_label_accuracy": 0.9956896551724138,
+            "augmented_teacher_top5_label_accuracy": 0.9956896551724138
+          },
+          "digits": {
+            "rows": 80,
+            "teacher_top1_agreement_with_source": 0.95,
+            "source_teacher_top1_label_accuracy": 0.85,
+            "augmented_teacher_top1_label_accuracy": 0.875,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "fences": {
+            "rows": 112,
+            "teacher_top1_agreement_with_source": 0.9821428571428571,
+            "source_teacher_top1_label_accuracy": 0.9732142857142857,
+            "augmented_teacher_top1_label_accuracy": 0.9553571428571429,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "greek": {
+            "rows": 368,
+            "teacher_top1_agreement_with_source": 0.9728260869565217,
+            "source_teacher_top1_label_accuracy": 0.8260869565217391,
+            "augmented_teacher_top1_label_accuracy": 0.8125,
+            "source_teacher_top5_label_accuracy": 0.967391304347826,
+            "augmented_teacher_top5_label_accuracy": 0.970108695652174
+          },
+          "large_ops": {
+            "rows": 72,
+            "teacher_top1_agreement_with_source": 0.9722222222222222,
+            "source_teacher_top1_label_accuracy": 0.7638888888888888,
+            "augmented_teacher_top1_label_accuracy": 0.75,
+            "source_teacher_top5_label_accuracy": 0.9722222222222222,
+            "augmented_teacher_top5_label_accuracy": 0.9722222222222222
+          },
+          "latin_lower": {
+            "rows": 200,
+            "teacher_top1_agreement_with_source": 0.905,
+            "source_teacher_top1_label_accuracy": 0.66,
+            "augmented_teacher_top1_label_accuracy": 0.645,
+            "source_teacher_top5_label_accuracy": 0.985,
+            "augmented_teacher_top5_label_accuracy": 0.985
+          },
+          "latin_upper": {
+            "rows": 208,
+            "teacher_top1_agreement_with_source": 0.9182692307692307,
+            "source_teacher_top1_label_accuracy": 0.8076923076923077,
+            "augmented_teacher_top1_label_accuracy": 0.7740384615384616,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "operators": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9741379310344828,
+            "source_teacher_top1_label_accuracy": 0.9008620689655172,
+            "augmented_teacher_top1_label_accuracy": 0.8922413793103449,
+            "source_teacher_top5_label_accuracy": 0.9913793103448276,
+            "augmented_teacher_top5_label_accuracy": 0.9913793103448276
+          },
+          "other_math": {
+            "rows": 1200,
+            "teacher_top1_agreement_with_source": 0.955,
+            "source_teacher_top1_label_accuracy": 0.7808333333333334,
+            "augmented_teacher_top1_label_accuracy": 0.7825,
+            "source_teacher_top5_label_accuracy": 0.9841666666666666,
+            "augmented_teacher_top5_label_accuracy": 0.9833333333333333
+          },
+          "relations": {
+            "rows": 272,
+            "teacher_top1_agreement_with_source": 0.9595588235294118,
+            "source_teacher_top1_label_accuracy": 0.7867647058823529,
+            "augmented_teacher_top1_label_accuracy": 0.7720588235294118,
+            "source_teacher_top5_label_accuracy": 0.9963235294117647,
+            "augmented_teacher_top5_label_accuracy": 0.9963235294117647
+          }
+        },
+        "by_source": {
+          "hwrt": {
+            "rows": 2658,
+            "teacher_top1_agreement_with_source": 0.9604966139954854,
+            "source_teacher_top1_label_accuracy": 0.8073739653875094,
+            "augmented_teacher_top1_label_accuracy": 0.799849510910459,
+            "source_teacher_top5_label_accuracy": 0.9853273137697517,
+            "augmented_teacher_top5_label_accuracy": 0.9853273137697517
+          },
+          "synthetic_equal": {
+            "rows": 8,
+            "teacher_top1_agreement_with_source": 1.0,
+            "source_teacher_top1_label_accuracy": 0.75,
+            "augmented_teacher_top1_label_accuracy": 0.75,
+            "source_teacher_top5_label_accuracy": 0.875,
+            "augmented_teacher_top5_label_accuracy": 0.875
+          },
+          "uji": {
+            "rows": 310,
+            "teacher_top1_agreement_with_source": 0.9258064516129032,
+            "source_teacher_top1_label_accuracy": 0.7483870967741936,
+            "augmented_teacher_top1_label_accuracy": 0.7483870967741936,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          }
+        }
+      },
+      {
+        "view_index": 2,
+        "overall": {
+          "rows": 2976,
+          "teacher_top1_agreement_with_source": 0.9650537634408602,
+          "source_teacher_top1_label_accuracy": 0.8010752688172043,
+          "augmented_teacher_top1_label_accuracy": 0.7983870967741935,
+          "source_teacher_top5_label_accuracy": 0.9865591397849462,
+          "augmented_teacher_top5_label_accuracy": 0.9858870967741935
+        },
+        "by_family": {
+          "arrows": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9827586206896551,
+            "source_teacher_top1_label_accuracy": 0.8103448275862069,
+            "augmented_teacher_top1_label_accuracy": 0.8189655172413793,
+            "source_teacher_top5_label_accuracy": 0.9956896551724138,
+            "augmented_teacher_top5_label_accuracy": 0.9956896551724138
+          },
+          "digits": {
+            "rows": 80,
+            "teacher_top1_agreement_with_source": 0.9625,
+            "source_teacher_top1_label_accuracy": 0.85,
+            "augmented_teacher_top1_label_accuracy": 0.85,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 0.9875
+          },
+          "fences": {
+            "rows": 112,
+            "teacher_top1_agreement_with_source": 0.9732142857142857,
+            "source_teacher_top1_label_accuracy": 0.9732142857142857,
+            "augmented_teacher_top1_label_accuracy": 0.9464285714285714,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "greek": {
+            "rows": 368,
+            "teacher_top1_agreement_with_source": 0.9592391304347826,
+            "source_teacher_top1_label_accuracy": 0.8260869565217391,
+            "augmented_teacher_top1_label_accuracy": 0.8288043478260869,
+            "source_teacher_top5_label_accuracy": 0.967391304347826,
+            "augmented_teacher_top5_label_accuracy": 0.970108695652174
+          },
+          "large_ops": {
+            "rows": 72,
+            "teacher_top1_agreement_with_source": 0.9583333333333334,
+            "source_teacher_top1_label_accuracy": 0.7638888888888888,
+            "augmented_teacher_top1_label_accuracy": 0.7361111111111112,
+            "source_teacher_top5_label_accuracy": 0.9722222222222222,
+            "augmented_teacher_top5_label_accuracy": 0.9583333333333334
+          },
+          "latin_lower": {
+            "rows": 200,
+            "teacher_top1_agreement_with_source": 0.945,
+            "source_teacher_top1_label_accuracy": 0.66,
+            "augmented_teacher_top1_label_accuracy": 0.655,
+            "source_teacher_top5_label_accuracy": 0.985,
+            "augmented_teacher_top5_label_accuracy": 0.985
+          },
+          "latin_upper": {
+            "rows": 208,
+            "teacher_top1_agreement_with_source": 0.9423076923076923,
+            "source_teacher_top1_label_accuracy": 0.8076923076923077,
+            "augmented_teacher_top1_label_accuracy": 0.8076923076923077,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "operators": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9698275862068966,
+            "source_teacher_top1_label_accuracy": 0.9008620689655172,
+            "augmented_teacher_top1_label_accuracy": 0.8922413793103449,
+            "source_teacher_top5_label_accuracy": 0.9913793103448276,
+            "augmented_teacher_top5_label_accuracy": 0.9956896551724138
+          },
+          "other_math": {
+            "rows": 1200,
+            "teacher_top1_agreement_with_source": 0.9708333333333333,
+            "source_teacher_top1_label_accuracy": 0.7808333333333334,
+            "augmented_teacher_top1_label_accuracy": 0.775,
+            "source_teacher_top5_label_accuracy": 0.9841666666666666,
+            "augmented_teacher_top5_label_accuracy": 0.9825
+          },
+          "relations": {
+            "rows": 272,
+            "teacher_top1_agreement_with_source": 0.9595588235294118,
+            "source_teacher_top1_label_accuracy": 0.7867647058823529,
+            "augmented_teacher_top1_label_accuracy": 0.8014705882352942,
+            "source_teacher_top5_label_accuracy": 0.9963235294117647,
+            "augmented_teacher_top5_label_accuracy": 0.9963235294117647
+          }
+        },
+        "by_source": {
+          "hwrt": {
+            "rows": 2658,
+            "teacher_top1_agreement_with_source": 0.9665161775771257,
+            "source_teacher_top1_label_accuracy": 0.8073739653875094,
+            "augmented_teacher_top1_label_accuracy": 0.8043641835966893,
+            "source_teacher_top5_label_accuracy": 0.9853273137697517,
+            "augmented_teacher_top5_label_accuracy": 0.9849510910458992
+          },
+          "synthetic_equal": {
+            "rows": 8,
+            "teacher_top1_agreement_with_source": 0.875,
+            "source_teacher_top1_label_accuracy": 0.75,
+            "augmented_teacher_top1_label_accuracy": 0.75,
+            "source_teacher_top5_label_accuracy": 0.875,
+            "augmented_teacher_top5_label_accuracy": 0.875
+          },
+          "uji": {
+            "rows": 310,
+            "teacher_top1_agreement_with_source": 0.9548387096774194,
+            "source_teacher_top1_label_accuracy": 0.7483870967741936,
+            "augmented_teacher_top1_label_accuracy": 0.7483870967741936,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 0.9967741935483871
+          }
+        }
+      },
+      {
+        "view_index": 3,
+        "overall": {
+          "rows": 2976,
+          "teacher_top1_agreement_with_source": 0.9566532258064516,
+          "source_teacher_top1_label_accuracy": 0.8010752688172043,
+          "augmented_teacher_top1_label_accuracy": 0.8000672043010753,
+          "source_teacher_top5_label_accuracy": 0.9865591397849462,
+          "augmented_teacher_top5_label_accuracy": 0.9872311827956989
+        },
+        "by_family": {
+          "arrows": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9655172413793104,
+            "source_teacher_top1_label_accuracy": 0.8103448275862069,
+            "augmented_teacher_top1_label_accuracy": 0.8103448275862069,
+            "source_teacher_top5_label_accuracy": 0.9956896551724138,
+            "augmented_teacher_top5_label_accuracy": 0.9956896551724138
+          },
+          "digits": {
+            "rows": 80,
+            "teacher_top1_agreement_with_source": 0.95,
+            "source_teacher_top1_label_accuracy": 0.85,
+            "augmented_teacher_top1_label_accuracy": 0.85,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "fences": {
+            "rows": 112,
+            "teacher_top1_agreement_with_source": 0.9821428571428571,
+            "source_teacher_top1_label_accuracy": 0.9732142857142857,
+            "augmented_teacher_top1_label_accuracy": 0.9553571428571429,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "greek": {
+            "rows": 368,
+            "teacher_top1_agreement_with_source": 0.9646739130434783,
+            "source_teacher_top1_label_accuracy": 0.8260869565217391,
+            "augmented_teacher_top1_label_accuracy": 0.8288043478260869,
+            "source_teacher_top5_label_accuracy": 0.967391304347826,
+            "augmented_teacher_top5_label_accuracy": 0.9728260869565217
+          },
+          "large_ops": {
+            "rows": 72,
+            "teacher_top1_agreement_with_source": 0.9444444444444444,
+            "source_teacher_top1_label_accuracy": 0.7638888888888888,
+            "augmented_teacher_top1_label_accuracy": 0.7638888888888888,
+            "source_teacher_top5_label_accuracy": 0.9722222222222222,
+            "augmented_teacher_top5_label_accuracy": 0.9722222222222222
+          },
+          "latin_lower": {
+            "rows": 200,
+            "teacher_top1_agreement_with_source": 0.92,
+            "source_teacher_top1_label_accuracy": 0.66,
+            "augmented_teacher_top1_label_accuracy": 0.665,
+            "source_teacher_top5_label_accuracy": 0.985,
+            "augmented_teacher_top5_label_accuracy": 0.985
+          },
+          "latin_upper": {
+            "rows": 208,
+            "teacher_top1_agreement_with_source": 0.9567307692307693,
+            "source_teacher_top1_label_accuracy": 0.8076923076923077,
+            "augmented_teacher_top1_label_accuracy": 0.7788461538461539,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "operators": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9525862068965517,
+            "source_teacher_top1_label_accuracy": 0.9008620689655172,
+            "augmented_teacher_top1_label_accuracy": 0.9094827586206896,
+            "source_teacher_top5_label_accuracy": 0.9913793103448276,
+            "augmented_teacher_top5_label_accuracy": 0.9913793103448276
+          },
+          "other_math": {
+            "rows": 1200,
+            "teacher_top1_agreement_with_source": 0.9566666666666667,
+            "source_teacher_top1_label_accuracy": 0.7808333333333334,
+            "augmented_teacher_top1_label_accuracy": 0.7775,
+            "source_teacher_top5_label_accuracy": 0.9841666666666666,
+            "augmented_teacher_top5_label_accuracy": 0.9841666666666666
+          },
+          "relations": {
+            "rows": 272,
+            "teacher_top1_agreement_with_source": 0.9632352941176471,
+            "source_teacher_top1_label_accuracy": 0.7867647058823529,
+            "augmented_teacher_top1_label_accuracy": 0.8051470588235294,
+            "source_teacher_top5_label_accuracy": 0.9963235294117647,
+            "augmented_teacher_top5_label_accuracy": 0.9963235294117647
+          }
+        },
+        "by_source": {
+          "hwrt": {
+            "rows": 2658,
+            "teacher_top1_agreement_with_source": 0.9574868322046651,
+            "source_teacher_top1_label_accuracy": 0.8073739653875094,
+            "augmented_teacher_top1_label_accuracy": 0.8081264108352144,
+            "source_teacher_top5_label_accuracy": 0.9853273137697517,
+            "augmented_teacher_top5_label_accuracy": 0.9860797592174567
+          },
+          "synthetic_equal": {
+            "rows": 8,
+            "teacher_top1_agreement_with_source": 0.875,
+            "source_teacher_top1_label_accuracy": 0.75,
+            "augmented_teacher_top1_label_accuracy": 0.75,
+            "source_teacher_top5_label_accuracy": 0.875,
+            "augmented_teacher_top5_label_accuracy": 0.875
+          },
+          "uji": {
+            "rows": 310,
+            "teacher_top1_agreement_with_source": 0.9516129032258065,
+            "source_teacher_top1_label_accuracy": 0.7483870967741936,
+            "augmented_teacher_top1_label_accuracy": 0.7322580645161291,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          }
+        }
+      },
+      {
+        "view_index": 4,
+        "overall": {
+          "rows": 2976,
+          "teacher_top1_agreement_with_source": 0.9586693548387096,
+          "source_teacher_top1_label_accuracy": 0.8010752688172043,
+          "augmented_teacher_top1_label_accuracy": 0.7943548387096774,
+          "source_teacher_top5_label_accuracy": 0.9865591397849462,
+          "augmented_teacher_top5_label_accuracy": 0.9865591397849462
+        },
+        "by_family": {
+          "arrows": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9612068965517241,
+            "source_teacher_top1_label_accuracy": 0.8103448275862069,
+            "augmented_teacher_top1_label_accuracy": 0.8232758620689655,
+            "source_teacher_top5_label_accuracy": 0.9956896551724138,
+            "augmented_teacher_top5_label_accuracy": 0.9956896551724138
+          },
+          "digits": {
+            "rows": 80,
+            "teacher_top1_agreement_with_source": 0.9625,
+            "source_teacher_top1_label_accuracy": 0.85,
+            "augmented_teacher_top1_label_accuracy": 0.8375,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 0.9875
+          },
+          "fences": {
+            "rows": 112,
+            "teacher_top1_agreement_with_source": 0.9642857142857143,
+            "source_teacher_top1_label_accuracy": 0.9732142857142857,
+            "augmented_teacher_top1_label_accuracy": 0.9375,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "greek": {
+            "rows": 368,
+            "teacher_top1_agreement_with_source": 0.9809782608695652,
+            "source_teacher_top1_label_accuracy": 0.8260869565217391,
+            "augmented_teacher_top1_label_accuracy": 0.8179347826086957,
+            "source_teacher_top5_label_accuracy": 0.967391304347826,
+            "augmented_teacher_top5_label_accuracy": 0.967391304347826
+          },
+          "large_ops": {
+            "rows": 72,
+            "teacher_top1_agreement_with_source": 0.9027777777777778,
+            "source_teacher_top1_label_accuracy": 0.7638888888888888,
+            "augmented_teacher_top1_label_accuracy": 0.7361111111111112,
+            "source_teacher_top5_label_accuracy": 0.9722222222222222,
+            "augmented_teacher_top5_label_accuracy": 0.9722222222222222
+          },
+          "latin_lower": {
+            "rows": 200,
+            "teacher_top1_agreement_with_source": 0.935,
+            "source_teacher_top1_label_accuracy": 0.66,
+            "augmented_teacher_top1_label_accuracy": 0.66,
+            "source_teacher_top5_label_accuracy": 0.985,
+            "augmented_teacher_top5_label_accuracy": 0.99
+          },
+          "latin_upper": {
+            "rows": 208,
+            "teacher_top1_agreement_with_source": 0.9615384615384616,
+            "source_teacher_top1_label_accuracy": 0.8076923076923077,
+            "augmented_teacher_top1_label_accuracy": 0.7980769230769231,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 1.0
+          },
+          "operators": {
+            "rows": 232,
+            "teacher_top1_agreement_with_source": 0.9827586206896551,
+            "source_teacher_top1_label_accuracy": 0.9008620689655172,
+            "augmented_teacher_top1_label_accuracy": 0.896551724137931,
+            "source_teacher_top5_label_accuracy": 0.9913793103448276,
+            "augmented_teacher_top5_label_accuracy": 0.9913793103448276
+          },
+          "other_math": {
+            "rows": 1200,
+            "teacher_top1_agreement_with_source": 0.955,
+            "source_teacher_top1_label_accuracy": 0.7808333333333334,
+            "augmented_teacher_top1_label_accuracy": 0.7733333333333333,
+            "source_teacher_top5_label_accuracy": 0.9841666666666666,
+            "augmented_teacher_top5_label_accuracy": 0.9841666666666666
+          },
+          "relations": {
+            "rows": 272,
+            "teacher_top1_agreement_with_source": 0.9485294117647058,
+            "source_teacher_top1_label_accuracy": 0.7867647058823529,
+            "augmented_teacher_top1_label_accuracy": 0.7830882352941176,
+            "source_teacher_top5_label_accuracy": 0.9963235294117647,
+            "augmented_teacher_top5_label_accuracy": 0.9963235294117647
+          }
+        },
+        "by_source": {
+          "hwrt": {
+            "rows": 2658,
+            "teacher_top1_agreement_with_source": 0.9597441685477803,
+            "source_teacher_top1_label_accuracy": 0.8073739653875094,
+            "augmented_teacher_top1_label_accuracy": 0.8002257336343115,
+            "source_teacher_top5_label_accuracy": 0.9853273137697517,
+            "augmented_teacher_top5_label_accuracy": 0.9857035364936042
+          },
+          "synthetic_equal": {
+            "rows": 8,
+            "teacher_top1_agreement_with_source": 0.75,
+            "source_teacher_top1_label_accuracy": 0.75,
+            "augmented_teacher_top1_label_accuracy": 0.625,
+            "source_teacher_top5_label_accuracy": 0.875,
+            "augmented_teacher_top5_label_accuracy": 0.875
+          },
+          "uji": {
+            "rows": 310,
+            "teacher_top1_agreement_with_source": 0.9548387096774194,
+            "source_teacher_top1_label_accuracy": 0.7483870967741936,
+            "augmented_teacher_top1_label_accuracy": 0.7483870967741936,
+            "source_teacher_top5_label_accuracy": 1.0,
+            "augmented_teacher_top5_label_accuracy": 0.9967741935483871
+          }
+        }
+      }
+    ]
+  },
+  "augmentation_diversity_geometry_only": {
+    "status": "measured",
+    "scope": "training-pool rows only; raw and global-affine-aligned XY geometry diagnostics, never used for model selection",
+    "view_count": 4,
+    "pairs_per_source_row": 6,
+    "identity_tolerance_xy": 1e-08,
+    "affine_alignment": "unconstrained least-squares 2D affine map fitted independently per source row and view pair",
+    "overall": {
+      "source_rows": 2976,
+      "pairwise_xy_rms_mean": 0.023738462273539686,
+      "pairwise_xy_rms_median": 0.022111491563842595,
+      "pairwise_xy_rms_p95": 0.044271780788338155,
+      "affine_aligned_residual_xy_rms_mean": 0.006809281744341217,
+      "affine_aligned_residual_xy_rms_median": 0.006758409042779006,
+      "affine_aligned_residual_xy_rms_p95": 0.011723879216068524,
+      "identical_view_pair_fraction": 0.01310483870967742,
+      "source_rows_with_any_identical_pair_fraction": 0.01310483870967742,
+      "source_rows_with_all_views_distinct_fraction": 0.9868951612903226
+    },
+    "by_class_family": {
+      "arrows": {
+        "source_rows": 232,
+        "pairwise_xy_rms_mean": 0.020793683549818878,
+        "pairwise_xy_rms_median": 0.019035523627663854,
+        "pairwise_xy_rms_p95": 0.03804645525560272,
+        "affine_aligned_residual_xy_rms_mean": 0.007393825844913916,
+        "affine_aligned_residual_xy_rms_median": 0.007293272976800812,
+        "affine_aligned_residual_xy_rms_p95": 0.011486210991062997,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "digits": {
+        "source_rows": 80,
+        "pairwise_xy_rms_mean": 0.024942494646990648,
+        "pairwise_xy_rms_median": 0.023004280124489615,
+        "pairwise_xy_rms_p95": 0.04532340619963052,
+        "affine_aligned_residual_xy_rms_mean": 0.00613068305694661,
+        "affine_aligned_residual_xy_rms_median": 0.005943195535377601,
+        "affine_aligned_residual_xy_rms_p95": 0.01109564055371783,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "fences": {
+        "source_rows": 112,
+        "pairwise_xy_rms_mean": 0.020918690556069038,
+        "pairwise_xy_rms_median": 0.018555115699247678,
+        "pairwise_xy_rms_p95": 0.04056031920684944,
+        "affine_aligned_residual_xy_rms_mean": 0.0060070753699150835,
+        "affine_aligned_residual_xy_rms_median": 0.0058773061289536304,
+        "affine_aligned_residual_xy_rms_p95": 0.010676649426097988,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "greek": {
+        "source_rows": 368,
+        "pairwise_xy_rms_mean": 0.024326444591195685,
+        "pairwise_xy_rms_median": 0.022603008065959933,
+        "pairwise_xy_rms_p95": 0.045062733326001636,
+        "affine_aligned_residual_xy_rms_mean": 0.0068278998370574166,
+        "affine_aligned_residual_xy_rms_median": 0.006751870109260346,
+        "affine_aligned_residual_xy_rms_p95": 0.01142264399823733,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "large_ops": {
+        "source_rows": 72,
+        "pairwise_xy_rms_mean": 0.021809179943209626,
+        "pairwise_xy_rms_median": 0.020246632973986843,
+        "pairwise_xy_rms_p95": 0.04001373421626069,
+        "affine_aligned_residual_xy_rms_mean": 0.007749467806489858,
+        "affine_aligned_residual_xy_rms_median": 0.007765412976299946,
+        "affine_aligned_residual_xy_rms_p95": 0.01275344914232529,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "latin_lower": {
+        "source_rows": 200,
+        "pairwise_xy_rms_mean": 0.023215436237866854,
+        "pairwise_xy_rms_median": 0.021270732991035796,
+        "pairwise_xy_rms_p95": 0.043668752412177485,
+        "affine_aligned_residual_xy_rms_mean": 0.006415339903750182,
+        "affine_aligned_residual_xy_rms_median": 0.006325491728358128,
+        "affine_aligned_residual_xy_rms_p95": 0.010874884809310658,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "latin_upper": {
+        "source_rows": 208,
+        "pairwise_xy_rms_mean": 0.025357898134572184,
+        "pairwise_xy_rms_median": 0.023480747777386797,
+        "pairwise_xy_rms_p95": 0.046700660608743075,
+        "affine_aligned_residual_xy_rms_mean": 0.00656369021567146,
+        "affine_aligned_residual_xy_rms_median": 0.006459302427869837,
+        "affine_aligned_residual_xy_rms_p95": 0.011064593839540688,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      },
+      "operators": {
+        "source_rows": 232,
+        "pairwise_xy_rms_mean": 0.024602240021627895,
+        "pairwise_xy_rms_median": 0.02328726092452709,
+        "pairwise_xy_rms_p95": 0.04518992968638411,
+        "affine_aligned_residual_xy_rms_mean": 0.006752831432462441,
+        "affine_aligned_residual_xy_rms_median": 0.006672773612182405,
+        "affine_aligned_residual_xy_rms_p95": 0.0117629868664834,
+        "identical_view_pair_fraction": 0.008620689655172414,
+        "source_rows_with_any_identical_pair_fraction": 0.008620689655172414,
+        "source_rows_with_all_views_distinct_fraction": 0.9913793103448276
+      },
+      "other_math": {
+        "source_rows": 1200,
+        "pairwise_xy_rms_mean": 0.023891089388206235,
+        "pairwise_xy_rms_median": 0.02253222017460105,
+        "pairwise_xy_rms_p95": 0.04464823509208271,
+        "affine_aligned_residual_xy_rms_mean": 0.006643072426342393,
+        "affine_aligned_residual_xy_rms_median": 0.00664100583139574,
+        "affine_aligned_residual_xy_rms_p95": 0.011742996537005581,
+        "identical_view_pair_fraction": 0.030833333333333334,
+        "source_rows_with_any_identical_pair_fraction": 0.030833333333333334,
+        "source_rows_with_all_views_distinct_fraction": 0.9691666666666666
+      },
+      "relations": {
+        "source_rows": 272,
+        "pairwise_xy_rms_mean": 0.02450840681086948,
+        "pairwise_xy_rms_median": 0.022888724072421623,
+        "pairwise_xy_rms_p95": 0.04382180914921669,
+        "affine_aligned_residual_xy_rms_mean": 0.007825439770209398,
+        "affine_aligned_residual_xy_rms_median": 0.007766395574006626,
+        "affine_aligned_residual_xy_rms_p95": 0.012547342874117457,
+        "identical_view_pair_fraction": 0.0,
+        "source_rows_with_any_identical_pair_fraction": 0.0,
+        "source_rows_with_all_views_distinct_fraction": 1.0
+      }
+    }
+  },
+  "teacher_visual_representative_stability": [
+    {
+      "view_index": 0,
+      "classes": 372,
+      "top1_hits": 307,
+      "prediction_changed_from_original": 0
+    },
+    {
+      "view_index": 1,
+      "classes": 372,
+      "top1_hits": 308,
+      "prediction_changed_from_original": 8,
+      "top1_delta_from_original": 1
+    },
+    {
+      "view_index": 2,
+      "classes": 372,
+      "top1_hits": 306,
+      "prediction_changed_from_original": 7,
+      "top1_delta_from_original": -1
+    },
+    {
+      "view_index": 3,
+      "classes": 372,
+      "top1_hits": 312,
+      "prediction_changed_from_original": 13,
+      "top1_delta_from_original": 5
+    },
+    {
+      "view_index": 4,
+      "classes": 372,
+      "top1_hits": 304,
+      "prediction_changed_from_original": 15,
+      "top1_delta_from_original": -3
+    }
+  ],
+  "image_sample_verification": {
+    "classes_visually_sampled": 372,
+    "panels_per_class": 5,
+    "augmentation_engine": "affine_elastic_mix",
+    "images": [
+      {
+        "label": "+",
+        "page": 1
+      },
+      {
+        "label": "-",
+        "page": 1
+      },
+      {
+        "label": "/",
+        "page": 1
+      },
+      {
+        "label": "0",
+        "page": 1
+      },
+      {
+        "label": "1",
+        "page": 1
+      },
+      {
+        "label": "2",
+        "page": 1
+      },
+      {
+        "label": "3",
+        "page": 1
+      },
+      {
+        "label": "4",
+        "page": 1
+      },
+      {
+        "label": "5",
+        "page": 1
+      },
+      {
+        "label": "6",
+        "page": 1
+      },
+      {
+        "label": "7",
+        "page": 1
+      },
+      {
+        "label": "8",
+        "page": 1
+      },
+      {
+        "label": "9",
+        "page": 1
+      },
+      {
+        "label": "<",
+        "page": 1
+      },
+      {
+        "label": ">",
+        "page": 1
+      },
+      {
+        "label": "A",
+        "page": 1
+      },
+      {
+        "label": "B",
+        "page": 1
+      },
+      {
+        "label": "C",
+        "page": 1
+      },
+      {
+        "label": "D",
+        "page": 1
+      },
+      {
+        "label": "E",
+        "page": 1
+      },
+      {
+        "label": "F",
+        "page": 1
+      },
+      {
+        "label": "G",
+        "page": 1
+      },
+      {
+        "label": "H",
+        "page": 1
+      },
+      {
+        "label": "I",
+        "page": 1
+      },
+      {
+        "label": "J",
+        "page": 1
+      },
+      {
+        "label": "K",
+        "page": 1
+      },
+      {
+        "label": "L",
+        "page": 1
+      },
+      {
+        "label": "M",
+        "page": 1
+      },
+      {
+        "label": "N",
+        "page": 1
+      },
+      {
+        "label": "O",
+        "page": 1
+      },
+      {
+        "label": "P",
+        "page": 1
+      },
+      {
+        "label": "Q",
+        "page": 1
+      },
+      {
+        "label": "R",
+        "page": 1
+      },
+      {
+        "label": "S",
+        "page": 1
+      },
+      {
+        "label": "T",
+        "page": 1
+      },
+      {
+        "label": "U",
+        "page": 1
+      },
+      {
+        "label": "V",
+        "page": 1
+      },
+      {
+        "label": "W",
+        "page": 1
+      },
+      {
+        "label": "X",
+        "page": 1
+      },
+      {
+        "label": "Y",
+        "page": 1
+      },
+      {
+        "label": "Z",
+        "page": 1
+      },
+      {
+        "label": "[",
+        "page": 1
+      },
+      {
+        "label": "\\#",
+        "page": 1
+      },
+      {
+        "label": "\\$",
+        "page": 1
+      },
+      {
+        "label": "\\%",
+        "page": 1
+      },
+      {
+        "label": "\\&",
+        "page": 1
+      },
+      {
+        "label": "\\AA",
+        "page": 1
+      },
+      {
+        "label": "\\AE",
+        "page": 1
+      },
+      {
+        "label": "\\Bowtie",
+        "page": 1
+      },
+      {
+        "label": "\\Delta",
+        "page": 1
+      },
+      {
+        "label": "\\Downarrow",
+        "page": 1
+      },
+      {
+        "label": "\\Gamma",
+        "page": 1
+      },
+      {
+        "label": "\\Im",
+        "page": 1
+      },
+      {
+        "label": "\\L",
+        "page": 1
+      },
+      {
+        "label": "\\Lambda",
+        "page": 1
+      },
+      {
+        "label": "\\Leftarrow",
+        "page": 1
+      },
+      {
+        "label": "\\Leftrightarrow",
+        "page": 1
+      },
+      {
+        "label": "\\Longleftrightarrow",
+        "page": 1
+      },
+      {
+        "label": "\\Longrightarrow",
+        "page": 1
+      },
+      {
+        "label": "\\O",
+        "page": 1
+      },
+      {
+        "label": "\\Omega",
+        "page": 1
+      },
+      {
+        "label": "\\Phi",
+        "page": 1
+      },
+      {
+        "label": "\\Pi",
+        "page": 1
+      },
+      {
+        "label": "\\Psi",
+        "page": 1
+      },
+      {
+        "label": "\\Re",
+        "page": 1
+      },
+      {
+        "label": "\\Rightarrow",
+        "page": 1
+      },
+      {
+        "label": "\\S",
+        "page": 1
+      },
+      {
+        "label": "\\Sigma",
+        "page": 1
+      },
+      {
+        "label": "\\Theta",
+        "page": 1
+      },
+      {
+        "label": "\\Vdash",
+        "page": 1
+      },
+      {
+        "label": "\\Xi",
+        "page": 1
+      },
+      {
+        "label": "\\aa",
+        "page": 1
+      },
+      {
+        "label": "\\ae",
+        "page": 1
+      },
+      {
+        "label": "\\aleph",
+        "page": 1
+      },
+      {
+        "label": "\\alpha",
+        "page": 1
+      },
+      {
+        "label": "\\amalg",
+        "page": 1
+      },
+      {
+        "label": "\\angle",
+        "page": 1
+      },
+      {
+        "label": "\\approx",
+        "page": 1
+      },
+      {
+        "label": "\\ast",
+        "page": 1
+      },
+      {
+        "label": "\\astrosun",
+        "page": 1
+      },
+      {
+        "label": "\\asymp",
+        "page": 1
+      },
+      {
+        "label": "\\backsim",
+        "page": 1
+      },
+      {
+        "label": "\\backslash",
+        "page": 1
+      },
+      {
+        "label": "\\barwedge",
+        "page": 1
+      },
+      {
+        "label": "\\because",
+        "page": 1
+      },
+      {
+        "label": "\\beta",
+        "page": 1
+      },
+      {
+        "label": "\\between",
+        "page": 1
+      },
+      {
+        "label": "\\blacksquare",
+        "page": 1
+      },
+      {
+        "label": "\\blacktriangleright",
+        "page": 1
+      },
+      {
+        "label": "\\bot",
+        "page": 1
+      },
+      {
+        "label": "\\bowtie",
+        "page": 1
+      },
+      {
+        "label": "\\boxdot",
+        "page": 1
+      },
+      {
+        "label": "\\boxplus",
+        "page": 1
+      },
+      {
+        "label": "\\boxtimes",
+        "page": 1
+      },
+      {
+        "label": "\\bullet",
+        "page": 1
+      },
+      {
+        "label": "\\cap",
+        "page": 1
+      },
+      {
+        "page_image": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_waves_matched_xover_a_r2\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_01.png",
+        "classes": 96
+      },
+      {
+        "label": "\\cdot",
+        "page": 2
+      },
+      {
+        "label": "\\celsius",
+        "page": 2
+      },
+      {
+        "label": "\\checked",
+        "page": 2
+      },
+      {
+        "label": "\\checkmark",
+        "page": 2
+      },
+      {
+        "label": "\\chi",
+        "page": 2
+      },
+      {
+        "label": "\\circ",
+        "page": 2
+      },
+      {
+        "label": "\\circlearrowleft",
+        "page": 2
+      },
+      {
+        "label": "\\circlearrowright",
+        "page": 2
+      },
+      {
+        "label": "\\circledR",
+        "page": 2
+      },
+      {
+        "label": "\\circledast",
+        "page": 2
+      },
+      {
+        "label": "\\circledcirc",
+        "page": 2
+      },
+      {
+        "label": "\\clubsuit",
+        "page": 2
+      },
+      {
+        "label": "\\cong",
+        "page": 2
+      },
+      {
+        "label": "\\coprod",
+        "page": 2
+      },
+      {
+        "label": "\\copyright",
+        "page": 2
+      },
+      {
+        "label": "\\cup",
+        "page": 2
+      },
+      {
+        "label": "\\curvearrowright",
+        "page": 2
+      },
+      {
+        "label": "\\dag",
+        "page": 2
+      },
+      {
+        "label": "\\dashv",
+        "page": 2
+      },
+      {
+        "label": "\\ddots",
+        "page": 2
+      },
+      {
+        "label": "\\degree",
+        "page": 2
+      },
+      {
+        "label": "\\delta",
+        "page": 2
+      },
+      {
+        "label": "\\diameter",
+        "page": 2
+      },
+      {
+        "label": "\\diamond",
+        "page": 2
+      },
+      {
+        "label": "\\diamondsuit",
+        "page": 2
+      },
+      {
+        "label": "\\div",
+        "page": 2
+      },
+      {
+        "label": "\\doteq",
+        "page": 2
+      },
+      {
+        "label": "\\dots",
+        "page": 2
+      },
+      {
+        "label": "\\dotsc",
+        "page": 2
+      },
+      {
+        "label": "\\downarrow",
+        "page": 2
+      },
+      {
+        "label": "\\ell",
+        "page": 2
+      },
+      {
+        "label": "\\emptyset",
+        "page": 2
+      },
+      {
+        "label": "\\epsilon",
+        "page": 2
+      },
+      {
+        "label": "\\equiv",
+        "page": 2
+      },
+      {
+        "label": "\\eta",
+        "page": 2
+      },
+      {
+        "label": "\\exists",
+        "page": 2
+      },
+      {
+        "label": "\\female",
+        "page": 2
+      },
+      {
+        "label": "\\fint",
+        "page": 2
+      },
+      {
+        "label": "\\flat",
+        "page": 2
+      },
+      {
+        "label": "\\forall",
+        "page": 2
+      },
+      {
+        "label": "\\frown",
+        "page": 2
+      },
+      {
+        "label": "\\fullmoon",
+        "page": 2
+      },
+      {
+        "label": "\\gamma",
+        "page": 2
+      },
+      {
+        "label": "\\geq",
+        "page": 2
+      },
+      {
+        "label": "\\geqslant",
+        "page": 2
+      },
+      {
+        "label": "\\gtrless",
+        "page": 2
+      },
+      {
+        "label": "\\gtrsim",
+        "page": 2
+      },
+      {
+        "label": "\\guillemotleft",
+        "page": 2
+      },
+      {
+        "label": "\\hbar",
+        "page": 2
+      },
+      {
+        "label": "\\heartsuit",
+        "page": 2
+      },
+      {
+        "label": "\\hookrightarrow",
+        "page": 2
+      },
+      {
+        "label": "\\iddots",
+        "page": 2
+      },
+      {
+        "label": "\\in",
+        "page": 2
+      },
+      {
+        "label": "\\infty",
+        "page": 2
+      },
+      {
+        "label": "\\int",
+        "page": 2
+      },
+      {
+        "label": "\\iota",
+        "page": 2
+      },
+      {
+        "label": "\\kappa",
+        "page": 2
+      },
+      {
+        "label": "\\lambda",
+        "page": 2
+      },
+      {
+        "label": "\\langle",
+        "page": 2
+      },
+      {
+        "label": "\\lceil",
+        "page": 2
+      },
+      {
+        "label": "\\leadsto",
+        "page": 2
+      },
+      {
+        "label": "\\leftarrow",
+        "page": 2
+      },
+      {
+        "label": "\\leftmoon",
+        "page": 2
+      },
+      {
+        "label": "\\leftrightarrow",
+        "page": 2
+      },
+      {
+        "label": "\\leq",
+        "page": 2
+      },
+      {
+        "label": "\\leqslant",
+        "page": 2
+      },
+      {
+        "label": "\\lesssim",
+        "page": 2
+      },
+      {
+        "label": "\\lfloor",
+        "page": 2
+      },
+      {
+        "label": "\\lhd",
+        "page": 2
+      },
+      {
+        "label": "\\lightning",
+        "page": 2
+      },
+      {
+        "label": "\\llbracket",
+        "page": 2
+      },
+      {
+        "label": "\\longmapsto",
+        "page": 2
+      },
+      {
+        "label": "\\longrightarrow",
+        "page": 2
+      },
+      {
+        "label": "\\lozenge",
+        "page": 2
+      },
+      {
+        "label": "\\ltimes",
+        "page": 2
+      },
+      {
+        "label": "\\male",
+        "page": 2
+      },
+      {
+        "label": "\\mapsfrom",
+        "page": 2
+      },
+      {
+        "label": "\\mapsto",
+        "page": 2
+      },
+      {
+        "label": "\\mars",
+        "page": 2
+      },
+      {
+        "label": "\\mathbb{1}",
+        "page": 2
+      },
+      {
+        "label": "\\mathbb{H}",
+        "page": 2
+      },
+      {
+        "label": "\\mathbb{N}",
+        "page": 2
+      },
+      {
+        "label": "\\mathbb{Q}",
+        "page": 2
+      },
+      {
+        "label": "\\mathbb{R}",
+        "page": 2
+      },
+      {
+        "label": "\\mathbb{Z}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{A}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{B}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{C}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{D}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{E}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{F}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{G}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{H}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{L}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{M}",
+        "page": 2
+      },
+      {
+        "label": "\\mathcal{N}",
+        "page": 2
+      },
+      {
+        "page_image": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_waves_matched_xover_a_r2\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_02.png",
+        "classes": 96
+      },
+      {
+        "label": "\\mathcal{O}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{P}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{R}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{S}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{T}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{U}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{X}",
+        "page": 3
+      },
+      {
+        "label": "\\mathcal{Z}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{1}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{C}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{E}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{N}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{P}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{Q}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{R}",
+        "page": 3
+      },
+      {
+        "label": "\\mathds{Z}",
+        "page": 3
+      },
+      {
+        "label": "\\mathfrak{A}",
+        "page": 3
+      },
+      {
+        "label": "\\mathfrak{M}",
+        "page": 3
+      },
+      {
+        "label": "\\mathfrak{S}",
+        "page": 3
+      },
+      {
+        "label": "\\mathfrak{X}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{A}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{C}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{D}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{E}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{F}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{H}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{L}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{P}",
+        "page": 3
+      },
+      {
+        "label": "\\mathscr{S}",
+        "page": 3
+      },
+      {
+        "label": "\\mathsection",
+        "page": 3
+      },
+      {
+        "label": "\\mid",
+        "page": 3
+      },
+      {
+        "label": "\\models",
+        "page": 3
+      },
+      {
+        "label": "\\mp",
+        "page": 3
+      },
+      {
+        "label": "\\mu",
+        "page": 3
+      },
+      {
+        "label": "\\multimap",
+        "page": 3
+      },
+      {
+        "label": "\\nRightarrow",
+        "page": 3
+      },
+      {
+        "label": "\\nabla",
+        "page": 3
+      },
+      {
+        "label": "\\nearrow",
+        "page": 3
+      },
+      {
+        "label": "\\neg",
+        "page": 3
+      },
+      {
+        "label": "\\neq",
+        "page": 3
+      },
+      {
+        "label": "\\nexists",
+        "page": 3
+      },
+      {
+        "label": "\\ni",
+        "page": 3
+      },
+      {
+        "label": "\\nmid",
+        "page": 3
+      },
+      {
+        "label": "\\not\\equiv",
+        "page": 3
+      },
+      {
+        "label": "\\notin",
+        "page": 3
+      },
+      {
+        "label": "\\nrightarrow",
+        "page": 3
+      },
+      {
+        "label": "\\nsubseteq",
+        "page": 3
+      },
+      {
+        "label": "\\nu",
+        "page": 3
+      },
+      {
+        "label": "\\nvDash",
+        "page": 3
+      },
+      {
+        "label": "\\o",
+        "page": 3
+      },
+      {
+        "label": "\\odot",
+        "page": 3
+      },
+      {
+        "label": "\\ohm",
+        "page": 3
+      },
+      {
+        "label": "\\oiint",
+        "page": 3
+      },
+      {
+        "label": "\\oint",
+        "page": 3
+      },
+      {
+        "label": "\\omega",
+        "page": 3
+      },
+      {
+        "label": "\\ominus",
+        "page": 3
+      },
+      {
+        "label": "\\oplus",
+        "page": 3
+      },
+      {
+        "label": "\\otimes",
+        "page": 3
+      },
+      {
+        "label": "\\parallel",
+        "page": 3
+      },
+      {
+        "label": "\\parr",
+        "page": 3
+      },
+      {
+        "label": "\\partial",
+        "page": 3
+      },
+      {
+        "label": "\\perp",
+        "page": 3
+      },
+      {
+        "label": "\\phi",
+        "page": 3
+      },
+      {
+        "label": "\\pi",
+        "page": 3
+      },
+      {
+        "label": "\\pitchfork",
+        "page": 3
+      },
+      {
+        "label": "\\pm",
+        "page": 3
+      },
+      {
+        "label": "\\pounds",
+        "page": 3
+      },
+      {
+        "label": "\\prec",
+        "page": 3
+      },
+      {
+        "label": "\\preccurlyeq",
+        "page": 3
+      },
+      {
+        "label": "\\preceq",
+        "page": 3
+      },
+      {
+        "label": "\\prime",
+        "page": 3
+      },
+      {
+        "label": "\\prod",
+        "page": 3
+      },
+      {
+        "label": "\\propto",
+        "page": 3
+      },
+      {
+        "label": "\\psi",
+        "page": 3
+      },
+      {
+        "label": "\\rangle",
+        "page": 3
+      },
+      {
+        "label": "\\rceil",
+        "page": 3
+      },
+      {
+        "label": "\\rfloor",
+        "page": 3
+      },
+      {
+        "label": "\\rho",
+        "page": 3
+      },
+      {
+        "label": "\\rightarrow",
+        "page": 3
+      },
+      {
+        "label": "\\rightharpoonup",
+        "page": 3
+      },
+      {
+        "label": "\\rightleftarrows",
+        "page": 3
+      },
+      {
+        "label": "\\rightleftharpoons",
+        "page": 3
+      },
+      {
+        "label": "\\rightrightarrows",
+        "page": 3
+      },
+      {
+        "label": "\\rightsquigarrow",
+        "page": 3
+      },
+      {
+        "label": "\\rrbracket",
+        "page": 3
+      },
+      {
+        "label": "\\rtimes",
+        "page": 3
+      },
+      {
+        "label": "\\searrow",
+        "page": 3
+      },
+      {
+        "label": "\\setminus",
+        "page": 3
+      },
+      {
+        "label": "\\sharp",
+        "page": 3
+      },
+      {
+        "label": "\\shortrightarrow",
+        "page": 3
+      },
+      {
+        "label": "\\sigma",
+        "page": 3
+      },
+      {
+        "label": "\\sim",
+        "page": 3
+      },
+      {
+        "label": "\\simeq",
+        "page": 3
+      },
+      {
+        "label": "\\sphericalangle",
+        "page": 3
+      },
+      {
+        "label": "\\sqcap",
+        "page": 3
+      },
+      {
+        "label": "\\sqcup",
+        "page": 3
+      },
+      {
+        "page_image": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_waves_matched_xover_a_r2\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_03.png",
+        "classes": 96
+      },
+      {
+        "label": "\\sqrt{}",
+        "page": 4
+      },
+      {
+        "label": "\\sqsubseteq",
+        "page": 4
+      },
+      {
+        "label": "\\square",
+        "page": 4
+      },
+      {
+        "label": "\\ss",
+        "page": 4
+      },
+      {
+        "label": "\\star",
+        "page": 4
+      },
+      {
+        "label": "\\subset",
+        "page": 4
+      },
+      {
+        "label": "\\subseteq",
+        "page": 4
+      },
+      {
+        "label": "\\subsetneq",
+        "page": 4
+      },
+      {
+        "label": "\\succ",
+        "page": 4
+      },
+      {
+        "label": "\\succeq",
+        "page": 4
+      },
+      {
+        "label": "\\sum",
+        "page": 4
+      },
+      {
+        "label": "\\sun",
+        "page": 4
+      },
+      {
+        "label": "\\supset",
+        "page": 4
+      },
+      {
+        "label": "\\supseteq",
+        "page": 4
+      },
+      {
+        "label": "\\tau",
+        "page": 4
+      },
+      {
+        "label": "\\therefore",
+        "page": 4
+      },
+      {
+        "label": "\\theta",
+        "page": 4
+      },
+      {
+        "label": "\\times",
+        "page": 4
+      },
+      {
+        "label": "\\top",
+        "page": 4
+      },
+      {
+        "label": "\\triangle",
+        "page": 4
+      },
+      {
+        "label": "\\triangledown",
+        "page": 4
+      },
+      {
+        "label": "\\triangleleft",
+        "page": 4
+      },
+      {
+        "label": "\\trianglelefteq",
+        "page": 4
+      },
+      {
+        "label": "\\triangleq",
+        "page": 4
+      },
+      {
+        "label": "\\triangleright",
+        "page": 4
+      },
+      {
+        "label": "\\twoheadrightarrow",
+        "page": 4
+      },
+      {
+        "label": "\\uparrow",
+        "page": 4
+      },
+      {
+        "label": "\\upharpoonright",
+        "page": 4
+      },
+      {
+        "label": "\\uplus",
+        "page": 4
+      },
+      {
+        "label": "\\vDash",
+        "page": 4
+      },
+      {
+        "label": "\\varepsilon",
+        "page": 4
+      },
+      {
+        "label": "\\varkappa",
+        "page": 4
+      },
+      {
+        "label": "\\varnothing",
+        "page": 4
+      },
+      {
+        "label": "\\varoiint",
+        "page": 4
+      },
+      {
+        "label": "\\varphi",
+        "page": 4
+      },
+      {
+        "label": "\\varpi",
+        "page": 4
+      },
+      {
+        "label": "\\varpropto",
+        "page": 4
+      },
+      {
+        "label": "\\varrho",
+        "page": 4
+      },
+      {
+        "label": "\\varsubsetneq",
+        "page": 4
+      },
+      {
+        "label": "\\vartheta",
+        "page": 4
+      },
+      {
+        "label": "\\vartriangle",
+        "page": 4
+      },
+      {
+        "label": "\\vdash",
+        "page": 4
+      },
+      {
+        "label": "\\vdots",
+        "page": 4
+      },
+      {
+        "label": "\\vee",
+        "page": 4
+      },
+      {
+        "label": "\\venus",
+        "page": 4
+      },
+      {
+        "label": "\\wedge",
+        "page": 4
+      },
+      {
+        "label": "\\with",
+        "page": 4
+      },
+      {
+        "label": "\\wp",
+        "page": 4
+      },
+      {
+        "label": "\\wr",
+        "page": 4
+      },
+      {
+        "label": "\\xi",
+        "page": 4
+      },
+      {
+        "label": "\\zeta",
+        "page": 4
+      },
+      {
+        "label": "\\{",
+        "page": 4
+      },
+      {
+        "label": "\\|",
+        "page": 4
+      },
+      {
+        "label": "\\}",
+        "page": 4
+      },
+      {
+        "label": "]",
+        "page": 4
+      },
+      {
+        "label": "a",
+        "page": 4
+      },
+      {
+        "label": "b",
+        "page": 4
+      },
+      {
+        "label": "c",
+        "page": 4
+      },
+      {
+        "label": "d",
+        "page": 4
+      },
+      {
+        "label": "e",
+        "page": 4
+      },
+      {
+        "label": "f",
+        "page": 4
+      },
+      {
+        "label": "g",
+        "page": 4
+      },
+      {
+        "label": "h",
+        "page": 4
+      },
+      {
+        "label": "i",
+        "page": 4
+      },
+      {
+        "label": "j",
+        "page": 4
+      },
+      {
+        "label": "k",
+        "page": 4
+      },
+      {
+        "label": "l",
+        "page": 4
+      },
+      {
+        "label": "m",
+        "page": 4
+      },
+      {
+        "label": "n",
+        "page": 4
+      },
+      {
+        "label": "o",
+        "page": 4
+      },
+      {
+        "label": "p",
+        "page": 4
+      },
+      {
+        "label": "q",
+        "page": 4
+      },
+      {
+        "label": "r",
+        "page": 4
+      },
+      {
+        "label": "s",
+        "page": 4
+      },
+      {
+        "label": "u",
+        "page": 4
+      },
+      {
+        "label": "v",
+        "page": 4
+      },
+      {
+        "label": "w",
+        "page": 4
+      },
+      {
+        "label": "x",
+        "page": 4
+      },
+      {
+        "label": "y",
+        "page": 4
+      },
+      {
+        "label": "z",
+        "page": 4
+      },
+      {
+        "label": "|",
+        "page": 4
+      },
+      {
+        "label": "(",
+        "page": 4
+      },
+      {
+        "label": ")",
+        "page": 4
+      },
+      {
+        "label": "=",
+        "page": 4
+      },
+      {
+        "page_image": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261003\\curve_waves_matched_xover_a_r2\\full_domain_affine_elastic_mix_sample_pages\\full_domain_affine_elastic_mix_samples_04.png",
+        "classes": 84
+      }
+    ]
+  },
+  "parameters": {
+    "rotation_degrees": [
+      -3.0,
+      3.0
+    ],
+    "axis_scale_relative": [
+      -0.08,
+      0.08
+    ],
+    "shear": [
+      -0.04,
+      0.04
+    ],
+    "elastic_control_grid": [
+      5,
+      5
+    ],
+    "elastic_max_control_displacement": 0.018,
+    "elastic_boundary": "pinned",
+    "elastic_jacobian_frobenius_max": 0.35,
+    "elastic_probability": 0.58,
+    "wide_parameter_probability_default": 0.0,
+    "wide_magnitude_multiplier_default": 1.5,
+    "independent_wide_probability_by_parameter": null,
+    "wide_magnitude_multiplier": null,
+    "resolved_wide_probability_by_parameter": {
+      "rotation": 0.28,
+      "axis_scale": 0.22,
+      "shear": 0.25,
+      "elastic": 0.2
+    },
+    "resolved_wide_multiplier_by_parameter": {
+      "rotation": 1.75,
+      "axis_scale": 1.9,
+      "shear": 1.8,
+      "elastic": 1.6
+    },
+    "stroke_local_probability": 0.65,
+    "stroke_local_rotation_degrees": 2.0,
+    "stroke_local_scale_jitter": 0.04,
+    "stroke_local_translation_jitter": 0.006,
+    "stroke_curve_probability": 0.65,
+    "stroke_curve_probability_by_family": {
+      "arrows": 0.65,
+      "digits": 0.65,
+      "fences": 0.65,
+      "greek": 0.65,
+      "large_ops": 0.65,
+      "latin_lower": 0.65,
+      "latin_upper": 0.65,
+      "operators": 0.65,
+      "other_math": 0.65,
+      "relations": 0.65
+    },
+    "stroke_curve_max_displacement": 0.025,
+    "stroke_curve_max_displacement_by_family": {
+      "arrows": 0.025,
+      "digits": 0.025,
+      "fences": 0.025,
+      "greek": 0.025,
+      "large_ops": 0.025,
+      "latin_lower": 0.025,
+      "latin_upper": 0.025,
+      "operators": 0.025,
+      "other_math": 0.025,
+      "relations": 0.025
+    },
+    "stroke_curve_max_waves": 2,
+    "stroke_curve_max_waves_by_family": {
+      "arrows": 3,
+      "digits": 1,
+      "fences": 3,
+      "greek": 3,
+      "large_ops": 3,
+      "latin_lower": 3,
+      "latin_upper": 1,
+      "operators": 3,
+      "other_math": 1,
+      "relations": 3
+    },
+    "stroke_curve_shape": "arc-length sinusoidal normal offset with pinned stroke endpoints and no-backtracking gate",
+    "seed": 20261813,
+    "stroke_local_seed": 20261814,
+    "stroke_curve_seed": 20261815,
+    "stroke_curve_selection_seed": 20261816
+  },
+  "heldout_used_for_selection": false,
+  "product_adopted": false
+}

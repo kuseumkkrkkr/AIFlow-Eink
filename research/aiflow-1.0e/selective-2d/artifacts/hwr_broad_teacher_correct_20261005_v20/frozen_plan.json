@@ -1,0 +1,53 @@
+{
+  "schema": "aiflow-teacher-correct-plan/v20",
+  "script_sha256": "df457d1a104c2f85d4645ca3206446424e692aaa3773d7c576e24b79a70d7930",
+  "helper_sha256": "304ab2a2e3b99a8a191925072ca69a1461d4ec926db64119a63a2744dafb83af",
+  "parent_plan_sha256": "449076d1d952e7c1e6cb8e71f3848a6aed768cc946edd79e671987aaf3248fe2",
+  "parent_manifest_sha256": "80959792e35f3787c61b0384c7a2816d2eda6e9c5381779ec9db116b2bb6ed14",
+  "diagnosis_certificate_sha256": "1c0df4af87d937a50b66249c167e923827f7e1ef2ea5192885d204d617c1fcb7",
+  "canonical_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+  "control_checkpoint_sha256": "5911ddef5740f8c9dab909d602591db11ca415e993e472991aa89478f239d1bf",
+  "steps": 2400,
+  "batch_size": 32,
+  "learning_rate": 1e-05,
+  "weight_decay": 0.0001,
+  "clip_grad_norm": 1.0,
+  "logit_temperature": 2.0,
+  "cold_initialization": "same canonical as V16; no warm start or extra steps",
+  "classes": 371,
+  "population_rows": 163982,
+  "scheduled_exposures": 76800,
+  "expected_incorrect_original_exposures": 14952,
+  "shape_temperatures": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "quantiles": [
+    0.5,
+    0.68,
+    0.85
+  ],
+  "controlled_change": "zero both KL terms only when canonical original Top1 != real GT; mean over full batch, no weight redistribution",
+  "objective": ".7 CE(real) + .2 mean(mask * KL(real,canonical)) + .1 mean(mask * KL(view,original-canonical)), T=2",
+  "development_folds": [
+    1,
+    2
+  ],
+  "all_development_folds_already_consumed": true,
+  "new_validation_fold": false,
+  "previous_validation_error_rows_used_for_training": 0,
+  "development_selection_bias": true,
+  "read_development_only_after_fixed_steps": true,
+  "interim_evaluation_or_best_epoch_selection": false,
+  "evaluation_gate": "report paired Top1/Top5 wins/losses and every family on both consumed folds; no fresh acceptance claim",
+  "independent_writer_device_acceptance": false,
+  "synthetic_hard_labels": 0,
+  "human_boundary_labels": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "collection_or_deployment_resumed": false,
+  "cloud_upload": false
+}

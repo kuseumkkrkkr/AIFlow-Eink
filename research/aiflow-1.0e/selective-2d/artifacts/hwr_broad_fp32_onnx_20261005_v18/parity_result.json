@@ -1,0 +1,104 @@
+{
+  "schema": "aiflow-broad-fp32-onnx-parity-result/v18",
+  "status": "pass",
+  "plan_sha256": "e938e206542cbe0cf7519c08d46d09d614bce166341b3a397992a88d700b7a82",
+  "onnx_bytes": 3543657,
+  "versions": {
+    "torch": "2.5.1+cu124",
+    "onnx": "1.22.0",
+    "onnxruntime": "1.29.0"
+  },
+  "input": [
+    "batch",
+    128,
+    5
+  ],
+  "outputs": {
+    "embedding": [
+      "batch",
+      128
+    ],
+    "logits": [
+      "batch",
+      372
+    ]
+  },
+  "batches": [
+    {
+      "batch": 1,
+      "cases": 407,
+      "embedding_max_abs_error": 5.7220458984375e-06,
+      "logits_max_abs_error": 1.239776611328125e-05,
+      "top1_mismatches": 0,
+      "ordered_top5_mismatches": 0,
+      "passed": true
+    },
+    {
+      "batch": 2,
+      "cases": 407,
+      "embedding_max_abs_error": 4.76837158203125e-06,
+      "logits_max_abs_error": 1.52587890625e-05,
+      "top1_mismatches": 0,
+      "ordered_top5_mismatches": 0,
+      "passed": true
+    },
+    {
+      "batch": 3,
+      "cases": 407,
+      "embedding_max_abs_error": 4.76837158203125e-06,
+      "logits_max_abs_error": 1.33514404296875e-05,
+      "top1_mismatches": 0,
+      "ordered_top5_mismatches": 0,
+      "passed": true
+    },
+    {
+      "batch": 8,
+      "cases": 407,
+      "embedding_max_abs_error": 4.5299530029296875e-06,
+      "logits_max_abs_error": 1.0013580322265625e-05,
+      "top1_mismatches": 0,
+      "ordered_top5_mismatches": 0,
+      "passed": true
+    },
+    {
+      "batch": 16,
+      "cases": 407,
+      "embedding_max_abs_error": 4.5299530029296875e-06,
+      "logits_max_abs_error": 1.1444091796875e-05,
+      "top1_mismatches": 0,
+      "ordered_top5_mismatches": 0,
+      "passed": true
+    },
+    {
+      "batch": 32,
+      "cases": 407,
+      "embedding_max_abs_error": 4.5299530029296875e-06,
+      "logits_max_abs_error": 1.1444091796875e-05,
+      "top1_mismatches": 0,
+      "ordered_top5_mismatches": 0,
+      "passed": true
+    }
+  ],
+  "malformed_inputs_rejected": [
+    {
+      "input": "float64",
+      "error_type": "InvalidArgument"
+    },
+    {
+      "input": "points127",
+      "error_type": "InvalidArgument"
+    },
+    {
+      "input": "channels4",
+      "error_type": "InvalidArgument"
+    }
+  ],
+  "checkpoint_unchanged": true,
+  "windows_cpu_only": true,
+  "android_latency_memory_or_crash_gates_measured": false,
+  "onnx_runtime_mobile_operator_build_tested": false,
+  "product_adopted": false,
+  "model_updates": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0
+}

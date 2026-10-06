@@ -1,0 +1,91 @@
+{
+  "schema": "aiflow-safe-memory-research-verdict/v1",
+  "status": "verified_partial_retention_recovery_train_gate_fail",
+  "result_sha256": "1c92078cdc832d985de72af0f1c913514d9d9dd92d9aff962e141c2e5eded793",
+  "checkpoint_sha256": "7a1720e62e8fa778983061315bc9f9e7f1eb6727968ff40ae97421a3dd67a71b",
+  "scope": {
+    "same_optimization_train_rows": 2048,
+    "old_math_classes": 371,
+    "source_digit_classes": 10,
+    "same_parent_solver_input_original_floors_rank_guards_alphas_and_512_direction_cap": true,
+    "changed_factor": "Remember discovered currently-safe row/rank conditions until current slack >= max(1e-4, 0.25*abs(original floor)); unchanged 16-condition quota and current-slack priority.",
+    "buffer_is_predeclared_selection_hypothesis_not_human_probability": true,
+    "all_domain_human_boundary_distillation_performed": false
+  },
+  "comparison": {
+    "safe_priority_v5": {
+      "accepted_steps": 8, "directions": 512, "trials": 38,
+      "old_top1_hits": 841, "source_top1_hits": 958,
+      "old_top5_hits": 1005, "floor_violations": 28,
+      "squared_deficit_merit": 0.9011254977990575
+    },
+    "safe_memory_v6": {
+      "accepted_steps": 8, "directions": 512, "trials": 35,
+      "old_top1_hits": 841, "source_top1_hits": 958,
+      "old_top5_hits": 1006, "floor_violations": 26,
+      "squared_deficit_merit": 0.6382913245770396
+    },
+    "merit_reduction_fraction": 0.29167321739754765,
+    "old_train_top5_rescued_rows": [{"row": 157, "label": "P"}],
+    "old_train_top5_new_losses": 0,
+    "old_train_top1_changes": 0,
+    "source_training_gain_retained_fraction": 1.0,
+    "protected_top5_membership_losses_still_remaining": 1,
+    "strict_train_gate_pass": false,
+    "note": "Same optimization TRAIN rows and actual 512 directions. No independent accuracy gain or product promotion is established."
+  },
+  "microscope": {
+    "remembered_constraints_selected_per_round": [0, 0, 1, 3, 2, 5, 7, 5],
+    "accepted_alphas": [0.125, 0.125, 0.125, 0.0625, 0.125, 0.03125, 0.125, 0.125],
+    "psi_row": 843,
+    "psi_remembered_in_final_round": true,
+    "psi_final_margin": 0.02649688720703125,
+    "psi_original_floor": 0.024145126342773438,
+    "simeq_final_margin": 0.08398628234863281,
+    "simeq_original_floor": 0.08018302917480469,
+    "sqrt_final_margin": 0.0061550140380859375,
+    "sqrt_original_floor": 0.005373477935791016,
+    "remaining_top5_loss": {
+      "row": 57, "truth": "\\varrho", "rival": "r",
+      "margin": -0.09603309631347656,
+      "original_floor": 0.10300445556640625
+    },
+    "last_larger_trial_rejection_alpha": 0.25,
+    "last_larger_trial_new_failures": [
+      {"row": 1669, "truth": "4", "rival": "\\diamondsuit", "selected": false, "deficit": 0.012523174285888672},
+      {"row": 1580, "truth": "9", "rival": "3", "row_selected": true, "rival_selected": false, "deficit": 0.0039052963256835938}
+    ],
+    "rival_switch_case": {
+      "row": 1580, "truth": "9",
+      "selected_rival": "8", "actual_rival_at_alpha025": "3",
+      "before_fixed_9_vs_8_margin": 0.04646015167236328,
+      "predicted_9_vs_8_margin_at_alpha025": 0.045495750128315346,
+      "actual_9_vs_3_margin_at_alpha025": 0.03324699401855469,
+      "original_floor": 0.03715229034423828,
+      "prediction_and_actual_have_same_rival": false,
+      "limit": "These two margins cannot establish fixed-rival nonlinearity. The failed trial's full logits were not stored, so the actual 9-vs-8 margin is unavailable."
+    },
+    "prior_v5_same_rival_prediction_error_p50_p95_max": [0.00009223403930663787, 0.004030173350247839, 0.03522361984252931],
+    "prior_v5_accepted_same_rival_error_p50_p95_max": [0.000009057468342010822, 0.00010712652206423798, 0.0005532076835632338],
+    "error_scope": "Selected conditions with unchanged actual rival only. Includes FP32 parameter application and forward-batch roundoff; not an isolated autograd correctness test."
+  },
+  "verification": {
+    "actual_trial_decisions_recomputed": 35,
+    "parameter_tensors": 57,
+    "historical_safe_memory_and_buffer_reconstructed": true,
+    "original_fixed_floors_and_rank_persistence_verified": true,
+    "batch1_16_32_rank_and_violation_counts_equal": true,
+    "batch32_checkpoint_reload_bit_exact": true,
+    "verifier_source_snapshot_preserved": true,
+    "canonical_and_parent_checkpoints_unchanged": true
+  },
+  "next_bounded_hypothesis": "Audit rival switching and cover close alternative rivals of newly prioritized rank/safe constraints within a newly frozen 64-per-round/512-total budget. Persist actual rival scores needed to separate nonlinear fixed-rival error from rival replacement. Do not hardcode 9/8/3, add directions mid-run, relax floors or use held/CROHME inputs.",
+  "not_proven": ["independent accuracy improvement", "human recognition boundaries", "global infeasibility", "insufficient model architecture"],
+  "human_boundary_labels": 0,
+  "held_inputs_forwarded": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "deployment_resumed": false,
+  "full_goal_completed": false
+}

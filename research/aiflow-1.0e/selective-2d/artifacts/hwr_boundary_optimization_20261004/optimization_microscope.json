@@ -1,0 +1,2803 @@
+{
+  "schema": "aiflow-hwr-boundary-optimization-audit/v1",
+  "status": "training_integrity_smoke_pass",
+  "plan": {
+    "schema": "aiflow-hwr-boundary-optimization-plan/v1",
+    "fixed_before_optimizer_steps": true,
+    "seed": 20261004,
+    "steps_per_arm": 32,
+    "batch_size": 32,
+    "learning_rate": 1e-05,
+    "boundary_weight": 0.1,
+    "boundary_temperature": 1.0,
+    "boundary_policy": "full",
+    "base_loss": "0.7 CE on real train labels + 0.3 T^2 KL at T=2 on unaugmented frozen logits",
+    "arms": {
+      "base": "L_base",
+      "scaled_base": "(1-w)*L_base",
+      "boundary": "(1-w)*L_base + w*L_boundary"
+    },
+    "teacher_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "script_sha256": "87b4122a8e9d3ab2d5f0151f5ce131320101d46661b3588a2abe440f0ed66371",
+    "source_manifest_sha256": "5d66c91b58af7faa529644bfe6915c0ce6ce13eda2c7c6dad3503cf0a6582054",
+    "boundary_report_sha256": "adba881acba550a5821ff5f9c809af0f50e8771c9be967d4c48924dd7ad405d7",
+    "training_inputs": {
+      "features": {
+        "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v1\\train_features.npy",
+        "sha256": "72061bc0fd989096729ed613a21e19cab04b92c947efffcd7991b76e139a03f4"
+      },
+      "labels": {
+        "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v1\\train_labels.npy",
+        "sha256": "fe60cece651054cf3713d7f62f103fab0bf7a210a91aea134316cd57e1742ae5"
+      },
+      "sources": {
+        "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v1\\train_sources.npy",
+        "sha256": "d3bc4479e24426f93792e90c34d82f0e0172691ea541ff81966c46649b08050c"
+      }
+    },
+    "sampled_rows": 1024,
+    "real_classes_sampled": 371,
+    "sampled_rows_by_source": {
+      "hwrt": 920,
+      "uji": 104
+    },
+    "training_row_indices_sha256": "8fcd92985bd9c7a5b902b3aecae005cbf601141b0b7fd16781a1d1171d870d22",
+    "boundary_rows": 70,
+    "boundary_scope": "class-2 teacher-boundary pilot only",
+    "hard_synthetic_labels_assigned": 0,
+    "human_boundary_labels_available": false,
+    "heldout_rows_read": 0,
+    "crohme_rows": 0,
+    "accuracy_scoring_performed": false,
+    "eligible_for_model_selection": false,
+    "product_adopted": false,
+    "limitations": "Training/integrity only; teacher-seen data. Neither accuracy improvement nor human recognition-boundary expansion can be inferred."
+  },
+  "arms": [
+    {
+      "arm": "base",
+      "optimizer_steps": 32,
+      "changed_parameter_tensors": 57,
+      "seconds": 15.168934799999988,
+      "checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_boundary_optimization_20261004\\base_smoke_checkpoint.pt",
+      "checkpoint_sha256": "ab533c8e15e4f5eaaf6e949b33a774a79dd38348d7928f6f6d16df3e844c2d39",
+      "history": [
+        {
+          "step": 1,
+          "hard_loss": 0.33590763807296753,
+          "base_distill_loss": 0.15643364191055298,
+          "boundary_loss": 0.0,
+          "total_loss": 0.2820654511451721,
+          "gradient_l2_before_clip": 3.1136314868927,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010098149999976158,
+            "rms_p95": 0.017184820026159286,
+            "max_point_p95": 0.04293675348162651,
+            "path_ratio_min": 0.9238877892494202,
+            "path_ratio_max": 1.0297131538391113,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null,
+          "all_boundary_teacher_kl_t1": 0.00016874074935913086
+        },
+        {
+          "step": 2,
+          "hard_loss": 0.4361494779586792,
+          "base_distill_loss": 0.18409518897533417,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3605331778526306,
+          "gradient_l2_before_clip": 3.478318452835083,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.009880131110548973,
+            "rms_p95": 0.021038178354501724,
+            "max_point_p95": 0.04970106482505798,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0371991395950317,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 3,
+          "hard_loss": 0.6268422603607178,
+          "base_distill_loss": 0.17940376698970795,
+          "boundary_loss": 0.0,
+          "total_loss": 0.4926106929779053,
+          "gradient_l2_before_clip": 3.053494930267334,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009399252943694592,
+            "rms_p95": 0.015538071282207966,
+            "max_point_p95": 0.03947240114212036,
+            "path_ratio_min": 0.9711112976074219,
+            "path_ratio_max": 1.0491619110107422,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 4,
+          "hard_loss": 0.40414902567863464,
+          "base_distill_loss": 0.20159955322742462,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3433842062950134,
+          "gradient_l2_before_clip": 3.121612787246704,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.011571694165468216,
+            "rms_p95": 0.01969551481306553,
+            "max_point_p95": 0.051520898938179016,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0544309616088867,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 5,
+          "hard_loss": 0.6603421568870544,
+          "base_distill_loss": 0.1423695832490921,
+          "boundary_loss": 0.0,
+          "total_loss": 0.5049504041671753,
+          "gradient_l2_before_clip": 4.333979606628418,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.008546048775315285,
+            "rms_p95": 0.016418635845184326,
+            "max_point_p95": 0.04280605539679527,
+            "path_ratio_min": 0.9821147918701172,
+            "path_ratio_max": 1.0474522113800049,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 6,
+          "hard_loss": 0.31698858737945557,
+          "base_distill_loss": 0.19252978265285492,
+          "boundary_loss": 0.0,
+          "total_loss": 0.2796509563922882,
+          "gradient_l2_before_clip": 3.2394912242889404,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010008436627686024,
+            "rms_p95": 0.021349715068936348,
+            "max_point_p95": 0.05452025681734085,
+            "path_ratio_min": 0.9595869183540344,
+            "path_ratio_max": 1.0478342771530151,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 7,
+          "hard_loss": 0.42087626457214355,
+          "base_distill_loss": 0.17706239223480225,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3477321267127991,
+          "gradient_l2_before_clip": 3.003828763961792,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.012894289568066597,
+            "rms_p95": 0.02562461793422699,
+            "max_point_p95": 0.058890294283628464,
+            "path_ratio_min": 0.9509105682373047,
+            "path_ratio_max": 1.0593812465667725,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 8,
+          "hard_loss": 0.7099164128303528,
+          "base_distill_loss": 0.18932685256004333,
+          "boundary_loss": 0.0,
+          "total_loss": 0.5537395477294922,
+          "gradient_l2_before_clip": 3.905392646789551,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.009212182834744453,
+            "rms_p95": 0.018725551664829254,
+            "max_point_p95": 0.04785987362265587,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0496457815170288,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null,
+          "all_boundary_teacher_kl_t1": 0.0015658293850719929
+        },
+        {
+          "step": 9,
+          "hard_loss": 0.43505632877349854,
+          "base_distill_loss": 0.1993018090724945,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3643299639225006,
+          "gradient_l2_before_clip": 3.871553897857666,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 30,
+            "reverted": 2,
+            "changed": 30,
+            "rms_mean": 0.009353015571832657,
+            "rms_p95": 0.015097826719284058,
+            "max_point_p95": 0.04194839298725128,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0331217050552368,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 10,
+          "hard_loss": 0.5288857221603394,
+          "base_distill_loss": 0.15290962159633636,
+          "boundary_loss": 0.0,
+          "total_loss": 0.4160929024219513,
+          "gradient_l2_before_clip": 3.081357717514038,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009553334675729275,
+            "rms_p95": 0.01841450110077858,
+            "max_point_p95": 0.04794337972998619,
+            "path_ratio_min": 0.9541422724723816,
+            "path_ratio_max": 1.0300654172897339,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 11,
+          "hard_loss": 0.5629920363426208,
+          "base_distill_loss": 0.2192125916481018,
+          "boundary_loss": 0.0,
+          "total_loss": 0.4598581790924072,
+          "gradient_l2_before_clip": 3.5831708908081055,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.011560534127056599,
+            "rms_p95": 0.019902920350432396,
+            "max_point_p95": 0.049974411725997925,
+            "path_ratio_min": 0.9580889940261841,
+            "path_ratio_max": 1.044060468673706,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 12,
+          "hard_loss": 0.6593726873397827,
+          "base_distill_loss": 0.17943118512630463,
+          "boundary_loss": 0.0,
+          "total_loss": 0.5153902173042297,
+          "gradient_l2_before_clip": 3.193336248397827,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 30,
+            "reverted": 2,
+            "changed": 30,
+            "rms_mean": 0.009945961646735668,
+            "rms_p95": 0.019025875255465508,
+            "max_point_p95": 0.050728943198919296,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0469439029693604,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 13,
+          "hard_loss": 0.284654438495636,
+          "base_distill_loss": 0.15396054089069366,
+          "boundary_loss": 0.0,
+          "total_loss": 0.24544626474380493,
+          "gradient_l2_before_clip": 2.355607748031616,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.011189501732587814,
+            "rms_p95": 0.01844320073723793,
+            "max_point_p95": 0.04155103117227554,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0494606494903564,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 14,
+          "hard_loss": 0.996768057346344,
+          "base_distill_loss": 0.23918074369430542,
+          "boundary_loss": 0.0,
+          "total_loss": 0.7694918513298035,
+          "gradient_l2_before_clip": 4.555356502532959,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.009369554929435253,
+            "rms_p95": 0.015833301469683647,
+            "max_point_p95": 0.04212368279695511,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.028436303138733,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 15,
+          "hard_loss": 0.48583856225013733,
+          "base_distill_loss": 0.1691792607307434,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3908407688140869,
+          "gradient_l2_before_clip": 3.9933547973632812,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.00859324261546135,
+            "rms_p95": 0.0178829412907362,
+            "max_point_p95": 0.041608523577451706,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0535112619400024,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 16,
+          "hard_loss": 0.5329070091247559,
+          "base_distill_loss": 0.16381801664829254,
+          "boundary_loss": 0.0,
+          "total_loss": 0.42218029499053955,
+          "gradient_l2_before_clip": 3.744553327560425,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.0089165223762393,
+            "rms_p95": 0.01583903096616268,
+            "max_point_p95": 0.04189521446824074,
+            "path_ratio_min": 0.9472886323928833,
+            "path_ratio_max": 1.034339427947998,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null,
+          "all_boundary_teacher_kl_t1": 0.0024666052777320147
+        },
+        {
+          "step": 17,
+          "hard_loss": 0.5082906484603882,
+          "base_distill_loss": 0.17368729412555695,
+          "boundary_loss": 0.0,
+          "total_loss": 0.40790966153144836,
+          "gradient_l2_before_clip": 2.962557554244995,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010812174528837204,
+            "rms_p95": 0.019876591861248016,
+            "max_point_p95": 0.04898977652192116,
+            "path_ratio_min": 0.9382551312446594,
+            "path_ratio_max": 1.0387518405914307,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 18,
+          "hard_loss": 0.5772396922111511,
+          "base_distill_loss": 0.174143448472023,
+          "boundary_loss": 0.0,
+          "total_loss": 0.45631080865859985,
+          "gradient_l2_before_clip": 3.277960777282715,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.00962399784475565,
+            "rms_p95": 0.01900937594473362,
+            "max_point_p95": 0.04365868121385574,
+            "path_ratio_min": 0.9557808041572571,
+            "path_ratio_max": 1.0464868545532227,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 19,
+          "hard_loss": 0.34041789174079895,
+          "base_distill_loss": 0.17465244233608246,
+          "boundary_loss": 0.0,
+          "total_loss": 0.29068824648857117,
+          "gradient_l2_before_clip": 3.5682075023651123,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009395561181008816,
+            "rms_p95": 0.016688868403434753,
+            "max_point_p95": 0.04218362644314766,
+            "path_ratio_min": 0.9602010250091553,
+            "path_ratio_max": 1.0328962802886963,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 20,
+          "hard_loss": 0.4817710518836975,
+          "base_distill_loss": 0.16291242837905884,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3861134648323059,
+          "gradient_l2_before_clip": 2.7005133628845215,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 30,
+            "reverted": 2,
+            "changed": 30,
+            "rms_mean": 0.010320719331502914,
+            "rms_p95": 0.022038334980607033,
+            "max_point_p95": 0.04733103886246681,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0626683235168457,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 21,
+          "hard_loss": 0.446407288312912,
+          "base_distill_loss": 0.1863078474998474,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3683774471282959,
+          "gradient_l2_before_clip": 2.902461528778076,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.01042106095701456,
+            "rms_p95": 0.020457308739423752,
+            "max_point_p95": 0.051845625042915344,
+            "path_ratio_min": 0.9656830430030823,
+            "path_ratio_max": 1.0369466543197632,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 22,
+          "hard_loss": 0.28378280997276306,
+          "base_distill_loss": 0.15473370254039764,
+          "boundary_loss": 0.0,
+          "total_loss": 0.24506807327270508,
+          "gradient_l2_before_clip": 2.382305860519409,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010721566155552864,
+            "rms_p95": 0.02056736871600151,
+            "max_point_p95": 0.044752635061740875,
+            "path_ratio_min": 0.9404968619346619,
+            "path_ratio_max": 1.0324058532714844,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 23,
+          "hard_loss": 0.291057288646698,
+          "base_distill_loss": 0.2132282555103302,
+          "boundary_loss": 0.0,
+          "total_loss": 0.26770859956741333,
+          "gradient_l2_before_clip": 2.5583560466766357,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009601963683962822,
+            "rms_p95": 0.018669236451387405,
+            "max_point_p95": 0.042796552181243896,
+            "path_ratio_min": 0.9544602036476135,
+            "path_ratio_max": 1.0330696105957031,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 24,
+          "hard_loss": 0.28545546531677246,
+          "base_distill_loss": 0.1764615774154663,
+          "boundary_loss": 0.0,
+          "total_loss": 0.25275731086730957,
+          "gradient_l2_before_clip": 2.9362435340881348,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.01183386892080307,
+            "rms_p95": 0.021139414981007576,
+            "max_point_p95": 0.04993533715605736,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0655208826065063,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 25,
+          "hard_loss": 0.5434432625770569,
+          "base_distill_loss": 0.13411706686019897,
+          "boundary_loss": 0.0,
+          "total_loss": 0.42064541578292847,
+          "gradient_l2_before_clip": 3.2610135078430176,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.009975530207157135,
+            "rms_p95": 0.018364720046520233,
+            "max_point_p95": 0.045624516904354095,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0454388856887817,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 26,
+          "hard_loss": 0.4773925542831421,
+          "base_distill_loss": 0.17636854946613312,
+          "boundary_loss": 0.0,
+          "total_loss": 0.38708534836769104,
+          "gradient_l2_before_clip": 2.2548601627349854,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010198823176324368,
+            "rms_p95": 0.01667059026658535,
+            "max_point_p95": 0.046085841953754425,
+            "path_ratio_min": 0.9572591781616211,
+            "path_ratio_max": 1.0407129526138306,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 27,
+          "hard_loss": 0.2682604491710663,
+          "base_distill_loss": 0.1468079686164856,
+          "boundary_loss": 0.0,
+          "total_loss": 0.23182471096515656,
+          "gradient_l2_before_clip": 2.943077564239502,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.00996391475200653,
+            "rms_p95": 0.018225403502583504,
+            "max_point_p95": 0.043962616473436356,
+            "path_ratio_min": 0.9541168212890625,
+            "path_ratio_max": 1.0367004871368408,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 28,
+          "hard_loss": 0.4820592403411865,
+          "base_distill_loss": 0.11900898814201355,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3731441795825958,
+          "gradient_l2_before_clip": 2.9811885356903076,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010890739969909191,
+            "rms_p95": 0.021033983677625656,
+            "max_point_p95": 0.0490134097635746,
+            "path_ratio_min": 0.9458526372909546,
+            "path_ratio_max": 1.0583548545837402,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 29,
+          "hard_loss": 0.5592203736305237,
+          "base_distill_loss": 0.14977353811264038,
+          "boundary_loss": 0.0,
+          "total_loss": 0.4363863170146942,
+          "gradient_l2_before_clip": 3.255382537841797,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009517256170511246,
+            "rms_p95": 0.018338369205594063,
+            "max_point_p95": 0.051249489188194275,
+            "path_ratio_min": 0.950761079788208,
+            "path_ratio_max": 1.061092495918274,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 30,
+          "hard_loss": 0.5585014224052429,
+          "base_distill_loss": 0.16284799575805664,
+          "boundary_loss": 0.0,
+          "total_loss": 0.43980538845062256,
+          "gradient_l2_before_clip": 3.7484984397888184,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.0104414327070117,
+            "rms_p95": 0.022268040105700493,
+            "max_point_p95": 0.06080548092722893,
+            "path_ratio_min": 0.9614624977111816,
+            "path_ratio_max": 1.042127251625061,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 31,
+          "hard_loss": 0.4699767827987671,
+          "base_distill_loss": 0.13889992237091064,
+          "boundary_loss": 0.0,
+          "total_loss": 0.37065374851226807,
+          "gradient_l2_before_clip": 2.804041862487793,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.010104133747518063,
+            "rms_p95": 0.016469089314341545,
+            "max_point_p95": 0.04668904468417168,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0459880828857422,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 32,
+          "hard_loss": 0.44313541054725647,
+          "base_distill_loss": 0.17017364501953125,
+          "boundary_loss": 0.0,
+          "total_loss": 0.36124688386917114,
+          "gradient_l2_before_clip": 3.252030611038208,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 30,
+            "reverted": 2,
+            "changed": 30,
+            "rms_mean": 0.01041438989341259,
+            "rms_p95": 0.02031010203063488,
+            "max_point_p95": 0.04830159246921539,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0281500816345215,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null,
+          "all_boundary_teacher_kl_t1": 0.003433045232668519
+        }
+      ]
+    },
+    {
+      "arm": "scaled_base",
+      "optimizer_steps": 32,
+      "changed_parameter_tensors": 57,
+      "seconds": 14.14853629999925,
+      "checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_boundary_optimization_20261004\\scaled_base_smoke_checkpoint.pt",
+      "checkpoint_sha256": "94d42b1bd5cbeb6add9676a3ed72fd8fb4fb230b7e4e7cf4bf4e8ebf48d8d99d",
+      "history": [
+        {
+          "step": 1,
+          "hard_loss": 0.33590763807296753,
+          "base_distill_loss": 0.15643364191055298,
+          "boundary_loss": 0.0,
+          "total_loss": 0.25385889410972595,
+          "gradient_l2_before_clip": 2.8022680282592773,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010098149999976158,
+            "rms_p95": 0.017184820026159286,
+            "max_point_p95": 0.04293675348162651,
+            "path_ratio_min": 0.9238877892494202,
+            "path_ratio_max": 1.0297131538391113,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null,
+          "all_boundary_teacher_kl_t1": 0.0001687326584942639
+        },
+        {
+          "step": 2,
+          "hard_loss": 0.4361494183540344,
+          "base_distill_loss": 0.18409520387649536,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3244798183441162,
+          "gradient_l2_before_clip": 3.130486249923706,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.009880131110548973,
+            "rms_p95": 0.021038178354501724,
+            "max_point_p95": 0.04970106482505798,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0371991395950317,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 3,
+          "hard_loss": 0.6268422603607178,
+          "base_distill_loss": 0.1794039011001587,
+          "boundary_loss": 0.0,
+          "total_loss": 0.4433496594429016,
+          "gradient_l2_before_clip": 2.7481467723846436,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009399252943694592,
+            "rms_p95": 0.015538071282207966,
+            "max_point_p95": 0.03947240114212036,
+            "path_ratio_min": 0.9711112976074219,
+            "path_ratio_max": 1.0491619110107422,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 4,
+          "hard_loss": 0.4041491746902466,
+          "base_distill_loss": 0.2015995979309082,
+          "boundary_loss": 0.0,
+          "total_loss": 0.30904585123062134,
+          "gradient_l2_before_clip": 2.809452533721924,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.011571694165468216,
+            "rms_p95": 0.01969551481306553,
+            "max_point_p95": 0.051520898938179016,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0544309616088867,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 5,
+          "hard_loss": 0.6603421568870544,
+          "base_distill_loss": 0.14236955344676971,
+          "boundary_loss": 0.0,
+          "total_loss": 0.45445528626441956,
+          "gradient_l2_before_clip": 3.900581121444702,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.008546048775315285,
+            "rms_p95": 0.016418635845184326,
+            "max_point_p95": 0.04280605539679527,
+            "path_ratio_min": 0.9821147918701172,
+            "path_ratio_max": 1.0474522113800049,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 6,
+          "hard_loss": 0.3169887065887451,
+          "base_distill_loss": 0.19252978265285492,
+          "boundary_loss": 0.0,
+          "total_loss": 0.2516859173774719,
+          "gradient_l2_before_clip": 2.9155449867248535,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010008436627686024,
+            "rms_p95": 0.021349715068936348,
+            "max_point_p95": 0.05452025681734085,
+            "path_ratio_min": 0.9595869183540344,
+            "path_ratio_max": 1.0478342771530151,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 7,
+          "hard_loss": 0.42087626457214355,
+          "base_distill_loss": 0.17706234753131866,
+          "boundary_loss": 0.0,
+          "total_loss": 0.31295886635780334,
+          "gradient_l2_before_clip": 2.7034459114074707,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.012894289568066597,
+            "rms_p95": 0.02562461793422699,
+            "max_point_p95": 0.058890294283628464,
+            "path_ratio_min": 0.9509105682373047,
+            "path_ratio_max": 1.0593812465667725,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 8,
+          "hard_loss": 0.709916353225708,
+          "base_distill_loss": 0.1893269568681717,
+          "boundary_loss": 0.0,
+          "total_loss": 0.498365581035614,
+          "gradient_l2_before_clip": 3.5148537158966064,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.009212182834744453,
+            "rms_p95": 0.018725551664829254,
+            "max_point_p95": 0.04785987362265587,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0496457815170288,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null,
+          "all_boundary_teacher_kl_t1": 0.0015658229822292924
+        },
+        {
+          "step": 9,
+          "hard_loss": 0.4350564777851105,
+          "base_distill_loss": 0.19930189847946167,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3278971016407013,
+          "gradient_l2_before_clip": 3.484401226043701,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 30,
+            "reverted": 2,
+            "changed": 30,
+            "rms_mean": 0.009353015571832657,
+            "rms_p95": 0.015097826719284058,
+            "max_point_p95": 0.04194839298725128,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0331217050552368,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 10,
+          "hard_loss": 0.528885543346405,
+          "base_distill_loss": 0.15290962159633636,
+          "boundary_loss": 0.0,
+          "total_loss": 0.37448349595069885,
+          "gradient_l2_before_clip": 2.773221492767334,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009553334675729275,
+            "rms_p95": 0.01841450110077858,
+            "max_point_p95": 0.04794337972998619,
+            "path_ratio_min": 0.9541422724723816,
+            "path_ratio_max": 1.0300654172897339,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 11,
+          "hard_loss": 0.5629919767379761,
+          "base_distill_loss": 0.2192126214504242,
+          "boundary_loss": 0.0,
+          "total_loss": 0.4138723611831665,
+          "gradient_l2_before_clip": 3.224853754043579,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.011560534127056599,
+            "rms_p95": 0.019902920350432396,
+            "max_point_p95": 0.049974411725997925,
+            "path_ratio_min": 0.9580889940261841,
+            "path_ratio_max": 1.044060468673706,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 12,
+          "hard_loss": 0.6593729257583618,
+          "base_distill_loss": 0.17943121492862701,
+          "boundary_loss": 0.0,
+          "total_loss": 0.46385133266448975,
+          "gradient_l2_before_clip": 2.8740034103393555,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 30,
+            "reverted": 2,
+            "changed": 30,
+            "rms_mean": 0.009945961646735668,
+            "rms_p95": 0.019025875255465508,
+            "max_point_p95": 0.050728943198919296,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0469439029693604,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 13,
+          "hard_loss": 0.2846544682979584,
+          "base_distill_loss": 0.15396051108837128,
+          "boundary_loss": 0.0,
+          "total_loss": 0.22090163826942444,
+          "gradient_l2_before_clip": 2.1200480461120605,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.011189501732587814,
+            "rms_p95": 0.01844320073723793,
+            "max_point_p95": 0.04155103117227554,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0494606494903564,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 14,
+          "hard_loss": 0.9967681765556335,
+          "base_distill_loss": 0.23918072879314423,
+          "boundary_loss": 0.0,
+          "total_loss": 0.6925426721572876,
+          "gradient_l2_before_clip": 4.099822044372559,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.009369554929435253,
+            "rms_p95": 0.015833301469683647,
+            "max_point_p95": 0.04212368279695511,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.028436303138733,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 15,
+          "hard_loss": 0.4858384132385254,
+          "base_distill_loss": 0.16917908191680908,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3517565131187439,
+          "gradient_l2_before_clip": 3.5940182209014893,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.00859324261546135,
+            "rms_p95": 0.0178829412907362,
+            "max_point_p95": 0.041608523577451706,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0535112619400024,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 16,
+          "hard_loss": 0.5329070091247559,
+          "base_distill_loss": 0.16381791234016418,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3799622356891632,
+          "gradient_l2_before_clip": 3.370098829269409,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.0089165223762393,
+            "rms_p95": 0.01583903096616268,
+            "max_point_p95": 0.04189521446824074,
+            "path_ratio_min": 0.9472886323928833,
+            "path_ratio_max": 1.034339427947998,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null,
+          "all_boundary_teacher_kl_t1": 0.002466605743393302
+        },
+        {
+          "step": 17,
+          "hard_loss": 0.5082907676696777,
+          "base_distill_loss": 0.1736871749162674,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3671186864376068,
+          "gradient_l2_before_clip": 2.666301965713501,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010812174528837204,
+            "rms_p95": 0.019876591861248016,
+            "max_point_p95": 0.04898977652192116,
+            "path_ratio_min": 0.9382551312446594,
+            "path_ratio_max": 1.0387518405914307,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 18,
+          "hard_loss": 0.5772393345832825,
+          "base_distill_loss": 0.17414364218711853,
+          "boundary_loss": 0.0,
+          "total_loss": 0.41067951917648315,
+          "gradient_l2_before_clip": 2.950164318084717,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.00962399784475565,
+            "rms_p95": 0.01900937594473362,
+            "max_point_p95": 0.04365868121385574,
+            "path_ratio_min": 0.9557808041572571,
+            "path_ratio_max": 1.0464868545532227,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 19,
+          "hard_loss": 0.34041765332221985,
+          "base_distill_loss": 0.17465247213840485,
+          "boundary_loss": 0.0,
+          "total_loss": 0.2616192698478699,
+          "gradient_l2_before_clip": 3.2113845348358154,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009395561181008816,
+            "rms_p95": 0.016688868403434753,
+            "max_point_p95": 0.04218362644314766,
+            "path_ratio_min": 0.9602010250091553,
+            "path_ratio_max": 1.0328962802886963,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 20,
+          "hard_loss": 0.4817708134651184,
+          "base_distill_loss": 0.1629123091697693,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3475019335746765,
+          "gradient_l2_before_clip": 2.430462121963501,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 30,
+            "reverted": 2,
+            "changed": 30,
+            "rms_mean": 0.010320719331502914,
+            "rms_p95": 0.022038334980607033,
+            "max_point_p95": 0.04733103886246681,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0626683235168457,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 21,
+          "hard_loss": 0.4464070796966553,
+          "base_distill_loss": 0.1863079071044922,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3315396010875702,
+          "gradient_l2_before_clip": 2.6122140884399414,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.01042106095701456,
+            "rms_p95": 0.020457308739423752,
+            "max_point_p95": 0.051845625042915344,
+            "path_ratio_min": 0.9656830430030823,
+            "path_ratio_max": 1.0369466543197632,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 22,
+          "hard_loss": 0.28378286957740784,
+          "base_distill_loss": 0.15473373234272003,
+          "boundary_loss": 0.0,
+          "total_loss": 0.22056131064891815,
+          "gradient_l2_before_clip": 2.1440765857696533,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010721566155552864,
+            "rms_p95": 0.02056736871600151,
+            "max_point_p95": 0.044752635061740875,
+            "path_ratio_min": 0.9404968619346619,
+            "path_ratio_max": 1.0324058532714844,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 23,
+          "hard_loss": 0.29105740785598755,
+          "base_distill_loss": 0.21322840452194214,
+          "boundary_loss": 0.0,
+          "total_loss": 0.24093784391880035,
+          "gradient_l2_before_clip": 2.3025214672088623,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009601963683962822,
+            "rms_p95": 0.018669236451387405,
+            "max_point_p95": 0.042796552181243896,
+            "path_ratio_min": 0.9544602036476135,
+            "path_ratio_max": 1.0330696105957031,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 24,
+          "hard_loss": 0.2854554057121277,
+          "base_distill_loss": 0.17646153271198273,
+          "boundary_loss": 0.0,
+          "total_loss": 0.22748151421546936,
+          "gradient_l2_before_clip": 2.6426196098327637,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.01183386892080307,
+            "rms_p95": 0.021139414981007576,
+            "max_point_p95": 0.04993533715605736,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0655208826065063,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 25,
+          "hard_loss": 0.543443500995636,
+          "base_distill_loss": 0.13411706686019897,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3785809874534607,
+          "gradient_l2_before_clip": 2.9349122047424316,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.009975530207157135,
+            "rms_p95": 0.018364720046520233,
+            "max_point_p95": 0.045624516904354095,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0454388856887817,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 26,
+          "hard_loss": 0.4773925542831421,
+          "base_distill_loss": 0.1763685941696167,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3483768403530121,
+          "gradient_l2_before_clip": 2.02937388420105,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010198823176324368,
+            "rms_p95": 0.01667059026658535,
+            "max_point_p95": 0.046085841953754425,
+            "path_ratio_min": 0.9572591781616211,
+            "path_ratio_max": 1.0407129526138306,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 27,
+          "hard_loss": 0.26826030015945435,
+          "base_distill_loss": 0.14680805802345276,
+          "boundary_loss": 0.0,
+          "total_loss": 0.2086421698331833,
+          "gradient_l2_before_clip": 2.6487693786621094,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.00996391475200653,
+            "rms_p95": 0.018225403502583504,
+            "max_point_p95": 0.043962616473436356,
+            "path_ratio_min": 0.9541168212890625,
+            "path_ratio_max": 1.0367004871368408,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 28,
+          "hard_loss": 0.4820590615272522,
+          "base_distill_loss": 0.11900892853736877,
+          "boundary_loss": 0.0,
+          "total_loss": 0.33582958579063416,
+          "gradient_l2_before_clip": 2.6830689907073975,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010890739969909191,
+            "rms_p95": 0.021033983677625656,
+            "max_point_p95": 0.0490134097635746,
+            "path_ratio_min": 0.9458526372909546,
+            "path_ratio_max": 1.0583548545837402,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 29,
+          "hard_loss": 0.5592203736305237,
+          "base_distill_loss": 0.149773508310318,
+          "boundary_loss": 0.0,
+          "total_loss": 0.3927476406097412,
+          "gradient_l2_before_clip": 2.9298439025878906,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009517256170511246,
+            "rms_p95": 0.018338369205594063,
+            "max_point_p95": 0.051249489188194275,
+            "path_ratio_min": 0.950761079788208,
+            "path_ratio_max": 1.061092495918274,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 30,
+          "hard_loss": 0.5585016012191772,
+          "base_distill_loss": 0.16284815967082977,
+          "boundary_loss": 0.0,
+          "total_loss": 0.39582499861717224,
+          "gradient_l2_before_clip": 3.3736491203308105,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.0104414327070117,
+            "rms_p95": 0.022268040105700493,
+            "max_point_p95": 0.06080548092722893,
+            "path_ratio_min": 0.9614624977111816,
+            "path_ratio_max": 1.042127251625061,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 31,
+          "hard_loss": 0.4699767231941223,
+          "base_distill_loss": 0.1388997733592987,
+          "boundary_loss": 0.0,
+          "total_loss": 0.33358827233314514,
+          "gradient_l2_before_clip": 2.523637056350708,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.010104133747518063,
+            "rms_p95": 0.016469089314341545,
+            "max_point_p95": 0.04668904468417168,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0459880828857422,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 32,
+          "hard_loss": 0.44313547015190125,
+          "base_distill_loss": 0.17017365992069244,
+          "boundary_loss": 0.0,
+          "total_loss": 0.325122207403183,
+          "gradient_l2_before_clip": 2.9268276691436768,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 30,
+            "reverted": 2,
+            "changed": 30,
+            "rms_mean": 0.01041438989341259,
+            "rms_p95": 0.02031010203063488,
+            "max_point_p95": 0.04830159246921539,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0281500816345215,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null,
+          "all_boundary_teacher_kl_t1": 0.0034330503549426794
+        }
+      ]
+    },
+    {
+      "arm": "boundary",
+      "optimizer_steps": 32,
+      "changed_parameter_tensors": 57,
+      "seconds": 20.794136099999378,
+      "checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_boundary_optimization_20261004\\boundary_smoke_checkpoint.pt",
+      "checkpoint_sha256": "d04c8c39cdca3aa82b066b3f419faa0e9d2ef9438977a4ac82c27b56294ca543",
+      "history": [
+        {
+          "step": 1,
+          "hard_loss": 0.33590763807296753,
+          "base_distill_loss": 0.15643364191055298,
+          "boundary_loss": 0.07693897932767868,
+          "total_loss": 0.2615527808666229,
+          "gradient_l2_before_clip": 2.7920734882354736,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010098149999976158,
+            "rms_p95": 0.017184820026159286,
+            "max_point_p95": 0.04293675348162651,
+            "path_ratio_min": 0.9238877892494202,
+            "path_ratio_max": 1.0297131538391113,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": {
+            "position": {
+              "weighted_base_gradient_l2": 0.224049367626224,
+              "weighted_boundary_gradient_l2": 0.05177788525143153,
+              "cosine": 0.030192317581472897
+            },
+            "input_projection.0": {
+              "weighted_base_gradient_l2": 1.3674542847964977,
+              "weighted_boundary_gradient_l2": 0.22792428687724575,
+              "cosine": -0.3260071283094652
+            },
+            "input_projection.1": {
+              "weighted_base_gradient_l2": 0.3522928334344093,
+              "weighted_boundary_gradient_l2": 0.05995989652593644,
+              "cosine": -0.30616335704348724
+            },
+            "encoder.layers.0.self_attn": {
+              "weighted_base_gradient_l2": 0.797753553312207,
+              "weighted_boundary_gradient_l2": 0.12661261973474358,
+              "cosine": -0.12415633659886868
+            },
+            "encoder.layers.0.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.6983749210135035,
+              "weighted_boundary_gradient_l2": 0.08555855703934365,
+              "cosine": -0.07303000337681971
+            },
+            "encoder.layers.0.linear1": {
+              "weighted_base_gradient_l2": 0.4838640083060879,
+              "weighted_boundary_gradient_l2": 0.10293876039031756,
+              "cosine": -0.012663736345960056
+            },
+            "encoder.layers.0.linear2": {
+              "weighted_base_gradient_l2": 0.36003908058432166,
+              "weighted_boundary_gradient_l2": 0.07267287761700017,
+              "cosine": -0.0852230825129633
+            },
+            "encoder.layers.0.norm1": {
+              "weighted_base_gradient_l2": 0.17674739554042976,
+              "weighted_boundary_gradient_l2": 0.030620460182127884,
+              "cosine": -0.16254990718871876
+            },
+            "encoder.layers.0.norm2": {
+              "weighted_base_gradient_l2": 0.12711104511190735,
+              "weighted_boundary_gradient_l2": 0.03268965598423668,
+              "cosine": -0.03418020079830639
+            },
+            "encoder.layers.1.self_attn": {
+              "weighted_base_gradient_l2": 0.6137930521103707,
+              "weighted_boundary_gradient_l2": 0.18010775207699617,
+              "cosine": 0.15395356827274465
+            },
+            "encoder.layers.1.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.5682220116840675,
+              "weighted_boundary_gradient_l2": 0.10802807234196139,
+              "cosine": -0.14592094592690413
+            },
+            "encoder.layers.1.linear1": {
+              "weighted_base_gradient_l2": 0.4063933215968691,
+              "weighted_boundary_gradient_l2": 0.07434951779991406,
+              "cosine": -0.07518269371227063
+            },
+            "encoder.layers.1.linear2": {
+              "weighted_base_gradient_l2": 0.4032329922009856,
+              "weighted_boundary_gradient_l2": 0.06889773616255117,
+              "cosine": -0.0695224506564591
+            },
+            "encoder.layers.1.norm1": {
+              "weighted_base_gradient_l2": 0.1202685828683385,
+              "weighted_boundary_gradient_l2": 0.025547360524432787,
+              "cosine": -0.21157556433294775
+            },
+            "encoder.layers.1.norm2": {
+              "weighted_base_gradient_l2": 0.14771751162318786,
+              "weighted_boundary_gradient_l2": 0.02746456991104466,
+              "cosine": -0.36296576996783253
+            },
+            "encoder.layers.2.self_attn": {
+              "weighted_base_gradient_l2": 0.694958375309399,
+              "weighted_boundary_gradient_l2": 0.13573519352949695,
+              "cosine": -0.1813549319719428
+            },
+            "encoder.layers.2.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.6504190276934926,
+              "weighted_boundary_gradient_l2": 0.12491801975719136,
+              "cosine": -0.03870652422707698
+            },
+            "encoder.layers.2.linear1": {
+              "weighted_base_gradient_l2": 0.3931161766055169,
+              "weighted_boundary_gradient_l2": 0.07640775212726116,
+              "cosine": -0.013113080791343051
+            },
+            "encoder.layers.2.linear2": {
+              "weighted_base_gradient_l2": 0.44880549973083284,
+              "weighted_boundary_gradient_l2": 0.07390692714063152,
+              "cosine": -0.01916318719399191
+            },
+            "encoder.layers.2.norm1": {
+              "weighted_base_gradient_l2": 0.13363537697560152,
+              "weighted_boundary_gradient_l2": 0.026323450534705754,
+              "cosine": -0.25815320692660504
+            },
+            "encoder.layers.2.norm2": {
+              "weighted_base_gradient_l2": 0.13431145841552766,
+              "weighted_boundary_gradient_l2": 0.024517078022751625,
+              "cosine": -0.1673221594241124
+            },
+            "encoder.layers.3.self_attn": {
+              "weighted_base_gradient_l2": 0.5865907917321787,
+              "weighted_boundary_gradient_l2": 0.10183391024297331,
+              "cosine": -0.02528437070860859
+            },
+            "encoder.layers.3.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.522498361191963,
+              "weighted_boundary_gradient_l2": 0.10263351208911438,
+              "cosine": 0.0008209772681857908
+            },
+            "encoder.layers.3.linear1": {
+              "weighted_base_gradient_l2": 0.44615541435280204,
+              "weighted_boundary_gradient_l2": 0.07498609385714827,
+              "cosine": -0.02379220299661434
+            },
+            "encoder.layers.3.linear2": {
+              "weighted_base_gradient_l2": 0.48118451155916137,
+              "weighted_boundary_gradient_l2": 0.07959141530419034,
+              "cosine": -0.005174073106970629
+            },
+            "encoder.layers.3.norm1": {
+              "weighted_base_gradient_l2": 0.12109374423180844,
+              "weighted_boundary_gradient_l2": 0.026044444343328525,
+              "cosine": -0.16674623863089746
+            },
+            "encoder.layers.3.norm2": {
+              "weighted_base_gradient_l2": 0.059055404140644835,
+              "weighted_boundary_gradient_l2": 0.010369279397089582,
+              "cosine": -0.013985795722444561
+            },
+            "pool_score": {
+              "weighted_base_gradient_l2": 0.14414557342512296,
+              "weighted_boundary_gradient_l2": 0.020764065461388554,
+              "cosine": -0.04107668325693427
+            },
+            "math_head": {
+              "weighted_base_gradient_l2": 0.9083166933321846,
+              "weighted_boundary_gradient_l2": 0.11945341863325767,
+              "cosine": -0.00914967868605322
+            }
+          },
+          "all_boundary_teacher_kl_t1": 0.0001119717417168431
+        },
+        {
+          "step": 2,
+          "hard_loss": 0.43614399433135986,
+          "base_distill_loss": 0.18409892916679382,
+          "boundary_loss": 0.0497049055993557,
+          "total_loss": 0.3294479250907898,
+          "gradient_l2_before_clip": 3.1836488246917725,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.009880131110548973,
+            "rms_p95": 0.021038178354501724,
+            "max_point_p95": 0.04970106482505798,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0371991395950317,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 3,
+          "hard_loss": 0.6270821690559387,
+          "base_distill_loss": 0.17943331599235535,
+          "boundary_loss": 0.07055261731147766,
+          "total_loss": 0.4505639970302582,
+          "gradient_l2_before_clip": 2.742027759552002,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009399252943694592,
+            "rms_p95": 0.015538071282207966,
+            "max_point_p95": 0.03947240114212036,
+            "path_ratio_min": 0.9711112976074219,
+            "path_ratio_max": 1.0491619110107422,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 4,
+          "hard_loss": 0.4041430950164795,
+          "base_distill_loss": 0.20178550481796265,
+          "boundary_loss": 0.051526449620723724,
+          "total_loss": 0.3142448663711548,
+          "gradient_l2_before_clip": 2.8055453300476074,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.011571694165468216,
+            "rms_p95": 0.01969551481306553,
+            "max_point_p95": 0.051520898938179016,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0544309616088867,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 5,
+          "hard_loss": 0.6615591049194336,
+          "base_distill_loss": 0.14212149381637573,
+          "boundary_loss": 0.04883759468793869,
+          "total_loss": 0.46003881096839905,
+          "gradient_l2_before_clip": 3.930711507797241,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.008546048775315285,
+            "rms_p95": 0.016418635845184326,
+            "max_point_p95": 0.04280605539679527,
+            "path_ratio_min": 0.9821147918701172,
+            "path_ratio_max": 1.0474522113800049,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 6,
+          "hard_loss": 0.3170541822910309,
+          "base_distill_loss": 0.19239652156829834,
+          "boundary_loss": 0.03602931275963783,
+          "total_loss": 0.2552941143512726,
+          "gradient_l2_before_clip": 2.92578125,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010008436627686024,
+            "rms_p95": 0.021349715068936348,
+            "max_point_p95": 0.05452025681734085,
+            "path_ratio_min": 0.9595869183540344,
+            "path_ratio_max": 1.0478342771530151,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 7,
+          "hard_loss": 0.42132189869880676,
+          "base_distill_loss": 0.17690855264663696,
+          "boundary_loss": 0.1138010025024414,
+          "total_loss": 0.3245782256126404,
+          "gradient_l2_before_clip": 2.7334115505218506,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.012894289568066597,
+            "rms_p95": 0.02562461793422699,
+            "max_point_p95": 0.058890294283628464,
+            "path_ratio_min": 0.9509105682373047,
+            "path_ratio_max": 1.0593812465667725,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 8,
+          "hard_loss": 0.7085251212120056,
+          "base_distill_loss": 0.18821057677268982,
+          "boundary_loss": 0.07554683834314346,
+          "total_loss": 0.5047423839569092,
+          "gradient_l2_before_clip": 3.539490222930908,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.009212182834744453,
+            "rms_p95": 0.018725551664829254,
+            "max_point_p95": 0.04785987362265587,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0496457815170288,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": {
+            "position": {
+              "weighted_base_gradient_l2": 0.31519143285950857,
+              "weighted_boundary_gradient_l2": 0.04619013137348446,
+              "cosine": 0.21417215923092836
+            },
+            "input_projection.0": {
+              "weighted_base_gradient_l2": 1.5008190620897504,
+              "weighted_boundary_gradient_l2": 0.1596239711792545,
+              "cosine": 0.059378341126722016
+            },
+            "input_projection.1": {
+              "weighted_base_gradient_l2": 0.4090808758203686,
+              "weighted_boundary_gradient_l2": 0.04161862199309717,
+              "cosine": -0.06552859681726382
+            },
+            "encoder.layers.0.self_attn": {
+              "weighted_base_gradient_l2": 1.389875175009304,
+              "weighted_boundary_gradient_l2": 0.09347430809911553,
+              "cosine": -0.2456717965100765
+            },
+            "encoder.layers.0.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.7448634444286415,
+              "weighted_boundary_gradient_l2": 0.07068751911100674,
+              "cosine": -0.15699031485521564
+            },
+            "encoder.layers.0.linear1": {
+              "weighted_base_gradient_l2": 0.567239492521993,
+              "weighted_boundary_gradient_l2": 0.06675319572415529,
+              "cosine": 0.051389353896338336
+            },
+            "encoder.layers.0.linear2": {
+              "weighted_base_gradient_l2": 0.40320571675361055,
+              "weighted_boundary_gradient_l2": 0.04996752313430646,
+              "cosine": 0.016176841075303167
+            },
+            "encoder.layers.0.norm1": {
+              "weighted_base_gradient_l2": 0.23595674354188978,
+              "weighted_boundary_gradient_l2": 0.020781612588584752,
+              "cosine": -0.09957578161658696
+            },
+            "encoder.layers.0.norm2": {
+              "weighted_base_gradient_l2": 0.16213304565148967,
+              "weighted_boundary_gradient_l2": 0.022921356639095117,
+              "cosine": -0.039234739519607764
+            },
+            "encoder.layers.1.self_attn": {
+              "weighted_base_gradient_l2": 0.7782714198992182,
+              "weighted_boundary_gradient_l2": 0.1291374309221995,
+              "cosine": 0.28767934320673116
+            },
+            "encoder.layers.1.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.6667049642672627,
+              "weighted_boundary_gradient_l2": 0.06690141196957082,
+              "cosine": 0.097339955729581
+            },
+            "encoder.layers.1.linear1": {
+              "weighted_base_gradient_l2": 0.4535232984401318,
+              "weighted_boundary_gradient_l2": 0.05315792602481802,
+              "cosine": 0.07518266297344163
+            },
+            "encoder.layers.1.linear2": {
+              "weighted_base_gradient_l2": 0.46750036354277114,
+              "weighted_boundary_gradient_l2": 0.05074316755195201,
+              "cosine": 0.0631315015147681
+            },
+            "encoder.layers.1.norm1": {
+              "weighted_base_gradient_l2": 0.1299430073092314,
+              "weighted_boundary_gradient_l2": 0.015500453315655771,
+              "cosine": 0.22300527006654822
+            },
+            "encoder.layers.1.norm2": {
+              "weighted_base_gradient_l2": 0.15275726683402172,
+              "weighted_boundary_gradient_l2": 0.014678958052161028,
+              "cosine": 0.1933579412366345
+            },
+            "encoder.layers.2.self_attn": {
+              "weighted_base_gradient_l2": 0.7934599647467745,
+              "weighted_boundary_gradient_l2": 0.08162936283461492,
+              "cosine": 0.22216259034744998
+            },
+            "encoder.layers.2.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.7256209909230176,
+              "weighted_boundary_gradient_l2": 0.0831452519942356,
+              "cosine": 0.08151692106809483
+            },
+            "encoder.layers.2.linear1": {
+              "weighted_base_gradient_l2": 0.5033185050766851,
+              "weighted_boundary_gradient_l2": 0.053135462641126355,
+              "cosine": 0.06384523884777735
+            },
+            "encoder.layers.2.linear2": {
+              "weighted_base_gradient_l2": 0.5384037668047006,
+              "weighted_boundary_gradient_l2": 0.05581640923407816,
+              "cosine": 0.04453397267338961
+            },
+            "encoder.layers.2.norm1": {
+              "weighted_base_gradient_l2": 0.16431598721768975,
+              "weighted_boundary_gradient_l2": 0.016288362449129994,
+              "cosine": 0.3146079909624913
+            },
+            "encoder.layers.2.norm2": {
+              "weighted_base_gradient_l2": 0.15739624865553076,
+              "weighted_boundary_gradient_l2": 0.014878666645567203,
+              "cosine": 0.31243219011151163
+            },
+            "encoder.layers.3.self_attn": {
+              "weighted_base_gradient_l2": 0.6735482090584972,
+              "weighted_boundary_gradient_l2": 0.06753575255000076,
+              "cosine": 0.1080146888854453
+            },
+            "encoder.layers.3.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.6382758833415616,
+              "weighted_boundary_gradient_l2": 0.07214520337751151,
+              "cosine": 0.049840744744701154
+            },
+            "encoder.layers.3.linear1": {
+              "weighted_base_gradient_l2": 0.5410935553652402,
+              "weighted_boundary_gradient_l2": 0.05356055929986313,
+              "cosine": 0.01455255952455825
+            },
+            "encoder.layers.3.linear2": {
+              "weighted_base_gradient_l2": 0.6327726497288476,
+              "weighted_boundary_gradient_l2": 0.0535101949861073,
+              "cosine": 0.007350654432074218
+            },
+            "encoder.layers.3.norm1": {
+              "weighted_base_gradient_l2": 0.14590552720049968,
+              "weighted_boundary_gradient_l2": 0.016195171334596366,
+              "cosine": 0.2332813028386397
+            },
+            "encoder.layers.3.norm2": {
+              "weighted_base_gradient_l2": 0.0745870227809682,
+              "weighted_boundary_gradient_l2": 0.006726995550425787,
+              "cosine": 0.13975596125589945
+            },
+            "pool_score": {
+              "weighted_base_gradient_l2": 0.1699077830555066,
+              "weighted_boundary_gradient_l2": 0.029240585929434373,
+              "cosine": 0.10099288759069831
+            },
+            "math_head": {
+              "weighted_base_gradient_l2": 1.365859009527166,
+              "weighted_boundary_gradient_l2": 0.08445140691168682,
+              "cosine": -0.01390810784644074
+            }
+          },
+          "all_boundary_teacher_kl_t1": 0.001084518851712346
+        },
+        {
+          "step": 9,
+          "hard_loss": 0.43494805693626404,
+          "base_distill_loss": 0.19960103929042816,
+          "boundary_loss": 0.07044631242752075,
+          "total_loss": 0.334954172372818,
+          "gradient_l2_before_clip": 3.5230214595794678,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 30,
+            "reverted": 2,
+            "changed": 30,
+            "rms_mean": 0.009353015571832657,
+            "rms_p95": 0.015097826719284058,
+            "max_point_p95": 0.04194839298725128,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0331217050552368,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 10,
+          "hard_loss": 0.5277630090713501,
+          "base_distill_loss": 0.15269410610198975,
+          "boundary_loss": 0.08085906505584717,
+          "total_loss": 0.3818039894104004,
+          "gradient_l2_before_clip": 2.8167736530303955,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009553334675729275,
+            "rms_p95": 0.01841450110077858,
+            "max_point_p95": 0.04794337972998619,
+            "path_ratio_min": 0.9541422724723816,
+            "path_ratio_max": 1.0300654172897339,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 11,
+          "hard_loss": 0.5635428428649902,
+          "base_distill_loss": 0.21793459355831146,
+          "boundary_loss": 0.050731513649225235,
+          "total_loss": 0.4189474880695343,
+          "gradient_l2_before_clip": 3.239776134490967,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.011560534127056599,
+            "rms_p95": 0.019902920350432396,
+            "max_point_p95": 0.049974411725997925,
+            "path_ratio_min": 0.9580889940261841,
+            "path_ratio_max": 1.044060468673706,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 12,
+          "hard_loss": 0.6593226194381714,
+          "base_distill_loss": 0.1797952950000763,
+          "boundary_loss": 0.06364530324935913,
+          "total_loss": 0.47028249502182007,
+          "gradient_l2_before_clip": 2.885709285736084,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 30,
+            "reverted": 2,
+            "changed": 30,
+            "rms_mean": 0.009945961646735668,
+            "rms_p95": 0.019025875255465508,
+            "max_point_p95": 0.050728943198919296,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0469439029693604,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 13,
+          "hard_loss": 0.2839789390563965,
+          "base_distill_loss": 0.1538155972957611,
+          "boundary_loss": 0.046697068959474564,
+          "total_loss": 0.22510665655136108,
+          "gradient_l2_before_clip": 2.136873722076416,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.011189501732587814,
+            "rms_p95": 0.01844320073723793,
+            "max_point_p95": 0.04155103117227554,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0494606494903564,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 14,
+          "hard_loss": 0.9977589845657349,
+          "base_distill_loss": 0.23796597123146057,
+          "boundary_loss": 0.060706742107868195,
+          "total_loss": 0.69890958070755,
+          "gradient_l2_before_clip": 4.102928161621094,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.009369554929435253,
+            "rms_p95": 0.015833301469683647,
+            "max_point_p95": 0.04212368279695511,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.028436303138733,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 15,
+          "hard_loss": 0.48690521717071533,
+          "base_distill_loss": 0.17059238255023956,
+          "boundary_loss": 0.0512579083442688,
+          "total_loss": 0.35793599486351013,
+          "gradient_l2_before_clip": 3.6558799743652344,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.00859324261546135,
+            "rms_p95": 0.0178829412907362,
+            "max_point_p95": 0.041608523577451706,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0535112619400024,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 16,
+          "hard_loss": 0.5327996015548706,
+          "base_distill_loss": 0.16326510906219482,
+          "boundary_loss": 0.055200107395648956,
+          "total_loss": 0.3852653205394745,
+          "gradient_l2_before_clip": 3.387127161026001,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.0089165223762393,
+            "rms_p95": 0.01583903096616268,
+            "max_point_p95": 0.04189521446824074,
+            "path_ratio_min": 0.9472886323928833,
+            "path_ratio_max": 1.034339427947998,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": {
+            "position": {
+              "weighted_base_gradient_l2": 0.34276187366422667,
+              "weighted_boundary_gradient_l2": 0.025646008569171725,
+              "cosine": -0.03216288220854003
+            },
+            "input_projection.0": {
+              "weighted_base_gradient_l2": 1.1975027350511953,
+              "weighted_boundary_gradient_l2": 0.09189885263082496,
+              "cosine": 0.3328044435443531
+            },
+            "input_projection.1": {
+              "weighted_base_gradient_l2": 0.342113103356248,
+              "weighted_boundary_gradient_l2": 0.023990296276423084,
+              "cosine": 0.44320890785716904
+            },
+            "encoder.layers.0.self_attn": {
+              "weighted_base_gradient_l2": 0.9035336299278172,
+              "weighted_boundary_gradient_l2": 0.04947462305805599,
+              "cosine": -0.1071475106230518
+            },
+            "encoder.layers.0.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.8595726436140456,
+              "weighted_boundary_gradient_l2": 0.05025111755646217,
+              "cosine": 0.05078514516617156
+            },
+            "encoder.layers.0.linear1": {
+              "weighted_base_gradient_l2": 0.7218932663605684,
+              "weighted_boundary_gradient_l2": 0.04622257516307097,
+              "cosine": -0.021342421013675873
+            },
+            "encoder.layers.0.linear2": {
+              "weighted_base_gradient_l2": 0.5743474747113166,
+              "weighted_boundary_gradient_l2": 0.04028475687975244,
+              "cosine": -0.03125929339772086
+            },
+            "encoder.layers.0.norm1": {
+              "weighted_base_gradient_l2": 0.198148211862852,
+              "weighted_boundary_gradient_l2": 0.013535824750758249,
+              "cosine": 0.21509296975229233
+            },
+            "encoder.layers.0.norm2": {
+              "weighted_base_gradient_l2": 0.16844418518179616,
+              "weighted_boundary_gradient_l2": 0.013323783840381223,
+              "cosine": 0.10744964047456419
+            },
+            "encoder.layers.1.self_attn": {
+              "weighted_base_gradient_l2": 0.8372802055860515,
+              "weighted_boundary_gradient_l2": 0.08030010565112686,
+              "cosine": 0.033936815525667643
+            },
+            "encoder.layers.1.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.7559476303109365,
+              "weighted_boundary_gradient_l2": 0.051457032567962614,
+              "cosine": -0.06187545230232216
+            },
+            "encoder.layers.1.linear1": {
+              "weighted_base_gradient_l2": 0.6280611765964346,
+              "weighted_boundary_gradient_l2": 0.03978403451606638,
+              "cosine": -0.030066841485603204
+            },
+            "encoder.layers.1.linear2": {
+              "weighted_base_gradient_l2": 0.6326161369852057,
+              "weighted_boundary_gradient_l2": 0.03830041456980137,
+              "cosine": 0.0092485207732982
+            },
+            "encoder.layers.1.norm1": {
+              "weighted_base_gradient_l2": 0.1573775230147524,
+              "weighted_boundary_gradient_l2": 0.0106781672666157,
+              "cosine": 0.11634308526584948
+            },
+            "encoder.layers.1.norm2": {
+              "weighted_base_gradient_l2": 0.21260348037361,
+              "weighted_boundary_gradient_l2": 0.011560058335693985,
+              "cosine": 0.19006740522633772
+            },
+            "encoder.layers.2.self_attn": {
+              "weighted_base_gradient_l2": 1.0438324351614676,
+              "weighted_boundary_gradient_l2": 0.056095397978378925,
+              "cosine": -0.013135010943865108
+            },
+            "encoder.layers.2.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.7987151637338417,
+              "weighted_boundary_gradient_l2": 0.06662628012887582,
+              "cosine": -0.030479555857746005
+            },
+            "encoder.layers.2.linear1": {
+              "weighted_base_gradient_l2": 0.5718939460322001,
+              "weighted_boundary_gradient_l2": 0.044920654302965206,
+              "cosine": 0.015052389414751592
+            },
+            "encoder.layers.2.linear2": {
+              "weighted_base_gradient_l2": 0.5738859943861395,
+              "weighted_boundary_gradient_l2": 0.04423843326460907,
+              "cosine": 0.02123593991342034
+            },
+            "encoder.layers.2.norm1": {
+              "weighted_base_gradient_l2": 0.15647271496149112,
+              "weighted_boundary_gradient_l2": 0.009997082880600451,
+              "cosine": 0.17401149502507957
+            },
+            "encoder.layers.2.norm2": {
+              "weighted_base_gradient_l2": 0.13614249037681025,
+              "weighted_boundary_gradient_l2": 0.009227781071014081,
+              "cosine": 0.15912777027586697
+            },
+            "encoder.layers.3.self_attn": {
+              "weighted_base_gradient_l2": 0.6696700336626841,
+              "weighted_boundary_gradient_l2": 0.05000443874247998,
+              "cosine": 0.012531288428427191
+            },
+            "encoder.layers.3.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.6023165652928927,
+              "weighted_boundary_gradient_l2": 0.04941760138654554,
+              "cosine": 0.01704273804707346
+            },
+            "encoder.layers.3.linear1": {
+              "weighted_base_gradient_l2": 0.5039871595819782,
+              "weighted_boundary_gradient_l2": 0.040274976053697176,
+              "cosine": 0.023242216877064938
+            },
+            "encoder.layers.3.linear2": {
+              "weighted_base_gradient_l2": 0.5721154565180582,
+              "weighted_boundary_gradient_l2": 0.043495906122999174,
+              "cosine": 0.021916294607295217
+            },
+            "encoder.layers.3.norm1": {
+              "weighted_base_gradient_l2": 0.12740152655828754,
+              "weighted_boundary_gradient_l2": 0.009088110539446963,
+              "cosine": 0.06594621718967886
+            },
+            "encoder.layers.3.norm2": {
+              "weighted_base_gradient_l2": 0.052680870348860334,
+              "weighted_boundary_gradient_l2": 0.004075892125130097,
+              "cosine": -0.006917705362264758
+            },
+            "pool_score": {
+              "weighted_base_gradient_l2": 0.25416803802578947,
+              "weighted_boundary_gradient_l2": 0.015146817407199472,
+              "cosine": -0.020768437961302417
+            },
+            "math_head": {
+              "weighted_base_gradient_l2": 1.0763501974312677,
+              "weighted_boundary_gradient_l2": 0.06448966565225055,
+              "cosine": 0.0009757911015980136
+            }
+          },
+          "all_boundary_teacher_kl_t1": 0.003783277003094554
+        },
+        {
+          "step": 17,
+          "hard_loss": 0.5070475935935974,
+          "base_distill_loss": 0.1727502942085266,
+          "boundary_loss": 0.057547084987163544,
+          "total_loss": 0.3718372881412506,
+          "gradient_l2_before_clip": 2.7452232837677,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010812174528837204,
+            "rms_p95": 0.019876591861248016,
+            "max_point_p95": 0.04898977652192116,
+            "path_ratio_min": 0.9382551312446594,
+            "path_ratio_max": 1.0387518405914307,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 18,
+          "hard_loss": 0.5772987604141235,
+          "base_distill_loss": 0.17422057688236237,
+          "boundary_loss": 0.0663464143872261,
+          "total_loss": 0.4173724055290222,
+          "gradient_l2_before_clip": 3.0182015895843506,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.00962399784475565,
+            "rms_p95": 0.01900937594473362,
+            "max_point_p95": 0.04365868121385574,
+            "path_ratio_min": 0.9557808041572571,
+            "path_ratio_max": 1.0464868545532227,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 19,
+          "hard_loss": 0.3414730727672577,
+          "base_distill_loss": 0.17382168769836426,
+          "boundary_loss": 0.05213664099574089,
+          "total_loss": 0.26727357506752014,
+          "gradient_l2_before_clip": 3.25154447555542,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009395561181008816,
+            "rms_p95": 0.016688868403434753,
+            "max_point_p95": 0.04218362644314766,
+            "path_ratio_min": 0.9602010250091553,
+            "path_ratio_max": 1.0328962802886963,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 20,
+          "hard_loss": 0.48041069507598877,
+          "base_distill_loss": 0.16145215928554535,
+          "boundary_loss": 0.058919042348861694,
+          "total_loss": 0.35214269161224365,
+          "gradient_l2_before_clip": 2.3804736137390137,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 30,
+            "reverted": 2,
+            "changed": 30,
+            "rms_mean": 0.010320719331502914,
+            "rms_p95": 0.022038334980607033,
+            "max_point_p95": 0.04733103886246681,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0626683235168457,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 21,
+          "hard_loss": 0.4469088912010193,
+          "base_distill_loss": 0.18637308478355408,
+          "boundary_loss": 0.08019663393497467,
+          "total_loss": 0.3398929834365845,
+          "gradient_l2_before_clip": 2.7396481037139893,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.01042106095701456,
+            "rms_p95": 0.020457308739423752,
+            "max_point_p95": 0.051845625042915344,
+            "path_ratio_min": 0.9656830430030823,
+            "path_ratio_max": 1.0369466543197632,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 22,
+          "hard_loss": 0.28466320037841797,
+          "base_distill_loss": 0.15554450452327728,
+          "boundary_loss": 0.03563544899225235,
+          "total_loss": 0.22489836812019348,
+          "gradient_l2_before_clip": 2.1394827365875244,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010721566155552864,
+            "rms_p95": 0.02056736871600151,
+            "max_point_p95": 0.044752635061740875,
+            "path_ratio_min": 0.9404968619346619,
+            "path_ratio_max": 1.0324058532714844,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 23,
+          "hard_loss": 0.2914385497570038,
+          "base_distill_loss": 0.2140728235244751,
+          "boundary_loss": 0.06308896839618683,
+          "total_loss": 0.2477148324251175,
+          "gradient_l2_before_clip": 2.372184991836548,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009601963683962822,
+            "rms_p95": 0.018669236451387405,
+            "max_point_p95": 0.042796552181243896,
+            "path_ratio_min": 0.9544602036476135,
+            "path_ratio_max": 1.0330696105957031,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 24,
+          "hard_loss": 0.2856281101703644,
+          "base_distill_loss": 0.17771270871162415,
+          "boundary_loss": 0.06833381205797195,
+          "total_loss": 0.23476150631904602,
+          "gradient_l2_before_clip": 2.655529499053955,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.01183386892080307,
+            "rms_p95": 0.021139414981007576,
+            "max_point_p95": 0.04993533715605736,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0655208826065063,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 25,
+          "hard_loss": 0.5443029999732971,
+          "base_distill_loss": 0.13356907665729523,
+          "boundary_loss": 0.06017039343714714,
+          "total_loss": 0.38499152660369873,
+          "gradient_l2_before_clip": 2.962013006210327,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.009975530207157135,
+            "rms_p95": 0.018364720046520233,
+            "max_point_p95": 0.045624516904354095,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0454388856887817,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 26,
+          "hard_loss": 0.4774244725704193,
+          "base_distill_loss": 0.17690470814704895,
+          "boundary_loss": 0.0853247344493866,
+          "total_loss": 0.35707414150238037,
+          "gradient_l2_before_clip": 2.056007146835327,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010198823176324368,
+            "rms_p95": 0.01667059026658535,
+            "max_point_p95": 0.046085841953754425,
+            "path_ratio_min": 0.9572591781616211,
+            "path_ratio_max": 1.0407129526138306,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 27,
+          "hard_loss": 0.26712140440940857,
+          "base_distill_loss": 0.1461097151041031,
+          "boundary_loss": 0.051144108176231384,
+          "total_loss": 0.21285051107406616,
+          "gradient_l2_before_clip": 2.629279375076294,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.00996391475200653,
+            "rms_p95": 0.018225403502583504,
+            "max_point_p95": 0.043962616473436356,
+            "path_ratio_min": 0.9541168212890625,
+            "path_ratio_max": 1.0367004871368408,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 28,
+          "hard_loss": 0.48082730174064636,
+          "base_distill_loss": 0.11935509741306305,
+          "boundary_loss": 0.05869947001338005,
+          "total_loss": 0.3410170376300812,
+          "gradient_l2_before_clip": 2.65667986869812,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.010890739969909191,
+            "rms_p95": 0.021033983677625656,
+            "max_point_p95": 0.0490134097635746,
+            "path_ratio_min": 0.9458526372909546,
+            "path_ratio_max": 1.0583548545837402,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 29,
+          "hard_loss": 0.560131847858429,
+          "base_distill_loss": 0.1501939296722412,
+          "boundary_loss": 0.06482673436403275,
+          "total_loss": 0.3999180793762207,
+          "gradient_l2_before_clip": 2.9378838539123535,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.009517256170511246,
+            "rms_p95": 0.018338369205594063,
+            "max_point_p95": 0.051249489188194275,
+            "path_ratio_min": 0.950761079788208,
+            "path_ratio_max": 1.061092495918274,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 30,
+          "hard_loss": 0.5565617084503174,
+          "base_distill_loss": 0.16286860406398773,
+          "boundary_loss": 0.0941108912229538,
+          "total_loss": 0.40401947498321533,
+          "gradient_l2_before_clip": 3.3402044773101807,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 32,
+            "reverted": 0,
+            "changed": 32,
+            "rms_mean": 0.0104414327070117,
+            "rms_p95": 0.022268040105700493,
+            "max_point_p95": 0.06080548092722893,
+            "path_ratio_min": 0.9614624977111816,
+            "path_ratio_max": 1.042127251625061,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 31,
+          "hard_loss": 0.46866700053215027,
+          "base_distill_loss": 0.1402849555015564,
+          "boundary_loss": 0.05190679430961609,
+          "total_loss": 0.3383277952671051,
+          "gradient_l2_before_clip": 2.5226402282714844,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 31,
+            "reverted": 1,
+            "changed": 31,
+            "rms_mean": 0.010104133747518063,
+            "rms_p95": 0.016469089314341545,
+            "max_point_p95": 0.04668904468417168,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0459880828857422,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": null
+        },
+        {
+          "step": 32,
+          "hard_loss": 0.4442414939403534,
+          "base_distill_loss": 0.1692064106464386,
+          "boundary_loss": 0.05500595644116402,
+          "total_loss": 0.33105847239494324,
+          "gradient_l2_before_clip": 2.921025037765503,
+          "augmentation": {
+            "rows": 32,
+            "accepted": 30,
+            "reverted": 2,
+            "changed": 30,
+            "rms_mean": 0.01041438989341259,
+            "rms_p95": 0.02031010203063488,
+            "max_point_p95": 0.04830159246921539,
+            "path_ratio_min": 0.0,
+            "path_ratio_max": 1.0281500816345215,
+            "stroke_count_preserved": true,
+            "orientation_preserving_affine": true
+          },
+          "layer_gradient_alignment": {
+            "position": {
+              "weighted_base_gradient_l2": 0.24667681392587684,
+              "weighted_boundary_gradient_l2": 0.03472815246074631,
+              "cosine": 0.0586048585378115
+            },
+            "input_projection.0": {
+              "weighted_base_gradient_l2": 1.2193156665813873,
+              "weighted_boundary_gradient_l2": 0.1605160033809094,
+              "cosine": -0.44989442111148
+            },
+            "input_projection.1": {
+              "weighted_base_gradient_l2": 0.35232803918697975,
+              "weighted_boundary_gradient_l2": 0.04377225071613777,
+              "cosine": -0.23595014961838162
+            },
+            "encoder.layers.0.self_attn": {
+              "weighted_base_gradient_l2": 0.9742386252265626,
+              "weighted_boundary_gradient_l2": 0.08642650946752146,
+              "cosine": 0.12629822016800857
+            },
+            "encoder.layers.0.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.5516622544983275,
+              "weighted_boundary_gradient_l2": 0.09075036931911008,
+              "cosine": -0.266020582783074
+            },
+            "encoder.layers.0.linear1": {
+              "weighted_base_gradient_l2": 0.4322277317083018,
+              "weighted_boundary_gradient_l2": 0.06946407082774952,
+              "cosine": -0.19709108291152416
+            },
+            "encoder.layers.0.linear2": {
+              "weighted_base_gradient_l2": 0.36329549266726435,
+              "weighted_boundary_gradient_l2": 0.0435587607791595,
+              "cosine": 0.002033240459178744
+            },
+            "encoder.layers.0.norm1": {
+              "weighted_base_gradient_l2": 0.165107704311722,
+              "weighted_boundary_gradient_l2": 0.022532278509728648,
+              "cosine": -0.35157785837606625
+            },
+            "encoder.layers.0.norm2": {
+              "weighted_base_gradient_l2": 0.13729426980686252,
+              "weighted_boundary_gradient_l2": 0.014186960421531655,
+              "cosine": 0.027287422208961482
+            },
+            "encoder.layers.1.self_attn": {
+              "weighted_base_gradient_l2": 0.6811746166375112,
+              "weighted_boundary_gradient_l2": 0.06960320551077556,
+              "cosine": 0.09035188396030086
+            },
+            "encoder.layers.1.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.5690499547683717,
+              "weighted_boundary_gradient_l2": 0.066363516922193,
+              "cosine": 0.06405478962896145
+            },
+            "encoder.layers.1.linear1": {
+              "weighted_base_gradient_l2": 0.40972267278390956,
+              "weighted_boundary_gradient_l2": 0.05139688644240249,
+              "cosine": -0.0041059709314788945
+            },
+            "encoder.layers.1.linear2": {
+              "weighted_base_gradient_l2": 0.3999540996479281,
+              "weighted_boundary_gradient_l2": 0.0475165719113231,
+              "cosine": 0.003503187682166913
+            },
+            "encoder.layers.1.norm1": {
+              "weighted_base_gradient_l2": 0.12053708983638048,
+              "weighted_boundary_gradient_l2": 0.01364536301263636,
+              "cosine": -0.0013053768711355283
+            },
+            "encoder.layers.1.norm2": {
+              "weighted_base_gradient_l2": 0.1391663265533441,
+              "weighted_boundary_gradient_l2": 0.014251385303227905,
+              "cosine": -0.019074884515285297
+            },
+            "encoder.layers.2.self_attn": {
+              "weighted_base_gradient_l2": 0.7016738320851573,
+              "weighted_boundary_gradient_l2": 0.07966007573737857,
+              "cosine": -0.09602540196337588
+            },
+            "encoder.layers.2.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.7161072546870373,
+              "weighted_boundary_gradient_l2": 0.07242705438472226,
+              "cosine": 0.061511488589192614
+            },
+            "encoder.layers.2.linear1": {
+              "weighted_base_gradient_l2": 0.5216371197812688,
+              "weighted_boundary_gradient_l2": 0.050836572538677044,
+              "cosine": 0.002262282785973096
+            },
+            "encoder.layers.2.linear2": {
+              "weighted_base_gradient_l2": 0.5527011790602184,
+              "weighted_boundary_gradient_l2": 0.05248863836706446,
+              "cosine": 0.004380236535965163
+            },
+            "encoder.layers.2.norm1": {
+              "weighted_base_gradient_l2": 0.15614808156087484,
+              "weighted_boundary_gradient_l2": 0.01324296536524058,
+              "cosine": -0.04008162923555338
+            },
+            "encoder.layers.2.norm2": {
+              "weighted_base_gradient_l2": 0.1501746949776606,
+              "weighted_boundary_gradient_l2": 0.011298522185722878,
+              "cosine": -0.020566472432649505
+            },
+            "encoder.layers.3.self_attn": {
+              "weighted_base_gradient_l2": 0.6636345830973787,
+              "weighted_boundary_gradient_l2": 0.05340263548283992,
+              "cosine": 0.044410603833986796
+            },
+            "encoder.layers.3.self_attn.out_proj": {
+              "weighted_base_gradient_l2": 0.6384764103905329,
+              "weighted_boundary_gradient_l2": 0.060649214495734086,
+              "cosine": 0.03023530772709831
+            },
+            "encoder.layers.3.linear1": {
+              "weighted_base_gradient_l2": 0.5365180163010653,
+              "weighted_boundary_gradient_l2": 0.04952615596362588,
+              "cosine": -0.0013784500886983143
+            },
+            "encoder.layers.3.linear2": {
+              "weighted_base_gradient_l2": 0.5763842579205231,
+              "weighted_boundary_gradient_l2": 0.061108380888299334,
+              "cosine": -0.005230786176370991
+            },
+            "encoder.layers.3.norm1": {
+              "weighted_base_gradient_l2": 0.13850517058145753,
+              "weighted_boundary_gradient_l2": 0.011360976873804681,
+              "cosine": 0.09195492120618941
+            },
+            "encoder.layers.3.norm2": {
+              "weighted_base_gradient_l2": 0.06337780606177501,
+              "weighted_boundary_gradient_l2": 0.00511172093555305,
+              "cosine": -0.037995911290609384
+            },
+            "pool_score": {
+              "weighted_base_gradient_l2": 0.1865527744090484,
+              "weighted_boundary_gradient_l2": 0.016781657555850576,
+              "cosine": 0.18298253637930403
+            },
+            "math_head": {
+              "weighted_base_gradient_l2": 1.0102698431790698,
+              "weighted_boundary_gradient_l2": 0.07579582860406817,
+              "cosine": 0.0006468136605872572
+            }
+          },
+          "all_boundary_teacher_kl_t1": 0.007566459011286497
+        }
+      ]
+    }
+  ],
+  "total_optimizer_steps": 96,
+  "canonical_checkpoint_unchanged": true,
+  "accuracy_scoring_performed": false,
+  "eligible_for_model_selection": false,
+  "heldout_rows_read": 0,
+  "crohme_rows": 0,
+  "product_adopted": false
+}

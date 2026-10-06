@@ -1,0 +1,95 @@
+{
+  "schema": "aiflow-hwr-objective-batch-gradient-microscope/v1",
+  "status": "completed_one_step_paired_gradient_diagnostic",
+  "scope": "one shared first training batch, identical seed/initialization, one optimizer update per objective arm",
+  "data": {
+    "train_rows": 170441,
+    "crohme_rows": 0,
+    "cache_reuse_mode": "hash_attested_reuse",
+    "writer_split_sha256": "5eea91adc1779a43d7c9d531c2b4ab4a1ee2dcced0f5ef74b5070b2a63b9be6d",
+    "canonical_hwrt_sha256": "a35bb9c0793831b69b7710812df1112750eb0cb49f2206cdbbd55c63e1a95102",
+    "canonical_uji_sha256": "9c7038aa8c3eeb1fd3b93827354053e9d3f329f28111dfdaed22c941a238bf8b",
+    "curated_uji_sha256": "cda2fe17c213bc8c90ed93ec8998658ddaf9d7871c75adf521798e6e3ba3029b",
+    "prepared_cache_sha256": {
+      "train_features.npy": "2eb2495ce2669c0cbab9dbd7f87f8bdde0794d0474ea587a54a9f3bc3258de52",
+      "train_labels.npy": "159ee67fd2f9e73f94f1cd8d583d1f2736f187ceec662664f08e6a76edf794bc",
+      "validation_features.npy": "897f6e5a177338cf82ca93a56787845223be923ecb6aff8f49845ae7a510680e",
+      "validation_labels.npy": "5518a204d5860cc8d19933a4d27732c2892e3ab6dfb2c82a95c65f25054e2935"
+    }
+  },
+  "experiment": {
+    "seed": 20261004,
+    "architecture": {"width": 128, "layers": 4, "heads": 4, "feedforward": 512},
+    "batch": {"classes_per_batch": 12, "rows_per_class": 2, "batch_size": 24},
+    "optimizer": {"name": "AdamW", "learning_rate": 0.0003, "weight_decay": 0.0001, "foreach": false, "gradient_clip_norm": 1.0},
+    "contrastive_weight": 0.1,
+    "temperature": 0.1,
+    "precision": "fp32"
+  },
+  "initialization": "same seed and same CPU-initialized state_dict loaded into both fresh CUDA models; sampler seed and first P×K batch identical",
+  "records": [
+    {
+      "arm": "ce_pk",
+      "status": "pass",
+      "ce": 6.348824977874756,
+      "supcon": 0.0,
+      "train_top1": 0.0,
+      "embedding_norm_mean": 10.96781158,
+      "logit_std": 0.5624271,
+      "global_gradient_norm_preclip": 5.292596340179443,
+      "gradient_norm_by_component_preclip": {
+        "372_class_head": 0.60020476,
+        "attention_pool": 0.00643511,
+        "encoder_layer_0": 0.47694716,
+        "encoder_layer_1": 0.35855627,
+        "encoder_layer_2": 0.33441346,
+        "encoder_layer_3": 0.37420817,
+        "input_projection": 0.17821893,
+        "position_embedding": 0.00665584
+      },
+      "parameter_update_norm_by_component": {
+        "input_projection": 0.00758311,
+        "encoder_layer_0_attention": 0.06559551,
+        "372_class_head": 0.06545701
+      },
+      "peak_allocated_mib": 146.57,
+      "peak_reserved_mib": 176.0
+    },
+    {
+      "arm": "ce_plus_supcon",
+      "status": "pass",
+      "ce": 6.348824977874756,
+      "supcon": 3.1136865615844727,
+      "weighted_supcon_loss": 0.31136865615844727,
+      "train_top1": 0.0,
+      "embedding_norm_mean": 10.96781158,
+      "logit_std": 0.5624271,
+      "global_gradient_norm_preclip": 5.292801380157471,
+      "gradient_norm_by_component_preclip": {
+        "372_class_head": 0.60018147,
+        "attention_pool": 0.00632753,
+        "encoder_layer_0": 0.47694972,
+        "encoder_layer_1": 0.3585688,
+        "encoder_layer_2": 0.33441753,
+        "encoder_layer_3": 0.37419938,
+        "input_projection": 0.17827961,
+        "position_embedding": 0.00665542
+      },
+      "parameter_update_norm_by_component": {
+        "input_projection": 0.00758235,
+        "encoder_layer_0_attention": 0.06559674,
+        "372_class_head": 0.06545701
+      },
+      "peak_allocated_mib": 146.57,
+      "peak_reserved_mib": 176.0
+    }
+  ],
+  "paired_diagnostic": {
+    "global_gradient_norm_delta": 0.0002050409317,
+    "global_gradient_norm_relative_delta_percent": 0.003874,
+    "selected_parameter_update_norms_are_nearly_equal": true,
+    "interpretation": "at initialization on this one batch, contrastive_weight=0.1 barely changes aggregate gradient/update magnitudes; vector direction and multi-step accuracy effects are not established"
+  },
+  "product_adopted": false,
+  "interpretation_limit": "one-batch microscope only; not an accuracy comparison or evidence for changing the contrastive weight"
+}

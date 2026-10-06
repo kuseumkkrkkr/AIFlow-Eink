@@ -1,0 +1,126 @@
+{
+  "schema": "aiflow-ranked-singleton-context-loop/v1",
+  "generated_at": "2026-08-19T20:15:00Z",
+  "status": "development_only_posthoc_shadow",
+  "decision": "retain_as_shadow_only",
+  "baseline": {
+    "name": "r26_nested_expression_final_code",
+    "output": "D:/AIFlow-Workspace/PrivateData/candidate-context-runtime-20260820-r26-nested-expression-final-code.json",
+    "sha256": "5217c07a24ac907074f469aeee5ba74e34bbd95dc40d59738cad992d61d173f1"
+  },
+  "challenger": {
+    "name": "r27_ranked_singleton_probe",
+    "output": "D:/AIFlow-Workspace/PrivateData/candidate-context-runtime-20260820-r27-ranked-singleton-probe.json",
+    "sha256": "ea095520d0671d6ddcdf41f134af9a6d4e1093101b408ec7e8816acfa819f3d6"
+  },
+  "artifacts": {
+    "candidate_context_fusion_config": "candidate_context_fusion_runtime_config.json",
+    "candidate_context_fusion_config_sha256": "312c9f2bd278319d6232f4d0d3d901c1ecfe014140047232c35aca2703e8f963",
+    "crohme_diagnostic": "formula_context_crohme_raw_diagnostic.json",
+    "crohme_diagnostic_sha256": "767164f7778ccbd0a2f60802dfb5163ce76830d3a44646a979a924f0f272e5f8",
+    "frozen_partition_ranker_sha256": "0d283d40b40f60d58131dec213efb84074f9119ac82b32fcb893ca931aeb0582"
+  },
+  "configuration": {
+    "scope": "selected formula has exactly one glyph",
+    "token": "\\times",
+    "maximum_fused_candidate_rank": 2,
+    "minimum_fused_probability": 0.4,
+    "original_main_hwr_top5_required": true,
+    "legacy_slash_maximum_candidate_rank": 1
+  },
+  "scores": {
+    "all_159": {
+      "baseline_exact": 151,
+      "challenger_exact": 152,
+      "total": 159
+    },
+    "chronological_ownership_49": {
+      "baseline_exact": 47,
+      "challenger_exact": 48,
+      "total": 49
+    },
+    "accepted_ownership_96": {
+      "baseline_exact": 93,
+      "challenger_exact": 94,
+      "total": 96
+    },
+    "public_non_phone_110": {
+      "baseline_exact": 107,
+      "challenger_exact": 108,
+      "total": 110
+    },
+    "owned_phone_replay_49": {
+      "baseline_exact": 44,
+      "challenger_exact": 44,
+      "total": 49
+    },
+    "changed_formula_ids": ["aiflow_0072"],
+    "improved_formula_ids": ["aiflow_0072"],
+    "regressed_formula_ids": []
+  },
+  "aiflow_0072": {
+    "truth": "\\times",
+    "baseline": "x",
+    "challenger": "\\times",
+    "fused_candidate_rank": 2,
+    "fused_probability": 0.4024730324745178,
+    "threshold": 0.4
+  },
+  "direct_singleton_sweep": {
+    "selected_singleton_formulas": 38,
+    "thresholds_tested": [0.2, 0.25, 0.3, 0.35, 0.4, 0.45],
+    "selected_threshold": 0.4,
+    "changed_at_selected_threshold": ["aiflow_0072"],
+    "regressed_at_selected_threshold": []
+  },
+  "legacy_configuration_compatibility": {
+    "current_code_output": "D:/AIFlow-Workspace/PrivateData/candidate-context-runtime-20260820-r28-legacy-singleton-compat.json",
+    "current_code_output_sha256": "054f3e464babed2e8d6f3a4928121b063a1086408c49384e9052810e194bc60e",
+    "finalized_token_differences_from_r26": 0,
+    "audit_schema_extended_with_candidate_ranks": true
+  },
+  "crohme_repeated_noncommercial_diagnostic": {
+    "protocol_formulas": 985,
+    "eligible_formulas": 722,
+    "grouping_exact_before": 331,
+    "grouping_exact_after": 331,
+    "formula_exact_before": 77,
+    "formula_exact_after": 77,
+    "ranked_singleton_changed": 0,
+    "grouping_regressed": 0,
+    "formula_regressed": 0,
+    "product_validation": false
+  },
+  "crohme_evaluator_fix_verification": {
+    "output": "D:/AIFlow-Workspace/PrivateData/formula-context-crohme-r27-rerun.json",
+    "sha256": "584a71fe13bf133ae13bed84c215820491979cfe7e37ca19b35a64d2c21f61ca",
+    "semantic_match_excluding_generated_at": true,
+    "purpose": "separate pre-existing singleton audit changes from ranked-singleton output changes"
+  },
+  "next_bottleneck_probe": {
+    "formula_id": "aiflow_0104",
+    "truth": ["f", "(", "x", ")", "+", "g", "(", "y", ")"],
+    "baseline": ["f", "L", "x", ")", "+", "g", "(", "q", ")"],
+    "open_fence_fused_rank": 6,
+    "y_fused_rank": 21,
+    "result_when_open_fence_and_y_are_injected_into_top5": [
+      "f", "(", "x", ")", "+", "g", "(", "q", ")"
+    ],
+    "decision": "requires new y/q shape and context training data; do not add a deterministic rewrite"
+  },
+  "contracts": {
+    "candidate_preserving": true,
+    "all_strokes_exactly_once": true,
+    "insertions_or_deletions": 0,
+    "glyph_order_mutations": 0,
+    "target_label_or_glyph_count_input": false,
+    "writer_identity_input": false,
+    "arithmetic_evaluation": false,
+    "product_default_enabled": false
+  },
+  "limits": [
+    "thresholds were inspected on the current 159 formulas",
+    "CROHME is repeated noncommercial diagnostic evidence only",
+    "fresh commercial project-owned writer-disjoint singleton x and times negatives remain required"
+  ]
+}

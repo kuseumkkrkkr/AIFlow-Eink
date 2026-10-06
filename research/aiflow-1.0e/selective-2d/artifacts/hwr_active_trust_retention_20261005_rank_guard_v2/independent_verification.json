@@ -1,0 +1,465 @@
+{
+  "schema": "aiflow-active-trust-retention-verification/v1",
+  "status": "reproduced",
+  "result_sha256": "73b5265033540110e8da19706aed35bd8e9d0c738491bc6ad2ebe77c5da932e4",
+  "checkpoint_sha256": "8493def5c83e86a1f891f507d362c56c149c99cbc4f8c140baf1b7f6c892f13a",
+  "immutable_constraints_rebuilt_exact": true,
+  "direction_budget_verified": true,
+  "linear_certificates": [
+    {
+      "round": 0,
+      "certified": true,
+      "min_primal_residual": -6.938893903907228e-18
+    },
+    {
+      "round": 1,
+      "certified": true,
+      "min_primal_residual": -1.214306433183765e-17
+    }
+  ],
+  "actual_trial_acceptance_checks": [
+    {
+      "round": 0,
+      "alpha": 1.0,
+      "accepted": false,
+      "newly_failed": 38,
+      "merit": 1.3341880766431586
+    },
+    {
+      "round": 0,
+      "alpha": 0.5,
+      "accepted": false,
+      "newly_failed": 13,
+      "merit": 1.0302581145626846
+    },
+    {
+      "round": 0,
+      "alpha": 0.25,
+      "accepted": false,
+      "newly_failed": 3,
+      "merit": 2.204623109015529
+    },
+    {
+      "round": 0,
+      "alpha": 0.125,
+      "accepted": true,
+      "newly_failed": 0,
+      "merit": 3.0180650698891895
+    },
+    {
+      "round": 1,
+      "alpha": 1.0,
+      "accepted": false,
+      "newly_failed": 19,
+      "merit": 0.27247676212300576
+    },
+    {
+      "round": 1,
+      "alpha": 0.5,
+      "accepted": false,
+      "newly_failed": 7,
+      "merit": 0.7530265558882547
+    },
+    {
+      "round": 1,
+      "alpha": 0.25,
+      "accepted": false,
+      "newly_failed": 6,
+      "merit": 1.6577240205076578
+    },
+    {
+      "round": 1,
+      "alpha": 0.125,
+      "accepted": false,
+      "newly_failed": 3,
+      "merit": 2.2823954543478067
+    },
+    {
+      "round": 1,
+      "alpha": 0.0625,
+      "accepted": false,
+      "newly_failed": 1,
+      "merit": 2.6364747369757424
+    },
+    {
+      "round": 1,
+      "alpha": 0.03125,
+      "accepted": false,
+      "newly_failed": 1,
+      "merit": 2.823927870913849
+    }
+  ],
+  "accepted_steps": 1,
+  "final_merit": 3.0180650698891895,
+  "monotonic_safe_fixed_conditions": true,
+  "batch_checks": [
+    {
+      "batch_size": 1,
+      "metrics": {
+        "old_math": {
+          "top1_hits": 841,
+          "top1_membership_regressions": 0,
+          "top1_constraint_violations": 33,
+          "top5_hits": 1004,
+          "top5_membership_regressions": 3,
+          "top5_constraint_violations": 4
+        },
+        "source_digits": {
+          "top1_hits": 958,
+          "top1_membership_regressions": 0,
+          "top1_constraint_violations": 0,
+          "top5_hits": 1015,
+          "top5_membership_regressions": 0,
+          "top5_constraint_violations": 0
+        }
+      },
+      "metrics_exact": true,
+      "bit_exact": false,
+      "max_logit_delta": 1.33514404296875e-05
+    },
+    {
+      "batch_size": 16,
+      "metrics": {
+        "old_math": {
+          "top1_hits": 841,
+          "top1_membership_regressions": 0,
+          "top1_constraint_violations": 33,
+          "top5_hits": 1004,
+          "top5_membership_regressions": 3,
+          "top5_constraint_violations": 4
+        },
+        "source_digits": {
+          "top1_hits": 958,
+          "top1_membership_regressions": 0,
+          "top1_constraint_violations": 0,
+          "top5_hits": 1015,
+          "top5_membership_regressions": 0,
+          "top5_constraint_violations": 0
+        }
+      },
+      "metrics_exact": true,
+      "bit_exact": false,
+      "max_logit_delta": 9.5367431640625e-06
+    },
+    {
+      "batch_size": 32,
+      "metrics": {
+        "old_math": {
+          "top1_hits": 841,
+          "top1_membership_regressions": 0,
+          "top1_constraint_violations": 33,
+          "top5_hits": 1004,
+          "top5_membership_regressions": 3,
+          "top5_constraint_violations": 4
+        },
+        "source_digits": {
+          "top1_hits": 958,
+          "top1_membership_regressions": 0,
+          "top1_constraint_violations": 0,
+          "top5_hits": 1015,
+          "top5_membership_regressions": 0,
+          "top5_constraint_violations": 0
+        }
+      },
+      "metrics_exact": true,
+      "bit_exact": true,
+      "max_logit_delta": 0.0
+    }
+  ],
+  "parameter_tensors": 57,
+  "parameter_layers": [
+    {
+      "name": "position",
+      "canonical_delta_l2_fp64": 0.01848762811974822,
+      "parent_delta_l2_fp64": 0.000223926148469415
+    },
+    {
+      "name": "input_projection.0.weight",
+      "canonical_delta_l2_fp64": 0.005444495203577952,
+      "parent_delta_l2_fp64": 0.0008135729144980069
+    },
+    {
+      "name": "input_projection.0.bias",
+      "canonical_delta_l2_fp64": 0.003045799740688931,
+      "parent_delta_l2_fp64": 0.0005793068101278222
+    },
+    {
+      "name": "input_projection.1.weight",
+      "canonical_delta_l2_fp64": 0.0023292598872147003,
+      "parent_delta_l2_fp64": 0.00024258757250370135
+    },
+    {
+      "name": "input_projection.1.bias",
+      "canonical_delta_l2_fp64": 0.002140569853716084,
+      "parent_delta_l2_fp64": 0.00022336935012765932
+    },
+    {
+      "name": "encoder.layers.0.self_attn.in_proj_weight",
+      "canonical_delta_l2_fp64": 0.0406526731935994,
+      "parent_delta_l2_fp64": 0.0006178990591824531
+    },
+    {
+      "name": "encoder.layers.0.self_attn.in_proj_bias",
+      "canonical_delta_l2_fp64": 0.0024975420166846547,
+      "parent_delta_l2_fp64": 0.00012767012374920872
+    },
+    {
+      "name": "encoder.layers.0.self_attn.out_proj.weight",
+      "canonical_delta_l2_fp64": 0.028183320531602222,
+      "parent_delta_l2_fp64": 0.0005833370350710936
+    },
+    {
+      "name": "encoder.layers.0.self_attn.out_proj.bias",
+      "canonical_delta_l2_fp64": 0.0023582314084369515,
+      "parent_delta_l2_fp64": 0.00031365704692254317
+    },
+    {
+      "name": "encoder.layers.0.linear1.weight",
+      "canonical_delta_l2_fp64": 0.055415925889236044,
+      "parent_delta_l2_fp64": 0.0005580611477917641
+    },
+    {
+      "name": "encoder.layers.0.linear1.bias",
+      "canonical_delta_l2_fp64": 0.004848364970414967,
+      "parent_delta_l2_fp64": 5.2415524929982015e-05
+    },
+    {
+      "name": "encoder.layers.0.linear2.weight",
+      "canonical_delta_l2_fp64": 0.05540801455434048,
+      "parent_delta_l2_fp64": 0.00031441273331967427
+    },
+    {
+      "name": "encoder.layers.0.linear2.bias",
+      "canonical_delta_l2_fp64": 0.002541794857832694,
+      "parent_delta_l2_fp64": 6.394812635740835e-05
+    },
+    {
+      "name": "encoder.layers.0.norm1.weight",
+      "canonical_delta_l2_fp64": 0.0024871556665373787,
+      "parent_delta_l2_fp64": 0.00014073710591967808
+    },
+    {
+      "name": "encoder.layers.0.norm1.bias",
+      "canonical_delta_l2_fp64": 0.002504004700297294,
+      "parent_delta_l2_fp64": 0.00011956745139041294
+    },
+    {
+      "name": "encoder.layers.0.norm2.weight",
+      "canonical_delta_l2_fp64": 0.0023326178977940517,
+      "parent_delta_l2_fp64": 0.00010251737261361072
+    },
+    {
+      "name": "encoder.layers.0.norm2.bias",
+      "canonical_delta_l2_fp64": 0.002525417344988912,
+      "parent_delta_l2_fp64": 7.257890776342039e-05
+    },
+    {
+      "name": "encoder.layers.1.self_attn.in_proj_weight",
+      "canonical_delta_l2_fp64": 0.04232172564038485,
+      "parent_delta_l2_fp64": 0.0006864657741375782
+    },
+    {
+      "name": "encoder.layers.1.self_attn.in_proj_bias",
+      "canonical_delta_l2_fp64": 0.0031272047465988706,
+      "parent_delta_l2_fp64": 5.4899060984260757e-05
+    },
+    {
+      "name": "encoder.layers.1.self_attn.out_proj.weight",
+      "canonical_delta_l2_fp64": 0.02751783622542849,
+      "parent_delta_l2_fp64": 0.000563662443014287
+    },
+    {
+      "name": "encoder.layers.1.self_attn.out_proj.bias",
+      "canonical_delta_l2_fp64": 0.002613607381510547,
+      "parent_delta_l2_fp64": 7.011991710133832e-05
+    },
+    {
+      "name": "encoder.layers.1.linear1.weight",
+      "canonical_delta_l2_fp64": 0.05168567802143971,
+      "parent_delta_l2_fp64": 0.0003769334149675247
+    },
+    {
+      "name": "encoder.layers.1.linear1.bias",
+      "canonical_delta_l2_fp64": 0.0051154877664181505,
+      "parent_delta_l2_fp64": 3.51190693928223e-05
+    },
+    {
+      "name": "encoder.layers.1.linear2.weight",
+      "canonical_delta_l2_fp64": 0.05261668155308301,
+      "parent_delta_l2_fp64": 0.00031366820252858236
+    },
+    {
+      "name": "encoder.layers.1.linear2.bias",
+      "canonical_delta_l2_fp64": 0.0028569345977213167,
+      "parent_delta_l2_fp64": 6.644451565839333e-05
+    },
+    {
+      "name": "encoder.layers.1.norm1.weight",
+      "canonical_delta_l2_fp64": 0.0023732418909953898,
+      "parent_delta_l2_fp64": 9.41533239503227e-05
+    },
+    {
+      "name": "encoder.layers.1.norm1.bias",
+      "canonical_delta_l2_fp64": 0.0026477373733012066,
+      "parent_delta_l2_fp64": 7.957306340347924e-05
+    },
+    {
+      "name": "encoder.layers.1.norm2.weight",
+      "canonical_delta_l2_fp64": 0.0023956914575699326,
+      "parent_delta_l2_fp64": 8.992059515004174e-05
+    },
+    {
+      "name": "encoder.layers.1.norm2.bias",
+      "canonical_delta_l2_fp64": 0.002774937277907068,
+      "parent_delta_l2_fp64": 8.16704706575524e-05
+    },
+    {
+      "name": "encoder.layers.2.self_attn.in_proj_weight",
+      "canonical_delta_l2_fp64": 0.044233570406834954,
+      "parent_delta_l2_fp64": 0.0006363277819931532
+    },
+    {
+      "name": "encoder.layers.2.self_attn.in_proj_bias",
+      "canonical_delta_l2_fp64": 0.0036792555029535375,
+      "parent_delta_l2_fp64": 6.7607431469353e-05
+    },
+    {
+      "name": "encoder.layers.2.self_attn.out_proj.weight",
+      "canonical_delta_l2_fp64": 0.028810095522300502,
+      "parent_delta_l2_fp64": 0.000565346587253981
+    },
+    {
+      "name": "encoder.layers.2.self_attn.out_proj.bias",
+      "canonical_delta_l2_fp64": 0.002889348652319539,
+      "parent_delta_l2_fp64": 6.700573321764013e-05
+    },
+    {
+      "name": "encoder.layers.2.linear1.weight",
+      "canonical_delta_l2_fp64": 0.04970035480930977,
+      "parent_delta_l2_fp64": 0.00038795725687019056
+    },
+    {
+      "name": "encoder.layers.2.linear1.bias",
+      "canonical_delta_l2_fp64": 0.005104419959236812,
+      "parent_delta_l2_fp64": 3.840190802893054e-05
+    },
+    {
+      "name": "encoder.layers.2.linear2.weight",
+      "canonical_delta_l2_fp64": 0.05352456780419606,
+      "parent_delta_l2_fp64": 0.0003876549379513142
+    },
+    {
+      "name": "encoder.layers.2.linear2.bias",
+      "canonical_delta_l2_fp64": 0.0030858810117692977,
+      "parent_delta_l2_fp64": 8.01691479698871e-05
+    },
+    {
+      "name": "encoder.layers.2.norm1.weight",
+      "canonical_delta_l2_fp64": 0.002516266403998966,
+      "parent_delta_l2_fp64": 7.37089218268322e-05
+    },
+    {
+      "name": "encoder.layers.2.norm1.bias",
+      "canonical_delta_l2_fp64": 0.0028517407084156913,
+      "parent_delta_l2_fp64": 9.18313707753423e-05
+    },
+    {
+      "name": "encoder.layers.2.norm2.weight",
+      "canonical_delta_l2_fp64": 0.0025001822998314636,
+      "parent_delta_l2_fp64": 7.648713641253813e-05
+    },
+    {
+      "name": "encoder.layers.2.norm2.bias",
+      "canonical_delta_l2_fp64": 0.0030650711084461955,
+      "parent_delta_l2_fp64": 9.501003659693761e-05
+    },
+    {
+      "name": "encoder.layers.3.self_attn.in_proj_weight",
+      "canonical_delta_l2_fp64": 0.04784414164452945,
+      "parent_delta_l2_fp64": 0.0005922186778058321
+    },
+    {
+      "name": "encoder.layers.3.self_attn.in_proj_bias",
+      "canonical_delta_l2_fp64": 0.004260540992163846,
+      "parent_delta_l2_fp64": 6.924987078410041e-05
+    },
+    {
+      "name": "encoder.layers.3.self_attn.out_proj.weight",
+      "canonical_delta_l2_fp64": 0.030426872481724255,
+      "parent_delta_l2_fp64": 0.0005084689705576084
+    },
+    {
+      "name": "encoder.layers.3.self_attn.out_proj.bias",
+      "canonical_delta_l2_fp64": 0.0032552634570772432,
+      "parent_delta_l2_fp64": 8.055089208849034e-05
+    },
+    {
+      "name": "encoder.layers.3.linear1.weight",
+      "canonical_delta_l2_fp64": 0.055467245868066825,
+      "parent_delta_l2_fp64": 0.0004239380730481676
+    },
+    {
+      "name": "encoder.layers.3.linear1.bias",
+      "canonical_delta_l2_fp64": 0.0059402196468853466,
+      "parent_delta_l2_fp64": 4.317767621074756e-05
+    },
+    {
+      "name": "encoder.layers.3.linear2.weight",
+      "canonical_delta_l2_fp64": 0.06264645354050244,
+      "parent_delta_l2_fp64": 0.0005340905408776194
+    },
+    {
+      "name": "encoder.layers.3.linear2.bias",
+      "canonical_delta_l2_fp64": 0.0037346140476671092,
+      "parent_delta_l2_fp64": 6.025013141617846e-05
+    },
+    {
+      "name": "encoder.layers.3.norm1.weight",
+      "canonical_delta_l2_fp64": 0.0027467739371439775,
+      "parent_delta_l2_fp64": 7.821592115631137e-05
+    },
+    {
+      "name": "encoder.layers.3.norm1.bias",
+      "canonical_delta_l2_fp64": 0.0032030616417627156,
+      "parent_delta_l2_fp64": 0.00010212842702146759
+    },
+    {
+      "name": "encoder.layers.3.norm2.weight",
+      "canonical_delta_l2_fp64": 0.003113365001624565,
+      "parent_delta_l2_fp64": 3.0737971413138514e-05
+    },
+    {
+      "name": "encoder.layers.3.norm2.bias",
+      "canonical_delta_l2_fp64": 0.003849827933953586,
+      "parent_delta_l2_fp64": 4.4005126222329934e-05
+    },
+    {
+      "name": "pool_score.weight",
+      "canonical_delta_l2_fp64": 0.001998801947801737,
+      "parent_delta_l2_fp64": 9.194299813404442e-05
+    },
+    {
+      "name": "pool_score.bias",
+      "canonical_delta_l2_fp64": 2.995133399963379e-06,
+      "parent_delta_l2_fp64": 0.0
+    },
+    {
+      "name": "math_head.weight",
+      "canonical_delta_l2_fp64": 0.03816683917941103,
+      "parent_delta_l2_fp64": 0.001392729896504797
+    },
+    {
+      "name": "math_head.bias",
+      "canonical_delta_l2_fp64": 0.004893470530295091,
+      "parent_delta_l2_fp64": 6.733446271509576e-05
+    }
+  ],
+  "separate_current_rank_guard": true,
+  "canonical_and_parent_unchanged": true,
+  "strict_train_gate_pass": false,
+  "human_boundary_labels": 0,
+  "held_inputs_forwarded": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "eligible_for_independent_performance_claim": false
+}

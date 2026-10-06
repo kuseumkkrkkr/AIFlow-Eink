@@ -1,0 +1,63 @@
+{
+  "schema": "aiflow-curvature-buffer-verdict/v1",
+  "status": "verified_negative_result_keep_v7_research_candidate",
+  "result_sha256": "ae6656a13740c05d73783eb1ec2ac24bcc8dd0aeece2096c589f795c7125da48",
+  "checkpoint_sha256": "b2ff117758cf9584854fea95ff9d172b4fc911ba62b0bd5b1e5050777da32287",
+  "comparison": {
+    "same_original_parent_2048_train_rows_original_floors_guards_and_512_directions": true,
+    "v7": {"old_top1": 841, "source_top1": 958, "old_top5": 1007, "violations": 22, "trials": 29, "merit": 0.07588579814796503},
+    "v8": {"old_top1": 841, "source_top1": 958, "old_top5": 1006, "violations": 23, "trials": 31, "merit": 0.23239802476791738},
+    "merit_ratio_v8_to_v7": 3.062470586588268,
+    "top5_target_not_recovered_relative_to_v7": {"row": 57, "label": "\\varrho"},
+    "strict_original_train_gate_pass": false,
+    "product_adopted": false,
+    "note": "Paired separate TRAIN runs initialized from the same parent checkpoint, not sequential adoption or independent performance evaluation."
+  },
+  "buffer_hypothesis": {
+    "error_factor": 1.25, "relative_floor_cap": 0.25, "absolute_cap": 0.01,
+    "memory": "Immediately previous round maximum negative FIXED-rival prediction error only.",
+    "nonzero_conditions_per_round": [0, 14, 28, 23, 26, 19, 24, 22],
+    "accepted_alphas": [0.125, 0.25, 0.0625, 0.125, 0.0625, 0.125, 0.25, 0.25],
+    "conclusion": "This predeclared capped-buffer rule did not improve v7 and is rejected. The comparison does not prove every numerical-error-aware buffer method is ineffective."
+  },
+  "failure_microscope": {
+    "last_larger_trial_alpha": 0.5,
+    "blocking_row": 830,
+    "truth": "\\bowtie", "rival": "\\rtimes",
+    "original_floor": 0.31230831146240234,
+    "trial_margin": 0.3018169403076172,
+    "deficit": 0.010491371154785156,
+    "before_trial_margin": 0.3735809326171875,
+    "current_slack": 0.061272621154785156,
+    "memory_buffer": 0.07807707786560059,
+    "in_fresh_bank_and_safe_memory": true,
+    "eligible_safe_candidate_count": 20,
+    "candidate_position_by_current_slack": 18,
+    "safe_priority_quota": 16,
+    "sixteenth_candidate_slack": 0.0441288948059082,
+    "blocking_constraint_selected": false,
+    "interpretation": "The final larger step was blocked by a discovered safe condition excluded by the 16-slot current-slack priority, not by missing discovery memory. Adding buffers to selected conditions alone does not protect this omitted condition. This observation is not a complete causal attribution of all v8-v7 differences."
+  },
+  "verification": {
+    "first_round_all_trial_logits_bit_exact_to_v7": true,
+    "proposal_buffers_and_negative_error_memory_rebuilt_exact": true,
+    "actual_model_trials_verified": 31,
+    "full_score_arrays_hash_verified": 33,
+    "parameter_tensors_verified": 57,
+    "batch1_16_32_rank_and_violation_counts_equal": true,
+    "batch32_checkpoint_reload_bit_exact": true,
+    "original_floors_rank_guards_rival_selection_and_direction_cap_verified": true,
+    "canonical_parent_and_v7_checkpoints_unchanged": true,
+    "verifier_source_snapshot_preserved": true
+  },
+  "preferred_research_checkpoint": "../hwr_active_trust_retention_20261005_rival_guard_v7/failed_active_trust_research.pt",
+  "preferred_research_checkpoint_sha256": "4d790c635af49ded6f59841684ac0fbaf9f0f8a861ba7caf319576f44bf6349a",
+  "next_bounded_hypothesis": "Audit and compare safe-slot ranking using observed prior-trial margin deterioration relative to CURRENT remaining slack, rather than raw slack alone. Keep v7 buffers, original floors and fixed direction caps; do not enlarge quotas mid-run, hardcode bowtie or describe this numerical score as a human probability.",
+  "human_boundary_labels": 0,
+  "held_inputs_forwarded": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0,
+  "independent_accuracy_gain_proven": false,
+  "deployment_resumed": false,
+  "full_goal_completed": false
+}

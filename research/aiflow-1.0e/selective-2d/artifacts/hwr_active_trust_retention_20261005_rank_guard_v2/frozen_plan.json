@@ -1,0 +1,62 @@
+{
+  "schema": "aiflow-active-trust-retention-plan/v1",
+  "script_sha256": "23394948b7070110ce906472e13d5b58bb615e465596c2d8cc26d705412d4249",
+  "prior_result_sha256": "06caae482aa82201bc6eaa98366d65f40a685cbaf7b2803e04d2eb04c257a7b6",
+  "canonical_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+  "parent_checkpoint_sha256": "b0aa6411b1e299ec14773cd44eadf54341d55582af68b0dc973c846c6e1d8963",
+  "reference_hashes": {
+    "joint_features": "489552d8dbade0d9429d078439b939b7a7b601d9f367ef0602edb408aa9c1cc1",
+    "joint_labels": "88f74e24301757ff1c288ef997567043990a763b2518009ab492a5cd873abf9d",
+    "reference_top1_mask": "1ea3ea5a72d8a4bb2d4023594581fd133bf17a80b2f76f80cfa2f73d18db4394",
+    "reference_top5_mask": "63c5f99e99a0b16e4ac8d0ffc1e1b0d86ee827fb94cff0ff562edb065ea97cfa",
+    "reference_top1_floor": "beae31625c8cb6052e95bbc86f5ec9e81b15953c11b6f0c63e62d5467ea13e50",
+    "reference_top5_floor": "42afa960f4e6be63d91850ec779f574195f5d61d63489a402ae3167e26ece90b"
+  },
+  "dependencies": {
+    "run_hwr_simultaneous_retention_repair_polished_v2.py": "4c929303ee5017876c554cc0e24dc2ad6bb5d5011a553181b50edb3690b3b11a",
+    "run_hwr_simultaneous_retention_repair_v1.py": "d6ad29c126a0935812e2fb9c2c980cb08052c9e1422f1de107c4d7b7f6100d2c",
+    "verify_hwr_joint_retention_repair_v1.py": "4f3115f526f63a3277189242ed363809b5f3055237e625262ab0789e95fab3f9",
+    "run_hwr_affine_distillation_experiment_v1.py": "3a36d8efee518b2fa5c3683e9fa7a4d6ff31450d48a353f355f2667834357b4a"
+  },
+  "max_rounds": 8,
+  "max_gradient_directions_per_round": 64,
+  "total_direction_cap": 512,
+  "proposal_slack": 0.0001,
+  "alphas": [
+    1.0,
+    0.5,
+    0.25,
+    0.125,
+    0.0625,
+    0.03125
+  ],
+  "norm_cap_multiple": 2.0,
+  "immutable_fixed_floor_fraction": 0.5,
+  "source_gain_retention_gate": 0.9,
+  "protected_counts": {
+    "old_math": {
+      "top1": 841,
+      "top5": 1007
+    },
+    "source_digits": {
+      "top1": 958,
+      "top5": 1015
+    }
+  },
+  "selection": "worst failures <=32, previous interference <=16, near-safe <=4/domain, then second/sixth OTHER rivals up to 64",
+  "changed_factors": "v1 active/trust method plus separate current-rank guard; no original floor change",
+  "actual_step_acceptance": "no currently correct protected Top-1/5 rank loss AND no currently safe floor loss AND actual merit decrease AND norm cap",
+  "final_acceptance": "all original joint rank/floor constraints AND unchanged 90% TRAIN gain gate",
+  "failure_policy": "retain last accepted TRAIN champion; no original floor changes or canonical fake success",
+  "optimizer_created": false,
+  "parameter_optimization_attempted": true,
+  "human_boundary_labels": 0,
+  "held_inputs_forwarded": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "limits": "Same optimization TRAIN anchors. Not independent accuracy, human probabilities or all-domain boundary distillation.",
+  "entrypoint_sha256": "5b1a76842a77ed8ddec900104c6d4946d8dffd5f498a6ff76121632f48af8cd0",
+  "rank_guard_revision": "v2",
+  "predecessor_result_sha256": "e18725e41d0849952bc6661d4fd6a7ed260112ea550cdfc844a2e164023b1faa"
+}

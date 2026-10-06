@@ -1,0 +1,148 @@
+{
+  "schema": "aiflow-hwr-objective-competition-partial-run/v1",
+  "status": "partial_ce_arm_complete_supcon_arm_failed",
+  "product_adopted": false,
+  "data": {
+    "train_rows": 170441,
+    "validation_rows": 1056,
+    "validation_writer_clusters": 8,
+    "validation_present_labels": 66,
+    "crohme_rows": 0,
+    "cache_reuse_mode": "hash_attested_reuse",
+    "cache_audit_report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261002\\objective_competition_three_way_paired_r1.json",
+    "cache_audit_report_sha256": "23c7db2a4e8fab1d590c4f452cef400aaaba55bb125d8265cc2b96b84c80473e",
+    "writer_split_sha256": "5eea91adc1779a43d7c9d531c2b4ab4a1ee2dcced0f5ef74b5070b2a63b9be6d",
+    "canonical_hwrt_sha256": "a35bb9c0793831b69b7710812df1112750eb0cb49f2206cdbbd55c63e1a95102",
+    "canonical_uji_sha256": "9c7038aa8c3eeb1fd3b93827354053e9d3f329f28111dfdaed22c941a238bf8b",
+    "curated_uji_sha256": "cda2fe17c213bc8c90ed93ec8998658ddaf9d7871c75adf521798e6e3ba3029b",
+    "prepared_cache_sha256": {
+      "train_features.npy": "2eb2495ce2669c0cbab9dbd7f87f8bdde0794d0474ea587a54a9f3bc3258de52",
+      "train_labels.npy": "159ee67fd2f9e73f94f1cd8d583d1f2736f187ceec662664f08e6a76edf794bc",
+      "validation_features.npy": "897f6e5a177338cf82ca93a56787845223be923ecb6aff8f49845ae7a510680e",
+      "validation_labels.npy": "5518a204d5860cc8d19933a4d27732c2892e3ab6dfb2c82a95c65f25054e2935"
+    }
+  },
+  "experiment": {
+    "seed": 20261004,
+    "architecture": {
+      "width": 128,
+      "layers": 4,
+      "heads": 4,
+      "feedforward": 512
+    },
+    "precision": "fp32",
+    "sampler": {
+      "classes_per_batch": 12,
+      "rows_per_class": 4,
+      "batch_size": 48
+    },
+    "epochs_requested": 4,
+    "optimizer": {
+      "name": "AdamW",
+      "foreach": false,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "gradient_clip_norm": 1.0,
+      "gradient_clip_foreach": false
+    },
+    "objective": {
+      "ce": "372-way cross-entropy",
+      "supcon": "normalized embedding supervised contrastive",
+      "contrastive_weight": 0.1,
+      "temperature": 0.1
+    },
+    "product_adopted": false
+  },
+  "completed_arm": {
+    "arm": "ce_pk",
+    "seed": 20261004,
+    "architecture": {
+      "width": 128,
+      "layers": 4,
+      "heads": 4,
+      "feedforward": 512,
+      "parameters": 858613
+    },
+    "objective": {
+      "ce_weight": 1.0,
+      "supcon_weight": 0.0,
+      "temperature": null
+    },
+    "sampling": {
+      "classes_per_batch": 12,
+      "rows_per_class": 4,
+      "batch_size": 48,
+      "train_rows": 170441,
+      "distinct_rows_within_batch": true
+    },
+    "precision": "fp32",
+    "optimizer": {
+      "name": "AdamW",
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "foreach": false,
+      "gradient_clip_norm": 1.0,
+      "gradient_clip_foreach": false
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_ce": 5.942833694059457,
+        "train_top1_on_sampled_batches": 0.0034732000375481084,
+        "validation_top1_hits": 0,
+        "validation_top5_hits": 45,
+        "validation_rows": 1056,
+        "seconds": 209.2424223000059
+      },
+      {
+        "epoch": 2,
+        "train_ce": 4.495850796768008,
+        "train_top1_on_sampled_batches": 0.1046066835633155,
+        "validation_top1_hits": 296,
+        "validation_top5_hits": 682,
+        "validation_rows": 1056,
+        "seconds": 218.6724455000076
+      },
+      {
+        "epoch": 3,
+        "train_ce": 1.740528124439921,
+        "train_top1_on_sampled_batches": 0.5410917112550455,
+        "validation_top1_hits": 643,
+        "validation_top5_hits": 973,
+        "validation_rows": 1056,
+        "seconds": 220.72038549999706
+      },
+      {
+        "epoch": 4,
+        "train_ce": 0.9608465387296824,
+        "train_top1_on_sampled_batches": 0.693759973716324,
+        "validation_top1_hits": 670,
+        "validation_top5_hits": 997,
+        "validation_rows": 1056,
+        "seconds": 206.16305520001333
+      }
+    ],
+    "final_validation": {
+      "rows": 1056,
+      "top1_hits": 670,
+      "top5_hits": 997,
+      "top1": 0.634469696969697,
+      "top5": 0.9441287878787878
+    },
+    "checkpoint": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-objective-competition-20261002\\ce-vs-supcon-pk-r4\\checkpoints\\ce_pk_seed20261004.pt",
+    "checkpoint_sha256": "89d981b5b1c30163e12ec26b1b294c468cf9d290f1109bbaffdee59c0f1851ab",
+    "elapsed_seconds": 0.0,
+    "reused_completed_checkpoint": true,
+    "reuse_source_partial_report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261002\\objective_competition_ce_vs_supcon_pk_r4_partial.json",
+    "reuse_source_partial_report_sha256": "ece143128886675551a08d4daf9a5bd6b356b611ab7f6a42999359a014a782c9"
+  },
+  "failed_arm": {
+    "arm": "ce_plus_supcon",
+    "completed_epochs": 0,
+    "failed_location": "epoch=1,batch=1,phase=supcon_loss",
+    "error_type": "RuntimeError",
+    "error": "CUDA error: unknown error\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n",
+    "paired_comparison": null
+  },
+  "interpretation_limit": "partial exploratory arm; not a paired result and not product accuracy"
+}

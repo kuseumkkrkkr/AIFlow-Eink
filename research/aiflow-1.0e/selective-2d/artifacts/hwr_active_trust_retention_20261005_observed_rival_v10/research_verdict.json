@@ -1,0 +1,79 @@
+{
+  "schema": "aiflow-observed-rival-retention-verdict/v1",
+  "status": "negative_hypothesis_reproduced_retain_v7",
+  "frozen_plan_sha256": "fa0055a856844e68b4c6498f1c1fc0cc706afef7df8e7bde527c56f7f8916920",
+  "result_sha256": "8c76cff97db6dff3424dbb8df8443072b597bc96337ca62ab3881e8938a1da03",
+  "verification_sha256": "06cb234a9e6fb9b7b23768f5d67fe7fe9a98ea83aca66abb669350700cad589f",
+  "checkpoint_sha256": "6d45b26151621be8589398630e179162db291401b035196a1acfd41e88763a8b",
+  "scope": {
+    "same_optimization_train_rows": 2048,
+    "old_math_classes": 371,
+    "source_digit_classes": 10,
+    "changed_factor": "Actual rejected-trial competitor keys share the original 16 alternative slots. V7 risk and current-slack safety prefix, original floors, 64/512 gradient caps, solver, alphas and acceptance guards unchanged.",
+    "capture_additional_model_forwards": 0,
+    "all_domain_human_boundary_distillation_performed": false
+  },
+  "comparison": {
+    "v7": {"directions": 512, "accepted_steps": 8, "actual_trials": 29, "old_top1": 841, "old_top5": 1007, "source_top1": 958, "source_top5": 1015, "floor_violations": 22, "protected_top5_losses": 0, "squared_deficit_merit": 0.07588579814796503},
+    "v10": {"directions": 512, "accepted_steps": 8, "actual_trials": 34, "old_top1": 841, "old_top5": 1006, "source_top1": 958, "source_top5": 1015, "floor_violations": 25, "protected_top5_losses": 1, "squared_deficit_merit": 0.25114311928587085},
+    "v10_merit_ratio_to_v7": 3.309487748895813,
+    "strict_original_train_gate_pass": false,
+    "note": "These reused optimization TRAIN anchors establish neither independent recognition accuracy nor human semantic boundaries. V10 is not adopted. V7 remains a research comparison champion, not a release."
+  },
+  "microscope": {
+    "observed_slots_per_round": [0, 16, 1, 13, 1, 13, 0, 6],
+    "combined_observed_and_adjacent_slots_per_round": [8, 16, 16, 16, 16, 16, 16, 16],
+    "observed_selected_occurrences": {"current_primary": 47, "adjacent": 3, "nonadjacent": 0},
+    "eligible_current_safe_observed_pool_occurrences": {"current_primary": 49, "adjacent": 3, "nonadjacent": 0},
+    "first_changed_round": {
+      "original_primary_risk_and_safe_prefix_equal_v7": true,
+      "v7_generic_weak_rivals": 16,
+      "v7_generic_weak_rivals_displaced": 16,
+      "observed_slots_used": 16,
+      "example": {"truth": "9", "row": 1580, "alpha": 1.0, "actual_rival": "3", "actual_rival_original_other_position": 2, "selected_rivals": ["8"], "original_floor": 0.03715229034423828, "actual_margin": -0.07986831665039062}
+    },
+    "rejected_new_failure_occurrences": {
+      "unselected_row_rank": 181,
+      "exact_selected_linear_pass_actual_fail": 39,
+      "selected_row_unselected_actual_rival": 1,
+      "exact_selected_linear_warning_or_already_bad_floor": 0
+    },
+    "occurrence_limit": "Repeated actual guard-loss occurrences across deliberately rejected trials; not unique cases or recognition error rates. The observed pool excludes currently unsafe ranks and pair conditions already below the original floor.",
+    "last_full_step": {
+      "alpha": 1.0,
+      "new_guard_failure_occurrences": 8,
+      "unselected": 2,
+      "exact_selected_linear_pass_actual_fail": 6,
+      "selected_case": {"row": 830, "truth": "\\bowtie", "rival": "\\rtimes", "role": "observed_rejected_trial_rival", "original_floor": 0.31230831146240234, "predicted_fixed_margin": 0.3124083114624023, "actual_fixed_margin": 0.3064451217651367, "prediction_error": -0.0059631896972655585},
+      "unselected_case": {"row": 1493, "truth": "9", "rival": "\\mathcal{G}", "original_floor": 0.0832209587097168, "actual_margin": 0.06462669372558594, "deficit": 0.01859426498413086}
+    },
+    "accepted_alphas": [0.125, 0.125, 0.0625, 0.0625, 0.0625, 0.125, 0.0625, 0.5],
+    "interpretation": "Most admitted witnesses were additional current-primary safety conditions, not new nonadjacent competitors. They consumed slots previously assigned to nearby weak rivals; the observed first-round displacement and later exact-selected nonlinear failures contradict the hypothesis that forgotten nonadjacent competitors alone explain the bottleneck. This is not a global impossibility proof."
+  },
+  "verification": {
+    "actual_trials_rebuilt": 34,
+    "full_prediction_arrays_hash_verified": 36,
+    "actual_rival_keys_and_slot_order_independently_rebuilt": true,
+    "cold_start_v7_all_first_round_trial_logits_bit_exact": true,
+    "parameter_tensors_checked": 57,
+    "batch1_16_32_rank_and_violation_counts_equal": true,
+    "batch32_checkpoint_reload_bit_exact": true,
+    "rejected_parameter_rollback_bit_exact": true,
+    "canonical_and_original_parent_unchanged": true
+  },
+  "next_bounded_hypothesis": {
+    "runtime_fact": "math_head is Linear(in_features=128,out_features=372,bias=True), with weight[372,128] and bias[372]; model has 57 parameter tensors.",
+    "experiment": "Return to unchanged v7 selection and original parent. Detach the encoder embedding only for gradient computation, so just the two linear-head parameter tensors can change. With fixed embeddings, each fixed-rival logit margin is affine in head parameters, separating nonlinear encoder-update error from missing constraints.",
+    "verification_required": "All 55 non-head tensors bit-exact to original parent; head-only nonzero gradients; same original floors, guards, 64/512 direction caps and real full logits; fixed-rival prediction residuals reported independently; batch1/16/32 parity. No claim that linear-head capacity suffices until experiment passes.",
+    "not_yet_executed": true
+  },
+  "human_boundary_labels": 0,
+  "held_inputs_forwarded": 0,
+  "official_test_rows_read": 0,
+  "crohme_rows": 0,
+  "product_adopted": false,
+  "collection_resumed": false,
+  "deployment_resumed": false,
+  "independent_accuracy_improvement_proven": false,
+  "full_goal_completed": false
+}
