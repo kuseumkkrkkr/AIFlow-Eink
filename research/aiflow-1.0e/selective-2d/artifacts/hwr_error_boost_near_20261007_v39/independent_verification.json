@@ -1,0 +1,105 @@
+{
+  "schema": "aiflow-error-boost-near-verification/v39",
+  "status": "pass",
+  "verifier_sha256": "abd97cd427f316c4792c1b2e5e02896576f60d315288785f3d056ee80e43b42d",
+  "comparison_sha256": "1739f9c0bd8cb42ae769ec3f2cd01589104593a61a54bcf488a5dde8624fe512",
+  "arms": {
+    "v33_control": {
+      "training_steps": 2400,
+      "masked_feature_exposures": 0,
+      "max_recorded_arithmetic_delta": 5.9315008764902755e-08,
+      "changed_parameter_tensors": 57,
+      "checkpoint_sha256": "62bb186885b2b7f3ffd8366c0f8be5fc952d160826b647b6349bbd9a0f67087c",
+      "final_logits_reload_bit_exact": true
+    },
+    "error_boost_near": {
+      "training_steps": 2400,
+      "masked_feature_exposures": 0,
+      "max_recorded_arithmetic_delta": 6.076474866334447e-08,
+      "changed_parameter_tensors": 57,
+      "checkpoint_sha256": "e654fa4ace9bcde79d0fd1c9ff2ddea4ec5636afe732505bdabfa60b84c4e127",
+      "final_logits_reload_bit_exact": true
+    }
+  },
+  "paired_formula_wins": 0,
+  "paired_formula_losses": 0,
+  "canonical_same_platform": {
+    "development": {
+      "1": {
+        "all": {
+          "rows": 2968,
+          "top1_hits": 2387,
+          "top5_hits": 2935
+        },
+        "digits": {
+          "rows": 80,
+          "top1_hits": 65,
+          "top5_hits": 79
+        },
+        "latin_letters": {
+          "rows": 408,
+          "top1_hits": 307,
+          "top5_hits": 402
+        },
+        "math_symbols": {
+          "rows": 2480,
+          "top1_hits": 2015,
+          "top5_hits": 2454
+        }
+      },
+      "2": {
+        "all": {
+          "rows": 2968,
+          "top1_hits": 2378,
+          "top5_hits": 2935
+        },
+        "digits": {
+          "rows": 80,
+          "top1_hits": 66,
+          "top5_hits": 78
+        },
+        "latin_letters": {
+          "rows": 408,
+          "top1_hits": 294,
+          "top5_hits": 404
+        },
+        "math_symbols": {
+          "rows": 2480,
+          "top1_hits": 2018,
+          "top5_hits": 2453
+        }
+      }
+    },
+    "owned": {
+      "formulas": 149,
+      "tokens": 579,
+      "top1_token_hits": 470,
+      "formula_top1_exact": 76,
+      "formula_top5_complete": 137
+    }
+  },
+  "canonical_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+  "reused_control": {
+    "weights_and_all_2400_records_bit_exact": true,
+    "source_plan_sha256": "de0782b4a313359604e016a653e88dda12dadabc913dac61b1e960cdda0e008e",
+    "source_certificate_sha256": "9475cfe403f8d51f70ce2f325cf9825d134baacf4174e7fee6e1efcb7ecd103b",
+    "metric_parity": true
+  },
+  "focus_telemetry": {
+    "steps": 2400,
+    "focused_exposures": 1357,
+    "focused_original_exposures": 382,
+    "focused_augmented_exposures": 975,
+    "source_sha256": "ede8a7ac3c70534a86b884d6eb8983386bad6571dfae3b51d2e60f9ac1dac655",
+    "optimized_gap_matches_all_records": true
+  },
+  "fresh_optimizer_steps": 2400,
+  "reused_control_steps": 2400,
+  "canonical_metrics_reused_from_v38_certificate": true,
+  "canonical_forward_rows_this_verifier": 0,
+  "historical_intermediate_forward_replayed": false,
+  "owned_optimizer_rows": 0,
+  "crohme_rows": 0,
+  "canonical_unchanged": true,
+  "product_adopted": false
+}

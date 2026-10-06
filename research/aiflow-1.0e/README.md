@@ -1,6 +1,6 @@
 # AIFlow 1.0e 누적 연구보고서
 
-기준일: **2026-10-07(한국 시간)** · 최근 완료 실험: **V38 closest-rival paired training**
+기준일: **2026-10-07(한국 시간)** · 최근 완료 실험: **V39 full-near error-row boost**
 
 ## 연구 결론과 현재 상태
 
@@ -8,8 +8,9 @@
 - 최근 재학습은 내부 문자 진단을 개선했으나 프로젝트 소유 수식 진단에서는 기존 canonical 체크포인트를 넘지 못했다. **Canonical을 유지하며 V33의 제품 채택·배포는 하지 않았다.**
 - 클라우드에서 V33 복원을 검증하고 V34 TRAIN gradient 분해 후 V35를 두 조건 각각 2,400 step 학습했다. 교사 정답 행만의 feature 보존은 대조군 대비 수식 exact **64/149 → 62/149**, 개선 0식·회귀 2식으로 기각했다. [V35 완료 보고서](selective-2d/reports/TEACHER_CORRECT_FEATURE_V35_20261006.md)
 - V36으로 마지막 96개 실제 AdamW update를 재생한 뒤 closest-rival 가설을 고정했다. V37 중단·정확 복구 실패를 보존하고, 같은 현재 CPU에서 V38 두 조건 각각 2,400 step을 새로 학습했다. TRAIN 잔여 오류 **6 → 2**에도 수식 exact **64/149 → 63/149**, Top-5 **125/149 → 123/149**로 회귀해 기각했다. [V38 완료 보고서](selective-2d/reports/CLOSEST_RIVAL_V38_20261007.md)
+- V39는 전체 near 후보·pair 수 분모를 유지하고 교사 정답·학생 오답 행의 gap만 고정 2배로 보정했다. 같은 CPU V38 대조군을 재사용하고 후보만 2,400 step 새로 학습했다. 수식 exact **64/149**, Top-5 **125/149**, 개선 0식·회귀 0식으로 정확도 증가는 없어 기각했다. [V39 완료 보고서](selective-2d/reports/ERROR_BOOST_NEAR_V39_20261007.md)
 - V33은 V29 대비 소유 수식 Top-1 완전일치가 **62/149 → 64/149**, Top-5 완전 포함이 **122/149 → 125/149**로 회복됐다. 현재 완료 후속 실험들은 Canonical의 **76/149, 137/149**에 미달한다.
-- V30–V33 표는 기존 산출물 요약이다. V34–V38 후속 연구는 Linux CPU에서 실제 진단·학습·평가했으며, V37은 최종 평가 없는 중단 실행이다. 연구 전체를 재평가한 것은 아니다.
+- V30–V33 표는 기존 산출물 요약이다. V34–V39 후속 연구는 Linux CPU에서 실제 진단·학습·평가했으며, V37은 최종 평가 없는 중단 실행이다. 연구 전체를 재평가한 것은 아니다.
 
 ## 1. 목적과 처리 구조
 
@@ -41,6 +42,7 @@ Canonical 입력 계약은 128×5 시퀀스(`x`, `y`, `delta_t`, `stroke_start`,
 | 10/6 | V30 노출 비율 → V31 숫자 sampling → V32 근접 경쟁 후보 감사 → V33 목적함수 비교 | V31 수식 비회귀 실패, V33 일부 회복. Canonical 유지 | 아래 최근 연구 상세 |
 | 10/6 클라우드 재개 | 원본 8,905파일 해시 검증, V33 전체 6,515입력 재현, V34 gradient 분해, V35 두 조건 학습·독립 검증 | 로컬 gradient 정렬은 개선됐지만 V35 소유 수식은 64/149 → 62/149. 조건 기각, canonical 유지 | [복원·V34](selective-2d/reports/CLOUD_REPLAY_AND_GRADIENT_BALANCE_V34_20261006.md), [V35](selective-2d/reports/TEACHER_CORRECT_FEATURE_V35_20261006.md) |
 | 10/7 환경 복구 | V36 실제 update 진단·V37 상태 보존 후 V38 두 조건 새 학습·검증 | TRAIN 오류 6 → 2에도 수식 exact 64/149 → 63/149, Top-5 125/149 → 123/149. 후보 기각 | [V36](selective-2d/reports/ADAM_MARGIN_REPLAY_V36_20261006.md), [V38](selective-2d/reports/CLOSEST_RIVAL_V38_20261007.md) |
+| 10/7 V39 루프 | 전체 near 후보를 유지하는 오류 행 boost 2 고정·후보 2,400 step 학습·같은 CPU 대조군 재사용·focus 기록 검증 | 수식 exact 64/149, Top-5 125/149, 개선·회귀 0식·0식. 후보 기각 | [V39](selective-2d/reports/ERROR_BOOST_NEAR_V39_20261007.md) |
 
 ## 3. 최근 연구: V30–V33
 
@@ -96,6 +98,18 @@ V36의 마지막 96개 AdamW update는 원래 손실·57개 gradient norm·최�
 | Closest-rival 후보 | 4,849 | 445 | 63 | 123 |
 
 개선 0식·회귀 1식으로 후보를 기각했다. TRAIN 정답 보존 오류는 6 → 2로 줄었으나, 공통 near-gap 평균은 0.019088 → 0.024362로 악화했다. 두 조건의 실제 gap 정의·분모가 다르므로 이 공통 정의로 구분해 비교한다. 현재 CPU의 최종 로짓 재로딩은 비트 일치했고, 과거 V35 대조군과는 가중치·기록이 달라도 최종 집계 지표는 같았다. [근거·전체 범위](selective-2d/reports/CLOSEST_RIVAL_V38_20261007.md), [재현](cloud/V38.md)
+
+### V39: 전체 near 후보를 유지하는 오류 행 보정
+
+Teacher/student Top-5 union·정답 제외·teacher-correct mask·pair 수 분모를 유지하고, 교사는 맞고 학생은 틀린 행의 gap만 고정 2배로 보정했다. Boost는 TRAIN 진단 전에 고정했고 검색하지 않았다. 같은 CPU V38 대조군의 5개 학습 파일·원래 메타데이터를 바이트 그대로 재사용했다. 새 학습은 후보의 2,400단계 하나이며, 완료 후 대조군 최종 로짓·지표를 V38 출처와 다시 대조해 비트 일치를 확인했다.
+
+| V39 같은 CPU 비교 | 내부 문자 Top-1 / 5,936 | 소유 문자 Top-1 / 579 | 수식 exact / 149 | Top-5 완전 포함 / 149 |
+| --- | ---: | ---: | ---: | ---: |
+| Canonical（V38 인증서 지표 재사용） | 4,765 | 470 | 76 | 137 |
+| V38 대조군 재사용 | 4,863 | 443 | 64 | 125 |
+| V39 오류 행 boost | 4,858 | 444 | 64 | 125 |
+
+개선·회귀는 0식·0식이고 두 cohort의 exact·Top-5 모두 동률이다. TRAIN 잔여 오류는 6 → 6, 공통 near-gap은 0.019088 → 0.018448이었다. 국소 gradient 진단 개선이 수식 exact 증가로 이어지지 않아 후보는 기각했다. 실제 boost 노출은 총 1,357회(원본 382·증강 975)이며 2,400개 focus 기록과 최적화 손실의 일치를 검증했다. 재사용 2,400개·신규 2,400개 학습 기록과 두 모델의 최종 로짓 비트 재현도 통과했다. Canonical forward는 V39에서 새로 실행하지 않았다. [전체 결과·검증 범위](selective-2d/reports/ERROR_BOOST_NEAR_V39_20261007.md), [재현](cloud/V39.md)
 
 ## 5. CROHME 원본 전체 범위 평가
 
