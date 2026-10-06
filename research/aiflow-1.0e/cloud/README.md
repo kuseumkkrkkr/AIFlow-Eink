@@ -56,3 +56,9 @@ python scripts/audit_hwr_teacher_correct_feature_v35.py --output "$experiment"
 검증은 총 4,800개 손실 기록·전체 모델 갱신·같은 CPU의 최종 로짓 비트 재현·소유 라벨 provenance·지표 재집계를 확인한다. 추가 TRAIN 진단은 기존 8배치에서 gradient 합성과 잔여 정답 보존 오류를 점검한다. 모든 과거 중간 forward 재생이나 untouched acceptance 검증을 뜻하지 않는다.
 
 프로세스는 새 클라우드 작업으로 승계되지 않는다. `resume_state.pt`는 128 step마다 저장한 상태이며 자동 resume CLI는 구현되지 않았다. [새 작업 시작 지침](START.md)을 읽고 완료·실패·기록 상태부터 확인한다.
+
+## V36 이후 진행
+
+[V37 및 엄격 복구 CLI](V37.md)는 원본 상태·로그를 보존하고 저장 이후의 겹침을 정확 재생한다. 이번 복구에서는 부동소수 불일치로 종료됐다. [V38 재현 지침](V38.md)은 현재 환경에서 두 조건을 모두 처음부터 다시 학습하는 명령과 검증 범위를 설명한다. 원래 V35/V37 trainer에는 자동 resume 기능을 추가하지 않았다.
+
+`CLOUD_RESULTS_MANIFEST_20261006.json`의 편집 문서 해시는 V35 결과를 저장한 `040f7effa63c97507fa781d42cf77c365b224ea2` 커밋에 적용된다. 후속 README·시작 지침의 변경으로 과거 해시를 갱신하지 않는다. 원래 연구 파일과 과거 인증서는 그대로 보존한다.
