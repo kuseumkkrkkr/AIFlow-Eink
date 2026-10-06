@@ -1,0 +1,54 @@
+{
+  "schema": "aiflow-candidate-validity-adoption-gate/v1",
+  "decided_on": "2026-08-20",
+  "selected_model": {
+    "name": "candidate_validity_context_20260820_r1_shadow",
+    "checkpoint_sha256": "ee0033fb42f59b09f3f130300fb5374710cfef010a71c94dbd48e4d1c93dc8b9"
+  },
+  "gates": {
+    "nested_writer_oof_nonregression": true,
+    "fresh_acceptance_core_size": true,
+    "fresh_acceptance_metrics_improved": true,
+    "fresh_acceptance_homograph_regressions_zero": true,
+    "fresh_acceptance_known_sparse_truth_present": false,
+    "crohme_post_selection_thresholds": false,
+    "candidate_and_grouping_integrity": true
+  },
+  "decision": {
+    "adopted": false,
+    "runtime_status": "shadow",
+    "adopted_manifest_written": false,
+    "reason_codes": [
+      "fresh_acceptance_missing_truth_for_bar_upper_O_lower_o",
+      "crohme_top1_below_gate",
+      "crohme_formula_exact_below_gate",
+      "crohme_strict_macro_below_gate"
+    ]
+  },
+  "required_next_untouched_acceptance": {
+    "minimum_formulae": 50,
+    "minimum_unseen_writers": 2,
+    "minimum_truth_instances_per_known_sparse_token": {
+      "|": 29,
+      "O": 29,
+      "o": 29
+    },
+    "statistical_basis": "with zero observed errors, n=29 gives a one-sided 95% binomial upper error bound below 10% for each token",
+    "must_be_frozen_after_model_selection": true,
+    "must_not_reuse_current_53_after_further_tuning": true
+  },
+  "evidence": {
+    "selection": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\candidate_validity_adoption_selection_20260820_r1\\selection.json",
+      "sha256": "4231316e0092fc79117ca32598d07f41b7eeebab675ec53295c4f5e9378a72b3"
+    },
+    "fresh_acceptance": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\candidate_validity_fresh_acceptance_20260820_r1\\fresh_acceptance_report.json",
+      "sha256": "f4bee0d91d9c85089714c1d42c612d5dcc76b473080b84d6f74fd0e24107316f"
+    },
+    "acceptance_freeze": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\fresh-context-acceptance-20260820-r2\\frozen_acceptance\\frozen_acceptance_manifest.json",
+      "sha256": "2b7dad97aa417bee25213e127c36cd1790c4c6f36f946bc798a7c2770b41e54f"
+    }
+  }
+}

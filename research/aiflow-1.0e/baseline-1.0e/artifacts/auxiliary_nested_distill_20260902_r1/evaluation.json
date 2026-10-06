@@ -1,0 +1,278 @@
+{
+  "adapter": {
+    "changed_rows": 56,
+    "formula_exact": 0.6736842105263158,
+    "formula_exact_correct": 64,
+    "formula_total": 95,
+    "row_level_improvements": 38,
+    "row_level_regressions": 8,
+    "rows": 387,
+    "top1": 0.896640826873385,
+    "top1_correct": 347
+  },
+  "baseline": {
+    "changed_rows": 0,
+    "formula_exact": 0.5157894736842106,
+    "formula_exact_correct": 49,
+    "formula_total": 95,
+    "row_level_improvements": 0,
+    "row_level_regressions": 0,
+    "rows": 387,
+    "top1": 0.8191214470284238,
+    "top1_correct": 317
+  },
+  "checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\auxiliary_nested_distill_20260902_r1\\online_candidate_ranker.pt",
+  "data": {
+    "auxiliary": {
+      "formulas": 46,
+      "rows": 179,
+      "writers": 2
+    },
+    "original": {
+      "formulas": 95,
+      "rows": 387,
+      "writers": 7
+    }
+  },
+  "external_teacher_in_runtime": false,
+  "gates": {
+    "candidate_contract_violations_zero": true,
+    "formula_exact_non_regression": true,
+    "held_writer_row_regressions_zero": false,
+    "row_regressions_zero": false,
+    "top1_non_regression": true
+  },
+  "loss_reports": [
+    {
+      "ce": 1.0422178400887383,
+      "held_writer": "0051ac0f3b066f191a50",
+      "kl": 0.11528108198609617,
+      "stability": 0.21147434749744004
+    },
+    {
+      "ce": 0.9357362576559478,
+      "held_writer": "2d04cc6470b7a5aa8e47",
+      "kl": 0.10318486058317564,
+      "stability": 0.2208944797588914
+    },
+    {
+      "ce": 1.0907816893110673,
+      "held_writer": "8c90e0ce2f8501e6cf74",
+      "kl": 0.12564511181941876,
+      "stability": 0.2166434809526739
+    },
+    {
+      "ce": 1.0546434727453051,
+      "held_writer": "8fd01f2ab9d55fa944e4",
+      "kl": 0.12075468303547018,
+      "stability": 0.2342282694187902
+    },
+    {
+      "ce": 1.1765152401394314,
+      "held_writer": "90ae7abee30ebd1c3a53",
+      "kl": 0.13549991572896639,
+      "stability": 0.22588352788653637
+    },
+    {
+      "ce": 1.0027699085573356,
+      "held_writer": "99a922f1edc2ef0565d0",
+      "kl": 0.11076827626675367,
+      "stability": 0.247630468957747
+    },
+    {
+      "ce": 1.0573796612374924,
+      "held_writer": "aaae4f8b061e862bc663",
+      "kl": 0.12314212387975525,
+      "stability": 0.23537060665879764
+    }
+  ],
+  "outer_evaluation": "frozen original seven-writer 95-formula partition only",
+  "product_runtime_changed": false,
+  "schema": "aiflow-1.0e-auxiliary-nested-distill/v1",
+  "status": "shadow_only",
+  "top5_candidate_recall": 0.9664082687338501,
+  "top5_non_regression": true,
+  "training": {
+    "epochs": 3,
+    "learning_rate": 0.0003,
+    "loss": "0.20 CE + 0.70 teacher KL + 0.10 baseline stability + 0.10 pairwise margin",
+    "refit_loss": {
+      "ce": 0.92092032233874,
+      "kl": 0.10259287612926629,
+      "stability": 0.19069983324880013
+    },
+    "seed": 20260902,
+    "temperature": 2.0
+  },
+  "training_boundary": "six non-held original writers plus two disjoint auxiliary writers per fold",
+  "writer_loo": [
+    {
+      "changed_rows": 22,
+      "formula_exact": 0.631578947368421,
+      "formula_exact_correct": 12,
+      "formula_total": 19,
+      "held_writer": "0051ac0f3b066f191a50",
+      "row_level_improvements": 14,
+      "row_level_regressions": 4,
+      "rows": 82,
+      "top1": 0.8902439024390244,
+      "top1_correct": 73,
+      "train_auxiliary_writers": [
+        "27f66571c13bf39a3d4ef022",
+        "ca031f8f1de952920a57a4f7"
+      ],
+      "train_original_writers": [
+        "2d04cc6470b7a5aa8e47",
+        "8c90e0ce2f8501e6cf74",
+        "8fd01f2ab9d55fa944e4",
+        "90ae7abee30ebd1c3a53",
+        "99a922f1edc2ef0565d0",
+        "aaae4f8b061e862bc663"
+      ]
+    },
+    {
+      "changed_rows": 4,
+      "formula_exact": 0.7,
+      "formula_exact_correct": 7,
+      "formula_total": 10,
+      "held_writer": "2d04cc6470b7a5aa8e47",
+      "row_level_improvements": 2,
+      "row_level_regressions": 1,
+      "rows": 32,
+      "top1": 0.90625,
+      "top1_correct": 29,
+      "train_auxiliary_writers": [
+        "27f66571c13bf39a3d4ef022",
+        "ca031f8f1de952920a57a4f7"
+      ],
+      "train_original_writers": [
+        "0051ac0f3b066f191a50",
+        "8c90e0ce2f8501e6cf74",
+        "8fd01f2ab9d55fa944e4",
+        "90ae7abee30ebd1c3a53",
+        "99a922f1edc2ef0565d0",
+        "aaae4f8b061e862bc663"
+      ]
+    },
+    {
+      "changed_rows": 3,
+      "formula_exact": 0.5,
+      "formula_exact_correct": 5,
+      "formula_total": 10,
+      "held_writer": "8c90e0ce2f8501e6cf74",
+      "row_level_improvements": 2,
+      "row_level_regressions": 1,
+      "rows": 35,
+      "top1": 0.8571428571428571,
+      "top1_correct": 30,
+      "train_auxiliary_writers": [
+        "27f66571c13bf39a3d4ef022",
+        "ca031f8f1de952920a57a4f7"
+      ],
+      "train_original_writers": [
+        "0051ac0f3b066f191a50",
+        "2d04cc6470b7a5aa8e47",
+        "8fd01f2ab9d55fa944e4",
+        "90ae7abee30ebd1c3a53",
+        "99a922f1edc2ef0565d0",
+        "aaae4f8b061e862bc663"
+      ]
+    },
+    {
+      "changed_rows": 14,
+      "formula_exact": 0.5217391304347826,
+      "formula_exact_correct": 12,
+      "formula_total": 23,
+      "held_writer": "8fd01f2ab9d55fa944e4",
+      "row_level_improvements": 10,
+      "row_level_regressions": 1,
+      "rows": 100,
+      "top1": 0.86,
+      "top1_correct": 86,
+      "train_auxiliary_writers": [
+        "27f66571c13bf39a3d4ef022",
+        "ca031f8f1de952920a57a4f7"
+      ],
+      "train_original_writers": [
+        "0051ac0f3b066f191a50",
+        "2d04cc6470b7a5aa8e47",
+        "8c90e0ce2f8501e6cf74",
+        "90ae7abee30ebd1c3a53",
+        "99a922f1edc2ef0565d0",
+        "aaae4f8b061e862bc663"
+      ]
+    },
+    {
+      "changed_rows": 5,
+      "formula_exact": 0.95,
+      "formula_exact_correct": 19,
+      "formula_total": 20,
+      "held_writer": "90ae7abee30ebd1c3a53",
+      "row_level_improvements": 5,
+      "row_level_regressions": 0,
+      "rows": 80,
+      "top1": 0.9875,
+      "top1_correct": 79,
+      "train_auxiliary_writers": [
+        "27f66571c13bf39a3d4ef022",
+        "ca031f8f1de952920a57a4f7"
+      ],
+      "train_original_writers": [
+        "0051ac0f3b066f191a50",
+        "2d04cc6470b7a5aa8e47",
+        "8c90e0ce2f8501e6cf74",
+        "8fd01f2ab9d55fa944e4",
+        "99a922f1edc2ef0565d0",
+        "aaae4f8b061e862bc663"
+      ]
+    },
+    {
+      "changed_rows": 4,
+      "formula_exact": 0.75,
+      "formula_exact_correct": 6,
+      "formula_total": 8,
+      "held_writer": "99a922f1edc2ef0565d0",
+      "row_level_improvements": 3,
+      "row_level_regressions": 1,
+      "rows": 35,
+      "top1": 0.9428571428571428,
+      "top1_correct": 33,
+      "train_auxiliary_writers": [
+        "27f66571c13bf39a3d4ef022",
+        "ca031f8f1de952920a57a4f7"
+      ],
+      "train_original_writers": [
+        "0051ac0f3b066f191a50",
+        "2d04cc6470b7a5aa8e47",
+        "8c90e0ce2f8501e6cf74",
+        "8fd01f2ab9d55fa944e4",
+        "90ae7abee30ebd1c3a53",
+        "aaae4f8b061e862bc663"
+      ]
+    },
+    {
+      "changed_rows": 4,
+      "formula_exact": 0.6,
+      "formula_exact_correct": 3,
+      "formula_total": 5,
+      "held_writer": "aaae4f8b061e862bc663",
+      "row_level_improvements": 2,
+      "row_level_regressions": 0,
+      "rows": 23,
+      "top1": 0.7391304347826086,
+      "top1_correct": 17,
+      "train_auxiliary_writers": [
+        "27f66571c13bf39a3d4ef022",
+        "ca031f8f1de952920a57a4f7"
+      ],
+      "train_original_writers": [
+        "0051ac0f3b066f191a50",
+        "2d04cc6470b7a5aa8e47",
+        "8c90e0ce2f8501e6cf74",
+        "8fd01f2ab9d55fa944e4",
+        "90ae7abee30ebd1c3a53",
+        "99a922f1edc2ef0565d0"
+      ]
+    }
+  ]
+}
