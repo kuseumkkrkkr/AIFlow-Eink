@@ -1,0 +1,313 @@
+{
+  "schema": "aiflow-teacher-correct-feature-verdict/v35",
+  "status": "completed",
+  "verdict": "challenger_rejected",
+  "rationale": "Internal Top-1 increased by one, but owned formula exact fell 64 to 62, Top-5 completeness fell 125 to 123, and TRAIN retention errors remained six. Local gradient alignment did not demonstrate recognition improvement.",
+  "canonical_retained": true,
+  "product_adopted": false,
+  "paired_formula_wins": 0,
+  "paired_formula_losses": 2,
+  "control_metrics": {
+    "development": {
+      "1": {
+        "all": {
+          "rows": 2968,
+          "top1_hits": 2426,
+          "top5_hits": 2941
+        },
+        "digits": {
+          "rows": 80,
+          "top1_hits": 66,
+          "top5_hits": 79
+        },
+        "latin_letters": {
+          "rows": 408,
+          "top1_hits": 309,
+          "top5_hits": 405
+        },
+        "math_symbols": {
+          "rows": 2480,
+          "top1_hits": 2051,
+          "top5_hits": 2457
+        }
+      },
+      "2": {
+        "all": {
+          "rows": 2968,
+          "top1_hits": 2437,
+          "top5_hits": 2938
+        },
+        "digits": {
+          "rows": 80,
+          "top1_hits": 66,
+          "top5_hits": 78
+        },
+        "latin_letters": {
+          "rows": 408,
+          "top1_hits": 304,
+          "top5_hits": 407
+        },
+        "math_symbols": {
+          "rows": 2480,
+          "top1_hits": 2067,
+          "top5_hits": 2453
+        }
+      }
+    },
+    "owned": {
+      "all": {
+        "formulas": 149,
+        "tokens": 579,
+        "top1_token_hits": 443,
+        "formula_top1_exact": 64,
+        "formula_top5_complete": 125
+      },
+      "legacy_96": {
+        "formulas": 96,
+        "tokens": 393,
+        "top1_token_hits": 305,
+        "formula_top1_exact": 41,
+        "formula_top5_complete": 85
+      },
+      "codex_reviewed_53": {
+        "formulas": 53,
+        "tokens": 186,
+        "top1_token_hits": 138,
+        "formula_top1_exact": 23,
+        "formula_top5_complete": 40
+      }
+    }
+  },
+  "challenger_metrics": {
+    "development": {
+      "1": {
+        "all": {
+          "rows": 2968,
+          "top1_hits": 2427,
+          "top5_hits": 2942
+        },
+        "digits": {
+          "rows": 80,
+          "top1_hits": 66,
+          "top5_hits": 79
+        },
+        "latin_letters": {
+          "rows": 408,
+          "top1_hits": 309,
+          "top5_hits": 405
+        },
+        "math_symbols": {
+          "rows": 2480,
+          "top1_hits": 2052,
+          "top5_hits": 2458
+        }
+      },
+      "2": {
+        "all": {
+          "rows": 2968,
+          "top1_hits": 2437,
+          "top5_hits": 2938
+        },
+        "digits": {
+          "rows": 80,
+          "top1_hits": 66,
+          "top5_hits": 78
+        },
+        "latin_letters": {
+          "rows": 408,
+          "top1_hits": 304,
+          "top5_hits": 407
+        },
+        "math_symbols": {
+          "rows": 2480,
+          "top1_hits": 2067,
+          "top5_hits": 2453
+        }
+      }
+    },
+    "owned": {
+      "all": {
+        "formulas": 149,
+        "tokens": 579,
+        "top1_token_hits": 440,
+        "formula_top1_exact": 62,
+        "formula_top5_complete": 123
+      },
+      "legacy_96": {
+        "formulas": 96,
+        "tokens": 393,
+        "top1_token_hits": 303,
+        "formula_top1_exact": 39,
+        "formula_top5_complete": 84
+      },
+      "codex_reviewed_53": {
+        "formulas": 53,
+        "tokens": 186,
+        "top1_token_hits": 137,
+        "formula_top1_exact": 23,
+        "formula_top5_complete": 39
+      }
+    }
+  },
+  "canonical_same_platform": {
+    "development": {
+      "1": {
+        "all": {
+          "rows": 2968,
+          "top1_hits": 2387,
+          "top5_hits": 2935
+        },
+        "digits": {
+          "rows": 80,
+          "top1_hits": 65,
+          "top5_hits": 79
+        },
+        "latin_letters": {
+          "rows": 408,
+          "top1_hits": 307,
+          "top5_hits": 402
+        },
+        "math_symbols": {
+          "rows": 2480,
+          "top1_hits": 2015,
+          "top5_hits": 2454
+        }
+      },
+      "2": {
+        "all": {
+          "rows": 2968,
+          "top1_hits": 2378,
+          "top5_hits": 2935
+        },
+        "digits": {
+          "rows": 80,
+          "top1_hits": 66,
+          "top5_hits": 78
+        },
+        "latin_letters": {
+          "rows": 408,
+          "top1_hits": 294,
+          "top5_hits": 404
+        },
+        "math_symbols": {
+          "rows": 2480,
+          "top1_hits": 2018,
+          "top5_hits": 2453
+        }
+      }
+    },
+    "owned": {
+      "formulas": 149,
+      "tokens": 579,
+      "top1_token_hits": 470,
+      "formula_top1_exact": 76,
+      "formula_top5_complete": 137
+    }
+  },
+  "changed_owned_predictions": [
+    {
+      "sample_id": "aiflow_0062",
+      "cohort": "legacy_96",
+      "truth_tokens": [
+        "f",
+        "(",
+        "x",
+        ")",
+        "+",
+        "1"
+      ],
+      "control_top1": [
+        "f",
+        "(",
+        "x",
+        ")",
+        "+",
+        "1"
+      ],
+      "challenger_top1": [
+        "f",
+        "(",
+        "\\chi",
+        ")",
+        "+",
+        "1"
+      ],
+      "control_exact": true,
+      "challenger_exact": false
+    },
+    {
+      "sample_id": "aiflow_0008",
+      "cohort": "legacy_96",
+      "truth_tokens": [
+        "b",
+        "=",
+        "4"
+      ],
+      "control_top1": [
+        "b",
+        "=",
+        "4"
+      ],
+      "challenger_top1": [
+        "\\flat",
+        "=",
+        "4"
+      ],
+      "control_exact": true,
+      "challenger_exact": false
+    },
+    {
+      "sample_id": "aiflow_0073",
+      "cohort": "legacy_96",
+      "truth_tokens": [
+        "1",
+        "\\times",
+        "5"
+      ],
+      "control_top1": [
+        "\\mid",
+        "x",
+        "5"
+      ],
+      "challenger_top1": [
+        "|",
+        "x",
+        "5"
+      ],
+      "control_exact": false,
+      "challenger_exact": false
+    },
+    {
+      "sample_id": "aiflow_0089",
+      "cohort": "codex_reviewed_53",
+      "truth_tokens": [
+        "1",
+        "0",
+        "+",
+        "2"
+      ],
+      "control_top1": [
+        "I",
+        "0",
+        "+",
+        "\\angle"
+      ],
+      "challenger_top1": [
+        "I",
+        "\\circlearrowleft",
+        "+",
+        "\\angle"
+      ],
+      "control_exact": false,
+      "challenger_exact": false
+    }
+  ],
+  "evidence_sha256": {
+    "frozen_plan.json": "c84e91adc62d42ffc9a3add00d649ea374b3957e8dba75363402b1ecb8adaf49",
+    "comparison_result.json": "bbe202a2c092f248eade9dd14200a10c64e5bb1161238fba549ad59f394a08d6",
+    "independent_verification.json": "201298b2d3990cf263ab35d1d06adb92b940fd508b63eb1ae892c29d2379deb2",
+    "train_gradient_diagnostic.json": "68835f900269f7e96ee882452274e3d135453b630c4bff8fbc03a2de5fd7a572"
+  },
+  "limits": "Consumed oracle-group diagnostic; not fresh writer/device acceptance, raw-stroke grouping, integrated decoder or official expression rate.",
+  "next_constraint": "Retain all-row feature baseline. Diagnose remaining six teacher-correct TRAIN failures before another objective change; aggregate gradient cosine alone is insufficient."
+}

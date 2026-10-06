@@ -1,13 +1,14 @@
 # AIFlow 1.0e 누적 연구보고서
 
-기준일: **2026-10-06** · 최근 완료 실험: **V33 near-rival training**
+기준일: **2026-10-06** · 최근 완료 실험: **V35 teacher-correct feature paired training**
 
 ## 연구 결론과 현재 상태
 
 - 원본 stroke의 문자 후보 생성, stroke grouping, 수식 문맥·배치 판단을 분리하고, 후보 보존과 기존 정답 회귀 여부를 함께 감사했다.
 - 최근 재학습은 내부 문자 진단을 개선했으나 프로젝트 소유 수식 진단에서는 기존 canonical 체크포인트를 넘지 못했다. **Canonical을 유지하며 V33의 제품 채택·배포는 하지 않았다.**
+- 클라우드에서 V33 복원을 검증하고 V34 TRAIN gradient 분해 후 V35를 두 조건 각각 2,400 step 학습했다. 교사 정답 행만의 feature 보존은 대조군 대비 수식 exact **64/149 → 62/149**, 개선 0식·회귀 2식으로 기각했다. [V35 완료 보고서](selective-2d/reports/TEACHER_CORRECT_FEATURE_V35_20261006.md)
 - 최신 V33은 V29 대비 소유 수식 Top-1 완전일치가 **62/149 → 64/149**, Top-5 완전 포함이 **122/149 → 125/149**로 회복됐다. Canonical의 **76/149, 137/149**에는 미달한다.
-- 아래 수치는 저장된 실험 산출물을 요약한 것이다. 이번 문서 작성에서 재학습하거나 전체 실험을 재평가하지 않았다.
+- V30–V33 표는 기존 산출물 요약이다. V34–V35 후속 연구는 Linux CPU에서 실제 검증·학습·평가했으며, 연구 전체를 재평가한 것은 아니다.
 
 ## 1. 목적과 처리 구조
 
@@ -37,6 +38,7 @@ Canonical 입력 계약은 128×5 시퀀스(`x`, `y`, `delta_t`, `stroke_start`,
 | 10/4 | 확률 경계·경계 tube·증류 타깃·학습 gradient 감사 | 학습 손실과 실제 gradient, 입력·로짓 일치를 점검 | [학습 microscope](selective-2d/artifacts/hwr_boundary_training_microscope_20261004_v2/training_microscope.json) |
 | 10/5 | active trust retention, guard, 전 도메인·dtype·ONNX·교사 충돌·encoder/head·feature/margin 유지 비교 | 내부 문자 개선과 소유 수식 회귀를 분리. V29 margin retention을 후속 목적함수 비교 기준으로 사용 | [전체 산출물](selective-2d/artifacts), [V33 비교표](selective-2d/artifacts/hwr_near_rival_training_20261006_v33/comparison_result.json) |
 | 10/6 | V30 노출 비율 → V31 숫자 sampling → V32 근접 경쟁 후보 감사 → V33 목적함수 비교 | V31 수식 비회귀 실패, V33 일부 회복. Canonical 유지 | 아래 최근 연구 상세 |
+| 10/6 클라우드 재개 | 원본 8,905파일 해시 검증, V33 전체 6,515입력 재현, V34 gradient 분해, V35 두 조건 학습·독립 검증 | 로컬 gradient 정렬은 개선됐지만 V35 소유 수식은 64/149 → 62/149. 조건 기각, canonical 유지 | [복원·V34](selective-2d/reports/CLOUD_REPLAY_AND_GRADIENT_BALANCE_V34_20261006.md), [V35](selective-2d/reports/TEACHER_CORRECT_FEATURE_V35_20261006.md) |
 
 ## 3. 최근 연구: V30–V33
 
@@ -69,7 +71,19 @@ Canonical 입력 계약은 128×5 시퀀스(`x`, `y`, `delta_t`, `stroke_start`,
 
 저장된 독립 검증은 2,400개 손실식, 57개 텐서의 유한 gradient와 변경, 교사 gradient 부재, NumPy 마스크·방향·산술, 체크포인트 재로딩 로짓의 비트 일치와 최종 지표 재집계를 통과했다. 전체 과거 중간 forward를 재생한 검증은 아니다. V33 TRAIN 근접 손실은 0.099419 → 0.019088로 줄었지만 새 필기 일반화의 증거는 아니다. [검증 결과](selective-2d/artifacts/hwr_near_rival_training_20261006_v33/independent_verification.json)
 
-## 4. CROHME 원본 전체 범위 평가
+## 4. V34–V35 클라우드 후속 연구
+
+V34의 고정 TRAIN 8배치에서 교사 오답 행의 feature gradient가 CE와 더 음의 방향을 보였다. V35는 이 행의 feature 기여만 제거하고 분모 64·CE·near-gap 계수·데이터·seed를 유지했다. 같은 CPU 대조군과 새 조건 모두 2,400 step을 완료한 후 평가했다.
+
+| 같은 CPU 비교 | 내부 문자 Top-1 / 5,936 | 소유 문자 Top-1 / 579 | 수식 Top-1 exact / 149 | Top-5 완전 포함 / 149 |
+| --- | ---: | ---: | ---: | ---: |
+| Canonical 재평가 | 4,765 | 470 | 76 | 137 |
+| V33 목적함수 대조군 | 4,863 | 443 | 64 | 125 |
+| 교사 정답 feature 조건 | 4,864 | 440 | 62 | 123 |
+
+4,800개 학습 기록·57개 텐서 갱신·같은 CPU 로짓 비트 재현·라벨 provenance·지표 재집계 검증을 통과했다. 새 조건의 TRAIN 잔여 정답 보존 오류는 대조군과 같은 6건이었다. 집계 gradient 정렬 개선이 인식 개선으로 이어지지 않아 기각했다. [전체 결과·판정·한계](selective-2d/reports/TEACHER_CORRECT_FEATURE_V35_20261006.md), [Linux 환경 재현](cloud/README.md)
+
+## 5. CROHME 원본 전체 범위 평가
 
 별도 CROHME 연구 트랙은 원본 **1,199식 전체**를 분모에 포함했다. 성공식만의 점수와 혼동하지 않는다.
 
@@ -83,7 +97,7 @@ Canonical 입력 계약은 128×5 시퀀스(`x`, `y`, `delta_t`, `stroke_start`,
 
 185식에는 단일 point 원본 stroke가 있고 추론 오류는 ValueError로 기록됐다. 지원되지 않는 정답 token을 가진 수식도 349식이었다. 이 결과는 **로컬 proxy 평가이며 공식 CROHME Expression Rate가 아니다.** 비상업 사후 shadow 검증으로 학습·선택·임계값 조정은 수행하지 않았다. [전체 범위 평가 원본](crohme-evaluation/artifacts/crohme_raw_full_coverage_research_20260914_r3_final/validation_report.json)
 
-## 5. 해석 한계와 남은 검증
+## 6. 해석 한계와 남은 검증
 
 - 95식·149식·CROHME 평가의 분모, grouping 제공 여부, 런타임과 지표가 다르므로 하나의 성능 향상 곡선으로 연결하지 않는다.
 - 최근 149식은 이미 반복 관찰한 oracle-group 진단이다. V31 기록은 95식이 과거 canonical calibration 입력이며 추가 53식은 Codex 검토 주석이라고 명시한다. 별도 96식 cohort 집계와 동일한 숫자로 치환하지 않는다.

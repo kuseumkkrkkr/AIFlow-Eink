@@ -1,0 +1,19 @@
+{
+  "schema": "aiflow-v35-plan-interpretation/v1",
+  "frozen_plan_sha256": "c84e91adc62d42ffc9a3add00d649ea374b3957e8dba75363402b1ecb8adaf49",
+  "current_behavior_fields": [
+    "arms",
+    "feature_rule",
+    "code_sha256",
+    "runtime_sha256"
+  ],
+  "historical_inherited_description_fields": [
+    "objective",
+    "trainer_reuse",
+    "checkpoint_container"
+  ],
+  "actual_trainer": "New V35 optimizer loop; reuse original V25 batch loader, canonical model loader and V33 near-gap helper.",
+  "actual_checkpoint_container": "aiflow-teacher-correct-feature-main/v35 with state_dict/math_labels and uniform-time input contract.",
+  "objective": "CE over all 64 rows + unchanged feature weight times mean per-row MSE times arm mask + unchanged near-gap weight times teacher-correct near-gap loss. Control mask is all ones; challenger mask is canonical-teacher-correct. Feature denominator stays 64.",
+  "note": "Frozen plan is preserved unchanged. The three inherited prose fields describe its V33 parent; current behavior is defined by the explicit V35 fields and SHA-bound source."
+}

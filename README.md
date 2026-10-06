@@ -65,10 +65,13 @@ E-ink handwriting input
 
 누적 작업과 최근 V30–V33 실험은 [전체 연구보고서](research/aiflow-1.0e/README.md)에 경과·비교표·기각 결과·검증 한계와 원본 근거를 정리했습니다.
 
+클라우드에서 V33을 복원·검증한 뒤 V34 gradient 진단과 V35 paired 학습을 완료했습니다. V35의 교사 정답 행만의 feature 보존은 수식 exact **64/149 → 62/149**, 개선 0식·회귀 2식으로 기각했습니다. 최종 모델·전체 학습 기록·독립 검증을 [V35 보고서](research/aiflow-1.0e/selective-2d/reports/TEACHER_CORRECT_FEATURE_V35_20261006.md)에 연결했고, [Linux CPU 설치·재현 지침](research/aiflow-1.0e/cloud/README.md)을 포함했습니다.
+
 | 핵심 결과 | 저장된 연구 기록 |
 | --- | --- |
 | 누적 연구 | stroke 정규화·372-class HWR, 수식 문맥·배치, 교사 증류, Selective-2D, 실패 분석, 증강·경계·정답 유지 실험 |
 | 최근 V33 | 근접 경쟁 후보 gap 유지 학습. V29 대비 소유 수식 Top-1 exact 62/149 → 64/149, Top-5 완전 포함 122/149 → 125/149 |
+| 후속 V35 | 같은 CPU에서 두 조건 각각 2,400 step 완료. 내부 문자 +1에도 수식 exact 64/149 → 62/149로 새 조건 기각. Canonical 유지 |
 | 기존 기준 | Canonical은 같은 소유 진단에서 76/149, 137/149로 V33보다 높아 유지. 제품 채택·배포 없음 |
 | 기각 결과 | V31 숫자 sampling은 내부 숫자 개선에도 소유 수식 62/149 → 61/149로 비회귀 조건 실패 |
 | 별도 전체 평가 | CROHME 1,199식 raw 평가에서 grouping exact 353식, 문자열 exact 59식, group·배치·관계·문자 동시 exact 50식 |
