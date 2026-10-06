@@ -1,0 +1,53 @@
+{
+  "schema": "aiflow-1.0e-accuracy-upgrade-loop/v1",
+  "status": "shadow_only",
+  "product_runtime_changed": false,
+  "huggingface_public_repo_changed": false,
+  "external_teacher_in_runtime": false,
+  "candidate_adoption": "rejected",
+  "baseline": {
+    "top1": 0.8191214470284238,
+    "top1_correct": 317,
+    "rows": 387,
+    "candidate_recall": 0.9664082687338501,
+    "formula_exact": 0.5157894736842106,
+    "formula_exact_correct": 49,
+    "formula_total": 95,
+    "row_level_regressions": 0
+  },
+  "trials": {
+    "lora": {
+      "evaluation": "artifacts/ocr_trocr_lora_rank_10e_20260902_r1/evaluation.json",
+      "guard_report": "artifacts/ocr_trocr_lora_rank_guard_20260902_r1/guard_report.json",
+      "raw_top1": 0.834625322997416,
+      "raw_formula_exact": 0.5473684210526316,
+      "raw_row_level_regressions": 34,
+      "guarded_top1": 0.8191214470284238,
+      "guarded_formula_exact": 0.5157894736842106,
+      "guarded_row_level_regressions": 0,
+      "decision": "rejected"
+    },
+    "online_distillation": {
+      "evaluation": "artifacts/online_candidate_distill_10e_20260902_r1/evaluation.json",
+      "fixed_guard_report": "artifacts/online_candidate_distill_guard_20260902_r1/guard_report.json",
+      "nested_guard_report": "artifacts/online_candidate_distill_nested_guard_20260902_r1/nested_guard_report.json",
+      "raw_top1": 0.8552971576227391,
+      "raw_formula_exact": 0.5473684210526316,
+      "raw_row_level_regressions": 22,
+      "fixed_guard_top1": 0.8217054263565892,
+      "fixed_guard_formula_exact": 0.5157894736842106,
+      "fixed_guard_row_level_regressions": 1,
+      "nested_guard_top1": 0.8165374677002584,
+      "nested_guard_formula_exact": 0.5052631578947369,
+      "nested_guard_row_level_regressions": 1,
+      "decision": "rejected"
+    }
+  },
+  "next_gate": {
+    "fresh_writer_disjoint_acceptance_required": true,
+    "row_level_regression_gate": 0,
+    "android_runtime_check_required": true,
+    "commercial_status": "bounded_beta_shadow_only"
+  },
+  "report": "reports/AIFlow_1_0E_ACCURACY_UPGRADE_LOOP_20260902.md"
+}

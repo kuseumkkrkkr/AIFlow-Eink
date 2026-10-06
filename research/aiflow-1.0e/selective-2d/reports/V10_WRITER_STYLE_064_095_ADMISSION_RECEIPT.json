@@ -1,0 +1,86 @@
+{
+  "schema": "aiflow-v10-new-style-bank-independent-admission/v1",
+  "generated_at": "2026-08-22T22:06:49.838562+00:00",
+  "status": "INDEPENDENT_V10_NEW_STYLE_BANK_ADMISSION_PASSED",
+  "gates": {
+    "raw_exact_four_files": true,
+    "final_exact_four_files": true,
+    "raw_expected_rejected_intermediate": true,
+    "final_shadow_candidate": true,
+    "raw_to_final_lineage_exact": true,
+    "final_report_output_hashes_exact": true,
+    "full_independent_audit_passed": true,
+    "full_independent_hashes_match_live": true,
+    "full_top5_duplicate_topology_contract": true,
+    "cross_independent_audit_passed": true,
+    "cross_hashes_match_live": true,
+    "cross_writer_id_synthetic_id_tensor_overlap_zero": true,
+    "latent_rng_contract_independently_reproduced": true,
+    "parent_manifold_overlap_disclosed": true,
+    "r3_artifact_audit_passed_and_generation_only": true,
+    "no_project_or_evaluation_rows": true,
+    "scorer_cache_features_predictions_outer_absent": true
+  },
+  "artifact": {
+    "raw": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\cleanroom_writer_style_v5_20260823_writers064_095_raw_r1",
+    "raw_hashes": {
+      "report": "ebeb9b440c5a11b6f64c9ffe10a8399dfc3bfa2c33ecfe637c7fee24fd2bf55d",
+      "bank": "e8fba454030943c6393c002dff38c00fd02d5a9fc10cf168a66db10721638cb5",
+      "metadata": "fc790dd1b61b9f1794382f72745a440f5be90d77ccd043d5ff70e69621787716",
+      "latents": "58d3ef5867aedeac349d973aa7b19e42c6e08ab02129cbc70fa935385edf2158"
+    },
+    "final": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\cleanroom_writer_style_v5_20260823_writers064_095_r4_r1",
+    "final_hashes": {
+      "report": "c582218dad976d076fa775784b2a644748e17ceac0a3601b0a75a960c35154f4",
+      "bank": "1965c5d52f2cde15fbb563066955011ac5ed0b0615aee1a88ec5a3daec0015da",
+      "metadata": "d184323f72dcdd4d83e9459f6b8cdc5a463e3c1a18e14f41a79340a63decba42",
+      "latents": "58d3ef5867aedeac349d973aa7b19e42c6e08ab02129cbc70fa935385edf2158"
+    },
+    "writers": 32,
+    "writer_ids": "synthetic_writer_064..095",
+    "rows": 40960,
+    "classes": 320,
+    "top1": 0.6536376953125,
+    "top5": 1.0
+  },
+  "cross_bank": {
+    "previous_writer_ids": "synthetic_writer_000..063",
+    "writer_id_overlap": [],
+    "synthetic_id_overlap": 0,
+    "exact_tensor_overlap": 0,
+    "latent_vector_overlap": 0,
+    "minimum_writer_pair": {
+      "previous_writer": "synthetic_writer_032",
+      "new_writer": "synthetic_writer_091",
+      "median_rms": 0.0312819629907608
+    },
+    "immediate_parent_overlap_ratio": 0.9893177119228118,
+    "root_fingerprint_overlap_ratio": 0.9893697798025817,
+    "physics_rng_seed_range": {
+      "first": 20325399,
+      "last": 20356678,
+      "contract": "SEED + global_writer_index * 1009"
+    }
+  },
+  "component_audits": {
+    "r3_artifact": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\reports\\V10_SPARSE_WRITER_STYLE_R3_ARTIFACT_INDEPENDENT_AUDIT.json",
+    "r3_artifact_sha256": "e0360a7918fb3785be87c5cc0dc338f79199381efab107190c39e4c12afe0182",
+    "full_bank": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\reports\\V10_WRITER_STYLE_064_095_FULL_INDEPENDENT_AUDIT.json",
+    "full_bank_sha256": "9710b5bb3d7964e57ba55f9c28c2f0894e8b7b61d168950107e3a3cec1299686",
+    "cross_bank": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\reports\\V10_WRITER_STYLE_064_095_CROSS_BANK_AUDIT.json",
+    "cross_bank_sha256": "5d7a8cd9a92e612dd27d844fd6112f297b576bb47ad5936c0aa677776bea0d7e",
+    "full_bank_script_sha256": "484ec02f9f4568f0e0e9a77d119cb724b6bd6ed9fb73463a3ea05c4923cb3d3e",
+    "cross_bank_script_sha256": "51f8211c6d552c6b228b80d4649d9eab42e5e26d2fec0b5edd4d1d3a179321b5",
+    "admission_builder_script_sha256": "58042d3f5083d94e67334aa05a272bd09c3c031bd11197aa7929424491d61b6c"
+  },
+  "scorer_artifacts_discovered": [],
+  "decision": {
+    "new_style_bank_admitted": true,
+    "outer_evaluator_implementation_allowed": true,
+    "outer_prepare_allowed": true,
+    "outer_open_allowed": false,
+    "real_corpus_open_allowed": false,
+    "product_promotion_allowed": false
+  },
+  "evidence_boundary": "This bank is untouched with respect to the frozen v10 r3 scorer, but it was label-filtered by the frozen HWR Top-5 admission contract. It is a new deterministic style/motor draw over a roughly 98.9% shared external parent manifold, not fresh real-writer evidence. The physics RNG formula is bound post hoc because the raw report lacks a generation-time source hash."
+}

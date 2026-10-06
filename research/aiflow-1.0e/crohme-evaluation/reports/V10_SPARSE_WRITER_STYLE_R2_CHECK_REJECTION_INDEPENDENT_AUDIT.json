@@ -1,0 +1,95 @@
+{
+  "schema": "aiflow-v10-r2-check-rejection-independent-audit/v1",
+  "generated_at": "2026-08-22T20:30:03.298659+00:00",
+  "status": "INDEPENDENT_V10_R2_CHECK_REJECTION_CONFIRMED",
+  "gates": {
+    "output_exact_marker_and_rejection": true,
+    "marker_hash_exact": true,
+    "rejection_hash_exact": true,
+    "source_live_exact_at_audit": true,
+    "predevelopment_audit_hash_exact": true,
+    "predevelopment_audit_contract_exact": true,
+    "marker_binds_source_audit_and_check12": true,
+    "frozen_hyperparameters_exact": true,
+    "rejection_binds_source_audit_and_marker": true,
+    "development_was_safe_positive": true,
+    "check_aggregate_positive_candidate_safe": true,
+    "check_writer_episode_nonregression_failed": true,
+    "only_writer29_regressed": true,
+    "only_support22_contains_regression": true,
+    "outer_artifact_not_created": true,
+    "r1_evidence_immutable": true
+  },
+  "development": {
+    "rows": 45732,
+    "baseline_top1": 0.6569141957491472,
+    "adapted_top1": 0.65697979532931,
+    "baseline_pseudo_exact": 0.071875,
+    "adapted_pseudo_exact": 0.071875,
+    "improved": 3,
+    "regressed": 0,
+    "changed": 6,
+    "candidate_violations": 0,
+    "activation_coverage": 0.18055555555555555
+  },
+  "check": {
+    "rows": 45720,
+    "baseline_top1": 0.6678477690288714,
+    "adapted_top1": 0.6680883639545057,
+    "baseline_pseudo_exact": 0.071875,
+    "adapted_pseudo_exact": 0.0720486111111111,
+    "improved": 12,
+    "regressed": 1,
+    "changed": 23,
+    "candidate_violations": 0,
+    "activation_coverage": 0.2361111111111111
+  },
+  "regression_scope": {
+    "writers": [
+      "29"
+    ],
+    "supports": [
+      "22"
+    ],
+    "writer29": {
+      "rows": 3816,
+      "baseline_top1": 0.7138364779874213,
+      "adapted_top1": 0.7135744234800838,
+      "baseline_pseudo_exact": 0.15,
+      "adapted_pseudo_exact": 0.15,
+      "improved": 0,
+      "regressed": 1,
+      "changed": 2,
+      "candidate_violations": 0,
+      "activation_coverage": 0.16666666666666666
+    },
+    "support22": {
+      "rows": 7620,
+      "baseline_top1": 0.6678477690288714,
+      "adapted_top1": 0.6681102362204724,
+      "baseline_pseudo_exact": 0.071875,
+      "adapted_pseudo_exact": 0.071875,
+      "improved": 3,
+      "regressed": 1,
+      "changed": 9,
+      "candidate_violations": 0,
+      "activation_coverage": 0.4166666666666667
+    }
+  },
+  "hashes": {
+    "source_sha256": "2a03edb913b2ed97d7f50502e2de7eca9500a63751d37408a273a984a9a74cb1",
+    "predevelopment_audit_sha256": "93e4303c9a7545507f3c67cb45c259680f3b7084f7325e80b8f4ee2d21a6a2c3",
+    "check_marker_sha256": "f249651971b8e48972262d0b197bd72bc8bbe0030c32ccdfe8ca17ee1721f45f",
+    "rejection_sha256": "8044be54d338f5a291f9cad7432375ad9c2a658efc3b53b5abaacef9b3534ac1",
+    "audit_script_sha256": "e3455346dd3032f682777b1fba5331293de6f8af4f21289ad26ec5ce6e0bca70"
+  },
+  "boundary": "The aggregate signal is positive, but the predeclared per-writer and writer-by-support non-regression contract failed. The consumed check12 result may not be rerun or tuned against.",
+  "decision": {
+    "r2_reuse_or_rerun_allowed": false,
+    "check12_reuse_allowed": false,
+    "all64_consumed_development_for_new_general_design_allowed": true,
+    "new_styles_generation_allowed": false,
+    "real_or_evaluation_corpora_allowed": false,
+    "product_promotion_allowed": false
+  }
+}

@@ -57,3 +57,7 @@ E-ink handwriting input
 - AIFlow Math Ink 0.5 자료는 원본 Hugging Face 저장소의 Apache-2.0 라이선스와 고지를 함께 보존합니다.
 - AIFlow Math Ink 0.6 Intermediate 자료는 원본 Hugging Face 모델 카드, `NOTICE.md`, `MANIFEST.json`, `MODEL_INDEX.json`을 함께 보존합니다.
 - 대용량 모델 바이너리는 GitHub가 아닌 Hugging Face 원본 저장소에서 내려받는 방식을 권장합니다.
+
+## AIFlow 1.0e 누적 연구 (2026-10-06)
+
+[AIFlow 1.0e 전체 연구 스냅샷](research/aiflow-1.0e/README.md)에 초기 연구, Selective-2D 후속 연구, CROHME 평가, 증강 모델 실험의 코드·보고서·실험 결과·체크포인트를 보존했습니다. 이 자료는 연구 기록이며 제품 채택 여부와 구분합니다. 대용량 연구 파일은 분할 압축으로 보존하며 복원 도구를 포함합니다.

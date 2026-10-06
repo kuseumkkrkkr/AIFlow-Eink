@@ -1,0 +1,70 @@
+{
+  "schema": "aiflow-1.0e-reinforcement-status/v1",
+  "date": "2026-09-11",
+  "execution_model": "gpt-5.6-luna",
+  "overall_status": "completed_with_blocked_data_stages",
+  "stages": {
+    "R0_output_integrity": {
+      "status": "completed",
+      "training_performed": false,
+      "e2e_before": "32/95",
+      "e2e_after": "32/95",
+      "serialization_changes": 0
+    },
+    "R1_class_support_audit": {
+      "status": "completed",
+      "vocabulary_size": 372,
+      "unobserved_external_labels": ["="],
+      "external_equal_examples": 0,
+      "own_equal_records": 51,
+      "own_equal_writers": 9
+    },
+    "R1_hwr_retraining": {
+      "status": "blocked_data",
+      "reason": "no newly collected writer-disjoint and rights-approved records"
+    },
+    "R2_context_training": {
+      "status": "completed",
+      "data_role": "consumed_development",
+      "baseline_e2e": "14/95",
+      "raw_e2e": "15/95",
+      "guarded_e2e": "15/95",
+      "baseline_glyph_top1": "208/387",
+      "raw_glyph_top1": "221/387",
+      "guarded_glyph_top1": "215/387",
+      "raw_regressions": 0,
+      "guarded_regressions": 0,
+      "writer_fold_epoch_selections": 84,
+      "selected_epoch_distribution": {"12": 84},
+      "competitive_with_current_32_of_95_candidate": false
+    },
+    "R2_additional_kd": {
+      "status": "stopped",
+      "reason": "the corrected CE path remains below the current 32/95 development candidate and prior TexTeller and UniMERNet KD runs showed no E2E gain"
+    },
+    "R3_guard_calibration": {
+      "status": "completed",
+      "risk_fit_and_threshold_writers_disjoint": true
+    },
+    "R3_relation_head": {
+      "status": "blocked_data",
+      "reason": "only two explicitly relation-annotated formulas are available"
+    },
+    "offline_runtime_probe": {
+      "status": "completed",
+      "network_disabled": true,
+      "forbidden_modules_loaded": 0,
+      "annotation_invariant": true,
+      "repeated_completion_identical": true,
+      "raw_ink_preserved": true,
+      "scope": "local CPU research probe; not real-device acceptance"
+    },
+    "sealed_acceptance": {
+      "status": "blocked_data",
+      "reason": "no fresh writer, formula, and device-disjoint sealed set"
+    }
+  },
+  "product_promotable": false,
+  "uploaded": false,
+  "product_activated": false
+}

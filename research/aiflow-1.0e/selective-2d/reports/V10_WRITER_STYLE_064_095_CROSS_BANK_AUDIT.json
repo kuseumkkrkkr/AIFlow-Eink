@@ -1,0 +1,88 @@
+{
+  "schema": "aiflow-v10-new-style-bank-cross-independent-audit/v1",
+  "generated_at": "2026-08-22T22:05:01.450474+00:00",
+  "status": "INDEPENDENT_V10_NEW_STYLE_BANK_CROSS_AUDIT_PASSED",
+  "gates": {
+    "base_writer_ids_exact_000_031": true,
+    "extension_writer_ids_exact_032_063": true,
+    "new_writer_ids_exact_064_095": true,
+    "all_96_writer_ids_disjoint": true,
+    "new_synthetic_ids_disjoint_from_previous64": true,
+    "new_exact_tensors_disjoint_from_previous64": true,
+    "new_writer_separation_from_previous64": true,
+    "all96_latents_match_independent_seeded_sequence": true,
+    "all96_latent_vectors_are_unique": true,
+    "raw_writer_range_exact_064_095": true,
+    "raw_to_final_latents_are_immutable": true,
+    "raw_to_final_hash_lineage_exact": true,
+    "live_builder_uses_total96_suffix_and_global_physics_rng": true,
+    "all_three_banks_shadow_admitted": true,
+    "new_full_bank_independent_audit_passed": true,
+    "new_full_bank_hashes_match_live": true,
+    "r3_artifact_independent_audit_passed": true,
+    "r3_audit_authorizes_generation_only": true
+  },
+  "banks": {
+    "base": {
+      "writers": 32,
+      "rows": 40704,
+      "classes": 318
+    },
+    "extension32": {
+      "writers": 32,
+      "rows": 40576,
+      "classes": 317
+    },
+    "new": {
+      "writers": 32,
+      "rows": 40960,
+      "classes": 320
+    }
+  },
+  "cross_bank": {
+    "writer_id_overlap": [],
+    "synthetic_id_overlap": 0,
+    "exact_tensor_overlap": 0,
+    "minimum_writer_pair": {
+      "previous_writer": "synthetic_writer_032",
+      "new_writer": "synthetic_writer_091",
+      "median_rms": 0.0312819629907608
+    },
+    "median_writer_pair_rms": 0.060545580461621284,
+    "immediate_parent_overlap": 2871,
+    "new_immediate_parent_overlap_ratio": 0.9893177119228118,
+    "root_fingerprint_overlap": 6515,
+    "new_root_fingerprint_overlap_ratio": 0.9893697798025817,
+    "latent_vector_overlap": 0,
+    "independent_latent_sequence_exact": true,
+    "physics_rng_seed_range": {
+      "first": 20325399,
+      "last": 20356678,
+      "contract": "SEED + global_writer_index * 1009"
+    }
+  },
+  "hashes": {
+    "base_report": "778a876640f3d14e454fcce0c2d98fe7ecca8caf39da3da38a11e0ac00d961fb",
+    "base_bank": "6e5bfed373291e335094aefa3365dab8090e35eb8ef178b31304b1f3f7b430dc",
+    "extension32_report": "562c3867bbe1ebc66c8aa82b3ff82a5e6d1d76d95550f4c05c3b95d4f0e81e36",
+    "extension32_bank": "58210589afbb9f073d981db541b5caa1a5b5e4b8b133f2ccea628d221f1f497d",
+    "new_report": "c582218dad976d076fa775784b2a644748e17ceac0a3601b0a75a960c35154f4",
+    "new_bank": "1965c5d52f2cde15fbb563066955011ac5ed0b0615aee1a88ec5a3daec0015da",
+    "new_metadata": "d184323f72dcdd4d83e9459f6b8cdc5a463e3c1a18e14f41a79340a63decba42",
+    "new_latents": "58d3ef5867aedeac349d973aa7b19e42c6e08ab02129cbc70fa935385edf2158",
+    "full_audit": "9710b5bb3d7964e57ba55f9c28c2f0894e8b7b61d168950107e3a3cec1299686",
+    "r3_artifact_audit": "e0360a7918fb3785be87c5cc0dc338f79199381efab107190c39e4c12afe0182",
+    "raw_report": "ebeb9b440c5a11b6f64c9ffe10a8399dfc3bfa2c33ecfe637c7fee24fd2bf55d",
+    "raw_latents": "58d3ef5867aedeac349d973aa7b19e42c6e08ab02129cbc70fa935385edf2158",
+    "live_builder_source": "a28f6f399f6075d31870d6b7906d13ddc343a4d3396c47266a490425f8b3ebbf",
+    "audit_script": "51f8211c6d552c6b228b80d4649d9eab42e5e26d2fec0b5edd4d1d3a179321b5"
+  },
+  "decision": {
+    "new_style_bank_admission_passed": true,
+    "outer_prepare_allowed": true,
+    "outer_open_allowed": false,
+    "real_corpus_open_allowed": false,
+    "product_promotion_allowed": false
+  },
+  "evidence_boundary": "writers064..095 are new deterministic motor/style draws over a known external parent manifold. Parent overlap is measured and disclosed; this is not fresh real-writer evidence. Latents are independently reproduced from seed 20260823. The physics RNG formula is bound post hoc to the current live builder source because the raw generation report did not embed a generation-time source hash."
+}

@@ -1,0 +1,1024 @@
+{
+  "schema": "aiflow-character-classifier-data-audit/v2",
+  "uci_duplicates": {
+    "records": 2858,
+    "affected_records": 2858,
+    "raw_points_removed": 138636,
+    "canonical_removed": 138695,
+    "rounding_collisions_removed": 59,
+    "remaining_consecutive_exact_xy": 0,
+    "plot": {
+      "file": "uci_exact_duplicate_before_after.png",
+      "selected_samples": [
+        1273,
+        1276,
+        1277,
+        1218,
+        1275,
+        1219
+      ]
+    }
+  },
+  "hwrt_support": {
+    "classes": 369,
+    "samples": 167363,
+    "mean": 453.55826558265585,
+    "median": 221,
+    "stdev": 552.3199923743441,
+    "min": 51,
+    "p05": 58,
+    "p25": 118,
+    "p75": 562,
+    "p95": 1526,
+    "max": 3512,
+    "bands": {
+      "0.25x_to_0.5x_mean": 104,
+      "0.5x_to_1x_mean": 75,
+      "1x_to_2x_mean": 50,
+      "2x_to_4x_mean": 43,
+      "above_4x_mean": 14,
+      "at_or_below_0.25x_mean": 83
+    },
+    "under_0_25x_mean": [
+      "+",
+      "4",
+      "5",
+      "6",
+      "7",
+      "9",
+      ">",
+      "B",
+      "D",
+      "E",
+      "F",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "X",
+      "Y",
+      "Z",
+      "\\L",
+      "\\barwedge",
+      "\\between",
+      "\\blacktriangleright",
+      "\\boxplus",
+      "\\circledcirc",
+      "\\diamondsuit",
+      "\\dotsc",
+      "\\frown",
+      "\\gtrless",
+      "\\guillemotleft",
+      "\\leftmoon",
+      "\\lhd",
+      "\\mathbb{H}",
+      "\\mathbb{N}",
+      "\\mathbb{Q}",
+      "\\mathbb{R}",
+      "\\mathbb{Z}",
+      "\\mathfrak{M}",
+      "\\mathscr{E}",
+      "\\multimap",
+      "\\nRightarrow",
+      "\\ominus",
+      "\\parr",
+      "\\pitchfork",
+      "\\sphericalangle",
+      "\\varsubsetneq",
+      "\\vartriangle",
+      "\\wr",
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s",
+      "u",
+      "v",
+      "w",
+      "x",
+      "y",
+      "z"
+    ],
+    "over_4x_mean": [
+      "\\Sigma",
+      "\\alpha",
+      "\\approx",
+      "\\equiv",
+      "\\forall",
+      "\\in",
+      "\\infty",
+      "\\int",
+      "\\mathds{R}",
+      "\\partial",
+      "\\sim",
+      "\\square",
+      "\\sum",
+      "\\xi"
+    ],
+    "decision": {
+      "rebalance": "class_balanced_sampler_plus_capped_loss_weight",
+      "do_not_use": "predictive_rebalancer",
+      "atomic_label_policy": "do_not_split_HWRT_labels_without_box_level_annotation",
+      "reason": "frequency correction cannot create missing handwriting variation; compositional LaTex labels are source annotation units and automatic splitting would corrupt stroke ownership"
+    }
+  },
+  "bdshwa": {
+    "status": "rejected_for_character_classifier",
+    "character_segmentable": false,
+    "records": 1348,
+    "category_counts": {
+      "freehand": 290,
+      "sentence": 292,
+      "shape": 148,
+      "topic": 174,
+      "wave": 144,
+      "word": 290
+    },
+    "task_keys": [
+      "category",
+      "mode",
+      "script",
+      "task_index",
+      "task_label",
+      "task_prompt",
+      "writing_condition"
+    ],
+    "raw_header": [
+      "timestamp",
+      "raw_x",
+      "raw_y",
+      "canvas_x",
+      "canvas_y",
+      "pressure",
+      "tilt_x",
+      "tilt_y",
+      "distance",
+      "pen_down",
+      "stroke",
+      "mode",
+      "category",
+      "script",
+      "task_label",
+      "task_prompt",
+      "sample_id",
+      "session_id",
+      "writing_condition",
+      "task_index"
+    ],
+    "character_boundary_fields_present": [],
+    "reason": "Each file supplies only a whole-task prompt plus pen-down stroke IDs. It has no character boundary, character label, or character-to-stroke ownership field; freehand, shape, and wave tasks also have no text transcript suitable for character supervision."
+  },
+  "classifier_input_audit": {
+    "cache_manifest": "cache_manifest.json",
+    "heads": {
+      "math": {
+        "training_support": {
+          "output_labels": 372,
+          "observed_labels": 371,
+          "missing_labels": [
+            "="
+          ],
+          "records": 151005,
+          "mean": 407.0215633423181,
+          "median": 199,
+          "p05": 53,
+          "p95": 1374,
+          "min": 46,
+          "max": 3161,
+          "bands": {
+            "0.25x_to_0.5x_mean": 106,
+            "0.5x_to_1x_mean": 75,
+            "1x_to_2x_mean": 50,
+            "2x_to_4x_mean": 44,
+            "above_4x_mean": 14,
+            "at_or_below_0.25x_mean": 82
+          },
+          "at_or_below_0_25x_mean": 82,
+          "above_4x_mean": 14
+        },
+        "evaluation_support": {
+          "output_labels": 372,
+          "observed_labels": 371,
+          "missing_labels": [
+            "="
+          ],
+          "records": 16598,
+          "mean": 44.73854447439353,
+          "median": 22,
+          "p05": 5,
+          "p95": 152,
+          "min": 5,
+          "max": 351,
+          "bands": {
+            "0.25x_to_0.5x_mean": 96,
+            "0.5x_to_1x_mean": 73,
+            "1x_to_2x_mean": 49,
+            "2x_to_4x_mean": 45,
+            "above_4x_mean": 14,
+            "at_or_below_0.25x_mean": 94
+          },
+          "at_or_below_0_25x_mean": 94,
+          "above_4x_mean": 14
+        },
+        "training_input_integrity": {
+          "records": 151005,
+          "non_finite": 0,
+          "xy_out_of_range": 0,
+          "negative_delta_t": 0,
+          "invalid_stroke_start": 0,
+          "invalid_observed": 0,
+          "no_stroke_start": 0,
+          "mixed_observed": 0,
+          "spatially_collapsed": 38,
+          "valid_shape": true,
+          "expected_shape": [
+            128,
+            5
+          ]
+        },
+        "evaluation_input_integrity": {
+          "records": 16598,
+          "non_finite": 0,
+          "xy_out_of_range": 0,
+          "negative_delta_t": 0,
+          "invalid_stroke_start": 0,
+          "invalid_observed": 0,
+          "no_stroke_start": 0,
+          "mixed_observed": 0,
+          "spatially_collapsed": 3,
+          "valid_shape": true,
+          "expected_shape": [
+            128,
+            5
+          ]
+        },
+        "training_spatially_collapsed_labels": {
+          "\\bullet": 2,
+          "\\cdot": 33,
+          "\\dotsc": 2,
+          "\\vdots": 1
+        },
+        "evaluation_spatially_collapsed_labels": {
+          "\\cdot": 3
+        },
+        "exact_tensor_collisions": {
+          "records": 167603,
+          "unique_tensors": 167538,
+          "duplicate_tensor_groups": 13,
+          "duplicate_rows_beyond_first": 65,
+          "cross_split_same_label_groups": 4,
+          "cross_split_cross_label_groups": 1,
+          "within_split_cross_label_groups": 3,
+          "examples": [
+            {
+              "records": 5,
+              "splits": {
+                "train": [
+                  "\\cdot"
+                ]
+              }
+            },
+            {
+              "records": 7,
+              "splits": {
+                "train": [
+                  "\\cdot"
+                ]
+              }
+            },
+            {
+              "records": 3,
+              "splits": {
+                "eval": [
+                  "\\cdot"
+                ],
+                "train": [
+                  "\\cdot"
+                ]
+              }
+            },
+            {
+              "records": 6,
+              "splits": {
+                "eval": [
+                  "\\cdot"
+                ],
+                "train": [
+                  "\\cdot"
+                ]
+              }
+            },
+            {
+              "records": 6,
+              "splits": {
+                "train": [
+                  "\\cdot"
+                ]
+              }
+            },
+            {
+              "records": 2,
+              "splits": {
+                "train": [
+                  "\\cdot"
+                ]
+              }
+            },
+            {
+              "records": 26,
+              "splits": {
+                "eval": [
+                  "\\cdot"
+                ],
+                "train": [
+                  "\\bullet",
+                  "\\cdot",
+                  "\\dotsc",
+                  "\\vdots"
+                ]
+              }
+            },
+            {
+              "records": 9,
+              "splits": {
+                "eval": [
+                  "\\cdot"
+                ],
+                "train": [
+                  "\\cdot"
+                ]
+              }
+            }
+          ],
+          "cross_label_examples": [
+            {
+              "records": 26,
+              "splits": {
+                "eval": [
+                  "\\cdot"
+                ],
+                "train": [
+                  "\\bullet",
+                  "\\cdot",
+                  "\\dotsc",
+                  "\\vdots"
+                ]
+              }
+            },
+            {
+              "records": 2,
+              "splits": {
+                "train": [
+                  "\\bullet",
+                  "\\cdot"
+                ]
+              }
+            },
+            {
+              "records": 2,
+              "splits": {
+                "train": [
+                  "\\backslash",
+                  "\\cdot"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "auxiliary": {
+        "training_support": {
+          "output_labels": 95,
+          "observed_labels": 95,
+          "missing_labels": [],
+          "records": 19496,
+          "mean": 205.22105263157894,
+          "median": 215,
+          "p05": 108,
+          "p95": 356,
+          "min": 64,
+          "max": 380,
+          "bands": {
+            "0.25x_to_0.5x_mean": 1,
+            "0.5x_to_1x_mean": 32,
+            "1x_to_2x_mean": 62
+          },
+          "at_or_below_0_25x_mean": 0,
+          "above_4x_mean": 0
+        },
+        "evaluation_support": {
+          "output_labels": 95,
+          "observed_labels": 95,
+          "missing_labels": [],
+          "records": 2125,
+          "mean": 22.36842105263158,
+          "median": 23,
+          "p05": 12,
+          "p95": 38,
+          "min": 7,
+          "max": 41,
+          "bands": {
+            "0.25x_to_0.5x_mean": 1,
+            "0.5x_to_1x_mean": 32,
+            "1x_to_2x_mean": 62
+          },
+          "at_or_below_0_25x_mean": 0,
+          "above_4x_mean": 0
+        },
+        "training_input_integrity": {
+          "records": 19496,
+          "non_finite": 0,
+          "xy_out_of_range": 0,
+          "negative_delta_t": 0,
+          "invalid_stroke_start": 0,
+          "invalid_observed": 0,
+          "no_stroke_start": 0,
+          "mixed_observed": 0,
+          "spatially_collapsed": 0,
+          "valid_shape": true,
+          "expected_shape": [
+            128,
+            5
+          ]
+        },
+        "evaluation_input_integrity": {
+          "records": 2125,
+          "non_finite": 0,
+          "xy_out_of_range": 0,
+          "negative_delta_t": 0,
+          "invalid_stroke_start": 0,
+          "invalid_observed": 0,
+          "no_stroke_start": 0,
+          "mixed_observed": 0,
+          "spatially_collapsed": 0,
+          "valid_shape": true,
+          "expected_shape": [
+            128,
+            5
+          ]
+        },
+        "training_spatially_collapsed_labels": {},
+        "evaluation_spatially_collapsed_labels": {},
+        "exact_tensor_collisions": {
+          "records": 21621,
+          "unique_tensors": 21621,
+          "duplicate_tensor_groups": 0,
+          "duplicate_rows_beyond_first": 0,
+          "cross_split_same_label_groups": 0,
+          "cross_split_cross_label_groups": 0,
+          "within_split_cross_label_groups": 0,
+          "examples": [],
+          "cross_label_examples": []
+        }
+      }
+    }
+  },
+  "fixed_holdout_diagnostics": {
+    "status": "diagnostic_only",
+    "fixed_holdout_used_for_selection": false,
+    "heads": {
+      "math": {
+        "records": 16598,
+        "missing_predictions": 0,
+        "top_confusions": [
+          {
+            "truth": "\\sum",
+            "predicted": "\\Sigma",
+            "records": 202,
+            "rate_within_truth": 0.5958702064896755
+          },
+          {
+            "truth": "\\alpha",
+            "predicted": "\\propto",
+            "records": 77,
+            "rate_within_truth": 0.2972972972972973
+          },
+          {
+            "truth": "\\Omega",
+            "predicted": "\\ohm",
+            "records": 71,
+            "rate_within_truth": 0.8658536585365854
+          },
+          {
+            "truth": "\\bot",
+            "predicted": "\\perp",
+            "records": 67,
+            "rate_within_truth": 0.9178082191780822
+          },
+          {
+            "truth": "\\in",
+            "predicted": "\\epsilon",
+            "records": 56,
+            "rate_within_truth": 0.2445414847161572
+          },
+          {
+            "truth": "\\Sigma",
+            "predicted": "\\sum",
+            "records": 55,
+            "rate_within_truth": 0.2894736842105263
+          },
+          {
+            "truth": "\\mapsto",
+            "predicted": "\\longmapsto",
+            "records": 49,
+            "rate_within_truth": 0.5384615384615384
+          },
+          {
+            "truth": "\\setminus",
+            "predicted": "\\backslash",
+            "records": 49,
+            "rate_within_truth": 0.9607843137254902
+          },
+          {
+            "truth": "\\#",
+            "predicted": "\\sharp",
+            "records": 46,
+            "rate_within_truth": 0.4339622641509434
+          },
+          {
+            "truth": "\\alpha",
+            "predicted": "\\varpropto",
+            "records": 46,
+            "rate_within_truth": 0.1776061776061776
+          },
+          {
+            "truth": "\\&",
+            "predicted": "\\with",
+            "records": 43,
+            "rate_within_truth": 0.3359375
+          },
+          {
+            "truth": "\\Pi",
+            "predicted": "\\prod",
+            "records": 42,
+            "rate_within_truth": 0.5316455696202531
+          },
+          {
+            "truth": "\\Leftrightarrow",
+            "predicted": "\\Longleftrightarrow",
+            "records": 34,
+            "rate_within_truth": 0.2764227642276423
+          },
+          {
+            "truth": "\\cup",
+            "predicted": "U",
+            "records": 34,
+            "rate_within_truth": 0.3695652173913043
+          },
+          {
+            "truth": "\\chi",
+            "predicted": "\\mathcal{X}",
+            "records": 32,
+            "rate_within_truth": 0.34782608695652173
+          },
+          {
+            "truth": "\\subset",
+            "predicted": "c",
+            "records": 32,
+            "rate_within_truth": 0.4155844155844156
+          },
+          {
+            "truth": "\\emptyset",
+            "predicted": "\\O",
+            "records": 31,
+            "rate_within_truth": 0.3263157894736842
+          },
+          {
+            "truth": "\\pi",
+            "predicted": "\\prod",
+            "records": 30,
+            "rate_within_truth": 0.19736842105263158
+          },
+          {
+            "truth": "|",
+            "predicted": "\\mid",
+            "records": 28,
+            "rate_within_truth": 0.5490196078431373
+          },
+          {
+            "truth": "\\varepsilon",
+            "predicted": "\\mathcal{E}",
+            "records": 27,
+            "rate_within_truth": 0.36486486486486486
+          }
+        ],
+        "lowest_label_top1": [
+          {
+            "label": "\\setminus",
+            "records": 51,
+            "top1": 0.0
+          },
+          {
+            "label": "\\varnothing",
+            "records": 46,
+            "top1": 0.0
+          },
+          {
+            "label": "\\venus",
+            "records": 12,
+            "top1": 0.0
+          },
+          {
+            "label": "v",
+            "records": 6,
+            "top1": 0.0
+          },
+          {
+            "label": "s",
+            "records": 5,
+            "top1": 0.0
+          },
+          {
+            "label": "\\Omega",
+            "records": 82,
+            "top1": 0.04878048780487805
+          },
+          {
+            "label": "\\bot",
+            "records": 73,
+            "top1": 0.0547945205479452
+          },
+          {
+            "label": "|",
+            "records": 51,
+            "top1": 0.058823529411764705
+          },
+          {
+            "label": "\\o",
+            "records": 31,
+            "top1": 0.06451612903225806
+          },
+          {
+            "label": "\\varkappa",
+            "records": 14,
+            "top1": 0.07142857142857142
+          },
+          {
+            "label": "\\astrosun",
+            "records": 29,
+            "top1": 0.10344827586206896
+          },
+          {
+            "label": "\\Pi",
+            "records": 79,
+            "top1": 0.13924050632911392
+          },
+          {
+            "label": "\\triangledown",
+            "records": 19,
+            "top1": 0.15789473684210525
+          },
+          {
+            "label": "\\mathds{1}",
+            "records": 31,
+            "top1": 0.16129032258064516
+          },
+          {
+            "label": "o",
+            "records": 6,
+            "top1": 0.16666666666666666
+          },
+          {
+            "label": "x",
+            "records": 6,
+            "top1": 0.16666666666666666
+          },
+          {
+            "label": "\\rightsquigarrow",
+            "records": 17,
+            "top1": 0.17647058823529413
+          },
+          {
+            "label": "\\checked",
+            "records": 27,
+            "top1": 0.18518518518518517
+          },
+          {
+            "label": "\\circ",
+            "records": 97,
+            "top1": 0.1958762886597938
+          },
+          {
+            "label": "\\ss",
+            "records": 23,
+            "top1": 0.21739130434782608
+          }
+        ],
+        "top1_by_training_support_band": {
+          "0.25x_to_0.5x_mean": {
+            "records": 1647,
+            "labels": 106,
+            "top1": 0.7462052216150576
+          },
+          "0.5x_to_1x_mean": {
+            "records": 2339,
+            "labels": 75,
+            "top1": 0.7178281316802052
+          },
+          "1x_to_2x_mean": {
+            "records": 3354,
+            "labels": 50,
+            "top1": 0.7042337507453786
+          },
+          "2x_to_4x_mean": {
+            "records": 5191,
+            "labels": 44,
+            "top1": 0.7809670583702563
+          },
+          "above_4x_mean": {
+            "records": 3477,
+            "labels": 14,
+            "top1": 0.7955133735979293
+          },
+          "at_or_below_0.25x_mean": {
+            "records": 590,
+            "labels": 82,
+            "top1": 0.752542372881356
+          }
+        }
+      },
+      "auxiliary": {
+        "records": 2125,
+        "missing_predictions": 0,
+        "top_confusions": [
+          {
+            "truth": "z",
+            "predicted": "Z",
+            "records": 22,
+            "rate_within_truth": 0.5365853658536586
+          },
+          {
+            "truth": "O",
+            "predicted": "0",
+            "records": 18,
+            "rate_within_truth": 0.782608695652174
+          },
+          {
+            "truth": "o",
+            "predicted": "0",
+            "records": 18,
+            "rate_within_truth": 0.47368421052631576
+          },
+          {
+            "truth": "v",
+            "predicted": "V",
+            "records": 18,
+            "rate_within_truth": 0.47368421052631576
+          },
+          {
+            "truth": "C",
+            "predicted": "c",
+            "records": 15,
+            "rate_within_truth": 0.6521739130434783
+          },
+          {
+            "truth": "X",
+            "predicted": "x",
+            "records": 12,
+            "rate_within_truth": 0.5217391304347826
+          },
+          {
+            "truth": "s",
+            "predicted": "S",
+            "records": 12,
+            "rate_within_truth": 0.32432432432432434
+          },
+          {
+            "truth": "u",
+            "predicted": "U",
+            "records": 12,
+            "rate_within_truth": 0.32432432432432434
+          },
+          {
+            "truth": "P",
+            "predicted": "p",
+            "records": 11,
+            "rate_within_truth": 0.4782608695652174
+          },
+          {
+            "truth": "k",
+            "predicted": "K",
+            "records": 11,
+            "rate_within_truth": 0.4583333333333333
+          },
+          {
+            "truth": "p",
+            "predicted": "P",
+            "records": 8,
+            "rate_within_truth": 0.21621621621621623
+          },
+          {
+            "truth": "x",
+            "predicted": "X",
+            "records": 8,
+            "rate_within_truth": 0.34782608695652173
+          },
+          {
+            "truth": "W",
+            "predicted": "w",
+            "records": 7,
+            "rate_within_truth": 0.30434782608695654
+          },
+          {
+            "truth": "n",
+            "predicted": "h",
+            "records": 7,
+            "rate_within_truth": 0.19444444444444445
+          },
+          {
+            "truth": "y",
+            "predicted": "Y",
+            "records": 7,
+            "rate_within_truth": 0.19444444444444445
+          },
+          {
+            "truth": "I",
+            "predicted": "'",
+            "records": 6,
+            "rate_within_truth": 0.25
+          },
+          {
+            "truth": "S",
+            "predicted": "s",
+            "records": 6,
+            "rate_within_truth": 0.25
+          },
+          {
+            "truth": "Ü",
+            "predicted": "ü",
+            "records": 5,
+            "rate_within_truth": 0.4166666666666667
+          },
+          {
+            "truth": "j",
+            "predicted": "J",
+            "records": 4,
+            "rate_within_truth": 0.16666666666666666
+          },
+          {
+            "truth": "í",
+            "predicted": "Í",
+            "records": 4,
+            "rate_within_truth": 0.3333333333333333
+          }
+        ],
+        "lowest_label_top1": [
+          {
+            "label": "O",
+            "records": 23,
+            "top1": 0.043478260869565216
+          },
+          {
+            "label": "C",
+            "records": 23,
+            "top1": 0.21739130434782608
+          },
+          {
+            "label": ".",
+            "records": 7,
+            "top1": 0.2857142857142857
+          },
+          {
+            "label": "k",
+            "records": 24,
+            "top1": 0.4166666666666667
+          },
+          {
+            "label": ",",
+            "records": 12,
+            "top1": 0.4166666666666667
+          },
+          {
+            "label": "X",
+            "records": 23,
+            "top1": 0.43478260869565216
+          },
+          {
+            "label": "z",
+            "records": 41,
+            "top1": 0.43902439024390244
+          },
+          {
+            "label": "o",
+            "records": 38,
+            "top1": 0.4473684210526316
+          },
+          {
+            "label": "v",
+            "records": 38,
+            "top1": 0.5
+          },
+          {
+            "label": "ú",
+            "records": 12,
+            "top1": 0.5
+          },
+          {
+            "label": "s",
+            "records": 37,
+            "top1": 0.5135135135135135
+          },
+          {
+            "label": "P",
+            "records": 23,
+            "top1": 0.5217391304347826
+          },
+          {
+            "label": "x",
+            "records": 23,
+            "top1": 0.5652173913043478
+          },
+          {
+            "label": "'",
+            "records": 12,
+            "top1": 0.5833333333333334
+          },
+          {
+            "label": "Ü",
+            "records": 12,
+            "top1": 0.5833333333333334
+          },
+          {
+            "label": "í",
+            "records": 12,
+            "top1": 0.5833333333333334
+          },
+          {
+            "label": "ó",
+            "records": 12,
+            "top1": 0.5833333333333334
+          },
+          {
+            "label": "u",
+            "records": 37,
+            "top1": 0.6216216216216216
+          },
+          {
+            "label": "n",
+            "records": 36,
+            "top1": 0.6388888888888888
+          },
+          {
+            "label": "W",
+            "records": 23,
+            "top1": 0.6521739130434783
+          }
+        ],
+        "top1_by_training_support_band": {
+          "0.25x_to_0.5x_mean": {
+            "records": 7,
+            "labels": 1,
+            "top1": 0.2857142857142857
+          },
+          "0.5x_to_1x_mean": {
+            "records": 384,
+            "labels": 32,
+            "top1": 0.8541666666666666
+          },
+          "1x_to_2x_mean": {
+            "records": 1734,
+            "labels": 62,
+            "top1": 0.790080738177624
+          }
+        }
+      }
+    },
+    "unexpected_prediction_ids": 0
+  },
+  "character_correction": {
+    "status": "writer_disjoint_reported",
+    "mode": "leave_one_writer_out",
+    "writer_groups": 3,
+    "direct_top1_before": 0.45023696682464454,
+    "direct_top1_after": 0.6492890995260664,
+    "punctuation_top1_before": 0.0,
+    "punctuation_top1_after": 0.6875,
+    "accepted_for_research_candidate": true,
+    "decision": "retain_only_the_existing_writer_disjoint_output_row_calibration; do_not_edit_labels_or_expand_the_correction_set_from_fixed_holdout_diagnostics"
+  }
+}

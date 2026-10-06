@@ -1,0 +1,24 @@
+{
+  "schema": "aiflow-1.0e-serial-ink-teller/v1",
+  "architecture": "online_ink_to_decoder_adapter",
+  "input": {
+    "source": "ordered_raw_strokes",
+    "channels": 19,
+    "max_events": 128,
+    "rasterization": false
+  },
+  "sequence": {
+    "temporal_stride": 8,
+    "memory_tokens": 16,
+    "bridge": "128_to_768"
+  },
+  "output": {
+    "decoder": "TexTeller_decoder",
+    "format": "free_form_latex"
+  },
+  "fit_only": {
+    "raster_teacher": true,
+    "runtime_raster_encoder": false
+  },
+  "checkpoint": "serial_bridge.pt"
+}

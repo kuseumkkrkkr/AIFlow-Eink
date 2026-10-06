@@ -1,0 +1,112 @@
+{
+  "decision": {
+    "generation_execution_allowed": false,
+    "generation_source_implementation_allowed": false,
+    "product_promotion_allowed": false,
+    "static_independent_audit_required": true,
+    "training_allowed": false
+  },
+  "deterministic_toys": {
+    "calibration_empty": "calibration.specs_direct_top5",
+    "candidate_violation": "final.candidate_violations",
+    "final_empty": "final.rows_after_pair16_filter",
+    "nonmonotone_rejected": true,
+    "query_empty": "query.actions_shared_topology",
+    "success": "NONE"
+  },
+  "fixed_policy": {
+    "minimum_pair_writers": 16,
+    "new_writer_range_proposed": [
+      256,
+      319
+    ],
+    "pairs": 9867,
+    "planned_actions": 197340,
+    "r3_policy_catalog_sha256": "66390f17ca243b5f779a7065d483b955e6c5f3038e5cc8e593e3e7e559d2b360",
+    "result_specific_threshold_class_writer_tuning": false,
+    "source": "V12 R3 policy unchanged",
+    "support_required": 2
+  },
+  "gates": {
+    "first_empty_stage_deterministic": true,
+    "hwr_checkpoint_runtime_unchanged": true,
+    "optimizer_backward_training_not_performed": true,
+    "prefinal_aggregate_telemetry_required": true,
+    "r3_exact3_failure_lineage_pinned": true,
+    "r3_first_bottleneck_not_overclaimed": true,
+    "r3_policy_threshold_class_writer_rules_unchanged": true,
+    "r3_writer192_255_retry_forbidden": true,
+    "r4_raw_and_final_absent": true,
+    "r4_writer256_319_generation_not_started": true,
+    "row_level_labels_excluded": true,
+    "writers096_127_legacy_real_crohme_mathwriting_closed": true
+  },
+  "lineage": {
+    "r3_failure_audit_sha256": "793ee301ce01f1a3bb0dddfd51cb05d925b4c6e611a99bf81844c3bdc6d7a069",
+    "r3_failure_sha256": "0cfbdd85693f4984a90198ee9a9390603979fa433e8e4e2a886a79953c24368b",
+    "r3_source_sha256": "23aef377213e07bc46629546caec3bb02f2f4b0891df466968f28e5eeacc9d4f",
+    "r3_started_marker_sha256": "b964b9d224b268b6fef3eb1952ecf3da9884e4b7029025d571fd513ad897ba0f",
+    "r4_design_sha256": "99d3dfb2a996390ea24f458b6d2ff1c413314a99bbed374996d03dd73ab360ad"
+  },
+  "schema": "aiflow-v12-r4-telemetry-first-static/v1",
+  "scope": "design and aggregate telemetry schema only; no generation, physics, model forward, or training",
+  "status": "V12_R4_TELEMETRY_FIRST_STATIC_DESIGN_READY_AUDIT_REQUIRED",
+  "telemetry_contract": {
+    "calibration_auxiliary": [
+      "parent_candidate_rows",
+      "topology_rejects",
+      "invalid_tensor_rejects",
+      "direct_top5_rejects",
+      "homograph_rejects",
+      "duplicate_rejects"
+    ],
+    "calibration_survivors": [
+      "requested_specs",
+      "specs_with_parent_candidates",
+      "specs_parent_disjoint",
+      "specs_topology_valid",
+      "specs_direct_top5",
+      "specs_homograph_clear",
+      "specs_duplicate_clear",
+      "specs_support2_complete"
+    ],
+    "filename": "PRE_FINAL_STAGE_TELEMETRY.json",
+    "final_counters": [
+      "calibration_rows_entering",
+      "query_rows_entering",
+      "rows_stored_top5_exact",
+      "stored_top5_mismatch_drops",
+      "rows_after_support_filter",
+      "support_drops",
+      "rows_after_pair16_filter",
+      "pair_lt16_rows_dropped",
+      "candidate_violations"
+    ],
+    "first_empty_stage_source": "aggregate counters only",
+    "must_precede": [
+      "compound empty guard",
+      "GENERATION_FAILED.json"
+    ],
+    "publish": "exclusive temp create, flush, fsync, non-replacing atomic rename",
+    "query_auxiliary": [
+      "morph_attempts",
+      "morph_topology_drops",
+      "auxiliary_unsupported_telemetry",
+      "invalid_tensor_rejects",
+      "duplicate_rejects"
+    ],
+    "query_survivors": [
+      "planned_actions",
+      "actions_calibration_supported",
+      "actions_shared_topology",
+      "actions_truth_parent_selected",
+      "actions_relative_parent_selected",
+      "actions_with_morph_candidate",
+      "actions_direct_membership",
+      "actions_risk_exact",
+      "actions_homograph_clear",
+      "actions_accepted"
+    ],
+    "row_level_tensor_metadata_labels": false
+  }
+}

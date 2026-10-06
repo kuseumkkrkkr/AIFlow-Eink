@@ -1,0 +1,38 @@
+{
+  "schema": "aiflow-1.0e-collection-contract/v1",
+  "writer_sessions": 2,
+  "roles": {
+    "train": {"writers": 20, "formulas": 1000},
+    "development_model_and_risk": {"writers": 5, "formulas": 250},
+    "development_threshold_calibration": {"writers": 5, "formulas": 250},
+    "sealed_acceptance": {"writers": 20, "formulas": 1000}
+  },
+  "formula_mix_percent": {
+    "arithmetic": 20,
+    "letters_and_functions": 20,
+    "scripts": 20,
+    "fractions_and_roots": 20,
+    "nested_and_long": 20
+  },
+  "required_fields": [
+    "record_id", "writer_id", "session_id", "device_id", "prompt_id",
+    "strokes", "stroke_times", "symbol_ownership", "symbol_labels",
+    "structure_relations", "latex", "annotation_status", "rights_status"
+  ],
+  "priority_confusion_sets": [
+    ["=", "\\approx", "\\simeq"],
+    ["8", "\\mathscr{C}"],
+    ["0", "O", "\\mathcal{O}"],
+    ["1", "/"],
+    ["7", "\\eta"]
+  ],
+  "rules": {
+    "writer_disjoint": true,
+    "prompt_disjoint": true,
+    "device_disjoint_in_sealed_acceptance": true,
+    "independent_structure_review": true,
+    "teacher_output_is_annotation": false,
+    "commercial_rights_required": true,
+    "sealed_data_single_use_after_freeze": true
+  }
+}

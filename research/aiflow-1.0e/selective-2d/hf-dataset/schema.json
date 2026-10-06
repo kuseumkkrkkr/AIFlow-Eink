@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://huggingface.co/datasets/cwLeeDev/aiflow-math-ink-0.9-data-card/raw/main/schema.json",
+  "title": "AIFlow Public Math Ink Formula",
+  "type": "object",
+  "required": ["schema", "sample_id", "writer_id", "session_group", "quality_status", "target_cells", "canvas", "strokes"],
+  "properties": {
+    "schema": {"const": "aiflow-public-math-ink/v1"},
+    "sample_id": {"type": "string", "pattern": "^aiflow_[0-9]{4}$"},
+    "writer_id": {"type": "string", "pattern": "^writer_[0-9]{3}$"},
+    "session_group": {"type": "string", "pattern": "^session_[0-9]{3}$"},
+    "quality_status": {"enum": ["valid", "pending", "reject"]},
+    "target_cells": {"type": "array"},
+    "canvas": {"type": "object", "required": ["width", "height"]},
+    "strokes": {"type": "array", "minItems": 1}
+  }
+}

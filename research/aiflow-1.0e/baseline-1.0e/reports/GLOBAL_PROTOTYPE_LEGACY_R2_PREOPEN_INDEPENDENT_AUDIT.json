@@ -1,0 +1,65 @@
+{
+  "schema": "aiflow-global-prototype-legacy-preopen-independent-audit/v9",
+  "status": "INDEPENDENT_LEGACY_R2_PREOPEN_AUDIT_PASSED",
+  "gates": {
+    "r2_exact_two_preparation_files": true,
+    "r2_cache_marker_outputs_absent": true,
+    "receipt_status_prepared_unopened": true,
+    "receipt_boundary_closed": true,
+    "fixed_legacy_contract_exact": true,
+    "all_receipt_hashes_match_live": true,
+    "live_evaluator_equals_snapshot": true,
+    "legacy_cache_path_exact": true,
+    "upstream_independent_decisions_valid": true,
+    "prepare_returns_before_legacy_content_load": true,
+    "one_shot_exact_prefiles_and_marker_first": true,
+    "direct_top5_set_gate_used": true,
+    "split_audit_drives_formula_gate": true,
+    "cache_and_marker_hashes_bound": true,
+    "no_training_or_runtime_mutation": true,
+    "label_blind_prediction_api_exact": true,
+    "receipt_exactly_reconstructed": true,
+    "r1_invalid_prepared_preserved_unopened": true
+  },
+  "contract": {
+    "writer_ids": [
+      "writer_001",
+      "writer_002",
+      "writer_003",
+      "writer_004",
+      "writer_006",
+      "writer_007",
+      "writer_008"
+    ],
+    "counts": {
+      "raw_catalog_rows": 393,
+      "supported_rows": 392,
+      "calibration_formulae": 23,
+      "evaluation_formulae": 73,
+      "calibration_glyphs": 92,
+      "evaluation_glyphs": 300
+    },
+    "prediction_api": [
+      "embeddings",
+      "logits",
+      "prototypes",
+      "admitted",
+      "alpha"
+    ]
+  },
+  "hashes": {
+    "legacy_r2_prepare_receipt_sha256": "e25171e3f22e52e66b5e03a90d6a63d68ca1f38d613979233616435e585e9280",
+    "legacy_r2_evaluator_live_sha256": "3195b2466db06c46b3683b094f0ae09123746d1055b60709481c729484a8533d",
+    "legacy_r2_evaluator_snapshot_sha256": "3195b2466db06c46b3683b094f0ae09123746d1055b60709481c729484a8533d",
+    "reserve_decision_sha256": "0e16919c4087b64b8e39a4d26601c77d6534152c90ad20b70d754eb705cdba17",
+    "legacy_r1_invalid_prepare_receipt_sha256": "d7a0649f0c794c56ea5c41a1a2b6efdc55f4a9f0687464e81f529ad7a97fc3fe",
+    "audit_script_sha256": "aa29a246da8ac1d1bed73a6e7a93c91edbcca2e34bb7fb32acaffb81a79f23ee"
+  },
+  "decision": {
+    "legacy_r2_open_allowed": true,
+    "known_replay_open_allowed": false,
+    "fresh_acceptance_open_allowed": false,
+    "product_promotion_allowed": false
+  },
+  "boundary": "This authorizes one Legacy known-development opening only. It does not authorize fresh acceptance, known replay, or product promotion."
+}

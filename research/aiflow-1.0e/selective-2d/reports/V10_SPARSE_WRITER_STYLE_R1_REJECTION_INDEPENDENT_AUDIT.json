@@ -1,0 +1,53 @@
+{
+  "schema": "aiflow-v10-r1-rejection-independent-audit/v1",
+  "generated_at": "2026-08-22T20:23:07.110501+00:00",
+  "status": "INDEPENDENT_V10_R1_REJECTION_CONFIRMED",
+  "gates": {
+    "r1_output_exact_one_file": true,
+    "r1_rejection_hash_exact": true,
+    "r1_status_fail_closed": true,
+    "candidate_grid_exact_28": true,
+    "all_candidates_safe_identity_nonpositive": true,
+    "baseline_metrics_exact": true,
+    "check_marker_absent": true,
+    "check_gate_artifacts_absent": true,
+    "predevelopment_audit_hash_exact": true,
+    "predevelopment_audit_bound_r1_source": true,
+    "r1_source_snapshot_limit_documented": true,
+    "self_truth_candidate_set_empty": true,
+    "self_activation_mathematically_impossible": true
+  },
+  "metrics": {
+    "candidate_count": 28,
+    "baseline_top1": 0.6569141957,
+    "baseline_pseudo_exact": 0.071875,
+    "all_candidate_changed": 0,
+    "all_candidate_activation_coverage": 0.0
+  },
+  "root_cause": {
+    "r1_source_snapshot_available": false,
+    "observation": "independently measured before live source drift",
+    "self_options": 30,
+    "self_truth_candidate_options": 0,
+    "self_wrong_candidate_options": 30,
+    "episodes_with_self_truth_candidate": 0,
+    "activation_improvement_mathematically_possible": false,
+    "classification": "SELF_LOO_SUPPORT_ELIGIBILITY_BUG_NOT_MODEL_SIGNAL_FAILURE",
+    "detail": "The class has two calibration samples, but holding out the scored sample reduces the context count to one before the support>=2 gate. The true promotion candidate is therefore never emitted."
+  },
+  "hashes": {
+    "r1_rejection_sha256": "2c355a242791305b7667b5779f025c7905e784701b6062ea3eb3b16d603ae68c",
+    "r1_source_sha256": "3b248c116511305d2ad3641d02d68dddc8262249a69fd79e2cb7f5f1ed4b1bbc",
+    "predevelopment_audit_sha256": "083c8ff50be2e43660f69d79180b7ebefd55485e15d5d8a2180597d3f0a6288d",
+    "audit_script_sha256": "bd5534f01dc203b27c65c9977a80a9cd5f752d781c42028d3b83cee7e05cc31f"
+  },
+  "provenance_limit": "The immutable rejection JSON did not embed source/audit hashes. This independent audit binds it to the predevelopment receipt and the still-live exact r1 source; r2 must embed lineage in every rejection branch.",
+  "decision": {
+    "r1_reuse_allowed": false,
+    "r2_fit40_development12_bugfix_allowed": true,
+    "check12_allowed": false,
+    "new_styles_allowed": false,
+    "real_or_evaluation_corpora_allowed": false,
+    "product_promotion_allowed": false
+  }
+}

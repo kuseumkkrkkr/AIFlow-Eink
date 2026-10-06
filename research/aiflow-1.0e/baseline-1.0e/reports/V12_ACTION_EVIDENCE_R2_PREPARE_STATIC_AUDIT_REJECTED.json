@@ -1,0 +1,78 @@
+{
+  "schema": "aiflow-v12-action-evidence-r2-preparation-static-audit/v1",
+  "generated_at": "2026-08-23T03:09:24.954413+00:00",
+  "status": "INDEPENDENT_V12_ACTION_EVIDENCE_R2_PREPARE_STATIC_AUDIT_REJECTED",
+  "gates": {
+    "source_design_summary_catalog_hashes_exact": false,
+    "source_py_compile_passed": true,
+    "dry_status_and_boundary_exact": true,
+    "catalog_summary_counts_exact": true,
+    "catalog_entries_have_well_formed_unit_assignments": true,
+    "each_pair_has_twenty_planned_actions": true,
+    "each_pair_has_twenty_distinct_writers_as_designed": false,
+    "each_pair_meets_minimum_sixteen_writer_disjoint_actions": false,
+    "calibration_anchor_count_reproduces_summary": true,
+    "static_audit_binds_live_dry_summary_hash": false,
+    "static_audit_binds_live_dry_catalog_hash": false,
+    "static_audit_binds_design_hash": false,
+    "static_audit_requires_explicit_prepare_decision": false,
+    "static_audit_requires_bank_generation_remain_closed": false,
+    "source_contains_no_bank_tensor_generation_or_training_path": true,
+    "writers096_bank_path_not_referenced": true,
+    "prepared_output_absent": true,
+    "design_claims_distinct_twenty_writers": true
+  },
+  "hashes": {
+    "source": "a2129c72eef54193865842aa0d0e0bca5a08ff28c0cf3becef7aba429d4fc03e",
+    "design": "89ce54de9c7fd966023fc863612296dec39a65618a11288014507b9f811e1596",
+    "summary": "77ce07f546722ee91af14f1877d9c4dd23f7f9d8e3f1152fb13c1c26c5ce92f1",
+    "catalog": "bfb51f104327d04a3f2dae5413d12ad59f7de475a50e9201fd9fb014312b6126",
+    "audit_script": "e4d8b83fe5cb5dafc9a71ebc5f59769fc01d0a7e1ab458aa0cabf30d5177bbeb"
+  },
+  "catalog_reproduction": {
+    "entries": 68958,
+    "directed_pairs": 9867,
+    "planned_query_actions": 197340,
+    "unique_writer_count_distribution": {
+      "12": 1,
+      "13": 14,
+      "14": 81,
+      "15": 311,
+      "16": 957,
+      "17": 1768,
+      "18": 2283,
+      "19": 1706,
+      "20": 2746
+    },
+    "pairs_with_fewer_than_16_unique_writers": 407,
+    "pairs_with_fewer_than_20_unique_writers": 7121,
+    "minimum_unique_writers_per_pair": 12,
+    "worst_pair": [
+      141,
+      140
+    ],
+    "worst_pair_actions": 20,
+    "worst_pair_max_actions_per_writer": 4,
+    "writer_candidate_anchor_pairs": 20650
+  },
+  "semantic_audit_bindings": {
+    "dry_summary_sha256": false,
+    "dry_catalog_sha256": false,
+    "design_sha256": false,
+    "prepare_allowed": false,
+    "bank_generation_allowed": false
+  },
+  "diagnosis": {
+    "classification": "PAIR_LEVEL_WRITER_DISJOINT_ALLOCATION_AND_AUDIT_BINDING_BLOCKER",
+    "detail": "Writers are selected independently per pair-risk unit, so a writer can be reused across multiple strata of one directed pair. Although every pair has 20 action rows, 407 pairs have fewer than 16 distinct writers and one pair has only 12. The prepare audit validator also does not bind the dry summary, dry catalog, design, or explicit prepare/bank decisions."
+  },
+  "decision": {
+    "prepare_allowed": false,
+    "bank_generation_allowed": false,
+    "adapter_training_allowed": false,
+    "writers096_127_open_allowed": false,
+    "r2_retry_or_overwrite_allowed": false,
+    "new_r3_dry_catalog_required": true
+  },
+  "required_fix": "Choose 20 unique writers once per directed pair, distribute those writer assignments exactly once across observed strata, and hard-bind the independent audit to the design, dry summary, dry catalog, explicit prepare permission, and bank-generation denial. Preserve R2 unchanged."
+}

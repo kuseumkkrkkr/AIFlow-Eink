@@ -1,0 +1,29 @@
+{
+  "schema": "aiflow-independent-v12-r4-r2-generator-pregeneration-audit/v1",
+  "status": "INDEPENDENT_V12_R4_R2_GENERATOR_PREGENERATION_AUDIT_PASSED",
+  "scope": "generation-only source static and semantic audit; generation, postprocess, training, evaluation corpora, and product promotion not performed",
+  "generator_source_sha256": "fdd6d289fdd93809ee80b809c46603d4454a5d9162f0eb99642e856c2e51f263",
+  "r4_generator_r1_source_sha256": "9e8767be92d1713053e571657de3f774fc67e7ef680741b39e6d89276700f50d",
+  "r4_r2_static_audit_sha256": "c3329815d8e287c20b872fa58e6d392e57680e6a329f8767aabb372c6059640d",
+  "gates": {
+    "r1_generator_source_is_pinned_and_preserved": true,
+    "r3_and_r4_static_lineage_require_boolean_true_gates": true,
+    "pregeneration_audit_requires_boolean_true_gates": true,
+    "string_integer_false_null_and_empty_gate_values_are_rejected": true,
+    "strict_audit_decision_requires_generation_true_and_training_false": true,
+    "telemetry_first_contract_is_inherited_and_dry_verified": true,
+    "missing_independent_audit_exits_before_output_creation": true,
+    "r4_r2_raw_and_final_outputs_are_absent": true,
+    "no_catalog_bank_checkpoint_physics_forward_or_training_in_dry_test": true,
+    "policy_writer_range_and_candidate_contract_are_unchanged": true,
+    "writers096_127_legacy_real_crohme_mathwriting_remain_closed": true
+  },
+  "decision": {
+    "generation_allowed": true,
+    "training_allowed": false,
+    "postprocessing_allowed": false,
+    "product_promotion_allowed": false,
+    "one_shot_command_only": "python scripts/generate_action_evidence_augmentation_v12_r4_r2.py --generate --independent-audit reports/V12_ACTION_EVIDENCE_R4_R2_GENERATOR_PREGENERATION_AUDIT.json",
+    "required_after_generation": "Independent raw/full/cross-bank audit must pass before postprocess, adapter training, or any acceptance evaluation."
+  }
+}

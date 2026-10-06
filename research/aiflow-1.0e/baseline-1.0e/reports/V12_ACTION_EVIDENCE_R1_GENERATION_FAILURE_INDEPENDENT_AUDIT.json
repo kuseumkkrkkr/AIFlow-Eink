@@ -1,0 +1,59 @@
+{
+  "schema": "aiflow-v12-action-evidence-generation-failure-independent-audit/v1",
+  "status": "INDEPENDENT_V12_R1_GENERATION_FAILURE_CONFIRMED",
+  "audited_at": "2026-08-23T06:55:43.434244+00:00",
+  "classification": {
+    "topology_gate_behavior": "correct fail-closed rejection",
+    "whole_run_termination_cause": "plumbing defect: an expected per-strength topology rejection escaped the query loop",
+    "data_or_model_result_available": false,
+    "reported_process_exit_code": 1,
+    "exit_code_evidence_boundary": "execution-thread observation; no persisted process receipt in exact2 artifact"
+  },
+  "source_locations": {
+    "topology_raise_line": 180,
+    "unguarded_morph_call_line": 549,
+    "unguarded_query_builder_call_line": 639
+  },
+  "gates": {
+    "consumed_raw_artifact_exact2": true,
+    "source_snapshot_sha256_exact": true,
+    "start_marker_sha256_exact": true,
+    "generator_static_audit_binding_exact": true,
+    "retry_allowed_false": true,
+    "bank_absent": true,
+    "metadata_absent": true,
+    "generation_report_absent": true,
+    "final_output_absent": true,
+    "topology_guard_present": true,
+    "topology_rejection_is_expected_value_error": true,
+    "per_attempt_topology_rejection_not_caught": true,
+    "query_builder_exception_not_caught_by_generate": true,
+    "no_generated_rows_available_for_training_or_scoring": true
+  },
+  "artifact_sha256": {
+    "source_snapshot": "e82064485a8ed10abcbb978746319a3a7063e78477133ce75f8bb6fe9d503733",
+    "started_marker": "c414a8995c26dd3e90f800cad1fd162b0d04f41b43730cb744a403a84dd5ec8c",
+    "generator_static_audit": "ee1cf98be018b0c1355536ff053cc611248d202d0c69f4ac4653b4ef578352e0"
+  },
+  "r2_general_design_boundary": {
+    "r1_output_immutable_and_never_retried": true,
+    "new_source_and_new_output_path_required": true,
+    "catalog_writer_allocation_seed_strengths_min16_and_hwr_unchanged": true,
+    "narrow_handling": "catch only the known morph-topology ValueError per strength, count it, and continue remaining fixed strengths",
+    "broad_exception_suppression_allowed": false,
+    "all_strengths_rejected_policy": "drop that action; existing pair min16 or identity-only gate decides admission",
+    "attempt_metadata": "preserve original morph attempt index separately from actual physics batch position",
+    "failure_receipt": "after STARTED, any future exception must write immutable GENERATION_FAILED.json before re-raising",
+    "result_specific_threshold_class_or_writer_tuning_allowed": false,
+    "r2_generation_execution_allowed_before_new_static_audit": false,
+    "training_postprocess_legacy_096_real_eval_product_allowed": false
+  },
+  "decision": {
+    "r1_failure_confirmed_and_sealed": true,
+    "r1_retry_allowed": false,
+    "r2_plumbing_fix_implementation_allowed": true,
+    "r2_generation_allowed": false,
+    "adapter_training_allowed": false,
+    "product_promotion_allowed": false
+  }
+}

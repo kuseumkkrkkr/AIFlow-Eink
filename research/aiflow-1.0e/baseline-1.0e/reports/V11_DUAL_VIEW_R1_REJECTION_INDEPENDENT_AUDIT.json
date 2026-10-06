@@ -1,0 +1,117 @@
+{
+  "schema": "aiflow-v11-dual-view-r1-rejection-independent-audit/v1",
+  "generated_at": "2026-08-23T00:25:10.424388+00:00",
+  "status": "INDEPENDENT_V11_DUAL_VIEW_R1_REJECTION_AUDIT_PASSED",
+  "gates": {
+    "consumed_output_exact_three_files": true,
+    "consumed_file_hashes_exact": true,
+    "live_source_and_snapshot_exact": true,
+    "predevelopment_audit_binding_exact": true,
+    "started_boundary_exact_000_095": true,
+    "started_inventory_exact": true,
+    "rejection_status_and_fold_exact": true,
+    "threshold_grid_exact_and_all_ineligible": true,
+    "all_threshold_results_exact_identity": true,
+    "overall_metrics_exact": true,
+    "development12_writer_partition_exact": true,
+    "per_writer_support_deficiency_row_totals_exact": true,
+    "every_reported_subgroup_is_identity": true,
+    "candidate_and_activation_contract_preserved": true,
+    "identity_nonregression_and_positive_failure_exact": true,
+    "zero_action_wilson_semantics_reproduced": true,
+    "no_frozen_candidate_or_success_artifact": true,
+    "writers096_127_admission_still_closed": true,
+    "writers096_127_bank_hashes_unchanged": true,
+    "frozen_hwr_checkpoint_unchanged": true,
+    "legacy_real_product_remained_closed": true
+  },
+  "consumed_artifact": {
+    "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\dual_view_writer_adapter_v11_20260823_r1_frozen",
+    "files": {
+      "V11_DEVELOPMENT_STARTED.json": {
+        "bytes": 2368,
+        "sha256": "fb92aa439d28278908ef8ad7e6e27ad8a8194bd7a36493a269967215bdc71bdb"
+      },
+      "development_rejection.json": {
+        "bytes": 41040,
+        "sha256": "c9f2b1d007c5580b558b5f2f97426d8d3cdc890095b8bf98d08af67f96eef4a4"
+      },
+      "train_dual_view_writer_adapter_v11.source.py": {
+        "bytes": 43004,
+        "sha256": "69e39539b447b8d1ccd06dbdcf976b67b58e0cb5d2cd9500db20d257ad6a0837"
+      }
+    },
+    "status": "V11_INNER_DEVELOPMENT_FAIL_CLOSED",
+    "outer_fold_reached": 0,
+    "thresholds": [
+      0.9,
+      0.95,
+      0.98,
+      0.99
+    ],
+    "overall": {
+      "rows": 45876,
+      "baseline_top1": 0.6577295317813235,
+      "adapted_top1": 0.6577295317813235,
+      "baseline_pseudo_exact": 0.057291666666666664,
+      "adapted_pseudo_exact": 0.057291666666666664,
+      "improved": 0,
+      "regressed": 0,
+      "changed": 0,
+      "candidate_violations": 0,
+      "regression_wilson_upper": 1.0,
+      "activation_coverage": 0.0
+    },
+    "development12_writers": [
+      10,
+      23,
+      12,
+      22,
+      43,
+      11,
+      77,
+      18,
+      70,
+      88,
+      94,
+      4
+    ]
+  },
+  "cause_boundary": {
+    "confirmed": [
+      "all four thresholds produced exact baseline identity",
+      "no query prediction changed and no candidate violation occurred",
+      "no episode activated",
+      "positive improvement was absent",
+      "safe=false also reflects the intentional Wilson upper bound of 1.0 for zero actions"
+    ],
+    "not_identifiable_from_consumed_receipt": [
+      "how many raw dual-view options existed",
+      "how many options exceeded each model threshold",
+      "how many candidate self gates failed Wilson or formula checks",
+      "whether option generation, probability, candidate admission, or episode admission was the first dominant bottleneck"
+    ],
+    "classification": "ACTIVATION_COLLAPSE_CAUSE_STAGE_UNRESOLVED"
+  },
+  "decision": {
+    "rejection_valid": true,
+    "artifact_consumed": true,
+    "same_output_retry_allowed": false,
+    "result_conditioned_threshold_retuning_allowed": false,
+    "writers096_127_open_allowed": false,
+    "legacy_open_allowed": false,
+    "hwr_training_or_checkpoint_change_allowed": false,
+    "real_corpus_open_allowed": false,
+    "product_promotion_allowed": false,
+    "new_development_source_allowed_after_static_audit": true
+  },
+  "next_development_boundary": "A new source/output may use writers000..095 only, but must add immutable stage telemetry before changing behavior: raw option counts, model-threshold counts, candidate self-gate counts, and episode activation counts by writer and support. The per-episode Wilson rule is mathematically unable to authorize zero-regression action with fewer than 16 changed calibration points at the 0.20 upper-bound threshold; cross-writer OOF action-risk evidence should be separated from sparse per-episode identity fallback.",
+  "hashes": {
+    "rejection": "c9f2b1d007c5580b558b5f2f97426d8d3cdc890095b8bf98d08af67f96eef4a4",
+    "source_snapshot": "69e39539b447b8d1ccd06dbdcf976b67b58e0cb5d2cd9500db20d257ad6a0837",
+    "started": "fb92aa439d28278908ef8ad7e6e27ad8a8194bd7a36493a269967215bdc71bdb",
+    "static_audit": "cf30a993b73041233e00c5c2a29cec5979b98729ff34b5d21015a5d1f36e8365",
+    "admission": "d655be9fad848667fde3a6483bd7c6a5597c1e60c5ceeb7883947f7990738ca2",
+    "audit_script": "54923369b7fa8255a143d0986f4fa55f097fc448d173aefc663b26bef455ecb2"
+  }
+}

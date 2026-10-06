@@ -1,0 +1,7220 @@
+{
+  "schema": "aiflow-hwr-affine-distillation-experiment/v1",
+  "status": "pass",
+  "current_checkpoint": {
+    "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-head-calibration-20260819-r1\\final_all_writers_steps250_lr1e-3\\project_symbol_head_checkpoint.pt",
+    "sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "classes": 372
+  },
+  "input_policy": {
+    "admitted_train": "HWRT curated official train split + UJI Pen v2 official writer-disjoint train split",
+    "heldout_comparison": "HWRT curated test split + UJI Pen v2 official writer-disjoint test split; scored once after training",
+    "project_owned": "excluded from this student experiment and its comparison",
+    "crohme": "zero rows; never trained or scored",
+    "input_mode": "uniform-time"
+  },
+  "source_audit": {
+    "source_split_rows": {
+      "hwrt": {
+        "test": 770,
+        "train": 165705,
+        "validation": 888
+      },
+      "uji": {
+        "test": 3861,
+        "train": 7730
+      }
+    },
+    "label_counts": {
+      "hwrt:train": {
+        "+": 65,
+        "-": 98,
+        "/": 528,
+        "0": 119,
+        "1": 102,
+        "2": 110,
+        "3": 104,
+        "4": 45,
+        "5": 63,
+        "6": 86,
+        "7": 61,
+        "8": 106,
+        "9": 74,
+        "<": 104,
+        ">": 89,
+        "A": 83,
+        "B": 52,
+        "C": 126,
+        "D": 47,
+        "E": 44,
+        "F": 47,
+        "G": 110,
+        "H": 56,
+        "I": 92,
+        "J": 97,
+        "K": 89,
+        "L": 102,
+        "M": 112,
+        "N": 98,
+        "O": 75,
+        "P": 64,
+        "Q": 60,
+        "R": 75,
+        "S": 56,
+        "T": 47,
+        "U": 52,
+        "V": 49,
+        "W": 53,
+        "X": 48,
+        "Y": 46,
+        "Z": 51,
+        "[": 913,
+        "\\#": 1064,
+        "\\$": 385,
+        "\\%": 883,
+        "\\&": 1275,
+        "\\AA": 757,
+        "\\AE": 149,
+        "\\Bowtie": 267,
+        "\\Delta": 985,
+        "\\Downarrow": 163,
+        "\\Gamma": 612,
+        "\\Im": 121,
+        "\\L": 99,
+        "\\Lambda": 431,
+        "\\Leftarrow": 136,
+        "\\Leftrightarrow": 1235,
+        "\\Longleftrightarrow": 237,
+        "\\Longrightarrow": 269,
+        "\\O": 237,
+        "\\Omega": 812,
+        "\\Phi": 597,
+        "\\Pi": 787,
+        "\\Psi": 438,
+        "\\Re": 193,
+        "\\Rightarrow": 1754,
+        "\\S": 342,
+        "\\Sigma": 1903,
+        "\\Theta": 450,
+        "\\Vdash": 134,
+        "\\Xi": 388,
+        "\\aa": 231,
+        "\\ae": 286,
+        "\\aleph": 762,
+        "\\alpha": 2569,
+        "\\amalg": 184,
+        "\\angle": 240,
+        "\\approx": 2033,
+        "\\ast": 553,
+        "\\astrosun": 297,
+        "\\asymp": 149,
+        "\\backsim": 140,
+        "\\backslash": 259,
+        "\\barwedge": 105,
+        "\\because": 215,
+        "\\beta": 1118,
+        "\\between": 94,
+        "\\blacksquare": 392,
+        "\\blacktriangleright": 60,
+        "\\bot": 732,
+        "\\bowtie": 239,
+        "\\boxdot": 118,
+        "\\boxplus": 104,
+        "\\boxtimes": 211,
+        "\\bullet": 290,
+        "\\cap": 1094,
+        "\\cdot": 180,
+        "\\celsius": 324,
+        "\\checked": 279,
+        "\\checkmark": 874,
+        "\\chi": 922,
+        "\\circ": 975,
+        "\\circlearrowleft": 166,
+        "\\circlearrowright": 138,
+        "\\circledR": 118,
+        "\\circledast": 118,
+        "\\circledcirc": 111,
+        "\\clubsuit": 272,
+        "\\cong": 1388,
+        "\\coprod": 167,
+        "\\copyright": 241,
+        "\\cup": 915,
+        "\\curvearrowright": 161,
+        "\\dag": 251,
+        "\\dashv": 211,
+        "\\ddots": 399,
+        "\\degree": 667,
+        "\\delta": 1233,
+        "\\diameter": 195,
+        "\\diamond": 250,
+        "\\diamondsuit": 111,
+        "\\div": 331,
+        "\\doteq": 179,
+        "\\dots": 136,
+        "\\dotsc": 106,
+        "\\downarrow": 203,
+        "\\ell": 901,
+        "\\emptyset": 948,
+        "\\epsilon": 533,
+        "\\equiv": 2514,
+        "\\eta": 676,
+        "\\exists": 1399,
+        "\\female": 175,
+        "\\fint": 294,
+        "\\flat": 125,
+        "\\forall": 2132,
+        "\\frown": 90,
+        "\\fullmoon": 142,
+        "\\gamma": 1123,
+        "\\geq": 858,
+        "\\geqslant": 303,
+        "\\gtrless": 96,
+        "\\gtrsim": 640,
+        "\\guillemotleft": 107,
+        "\\hbar": 516,
+        "\\heartsuit": 905,
+        "\\hookrightarrow": 667,
+        "\\iddots": 235,
+        "\\in": 2290,
+        "\\infty": 2907,
+        "\\int": 3502,
+        "\\iota": 145,
+        "\\kappa": 243,
+        "\\lambda": 981,
+        "\\langle": 761,
+        "\\lceil": 347,
+        "\\leadsto": 620,
+        "\\leftarrow": 207,
+        "\\leftmoon": 100,
+        "\\leftrightarrow": 505,
+        "\\leq": 1044,
+        "\\leqslant": 397,
+        "\\lesssim": 771,
+        "\\lfloor": 414,
+        "\\lhd": 103,
+        "\\lightning": 547,
+        "\\llbracket": 772,
+        "\\longmapsto": 180,
+        "\\longrightarrow": 241,
+        "\\lozenge": 154,
+        "\\ltimes": 220,
+        "\\male": 379,
+        "\\mapsfrom": 121,
+        "\\mapsto": 913,
+        "\\mars": 225,
+        "\\mathbb{1}": 946,
+        "\\mathbb{H}": 67,
+        "\\mathbb{N}": 46,
+        "\\mathbb{Q}": 49,
+        "\\mathbb{R}": 53,
+        "\\mathbb{Z}": 64,
+        "\\mathcal{A}": 359,
+        "\\mathcal{B}": 160,
+        "\\mathcal{C}": 184,
+        "\\mathcal{D}": 202,
+        "\\mathcal{E}": 282,
+        "\\mathcal{F}": 393,
+        "\\mathcal{G}": 114,
+        "\\mathcal{H}": 239,
+        "\\mathcal{L}": 743,
+        "\\mathcal{M}": 220,
+        "\\mathcal{N}": 326,
+        "\\mathcal{O}": 862,
+        "\\mathcal{P}": 359,
+        "\\mathcal{R}": 160,
+        "\\mathcal{S}": 182,
+        "\\mathcal{T}": 183,
+        "\\mathcal{U}": 113,
+        "\\mathcal{X}": 123,
+        "\\mathcal{Z}": 156,
+        "\\mathds{1}": 310,
+        "\\mathds{C}": 417,
+        "\\mathds{E}": 202,
+        "\\mathds{N}": 1012,
+        "\\mathds{P}": 198,
+        "\\mathds{Q}": 219,
+        "\\mathds{R}": 2377,
+        "\\mathds{Z}": 1008,
+        "\\mathfrak{A}": 154,
+        "\\mathfrak{M}": 110,
+        "\\mathfrak{S}": 221,
+        "\\mathfrak{X}": 115,
+        "\\mathscr{A}": 185,
+        "\\mathscr{C}": 219,
+        "\\mathscr{D}": 137,
+        "\\mathscr{E}": 99,
+        "\\mathscr{F}": 131,
+        "\\mathscr{H}": 209,
+        "\\mathscr{L}": 801,
+        "\\mathscr{P}": 114,
+        "\\mathscr{S}": 191,
+        "\\mathsection": 127,
+        "\\mid": 334,
+        "\\models": 469,
+        "\\mp": 115,
+        "\\mu": 1127,
+        "\\multimap": 97,
+        "\\nRightarrow": 96,
+        "\\nabla": 1206,
+        "\\nearrow": 200,
+        "\\neg": 841,
+        "\\neq": 1523,
+        "\\nexists": 311,
+        "\\ni": 483,
+        "\\nmid": 347,
+        "\\not\\equiv": 382,
+        "\\notin": 1305,
+        "\\nrightarrow": 184,
+        "\\nsubseteq": 198,
+        "\\nu": 380,
+        "\\nvDash": 143,
+        "\\o": 313,
+        "\\odot": 482,
+        "\\ohm": 326,
+        "\\oiint": 316,
+        "\\oint": 1177,
+        "\\omega": 619,
+        "\\ominus": 101,
+        "\\oplus": 1336,
+        "\\otimes": 1073,
+        "\\parallel": 354,
+        "\\parr": 94,
+        "\\partial": 2400,
+        "\\perp": 1093,
+        "\\phi": 677,
+        "\\pi": 1510,
+        "\\pitchfork": 107,
+        "\\pm": 1524,
+        "\\pounds": 145,
+        "\\prec": 520,
+        "\\preccurlyeq": 183,
+        "\\preceq": 277,
+        "\\prime": 146,
+        "\\prod": 1112,
+        "\\propto": 1361,
+        "\\psi": 552,
+        "\\rangle": 157,
+        "\\rceil": 170,
+        "\\rfloor": 142,
+        "\\rho": 685,
+        "\\rightarrow": 1063,
+        "\\rightharpoonup": 217,
+        "\\rightleftarrows": 123,
+        "\\rightleftharpoons": 209,
+        "\\rightrightarrows": 139,
+        "\\rightsquigarrow": 171,
+        "\\rrbracket": 174,
+        "\\rtimes": 267,
+        "\\searrow": 141,
+        "\\setminus": 510,
+        "\\sharp": 234,
+        "\\shortrightarrow": 273,
+        "\\sigma": 1113,
+        "\\sim": 1997,
+        "\\simeq": 879,
+        "\\sphericalangle": 102,
+        "\\sqcap": 147,
+        "\\sqcup": 263,
+        "\\sqrt{}": 975,
+        "\\sqsubseteq": 287,
+        "\\square": 2170,
+        "\\ss": 239,
+        "\\star": 260,
+        "\\subset": 762,
+        "\\subseteq": 1564,
+        "\\subsetneq": 237,
+        "\\succ": 357,
+        "\\succeq": 197,
+        "\\sum": 3384,
+        "\\sun": 163,
+        "\\supset": 402,
+        "\\supseteq": 394,
+        "\\tau": 416,
+        "\\therefore": 762,
+        "\\theta": 640,
+        "\\times": 1497,
+        "\\top": 335,
+        "\\triangle": 316,
+        "\\triangledown": 193,
+        "\\triangleleft": 131,
+        "\\trianglelefteq": 166,
+        "\\triangleq": 567,
+        "\\triangleright": 151,
+        "\\twoheadrightarrow": 415,
+        "\\uparrow": 227,
+        "\\upharpoonright": 139,
+        "\\uplus": 181,
+        "\\vDash": 453,
+        "\\varepsilon": 731,
+        "\\varkappa": 136,
+        "\\varnothing": 459,
+        "\\varoiint": 141,
+        "\\varphi": 1511,
+        "\\varpi": 146,
+        "\\varpropto": 132,
+        "\\varrho": 212,
+        "\\varsubsetneq": 98,
+        "\\vartheta": 281,
+        "\\vartriangle": 111,
+        "\\vdash": 1064,
+        "\\vdots": 404,
+        "\\vee": 858,
+        "\\venus": 123,
+        "\\wedge": 1448,
+        "\\with": 201,
+        "\\wp": 356,
+        "\\wr": 56,
+        "\\xi": 2479,
+        "\\zeta": 854,
+        "\\{": 1127,
+        "\\|": 367,
+        "\\}": 319,
+        "]": 257,
+        "a": 79,
+        "b": 51,
+        "c": 54,
+        "d": 50,
+        "e": 57,
+        "f": 50,
+        "g": 48,
+        "h": 50,
+        "i": 53,
+        "j": 46,
+        "k": 48,
+        "l": 51,
+        "m": 51,
+        "n": 52,
+        "o": 56,
+        "p": 49,
+        "q": 62,
+        "r": 56,
+        "s": 50,
+        "u": 50,
+        "v": 59,
+        "w": 49,
+        "x": 53,
+        "y": 48,
+        "z": 53,
+        "|": 508
+      },
+      "hwrt:test": {
+        "+": 9,
+        "-": 6,
+        "/": 3,
+        "0": 7,
+        "1": 6,
+        "2": 6,
+        "3": 8,
+        "4": 7,
+        "5": 8,
+        "6": 6,
+        "7": 6,
+        "8": 6,
+        "9": 6,
+        "<": 5,
+        ">": 6,
+        "A": 65,
+        "B": 6,
+        "C": 5,
+        "D": 5,
+        "E": 5,
+        "F": 4,
+        "G": 4,
+        "H": 5,
+        "I": 4,
+        "J": 4,
+        "K": 4,
+        "L": 4,
+        "M": 5,
+        "N": 4,
+        "O": 4,
+        "P": 4,
+        "Q": 4,
+        "R": 4,
+        "S": 3,
+        "T": 4,
+        "U": 4,
+        "V": 4,
+        "W": 5,
+        "X": 3,
+        "Y": 5,
+        "Z": 9,
+        "[": 1,
+        "\\$": 1,
+        "\\%": 2,
+        "\\&": 4,
+        "\\Delta": 3,
+        "\\Gamma": 3,
+        "\\Lambda": 3,
+        "\\Leftarrow": 2,
+        "\\Longleftrightarrow": 2,
+        "\\Omega": 5,
+        "\\Phi": 4,
+        "\\Pi": 4,
+        "\\Psi": 6,
+        "\\Rightarrow": 3,
+        "\\S": 1,
+        "\\Sigma": 2,
+        "\\Theta": 5,
+        "\\Xi": 6,
+        "\\alpha": 10,
+        "\\approx": 5,
+        "\\barwedge": 2,
+        "\\beta": 5,
+        "\\boxdot": 1,
+        "\\boxplus": 1,
+        "\\boxtimes": 1,
+        "\\cap": 3,
+        "\\cdot": 2,
+        "\\celsius": 3,
+        "\\chi": 3,
+        "\\circ": 2,
+        "\\circledcirc": 2,
+        "\\cong": 5,
+        "\\cup": 4,
+        "\\curvearrowright": 1,
+        "\\dashv": 1,
+        "\\degree": 1,
+        "\\delta": 5,
+        "\\div": 4,
+        "\\doteq": 1,
+        "\\dots": 2,
+        "\\dotsc": 2,
+        "\\ell": 1,
+        "\\emptyset": 1,
+        "\\epsilon": 3,
+        "\\equiv": 2,
+        "\\eta": 3,
+        "\\exists": 1,
+        "\\fint": 1,
+        "\\flat": 1,
+        "\\forall": 4,
+        "\\gamma": 5,
+        "\\geq": 4,
+        "\\hbar": 2,
+        "\\heartsuit": 2,
+        "\\iddots": 2,
+        "\\in": 1,
+        "\\infty": 2,
+        "\\int": 4,
+        "\\iota": 6,
+        "\\kappa": 3,
+        "\\lambda": 3,
+        "\\leadsto": 3,
+        "\\leftarrow": 1,
+        "\\leq": 5,
+        "\\leqslant": 1,
+        "\\lfloor": 2,
+        "\\lhd": 2,
+        "\\longmapsto": 1,
+        "\\longrightarrow": 1,
+        "\\ltimes": 1,
+        "\\male": 1,
+        "\\mapsto": 1,
+        "\\mathbb{H}": 1,
+        "\\mathbb{N}": 3,
+        "\\mathbb{Q}": 2,
+        "\\mathbb{R}": 1,
+        "\\mathbb{Z}": 2,
+        "\\mathcal{D}": 1,
+        "\\mathcal{H}": 1,
+        "\\mathcal{S}": 1,
+        "\\mathcal{U}": 1,
+        "\\mathcal{X}": 1,
+        "\\mathds{1}": 1,
+        "\\mathds{N}": 1,
+        "\\mathds{Q}": 1,
+        "\\mathscr{F}": 1,
+        "\\mathscr{S}": 2,
+        "\\mid": 1,
+        "\\models": 4,
+        "\\mu": 4,
+        "\\multimap": 2,
+        "\\nabla": 3,
+        "\\neg": 1,
+        "\\neq": 3,
+        "\\ni": 3,
+        "\\nmid": 1,
+        "\\not\\equiv": 1,
+        "\\nu": 6,
+        "\\nvDash": 1,
+        "\\odot": 1,
+        "\\ohm": 1,
+        "\\oiint": 1,
+        "\\oint": 4,
+        "\\omega": 6,
+        "\\parallel": 3,
+        "\\parr": 1,
+        "\\partial": 4,
+        "\\perp": 3,
+        "\\phi": 3,
+        "\\pi": 6,
+        "\\pitchfork": 3,
+        "\\pm": 1,
+        "\\pounds": 3,
+        "\\prec": 1,
+        "\\propto": 8,
+        "\\psi": 4,
+        "\\rceil": 3,
+        "\\rfloor": 2,
+        "\\rho": 3,
+        "\\rightarrow": 2,
+        "\\searrow": 1,
+        "\\setminus": 4,
+        "\\sharp": 1,
+        "\\sigma": 4,
+        "\\sim": 4,
+        "\\sqrt{}": 1,
+        "\\square": 2,
+        "\\subset": 4,
+        "\\subseteq": 6,
+        "\\succ": 4,
+        "\\succeq": 3,
+        "\\sum": 3,
+        "\\supset": 4,
+        "\\supseteq": 5,
+        "\\tau": 3,
+        "\\theta": 5,
+        "\\times": 5,
+        "\\triangleleft": 1,
+        "\\trianglelefteq": 1,
+        "\\triangleq": 2,
+        "\\uplus": 2,
+        "\\varepsilon": 4,
+        "\\varkappa": 3,
+        "\\varphi": 3,
+        "\\varrho": 5,
+        "\\vdash": 2,
+        "\\vdots": 1,
+        "\\vee": 2,
+        "\\wedge": 1,
+        "\\with": 1,
+        "\\xi": 3,
+        "\\zeta": 4,
+        "\\{": 2,
+        "\\|": 2,
+        "\\}": 1,
+        "]": 2,
+        "a": 3,
+        "b": 2,
+        "c": 9,
+        "d": 3,
+        "e": 2,
+        "f": 10,
+        "g": 4,
+        "h": 4,
+        "i": 2,
+        "j": 2,
+        "k": 4,
+        "l": 1,
+        "m": 1,
+        "n": 4,
+        "o": 2,
+        "p": 2,
+        "q": 3,
+        "r": 1,
+        "s": 6,
+        "u": 4,
+        "v": 1,
+        "w": 4,
+        "x": 5,
+        "y": 7,
+        "z": 3,
+        "|": 2
+      },
+      "uji:test": {
+        "(": 40,
+        ")": 40,
+        "-": 40,
+        "0": 40,
+        "1": 40,
+        "2": 40,
+        "3": 40,
+        "4": 40,
+        "5": 40,
+        "6": 40,
+        "7": 40,
+        "8": 40,
+        "9": 40,
+        "<": 40,
+        ">": 40,
+        "A": 40,
+        "B": 40,
+        "C": 40,
+        "D": 40,
+        "E": 40,
+        "F": 40,
+        "G": 40,
+        "H": 40,
+        "I": 40,
+        "J": 40,
+        "K": 40,
+        "L": 40,
+        "M": 40,
+        "N": 40,
+        "O": 40,
+        "P": 40,
+        "Q": 40,
+        "R": 40,
+        "S": 40,
+        "T": 40,
+        "U": 40,
+        "V": 40,
+        "W": 40,
+        "X": 40,
+        "Y": 40,
+        "Z": 40,
+        "a": 40,
+        "b": 40,
+        "c": 40,
+        "d": 40,
+        "e": 40,
+        "f": 40,
+        "g": 40,
+        "h": 40,
+        "i": 40,
+        "j": 40,
+        "k": 40,
+        "l": 40,
+        "m": 40,
+        "n": 40,
+        "o": 40,
+        "p": 40,
+        "q": 40,
+        "r": 40,
+        "s": 40,
+        "u": 40,
+        "v": 40,
+        "w": 40,
+        "x": 40,
+        "y": 40,
+        "z": 40
+      },
+      "uji:train": {
+        "(": 80,
+        ")": 80,
+        "-": 80,
+        "0": 80,
+        "1": 80,
+        "2": 80,
+        "3": 80,
+        "4": 80,
+        "5": 80,
+        "6": 80,
+        "7": 80,
+        "8": 80,
+        "9": 80,
+        "<": 80,
+        ">": 80,
+        "A": 80,
+        "B": 80,
+        "C": 80,
+        "D": 80,
+        "E": 80,
+        "F": 80,
+        "G": 80,
+        "H": 80,
+        "I": 80,
+        "J": 80,
+        "K": 80,
+        "L": 80,
+        "M": 80,
+        "N": 80,
+        "O": 80,
+        "P": 80,
+        "Q": 80,
+        "R": 80,
+        "S": 80,
+        "T": 80,
+        "U": 80,
+        "V": 80,
+        "W": 80,
+        "X": 80,
+        "Y": 80,
+        "Z": 80,
+        "a": 80,
+        "b": 80,
+        "c": 80,
+        "d": 80,
+        "e": 80,
+        "f": 80,
+        "g": 80,
+        "h": 80,
+        "i": 80,
+        "j": 80,
+        "k": 80,
+        "l": 80,
+        "m": 80,
+        "n": 80,
+        "o": 80,
+        "p": 80,
+        "q": 80,
+        "r": 80,
+        "s": 80,
+        "u": 80,
+        "v": 80,
+        "w": 80,
+        "x": 80,
+        "y": 80,
+        "z": 80
+      }
+    },
+    "input_files": {
+      "hwrt": {
+        "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\canonical-trainpool\\hwrt.jsonl.gz",
+        "sha256": "a35bb9c0793831b69b7710812df1112750eb0cb49f2206cdbbd55c63e1a95102"
+      },
+      "uji": {
+        "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\canonical-trainpool\\uji.jsonl.gz",
+        "sha256": "9c7038aa8c3eeb1fd3b93827354053e9d3f329f28111dfdaed22c941a238bf8b"
+      }
+    },
+    "cross_split_source_fingerprint_overlap": {}
+  },
+  "real_train_rows": 170985,
+  "synthetic_rows": {
+    "=": 512,
+    "generator": "two independently resampled HWRT train dashes, separated and lightly sloped; no CROHME or project holdout input"
+  },
+  "heldout_rows": 3410,
+  "class_rows": [
+    {
+      "label": "+",
+      "family": "operators",
+      "real_train": 65,
+      "synthetic_train": 0,
+      "test": 9
+    },
+    {
+      "label": "-",
+      "family": "operators",
+      "real_train": 178,
+      "synthetic_train": 0,
+      "test": 46
+    },
+    {
+      "label": "/",
+      "family": "operators",
+      "real_train": 528,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "0",
+      "family": "digits",
+      "real_train": 199,
+      "synthetic_train": 0,
+      "test": 47
+    },
+    {
+      "label": "1",
+      "family": "digits",
+      "real_train": 182,
+      "synthetic_train": 0,
+      "test": 46
+    },
+    {
+      "label": "2",
+      "family": "digits",
+      "real_train": 190,
+      "synthetic_train": 0,
+      "test": 46
+    },
+    {
+      "label": "3",
+      "family": "digits",
+      "real_train": 184,
+      "synthetic_train": 0,
+      "test": 48
+    },
+    {
+      "label": "4",
+      "family": "digits",
+      "real_train": 125,
+      "synthetic_train": 0,
+      "test": 47
+    },
+    {
+      "label": "5",
+      "family": "digits",
+      "real_train": 143,
+      "synthetic_train": 0,
+      "test": 48
+    },
+    {
+      "label": "6",
+      "family": "digits",
+      "real_train": 166,
+      "synthetic_train": 0,
+      "test": 46
+    },
+    {
+      "label": "7",
+      "family": "digits",
+      "real_train": 141,
+      "synthetic_train": 0,
+      "test": 46
+    },
+    {
+      "label": "8",
+      "family": "digits",
+      "real_train": 186,
+      "synthetic_train": 0,
+      "test": 46
+    },
+    {
+      "label": "9",
+      "family": "digits",
+      "real_train": 154,
+      "synthetic_train": 0,
+      "test": 46
+    },
+    {
+      "label": "<",
+      "family": "relations",
+      "real_train": 184,
+      "synthetic_train": 0,
+      "test": 45
+    },
+    {
+      "label": ">",
+      "family": "relations",
+      "real_train": 169,
+      "synthetic_train": 0,
+      "test": 46
+    },
+    {
+      "label": "A",
+      "family": "latin_upper",
+      "real_train": 163,
+      "synthetic_train": 0,
+      "test": 105
+    },
+    {
+      "label": "B",
+      "family": "latin_upper",
+      "real_train": 132,
+      "synthetic_train": 0,
+      "test": 46
+    },
+    {
+      "label": "C",
+      "family": "latin_upper",
+      "real_train": 206,
+      "synthetic_train": 0,
+      "test": 45
+    },
+    {
+      "label": "D",
+      "family": "latin_upper",
+      "real_train": 127,
+      "synthetic_train": 0,
+      "test": 45
+    },
+    {
+      "label": "E",
+      "family": "latin_upper",
+      "real_train": 124,
+      "synthetic_train": 0,
+      "test": 45
+    },
+    {
+      "label": "F",
+      "family": "latin_upper",
+      "real_train": 127,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "G",
+      "family": "latin_upper",
+      "real_train": 190,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "H",
+      "family": "latin_upper",
+      "real_train": 136,
+      "synthetic_train": 0,
+      "test": 45
+    },
+    {
+      "label": "I",
+      "family": "latin_upper",
+      "real_train": 172,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "J",
+      "family": "latin_upper",
+      "real_train": 177,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "K",
+      "family": "latin_upper",
+      "real_train": 169,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "L",
+      "family": "latin_upper",
+      "real_train": 182,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "M",
+      "family": "latin_upper",
+      "real_train": 192,
+      "synthetic_train": 0,
+      "test": 45
+    },
+    {
+      "label": "N",
+      "family": "latin_upper",
+      "real_train": 178,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "O",
+      "family": "latin_upper",
+      "real_train": 155,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "P",
+      "family": "latin_upper",
+      "real_train": 144,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "Q",
+      "family": "latin_upper",
+      "real_train": 140,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "R",
+      "family": "latin_upper",
+      "real_train": 155,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "S",
+      "family": "latin_upper",
+      "real_train": 136,
+      "synthetic_train": 0,
+      "test": 43
+    },
+    {
+      "label": "T",
+      "family": "latin_upper",
+      "real_train": 127,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "U",
+      "family": "latin_upper",
+      "real_train": 132,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "V",
+      "family": "latin_upper",
+      "real_train": 129,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "W",
+      "family": "latin_upper",
+      "real_train": 133,
+      "synthetic_train": 0,
+      "test": 45
+    },
+    {
+      "label": "X",
+      "family": "latin_upper",
+      "real_train": 128,
+      "synthetic_train": 0,
+      "test": 43
+    },
+    {
+      "label": "Y",
+      "family": "latin_upper",
+      "real_train": 126,
+      "synthetic_train": 0,
+      "test": 45
+    },
+    {
+      "label": "Z",
+      "family": "latin_upper",
+      "real_train": 131,
+      "synthetic_train": 0,
+      "test": 49
+    },
+    {
+      "label": "[",
+      "family": "fences",
+      "real_train": 913,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\#",
+      "family": "other_math",
+      "real_train": 1064,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\$",
+      "family": "other_math",
+      "real_train": 385,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\%",
+      "family": "other_math",
+      "real_train": 883,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\&",
+      "family": "other_math",
+      "real_train": 1275,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\AA",
+      "family": "other_math",
+      "real_train": 757,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\AE",
+      "family": "other_math",
+      "real_train": 149,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\Bowtie",
+      "family": "other_math",
+      "real_train": 267,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\Delta",
+      "family": "greek",
+      "real_train": 985,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\Downarrow",
+      "family": "arrows",
+      "real_train": 163,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\Gamma",
+      "family": "greek",
+      "real_train": 612,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\Im",
+      "family": "other_math",
+      "real_train": 121,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\L",
+      "family": "other_math",
+      "real_train": 99,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\Lambda",
+      "family": "greek",
+      "real_train": 431,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\Leftarrow",
+      "family": "arrows",
+      "real_train": 136,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\Leftrightarrow",
+      "family": "arrows",
+      "real_train": 1235,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\Longleftrightarrow",
+      "family": "arrows",
+      "real_train": 237,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\Longrightarrow",
+      "family": "arrows",
+      "real_train": 269,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\O",
+      "family": "other_math",
+      "real_train": 237,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\Omega",
+      "family": "greek",
+      "real_train": 812,
+      "synthetic_train": 0,
+      "test": 5
+    },
+    {
+      "label": "\\Phi",
+      "family": "greek",
+      "real_train": 597,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\Pi",
+      "family": "greek",
+      "real_train": 787,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\Psi",
+      "family": "greek",
+      "real_train": 438,
+      "synthetic_train": 0,
+      "test": 6
+    },
+    {
+      "label": "\\Re",
+      "family": "other_math",
+      "real_train": 193,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\Rightarrow",
+      "family": "arrows",
+      "real_train": 1754,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\S",
+      "family": "other_math",
+      "real_train": 342,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\Sigma",
+      "family": "greek",
+      "real_train": 1903,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\Theta",
+      "family": "greek",
+      "real_train": 450,
+      "synthetic_train": 0,
+      "test": 5
+    },
+    {
+      "label": "\\Vdash",
+      "family": "relations",
+      "real_train": 134,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\Xi",
+      "family": "greek",
+      "real_train": 388,
+      "synthetic_train": 0,
+      "test": 6
+    },
+    {
+      "label": "\\aa",
+      "family": "other_math",
+      "real_train": 231,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\ae",
+      "family": "other_math",
+      "real_train": 286,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\aleph",
+      "family": "other_math",
+      "real_train": 762,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\alpha",
+      "family": "greek",
+      "real_train": 2569,
+      "synthetic_train": 0,
+      "test": 10
+    },
+    {
+      "label": "\\amalg",
+      "family": "other_math",
+      "real_train": 184,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\angle",
+      "family": "other_math",
+      "real_train": 240,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\approx",
+      "family": "relations",
+      "real_train": 2033,
+      "synthetic_train": 0,
+      "test": 5
+    },
+    {
+      "label": "\\ast",
+      "family": "operators",
+      "real_train": 553,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\astrosun",
+      "family": "operators",
+      "real_train": 297,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\asymp",
+      "family": "operators",
+      "real_train": 149,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\backsim",
+      "family": "other_math",
+      "real_train": 140,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\backslash",
+      "family": "other_math",
+      "real_train": 259,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\barwedge",
+      "family": "operators",
+      "real_train": 105,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\because",
+      "family": "other_math",
+      "real_train": 215,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\beta",
+      "family": "greek",
+      "real_train": 1118,
+      "synthetic_train": 0,
+      "test": 5
+    },
+    {
+      "label": "\\between",
+      "family": "other_math",
+      "real_train": 94,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\blacksquare",
+      "family": "other_math",
+      "real_train": 392,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\blacktriangleright",
+      "family": "other_math",
+      "real_train": 60,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\bot",
+      "family": "other_math",
+      "real_train": 732,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\bowtie",
+      "family": "other_math",
+      "real_train": 239,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\boxdot",
+      "family": "other_math",
+      "real_train": 118,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\boxplus",
+      "family": "other_math",
+      "real_train": 104,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\boxtimes",
+      "family": "operators",
+      "real_train": 211,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\bullet",
+      "family": "other_math",
+      "real_train": 290,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\cap",
+      "family": "operators",
+      "real_train": 1094,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\cdot",
+      "family": "operators",
+      "real_train": 180,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\celsius",
+      "family": "other_math",
+      "real_train": 324,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\checked",
+      "family": "other_math",
+      "real_train": 279,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\checkmark",
+      "family": "other_math",
+      "real_train": 874,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\chi",
+      "family": "greek",
+      "real_train": 922,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\circ",
+      "family": "operators",
+      "real_train": 975,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\circlearrowleft",
+      "family": "arrows",
+      "real_train": 166,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\circlearrowright",
+      "family": "arrows",
+      "real_train": 138,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\circledR",
+      "family": "operators",
+      "real_train": 118,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\circledast",
+      "family": "operators",
+      "real_train": 118,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\circledcirc",
+      "family": "operators",
+      "real_train": 111,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\clubsuit",
+      "family": "other_math",
+      "real_train": 272,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\cong",
+      "family": "relations",
+      "real_train": 1388,
+      "synthetic_train": 0,
+      "test": 5
+    },
+    {
+      "label": "\\coprod",
+      "family": "large_ops",
+      "real_train": 167,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\copyright",
+      "family": "other_math",
+      "real_train": 241,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\cup",
+      "family": "operators",
+      "real_train": 915,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\curvearrowright",
+      "family": "arrows",
+      "real_train": 161,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\dag",
+      "family": "other_math",
+      "real_train": 251,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\dashv",
+      "family": "relations",
+      "real_train": 211,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\ddots",
+      "family": "other_math",
+      "real_train": 399,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\degree",
+      "family": "other_math",
+      "real_train": 667,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\delta",
+      "family": "greek",
+      "real_train": 1233,
+      "synthetic_train": 0,
+      "test": 5
+    },
+    {
+      "label": "\\diameter",
+      "family": "other_math",
+      "real_train": 195,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\diamond",
+      "family": "other_math",
+      "real_train": 250,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\diamondsuit",
+      "family": "other_math",
+      "real_train": 111,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\div",
+      "family": "operators",
+      "real_train": 331,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\doteq",
+      "family": "other_math",
+      "real_train": 179,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\dots",
+      "family": "other_math",
+      "real_train": 136,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\dotsc",
+      "family": "other_math",
+      "real_train": 106,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\downarrow",
+      "family": "arrows",
+      "real_train": 203,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\ell",
+      "family": "other_math",
+      "real_train": 901,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\emptyset",
+      "family": "operators",
+      "real_train": 948,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\epsilon",
+      "family": "greek",
+      "real_train": 533,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\equiv",
+      "family": "relations",
+      "real_train": 2514,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\eta",
+      "family": "greek",
+      "real_train": 676,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\exists",
+      "family": "greek",
+      "real_train": 1399,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\female",
+      "family": "other_math",
+      "real_train": 175,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\fint",
+      "family": "large_ops",
+      "real_train": 294,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\flat",
+      "family": "other_math",
+      "real_train": 125,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\forall",
+      "family": "other_math",
+      "real_train": 2132,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\frown",
+      "family": "other_math",
+      "real_train": 90,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\fullmoon",
+      "family": "other_math",
+      "real_train": 142,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\gamma",
+      "family": "greek",
+      "real_train": 1123,
+      "synthetic_train": 0,
+      "test": 5
+    },
+    {
+      "label": "\\geq",
+      "family": "relations",
+      "real_train": 858,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\geqslant",
+      "family": "relations",
+      "real_train": 303,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\gtrless",
+      "family": "other_math",
+      "real_train": 96,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\gtrsim",
+      "family": "other_math",
+      "real_train": 640,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\guillemotleft",
+      "family": "other_math",
+      "real_train": 107,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\hbar",
+      "family": "other_math",
+      "real_train": 516,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\heartsuit",
+      "family": "other_math",
+      "real_train": 905,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\hookrightarrow",
+      "family": "arrows",
+      "real_train": 667,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\iddots",
+      "family": "other_math",
+      "real_train": 235,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\in",
+      "family": "other_math",
+      "real_train": 2290,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\infty",
+      "family": "operators",
+      "real_train": 2907,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\int",
+      "family": "large_ops",
+      "real_train": 3502,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\iota",
+      "family": "greek",
+      "real_train": 145,
+      "synthetic_train": 0,
+      "test": 6
+    },
+    {
+      "label": "\\kappa",
+      "family": "greek",
+      "real_train": 243,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\lambda",
+      "family": "greek",
+      "real_train": 981,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\langle",
+      "family": "fences",
+      "real_train": 761,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\lceil",
+      "family": "fences",
+      "real_train": 347,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\leadsto",
+      "family": "arrows",
+      "real_train": 620,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\leftarrow",
+      "family": "arrows",
+      "real_train": 207,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\leftmoon",
+      "family": "other_math",
+      "real_train": 100,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\leftrightarrow",
+      "family": "arrows",
+      "real_train": 505,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\leq",
+      "family": "relations",
+      "real_train": 1044,
+      "synthetic_train": 0,
+      "test": 5
+    },
+    {
+      "label": "\\leqslant",
+      "family": "relations",
+      "real_train": 397,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\lesssim",
+      "family": "other_math",
+      "real_train": 771,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\lfloor",
+      "family": "fences",
+      "real_train": 414,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\lhd",
+      "family": "other_math",
+      "real_train": 103,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\lightning",
+      "family": "other_math",
+      "real_train": 547,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\llbracket",
+      "family": "other_math",
+      "real_train": 772,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\longmapsto",
+      "family": "arrows",
+      "real_train": 180,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\longrightarrow",
+      "family": "arrows",
+      "real_train": 241,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\lozenge",
+      "family": "other_math",
+      "real_train": 154,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\ltimes",
+      "family": "operators",
+      "real_train": 220,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\male",
+      "family": "other_math",
+      "real_train": 379,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mapsfrom",
+      "family": "other_math",
+      "real_train": 121,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mapsto",
+      "family": "arrows",
+      "real_train": 913,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mars",
+      "family": "other_math",
+      "real_train": 225,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathbb{1}",
+      "family": "other_math",
+      "real_train": 946,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathbb{H}",
+      "family": "other_math",
+      "real_train": 67,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mathbb{N}",
+      "family": "other_math",
+      "real_train": 46,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\mathbb{Q}",
+      "family": "other_math",
+      "real_train": 49,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\mathbb{R}",
+      "family": "other_math",
+      "real_train": 53,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mathbb{Z}",
+      "family": "other_math",
+      "real_train": 64,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\mathcal{A}",
+      "family": "other_math",
+      "real_train": 359,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{B}",
+      "family": "other_math",
+      "real_train": 160,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{C}",
+      "family": "other_math",
+      "real_train": 184,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{D}",
+      "family": "other_math",
+      "real_train": 202,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mathcal{E}",
+      "family": "other_math",
+      "real_train": 282,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{F}",
+      "family": "other_math",
+      "real_train": 393,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{G}",
+      "family": "other_math",
+      "real_train": 114,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{H}",
+      "family": "other_math",
+      "real_train": 239,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mathcal{L}",
+      "family": "other_math",
+      "real_train": 743,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{M}",
+      "family": "other_math",
+      "real_train": 220,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{N}",
+      "family": "other_math",
+      "real_train": 326,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{O}",
+      "family": "other_math",
+      "real_train": 862,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{P}",
+      "family": "other_math",
+      "real_train": 359,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{R}",
+      "family": "other_math",
+      "real_train": 160,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{S}",
+      "family": "other_math",
+      "real_train": 182,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mathcal{T}",
+      "family": "other_math",
+      "real_train": 183,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathcal{U}",
+      "family": "other_math",
+      "real_train": 113,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mathcal{X}",
+      "family": "other_math",
+      "real_train": 123,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mathcal{Z}",
+      "family": "other_math",
+      "real_train": 156,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathds{1}",
+      "family": "other_math",
+      "real_train": 310,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mathds{C}",
+      "family": "other_math",
+      "real_train": 417,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathds{E}",
+      "family": "other_math",
+      "real_train": 202,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathds{N}",
+      "family": "other_math",
+      "real_train": 1012,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mathds{P}",
+      "family": "other_math",
+      "real_train": 198,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathds{Q}",
+      "family": "other_math",
+      "real_train": 219,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mathds{R}",
+      "family": "other_math",
+      "real_train": 2377,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathds{Z}",
+      "family": "other_math",
+      "real_train": 1008,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathfrak{A}",
+      "family": "other_math",
+      "real_train": 154,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathfrak{M}",
+      "family": "other_math",
+      "real_train": 110,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathfrak{S}",
+      "family": "other_math",
+      "real_train": 221,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathfrak{X}",
+      "family": "other_math",
+      "real_train": 115,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathscr{A}",
+      "family": "other_math",
+      "real_train": 185,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathscr{C}",
+      "family": "other_math",
+      "real_train": 219,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathscr{D}",
+      "family": "other_math",
+      "real_train": 137,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathscr{E}",
+      "family": "other_math",
+      "real_train": 99,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathscr{F}",
+      "family": "other_math",
+      "real_train": 131,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\mathscr{H}",
+      "family": "other_math",
+      "real_train": 209,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathscr{L}",
+      "family": "other_math",
+      "real_train": 801,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathscr{P}",
+      "family": "other_math",
+      "real_train": 114,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mathscr{S}",
+      "family": "other_math",
+      "real_train": 191,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\mathsection",
+      "family": "other_math",
+      "real_train": 127,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mid",
+      "family": "other_math",
+      "real_train": 334,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\models",
+      "family": "relations",
+      "real_train": 469,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\mp",
+      "family": "operators",
+      "real_train": 115,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\mu",
+      "family": "greek",
+      "real_train": 1127,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\multimap",
+      "family": "greek",
+      "real_train": 97,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\nRightarrow",
+      "family": "arrows",
+      "real_train": 96,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\nabla",
+      "family": "other_math",
+      "real_train": 1206,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\nearrow",
+      "family": "arrows",
+      "real_train": 200,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\neg",
+      "family": "other_math",
+      "real_train": 841,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\neq",
+      "family": "relations",
+      "real_train": 1523,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\nexists",
+      "family": "greek",
+      "real_train": 311,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\ni",
+      "family": "other_math",
+      "real_train": 483,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\nmid",
+      "family": "other_math",
+      "real_train": 347,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\not\\equiv",
+      "family": "relations",
+      "real_train": 382,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\notin",
+      "family": "relations",
+      "real_train": 1305,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\nrightarrow",
+      "family": "arrows",
+      "real_train": 184,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\nsubseteq",
+      "family": "relations",
+      "real_train": 198,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\nu",
+      "family": "greek",
+      "real_train": 380,
+      "synthetic_train": 0,
+      "test": 6
+    },
+    {
+      "label": "\\nvDash",
+      "family": "relations",
+      "real_train": 143,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\o",
+      "family": "other_math",
+      "real_train": 313,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\odot",
+      "family": "other_math",
+      "real_train": 482,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\ohm",
+      "family": "other_math",
+      "real_train": 326,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\oiint",
+      "family": "large_ops",
+      "real_train": 316,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\oint",
+      "family": "large_ops",
+      "real_train": 1177,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\omega",
+      "family": "greek",
+      "real_train": 619,
+      "synthetic_train": 0,
+      "test": 6
+    },
+    {
+      "label": "\\ominus",
+      "family": "greek",
+      "real_train": 101,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\oplus",
+      "family": "operators",
+      "real_train": 1336,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\otimes",
+      "family": "operators",
+      "real_train": 1073,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\parallel",
+      "family": "relations",
+      "real_train": 354,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\parr",
+      "family": "other_math",
+      "real_train": 94,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\partial",
+      "family": "other_math",
+      "real_train": 2400,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\perp",
+      "family": "other_math",
+      "real_train": 1093,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\phi",
+      "family": "greek",
+      "real_train": 677,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\pi",
+      "family": "greek",
+      "real_train": 1510,
+      "synthetic_train": 0,
+      "test": 6
+    },
+    {
+      "label": "\\pitchfork",
+      "family": "greek",
+      "real_train": 107,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\pm",
+      "family": "operators",
+      "real_train": 1524,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\pounds",
+      "family": "other_math",
+      "real_train": 145,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\prec",
+      "family": "other_math",
+      "real_train": 520,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\preccurlyeq",
+      "family": "other_math",
+      "real_train": 183,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\preceq",
+      "family": "other_math",
+      "real_train": 277,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\prime",
+      "family": "other_math",
+      "real_train": 146,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\prod",
+      "family": "large_ops",
+      "real_train": 1112,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\propto",
+      "family": "relations",
+      "real_train": 1361,
+      "synthetic_train": 0,
+      "test": 8
+    },
+    {
+      "label": "\\psi",
+      "family": "greek",
+      "real_train": 552,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\rangle",
+      "family": "fences",
+      "real_train": 157,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\rceil",
+      "family": "fences",
+      "real_train": 170,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\rfloor",
+      "family": "fences",
+      "real_train": 142,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\rho",
+      "family": "greek",
+      "real_train": 685,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\rightarrow",
+      "family": "arrows",
+      "real_train": 1063,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\rightharpoonup",
+      "family": "greek",
+      "real_train": 217,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\rightleftarrows",
+      "family": "arrows",
+      "real_train": 123,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\rightleftharpoons",
+      "family": "other_math",
+      "real_train": 209,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\rightrightarrows",
+      "family": "arrows",
+      "real_train": 139,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\rightsquigarrow",
+      "family": "arrows",
+      "real_train": 171,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\rrbracket",
+      "family": "other_math",
+      "real_train": 174,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\rtimes",
+      "family": "operators",
+      "real_train": 267,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\searrow",
+      "family": "arrows",
+      "real_train": 141,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\setminus",
+      "family": "greek",
+      "real_train": 510,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\sharp",
+      "family": "other_math",
+      "real_train": 234,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\shortrightarrow",
+      "family": "arrows",
+      "real_train": 273,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\sigma",
+      "family": "greek",
+      "real_train": 1113,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\sim",
+      "family": "other_math",
+      "real_train": 1997,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\simeq",
+      "family": "other_math",
+      "real_train": 879,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\sphericalangle",
+      "family": "other_math",
+      "real_train": 102,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\sqcap",
+      "family": "operators",
+      "real_train": 147,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\sqcup",
+      "family": "operators",
+      "real_train": 263,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\sqrt{}",
+      "family": "large_ops",
+      "real_train": 975,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\sqsubseteq",
+      "family": "relations",
+      "real_train": 287,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\square",
+      "family": "other_math",
+      "real_train": 2170,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\ss",
+      "family": "other_math",
+      "real_train": 239,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\star",
+      "family": "operators",
+      "real_train": 260,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\subset",
+      "family": "relations",
+      "real_train": 762,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\subseteq",
+      "family": "relations",
+      "real_train": 1564,
+      "synthetic_train": 0,
+      "test": 6
+    },
+    {
+      "label": "\\subsetneq",
+      "family": "relations",
+      "real_train": 237,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\succ",
+      "family": "other_math",
+      "real_train": 357,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\succeq",
+      "family": "other_math",
+      "real_train": 197,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\sum",
+      "family": "large_ops",
+      "real_train": 3384,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\sun",
+      "family": "other_math",
+      "real_train": 163,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\supset",
+      "family": "relations",
+      "real_train": 402,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\supseteq",
+      "family": "relations",
+      "real_train": 394,
+      "synthetic_train": 0,
+      "test": 5
+    },
+    {
+      "label": "\\tau",
+      "family": "greek",
+      "real_train": 416,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\therefore",
+      "family": "other_math",
+      "real_train": 762,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\theta",
+      "family": "greek",
+      "real_train": 640,
+      "synthetic_train": 0,
+      "test": 5
+    },
+    {
+      "label": "\\times",
+      "family": "operators",
+      "real_train": 1497,
+      "synthetic_train": 0,
+      "test": 5
+    },
+    {
+      "label": "\\top",
+      "family": "arrows",
+      "real_train": 335,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\triangle",
+      "family": "other_math",
+      "real_train": 316,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\triangledown",
+      "family": "other_math",
+      "real_train": 193,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\triangleleft",
+      "family": "other_math",
+      "real_train": 131,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\trianglelefteq",
+      "family": "other_math",
+      "real_train": 166,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\triangleq",
+      "family": "relations",
+      "real_train": 567,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\triangleright",
+      "family": "other_math",
+      "real_train": 151,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\twoheadrightarrow",
+      "family": "arrows",
+      "real_train": 415,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\uparrow",
+      "family": "arrows",
+      "real_train": 227,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\upharpoonright",
+      "family": "other_math",
+      "real_train": 139,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\uplus",
+      "family": "other_math",
+      "real_train": 181,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\vDash",
+      "family": "relations",
+      "real_train": 453,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\varepsilon",
+      "family": "greek",
+      "real_train": 731,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\varkappa",
+      "family": "greek",
+      "real_train": 136,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\varnothing",
+      "family": "other_math",
+      "real_train": 459,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\varoiint",
+      "family": "large_ops",
+      "real_train": 141,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\varphi",
+      "family": "greek",
+      "real_train": 1511,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\varpi",
+      "family": "greek",
+      "real_train": 146,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\varpropto",
+      "family": "relations",
+      "real_train": 132,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\varrho",
+      "family": "greek",
+      "real_train": 212,
+      "synthetic_train": 0,
+      "test": 5
+    },
+    {
+      "label": "\\varsubsetneq",
+      "family": "relations",
+      "real_train": 98,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\vartheta",
+      "family": "greek",
+      "real_train": 281,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\vartriangle",
+      "family": "other_math",
+      "real_train": 111,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\vdash",
+      "family": "relations",
+      "real_train": 1064,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\vdots",
+      "family": "other_math",
+      "real_train": 404,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\vee",
+      "family": "operators",
+      "real_train": 858,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\venus",
+      "family": "greek",
+      "real_train": 123,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\wedge",
+      "family": "operators",
+      "real_train": 1448,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\with",
+      "family": "other_math",
+      "real_train": 201,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "\\wp",
+      "family": "other_math",
+      "real_train": 356,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\wr",
+      "family": "other_math",
+      "real_train": 56,
+      "synthetic_train": 0,
+      "test": 0
+    },
+    {
+      "label": "\\xi",
+      "family": "greek",
+      "real_train": 2479,
+      "synthetic_train": 0,
+      "test": 3
+    },
+    {
+      "label": "\\zeta",
+      "family": "greek",
+      "real_train": 854,
+      "synthetic_train": 0,
+      "test": 4
+    },
+    {
+      "label": "\\{",
+      "family": "fences",
+      "real_train": 1127,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\|",
+      "family": "fences",
+      "real_train": 367,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "\\}",
+      "family": "fences",
+      "real_train": 319,
+      "synthetic_train": 0,
+      "test": 1
+    },
+    {
+      "label": "]",
+      "family": "fences",
+      "real_train": 257,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "a",
+      "family": "latin_lower",
+      "real_train": 159,
+      "synthetic_train": 0,
+      "test": 43
+    },
+    {
+      "label": "b",
+      "family": "latin_lower",
+      "real_train": 131,
+      "synthetic_train": 0,
+      "test": 42
+    },
+    {
+      "label": "c",
+      "family": "latin_lower",
+      "real_train": 134,
+      "synthetic_train": 0,
+      "test": 49
+    },
+    {
+      "label": "d",
+      "family": "latin_lower",
+      "real_train": 130,
+      "synthetic_train": 0,
+      "test": 43
+    },
+    {
+      "label": "e",
+      "family": "latin_lower",
+      "real_train": 137,
+      "synthetic_train": 0,
+      "test": 42
+    },
+    {
+      "label": "f",
+      "family": "latin_lower",
+      "real_train": 130,
+      "synthetic_train": 0,
+      "test": 50
+    },
+    {
+      "label": "g",
+      "family": "latin_lower",
+      "real_train": 128,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "h",
+      "family": "latin_lower",
+      "real_train": 130,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "i",
+      "family": "latin_lower",
+      "real_train": 133,
+      "synthetic_train": 0,
+      "test": 42
+    },
+    {
+      "label": "j",
+      "family": "latin_lower",
+      "real_train": 126,
+      "synthetic_train": 0,
+      "test": 42
+    },
+    {
+      "label": "k",
+      "family": "latin_lower",
+      "real_train": 128,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "l",
+      "family": "latin_lower",
+      "real_train": 131,
+      "synthetic_train": 0,
+      "test": 41
+    },
+    {
+      "label": "m",
+      "family": "latin_lower",
+      "real_train": 131,
+      "synthetic_train": 0,
+      "test": 41
+    },
+    {
+      "label": "n",
+      "family": "latin_lower",
+      "real_train": 132,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "o",
+      "family": "latin_lower",
+      "real_train": 136,
+      "synthetic_train": 0,
+      "test": 42
+    },
+    {
+      "label": "p",
+      "family": "latin_lower",
+      "real_train": 129,
+      "synthetic_train": 0,
+      "test": 42
+    },
+    {
+      "label": "q",
+      "family": "latin_lower",
+      "real_train": 142,
+      "synthetic_train": 0,
+      "test": 43
+    },
+    {
+      "label": "r",
+      "family": "latin_lower",
+      "real_train": 136,
+      "synthetic_train": 0,
+      "test": 41
+    },
+    {
+      "label": "s",
+      "family": "latin_lower",
+      "real_train": 130,
+      "synthetic_train": 0,
+      "test": 46
+    },
+    {
+      "label": "u",
+      "family": "latin_lower",
+      "real_train": 130,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "v",
+      "family": "latin_lower",
+      "real_train": 139,
+      "synthetic_train": 0,
+      "test": 41
+    },
+    {
+      "label": "w",
+      "family": "latin_lower",
+      "real_train": 129,
+      "synthetic_train": 0,
+      "test": 44
+    },
+    {
+      "label": "x",
+      "family": "latin_lower",
+      "real_train": 133,
+      "synthetic_train": 0,
+      "test": 45
+    },
+    {
+      "label": "y",
+      "family": "latin_lower",
+      "real_train": 128,
+      "synthetic_train": 0,
+      "test": 47
+    },
+    {
+      "label": "z",
+      "family": "latin_lower",
+      "real_train": 133,
+      "synthetic_train": 0,
+      "test": 43
+    },
+    {
+      "label": "|",
+      "family": "fences",
+      "real_train": 508,
+      "synthetic_train": 0,
+      "test": 2
+    },
+    {
+      "label": "(",
+      "family": "fences",
+      "real_train": 80,
+      "synthetic_train": 0,
+      "test": 40
+    },
+    {
+      "label": ")",
+      "family": "fences",
+      "real_train": 80,
+      "synthetic_train": 0,
+      "test": 40
+    },
+    {
+      "label": "=",
+      "family": "relations",
+      "real_train": 0,
+      "synthetic_train": 512,
+      "test": 0
+    }
+  ],
+  "class_coverage": {
+    "total_model_classes": 372,
+    "real_training_classes": 371,
+    "synthetic_only_classes": [
+      "="
+    ],
+    "external_test_classes": 225,
+    "classes_without_train_support": []
+  },
+  "cache": {
+    "train": {
+      "features": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v1\\train_features.npy",
+      "labels": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v1\\train_labels.npy",
+      "sources": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v1\\train_sources.npy",
+      "rows": 171497
+    },
+    "test": {
+      "features": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v1\\test_features.npy",
+      "labels": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v1\\test_labels.npy",
+      "sources": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-augmentation-20261001\\affine-distill-v1\\test_sources.npy",
+      "rows": 3410
+    }
+  },
+  "counts_by_split_source": {
+    "test:hwrt": {
+      "+": 9,
+      "-": 6,
+      "/": 3,
+      "0": 7,
+      "1": 6,
+      "2": 6,
+      "3": 8,
+      "4": 7,
+      "5": 8,
+      "6": 6,
+      "7": 6,
+      "8": 6,
+      "9": 6,
+      "<": 5,
+      ">": 6,
+      "A": 65,
+      "B": 6,
+      "C": 5,
+      "D": 5,
+      "E": 5,
+      "F": 4,
+      "G": 4,
+      "H": 5,
+      "I": 4,
+      "J": 4,
+      "K": 4,
+      "L": 4,
+      "M": 5,
+      "N": 4,
+      "O": 4,
+      "P": 4,
+      "Q": 4,
+      "R": 4,
+      "S": 3,
+      "T": 4,
+      "U": 4,
+      "V": 4,
+      "W": 5,
+      "X": 3,
+      "Y": 5,
+      "Z": 9,
+      "[": 1,
+      "\\$": 1,
+      "\\%": 2,
+      "\\&": 4,
+      "\\Delta": 3,
+      "\\Gamma": 3,
+      "\\Lambda": 3,
+      "\\Leftarrow": 2,
+      "\\Longleftrightarrow": 2,
+      "\\Omega": 5,
+      "\\Phi": 4,
+      "\\Pi": 4,
+      "\\Psi": 6,
+      "\\Rightarrow": 3,
+      "\\S": 1,
+      "\\Sigma": 2,
+      "\\Theta": 5,
+      "\\Xi": 6,
+      "\\alpha": 10,
+      "\\approx": 5,
+      "\\barwedge": 2,
+      "\\beta": 5,
+      "\\boxdot": 1,
+      "\\boxplus": 1,
+      "\\boxtimes": 1,
+      "\\cap": 3,
+      "\\cdot": 2,
+      "\\celsius": 3,
+      "\\chi": 3,
+      "\\circ": 2,
+      "\\circledcirc": 2,
+      "\\cong": 5,
+      "\\cup": 4,
+      "\\curvearrowright": 1,
+      "\\dashv": 1,
+      "\\degree": 1,
+      "\\delta": 5,
+      "\\div": 4,
+      "\\doteq": 1,
+      "\\dots": 2,
+      "\\dotsc": 2,
+      "\\ell": 1,
+      "\\emptyset": 1,
+      "\\epsilon": 3,
+      "\\equiv": 2,
+      "\\eta": 3,
+      "\\exists": 1,
+      "\\fint": 1,
+      "\\flat": 1,
+      "\\forall": 4,
+      "\\gamma": 5,
+      "\\geq": 4,
+      "\\hbar": 2,
+      "\\heartsuit": 2,
+      "\\iddots": 2,
+      "\\in": 1,
+      "\\infty": 2,
+      "\\int": 4,
+      "\\iota": 6,
+      "\\kappa": 3,
+      "\\lambda": 3,
+      "\\leadsto": 3,
+      "\\leftarrow": 1,
+      "\\leq": 5,
+      "\\leqslant": 1,
+      "\\lfloor": 2,
+      "\\lhd": 2,
+      "\\longmapsto": 1,
+      "\\longrightarrow": 1,
+      "\\ltimes": 1,
+      "\\male": 1,
+      "\\mapsto": 1,
+      "\\mathbb{H}": 1,
+      "\\mathbb{N}": 3,
+      "\\mathbb{Q}": 2,
+      "\\mathbb{R}": 1,
+      "\\mathbb{Z}": 2,
+      "\\mathcal{D}": 1,
+      "\\mathcal{H}": 1,
+      "\\mathcal{S}": 1,
+      "\\mathcal{U}": 1,
+      "\\mathcal{X}": 1,
+      "\\mathds{1}": 1,
+      "\\mathds{N}": 1,
+      "\\mathds{Q}": 1,
+      "\\mathscr{F}": 1,
+      "\\mathscr{S}": 2,
+      "\\mid": 1,
+      "\\models": 4,
+      "\\mu": 4,
+      "\\multimap": 2,
+      "\\nabla": 3,
+      "\\neg": 1,
+      "\\neq": 3,
+      "\\ni": 3,
+      "\\nmid": 1,
+      "\\not\\equiv": 1,
+      "\\nu": 6,
+      "\\nvDash": 1,
+      "\\odot": 1,
+      "\\ohm": 1,
+      "\\oiint": 1,
+      "\\oint": 4,
+      "\\omega": 6,
+      "\\parallel": 3,
+      "\\parr": 1,
+      "\\partial": 4,
+      "\\perp": 3,
+      "\\phi": 3,
+      "\\pi": 6,
+      "\\pitchfork": 3,
+      "\\pm": 1,
+      "\\pounds": 3,
+      "\\prec": 1,
+      "\\propto": 8,
+      "\\psi": 4,
+      "\\rceil": 3,
+      "\\rfloor": 2,
+      "\\rho": 3,
+      "\\rightarrow": 2,
+      "\\searrow": 1,
+      "\\setminus": 4,
+      "\\sharp": 1,
+      "\\sigma": 4,
+      "\\sim": 4,
+      "\\sqrt{}": 1,
+      "\\square": 2,
+      "\\subset": 4,
+      "\\subseteq": 6,
+      "\\succ": 4,
+      "\\succeq": 3,
+      "\\sum": 3,
+      "\\supset": 4,
+      "\\supseteq": 5,
+      "\\tau": 3,
+      "\\theta": 5,
+      "\\times": 5,
+      "\\triangleleft": 1,
+      "\\trianglelefteq": 1,
+      "\\triangleq": 2,
+      "\\uplus": 2,
+      "\\varepsilon": 4,
+      "\\varkappa": 3,
+      "\\varphi": 3,
+      "\\varrho": 5,
+      "\\vdash": 2,
+      "\\vdots": 1,
+      "\\vee": 2,
+      "\\wedge": 1,
+      "\\with": 1,
+      "\\xi": 3,
+      "\\zeta": 4,
+      "\\{": 2,
+      "\\|": 2,
+      "\\}": 1,
+      "]": 2,
+      "a": 3,
+      "b": 2,
+      "c": 9,
+      "d": 3,
+      "e": 2,
+      "f": 10,
+      "g": 4,
+      "h": 4,
+      "i": 2,
+      "j": 2,
+      "k": 4,
+      "l": 1,
+      "m": 1,
+      "n": 4,
+      "o": 2,
+      "p": 2,
+      "q": 3,
+      "r": 1,
+      "s": 6,
+      "u": 4,
+      "v": 1,
+      "w": 4,
+      "x": 5,
+      "y": 7,
+      "z": 3,
+      "|": 2
+    },
+    "test:uji": {
+      "(": 40,
+      ")": 40,
+      "-": 40,
+      "0": 40,
+      "1": 40,
+      "2": 40,
+      "3": 40,
+      "4": 40,
+      "5": 40,
+      "6": 40,
+      "7": 40,
+      "8": 40,
+      "9": 40,
+      "<": 40,
+      ">": 40,
+      "A": 40,
+      "B": 40,
+      "C": 40,
+      "D": 40,
+      "E": 40,
+      "F": 40,
+      "G": 40,
+      "H": 40,
+      "I": 40,
+      "J": 40,
+      "K": 40,
+      "L": 40,
+      "M": 40,
+      "N": 40,
+      "O": 40,
+      "P": 40,
+      "Q": 40,
+      "R": 40,
+      "S": 40,
+      "T": 40,
+      "U": 40,
+      "V": 40,
+      "W": 40,
+      "X": 40,
+      "Y": 40,
+      "Z": 40,
+      "a": 40,
+      "b": 40,
+      "c": 40,
+      "d": 40,
+      "e": 40,
+      "f": 40,
+      "g": 40,
+      "h": 40,
+      "i": 40,
+      "j": 40,
+      "k": 40,
+      "l": 40,
+      "m": 40,
+      "n": 40,
+      "o": 40,
+      "p": 40,
+      "q": 40,
+      "r": 40,
+      "s": 40,
+      "u": 40,
+      "v": 40,
+      "w": 40,
+      "x": 40,
+      "y": 40,
+      "z": 40
+    },
+    "train:hwrt": {
+      "+": 65,
+      "-": 98,
+      "/": 528,
+      "0": 119,
+      "1": 102,
+      "2": 110,
+      "3": 104,
+      "4": 45,
+      "5": 63,
+      "6": 86,
+      "7": 61,
+      "8": 106,
+      "9": 74,
+      "<": 104,
+      ">": 89,
+      "A": 83,
+      "B": 52,
+      "C": 126,
+      "D": 47,
+      "E": 44,
+      "F": 47,
+      "G": 110,
+      "H": 56,
+      "I": 92,
+      "J": 97,
+      "K": 89,
+      "L": 102,
+      "M": 112,
+      "N": 98,
+      "O": 75,
+      "P": 64,
+      "Q": 60,
+      "R": 75,
+      "S": 56,
+      "T": 47,
+      "U": 52,
+      "V": 49,
+      "W": 53,
+      "X": 48,
+      "Y": 46,
+      "Z": 51,
+      "[": 913,
+      "\\#": 1064,
+      "\\$": 385,
+      "\\%": 883,
+      "\\&": 1275,
+      "\\AA": 757,
+      "\\AE": 149,
+      "\\Bowtie": 267,
+      "\\Delta": 985,
+      "\\Downarrow": 163,
+      "\\Gamma": 612,
+      "\\Im": 121,
+      "\\L": 99,
+      "\\Lambda": 431,
+      "\\Leftarrow": 136,
+      "\\Leftrightarrow": 1235,
+      "\\Longleftrightarrow": 237,
+      "\\Longrightarrow": 269,
+      "\\O": 237,
+      "\\Omega": 812,
+      "\\Phi": 597,
+      "\\Pi": 787,
+      "\\Psi": 438,
+      "\\Re": 193,
+      "\\Rightarrow": 1754,
+      "\\S": 342,
+      "\\Sigma": 1903,
+      "\\Theta": 450,
+      "\\Vdash": 134,
+      "\\Xi": 388,
+      "\\aa": 231,
+      "\\ae": 286,
+      "\\aleph": 762,
+      "\\alpha": 2569,
+      "\\amalg": 184,
+      "\\angle": 240,
+      "\\approx": 2033,
+      "\\ast": 553,
+      "\\astrosun": 297,
+      "\\asymp": 149,
+      "\\backsim": 140,
+      "\\backslash": 259,
+      "\\barwedge": 105,
+      "\\because": 215,
+      "\\beta": 1118,
+      "\\between": 94,
+      "\\blacksquare": 392,
+      "\\blacktriangleright": 60,
+      "\\bot": 732,
+      "\\bowtie": 239,
+      "\\boxdot": 118,
+      "\\boxplus": 104,
+      "\\boxtimes": 211,
+      "\\bullet": 290,
+      "\\cap": 1094,
+      "\\cdot": 180,
+      "\\celsius": 324,
+      "\\checked": 279,
+      "\\checkmark": 874,
+      "\\chi": 922,
+      "\\circ": 975,
+      "\\circlearrowleft": 166,
+      "\\circlearrowright": 138,
+      "\\circledR": 118,
+      "\\circledast": 118,
+      "\\circledcirc": 111,
+      "\\clubsuit": 272,
+      "\\cong": 1388,
+      "\\coprod": 167,
+      "\\copyright": 241,
+      "\\cup": 915,
+      "\\curvearrowright": 161,
+      "\\dag": 251,
+      "\\dashv": 211,
+      "\\ddots": 399,
+      "\\degree": 667,
+      "\\delta": 1233,
+      "\\diameter": 195,
+      "\\diamond": 250,
+      "\\diamondsuit": 111,
+      "\\div": 331,
+      "\\doteq": 179,
+      "\\dots": 136,
+      "\\dotsc": 106,
+      "\\downarrow": 203,
+      "\\ell": 901,
+      "\\emptyset": 948,
+      "\\epsilon": 533,
+      "\\equiv": 2514,
+      "\\eta": 676,
+      "\\exists": 1399,
+      "\\female": 175,
+      "\\fint": 294,
+      "\\flat": 125,
+      "\\forall": 2132,
+      "\\frown": 90,
+      "\\fullmoon": 142,
+      "\\gamma": 1123,
+      "\\geq": 858,
+      "\\geqslant": 303,
+      "\\gtrless": 96,
+      "\\gtrsim": 640,
+      "\\guillemotleft": 107,
+      "\\hbar": 516,
+      "\\heartsuit": 905,
+      "\\hookrightarrow": 667,
+      "\\iddots": 235,
+      "\\in": 2290,
+      "\\infty": 2907,
+      "\\int": 3502,
+      "\\iota": 145,
+      "\\kappa": 243,
+      "\\lambda": 981,
+      "\\langle": 761,
+      "\\lceil": 347,
+      "\\leadsto": 620,
+      "\\leftarrow": 207,
+      "\\leftmoon": 100,
+      "\\leftrightarrow": 505,
+      "\\leq": 1044,
+      "\\leqslant": 397,
+      "\\lesssim": 771,
+      "\\lfloor": 414,
+      "\\lhd": 103,
+      "\\lightning": 547,
+      "\\llbracket": 772,
+      "\\longmapsto": 180,
+      "\\longrightarrow": 241,
+      "\\lozenge": 154,
+      "\\ltimes": 220,
+      "\\male": 379,
+      "\\mapsfrom": 121,
+      "\\mapsto": 913,
+      "\\mars": 225,
+      "\\mathbb{1}": 946,
+      "\\mathbb{H}": 67,
+      "\\mathbb{N}": 46,
+      "\\mathbb{Q}": 49,
+      "\\mathbb{R}": 53,
+      "\\mathbb{Z}": 64,
+      "\\mathcal{A}": 359,
+      "\\mathcal{B}": 160,
+      "\\mathcal{C}": 184,
+      "\\mathcal{D}": 202,
+      "\\mathcal{E}": 282,
+      "\\mathcal{F}": 393,
+      "\\mathcal{G}": 114,
+      "\\mathcal{H}": 239,
+      "\\mathcal{L}": 743,
+      "\\mathcal{M}": 220,
+      "\\mathcal{N}": 326,
+      "\\mathcal{O}": 862,
+      "\\mathcal{P}": 359,
+      "\\mathcal{R}": 160,
+      "\\mathcal{S}": 182,
+      "\\mathcal{T}": 183,
+      "\\mathcal{U}": 113,
+      "\\mathcal{X}": 123,
+      "\\mathcal{Z}": 156,
+      "\\mathds{1}": 310,
+      "\\mathds{C}": 417,
+      "\\mathds{E}": 202,
+      "\\mathds{N}": 1012,
+      "\\mathds{P}": 198,
+      "\\mathds{Q}": 219,
+      "\\mathds{R}": 2377,
+      "\\mathds{Z}": 1008,
+      "\\mathfrak{A}": 154,
+      "\\mathfrak{M}": 110,
+      "\\mathfrak{S}": 221,
+      "\\mathfrak{X}": 115,
+      "\\mathscr{A}": 185,
+      "\\mathscr{C}": 219,
+      "\\mathscr{D}": 137,
+      "\\mathscr{E}": 99,
+      "\\mathscr{F}": 131,
+      "\\mathscr{H}": 209,
+      "\\mathscr{L}": 801,
+      "\\mathscr{P}": 114,
+      "\\mathscr{S}": 191,
+      "\\mathsection": 127,
+      "\\mid": 334,
+      "\\models": 469,
+      "\\mp": 115,
+      "\\mu": 1127,
+      "\\multimap": 97,
+      "\\nRightarrow": 96,
+      "\\nabla": 1206,
+      "\\nearrow": 200,
+      "\\neg": 841,
+      "\\neq": 1523,
+      "\\nexists": 311,
+      "\\ni": 483,
+      "\\nmid": 347,
+      "\\not\\equiv": 382,
+      "\\notin": 1305,
+      "\\nrightarrow": 184,
+      "\\nsubseteq": 198,
+      "\\nu": 380,
+      "\\nvDash": 143,
+      "\\o": 313,
+      "\\odot": 482,
+      "\\ohm": 326,
+      "\\oiint": 316,
+      "\\oint": 1177,
+      "\\omega": 619,
+      "\\ominus": 101,
+      "\\oplus": 1336,
+      "\\otimes": 1073,
+      "\\parallel": 354,
+      "\\parr": 94,
+      "\\partial": 2400,
+      "\\perp": 1093,
+      "\\phi": 677,
+      "\\pi": 1510,
+      "\\pitchfork": 107,
+      "\\pm": 1524,
+      "\\pounds": 145,
+      "\\prec": 520,
+      "\\preccurlyeq": 183,
+      "\\preceq": 277,
+      "\\prime": 146,
+      "\\prod": 1112,
+      "\\propto": 1361,
+      "\\psi": 552,
+      "\\rangle": 157,
+      "\\rceil": 170,
+      "\\rfloor": 142,
+      "\\rho": 685,
+      "\\rightarrow": 1063,
+      "\\rightharpoonup": 217,
+      "\\rightleftarrows": 123,
+      "\\rightleftharpoons": 209,
+      "\\rightrightarrows": 139,
+      "\\rightsquigarrow": 171,
+      "\\rrbracket": 174,
+      "\\rtimes": 267,
+      "\\searrow": 141,
+      "\\setminus": 510,
+      "\\sharp": 234,
+      "\\shortrightarrow": 273,
+      "\\sigma": 1113,
+      "\\sim": 1997,
+      "\\simeq": 879,
+      "\\sphericalangle": 102,
+      "\\sqcap": 147,
+      "\\sqcup": 263,
+      "\\sqrt{}": 975,
+      "\\sqsubseteq": 287,
+      "\\square": 2170,
+      "\\ss": 239,
+      "\\star": 260,
+      "\\subset": 762,
+      "\\subseteq": 1564,
+      "\\subsetneq": 237,
+      "\\succ": 357,
+      "\\succeq": 197,
+      "\\sum": 3384,
+      "\\sun": 163,
+      "\\supset": 402,
+      "\\supseteq": 394,
+      "\\tau": 416,
+      "\\therefore": 762,
+      "\\theta": 640,
+      "\\times": 1497,
+      "\\top": 335,
+      "\\triangle": 316,
+      "\\triangledown": 193,
+      "\\triangleleft": 131,
+      "\\trianglelefteq": 166,
+      "\\triangleq": 567,
+      "\\triangleright": 151,
+      "\\twoheadrightarrow": 415,
+      "\\uparrow": 227,
+      "\\upharpoonright": 139,
+      "\\uplus": 181,
+      "\\vDash": 453,
+      "\\varepsilon": 731,
+      "\\varkappa": 136,
+      "\\varnothing": 459,
+      "\\varoiint": 141,
+      "\\varphi": 1511,
+      "\\varpi": 146,
+      "\\varpropto": 132,
+      "\\varrho": 212,
+      "\\varsubsetneq": 98,
+      "\\vartheta": 281,
+      "\\vartriangle": 111,
+      "\\vdash": 1064,
+      "\\vdots": 404,
+      "\\vee": 858,
+      "\\venus": 123,
+      "\\wedge": 1448,
+      "\\with": 201,
+      "\\wp": 356,
+      "\\wr": 56,
+      "\\xi": 2479,
+      "\\zeta": 854,
+      "\\{": 1127,
+      "\\|": 367,
+      "\\}": 319,
+      "]": 257,
+      "a": 79,
+      "b": 51,
+      "c": 54,
+      "d": 50,
+      "e": 57,
+      "f": 50,
+      "g": 48,
+      "h": 50,
+      "i": 53,
+      "j": 46,
+      "k": 48,
+      "l": 51,
+      "m": 51,
+      "n": 52,
+      "o": 56,
+      "p": 49,
+      "q": 62,
+      "r": 56,
+      "s": 50,
+      "u": 50,
+      "v": 59,
+      "w": 49,
+      "x": 53,
+      "y": 48,
+      "z": 53,
+      "|": 508
+    },
+    "train:synthetic_equal": {
+      "=": 512
+    },
+    "train:uji": {
+      "(": 80,
+      ")": 80,
+      "-": 80,
+      "0": 80,
+      "1": 80,
+      "2": 80,
+      "3": 80,
+      "4": 80,
+      "5": 80,
+      "6": 80,
+      "7": 80,
+      "8": 80,
+      "9": 80,
+      "<": 80,
+      ">": 80,
+      "A": 80,
+      "B": 80,
+      "C": 80,
+      "D": 80,
+      "E": 80,
+      "F": 80,
+      "G": 80,
+      "H": 80,
+      "I": 80,
+      "J": 80,
+      "K": 80,
+      "L": 80,
+      "M": 80,
+      "N": 80,
+      "O": 80,
+      "P": 80,
+      "Q": 80,
+      "R": 80,
+      "S": 80,
+      "T": 80,
+      "U": 80,
+      "V": 80,
+      "W": 80,
+      "X": 80,
+      "Y": 80,
+      "Z": 80,
+      "a": 80,
+      "b": 80,
+      "c": 80,
+      "d": 80,
+      "e": 80,
+      "f": 80,
+      "g": 80,
+      "h": 80,
+      "i": 80,
+      "j": 80,
+      "k": 80,
+      "l": 80,
+      "m": 80,
+      "n": 80,
+      "o": 80,
+      "p": 80,
+      "q": 80,
+      "r": 80,
+      "s": 80,
+      "u": 80,
+      "v": 80,
+      "w": 80,
+      "x": 80,
+      "y": 80,
+      "z": 80
+    }
+  },
+  "product_adopted": false,
+  "data_unit_validation": {
+    "rows_tensorized_and_checked": 174395,
+    "real_training_rows": 170985,
+    "synthetic_rows_checked": 512,
+    "bad_rows": 0,
+    "all_labels_in_frozen_vocabulary": true,
+    "all_xy_finite_and_bounded": true,
+    "uniform_time_contract": true,
+    "stroke_start_channel_preserved": true
+  },
+  "augmentation_audit": {
+    "algorithm": "orientation-preserving global affine jitter; no flips, stroke reorder, point deletion, or topology synthesis",
+    "parameters": {
+      "rotation_degrees": [
+        -2.5,
+        2.5
+      ],
+      "axis_scale_relative": [
+        -0.055,
+        0.055
+      ],
+      "shear": [
+        -0.025,
+        0.025
+      ]
+    },
+    "hard_limits": {
+      "xy_rms": 0.035,
+      "max_point_displacement": 0.105,
+      "per_stroke_path_ratio": [
+        0.78,
+        1.22
+      ]
+    },
+    "qa_rows": 2976,
+    "qa_rows_per_class_max": 8,
+    "unit_checks": {
+      "rows": 2976,
+      "accepted": 2934,
+      "reverted": 42,
+      "changed": 2934,
+      "rms_mean": 0.010219168849289417,
+      "rms_p95": 0.01984049752354622,
+      "max_point_p95": 0.04843609035015106,
+      "path_ratio_min": 0.0,
+      "path_ratio_max": 1.1043946743011475,
+      "stroke_count_preserved": true,
+      "orientation_preserving_affine": true
+    },
+    "teacher_identity_metrics": {
+      "overall": {
+        "rows": 2976,
+        "top1_hits": 2356,
+        "top5_hits": 2933,
+        "top1": 0.7916666666666666,
+        "top5": 0.9855510752688172,
+        "by_family": {
+          "arrows": {
+            "rows": 232,
+            "top1": 0.7974137931034483,
+            "top5": 0.9956896551724138
+          },
+          "digits": {
+            "rows": 80,
+            "top1": 0.8625,
+            "top5": 0.975
+          },
+          "fences": {
+            "rows": 112,
+            "top1": 0.9017857142857143,
+            "top5": 0.9910714285714286
+          },
+          "greek": {
+            "rows": 368,
+            "top1": 0.8152173913043478,
+            "top5": 0.9891304347826086
+          },
+          "large_ops": {
+            "rows": 72,
+            "top1": 0.7361111111111112,
+            "top5": 0.9583333333333334
+          },
+          "latin_lower": {
+            "rows": 200,
+            "top1": 0.625,
+            "top5": 0.985
+          },
+          "latin_upper": {
+            "rows": 208,
+            "top1": 0.8076923076923077,
+            "top5": 0.9951923076923077
+          },
+          "operators": {
+            "rows": 240,
+            "top1": 0.875,
+            "top5": 0.9916666666666667
+          },
+          "other_math": {
+            "rows": 1216,
+            "top1": 0.7787828947368421,
+            "top5": 0.9819078947368421
+          },
+          "relations": {
+            "rows": 248,
+            "top1": 0.7983870967741935,
+            "top5": 0.9838709677419355
+          }
+        }
+      },
+      "by_source": {
+        "hwrt": {
+          "rows": 2667,
+          "top1_hits": 2119,
+          "top5_hits": 2627,
+          "top1": 0.7945256842894638,
+          "top5": 0.9850018747656543,
+          "by_family": {
+            "arrows": {
+              "rows": 232,
+              "top1": 0.7974137931034483,
+              "top5": 0.9956896551724138
+            },
+            "digits": {
+              "rows": 43,
+              "top1": 0.8372093023255814,
+              "top5": 0.9534883720930233
+            },
+            "fences": {
+              "rows": 96,
+              "top1": 0.8958333333333334,
+              "top5": 0.9895833333333334
+            },
+            "greek": {
+              "rows": 368,
+              "top1": 0.8152173913043478,
+              "top5": 0.9891304347826086
+            },
+            "large_ops": {
+              "rows": 72,
+              "top1": 0.7361111111111112,
+              "top5": 0.9583333333333334
+            },
+            "latin_lower": {
+              "rows": 80,
+              "top1": 0.525,
+              "top5": 0.975
+            },
+            "latin_upper": {
+              "rows": 87,
+              "top1": 0.8160919540229885,
+              "top5": 1.0
+            },
+            "operators": {
+              "rows": 238,
+              "top1": 0.8739495798319328,
+              "top5": 0.9915966386554622
+            },
+            "other_math": {
+              "rows": 1216,
+              "top1": 0.7787828947368421,
+              "top5": 0.9819078947368421
+            },
+            "relations": {
+              "rows": 235,
+              "top1": 0.8127659574468085,
+              "top5": 0.9872340425531915
+            }
+          }
+        },
+        "uji": {
+          "rows": 301,
+          "top1_hits": 231,
+          "top5_hits": 299,
+          "top1": 0.7674418604651163,
+          "top5": 0.9933554817275747,
+          "by_family": {
+            "digits": {
+              "rows": 37,
+              "top1": 0.8918918918918919,
+              "top5": 1.0
+            },
+            "fences": {
+              "rows": 16,
+              "top1": 0.9375,
+              "top5": 1.0
+            },
+            "latin_lower": {
+              "rows": 120,
+              "top1": 0.6916666666666667,
+              "top5": 0.9916666666666667
+            },
+            "latin_upper": {
+              "rows": 121,
+              "top1": 0.8016528925619835,
+              "top5": 0.9917355371900827
+            },
+            "operators": {
+              "rows": 2,
+              "top1": 1.0,
+              "top5": 1.0
+            },
+            "relations": {
+              "rows": 5,
+              "top1": 0.2,
+              "top5": 1.0
+            }
+          }
+        }
+      }
+    },
+    "teacher_augmented_metrics": {
+      "overall": {
+        "rows": 2976,
+        "top1_hits": 2377,
+        "top5_hits": 2934,
+        "top1": 0.7987231182795699,
+        "top5": 0.9858870967741935,
+        "by_family": {
+          "arrows": {
+            "rows": 232,
+            "top1": 0.8060344827586207,
+            "top5": 0.9956896551724138
+          },
+          "digits": {
+            "rows": 80,
+            "top1": 0.875,
+            "top5": 0.9875
+          },
+          "fences": {
+            "rows": 112,
+            "top1": 0.9017857142857143,
+            "top5": 0.9910714285714286
+          },
+          "greek": {
+            "rows": 368,
+            "top1": 0.8233695652173914,
+            "top5": 0.9918478260869565
+          },
+          "large_ops": {
+            "rows": 72,
+            "top1": 0.7083333333333334,
+            "top5": 0.9444444444444444
+          },
+          "latin_lower": {
+            "rows": 200,
+            "top1": 0.645,
+            "top5": 0.98
+          },
+          "latin_upper": {
+            "rows": 208,
+            "top1": 0.8076923076923077,
+            "top5": 0.9951923076923077
+          },
+          "operators": {
+            "rows": 240,
+            "top1": 0.8833333333333333,
+            "top5": 0.9916666666666667
+          },
+          "other_math": {
+            "rows": 1216,
+            "top1": 0.7861842105263158,
+            "top5": 0.9827302631578947
+          },
+          "relations": {
+            "rows": 248,
+            "top1": 0.8064516129032258,
+            "top5": 0.9838709677419355
+          }
+        }
+      },
+      "by_source": {
+        "hwrt": {
+          "rows": 2667,
+          "top1_hits": 2139,
+          "top5_hits": 2628,
+          "top1": 0.8020247469066367,
+          "top5": 0.9853768278965129,
+          "by_family": {
+            "arrows": {
+              "rows": 232,
+              "top1": 0.8060344827586207,
+              "top5": 0.9956896551724138
+            },
+            "digits": {
+              "rows": 43,
+              "top1": 0.8604651162790697,
+              "top5": 0.9767441860465116
+            },
+            "fences": {
+              "rows": 96,
+              "top1": 0.8958333333333334,
+              "top5": 0.9895833333333334
+            },
+            "greek": {
+              "rows": 368,
+              "top1": 0.8233695652173914,
+              "top5": 0.9918478260869565
+            },
+            "large_ops": {
+              "rows": 72,
+              "top1": 0.7083333333333334,
+              "top5": 0.9444444444444444
+            },
+            "latin_lower": {
+              "rows": 80,
+              "top1": 0.55,
+              "top5": 0.975
+            },
+            "latin_upper": {
+              "rows": 87,
+              "top1": 0.8275862068965517,
+              "top5": 0.9885057471264368
+            },
+            "operators": {
+              "rows": 238,
+              "top1": 0.8823529411764706,
+              "top5": 0.9915966386554622
+            },
+            "other_math": {
+              "rows": 1216,
+              "top1": 0.7861842105263158,
+              "top5": 0.9827302631578947
+            },
+            "relations": {
+              "rows": 235,
+              "top1": 0.8212765957446808,
+              "top5": 0.9872340425531915
+            }
+          }
+        },
+        "uji": {
+          "rows": 301,
+          "top1_hits": 232,
+          "top5_hits": 299,
+          "top1": 0.770764119601329,
+          "top5": 0.9933554817275747,
+          "by_family": {
+            "digits": {
+              "rows": 37,
+              "top1": 0.8918918918918919,
+              "top5": 1.0
+            },
+            "fences": {
+              "rows": 16,
+              "top1": 0.9375,
+              "top5": 1.0
+            },
+            "latin_lower": {
+              "rows": 120,
+              "top1": 0.7083333333333334,
+              "top5": 0.9833333333333333
+            },
+            "latin_upper": {
+              "rows": 121,
+              "top1": 0.7933884297520661,
+              "top5": 1.0
+            },
+            "operators": {
+              "rows": 2,
+              "top1": 1.0,
+              "top5": 1.0
+            },
+            "relations": {
+              "rows": 5,
+              "top1": 0.2,
+              "top5": 1.0
+            }
+          }
+        }
+      }
+    },
+    "teacher_label_top1_delta": 21,
+    "teacher_label_top5_delta": 1,
+    "teacher_prediction_changed_rows": 77,
+    "per_class": {
+      "+": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "-": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "/": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "0": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 3,
+        "top5_before": 6,
+        "top5_after": 7
+      },
+      "1": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "2": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "3": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "4": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "5": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "6": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "7": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "8": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "9": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "<": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      ">": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "A": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "B": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "C": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "D": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "E": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "F": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "G": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "H": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "I": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 7
+      },
+      "J": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "K": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "L": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "M": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "N": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "O": {
+        "qa_rows": 8,
+        "top1_before": 1,
+        "top1_after": 0,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "P": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "Q": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "R": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "S": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 2,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "T": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "U": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "V": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "W": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "X": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "Y": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 7,
+        "top5_after": 8
+      },
+      "Z": {
+        "qa_rows": 8,
+        "top1_before": 3,
+        "top1_after": 3,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "[": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\#": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 5,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\$": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\%": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\&": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 1,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\AA": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\AE": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Bowtie": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Delta": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Downarrow": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Gamma": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Im": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\L": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\Lambda": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Leftarrow": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Leftrightarrow": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Longleftrightarrow": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 2,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Longrightarrow": {
+        "qa_rows": 8,
+        "top1_before": 3,
+        "top1_after": 4,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\O": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Omega": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 3,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\Phi": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Pi": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Psi": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Re": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Rightarrow": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\S": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Sigma": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Theta": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Vdash": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\Xi": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\aa": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\ae": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\aleph": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\alpha": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\amalg": {
+        "qa_rows": 8,
+        "top1_before": 1,
+        "top1_after": 2,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\angle": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 7,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\approx": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\ast": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\astrosun": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\asymp": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\backsim": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\backslash": {
+        "qa_rows": 8,
+        "top1_before": 0,
+        "top1_after": 0,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\barwedge": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\because": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\beta": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\between": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\blacksquare": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\blacktriangleright": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\bot": {
+        "qa_rows": 8,
+        "top1_before": 0,
+        "top1_after": 0,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\bowtie": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\boxdot": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\boxplus": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\boxtimes": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\bullet": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\cap": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\cdot": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\celsius": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\checked": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\checkmark": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\chi": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 3,
+        "top5_before": 6,
+        "top5_after": 6
+      },
+      "\\circ": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 2,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\circlearrowleft": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\circlearrowright": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\circledR": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\circledast": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\circledcirc": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\clubsuit": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\cong": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\coprod": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\copyright": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\cup": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\curvearrowright": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\dag": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 5,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\dashv": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\ddots": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\degree": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 2,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\delta": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\diameter": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 2,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\diamond": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\diamondsuit": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\div": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\doteq": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\dots": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\dotsc": {
+        "qa_rows": 8,
+        "top1_before": 3,
+        "top1_after": 3,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\downarrow": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\ell": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\emptyset": {
+        "qa_rows": 8,
+        "top1_before": 3,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\epsilon": {
+        "qa_rows": 8,
+        "top1_before": 0,
+        "top1_after": 0,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\equiv": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\eta": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\exists": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\female": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\fint": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\flat": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 3,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\forall": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\frown": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\fullmoon": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\gamma": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\geq": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\geqslant": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\gtrless": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\gtrsim": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 5,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\guillemotleft": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\hbar": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\heartsuit": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\hookrightarrow": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\iddots": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\in": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\infty": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\int": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 7
+      },
+      "\\iota": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\kappa": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\lambda": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\langle": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\lceil": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\leadsto": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\leftarrow": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\leftmoon": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\leftrightarrow": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\leq": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\leqslant": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\lesssim": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\lfloor": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\lhd": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\lightning": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\llbracket": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\longmapsto": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\longrightarrow": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\lozenge": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\ltimes": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\male": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mapsfrom": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mapsto": {
+        "qa_rows": 8,
+        "top1_before": 3,
+        "top1_after": 3,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mars": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathbb{1}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathbb{H}": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathbb{N}": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathbb{Q}": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathbb{R}": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\mathbb{Z}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{A}": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{B}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{C}": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{D}": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{E}": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\mathcal{F}": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{G}": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{H}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{L}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\mathcal{M}": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{N}": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{O}": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{P}": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{R}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{S}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{T}": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\mathcal{U}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{X}": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 2,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathcal{Z}": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathds{1}": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\mathds{C}": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathds{E}": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathds{N}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathds{P}": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathds{Q}": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathds{R}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathds{Z}": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathfrak{A}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathfrak{M}": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathfrak{S}": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathfrak{X}": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathscr{A}": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathscr{C}": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\mathscr{D}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathscr{E}": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathscr{F}": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathscr{H}": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathscr{L}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathscr{P}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mathscr{S}": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\mathsection": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mid": {
+        "qa_rows": 8,
+        "top1_before": 0,
+        "top1_after": 0,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\models": {
+        "qa_rows": 8,
+        "top1_before": 1,
+        "top1_after": 1,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mp": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\mu": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\multimap": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\nRightarrow": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\nabla": {
+        "qa_rows": 8,
+        "top1_before": 1,
+        "top1_after": 1,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\nearrow": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\neg": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\neq": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\nexists": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\ni": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\nmid": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\not\\equiv": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\notin": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\nrightarrow": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\nsubseteq": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\nu": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\nvDash": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\o": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 6,
+        "top5_before": 7,
+        "top5_after": 8
+      },
+      "\\odot": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\ohm": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\oiint": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\oint": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\omega": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\ominus": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\oplus": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\otimes": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\parallel": {
+        "qa_rows": 8,
+        "top1_before": 3,
+        "top1_after": 3,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\parr": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\partial": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\perp": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\phi": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\pi": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\pitchfork": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\pm": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\pounds": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\prec": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\preccurlyeq": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\preceq": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\prime": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 2,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\prod": {
+        "qa_rows": 8,
+        "top1_before": 1,
+        "top1_after": 1,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\propto": {
+        "qa_rows": 8,
+        "top1_before": 0,
+        "top1_after": 0,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\psi": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\rangle": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\rceil": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\rfloor": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\rho": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\rightarrow": {
+        "qa_rows": 8,
+        "top1_before": 0,
+        "top1_after": 0,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\rightharpoonup": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\rightleftarrows": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\rightleftharpoons": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\rightrightarrows": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\rightsquigarrow": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\rrbracket": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\rtimes": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\searrow": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\setminus": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\sharp": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\shortrightarrow": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\sigma": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\sim": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\simeq": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\sphericalangle": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\sqcap": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\sqcup": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\sqrt{}": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\sqsubseteq": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\square": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\ss": {
+        "qa_rows": 8,
+        "top1_before": 3,
+        "top1_after": 3,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\star": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\subset": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\subseteq": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\subsetneq": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\succ": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\succeq": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\sum": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 2,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\sun": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\supset": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\supseteq": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\tau": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\therefore": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\theta": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\times": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\top": {
+        "qa_rows": 8,
+        "top1_before": 3,
+        "top1_after": 3,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\triangle": {
+        "qa_rows": 8,
+        "top1_before": 3,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\triangledown": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\triangleleft": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\trianglelefteq": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\triangleq": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\triangleright": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\twoheadrightarrow": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\uparrow": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\upharpoonright": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\uplus": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\vDash": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\varepsilon": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\varkappa": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\varnothing": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 2,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\varoiint": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\varphi": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\varpi": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\varpropto": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\varrho": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 4,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\varsubsetneq": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\vartheta": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\vartriangle": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\vdash": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\vdots": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\vee": {
+        "qa_rows": 8,
+        "top1_before": 3,
+        "top1_after": 3,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "\\venus": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\wedge": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\with": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\wp": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\wr": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\xi": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\zeta": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 7,
+        "top5_after": 8
+      },
+      "\\{": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\|": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "\\}": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "]": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "a": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "b": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "c": {
+        "qa_rows": 8,
+        "top1_before": 0,
+        "top1_after": 0,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "d": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "e": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "f": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "g": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "h": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "i": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "j": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "k": {
+        "qa_rows": 8,
+        "top1_before": 3,
+        "top1_after": 3,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "l": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 2,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "m": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "n": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "o": {
+        "qa_rows": 8,
+        "top1_before": 0,
+        "top1_after": 0,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "p": {
+        "qa_rows": 8,
+        "top1_before": 4,
+        "top1_after": 5,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "q": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "r": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "s": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 2,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "u": {
+        "qa_rows": 8,
+        "top1_before": 5,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "v": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 3,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "w": {
+        "qa_rows": 8,
+        "top1_before": 1,
+        "top1_after": 1,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "x": {
+        "qa_rows": 8,
+        "top1_before": 2,
+        "top1_after": 2,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "y": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 8,
+        "top5_after": 7
+      },
+      "z": {
+        "qa_rows": 8,
+        "top1_before": 1,
+        "top1_after": 0,
+        "top5_before": 7,
+        "top5_after": 7
+      },
+      "|": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "(": {
+        "qa_rows": 8,
+        "top1_before": 7,
+        "top1_after": 7,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      ")": {
+        "qa_rows": 8,
+        "top1_before": 8,
+        "top1_after": 8,
+        "top5_before": 8,
+        "top5_after": 8
+      },
+      "=": {
+        "qa_rows": 8,
+        "top1_before": 6,
+        "top1_after": 6,
+        "top5_before": 7,
+        "top5_after": 7
+      }
+    },
+    "image_sample_verification": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\worktrees\\selective_2d_anytime_hwr_20260914\\artifacts\\hwr_augmentation_microscope_20261001\\affine_distill_v1\\full_domain_affine_sample_sheet.png",
+      "families": {
+        "digits": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "latin_lower": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "latin_upper": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "greek": [
+          "\\Delta",
+          "\\Gamma",
+          "\\Lambda",
+          "\\Omega",
+          "\\Phi",
+          "\\Pi"
+        ],
+        "relations": [
+          "<",
+          ">",
+          "\\Vdash",
+          "\\approx",
+          "\\cong",
+          "\\dashv"
+        ],
+        "operators": [
+          "+",
+          "-",
+          "/",
+          "\\ast",
+          "\\astrosun",
+          "\\asymp"
+        ],
+        "fences": [
+          "[",
+          "\\langle",
+          "\\lceil",
+          "\\lfloor",
+          "\\rangle",
+          "\\rceil"
+        ],
+        "arrows": [
+          "\\Downarrow",
+          "\\Leftarrow",
+          "\\Leftrightarrow",
+          "\\Longleftrightarrow",
+          "\\Longrightarrow",
+          "\\Rightarrow"
+        ],
+        "large_ops": [
+          "\\coprod",
+          "\\fint",
+          "\\int",
+          "\\oiint",
+          "\\oint",
+          "\\prod"
+        ],
+        "other_math": [
+          "\\#",
+          "\\$",
+          "\\%",
+          "\\&",
+          "\\AA",
+          "\\AE"
+        ]
+      },
+      "source_codes": {
+        "H": "HWRT real train",
+        "U": "UJI real train",
+        "S": "synthetic '='"
+      },
+      "legend": "each symbol is shown as source ink then affine-augmented ink; captions show teacher Top1 before>after"
+    },
+    "qa_scope": "training pool only; no augmentation parameter selection from heldout metrics"
+  }
+}

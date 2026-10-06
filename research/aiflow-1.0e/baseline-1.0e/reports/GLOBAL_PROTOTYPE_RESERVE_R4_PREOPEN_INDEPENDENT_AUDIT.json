@@ -1,0 +1,89 @@
+{
+  "schema": "aiflow-global-prototype-reserve-preopen-independent-audit/v9",
+  "generated_at": "2026-08-22T19:26:52.533513+00:00",
+  "status": "INDEPENDENT_RESERVE_R4_PREOPEN_AUDIT_PASSED",
+  "gates": {
+    "r4_exact_two_preparation_files": true,
+    "r4_cache_report_trace_absent": true,
+    "legacy_output_absent": true,
+    "receipt_status_prepared_unopened": true,
+    "receipt_boundary_closed": true,
+    "reserve_exact16_and_consumed_disjoint": true,
+    "reserve_matches_original_sealed_set": true,
+    "all_receipt_hashes_match_live": true,
+    "live_opener_equals_snapshot": true,
+    "cache_embedded_hashes_match_receipt": true,
+    "upstream_independent_gates_valid": true,
+    "pseudo_exact_query_local_indexing": true,
+    "trace_cache_report_fail_closed": true,
+    "strict_top5_label_blind_prediction": true,
+    "receipt_exactly_reconstructed": true,
+    "nonzero_query_index_toy_metrics_exact": true,
+    "r3_invalid_prepared_preserved_unopened": true
+  },
+  "toy_metrics": {
+    "rows": 3,
+    "writers": 1,
+    "baseline_top1": 0.6666666666666666,
+    "adapted_top1": 1.0,
+    "pseudo_formula_contract": "writer query rows in deterministic bank order, chunked by 8; diagnostic only",
+    "pseudo_formulae": 1,
+    "baseline_pseudo_exact": 0.0,
+    "adapted_pseudo_exact": 1.0,
+    "changed": 1,
+    "improved": 1,
+    "regressed": 0,
+    "candidate_set_violations": 0,
+    "per_global_writer": {
+      "synthetic_writer_059": {
+        "rows": 3,
+        "baseline_correct": 2,
+        "adapted_correct": 3,
+        "changed": 1,
+        "improved": 1,
+        "regressed": 0,
+        "pseudo_formulae": 1,
+        "baseline_pseudo_exact": 0,
+        "adapted_pseudo_exact": 1
+      }
+    },
+    "writer_top1_regressions": [],
+    "writer_pseudo_exact_regressions": []
+  },
+  "reserve": {
+    "writers": 16,
+    "global_writer_ids": [
+      "synthetic_writer_059",
+      "synthetic_writer_032",
+      "synthetic_writer_036",
+      "synthetic_writer_038",
+      "synthetic_writer_063",
+      "synthetic_writer_056",
+      "synthetic_writer_062",
+      "synthetic_writer_052",
+      "synthetic_writer_053",
+      "synthetic_writer_046",
+      "synthetic_writer_061",
+      "synthetic_writer_041",
+      "synthetic_writer_050",
+      "synthetic_writer_043",
+      "synthetic_writer_039",
+      "synthetic_writer_049"
+    ],
+    "consumed_disjoint": true
+  },
+  "hashes": {
+    "r4_prepare_receipt_sha256": "689d1acb87c1476ad062c468ca5e7881acb7331d493db20124fd6c90d67b92c5",
+    "r4_opener_live_sha256": "8fd4100c8738d56666bbaaf6f54035bfda04bc8dcf8ad0fc314382778b2cf1bf",
+    "r4_opener_snapshot_sha256": "8fd4100c8738d56666bbaaf6f54035bfda04bc8dcf8ad0fc314382778b2cf1bf",
+    "r3_invalid_prepare_receipt_sha256": "e3cf168d2343d288a6f33952af6dd4dfe7c430d051fdf8e02cf9fdff83c46b85",
+    "audit_script_sha256": "3cff858b2b6acdf358b242189f4f10831f7eb704c64c7ea214beb921bef957ea"
+  },
+  "decision": {
+    "reserve_r4_open_allowed": true,
+    "legacy_open_allowed": false,
+    "known_replay_open_allowed": false,
+    "product_promotion_allowed": false
+  },
+  "boundary": "This authorizes one synthetic reserve opening only. It is known-parent-manifold evidence, not real-writer acceptance or product promotion evidence."
+}

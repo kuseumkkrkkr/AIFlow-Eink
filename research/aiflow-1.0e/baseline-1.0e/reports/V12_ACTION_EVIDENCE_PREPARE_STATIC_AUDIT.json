@@ -1,0 +1,82 @@
+{
+  "schema": "aiflow-v12-action-evidence-r3-preparation-static-audit/v1",
+  "generated_at": "2026-08-23T03:15:03.362319+00:00",
+  "status": "INDEPENDENT_V12_ACTION_EVIDENCE_PREPARE_STATIC_AUDIT_PASSED",
+  "script_sha256": "9fed8bc4512f99e7ba1e12af109fc688b93b0522cb63faf0e3d07f3ea76ca1ba",
+  "dry_summary_sha256": "548c777a8f1007687c6e9b782c40d0d28b4eafad2747f78c9c97332c70b87b68",
+  "dry_catalog_sha256": "7643ba1dbd67d4699d4b8a81999c756cb323540bbd941fdcb058f2614654337d",
+  "design_sha256": "1b9e41933ca7efed225aaa589ccde7c2d0130022c4b0c380637c6ec1445338d5",
+  "gates": {
+    "all_bound_file_hashes_exact": true,
+    "source_py_compile_passed": true,
+    "r2_rejected_catalog_and_receipt_immutable": true,
+    "catalog_payload_shape_and_unit_assignments_valid": true,
+    "catalog_observed_units_reconstructed_exact": true,
+    "summary_catalog_counts_reconstructed_exact": true,
+    "consumed_inventory_exact_and_writers096_closed": true,
+    "pair_level_assignment_algorithm_reproduced_exact": true,
+    "all_pairs_have_twenty_actions": true,
+    "all_pairs_have_twenty_unique_writers": true,
+    "pair_writer_maximum_one_action": true,
+    "every_pair_exceeds_unchanged_minimum_writer_evidence": true,
+    "allocation_is_outcome_blind": true,
+    "summary_build_plan_arithmetic_exact": true,
+    "summary_hash_and_boundary_bindings_exact": true,
+    "external_parent_hashes_pinned_exact": true,
+    "catalog_gzip_is_deterministic_and_reproduces_exact": true,
+    "static_audit_semantic_rejection_matrix_passed": true,
+    "prepare_source_has_no_tensor_generation_or_training_path": true,
+    "writers096_bank_not_loaded_or_referenced": true,
+    "default_prepared_output_absent": true
+  },
+  "hashes": {
+    "script_sha256": "9fed8bc4512f99e7ba1e12af109fc688b93b0522cb63faf0e3d07f3ea76ca1ba",
+    "design_sha256": "1b9e41933ca7efed225aaa589ccde7c2d0130022c4b0c380637c6ec1445338d5",
+    "dry_summary_sha256": "548c777a8f1007687c6e9b782c40d0d28b4eafad2747f78c9c97332c70b87b68",
+    "dry_catalog_sha256": "7643ba1dbd67d4699d4b8a81999c756cb323540bbd941fdcb058f2614654337d",
+    "v11_source_sha256": "fb43d0ce519546ff00e779c97ad7ed6dbdf3f067f5958bb214da38a923b5640f",
+    "checkpoint_sha256": "c9ebd51e5ba72f1a1e8e2938343823808f7c0ab1bc7143e93332ef8b58143521",
+    "external_bank_sha256": "31eb534d125f38cfbe5aa33d38545489d71737461f9f605da5304ebab8d3d577",
+    "external_metadata_sha256": "411097fe5846ec3da6c7c6c82c47dc3da66cf2cb0e8cc1ee691edca18ec5c87b",
+    "v11_r3_audit_sha256": "e7b17080c7f99df46309bc2284928fd36e5342d6fda09ea2a0835f7935551938",
+    "writers096_admission_sha256": "d655be9fad848667fde3a6483bd7c6a5597c1e60c5ceeb7883947f7990738ca2",
+    "r2_summary_sha256": "77ce07f546722ee91af14f1877d9c4dd23f7f9d8e3f1152fb13c1c26c5ce92f1",
+    "r2_catalog_sha256": "bfb51f104327d04a3f2dae5413d12ad59f7de475a50e9201fd9fb014312b6126",
+    "r2_rejection_sha256": "821220257350febe91c6d6af9277512a4a88806124152a7abefff167cec667c3",
+    "audit_script_sha256": "f0487f75a21afd5c35806644dc0abddbdcbc6d85d19682f9410cede028638761"
+  },
+  "catalog_reproduction": {
+    "entries": 68958,
+    "directed_pairs": 9867,
+    "planned_query_actions": 197340,
+    "unique_writer_count_distribution": {
+      "20": 9867
+    },
+    "pair_writer_maximum_actions": 1,
+    "writer_candidate_anchor_pairs": 20698,
+    "label_free_risk_strata": 233,
+    "deterministic_gzip_header": "1f8b08000000000002ff"
+  },
+  "static_audit_validator_matrix": {
+    "valid_contract_accepted": true,
+    "wrong_status_rejected": true,
+    "wrong_source_rejected": true,
+    "wrong_summary_rejected": true,
+    "wrong_catalog_rejected": true,
+    "wrong_design_rejected": true,
+    "false_gate_rejected": true,
+    "prepare_denial_rejected": true,
+    "bank_generation_permission_rejected": true
+  },
+  "decision": {
+    "prepare_allowed": true,
+    "bank_generation_allowed": false,
+    "adapter_training_allowed": false,
+    "writers096_127_open_allowed": false,
+    "legacy_open_allowed": false,
+    "real_corpus_open_allowed": false,
+    "hwr_training_or_checkpoint_change_allowed": false,
+    "product_promotion_allowed": false
+  },
+  "boundary": "This receipt authorizes only PREPARED-ONLY exact2 creation. It does not authorize trajectory bank generation, adapter training, writers096..127 access, Legacy, real-corpus evaluation, HWR/checkpoint/runtime changes, or product promotion."
+}

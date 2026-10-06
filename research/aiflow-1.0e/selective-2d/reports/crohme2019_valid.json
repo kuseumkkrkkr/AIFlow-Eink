@@ -1,0 +1,63 @@
+{
+  "experiment": "R-CROHME2019-PUBLIC-CALIBRATOR09-001",
+  "generated_at": "2026-08-08T13:44:56.644602+00:00",
+  "track": "R_noncommercial_only",
+  "product_validation": false,
+  "dataset": {
+    "source": "Kaggle ntcuong2103/crohme2019 valid",
+    "license": "CC BY-NC 4.0",
+    "formulas": 985,
+    "fully_supported_formulas": 843,
+    "truth_groups": 9997,
+    "supported_symbol_groups": 9725
+  },
+  "layout": {
+    "partition_exact": 0.40812182741116754,
+    "exact_group_recall": 0.8248474542362709,
+    "lattice_group_ceiling": 0.9985995798739622
+  },
+  "truth_group_classifier": {
+    "baseline": {
+      "symbols": 9725,
+      "top1": 0.5695629715919495,
+      "top5": 0.7996914982795715
+    },
+    "candidate": {
+      "symbols": 9725,
+      "top1": 0.7410796880722046,
+      "top5": 0.9245244264602661
+    },
+    "guarded_candidate": {
+      "symbols": 9725,
+      "top1": 0.7417994737625122,
+      "top5": 0.9227763414382935
+    },
+    "guard_preserved_symbols": 747,
+    "guard_policy": "preserve baseline when its top1 confidence >=0.95 and public-train support <3"
+  },
+  "end_to_end": {
+    "baseline": {
+      "group_token_top1_recall": 0.4820446133840152,
+      "group_token_top5_recall": 0.6654996498949685,
+      "formula_exact": 0.07947805456702253,
+      "formula_top5_oracle": 0.21708185053380782
+    },
+    "candidate": {
+      "group_token_top1_recall": 0.6216865059517855,
+      "group_token_top5_recall": 0.7661298389516855,
+      "formula_exact": 0.11981020166073547,
+      "formula_top5_oracle": 0.3428232502965599
+    },
+    "guarded_candidate": {
+      "group_token_top1_recall": 0.622186655996799,
+      "group_token_top5_recall": 0.7645293588076423,
+      "formula_exact": 0.12099644128113879,
+      "formula_top5_oracle": 0.3404507710557533
+    }
+  },
+  "limits": [
+    "CROHME2019 is evaluation-only and noncommercial",
+    "the 0.6 geometry gridder is evaluated because later noncommercial gridder artifacts were removed",
+    "decision-layer semantic equivalence is not scored"
+  ]
+}

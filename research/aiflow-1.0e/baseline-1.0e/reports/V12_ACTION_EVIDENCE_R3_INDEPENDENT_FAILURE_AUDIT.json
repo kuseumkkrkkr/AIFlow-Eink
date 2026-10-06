@@ -1,0 +1,43 @@
+{
+  "schema": "aiflow-v12-r3-independent-failure-audit/v1",
+  "status": "INDEPENDENT_V12_R3_FAILURE_AUDIT_CONFIRMED",
+  "audited_at": "2026-08-24",
+  "raw_output": "artifacts/action_evidence_augmentation_v12_20260824_r3_raw",
+  "raw_file_contract": {
+    "exact_files": [
+      "generate_action_evidence_augmentation_v12_r3.source.py",
+      "GENERATION_STARTED.json",
+      "GENERATION_FAILED.json"
+    ],
+    "source_snapshot_sha256": "23aef377213e07bc46629546caec3bb02f2f4b0891df466968f28e5eeacc9d4f",
+    "started_marker_sha256": "b964b9d224b268b6fef3eb1952ecf3da9884e4b7029025d571fd513ad897ba0f",
+    "failure_receipt_sha256": "0cfbdd85693f4984a90198ee9a9390603979fa433e8e4e2a886a79953c24368b",
+    "stderr_sha256": "87daa316275e999b5c01d418bc92fb923dec667699a69645b0d017c931a70cf6"
+  },
+  "failure": {
+    "status": "V12_ACTION_EVIDENCE_R3_GENERATION_FAILED_IMMUTABLE",
+    "exception_type": "ValueError",
+    "exception_message": "R3 generated no calibration or query rows before final admission",
+    "traceback_sha256": "cc1c13e51211ef03e800f2151f7e5fe4295ec3703fd77896040f7800753d4da8",
+    "first_empty_stage": "INDETERMINATE_CALIBRATION_OR_QUERY",
+    "reason": "The only persisted exception is the compound `not cal_rows or not query_rows` guard; no pre-final calibration/query counters were written."
+  },
+  "gates": {
+    "source_started_failure_hash_chain_exact": true,
+    "failure_receipt_retry_allowed_false": true,
+    "bank_metadata_generation_report_absent": true,
+    "postprocess_training_and_product_not_performed": true,
+    "r2_raw_reuse_false": true,
+    "writers096_127_legacy_real_crohme_mathwriting_closed": true,
+    "first_bottleneck_not_overclaimed": true,
+    "same_r3_writer_range_source_output_rerun_forbidden": true,
+    "next_design_requires_immutable_prefinal_stage_telemetry": true
+  },
+  "decision": {
+    "r3_is_immutable_rejected_evidence": true,
+    "r3_postprocess_or_training_allowed": false,
+    "r3_retry_allowed": false,
+    "next_step": "new-writer-range telemetry-first diagnostic design and static audit only",
+    "product_promotion_allowed": false
+  }
+}

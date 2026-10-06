@@ -1,0 +1,46 @@
+{
+  "schema": "aiflow-cleanroom-writer-style-extension-independent-audit/v1",
+  "status": "INDEPENDENT_EXTENSION_AUDIT_PASSED",
+  "gates": {
+    "base_writer_ids_000_031": true,
+    "extension_writer_ids_032_063": true,
+    "writer_id_overlap_zero": true,
+    "synthetic_id_overlap_zero": true,
+    "cross_bank_exact_tensor_overlap_zero": true,
+    "cross_bank_writer_separation": true,
+    "base_admitted": true,
+    "extension_admitted": true
+  },
+  "base": {
+    "writers": 32,
+    "rows": 40704,
+    "classes": 318
+  },
+  "extension": {
+    "writers": 32,
+    "rows": 40576,
+    "classes": 317
+  },
+  "cross_bank": {
+    "writer_id_overlap": [],
+    "synthetic_id_overlap": 0,
+    "exact_tensor_overlap": 0,
+    "minimum_writer_pair": {
+      "base_writer": "synthetic_writer_005",
+      "extension_writer": "synthetic_writer_062",
+      "median_rms": 0.033035699278116226
+    },
+    "median_writer_pair_rms": 0.0609393585473299,
+    "immediate_parent_overlap": 2838,
+    "extension_immediate_parent_overlap_ratio": 0.9871304347826086,
+    "root_fingerprint_overlap": 6444,
+    "extension_root_fingerprint_overlap_ratio": 0.9880404783808647
+  },
+  "evidence_boundary": "style and motor-noise extension; parent manifold overlap is measured, not treated as fresh trajectory evidence",
+  "hashes": {
+    "base_report": "778a876640f3d14e454fcce0c2d98fe7ecca8caf39da3da38a11e0ac00d961fb",
+    "base_bank": "6e5bfed373291e335094aefa3365dab8090e35eb8ef178b31304b1f3f7b430dc",
+    "extension_report": "562c3867bbe1ebc66c8aa82b3ff82a5e6d1d76d95550f4c05c3b95d4f0e81e36",
+    "extension_bank": "58210589afbb9f073d981db541b5caa1a5b5e4b8b133f2ccea628d221f1f497d"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "counts": {
+    "accepted_points": 25393124,
+    "accepted_rows": {
+      "test": 774,
+      "train": 166361,
+      "validation": 892
+    },
+    "accepted_strokes": 317996,
+    "accepted_total": 168027,
+    "contributor_group_types": {
+      "detexify_aggregate_unknown_writers": 153660,
+      "source_user_id_unverified": 14367
+    },
+    "labels": {
+      "test": 223,
+      "train": 369,
+      "validation": 230
+    },
+    "output_timestamp_reversals": 0,
+    "rejected_timestamp_reversal_events": 1209,
+    "rejected_total": 206,
+    "rejection_reasons": {
+      "duplicate_sample": 13,
+      "timestamp_reversal": 193
+    },
+    "source_group_overlap": {
+      "train_test": 0,
+      "train_validation": 0,
+      "validation_test": 0
+    },
+    "source_groups": {
+      "test": 55,
+      "train": 373,
+      "validation": 49
+    },
+    "source_rows": {
+      "test": 17074,
+      "train": 151159
+    },
+    "source_time_modes": {
+      "epoch_ms": 166513,
+      "relative_ms": 1527
+    },
+    "source_to_curated_split": {
+      "test": {
+        "test": 77,
+        "train": 16885,
+        "validation": 92
+      },
+      "train": {
+        "test": 697,
+        "train": 149476,
+        "validation": 800
+      }
+    }
+  },
+  "files": {
+    "rejections": {
+      "bytes": 1420,
+      "sha256": "47B0968D8387E10DED1413F74D46B504FA560F4F6CBD4CBE81ED7D859AFB6644"
+    },
+    "test": {
+      "bytes": 359995,
+      "sha256": "902EAAA1311708D4A73F1E63A9C88AE15CEDDED945E7B915B7CE177DAD30AF8A"
+    },
+    "train": {
+      "bytes": 153885264,
+      "sha256": "4C067A06FFAB8A73FE99C10B633B1175A68E512D17CA68D587F56E6182AD2561"
+    },
+    "validation": {
+      "bytes": 496546,
+      "sha256": "9813260509A4025E203CD36A3AE08C8A6CBC342233684C12C13B2C447D8B0A34"
+    }
+  },
+  "policy": {
+    "duplicate_key": "SHA-256(symbol_id + normalized ordered strokes)",
+    "privacy": "drop user_agent, pseudonymize user_id, remove absolute timestamp origin",
+    "rejection": "reject malformed/empty/non-finite samples and any cross-point time reversal",
+    "role": "box-local mathematical-symbol candidate model only",
+    "split": "Detexify aggregate 16925 is train-only; other source IDs use SHA-256 80/10/10 group assignment",
+    "split_limit": "source user IDs are unreliable; splits are group-disjoint but not proven writer-disjoint and cannot select or evaluate models"
+  },
+  "schema_version": "aiflow-hwrt-curation-manifest-v1",
+  "source": {
+    "artifact": "raw/2015-01-28-data.tar",
+    "license_id": "ODbL-1.0",
+    "sha256": "B96FEAFD71B01F1623997DFF3CC8AC4D18628D128CEE1B3DF1880518BBA3EA4A",
+    "url": "https://zenodo.org/records/50022"
+  },
+  "source_user_id_caveat": {
+    "evidence": "https://arxiv.org/abs/1701.08380",
+    "finding": "HASYv2 reports that ID 16925 combines many Detexify contributors and that source user IDs cannot identify exact writers",
+    "true_writer_disjoint": "unverifiable"
+  }
+}

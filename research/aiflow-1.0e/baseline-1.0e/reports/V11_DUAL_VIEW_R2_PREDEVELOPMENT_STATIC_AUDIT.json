@@ -1,0 +1,162 @@
+{
+  "schema": "aiflow-v11-r2-dual-view-predevelopment-independent-audit/v1",
+  "generated_at": "2026-08-23T00:37:57.839845+00:00",
+  "status": "INDEPENDENT_V11_DUAL_VIEW_R2_PREDEVELOPMENT_STATIC_AUDIT_PASSED",
+  "script_path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\scripts\\train_dual_view_writer_adapter_v11.py",
+  "script_sha256": "f9be1bb22a20c457b52d41f141506577ba67684ead12e6da4af03fad1dd6d13d",
+  "gates": {
+    "source_hash_exact": true,
+    "source_py_compile_passed": true,
+    "default_output_absent": true,
+    "independent_audit_precedes_data_load_and_output": true,
+    "r1_exact_three_file_lineage_bound": true,
+    "r1_independent_rejection_audit_bound": true,
+    "writers096_127_bank_cache_paths_absent": true,
+    "prediction_data_labels_removed": true,
+    "inference_api_forbidden_fields_absent": true,
+    "prediction_receives_no_query_truth": true,
+    "candidate_is_frozen_top5_only": true,
+    "identity_changed_zero_is_safe_not_positive": true,
+    "pooled_candidate_acceptance_requires_positive_zero_regression_wilson": true,
+    "pooled_model_rows_exclude_risk_held_writers": true,
+    "risk_held_writers_absent_from_every_pooled_model_training_feature_statistic": true,
+    "pooled_preparation_rebuilds_training_features_inside_risk_fold": true,
+    "sparse_self_gate_requires_observed_improvement_zero_regression_and_pseudo_nonregression": true,
+    "stage_telemetry_and_hash_present_on_rejection": true,
+    "final_all96_artifact_marked_unevaluated": true,
+    "hwr_checkpoint_is_label_catalog_read_only": true
+  },
+  "blockers": [],
+  "semantic_checks": {
+    "risk_fold_count": 4,
+    "risk_fold_preparation_checks": [
+      {
+        "risk_fold": 0,
+        "risk_heldout_writers": [
+          1,
+          2
+        ],
+        "model_training_writers": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "feature_statistics_union": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "feature_statistics_intersection": [],
+        "held_absent_from_model_training": true,
+        "held_absent_from_training_feature_statistics": true,
+        "held_episode_writer_set_exact": true
+      },
+      {
+        "risk_fold": 1,
+        "risk_heldout_writers": [
+          0,
+          6
+        ],
+        "model_training_writers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "feature_statistics_union": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "feature_statistics_intersection": [],
+        "held_absent_from_model_training": true,
+        "held_absent_from_training_feature_statistics": true,
+        "held_episode_writer_set_exact": true
+      },
+      {
+        "risk_fold": 2,
+        "risk_heldout_writers": [
+          3,
+          7
+        ],
+        "model_training_writers": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "feature_statistics_union": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "feature_statistics_intersection": [],
+        "held_absent_from_model_training": true,
+        "held_absent_from_training_feature_statistics": true,
+        "held_episode_writer_set_exact": true
+      },
+      {
+        "risk_fold": 3,
+        "risk_heldout_writers": [
+          4,
+          5
+        ],
+        "model_training_writers": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ],
+        "feature_statistics_union": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7
+        ],
+        "feature_statistics_intersection": [],
+        "held_absent_from_model_training": true,
+        "held_absent_from_training_feature_statistics": true,
+        "held_episode_writer_set_exact": true
+      }
+    ],
+    "identity_safe": true,
+    "identity_positive": false,
+    "identity_regression_wilson_upper": 0.0,
+    "wilson_upper_zero_regression_15_changes": 0.20388926630434784,
+    "wilson_upper_zero_regression_16_changes": 0.19361341827271994
+  },
+  "hashes": {
+    "source": "f9be1bb22a20c457b52d41f141506577ba67684ead12e6da4af03fad1dd6d13d",
+    "r1_rejection_audit": "8cbc38b7918ecb89a989659ff7b45abd544fa1fd3a6b9a58dc9d9dd92e17a2b2",
+    "audit_script": "769ef3de05686f0fe3ff1440f73eae3e07f11d640969a6d3777638592714147e"
+  },
+  "decision": {
+    "development_run_allowed": true,
+    "writers096_127_open_allowed": false,
+    "legacy_open_allowed": false,
+    "hwr_training_or_checkpoint_change_allowed": false,
+    "real_corpus_open_allowed": false,
+    "product_promotion_allowed": false
+  },
+  "evidence_boundary": "Static audit only. The rejected receipt authorizes no development run, no access to writers096..127, and no Legacy, real-writer, HWR, checkpoint, runtime, or product action."
+}

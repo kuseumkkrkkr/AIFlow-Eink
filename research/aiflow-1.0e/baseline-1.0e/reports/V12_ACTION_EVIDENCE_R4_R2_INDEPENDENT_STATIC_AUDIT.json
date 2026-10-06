@@ -1,0 +1,45 @@
+{
+  "schema": "aiflow-independent-v12-r4-r2-static-audit/v1",
+  "status": "INDEPENDENT_V12_R4_R2_TELEMETRY_FIRST_STATIC_AUDIT_PASSED",
+  "scope": "static aggregate-only telemetry contract audit; no generation, physics, frozen-HWR forward, training, postprocess, or evaluation corpus",
+  "hashes": {
+    "source_sha256": "07f1019a96705bab7bdcbe459b10e7454a65b661d9fadfc15dc625c829f63005",
+    "design_sha256": "1ea91413489999648f9af7a9ce500b9b10a1dc36f808b3c99342a9b94274c129",
+    "dry_summary_sha256": "fa546967eb68ddd00a6fbd1d15e0e568057a33fcb1855be8df01b0a98b1eb8dc",
+    "r3_policy_catalog_sha256": "66390f17ca243b5f779a7065d483b955e6c5f3038e5cc8e593e3e7e559d2b360",
+    "r3_failure_audit_sha256": "793ee301ce01f1a3bb0dddfd51cb05d925b4c6e611a99bf81844c3bdc6d7a069"
+  },
+  "independent_catalog_recalculation": {
+    "pairs": 9867,
+    "planned_actions": 197340,
+    "pair_unique_writers_min": 20,
+    "pair_unique_writers_max": 20,
+    "orientation": {
+      "baseline_truth_veto": 98670,
+      "candidate_truth_promotion": 98670
+    },
+    "writers": [192, 255],
+    "global_policy_sha256": "10062b5e16b954d568d57801aed51ef39c766d34fd03541f5670f7f2e693703c"
+  },
+  "gates": {
+    "r3_live_catalog_hash_and_policy_are_verified": true,
+    "r3_policy_counts_orientation_and_writer_contract_exact": true,
+    "calibration_and_query_final_chains_are_separate": true,
+    "final_calibration_zero_is_distinctly_detected": true,
+    "final_query_zero_is_distinctly_detected": true,
+    "branch_local_monotonicity_and_toys_pass": true,
+    "telemetry_is_aggregate_only_and_atomic_publish_is_required": true,
+    "source_is_stdlib_only_and_has_no_generation_or_model_execution": true,
+    "r4_r2_raw_and_final_outputs_absent": true,
+    "writers096_127_legacy_real_crohme_mathwriting_remain_closed": true,
+    "generation_execution_remains_disallowed": true,
+    "training_remains_disallowed": true
+  },
+  "decision": {
+    "generation_source_implementation_allowed": true,
+    "generation_execution_allowed": false,
+    "training_allowed": false,
+    "product_promotion_allowed": false,
+    "required_before_generation": "Separate generation-only implementation must atomically publish aggregate-only PRE_FINAL_STAGE_TELEMETRY.json before every compound guard or immutable failure receipt, then pass a separate independent pre-generation audit."
+  }
+}

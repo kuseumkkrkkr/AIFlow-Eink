@@ -1,0 +1,40 @@
+{
+  "schema": "aiflow-v12-r3-independent-static-audit/v1",
+  "status": "INDEPENDENT_V12_R3_STATIC_AUDIT_PASSED",
+  "scope": "design and dry-policy catalog only; no bank generation, physics, frozen HWR forward, optimizer, or evaluation corpus access",
+  "audited_at": "2026-08-24",
+  "inputs": {
+    "source": "scripts/prepare_action_evidence_augmentation_v12_r3.py",
+    "source_sha256": "3cd2feb22960218e3ef05ed707bbf356da3f7b210a4aef7a8fd10d053891384f",
+    "design_sha256": "7d7cc1d7f655bc1d1aaa9600c029119331227f32ac506e210b76a855fddce7c1",
+    "dry_summary_sha256": "c646c2571e300dbe0262b774f21fa7703756476857f2ecf0837f5cd131f55863",
+    "dry_catalog_sha256": "66390f17ca243b5f779a7065d483b955e6c5f3038e5cc8e593e3e7e559d2b360"
+  },
+  "gates": {
+    "source_dry_only_cli": true,
+    "r3_raw_and_prepared_outputs_absent": true,
+    "no_numpy_torch_or_model_execution_path": true,
+    "r2_npz_metadata_path_not_opened_by_source": true,
+    "source_and_output_hashes_exact": true,
+    "gzip_mtime_zero_and_filename_blank": true,
+    "directed_pairs_exact_9867": true,
+    "planned_actions_exact_197340": true,
+    "unique_writer20_and_pair_writer_max1": true,
+    "orientation_candidate_truth_10_baseline_truth_10": true,
+    "writer_range_192_255_exact": true,
+    "writer_action_range_2997_3170": true,
+    "action_acceptance_requires_direct_baseline_candidate_top5_membership": true,
+    "auxiliary_unadmitted_is_separate_runtime_identity_fallback": true,
+    "homograph_is_context_owned_identity": true,
+    "pre_save_candidate_violation_zero_fail_closed": true,
+    "actual_parent_availability_and_query_yield_remain_unproven": true,
+    "writers096_127_legacy_real_crohme_mathwriting_remain_closed": true
+  },
+  "decision": {
+    "static_design_passed": true,
+    "generation_source_run_allowed": false,
+    "generation_requires_separate_source_and_independent_pregeneration_audit": true,
+    "r2_raw_reuse_postprocess_training_allowed": false,
+    "product_promotion_allowed": false
+  }
+}

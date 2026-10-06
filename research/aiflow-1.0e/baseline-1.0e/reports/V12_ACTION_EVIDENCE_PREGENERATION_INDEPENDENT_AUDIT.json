@@ -1,0 +1,62 @@
+{
+  "schema": "aiflow-v12-action-evidence-prepared-independent-audit/v1",
+  "generated_at": "2026-08-23T03:17:43.737167+00:00",
+  "status": "INDEPENDENT_V12_ACTION_EVIDENCE_PREGENERATION_AUDIT_PASSED",
+  "artifact": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\action_evidence_augmentation_v12_20260823_r1_prepared",
+  "gates": {
+    "prepared_artifact_exact_two_files": true,
+    "prepared_exact_file_hashes": true,
+    "source_snapshot_matches_live_and_py_compiles": true,
+    "manifest_status_and_closed_boundaries_exact": true,
+    "manifest_static_audit_binding_exact": true,
+    "static_audit_hash_status_gates_and_decision_exact": true,
+    "manifest_dry_and_design_hashes_live_exact": true,
+    "manifest_model_and_external_hashes_live_exact": true,
+    "summary_still_declares_ungenerated_closed_scope": true,
+    "r2_rejected_lineage_immutable": true,
+    "writers096_127_bank_hashes_unchanged": true,
+    "no_other_v12_bank_or_cache_artifacts": true,
+    "prepared_artifact_contains_no_npz_tensor_or_model": true,
+    "prepare_source_has_no_bank_generation_or_training_path": true,
+    "prepare_source_refuses_existing_output": true,
+    "manifest_next_action_requires_independent_audit": true
+  },
+  "hashes": {
+    "prepared_files": {
+      "PREPARED_MANIFEST.json": "ac6e5153ce6cdb8b7c20979b031f85bdd05edce77786b31cf35084d744acb5a7",
+      "prepare_action_evidence_augmentation_v12.source.py": "9fed8bc4512f99e7ba1e12af109fc688b93b0522cb63faf0e3d07f3ea76ca1ba"
+    },
+    "bound_files": {
+      "static_audit": "31c8c9fd901523555ba30b53420774fbbf912dc608be1869859e81f4aade40f3",
+      "summary": "548c777a8f1007687c6e9b782c40d0d28b4eafad2747f78c9c97332c70b87b68",
+      "catalog": "7643ba1dbd67d4699d4b8a81999c756cb323540bbd941fdcb058f2614654337d",
+      "design": "1b9e41933ca7efed225aaa589ccde7c2d0130022c4b0c380637c6ec1445338d5",
+      "v11_source": "fb43d0ce519546ff00e779c97ad7ed6dbdf3f067f5958bb214da38a923b5640f",
+      "checkpoint": "c9ebd51e5ba72f1a1e8e2938343823808f7c0ab1bc7143e93332ef8b58143521",
+      "external_bank": "31eb534d125f38cfbe5aa33d38545489d71737461f9f605da5304ebab8d3d577",
+      "external_metadata": "411097fe5846ec3da6c7c6c82c47dc3da66cf2cb0e8cc1ee691edca18ec5c87b",
+      "r2_summary": "77ce07f546722ee91af14f1877d9c4dd23f7f9d8e3f1152fb13c1c26c5ce92f1",
+      "r2_catalog": "bfb51f104327d04a3f2dae5413d12ad59f7de475a50e9201fd9fb014312b6126",
+      "r2_rejection": "821220257350febe91c6d6af9277512a4a88806124152a7abefff167cec667c3"
+    },
+    "writers096_127_bank": {
+      "synthetic_writer_style_bank_v5_r4.npz": "2c22b90e48476b886b06778e671031553007b5e5e481b0aafd8a34f75286e3d8",
+      "synthetic_writer_style_bank_v5_r4.metadata.jsonl.gz": "8810d4fb4f3d316e5a93537e6509f41ebbfcc6910fcdd3b5cff52cbcfd942b42",
+      "report.json": "036e323a1ef33d443def4791176d405f37c11430d4a0680523dde209d74b9888",
+      "writer_latents.json": "6eac2a69c7ee7e5adef93c2811f2b209bc8a703d052c82bb233f72c375a1c477"
+    },
+    "audit_script_sha256": "1c89fca6266532ab663525bc030604e5d2a539fa3f859d60afd657b77d1e92aa"
+  },
+  "decision": {
+    "prepared_receipt_accepted": true,
+    "bank_builder_source_implementation_allowed": true,
+    "bank_generation_execution_allowed": false,
+    "adapter_training_allowed": false,
+    "writers096_127_open_allowed": false,
+    "legacy_open_allowed": false,
+    "real_corpus_open_allowed": false,
+    "hwr_training_or_checkpoint_change_allowed": false,
+    "product_promotion_allowed": false
+  },
+  "next_required_evidence": "Implement and independently audit a generation-only builder that consumes this exact prepared receipt and catalog, writes a start marker before loading parents or generating tensors, preserves pair/writer/topology/provenance contracts, and cannot train or access writers096..127."
+}
