@@ -1,0 +1,430 @@
+{
+  "schema": "aiflow-1.0e-ocr-text-evidence-adapter-audit/v1",
+  "artifact": "artifacts\\ocr_trocr_weight_tuned_20260901_r1",
+  "external_model": {
+    "name": "Azu/trocr-handwritten-math",
+    "revision": "fc8dc9829360d42b1d4bc2f2668c831a72c80379",
+    "weights_source": "huggingface_pretrained_then_partial_finetune",
+    "external_weights_tuned": true,
+    "tuned_scope": "encoder.encoder.layer[-1:]"
+  },
+  "training": {
+    "epochs": 2,
+    "seed": 20260830,
+    "learning_rate": 0.0005,
+    "external_tuned_parameters": 1774464,
+    "candidate_adapter_parameters": 111601,
+    "unfreeze_blocks": 1,
+    "tuning_scope": "external_encoder_last_block_plus_candidate_selector"
+  },
+  "aggregate_reported": {
+    "records": 387,
+    "covered_records": 374,
+    "candidate_recall": 0.9664082687338501,
+    "baseline_top1_covered": 0.8475935828877005,
+    "adapter_top1_covered": 0.8850267379679144,
+    "baseline_formula_exact_covered": 0.574468085106383,
+    "adapter_formula_exact_covered": 0.6276595744680851
+  },
+  "aggregate_full_exact": {
+    "baseline": {
+      "exact_formulas": 49,
+      "total_formulas": 95,
+      "rate": 0.5157894736842106,
+      "formula_ids": [
+        "aiflow_0001",
+        "aiflow_0002",
+        "aiflow_0003",
+        "aiflow_0008",
+        "aiflow_0015",
+        "aiflow_0019",
+        "aiflow_0026",
+        "aiflow_0027",
+        "aiflow_0028",
+        "aiflow_0029",
+        "aiflow_0047",
+        "aiflow_0048",
+        "aiflow_0049",
+        "aiflow_0054",
+        "aiflow_0057",
+        "aiflow_0059",
+        "aiflow_0060",
+        "aiflow_0065",
+        "aiflow_0071",
+        "aiflow_0072",
+        "aiflow_0073",
+        "aiflow_0075",
+        "aiflow_0076",
+        "aiflow_0077",
+        "aiflow_0079",
+        "aiflow_0118",
+        "aiflow_0119",
+        "aiflow_0120",
+        "aiflow_0121",
+        "aiflow_0122",
+        "aiflow_0124",
+        "aiflow_0126",
+        "aiflow_0127",
+        "aiflow_0130",
+        "aiflow_0131",
+        "aiflow_0132",
+        "aiflow_0133",
+        "aiflow_0134",
+        "aiflow_0135",
+        "aiflow_0136",
+        "aiflow_0137",
+        "aiflow_0141",
+        "aiflow_0143",
+        "aiflow_0145",
+        "aiflow_0147",
+        "aiflow_0154",
+        "aiflow_0156",
+        "aiflow_0160",
+        "aiflow_0161"
+      ]
+    },
+    "adapter": {
+      "exact_formulas": 54,
+      "total_formulas": 95,
+      "rate": 0.5684210526315789,
+      "formula_ids": [
+        "aiflow_0002",
+        "aiflow_0003",
+        "aiflow_0006",
+        "aiflow_0007",
+        "aiflow_0008",
+        "aiflow_0015",
+        "aiflow_0016",
+        "aiflow_0017",
+        "aiflow_0019",
+        "aiflow_0047",
+        "aiflow_0048",
+        "aiflow_0050",
+        "aiflow_0051",
+        "aiflow_0052",
+        "aiflow_0053",
+        "aiflow_0054",
+        "aiflow_0057",
+        "aiflow_0059",
+        "aiflow_0060",
+        "aiflow_0061",
+        "aiflow_0071",
+        "aiflow_0072",
+        "aiflow_0073",
+        "aiflow_0075",
+        "aiflow_0076",
+        "aiflow_0077",
+        "aiflow_0118",
+        "aiflow_0119",
+        "aiflow_0120",
+        "aiflow_0121",
+        "aiflow_0122",
+        "aiflow_0124",
+        "aiflow_0125",
+        "aiflow_0126",
+        "aiflow_0127",
+        "aiflow_0128",
+        "aiflow_0130",
+        "aiflow_0131",
+        "aiflow_0132",
+        "aiflow_0133",
+        "aiflow_0134",
+        "aiflow_0135",
+        "aiflow_0136",
+        "aiflow_0140",
+        "aiflow_0141",
+        "aiflow_0143",
+        "aiflow_0144",
+        "aiflow_0145",
+        "aiflow_0151",
+        "aiflow_0152",
+        "aiflow_0154",
+        "aiflow_0160",
+        "aiflow_0161",
+        "aiflow_0162"
+      ]
+    },
+    "candidate_absent_records": 13,
+    "candidate_absent_record_ids": [
+      "project_owned_ownership_0a2c48c4c4387e524b2cba9c",
+      "project_owned_ownership_00102beeee8f4726ed9df304",
+      "project_owned_ownership_144ce49996e9102916996642",
+      "project_owned_ownership_16d89dd2924aa53689c74f74",
+      "project_owned_ownership_14d054e119ecec62cd77d70d",
+      "project_owned_ownership_9c06860a3c48a7e8a4e6bfc6",
+      "project_owned_ownership_27f21dfa25f0e38d9a1ddb60",
+      "project_owned_ownership_8e091934e9941a6220ebd346",
+      "project_owned_ownership_87481d95305d9a660a621977",
+      "project_owned_ownership_fe043020f7c639cbe5221451",
+      "project_owned_ownership_d3f1ed68dd84fda609308c5f",
+      "project_owned_ownership_a90711979fffc7c2367a35ff",
+      "project_owned_ownership_f4599697f524a91034ec3c8a"
+    ]
+  },
+  "teacher_direct_exact": null,
+  "writer_loo_full_exact": [
+    {
+      "held_writer": "0051ac0f3b066f191a50",
+      "records": 82,
+      "covered_records": 80,
+      "candidate_recall": 0.975609756097561,
+      "baseline_top1_covered": 0.7875,
+      "adapter_top1_covered": 0.9,
+      "baseline_full_formula_exact": {
+        "exact_formulas": 8,
+        "total_formulas": 19,
+        "rate": 0.42105263157894735,
+        "formula_ids": [
+          "aiflow_0047",
+          "aiflow_0048",
+          "aiflow_0049",
+          "aiflow_0054",
+          "aiflow_0057",
+          "aiflow_0059",
+          "aiflow_0060",
+          "aiflow_0065"
+        ]
+      },
+      "adapter_full_formula_exact": {
+        "exact_formulas": 11,
+        "total_formulas": 19,
+        "rate": 0.5789473684210527,
+        "formula_ids": [
+          "aiflow_0047",
+          "aiflow_0048",
+          "aiflow_0050",
+          "aiflow_0051",
+          "aiflow_0052",
+          "aiflow_0053",
+          "aiflow_0054",
+          "aiflow_0057",
+          "aiflow_0059",
+          "aiflow_0060",
+          "aiflow_0061"
+        ]
+      }
+    },
+    {
+      "held_writer": "2d04cc6470b7a5aa8e47",
+      "records": 32,
+      "covered_records": 31,
+      "candidate_recall": 0.96875,
+      "baseline_top1_covered": 0.9032258064516129,
+      "adapter_top1_covered": 0.8709677419354839,
+      "baseline_full_formula_exact": {
+        "exact_formulas": 7,
+        "total_formulas": 10,
+        "rate": 0.7,
+        "formula_ids": [
+          "aiflow_0071",
+          "aiflow_0072",
+          "aiflow_0073",
+          "aiflow_0075",
+          "aiflow_0076",
+          "aiflow_0077",
+          "aiflow_0079"
+        ]
+      },
+      "adapter_full_formula_exact": {
+        "exact_formulas": 6,
+        "total_formulas": 10,
+        "rate": 0.6,
+        "formula_ids": [
+          "aiflow_0071",
+          "aiflow_0072",
+          "aiflow_0073",
+          "aiflow_0075",
+          "aiflow_0076",
+          "aiflow_0077"
+        ]
+      }
+    },
+    {
+      "held_writer": "8c90e0ce2f8501e6cf74",
+      "records": 35,
+      "covered_records": 34,
+      "candidate_recall": 0.9714285714285714,
+      "baseline_top1_covered": 0.8529411764705882,
+      "adapter_top1_covered": 0.8823529411764706,
+      "baseline_full_formula_exact": {
+        "exact_formulas": 4,
+        "total_formulas": 10,
+        "rate": 0.4,
+        "formula_ids": [
+          "aiflow_0001",
+          "aiflow_0002",
+          "aiflow_0003",
+          "aiflow_0008"
+        ]
+      },
+      "adapter_full_formula_exact": {
+        "exact_formulas": 5,
+        "total_formulas": 10,
+        "rate": 0.5,
+        "formula_ids": [
+          "aiflow_0002",
+          "aiflow_0003",
+          "aiflow_0006",
+          "aiflow_0007",
+          "aiflow_0008"
+        ]
+      }
+    },
+    {
+      "held_writer": "8fd01f2ab9d55fa944e4",
+      "records": 100,
+      "covered_records": 98,
+      "candidate_recall": 0.98,
+      "baseline_top1_covered": 0.7857142857142857,
+      "adapter_top1_covered": 0.7857142857142857,
+      "baseline_full_formula_exact": {
+        "exact_formulas": 8,
+        "total_formulas": 23,
+        "rate": 0.34782608695652173,
+        "formula_ids": [
+          "aiflow_0015",
+          "aiflow_0019",
+          "aiflow_0026",
+          "aiflow_0027",
+          "aiflow_0028",
+          "aiflow_0029",
+          "aiflow_0154",
+          "aiflow_0156"
+        ]
+      },
+      "adapter_full_formula_exact": {
+        "exact_formulas": 7,
+        "total_formulas": 23,
+        "rate": 0.30434782608695654,
+        "formula_ids": [
+          "aiflow_0015",
+          "aiflow_0016",
+          "aiflow_0017",
+          "aiflow_0019",
+          "aiflow_0151",
+          "aiflow_0152",
+          "aiflow_0154"
+        ]
+      }
+    },
+    {
+      "held_writer": "90ae7abee30ebd1c3a53",
+      "records": 80,
+      "covered_records": 80,
+      "candidate_recall": 1.0,
+      "baseline_top1_covered": 0.925,
+      "adapter_top1_covered": 0.9625,
+      "baseline_full_formula_exact": {
+        "exact_formulas": 16,
+        "total_formulas": 20,
+        "rate": 0.8,
+        "formula_ids": [
+          "aiflow_0118",
+          "aiflow_0119",
+          "aiflow_0120",
+          "aiflow_0121",
+          "aiflow_0122",
+          "aiflow_0124",
+          "aiflow_0126",
+          "aiflow_0127",
+          "aiflow_0130",
+          "aiflow_0131",
+          "aiflow_0132",
+          "aiflow_0133",
+          "aiflow_0134",
+          "aiflow_0135",
+          "aiflow_0136",
+          "aiflow_0137"
+        ]
+      },
+      "adapter_full_formula_exact": {
+        "exact_formulas": 17,
+        "total_formulas": 20,
+        "rate": 0.85,
+        "formula_ids": [
+          "aiflow_0118",
+          "aiflow_0119",
+          "aiflow_0120",
+          "aiflow_0121",
+          "aiflow_0122",
+          "aiflow_0124",
+          "aiflow_0125",
+          "aiflow_0126",
+          "aiflow_0127",
+          "aiflow_0128",
+          "aiflow_0130",
+          "aiflow_0131",
+          "aiflow_0132",
+          "aiflow_0133",
+          "aiflow_0134",
+          "aiflow_0135",
+          "aiflow_0136"
+        ]
+      }
+    },
+    {
+      "held_writer": "99a922f1edc2ef0565d0",
+      "records": 35,
+      "covered_records": 34,
+      "candidate_recall": 0.9714285714285714,
+      "baseline_top1_covered": 0.9117647058823529,
+      "adapter_top1_covered": 0.9411764705882353,
+      "baseline_full_formula_exact": {
+        "exact_formulas": 4,
+        "total_formulas": 8,
+        "rate": 0.5,
+        "formula_ids": [
+          "aiflow_0141",
+          "aiflow_0143",
+          "aiflow_0145",
+          "aiflow_0147"
+        ]
+      },
+      "adapter_full_formula_exact": {
+        "exact_formulas": 5,
+        "total_formulas": 8,
+        "rate": 0.625,
+        "formula_ids": [
+          "aiflow_0140",
+          "aiflow_0141",
+          "aiflow_0143",
+          "aiflow_0144",
+          "aiflow_0145"
+        ]
+      }
+    },
+    {
+      "held_writer": "aaae4f8b061e862bc663",
+      "records": 23,
+      "covered_records": 17,
+      "candidate_recall": 0.7391304347826086,
+      "baseline_top1_covered": 0.8823529411764706,
+      "adapter_top1_covered": 0.9411764705882353,
+      "baseline_full_formula_exact": {
+        "exact_formulas": 2,
+        "total_formulas": 5,
+        "rate": 0.4,
+        "formula_ids": [
+          "aiflow_0160",
+          "aiflow_0161"
+        ]
+      },
+      "adapter_full_formula_exact": {
+        "exact_formulas": 3,
+        "total_formulas": 5,
+        "rate": 0.6,
+        "formula_ids": [
+          "aiflow_0160",
+          "aiflow_0161",
+          "aiflow_0162"
+        ]
+      }
+    }
+  ],
+  "candidate_contract": {
+    "violations": 0,
+    "violation_record_ids": [],
+    "top_k_only_verified": true
+  },
+  "status": "shadow_only"
+}

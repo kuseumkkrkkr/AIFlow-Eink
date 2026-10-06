@@ -1,0 +1,192 @@
+{
+  "schema": "aiflow-pairwise-shape-runtime-evaluation/v1",
+  "generated_at": "2026-08-19T21:41:04.613533+00:00",
+  "status": "development_only_posthoc_shadow",
+  "decision": "retain_as_shadow_only_not_product",
+  "scores": {
+    "all_159": {
+      "baseline": {
+        "exact": 152,
+        "total": 159,
+        "rate": 0.9559748427672956
+      },
+      "challenger": {
+        "exact": 153,
+        "total": 159,
+        "rate": 0.9622641509433962
+      }
+    },
+    "public_web_110": {
+      "baseline": {
+        "exact": 108,
+        "total": 110,
+        "rate": 0.9818181818181818
+      },
+      "challenger": {
+        "exact": 108,
+        "total": 110,
+        "rate": 0.9818181818181818
+      }
+    },
+    "owned_phone_replay_49": {
+      "baseline": {
+        "exact": 44,
+        "total": 49,
+        "rate": 0.8979591836734694
+      },
+      "challenger": {
+        "exact": 45,
+        "total": 49,
+        "rate": 0.9183673469387755
+      }
+    }
+  },
+  "project_formula_changes": {
+    "changed_formula_ids": [
+      "aiflow_0113"
+    ],
+    "improved_formula_ids": [
+      "aiflow_0113"
+    ],
+    "regressed_formula_ids": [],
+    "changes": [
+      {
+        "formula_id": "aiflow_0113",
+        "truth": [
+          "8",
+          "\\div",
+          "2"
+        ],
+        "before": [
+          "p",
+          "\\div",
+          "2"
+        ],
+        "after": [
+          "8",
+          "\\div",
+          "2"
+        ],
+        "audit": [
+          {
+            "record_id": "aiflow_0113::p1::g0",
+            "formula_id": "aiflow_0113",
+            "from": "p",
+            "to": "8",
+            "expert_margin_8_over_p": 0.5831446770089468,
+            "hwr_challenger_rank": 13,
+            "hwr_probability_ratio_8_over_p": 0.05858936555025728
+          }
+        ]
+      }
+    ]
+  },
+  "fixed_external_collision_free_gate": {
+    "records": 18330,
+    "baseline_top1_hits": 14179,
+    "challenger_top1_hits": 14179,
+    "changed": 0,
+    "improved": 0,
+    "regressed": 0,
+    "changed_truth": {}
+  },
+  "default_off_compatibility": {
+    "formulas": 159,
+    "finalized_token_differences": 0,
+    "group_differences": 0,
+    "pairwise_shape_enabled": false
+  },
+  "crohme_repeated_noncommercial_diagnostic": {
+    "coverage": {
+      "protocol_formulas": 985,
+      "exact_formula_duplicates_removed": 1,
+      "eligible_formulas": 722,
+      "skipped": {
+        "missing_truth_partition": 0,
+        "incomplete_truth_partition": 1,
+        "unsupported_truth_label": 233,
+        "single_point_source_stroke": 29
+      }
+    },
+    "scores": {
+      "grouping_exact_before": 331,
+      "grouping_exact_after": 331,
+      "formula_exact_before": 77,
+      "formula_exact_after": 77,
+      "grouping_improved": [],
+      "grouping_regressed": [],
+      "formula_improved": [],
+      "formula_regressed": []
+    },
+    "pairwise_shape_rescue": {
+      "enabled": true,
+      "baseline_mode": "same_runtime_without_pairwise_shape_rescue",
+      "changed_formulas": 0,
+      "changed_formula_ids": []
+    },
+    "product_validation": false
+  },
+  "model": {
+    "negative_class": "p",
+    "positive_class": "8",
+    "feature_dimension": 128,
+    "gate": {
+      "baseline_token": "p",
+      "challenger_token": "8",
+      "minimum_expert_margin": 0.1,
+      "hwr_candidate_width": 20,
+      "minimum_hwr_probability_ratio": 0.05,
+      "challenger_must_be_in_original_hwr_candidates": true
+    }
+  },
+  "contracts": {
+    "candidate_preserving": true,
+    "all_strokes_exactly_once": true,
+    "insertions_or_deletions": 0,
+    "glyph_order_mutations": 0,
+    "target_label_or_glyph_count_input": false,
+    "writer_identity_input": false,
+    "arithmetic_evaluation": false,
+    "product_default_enabled": false
+  },
+  "artifacts": {
+    "truth": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\public-candidate-20260819-r3\\data\\formulas_valid.jsonl",
+      "sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401"
+    },
+    "baseline": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\candidate-context-runtime-20260820-r27-ranked-singleton-probe.json",
+      "sha256": "ea095520d0671d6ddcdf41f134af9a6d4e1093101b408ec7e8816acfa819f3d6"
+    },
+    "challenger": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\candidate-context-runtime-20260820-r28-pairwise-8p-shadow.json",
+      "sha256": "601239ffabff9b2ad2616c1157a04bd20382306f2fb8ba784e44188bff6943b0"
+    },
+    "default_off_compat": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\candidate-context-runtime-20260820-r29-pairwise-default-off-compat.json",
+      "sha256": "57203d01337b6dd54981bcecdee530838c85a451729946f4fffd3105577d672e"
+    },
+    "crohme": {
+      "path": "D:\\AIFlow-Workspace\\PrivateData\\formula-context-crohme-r28-pairwise-8p-shadow.json",
+      "sha256": "a21e150e841592ea2f0abab8c756a232445f007bdc98159ce0cda16c8e3bd167"
+    },
+    "expert": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\pairwise_shape_expert_20260820_r1_shadow\\pairwise_shape_expert.json",
+      "sha256": "0f07993e4ccc71630290e1516fa132d35ad9e754ffffce88426b399ee7c21061"
+    },
+    "configuration": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\pairwise_shape_expert_20260820_r1_shadow\\pairwise_shape_rescue_config.json",
+      "sha256": "a67452835709baa2a22f3a959b419ff203fa626c2bdb2d451828cc2f3a098a45"
+    },
+    "training_report": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\pairwise_shape_expert_20260820_r1_shadow\\training_evaluation_report.json",
+      "sha256": "f571b4ede20b56ac1750a84e0e424ec59554bdde774a5ff8a61be039de0aded4"
+    }
+  },
+  "limits": [
+    "the fixed external gate changed zero rows and has no positive external coverage",
+    "the threshold was inspected against the current 159 formulas",
+    "CROHME is repeated noncommercial diagnostic evidence only",
+    "fresh commercial writer/formula-disjoint 8 and p acceptance is required before promotion"
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schema": "aiflow-1.0e-trocr-weight-tuned/v1",
+  "model": {
+    "name": "Azu/trocr-handwritten-math",
+    "revision": "fc8dc9829360d42b1d4bc2f2668c831a72c80379",
+    "weights_source": "huggingface_pretrained_then_partial_finetune",
+    "external_weights_tuned": true,
+    "tuned_scope": "encoder.encoder.layer[-1:]"
+  },
+  "data": {
+    "candidate_path": "artifacts\\ocr_trocr_hwr95_candidates_20260901_r1\\candidates.jsonl.gz",
+    "formula_path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\public-candidate-20260819-r2\\data\\formulas_valid.jsonl",
+    "formula_count": 95,
+    "record_count": 387
+  },
+  "training": {
+    "epochs": 2,
+    "seed": 20260830,
+    "learning_rate": 0.0005,
+    "external_tuned_parameters": 1774464,
+    "candidate_adapter_parameters": 111601,
+    "unfreeze_blocks": 1,
+    "tuning_scope": "external_encoder_last_block_plus_candidate_selector"
+  },
+  "writer_loo": [
+    {
+      "held_writer": "0051ac0f3b066f191a50",
+      "records": 82,
+      "covered_records": 80,
+      "candidate_recall": 0.975609756097561,
+      "baseline_top1_covered": 0.7875,
+      "adapter_top1_covered": 0.9,
+      "baseline_formula_exact_covered": 0.4444444444444444,
+      "adapter_formula_exact_covered": 0.6111111111111112
+    },
+    {
+      "held_writer": "2d04cc6470b7a5aa8e47",
+      "records": 32,
+      "covered_records": 31,
+      "candidate_recall": 0.96875,
+      "baseline_top1_covered": 0.9032258064516129,
+      "adapter_top1_covered": 0.8709677419354839,
+      "baseline_formula_exact_covered": 0.8,
+      "adapter_formula_exact_covered": 0.7
+    },
+    {
+      "held_writer": "8c90e0ce2f8501e6cf74",
+      "records": 35,
+      "covered_records": 34,
+      "candidate_recall": 0.9714285714285714,
+      "baseline_top1_covered": 0.8529411764705882,
+      "adapter_top1_covered": 0.8823529411764706,
+      "baseline_formula_exact_covered": 0.5,
+      "adapter_formula_exact_covered": 0.6
+    },
+    {
+      "held_writer": "8fd01f2ab9d55fa944e4",
+      "records": 100,
+      "covered_records": 98,
+      "candidate_recall": 0.98,
+      "baseline_top1_covered": 0.7857142857142857,
+      "adapter_top1_covered": 0.7857142857142857,
+      "baseline_formula_exact_covered": 0.391304347826087,
+      "adapter_formula_exact_covered": 0.34782608695652173
+    },
+    {
+      "held_writer": "90ae7abee30ebd1c3a53",
+      "records": 80,
+      "covered_records": 80,
+      "candidate_recall": 1.0,
+      "baseline_top1_covered": 0.925,
+      "adapter_top1_covered": 0.9625,
+      "baseline_formula_exact_covered": 0.8,
+      "adapter_formula_exact_covered": 0.85
+    },
+    {
+      "held_writer": "99a922f1edc2ef0565d0",
+      "records": 35,
+      "covered_records": 34,
+      "candidate_recall": 0.9714285714285714,
+      "baseline_top1_covered": 0.9117647058823529,
+      "adapter_top1_covered": 0.9411764705882353,
+      "baseline_formula_exact_covered": 0.625,
+      "adapter_formula_exact_covered": 0.75
+    },
+    {
+      "held_writer": "aaae4f8b061e862bc663",
+      "records": 23,
+      "covered_records": 17,
+      "candidate_recall": 0.7391304347826086,
+      "baseline_top1_covered": 0.8823529411764706,
+      "adapter_top1_covered": 0.9411764705882353,
+      "baseline_formula_exact_covered": 0.6,
+      "adapter_formula_exact_covered": 0.8
+    }
+  ],
+  "aggregate": {
+    "records": 387,
+    "covered_records": 374,
+    "candidate_recall": 0.9664082687338501,
+    "baseline_top1_covered": 0.8475935828877005,
+    "adapter_top1_covered": 0.8850267379679144,
+    "baseline_formula_exact_covered": 0.574468085106383,
+    "adapter_formula_exact_covered": 0.6276595744680851
+  },
+  "status": "shadow_only",
+  "checkpoint": "artifacts\\ocr_trocr_weight_tuned_20260901_r1\\ocr_trocr_weight_tuned.pt"
+}

@@ -1,0 +1,204 @@
+{
+  "schema": "aiflow-1.0e-ocr-text-evidence-adapter-audit/v1",
+  "artifact": "artifacts\\ocr_trocr_adapter_10e_20260830_r2",
+  "external_model": {
+    "name": "Azu/trocr-handwritten-math",
+    "revision": "fc8dc9829360d42b1d4bc2f2668c831a72c80379",
+    "weights_frozen": true,
+    "representation": "encoder_mean_pool_only"
+  },
+  "training": {
+    "epochs": 3,
+    "seed": 20260830,
+    "trainable_adapter_parameters": 109393,
+    "external_trainable_parameters": 0,
+    "tuning_scope": "candidate_selector_only"
+  },
+  "aggregate_reported": {
+    "records": 211,
+    "covered_records": 199,
+    "candidate_recall": 0.943127962085308,
+    "baseline_top1_covered": 0.7788944723618091,
+    "adapter_top1_covered": 0.8542713567839196,
+    "baseline_formula_exact_covered": 0.3829787234042553,
+    "adapter_formula_exact_covered": 0.574468085106383
+  },
+  "aggregate_full_exact": {
+    "baseline": {
+      "exact_formulas": 16,
+      "total_formulas": 47,
+      "rate": 0.3404255319148936,
+      "formula_ids": [
+        "aiflow_0005",
+        "aiflow_0009",
+        "aiflow_0016",
+        "aiflow_0017",
+        "aiflow_0018",
+        "aiflow_0019",
+        "aiflow_0082",
+        "aiflow_0084",
+        "aiflow_0091",
+        "aiflow_0093",
+        "aiflow_0097",
+        "aiflow_0101",
+        "aiflow_0103",
+        "aiflow_0107",
+        "aiflow_0114",
+        "aiflow_0116"
+      ]
+    },
+    "adapter": {
+      "exact_formulas": 20,
+      "total_formulas": 47,
+      "rate": 0.425531914893617,
+      "formula_ids": [
+        "aiflow_0005",
+        "aiflow_0011",
+        "aiflow_0012",
+        "aiflow_0017",
+        "aiflow_0018",
+        "aiflow_0082",
+        "aiflow_0084",
+        "aiflow_0085",
+        "aiflow_0090",
+        "aiflow_0093",
+        "aiflow_0094",
+        "aiflow_0095",
+        "aiflow_0097",
+        "aiflow_0101",
+        "aiflow_0103",
+        "aiflow_0104",
+        "aiflow_0105",
+        "aiflow_0111",
+        "aiflow_0113",
+        "aiflow_0114"
+      ]
+    },
+    "candidate_absent_records": 12,
+    "candidate_absent_record_ids": [
+      "project_owned_ownership_a572346a0145c118b75e9b44",
+      "project_owned_ownership_4ec28aedc44502ae1b6f7f10",
+      "project_owned_ownership_78f867412e8cfa8859490b78",
+      "project_owned_ownership_d73e68c48f2abd1c13420516",
+      "project_owned_ownership_4697707891e6d16bec4153e1",
+      "project_owned_ownership_f5c8784a6ff946b1ff0c145f",
+      "project_owned_ownership_4abcb8f8064ea2b33ad0ef66",
+      "project_owned_ownership_81113cb168adb805bc26e6e7",
+      "project_owned_ownership_f8cb7a24d81d007dd7997deb",
+      "project_owned_ownership_20e7dd91d6838cfeefbcf117",
+      "project_owned_ownership_daa5a68d1bb462c9f8d11bbd",
+      "project_owned_ownership_5b7adf35b57f75ca8ff4f2ca"
+    ]
+  },
+  "teacher_direct_exact": null,
+  "writer_loo_full_exact": [
+    {
+      "held_writer": "3e41b56c75d3f1af3cc89494",
+      "records": 35,
+      "covered_records": 33,
+      "candidate_recall": 0.9428571428571428,
+      "baseline_top1_covered": 0.8181818181818182,
+      "adapter_top1_covered": 0.9090909090909091,
+      "baseline_full_formula_exact": {
+        "exact_formulas": 3,
+        "total_formulas": 8,
+        "rate": 0.375,
+        "formula_ids": [
+          "aiflow_0101",
+          "aiflow_0103",
+          "aiflow_0107"
+        ]
+      },
+      "adapter_full_formula_exact": {
+        "exact_formulas": 4,
+        "total_formulas": 8,
+        "rate": 0.5,
+        "formula_ids": [
+          "aiflow_0101",
+          "aiflow_0103",
+          "aiflow_0104",
+          "aiflow_0105"
+        ]
+      }
+    },
+    {
+      "held_writer": "baed3dc87cbfa8c20bdde074",
+      "records": 76,
+      "covered_records": 76,
+      "candidate_recall": 1.0,
+      "baseline_top1_covered": 0.7236842105263158,
+      "adapter_top1_covered": 0.8421052631578947,
+      "baseline_full_formula_exact": {
+        "exact_formulas": 5,
+        "total_formulas": 16,
+        "rate": 0.3125,
+        "formula_ids": [
+          "aiflow_0082",
+          "aiflow_0084",
+          "aiflow_0091",
+          "aiflow_0093",
+          "aiflow_0097"
+        ]
+      },
+      "adapter_full_formula_exact": {
+        "exact_formulas": 8,
+        "total_formulas": 16,
+        "rate": 0.5,
+        "formula_ids": [
+          "aiflow_0082",
+          "aiflow_0084",
+          "aiflow_0085",
+          "aiflow_0090",
+          "aiflow_0093",
+          "aiflow_0094",
+          "aiflow_0095",
+          "aiflow_0097"
+        ]
+      }
+    },
+    {
+      "held_writer": "ed6789e0639f68e05d5e2d1b",
+      "records": 100,
+      "covered_records": 90,
+      "candidate_recall": 0.9,
+      "baseline_top1_covered": 0.8111111111111111,
+      "adapter_top1_covered": 0.8444444444444444,
+      "baseline_full_formula_exact": {
+        "exact_formulas": 8,
+        "total_formulas": 23,
+        "rate": 0.34782608695652173,
+        "formula_ids": [
+          "aiflow_0005",
+          "aiflow_0009",
+          "aiflow_0016",
+          "aiflow_0017",
+          "aiflow_0018",
+          "aiflow_0019",
+          "aiflow_0114",
+          "aiflow_0116"
+        ]
+      },
+      "adapter_full_formula_exact": {
+        "exact_formulas": 8,
+        "total_formulas": 23,
+        "rate": 0.34782608695652173,
+        "formula_ids": [
+          "aiflow_0005",
+          "aiflow_0011",
+          "aiflow_0012",
+          "aiflow_0017",
+          "aiflow_0018",
+          "aiflow_0111",
+          "aiflow_0113",
+          "aiflow_0114"
+        ]
+      }
+    }
+  ],
+  "candidate_contract": {
+    "violations": 0,
+    "violation_record_ids": [],
+    "top_k_only_verified": true
+  },
+  "status": "shadow_only"
+}

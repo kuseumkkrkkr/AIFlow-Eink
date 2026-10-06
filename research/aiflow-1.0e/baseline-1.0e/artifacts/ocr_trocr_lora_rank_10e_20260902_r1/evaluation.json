@@ -1,0 +1,184 @@
+{
+  "adapter": {
+    "changed_rows": 91,
+    "formula_exact": 0.5473684210526316,
+    "formula_exact_correct": 52,
+    "formula_total": 95,
+    "row_level_improvements": 40,
+    "row_level_regressions": 34,
+    "rows": 387,
+    "top1": 0.834625322997416,
+    "top1_correct": 323
+  },
+  "baseline": {
+    "changed_rows": 0,
+    "formula_exact": 0.5157894736842106,
+    "formula_exact_correct": 49,
+    "formula_total": 95,
+    "row_level_improvements": 0,
+    "row_level_regressions": 0,
+    "rows": 387,
+    "top1": 0.8191214470284238,
+    "top1_correct": 317
+  },
+  "candidate_recall": 0.9664082687338501,
+  "checkpoint": "artifacts\\ocr_trocr_lora_rank_10e_20260902_r1\\ocr_trocr_lora_rank.pt",
+  "data": {
+    "candidate_path": "artifacts\\ocr_trocr_hwr95_candidates_20260901_r1\\candidates.jsonl.gz",
+    "formula_count": 95,
+    "formula_path": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\public-candidate-20260819-r2\\data\\formulas_valid.jsonl",
+    "record_count": 387
+  },
+  "loss_reports": [
+    {
+      "ce": 1.4671924233436584,
+      "held_writer": "0051ac0f3b066f191a50",
+      "pairwise": 0.33399615809321404,
+      "stability": 0.1265267411246896
+    },
+    {
+      "ce": 1.3936925476247615,
+      "held_writer": "2d04cc6470b7a5aa8e47",
+      "pairwise": 0.2890252223746343,
+      "stability": 0.1251196197488091
+    },
+    {
+      "ce": 1.3706850897182117,
+      "held_writer": "8c90e0ce2f8501e6cf74",
+      "pairwise": 0.2472467219287699,
+      "stability": 0.10417158944024281
+    },
+    {
+      "ce": 1.461621794435713,
+      "held_writer": "8fd01f2ab9d55fa944e4",
+      "pairwise": 0.3076550422443284,
+      "stability": 0.14505389953653017
+    },
+    {
+      "ce": 1.4143526315689088,
+      "held_writer": "90ae7abee30ebd1c3a53",
+      "pairwise": 0.23556864252313972,
+      "stability": 0.1660486675798893
+    },
+    {
+      "ce": 1.4678976319052957,
+      "held_writer": "99a922f1edc2ef0565d0",
+      "pairwise": 0.38184509155425156,
+      "stability": 0.12971042833206328
+    },
+    {
+      "ce": 1.4276219209035237,
+      "held_writer": "aaae4f8b061e862bc663",
+      "pairwise": 0.2679992836589615,
+      "stability": 0.13470748144512376
+    }
+  ],
+  "model": {
+    "name": "Azu/trocr-handwritten-math",
+    "revision": "fc8dc9829360d42b1d4bc2f2668c831a72c80379",
+    "weights_source": "huggingface_pretrained_then_lora_partial_finetune"
+  },
+  "schema": "aiflow-1.0e-trocr-lora-rank/v1",
+  "status": "shadow_only",
+  "training": {
+    "epochs": 2,
+    "learning_rate": 0.0003,
+    "lora_alpha": 8.0,
+    "lora_block_count": 2,
+    "lora_parameters": 12288,
+    "lora_rank": 4,
+    "lora_target_modules": [
+      "query",
+      "value"
+    ],
+    "loss": "cross_entropy + formula-balanced pairwise margin + baseline stability penalty",
+    "seed": 20260902,
+    "selector_parameters": 111601
+  },
+  "writer_loo": [
+    {
+      "changed_rows": 27,
+      "formula_exact": 0.631578947368421,
+      "formula_exact_correct": 12,
+      "formula_total": 19,
+      "held_writer": "0051ac0f3b066f191a50",
+      "row_level_improvements": 14,
+      "row_level_regressions": 9,
+      "rows": 82,
+      "top1": 0.8292682926829268,
+      "top1_correct": 68
+    },
+    {
+      "changed_rows": 6,
+      "formula_exact": 0.6,
+      "formula_exact_correct": 6,
+      "formula_total": 10,
+      "held_writer": "2d04cc6470b7a5aa8e47",
+      "row_level_improvements": 1,
+      "row_level_regressions": 3,
+      "rows": 32,
+      "top1": 0.8125,
+      "top1_correct": 26
+    },
+    {
+      "changed_rows": 6,
+      "formula_exact": 0.3,
+      "formula_exact_correct": 3,
+      "formula_total": 10,
+      "held_writer": "8c90e0ce2f8501e6cf74",
+      "row_level_improvements": 2,
+      "row_level_regressions": 4,
+      "rows": 35,
+      "top1": 0.7714285714285715,
+      "top1_correct": 27
+    },
+    {
+      "changed_rows": 29,
+      "formula_exact": 0.5652173913043478,
+      "formula_exact_correct": 13,
+      "formula_total": 23,
+      "held_writer": "8fd01f2ab9d55fa944e4",
+      "row_level_improvements": 17,
+      "row_level_regressions": 9,
+      "rows": 100,
+      "top1": 0.85,
+      "top1_correct": 85
+    },
+    {
+      "changed_rows": 9,
+      "formula_exact": 0.6,
+      "formula_exact_correct": 12,
+      "formula_total": 20,
+      "held_writer": "90ae7abee30ebd1c3a53",
+      "row_level_improvements": 3,
+      "row_level_regressions": 5,
+      "rows": 80,
+      "top1": 0.9,
+      "top1_correct": 72
+    },
+    {
+      "changed_rows": 3,
+      "formula_exact": 0.75,
+      "formula_exact_correct": 6,
+      "formula_total": 8,
+      "held_writer": "99a922f1edc2ef0565d0",
+      "row_level_improvements": 2,
+      "row_level_regressions": 0,
+      "rows": 35,
+      "top1": 0.9428571428571428,
+      "top1_correct": 33
+    },
+    {
+      "changed_rows": 11,
+      "formula_exact": 0.0,
+      "formula_exact_correct": 0,
+      "formula_total": 5,
+      "held_writer": "aaae4f8b061e862bc663",
+      "row_level_improvements": 1,
+      "row_level_regressions": 4,
+      "rows": 23,
+      "top1": 0.5217391304347826,
+      "top1_correct": 12
+    }
+  ]
+}

@@ -1,0 +1,978 @@
+{
+  "schema": "aiflow-joint-hwr-stroke-grouping/v1",
+  "generated_at": "2026-08-19T13:53:54.388283+00:00",
+  "status": "shadow",
+  "model_version": "aiflow-joint-hwr-stroke-grouping-1.0-r1-shadow",
+  "dataset": {
+    "dataset_info_sha256": "03dfc7d65cf39b66410198e0410414f73398ec968bac3cd3c73fe26ce699cb3f",
+    "formulas_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "ownership_sha256": "2b466b35cedfa9f9d3ed4f965ef36884cb0eab0791466b50524e906b5f0647df",
+    "formulas": 96,
+    "writers": 7,
+    "writer_formulas": {
+      "writer_001": 10,
+      "writer_002": 23,
+      "writer_003": 20,
+      "writer_004": 10,
+      "writer_006": 20,
+      "writer_007": 8,
+      "writer_008": 5
+    }
+  },
+  "lattice_config": {
+    "temporal_window": 6,
+    "spatial_neighbors": 4,
+    "max_long_group_width_fraction": 1.0
+  },
+  "fixed_group_bias": 0.0,
+  "feature_names": [
+    "stroke_count",
+    "point_count_log",
+    "width_ref",
+    "height_ref",
+    "aspect_log",
+    "temporal_span",
+    "temporal_contiguous",
+    "singleton",
+    "has_spatial_pair",
+    "pair_gap_mean_ref",
+    "pair_gap_max_ref",
+    "x_overlap_mean",
+    "y_overlap_mean",
+    "stroke_width_mean_ref",
+    "stroke_width_std_ref",
+    "stroke_height_mean_ref",
+    "stroke_height_std_ref",
+    "path_length_ref",
+    "endpoint_gap_mean_ref",
+    "candidate_cx_formula",
+    "candidate_cy_formula",
+    "candidate_width_formula",
+    "hwr_top1",
+    "hwr_margin",
+    "hwr_top5_mass",
+    "hwr_entropy",
+    "hwr_component_top1_gain",
+    "hwr_component_entropy_gain",
+    "hwr_label_digit",
+    "hwr_label_operator",
+    "hwr_label_alpha",
+    "hwr_label_delimiter"
+  ],
+  "evaluation": {
+    "protocol": "outer writer absent from HWR-head and grouping-model fitting; fixed group_bias=0",
+    "geometry": {
+      "formulas": 96,
+      "partition_exact": 0.9270833333333334,
+      "exact_partitions": 89,
+      "truth_groups": 393,
+      "exact_group_recall": 0.9694656488549618,
+      "pair_precision": 0.9304347826086956,
+      "pair_recall": 0.9771689497716894,
+      "pair_f1": 0.953229398663697,
+      "overmerge_rate": 0.03125,
+      "oversplit_rate": 0.041666666666666664
+    },
+    "joint_hwr": {
+      "formulas": 96,
+      "partition_exact": 0.90625,
+      "exact_partitions": 87,
+      "truth_groups": 393,
+      "exact_group_recall": 0.9669211195928753,
+      "pair_precision": 0.9764150943396226,
+      "pair_recall": 0.9452054794520548,
+      "pair_f1": 0.9605568445475638,
+      "overmerge_rate": 0.041666666666666664,
+      "oversplit_rate": 0.0625
+    },
+    "folds": [
+      {
+        "held_out_writer": "writer_001",
+        "train_formulas": 86,
+        "test_formulas": 10,
+        "geometry": {
+          "formulas": 10,
+          "partition_exact": 1.0,
+          "exact_partitions": 10,
+          "truth_groups": 32,
+          "exact_group_recall": 1.0,
+          "pair_precision": 1.0,
+          "pair_recall": 1.0,
+          "pair_f1": 1.0,
+          "overmerge_rate": 0.0,
+          "oversplit_rate": 0.0
+        },
+        "joint_hwr": {
+          "formulas": 10,
+          "partition_exact": 0.9,
+          "exact_partitions": 9,
+          "truth_groups": 32,
+          "exact_group_recall": 0.96875,
+          "pair_precision": 1.0,
+          "pair_recall": 0.9333333333333333,
+          "pair_f1": 0.9655172413793104,
+          "overmerge_rate": 0.0,
+          "oversplit_rate": 0.1
+        }
+      },
+      {
+        "held_out_writer": "writer_002",
+        "train_formulas": 73,
+        "test_formulas": 23,
+        "geometry": {
+          "formulas": 23,
+          "partition_exact": 0.8695652173913043,
+          "exact_partitions": 20,
+          "truth_groups": 100,
+          "exact_group_recall": 0.93,
+          "pair_precision": 0.7586206896551724,
+          "pair_recall": 0.9777777777777777,
+          "pair_f1": 0.854368932038835,
+          "overmerge_rate": 0.08695652173913043,
+          "oversplit_rate": 0.043478260869565216
+        },
+        "joint_hwr": {
+          "formulas": 23,
+          "partition_exact": 0.9130434782608695,
+          "exact_partitions": 21,
+          "truth_groups": 100,
+          "exact_group_recall": 0.96,
+          "pair_precision": 0.9574468085106383,
+          "pair_recall": 1.0,
+          "pair_f1": 0.9782608695652174,
+          "overmerge_rate": 0.08695652173913043,
+          "oversplit_rate": 0.0
+        }
+      },
+      {
+        "held_out_writer": "writer_003",
+        "train_formulas": 76,
+        "test_formulas": 20,
+        "geometry": {
+          "formulas": 20,
+          "partition_exact": 1.0,
+          "exact_partitions": 20,
+          "truth_groups": 88,
+          "exact_group_recall": 1.0,
+          "pair_precision": 1.0,
+          "pair_recall": 1.0,
+          "pair_f1": 1.0,
+          "overmerge_rate": 0.0,
+          "oversplit_rate": 0.0
+        },
+        "joint_hwr": {
+          "formulas": 20,
+          "partition_exact": 1.0,
+          "exact_partitions": 20,
+          "truth_groups": 88,
+          "exact_group_recall": 1.0,
+          "pair_precision": 1.0,
+          "pair_recall": 1.0,
+          "pair_f1": 1.0,
+          "overmerge_rate": 0.0,
+          "oversplit_rate": 0.0
+        }
+      },
+      {
+        "held_out_writer": "writer_004",
+        "train_formulas": 86,
+        "test_formulas": 10,
+        "geometry": {
+          "formulas": 10,
+          "partition_exact": 0.8,
+          "exact_partitions": 8,
+          "truth_groups": 35,
+          "exact_group_recall": 0.9428571428571428,
+          "pair_precision": 1.0,
+          "pair_recall": 0.8846153846153846,
+          "pair_f1": 0.9387755102040816,
+          "overmerge_rate": 0.0,
+          "oversplit_rate": 0.2
+        },
+        "joint_hwr": {
+          "formulas": 10,
+          "partition_exact": 0.8,
+          "exact_partitions": 8,
+          "truth_groups": 35,
+          "exact_group_recall": 0.9428571428571428,
+          "pair_precision": 1.0,
+          "pair_recall": 0.8846153846153846,
+          "pair_f1": 0.9387755102040816,
+          "overmerge_rate": 0.0,
+          "oversplit_rate": 0.2
+        }
+      },
+      {
+        "held_out_writer": "writer_006",
+        "train_formulas": 76,
+        "test_formulas": 20,
+        "geometry": {
+          "formulas": 20,
+          "partition_exact": 0.9,
+          "exact_partitions": 18,
+          "truth_groups": 80,
+          "exact_group_recall": 0.9625,
+          "pair_precision": 0.9545454545454546,
+          "pair_recall": 0.9767441860465116,
+          "pair_f1": 0.9655172413793104,
+          "overmerge_rate": 0.05,
+          "oversplit_rate": 0.05
+        },
+        "joint_hwr": {
+          "formulas": 20,
+          "partition_exact": 0.9,
+          "exact_partitions": 18,
+          "truth_groups": 80,
+          "exact_group_recall": 0.9625,
+          "pair_precision": 0.9545454545454546,
+          "pair_recall": 0.9767441860465116,
+          "pair_f1": 0.9655172413793104,
+          "overmerge_rate": 0.05,
+          "oversplit_rate": 0.05
+        }
+      },
+      {
+        "held_out_writer": "writer_007",
+        "train_formulas": 88,
+        "test_formulas": 8,
+        "geometry": {
+          "formulas": 8,
+          "partition_exact": 1.0,
+          "exact_partitions": 8,
+          "truth_groups": 35,
+          "exact_group_recall": 1.0,
+          "pair_precision": 1.0,
+          "pair_recall": 1.0,
+          "pair_f1": 1.0,
+          "overmerge_rate": 0.0,
+          "oversplit_rate": 0.0
+        },
+        "joint_hwr": {
+          "formulas": 8,
+          "partition_exact": 1.0,
+          "exact_partitions": 8,
+          "truth_groups": 35,
+          "exact_group_recall": 1.0,
+          "pair_precision": 1.0,
+          "pair_recall": 1.0,
+          "pair_f1": 1.0,
+          "overmerge_rate": 0.0,
+          "oversplit_rate": 0.0
+        }
+      },
+      {
+        "held_out_writer": "writer_008",
+        "train_formulas": 91,
+        "test_formulas": 5,
+        "geometry": {
+          "formulas": 5,
+          "partition_exact": 1.0,
+          "exact_partitions": 5,
+          "truth_groups": 23,
+          "exact_group_recall": 1.0,
+          "pair_precision": 1.0,
+          "pair_recall": 1.0,
+          "pair_f1": 1.0,
+          "overmerge_rate": 0.0,
+          "oversplit_rate": 0.0
+        },
+        "joint_hwr": {
+          "formulas": 5,
+          "partition_exact": 0.6,
+          "exact_partitions": 3,
+          "truth_groups": 23,
+          "exact_group_recall": 0.8695652173913043,
+          "pair_precision": 0.967741935483871,
+          "pair_recall": 0.8108108108108109,
+          "pair_f1": 0.8823529411764706,
+          "overmerge_rate": 0.2,
+          "oversplit_rate": 0.4
+        }
+      }
+    ],
+    "geometry_failed": [
+      {
+        "sample_id": "aiflow_0018",
+        "writer": "writer_002",
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            6
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0020",
+        "writer": "writer_002",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0156",
+        "writer": "writer_002",
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0128",
+        "writer": "writer_006",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            7
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0130",
+        "writer": "writer_006",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0008",
+        "writer": "writer_004",
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0010",
+        "writer": "writer_004",
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      }
+    ],
+    "joint_hwr_failed": [
+      {
+        "sample_id": "aiflow_0020",
+        "writer": "writer_002",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0021",
+        "writer": "writer_002",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0128",
+        "writer": "writer_006",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            7
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0130",
+        "writer": "writer_006",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0163",
+        "writer": "writer_008",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          [
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0164",
+        "writer": "writer_008",
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          [
+            9
+          ],
+          [
+            10,
+            11,
+            12
+          ],
+          [
+            13
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            13
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0008",
+        "writer": "writer_004",
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0010",
+        "writer": "writer_004",
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0074",
+        "writer": "writer_001",
+        "truth": [
+          [
+            0,
+            3
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "joint_grouping_selector": {
+      "file": "joint_grouping_selector.joblib",
+      "sha256": "906c81721c120acafd3c55358cfbb5d26fdfddf25f2c9793f8a0a1e6b180c3dc"
+    },
+    "base_hwr_checkpoint_sha256": "f0e1c222a98510be3a77b096affdc20c62c97ec4c994de6af5c5436b07210475",
+    "writer_loo_heads_sha256": "80464eb50ef14acb194c944fc5c95201ce94d03e4687b721a5f097aad67706bc",
+    "product_hwr_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e"
+  },
+  "contracts": {
+    "target_label_or_cell_count_input": false,
+    "writer_id_feature": false,
+    "held_writer_absent_from_hwr_and_grouping_fit": true,
+    "all_strokes_exactly_once": true,
+    "product_default_enabled": false
+  },
+  "limits": [
+    "current writers are development evidence, not untouched product acceptance",
+    "the final product artifact is fitted on all current ownership rows and is not scored on them"
+  ]
+}

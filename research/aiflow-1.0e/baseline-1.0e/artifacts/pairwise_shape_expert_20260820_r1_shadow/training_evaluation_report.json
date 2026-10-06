@@ -1,0 +1,82 @@
+{
+  "schema": "aiflow-pairwise-shape-expert-training-report/v1",
+  "generated_at": "2026-08-19T21:26:11.751353+00:00",
+  "status": "development_only_posthoc_shadow",
+  "decision": "continue_to_formula_and_crohme_no_regression_gates",
+  "training": {
+    "external_train_only": true,
+    "records": 714,
+    "support": {
+      "p": 389,
+      "8": 325
+    },
+    "class_balanced": true,
+    "encoder_frozen": true,
+    "formula_truth_input": false,
+    "writer_identity_input": false
+  },
+  "collision_audit": {
+    "policy": "exclude_eval_rows_with_byte_identical_model_input_in_training",
+    "train_records": 167088,
+    "eval_records": 18344,
+    "excluded_exact_input_collisions": 14,
+    "collision_free_eval_records": 18330
+  },
+  "fixed_external_pair_eval": {
+    "records": 78,
+    "support": {
+      "p": 42,
+      "8": 36
+    },
+    "production_hwr_pairwise_hits": 78,
+    "expert_pairwise_hits": 77,
+    "expert_errors": [
+      {
+        "collision_free_eval_index": 17176,
+        "record_id": "uji:uji_pen_v2_76a1c2c2d6c64681127ca8a3",
+        "source": "uji",
+        "truth": "p",
+        "expert_prediction": "8",
+        "expert_margin_8_over_p": 0.08216865526665239,
+        "hwr_8_rank": 15,
+        "hwr_probability_8": 0.004670357797294855,
+        "hwr_probability_p": 0.03907174989581108,
+        "hwr_probability_ratio_8_over_p": 0.11953285454961332
+      }
+    ]
+  },
+  "fixed_collision_free_external_gate": {
+    "records": 18330,
+    "baseline_top1_hits": 14179,
+    "challenger_top1_hits": 14179,
+    "changed": 0,
+    "improved": 0,
+    "regressed": 0,
+    "changed_truth": {}
+  },
+  "artifacts": {
+    "expert": "pairwise_shape_expert.json",
+    "expert_sha256": "0f07993e4ccc71630290e1516fa132d35ad9e754ffffce88426b399ee7c21061",
+    "configuration": "pairwise_shape_rescue_config.json",
+    "configuration_sha256": "a67452835709baa2a22f3a959b419ff203fa626c2bdb2d451828cc2f3a098a45",
+    "cache_manifest_sha256": "eb34355c4a90c65326758d59dc167463e1d87dc29748d44c5041a3f1d4210f80",
+    "train_features_sha256": "39e3f0c5197c3043e6c192b25f32925d56b99d08452dd9b31d2d11f0422e9edc",
+    "train_labels_sha256": "22c1f12b4de0715a6d58f6ad67dd672f051fa7d6152e39cc2c8826ea06651600",
+    "eval_features_sha256": "24afdc37a8282af19060ccda91ca7765faba21a3106e475dbea87096aac26711",
+    "eval_labels_sha256": "2ff1aa55cabdb8fab760bf48401a521f7b3cb7b7afb30e8e86b61fb465b297c7",
+    "eval_truth_sha256": "7ddedcaea10fb571d562741e14e3b8a88e96ada765d90601ae53dc2638722a34",
+    "hwr_checkpoint_sha256": "1fed74b4580d3acc9ff48544a7d715c52170037bcb0842921b1fe0339f0abd1d"
+  },
+  "software": {
+    "numpy": "2.1.3",
+    "pytorch": "2.5.1+cu124",
+    "scikit_learn": "1.5.2"
+  },
+  "limits": [
+    "the expert standalone pair decision makes one fixed external p-to-8 error",
+    "the deployed gate has zero changed external rows and therefore no external positive coverage",
+    "the threshold was inspected against the current 159 formulas",
+    "fresh commercial writer/formula-disjoint p and 8 acceptance remains required"
+  ],
+  "product_default_enabled": false
+}

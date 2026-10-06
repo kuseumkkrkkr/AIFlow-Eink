@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>RIT_2014_65.inkml</title>
+<style>body{font:16px system-ui;margin:24px;max-width:720px}canvas{border:1px solid #888;width:100%;height:auto}input{width:100%}button{margin-right:8px}</style>
+<h1>RIT_2014_65.inkml</h1><p>truth: $ G \times H $</p>
+<canvas id="ink" width="640" height="480"></canvas>
+<p><button id="play" type="button">play (48 Hz)</button><button id="reset" type="button">reset</button></p>
+<input id="step" type="range" min="0" value="0"><output id="count"></output>
+<script>
+const strokes=[[[340.0, 145.0], [333.0, 142.0], [328.0, 142.0], [322.0, 142.0], [314.0, 141.0], [304.0, 141.0], [292.0, 141.0], [281.0, 143.0], [271.0, 148.0], [261.0, 155.0], [253.0, 163.0], [247.0, 172.0], [242.0, 184.0], [238.0, 195.0], [236.0, 208.0], [236.0, 219.0], [236.0, 234.0], [239.0, 246.0], [246.0, 259.0], [255.0, 268.0], [267.0, 275.0], [281.0, 279.0], [294.0, 281.0], [310.0, 281.0], [328.0, 281.0], [343.0, 277.0], [357.0, 272.0], [367.0, 266.0], [375.0, 259.0], [380.0, 252.0], [382.0, 246.0], [382.0, 239.0], [381.0, 232.0], [373.0, 227.0], [362.0, 223.0], [348.0, 223.0], [333.0, 223.0], [318.0, 223.0], [303.0, 223.0], [291.0, 225.0], [284.0, 226.0], [280.0, 228.0], [280.0, 231.0], [281.0, 235.0]], [[458.0, 168.0], [459.0, 172.0], [459.0, 177.0], [463.0, 186.0], [467.0, 196.0], [473.0, 209.0], [479.0, 218.0], [486.0, 227.0], [495.0, 238.0], [502.0, 245.0], [508.0, 252.0], [513.0, 257.0], [517.0, 263.0], [521.0, 267.0], [525.0, 270.0], [529.0, 272.0], [533.0, 273.0], [538.0, 271.0]], [[553.0, 170.0], [545.0, 174.0], [534.0, 184.0], [517.0, 198.0], [499.0, 212.0], [481.0, 225.0], [466.0, 238.0], [456.0, 247.0], [448.0, 255.0], [444.0, 263.0], [442.0, 268.0], [442.0, 272.0], [445.0, 272.0]], [[632.0, 129.0], [624.0, 131.0], [621.0, 136.0], [619.0, 144.0], [617.0, 157.0], [616.0, 170.0], [615.0, 185.0], [615.0, 200.0], [615.0, 215.0], [615.0, 231.0], [615.0, 247.0], [613.0, 262.0], [611.0, 274.0], [609.0, 283.0], [609.0, 289.0], [609.0, 292.0]], [[606.0, 211.0], [612.0, 213.0], [618.0, 213.0], [626.0, 212.0], [638.0, 210.0], [651.0, 208.0], [663.0, 206.0], [673.0, 204.0], [680.0, 203.0], [688.0, 202.0], [694.0, 201.0], [700.0, 199.0], [704.0, 195.0]], [[708.0, 111.0], [702.0, 114.0], [700.0, 121.0], [699.0, 133.0], [698.0, 153.0], [697.0, 172.0], [697.0, 191.0], [697.0, 210.0], [699.0, 228.0], [701.0, 247.0], [702.0, 267.0], [703.0, 284.0], [703.0, 298.0], [705.0, 313.0], [706.0, 323.0], [708.0, 330.0]]]; const points=[];
+for(let s=0;s<strokes.length;s++) for(let p=0;p<strokes[s].length;p++) points.push([s,p,strokes[s][p]]);
+const canvas=document.getElementById('ink'),ctx=canvas.getContext('2d'),step=document.getElementById('step'),count=document.getElementById('count');
+step.max=points.length; let timer=null;
+const flat=points.map(v=>v[2]), xs=flat.map(v=>v[0]), ys=flat.map(v=>v[1]);
+const loX=Math.min(...xs), hiX=Math.max(...xs), loY=Math.min(...ys), hiY=Math.max(...ys), span=Math.max(hiX-loX,hiY-loY,1), pad=32;
+function map(p){return [pad+(p[0]-loX)/span*(canvas.width-2*pad),pad+(p[1]-loY)/span*(canvas.height-2*pad)]}
+function draw(){const n=Number(step.value);ctx.clearRect(0,0,canvas.width,canvas.height);ctx.lineWidth=2;ctx.strokeStyle='#111';ctx.lineCap='round';for(let i=0;i<n;i++){const [s,p,point]=points[i],xy=map(point);if(p===0){ctx.beginPath();ctx.moveTo(...xy)}else{ctx.lineTo(...xy);ctx.stroke();ctx.beginPath();ctx.moveTo(...xy)}ctx.fillStyle='#2563eb';ctx.beginPath();ctx.arc(...xy,2.5,0,Math.PI*2);ctx.fill()}count.value=`${n} / ${points.length} points`;}
+step.addEventListener('input',draw);document.getElementById('reset').onclick=()=>{step.value=0;draw()};document.getElementById('play').onclick=()=>{if(timer){clearInterval(timer);timer=null;return} timer=setInterval(()=>{if(Number(step.value)>=points.length){clearInterval(timer);timer=null}else{step.value=Number(step.value)+1;draw()}},1000/48)};draw();
+</script>

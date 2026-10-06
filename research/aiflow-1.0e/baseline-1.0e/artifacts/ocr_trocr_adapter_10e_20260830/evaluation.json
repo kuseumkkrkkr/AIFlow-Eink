@@ -1,0 +1,69 @@
+{
+  "schema": "aiflow-1.0e-trocr-candidate-adapter/v1",
+  "model": {
+    "name": "Azu/trocr-handwritten-math",
+    "revision": "fc8dc9829360d42b1d4bc2f2668c831a72c80379",
+    "weights_frozen": true,
+    "representation": "encoder_mean_pool_only"
+  },
+  "processor": {
+    "name": "fhswf/TrOCR_Math_handwritten",
+    "revision": "12c159e774f558d568e0b083f43ce6f48af3981a"
+  },
+  "data": {
+    "candidate_path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\homograph_context_20260814\\direct_candidates.jsonl.gz",
+    "formula_path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\hf-dataset\\data\\formulas_valid.jsonl",
+    "formula_count": 47,
+    "record_count": 211
+  },
+  "training": {
+    "epochs": 3,
+    "seed": 20260830,
+    "trainable_adapter_parameters": 109393,
+    "external_trainable_parameters": 0,
+    "tuning_scope": "candidate_selector_only"
+  },
+  "writer_loo": [
+    {
+      "held_writer": "3e41b56c75d3f1af3cc89494",
+      "records": 35,
+      "covered_records": 33,
+      "candidate_recall": 0.9428571428571428,
+      "baseline_top1_covered": 0.8181818181818182,
+      "adapter_top1_covered": 0.9090909090909091,
+      "baseline_formula_exact_covered": 0.375,
+      "adapter_formula_exact_covered": 0.625
+    },
+    {
+      "held_writer": "baed3dc87cbfa8c20bdde074",
+      "records": 76,
+      "covered_records": 76,
+      "candidate_recall": 1.0,
+      "baseline_top1_covered": 0.7236842105263158,
+      "adapter_top1_covered": 0.8421052631578947,
+      "baseline_formula_exact_covered": 0.3125,
+      "adapter_formula_exact_covered": 0.5
+    },
+    {
+      "held_writer": "ed6789e0639f68e05d5e2d1b",
+      "records": 100,
+      "covered_records": 90,
+      "candidate_recall": 0.9,
+      "baseline_top1_covered": 0.8111111111111111,
+      "adapter_top1_covered": 0.8444444444444444,
+      "baseline_formula_exact_covered": 0.43478260869565216,
+      "adapter_formula_exact_covered": 0.6086956521739131
+    }
+  ],
+  "aggregate": {
+    "records": 211,
+    "covered_records": 199,
+    "candidate_recall": 0.943127962085308,
+    "baseline_top1_covered": 0.7788944723618091,
+    "adapter_top1_covered": 0.8542713567839196,
+    "baseline_formula_exact_covered": 0.3829787234042553,
+    "adapter_formula_exact_covered": 0.574468085106383
+  },
+  "status": "shadow_only",
+  "checkpoint": "artifacts\\ocr_trocr_adapter_10e_20260830\\ocr_trocr_adapter.pt"
+}

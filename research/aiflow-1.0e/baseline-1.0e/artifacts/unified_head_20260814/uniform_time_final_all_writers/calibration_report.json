@@ -1,0 +1,145 @@
+{
+  "schema": "aiflow-project-symbol-head-calibration/v2",
+  "base_checkpoint_sha256": "f0e1c222a98510be3a77b096affdc20c62c97ec4c994de6af5c5436b07210475",
+  "base_checkpoint_name": "classifier_checkpoint.pt",
+  "seed": 20260812,
+  "head_mode": "unified-math",
+  "data_policy": {
+    "project_owned_training": "only real symbol trajectories from non-held hashed writer groups",
+    "project_owned_formula_grouping_training": false,
+    "raw_dataset_mutation": false,
+    "external_rehearsal": "math_train only; fixed external holdout excluded"
+  },
+  "input_contract": {
+    "channels": [
+      "x",
+      "y",
+      "delta_t",
+      "stroke_start",
+      "observed"
+    ],
+    "observed_channel_mode": "uniform-time",
+    "math_observed_transform": "uniform-time",
+    "auxiliary_observed_transform": "uniform-time",
+    "observed_channel_policy": "constant_one_for_source_invariance",
+    "delta_t_policy": "normalized_sequence_progress:first_zero_then_1/(points-1)"
+  },
+  "calibration": {
+    "punctuation_labels": [
+      "(",
+      ")",
+      "="
+    ],
+    "output_rows_only": true,
+    "steps": 250,
+    "learning_rate": 0.001,
+    "punctuation_direct_batch_size": 16,
+    "other_symbol_direct_batch_size": 32,
+    "rehearsal_batch_size": 64,
+    "rehearsal_negative_rows": 8192,
+    "punctuation_rehearsal_loss_weight": 8.0,
+    "other_symbol_rehearsal_loss_weight": 16.0,
+    "rehearsal_records": 8408
+  },
+  "base_external": {
+    "top1": 0.7720235499345836,
+    "top5": 0.9735063235935456,
+    "math": {
+      "top1": 0.7720235499345836,
+      "top5": 0.9735063235935456,
+      "punctuation": {
+        "records": 24,
+        "top1_hits": 24,
+        "top5_hits": 24,
+        "top1": 1.0,
+        "top5": 1.0
+      }
+    },
+    "collision_free_math": {
+      "records": 18330,
+      "top1": 0.7722858701582106,
+      "top5": 0.9735406437534098
+    }
+  },
+  "external_holdout_collision_audit": {
+    "policy": "exclude_eval_rows_with_byte_identical_model_input_in_training",
+    "train_records": 167088,
+    "eval_records": 18344,
+    "excluded_exact_input_collisions": 14,
+    "collision_free_eval_records": 18330
+  },
+  "mode": "finalize_all_writers",
+  "calibration_train": {
+    "punctuation": {
+      "project_train_records": 32,
+      "target_output_rows": [
+        369,
+        370,
+        371
+      ],
+      "direct_batch_size": 16,
+      "rehearsal_loss_weight": 8.0,
+      "learning_rate": 0.001,
+      "steps": 250,
+      "mean_loss": 5.864376281738282
+    },
+    "other_observed_symbols": {
+      "project_train_records": 179,
+      "target_output_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        121,
+        305,
+        343,
+        344,
+        348,
+        355,
+        356,
+        365,
+        366
+      ],
+      "direct_batch_size": 32,
+      "rehearsal_loss_weight": 16.0,
+      "learning_rate": 0.001,
+      "steps": 250,
+      "mean_loss": 8.441609661102294
+    }
+  },
+  "calibrated_external": {
+    "top1": 0.7732773658962059,
+    "top5": 0.9736153510684693,
+    "math": {
+      "top1": 0.7732773658962059,
+      "top5": 0.9736153510684693,
+      "punctuation": {
+        "records": 24,
+        "top1_hits": 24,
+        "top5_hits": 24,
+        "top1": 1.0,
+        "top5": 1.0
+      }
+    },
+    "collision_free_math": {
+      "records": 18330,
+      "top1": 0.7735406437534097,
+      "top5": 0.9736497545008184
+    }
+  },
+  "direct_ownership": {
+    "status": "not_scored",
+    "reason": "all project symbol rows were calibration input; scoring them would leak training labels"
+  },
+  "product_adopted": false,
+  "limit": "use only after the separate leave-one-writer-out report passes; formula grouping and decoding remain absent"
+}

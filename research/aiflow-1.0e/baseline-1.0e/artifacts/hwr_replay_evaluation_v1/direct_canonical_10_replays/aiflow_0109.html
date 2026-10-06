@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>aiflow_0109</title>
+<style>body{font:16px system-ui;margin:24px;max-width:720px}canvas{border:1px solid #888;width:100%;height:auto}input{width:100%}button{margin-right:8px}</style>
+<h1>aiflow_0109</h1><p>target_display: y</p>
+<canvas id="ink" width="640" height="480"></canvas>
+<p><button id="play" type="button">play (48 Hz)</button><button id="reset" type="button">reset</button></p>
+<input id="step" type="range" min="0" value="0"><output id="count"></output>
+<script>
+const strokes=[[[94.039, 149.341], [94.039, 149.341], [94.152, 149.585], [94.372, 149.803], [94.733, 150.64], [95.132, 151.674], [95.528, 153.058], [95.98, 154.687], [96.651, 157.041], [97.384, 159.707], [98.224, 163.062], [99.116, 166.387], [100.271, 170.383], [101.388, 174.133], [102.535, 177.671], [104.084, 181.444], [105.795, 185.171], [107.762, 188.054], [110.016, 189.724], [110.07, 189.763], [110.07, 189.763]], [[134.258, 160.309], [134.258, 160.309], [134.162, 160.309], [133.97, 160.729], [133.589, 161.135], [132.927, 162.165], [131.981, 163.599], [130.575, 165.628], [128.671, 168.309], [123.895, 175.415], [116.152, 186.315], [109.185, 195.551], [102.916, 204.282], [97.549, 211.074], [92.809, 217.323], [88.398, 223.014], [84.149, 228.118], [80.321, 232.563], [71.392, 239.439], [71.539, 239.325]]]; const points=[];
+for(let s=0;s<strokes.length;s++) for(let p=0;p<strokes[s].length;p++) points.push([s,p,strokes[s][p]]);
+const canvas=document.getElementById('ink'),ctx=canvas.getContext('2d'),step=document.getElementById('step'),count=document.getElementById('count');
+step.max=points.length; let timer=null;
+const flat=points.map(v=>v[2]), xs=flat.map(v=>v[0]), ys=flat.map(v=>v[1]);
+const loX=Math.min(...xs), hiX=Math.max(...xs), loY=Math.min(...ys), hiY=Math.max(...ys), span=Math.max(hiX-loX,hiY-loY,1), pad=32;
+function map(p){return [pad+(p[0]-loX)/span*(canvas.width-2*pad),pad+(p[1]-loY)/span*(canvas.height-2*pad)]}
+function draw(){const n=Number(step.value);ctx.clearRect(0,0,canvas.width,canvas.height);ctx.lineWidth=2;ctx.strokeStyle='#111';ctx.lineCap='round';for(let i=0;i<n;i++){const [s,p,point]=points[i],xy=map(point);if(p===0){ctx.beginPath();ctx.moveTo(...xy)}else{ctx.lineTo(...xy);ctx.stroke();ctx.beginPath();ctx.moveTo(...xy)}ctx.fillStyle='#2563eb';ctx.beginPath();ctx.arc(...xy,2.5,0,Math.PI*2);ctx.fill()}count.value=`${n} / ${points.length} points`;}
+step.addEventListener('input',draw);document.getElementById('reset').onclick=()=>{step.value=0;draw()};document.getElementById('play').onclick=()=>{if(timer){clearInterval(timer);timer=null;return} timer=setInterval(()=>{if(Number(step.value)>=points.length){clearInterval(timer);timer=null}else{step.value=Number(step.value)+1;draw()}},1000/48)};draw();
+</script>

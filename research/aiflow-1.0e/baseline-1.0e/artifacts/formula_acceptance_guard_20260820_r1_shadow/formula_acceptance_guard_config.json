@@ -1,0 +1,31 @@
+{
+  "schema": "aiflow-formula-acceptance-guard-config/v1",
+  "guard_schema": "aiflow-formula-acceptance-guard/v1",
+  "generated_at": "2026-08-20T00:00:00Z",
+  "status": "development_only_posthoc_shadow",
+  "posthoc_test_tuning": true,
+  "policy": {
+    "review_singleton_context_override": true,
+    "review_context_mutated_multidigit": true,
+    "review_unbalanced_multisymbol_fence": true,
+    "unresolved_singleton_homograph_families": [
+      ["0", "O", "o", "\\circlearrowright"]
+    ],
+    "two_stroke_cross_grouping_conflict": {
+      "enabled": true,
+      "alternate_tokens": ["x", "X", "\\times", "\\mathfrak{X}", "\\chi"],
+      "minimum_ranker_probability_ratio": 0.35
+    }
+  },
+  "contracts": {
+    "candidate_preserving": true,
+    "token_mutations": 0,
+    "grouping_mutations": 0,
+    "glyph_order_mutations": 0,
+    "target_label_or_glyph_count_input": false,
+    "writer_identity_input": false,
+    "arithmetic_evaluation": false
+  },
+  "requires_explicit_shadow_opt_in": true,
+  "product_default_enabled": false
+}

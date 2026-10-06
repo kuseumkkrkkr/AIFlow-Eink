@@ -1,0 +1,53 @@
+{
+  "schema": "aiflow-grouping-collection-gate/v1",
+  "generated_at": "2026-08-21T15:27:19.567891+00:00",
+  "scope": "new untouched product-owned/commercial grouping acceptance only",
+  "gate": {
+    "observed_partition_exact_target": 0.9,
+    "wilson_lower_bound_target": 0.85,
+    "confidence": 0.95,
+    "minimum_iid_formulas": 159,
+    "minimum_successes_at_that_size": 144,
+    "achieved_observed_rate": 0.9056603773584906,
+    "achieved_wilson_lower_bound": 0.8501874669797129,
+    "practical_formula_batch_at_writer_cap": 160,
+    "max_formulas_per_writer": 20,
+    "minimum_writers_at_cap": 8
+  },
+  "writer_clustering_sensitivity": {
+    "icc_0.05": {
+      "assumption_only": true,
+      "design_effect": 1.9500000000000002,
+      "formulas": 311,
+      "writers_at_cap": 16
+    },
+    "icc_0.10": {
+      "assumption_only": true,
+      "design_effect": 2.9000000000000004,
+      "formulas": 462,
+      "writers_at_cap": 24
+    },
+    "icc_0.20": {
+      "assumption_only": true,
+      "design_effect": 4.800000000000001,
+      "formulas": 764,
+      "writers_at_cap": 39
+    }
+  },
+  "collection_contract": {
+    "writers_disjoint_from_training_and_prior_inspection": true,
+    "exact_stroke_partition_required": true,
+    "stroke_order_and_timestamps_required": true,
+    "formula_complete_boundary_required": true,
+    "two_dimensional_relation_labels_required": true,
+    "raw_ink_immutable": true,
+    "crohme_substitution_allowed": false
+  },
+  "interpretation": {
+    "minimum_iid_formulas_is_lower_bound": true,
+    "training_quantity_proven_by_this_calculation": false,
+    "next_training_tranche_recommendation": 160,
+    "stop_rule": "repeat project-owned training tranches; never inspect the untouched acceptance set for model/epoch/threshold selection; stop only when the frozen candidate reaches the gate",
+    "writer_level_requirement": "measure intraclass correlation on new data and apply the reported design-effect formula"
+  }
+}

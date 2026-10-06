@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>aiflow_0091</title>
+<style>body{font:16px system-ui;margin:24px;max-width:720px}canvas{border:1px solid #888;width:100%;height:auto}input{width:100%}button{margin-right:8px}</style>
+<h1>aiflow_0091</h1><p>labels: y = 3</p>
+<canvas id="ink" width="640" height="480"></canvas>
+<p><button id="play" type="button">play (48 Hz)</button><button id="reset" type="button">reset</button></p>
+<input id="step" type="range" min="0" value="0"><output id="count"></output>
+<script>
+const strokes=[[[82.611, 128.289], [82.611, 128.289], [82.611, 130.119], [82.949, 133.708], [84.61, 142.062], [88.739, 156.039], [92.343, 163.585], [95.244, 166.965], [97.321, 168.256], [98.701, 168.28], [100.571, 166.56], [102.462, 162.66], [104.304, 156.328], [105.418, 149.207], [106.049, 143.813], [106.332, 139.505], [106.596, 137.147], [106.605, 135.974], [106.771, 135.716], [107.356, 137.974], [108.567, 146.307], [109.881, 161.229], [110.71, 179.206], [109.361, 194.61], [106.432, 203.651], [102.778, 208.978], [98.847, 211.594], [94.654, 212.101], [90.043, 210.314], [85.5, 206.77], [82.734, 203.128], [81.427, 200.222], [81.117, 198.558], [81.117, 198.558]], [[135.785, 153.807], [135.785, 153.807], [136.749, 153.645], [139.141, 153.102], [143.016, 152.343], [147.64, 151.552], [152.08, 150.789], [155.922, 150.215], [158.811, 149.808], [160.823, 149.451], [161.994, 149.262], [162.504, 149.237], [162.504, 149.237]], [[133.324, 163.519], [133.324, 163.519], [133.73, 163.353], [135.147, 163.162], [139.297, 162.973], [145.069, 162.757], [150.035, 162.4], [153.933, 162.215], [157.395, 162.186], [160.201, 162.186], [160.395, 162.186], [160.395, 162.186]], [[188.695, 141.048], [188.695, 141.048], [189.036, 140.493], [190.254, 138.791], [192.434, 136.516], [195.279, 134.254], [198.591, 132.57], [202.247, 131.551], [205.706, 131.692], [208.485, 133.124], [211.072, 137.305], [211.478, 144.045], [209.023, 154.149], [205.018, 161.993], [201.204, 166.535], [197.844, 168.976], [195.9, 169.785], [194.64, 170.164], [193.915, 170.012], [193.872, 169.803], [194.944, 169.613], [200.132, 169.784], [206.62, 171.41], [212.145, 174.012], [215.993, 177.213], [218.05, 179.781], [218.736, 182.594], [217.384, 187.053], [211.993, 193.069], [202.702, 198.797], [191.807, 201.7], [181.941, 202.006], [176.054, 200.545], [174.369, 200.081], [174.369, 200.081]]]; const points=[];
+for(let s=0;s<strokes.length;s++) for(let p=0;p<strokes[s].length;p++) points.push([s,p,strokes[s][p]]);
+const canvas=document.getElementById('ink'),ctx=canvas.getContext('2d'),step=document.getElementById('step'),count=document.getElementById('count');
+step.max=points.length; let timer=null;
+const flat=points.map(v=>v[2]), xs=flat.map(v=>v[0]), ys=flat.map(v=>v[1]);
+const loX=Math.min(...xs), hiX=Math.max(...xs), loY=Math.min(...ys), hiY=Math.max(...ys), span=Math.max(hiX-loX,hiY-loY,1), pad=32;
+function map(p){return [pad+(p[0]-loX)/span*(canvas.width-2*pad),pad+(p[1]-loY)/span*(canvas.height-2*pad)]}
+function draw(){const n=Number(step.value);ctx.clearRect(0,0,canvas.width,canvas.height);ctx.lineWidth=2;ctx.strokeStyle='#111';ctx.lineCap='round';for(let i=0;i<n;i++){const [s,p,point]=points[i],xy=map(point);if(p===0){ctx.beginPath();ctx.moveTo(...xy)}else{ctx.lineTo(...xy);ctx.stroke();ctx.beginPath();ctx.moveTo(...xy)}ctx.fillStyle='#2563eb';ctx.beginPath();ctx.arc(...xy,2.5,0,Math.PI*2);ctx.fill()}count.value=`${n} / ${points.length} points`;}
+step.addEventListener('input',draw);document.getElementById('reset').onclick=()=>{step.value=0;draw()};document.getElementById('play').onclick=()=>{if(timer){clearInterval(timer);timer=null;return} timer=setInterval(()=>{if(Number(step.value)>=points.length){clearInterval(timer);timer=null}else{step.value=Number(step.value)+1;draw()}},1000/48)};draw();
+</script>

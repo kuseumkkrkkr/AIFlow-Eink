@@ -1,0 +1,1847 @@
+{
+  "schema": "aiflow-homograph-context-reranker-evaluation/v1",
+  "generated_at": "2026-08-20T06:31:28.366041+00:00",
+  "hypothesis": "frozen Top-5 candidates can be better ranked with neighboring token roles and box geometry",
+  "candidate_policy": "reorder only candidates already present inside one declared homograph family",
+  "model": {
+    "type": "balanced one-hot logistic candidate ranker",
+    "embedding_model_used": false,
+    "c_grid": [
+      null,
+      0.1,
+      0.3,
+      1.0,
+      3.0
+    ],
+    "inner_selection": "formula-disjoint strict macro then micro accuracy"
+  },
+  "features": {
+    "emission": "candidate identity, rank, frozen-head probability",
+    "context": "emission plus adjacent predicted tokens/roles and sequence position",
+    "context_geometry": "context plus bbox, stroke, direction, and neighbor offsets"
+  },
+  "direct": {
+    "scope": "project-owned writer-LOO; product-path evidence",
+    "source": {
+      "cache_reused": false,
+      "checkpoint_sha256": "f0e1c222a98510be3a77b096affdc20c62c97ec4c994de6af5c5436b07210475",
+      "heads_sha256": "80464eb50ef14acb194c944fc5c95201ce94d03e4687b721a5f097aad67706bc"
+    },
+    "evaluation": {
+      "baseline": {
+        "all_records": 211,
+        "all_top1": 0.8815165876777251,
+        "baseline_all_top1": 0.8815165876777251,
+        "strict_records": 53,
+        "strict_micro_top1": 0.5849056603773585,
+        "strict_macro_top1": 0.7095,
+        "eligible_records": 49,
+        "changed": 0,
+        "improved": 0,
+        "regressed": 0,
+        "paired_sign_test_p": null,
+        "formula_exact": 0.6170212765957447,
+        "baseline_formula_exact": 0.6170212765957447,
+        "by_family": {
+          "vertical_slash": {
+            "records": 28,
+            "baseline_top1": 0.42857142857142855,
+            "reranked_top1": 0.42857142857142855,
+            "top5_oracle": 0.9642857142857143
+          },
+          "circle": {
+            "records": 16,
+            "baseline_top1": 0.6875,
+            "reranked_top1": 0.6875,
+            "top5_oracle": 0.9375
+          },
+          "cross": {
+            "records": 9,
+            "baseline_top1": 0.8888888888888888,
+            "reranked_top1": 0.8888888888888888,
+            "top5_oracle": 1.0
+          }
+        },
+        "by_label": {
+          "/": {
+            "records": 3,
+            "baseline_hits": 3,
+            "reranked_hits": 3,
+            "top5_hits": 3
+          },
+          "0": {
+            "records": 16,
+            "baseline_hits": 11,
+            "reranked_hits": 11,
+            "top5_hits": 15
+          },
+          "1": {
+            "records": 25,
+            "baseline_hits": 9,
+            "reranked_hits": 9,
+            "top5_hits": 24
+          },
+          "\\times": {
+            "records": 7,
+            "baseline_hits": 7,
+            "reranked_hits": 7,
+            "top5_hits": 7
+          },
+          "x": {
+            "records": 2,
+            "baseline_hits": 1,
+            "reranked_hits": 1,
+            "top5_hits": 2
+          }
+        }
+      },
+      "variants": {
+        "emission": {
+          "metrics": {
+            "all_records": 211,
+            "all_top1": 0.909952606635071,
+            "baseline_all_top1": 0.8815165876777251,
+            "strict_records": 53,
+            "strict_micro_top1": 0.6981132075471698,
+            "strict_macro_top1": 0.7575000000000001,
+            "eligible_records": 49,
+            "changed": 6,
+            "improved": 6,
+            "regressed": 0,
+            "paired_sign_test_p": 0.03125,
+            "formula_exact": 0.7021276595744681,
+            "baseline_formula_exact": 0.6170212765957447,
+            "by_family": {
+              "vertical_slash": {
+                "records": 28,
+                "baseline_top1": 0.42857142857142855,
+                "reranked_top1": 0.6428571428571429,
+                "top5_oracle": 0.9642857142857143
+              },
+              "circle": {
+                "records": 16,
+                "baseline_top1": 0.6875,
+                "reranked_top1": 0.6875,
+                "top5_oracle": 0.9375
+              },
+              "cross": {
+                "records": 9,
+                "baseline_top1": 0.8888888888888888,
+                "reranked_top1": 0.8888888888888888,
+                "top5_oracle": 1.0
+              }
+            },
+            "by_label": {
+              "/": {
+                "records": 3,
+                "baseline_hits": 3,
+                "reranked_hits": 3,
+                "top5_hits": 3
+              },
+              "0": {
+                "records": 16,
+                "baseline_hits": 11,
+                "reranked_hits": 11,
+                "top5_hits": 15
+              },
+              "1": {
+                "records": 25,
+                "baseline_hits": 9,
+                "reranked_hits": 15,
+                "top5_hits": 24
+              },
+              "\\times": {
+                "records": 7,
+                "baseline_hits": 7,
+                "reranked_hits": 7,
+                "top5_hits": 7
+              },
+              "x": {
+                "records": 2,
+                "baseline_hits": 1,
+                "reranked_hits": 1,
+                "top5_hits": 2
+              }
+            }
+          },
+          "folds": [
+            {
+              "held_group": "3e41b56c75d3f1af3cc89494",
+              "train_formulas": 39,
+              "held_formulas": 8,
+              "selected_c": 0.3,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.8217105263157893,
+                  "strict_micro": 0.6363636363636364
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.8217105263157893,
+                  "strict_micro": 0.6363636363636364
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.8763157894736843,
+                  "strict_micro": 0.75
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.843421052631579,
+                  "strict_micro": 0.8636363636363636
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.743421052631579,
+                  "strict_micro": 0.8409090909090909
+                }
+              ],
+              "fit": {
+                "training_records": 42,
+                "truth_labels": {
+                  "/": 2,
+                  "0": 15,
+                  "1": 18,
+                  "\\times": 6,
+                  "x": 1
+                },
+                "features": 31
+              }
+            },
+            {
+              "held_group": "baed3dc87cbfa8c20bdde074",
+              "train_formulas": 31,
+              "held_formulas": 16,
+              "selected_c": 0.3,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.6470588235294118,
+                  "strict_micro": 0.45714285714285713
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.6905882352941177,
+                  "strict_micro": 0.5428571428571428
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.7658823529411765,
+                  "strict_micro": 0.6857142857142857
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.5894117647058824,
+                  "strict_micro": 0.6571428571428571
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.6094117647058823,
+                  "strict_micro": 0.6857142857142857
+                }
+              ],
+              "fit": {
+                "training_records": 30,
+                "truth_labels": {
+                  "/": 3,
+                  "0": 9,
+                  "1": 13,
+                  "\\times": 3,
+                  "x": 2
+                },
+                "features": 32
+              }
+            },
+            {
+              "held_group": "ed6789e0639f68e05d5e2d1b",
+              "train_formulas": 24,
+              "held_formulas": 23,
+              "selected_c": 0.3,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.6857142857142857,
+                  "strict_micro": 0.6666666666666666
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.7285714285714285,
+                  "strict_micro": 0.7777777777777778
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.7571428571428571,
+                  "strict_micro": 0.8518518518518519
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.7571428571428571,
+                  "strict_micro": 0.8518518518518519
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.7571428571428571,
+                  "strict_micro": 0.8518518518518519
+                }
+              ],
+              "fit": {
+                "training_records": 24,
+                "truth_labels": {
+                  "/": 1,
+                  "0": 6,
+                  "1": 11,
+                  "\\times": 5,
+                  "x": 1
+                },
+                "features": 32
+              }
+            }
+          ]
+        },
+        "context": {
+          "metrics": {
+            "all_records": 211,
+            "all_top1": 0.919431279620853,
+            "baseline_all_top1": 0.8815165876777251,
+            "strict_records": 53,
+            "strict_micro_top1": 0.7358490566037735,
+            "strict_macro_top1": 0.778,
+            "eligible_records": 49,
+            "changed": 8,
+            "improved": 8,
+            "regressed": 0,
+            "paired_sign_test_p": 0.0078125,
+            "formula_exact": 0.723404255319149,
+            "baseline_formula_exact": 0.6170212765957447,
+            "by_family": {
+              "vertical_slash": {
+                "records": 28,
+                "baseline_top1": 0.42857142857142855,
+                "reranked_top1": 0.6785714285714286,
+                "top5_oracle": 0.9642857142857143
+              },
+              "circle": {
+                "records": 16,
+                "baseline_top1": 0.6875,
+                "reranked_top1": 0.75,
+                "top5_oracle": 0.9375
+              },
+              "cross": {
+                "records": 9,
+                "baseline_top1": 0.8888888888888888,
+                "reranked_top1": 0.8888888888888888,
+                "top5_oracle": 1.0
+              }
+            },
+            "by_label": {
+              "/": {
+                "records": 3,
+                "baseline_hits": 3,
+                "reranked_hits": 3,
+                "top5_hits": 3
+              },
+              "0": {
+                "records": 16,
+                "baseline_hits": 11,
+                "reranked_hits": 12,
+                "top5_hits": 15
+              },
+              "1": {
+                "records": 25,
+                "baseline_hits": 9,
+                "reranked_hits": 16,
+                "top5_hits": 24
+              },
+              "\\times": {
+                "records": 7,
+                "baseline_hits": 7,
+                "reranked_hits": 7,
+                "top5_hits": 7
+              },
+              "x": {
+                "records": 2,
+                "baseline_hits": 1,
+                "reranked_hits": 1,
+                "top5_hits": 2
+              }
+            }
+          },
+          "folds": [
+            {
+              "held_group": "3e41b56c75d3f1af3cc89494",
+              "train_formulas": 39,
+              "held_formulas": 8,
+              "selected_c": 3.0,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.8217105263157893,
+                  "strict_micro": 0.6363636363636364
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.8322368421052632,
+                  "strict_micro": 0.6590909090909091
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.9098684210526315,
+                  "strict_micro": 0.8181818181818182
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.9328947368421053,
+                  "strict_micro": 0.8636363636363636
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.9664473684210527,
+                  "strict_micro": 0.9318181818181818
+                }
+              ],
+              "fit": {
+                "training_records": 42,
+                "truth_labels": {
+                  "/": 2,
+                  "0": 15,
+                  "1": 18,
+                  "\\times": 6,
+                  "x": 1
+                },
+                "features": 325
+              }
+            },
+            {
+              "held_group": "baed3dc87cbfa8c20bdde074",
+              "train_formulas": 31,
+              "held_formulas": 16,
+              "selected_c": 3.0,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.6470588235294118,
+                  "strict_micro": 0.45714285714285713
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.7141176470588235,
+                  "strict_micro": 0.6
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.7658823529411765,
+                  "strict_micro": 0.6857142857142857
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.7776470588235294,
+                  "strict_micro": 0.7142857142857143
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.8211764705882352,
+                  "strict_micro": 0.8
+                }
+              ],
+              "fit": {
+                "training_records": 30,
+                "truth_labels": {
+                  "/": 3,
+                  "0": 9,
+                  "1": 13,
+                  "\\times": 3,
+                  "x": 2
+                },
+                "features": 283
+              }
+            },
+            {
+              "held_group": "ed6789e0639f68e05d5e2d1b",
+              "train_formulas": 24,
+              "held_formulas": 23,
+              "selected_c": 0.3,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.6857142857142857,
+                  "strict_micro": 0.6666666666666666
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.7285714285714285,
+                  "strict_micro": 0.7777777777777778
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.7571428571428571,
+                  "strict_micro": 0.8518518518518519
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.7571428571428571,
+                  "strict_micro": 0.8518518518518519
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.7571428571428571,
+                  "strict_micro": 0.8518518518518519
+                }
+              ],
+              "fit": {
+                "training_records": 24,
+                "truth_labels": {
+                  "/": 1,
+                  "0": 6,
+                  "1": 11,
+                  "\\times": 5,
+                  "x": 1
+                },
+                "features": 241
+              }
+            }
+          ]
+        },
+        "context_geometry": {
+          "metrics": {
+            "all_records": 211,
+            "all_top1": 0.919431279620853,
+            "baseline_all_top1": 0.8815165876777251,
+            "strict_records": 53,
+            "strict_micro_top1": 0.7358490566037735,
+            "strict_macro_top1": 0.778,
+            "eligible_records": 49,
+            "changed": 8,
+            "improved": 8,
+            "regressed": 0,
+            "paired_sign_test_p": 0.0078125,
+            "formula_exact": 0.723404255319149,
+            "baseline_formula_exact": 0.6170212765957447,
+            "by_family": {
+              "vertical_slash": {
+                "records": 28,
+                "baseline_top1": 0.42857142857142855,
+                "reranked_top1": 0.6785714285714286,
+                "top5_oracle": 0.9642857142857143
+              },
+              "circle": {
+                "records": 16,
+                "baseline_top1": 0.6875,
+                "reranked_top1": 0.75,
+                "top5_oracle": 0.9375
+              },
+              "cross": {
+                "records": 9,
+                "baseline_top1": 0.8888888888888888,
+                "reranked_top1": 0.8888888888888888,
+                "top5_oracle": 1.0
+              }
+            },
+            "by_label": {
+              "/": {
+                "records": 3,
+                "baseline_hits": 3,
+                "reranked_hits": 3,
+                "top5_hits": 3
+              },
+              "0": {
+                "records": 16,
+                "baseline_hits": 11,
+                "reranked_hits": 12,
+                "top5_hits": 15
+              },
+              "1": {
+                "records": 25,
+                "baseline_hits": 9,
+                "reranked_hits": 16,
+                "top5_hits": 24
+              },
+              "\\times": {
+                "records": 7,
+                "baseline_hits": 7,
+                "reranked_hits": 7,
+                "top5_hits": 7
+              },
+              "x": {
+                "records": 2,
+                "baseline_hits": 1,
+                "reranked_hits": 1,
+                "top5_hits": 2
+              }
+            }
+          },
+          "folds": [
+            {
+              "held_group": "3e41b56c75d3f1af3cc89494",
+              "train_formulas": 39,
+              "held_formulas": 8,
+              "selected_c": 3.0,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.8217105263157893,
+                  "strict_micro": 0.6363636363636364
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.8763157894736843,
+                  "strict_micro": 0.75
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.9098684210526315,
+                  "strict_micro": 0.8181818181818182
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.9328947368421053,
+                  "strict_micro": 0.8636363636363636
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.9434210526315789,
+                  "strict_micro": 0.8863636363636364
+                }
+              ],
+              "fit": {
+                "training_records": 42,
+                "truth_labels": {
+                  "/": 2,
+                  "0": 15,
+                  "1": 18,
+                  "\\times": 6,
+                  "x": 1
+                },
+                "features": 339
+              }
+            },
+            {
+              "held_group": "baed3dc87cbfa8c20bdde074",
+              "train_formulas": 31,
+              "held_formulas": 16,
+              "selected_c": 3.0,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.6470588235294118,
+                  "strict_micro": 0.45714285714285713
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.6905882352941177,
+                  "strict_micro": 0.5428571428571428
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.7458823529411764,
+                  "strict_micro": 0.6571428571428571
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.7976470588235294,
+                  "strict_micro": 0.7428571428571429
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.8094117647058823,
+                  "strict_micro": 0.7714285714285715
+                }
+              ],
+              "fit": {
+                "training_records": 30,
+                "truth_labels": {
+                  "/": 3,
+                  "0": 9,
+                  "1": 13,
+                  "\\times": 3,
+                  "x": 2
+                },
+                "features": 297
+              }
+            },
+            {
+              "held_group": "ed6789e0639f68e05d5e2d1b",
+              "train_formulas": 24,
+              "held_formulas": 23,
+              "selected_c": 0.3,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.6857142857142857,
+                  "strict_micro": 0.6666666666666666
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.7285714285714285,
+                  "strict_micro": 0.7777777777777778
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.7571428571428571,
+                  "strict_micro": 0.8518518518518519
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.7571428571428571,
+                  "strict_micro": 0.8518518518518519
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.7571428571428571,
+                  "strict_micro": 0.8518518518518519
+                }
+              ],
+              "fit": {
+                "training_records": 24,
+                "truth_labels": {
+                  "/": 1,
+                  "0": 6,
+                  "1": 11,
+                  "\\times": 5,
+                  "x": 1
+                },
+                "features": 255
+              }
+            }
+          ]
+        }
+      },
+      "context_increment_over_emission": {
+        "strict_micro_top1": 0.037735849056603765,
+        "strict_macro_top1": 0.020499999999999963,
+        "all_top1": 0.009478672985781977
+      }
+    }
+  },
+  "crohme": {
+    "scope": "CC BY-NC research-only; five formula-disjoint folds; never a product model",
+    "source": {
+      "cache_reused": false,
+      "checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+      "coverage": {
+        "protocol_formulas": 985,
+        "exact_formula_duplicates_removed": 1,
+        "unsupported_truth_groups": 480,
+        "unsupported_labels": {
+          "\\sin": 95,
+          ",": 82,
+          "t": 81,
+          "\\cos": 70,
+          "\\tan": 39,
+          "\\log": 36,
+          "\\lim": 35,
+          ".": 21,
+          "!": 21
+        },
+        "invalid_single_point_truth_groups": 1,
+        "incomplete_truth_partition_formulas": 1,
+        "fully_supported_formulas": 751
+      }
+    },
+    "evaluation": {
+      "baseline": {
+        "all_records": 9535,
+        "all_top1": 0.7061352910330362,
+        "baseline_all_top1": 0.7061352910330362,
+        "strict_records": 1685,
+        "strict_micro_top1": 0.39347181008902077,
+        "strict_macro_top1": 0.4846709102143654,
+        "eligible_records": 1200,
+        "changed": 0,
+        "improved": 0,
+        "regressed": 0,
+        "paired_sign_test_p": null,
+        "formula_exact": 0.16463414634146342,
+        "baseline_formula_exact": 0.16463414634146342,
+        "by_family": {
+          "vertical_slash": {
+            "records": 802,
+            "baseline_top1": 0.3566084788029925,
+            "reranked_top1": 0.3566084788029925,
+            "top5_oracle": 0.8728179551122195
+          },
+          "circle": {
+            "records": 224,
+            "baseline_top1": 0.5,
+            "reranked_top1": 0.5,
+            "top5_oracle": 0.9241071428571429
+          },
+          "cross": {
+            "records": 659,
+            "baseline_top1": 0.40212443095599393,
+            "reranked_top1": 0.40212443095599393,
+            "top5_oracle": 0.9074355083459787
+          }
+        },
+        "by_label": {
+          "/": {
+            "records": 19,
+            "baseline_hits": 18,
+            "reranked_hits": 18,
+            "top5_hits": 19
+          },
+          "0": {
+            "records": 213,
+            "baseline_hits": 112,
+            "reranked_hits": 112,
+            "top5_hits": 198
+          },
+          "1": {
+            "records": 721,
+            "baseline_hits": 230,
+            "reranked_hits": 230,
+            "top5_hits": 620
+          },
+          "\\times": {
+            "records": 72,
+            "baseline_hits": 44,
+            "reranked_hits": 44,
+            "top5_hits": 71
+          },
+          "o": {
+            "records": 11,
+            "baseline_hits": 0,
+            "reranked_hits": 0,
+            "top5_hits": 9
+          },
+          "x": {
+            "records": 587,
+            "baseline_hits": 221,
+            "reranked_hits": 221,
+            "top5_hits": 527
+          },
+          "|": {
+            "records": 62,
+            "baseline_hits": 38,
+            "reranked_hits": 38,
+            "top5_hits": 61
+          }
+        }
+      },
+      "variants": {
+        "emission": {
+          "metrics": {
+            "all_records": 9535,
+            "all_top1": 0.7055060304142632,
+            "baseline_all_top1": 0.7061352910330362,
+            "strict_records": 1685,
+            "strict_micro_top1": 0.3857566765578635,
+            "strict_macro_top1": 0.525594856809961,
+            "eligible_records": 1200,
+            "changed": 278,
+            "improved": 63,
+            "regressed": 69,
+            "paired_sign_test_p": 0.6635853603383616,
+            "formula_exact": 0.17073170731707318,
+            "baseline_formula_exact": 0.16463414634146342,
+            "by_family": {
+              "vertical_slash": {
+                "records": 802,
+                "baseline_top1": 0.3566084788029925,
+                "reranked_top1": 0.32917705735660846,
+                "top5_oracle": 0.8728179551122195
+              },
+              "circle": {
+                "records": 224,
+                "baseline_top1": 0.5,
+                "reranked_top1": 0.5401785714285714,
+                "top5_oracle": 0.9241071428571429
+              },
+              "cross": {
+                "records": 659,
+                "baseline_top1": 0.40212443095599393,
+                "reranked_top1": 0.40212443095599393,
+                "top5_oracle": 0.9074355083459787
+              }
+            },
+            "by_label": {
+              "/": {
+                "records": 19,
+                "baseline_hits": 18,
+                "reranked_hits": 16,
+                "top5_hits": 19
+              },
+              "0": {
+                "records": 213,
+                "baseline_hits": 112,
+                "reranked_hits": 116,
+                "top5_hits": 198
+              },
+              "1": {
+                "records": 721,
+                "baseline_hits": 230,
+                "reranked_hits": 212,
+                "top5_hits": 620
+              },
+              "\\times": {
+                "records": 72,
+                "baseline_hits": 44,
+                "reranked_hits": 42,
+                "top5_hits": 71
+              },
+              "o": {
+                "records": 11,
+                "baseline_hits": 0,
+                "reranked_hits": 5,
+                "top5_hits": 9
+              },
+              "x": {
+                "records": 587,
+                "baseline_hits": 221,
+                "reranked_hits": 223,
+                "top5_hits": 527
+              },
+              "|": {
+                "records": 62,
+                "baseline_hits": 38,
+                "reranked_hits": 36,
+                "top5_hits": 61
+              }
+            }
+          },
+          "folds": [
+            {
+              "held_group": "0",
+              "train_formulas": 788,
+              "held_formulas": 196,
+              "selected_c": 1.0,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.4771986910958203,
+                  "strict_micro": 0.39111111111111113
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.5198638970895221,
+                  "strict_micro": 0.3896296296296296
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.5146220623455232,
+                  "strict_micro": 0.37555555555555553
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.5199549281273966,
+                  "strict_micro": 0.3718518518518519
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.5196396136407765,
+                  "strict_micro": 0.36814814814814817
+                }
+              ],
+              "fit": {
+                "training_records": 902,
+                "truth_labels": {
+                  "/": 15,
+                  "0": 152,
+                  "1": 318,
+                  "I": 4,
+                  "X": 28,
+                  "\\prime": 2,
+                  "\\times": 43,
+                  "i": 49,
+                  "l": 2,
+                  "o": 7,
+                  "x": 231,
+                  "|": 51
+                },
+                "features": 36
+              }
+            },
+            {
+              "held_group": "1",
+              "train_formulas": 805,
+              "held_formulas": 179,
+              "selected_c": 0.1,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.47731119079688383,
+                  "strict_micro": 0.3918918918918919
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.5339389844884584,
+                  "strict_micro": 0.3911806543385491
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.5133748456885613,
+                  "strict_micro": 0.3748221906116643
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.5109024444072197,
+                  "strict_micro": 0.37197724039829305
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.5261590199991961,
+                  "strict_micro": 0.3705547652916074
+                }
+              ],
+              "fit": {
+                "training_records": 905,
+                "truth_labels": {
+                  "/": 14,
+                  "0": 152,
+                  "1": 319,
+                  "I": 2,
+                  "X": 25,
+                  "\\prime": 4,
+                  "\\times": 60,
+                  "i": 31,
+                  "l": 2,
+                  "o": 8,
+                  "x": 238,
+                  "|": 50
+                },
+                "features": 36
+              }
+            },
+            {
+              "held_group": "2",
+              "train_formulas": 789,
+              "held_formulas": 195,
+              "selected_c": 0.1,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.4654323904278329,
+                  "strict_micro": 0.3853073463268366
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.5428125856169251,
+                  "strict_micro": 0.39580209895052476
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.5184948806471478,
+                  "strict_micro": 0.3823088455772114
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.53779610438109,
+                  "strict_micro": 0.3808095952023988
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.5339334350097784,
+                  "strict_micro": 0.3770614692653673
+                }
+              ],
+              "fit": {
+                "training_records": 859,
+                "truth_labels": {
+                  "/": 12,
+                  "0": 132,
+                  "1": 307,
+                  "I": 4,
+                  "X": 25,
+                  "\\prime": 4,
+                  "\\times": 52,
+                  "i": 39,
+                  "o": 7,
+                  "x": 246,
+                  "|": 31
+                },
+                "features": 36
+              }
+            },
+            {
+              "held_group": "3",
+              "train_formulas": 792,
+              "held_formulas": 192,
+              "selected_c": 0.3,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.48666674298875884,
+                  "strict_micro": 0.3964757709251101
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.525451403716865,
+                  "strict_micro": 0.3964757709251101
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.5279987546670615,
+                  "strict_micro": 0.38472834067547723
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.5165065152134322,
+                  "strict_micro": 0.38472834067547723
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.5149762254779813,
+                  "strict_micro": 0.3832599118942731
+                }
+              ],
+              "fit": {
+                "training_records": 906,
+                "truth_labels": {
+                  "/": 19,
+                  "0": 145,
+                  "1": 307,
+                  "I": 4,
+                  "X": 27,
+                  "\\prime": 2,
+                  "\\times": 67,
+                  "i": 46,
+                  "l": 2,
+                  "o": 6,
+                  "x": 236,
+                  "|": 45
+                },
+                "features": 36
+              }
+            },
+            {
+              "held_group": "4",
+              "train_formulas": 762,
+              "held_formulas": 222,
+              "selected_c": 0.1,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.5113974539388678,
+                  "strict_micro": 0.4029503105590062
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.5713043074575296,
+                  "strict_micro": 0.41304347826086957
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.5336276032211621,
+                  "strict_micro": 0.39285714285714285
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.5372231513298001,
+                  "strict_micro": 0.38354037267080743
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.5379144322377316,
+                  "strict_micro": 0.38198757763975155
+                }
+              ],
+              "fit": {
+                "training_records": 856,
+                "truth_labels": {
+                  "/": 16,
+                  "0": 151,
+                  "1": 317,
+                  "I": 2,
+                  "X": 15,
+                  "\\prime": 4,
+                  "\\times": 58,
+                  "i": 39,
+                  "l": 2,
+                  "o": 8,
+                  "x": 205,
+                  "|": 39
+                },
+                "features": 36
+              }
+            }
+          ]
+        },
+        "context": {
+          "metrics": {
+            "all_records": 9535,
+            "all_top1": 0.7271106449921343,
+            "baseline_all_top1": 0.7061352910330362,
+            "strict_records": 1685,
+            "strict_micro_top1": 0.5103857566765578,
+            "strict_macro_top1": 0.5675201399697516,
+            "eligible_records": 1200,
+            "changed": 356,
+            "improved": 233,
+            "regressed": 33,
+            "paired_sign_test_p": 2.989506736237329e-38,
+            "formula_exact": 0.18902439024390244,
+            "baseline_formula_exact": 0.16463414634146342,
+            "by_family": {
+              "vertical_slash": {
+                "records": 802,
+                "baseline_top1": 0.3566084788029925,
+                "reranked_top1": 0.5062344139650873,
+                "top5_oracle": 0.8728179551122195
+              },
+              "circle": {
+                "records": 224,
+                "baseline_top1": 0.5,
+                "reranked_top1": 0.7232142857142857,
+                "top5_oracle": 0.9241071428571429
+              },
+              "cross": {
+                "records": 659,
+                "baseline_top1": 0.40212443095599393,
+                "reranked_top1": 0.44309559939301973,
+                "top5_oracle": 0.9074355083459787
+              }
+            },
+            "by_label": {
+              "/": {
+                "records": 19,
+                "baseline_hits": 18,
+                "reranked_hits": 17,
+                "top5_hits": 19
+              },
+              "0": {
+                "records": 213,
+                "baseline_hits": 112,
+                "reranked_hits": 160,
+                "top5_hits": 198
+              },
+              "1": {
+                "records": 721,
+                "baseline_hits": 230,
+                "reranked_hits": 356,
+                "top5_hits": 620
+              },
+              "\\times": {
+                "records": 72,
+                "baseline_hits": 44,
+                "reranked_hits": 51,
+                "top5_hits": 71
+              },
+              "o": {
+                "records": 11,
+                "baseline_hits": 0,
+                "reranked_hits": 2,
+                "top5_hits": 9
+              },
+              "x": {
+                "records": 587,
+                "baseline_hits": 221,
+                "reranked_hits": 241,
+                "top5_hits": 527
+              },
+              "|": {
+                "records": 62,
+                "baseline_hits": 38,
+                "reranked_hits": 33,
+                "top5_hits": 61
+              }
+            }
+          },
+          "folds": [
+            {
+              "held_group": "0",
+              "train_formulas": 788,
+              "held_formulas": 196,
+              "selected_c": 1.0,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.4771986910958203,
+                  "strict_micro": 0.39111111111111113
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.5294463910659016,
+                  "strict_micro": 0.45111111111111113
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.5393784984273597,
+                  "strict_micro": 0.4888888888888889
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.5411126408922896,
+                  "strict_micro": 0.5185185185185185
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.5361106836218515,
+                  "strict_micro": 0.5385185185185185
+                }
+              ],
+              "fit": {
+                "training_records": 902,
+                "truth_labels": {
+                  "/": 15,
+                  "0": 152,
+                  "1": 318,
+                  "I": 4,
+                  "X": 28,
+                  "\\prime": 2,
+                  "\\times": 43,
+                  "i": 49,
+                  "l": 2,
+                  "o": 7,
+                  "x": 231,
+                  "|": 51
+                },
+                "features": 2698
+              }
+            },
+            {
+              "held_group": "1",
+              "train_formulas": 805,
+              "held_formulas": 179,
+              "selected_c": 1.0,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.47731119079688383,
+                  "strict_micro": 0.3918918918918919
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.5227183344427889,
+                  "strict_micro": 0.4523470839260313
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.5323497742968394,
+                  "strict_micro": 0.48862019914651494
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.5387297261449199,
+                  "strict_micro": 0.515647226173542
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.523937050709433,
+                  "strict_micro": 0.531294452347084
+                }
+              ],
+              "fit": {
+                "training_records": 905,
+                "truth_labels": {
+                  "/": 14,
+                  "0": 152,
+                  "1": 319,
+                  "I": 2,
+                  "X": 25,
+                  "\\prime": 4,
+                  "\\times": 60,
+                  "i": 31,
+                  "l": 2,
+                  "o": 8,
+                  "x": 238,
+                  "|": 50
+                },
+                "features": 2687
+              }
+            },
+            {
+              "held_group": "2",
+              "train_formulas": 789,
+              "held_formulas": 195,
+              "selected_c": 0.3,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.4654323904278329,
+                  "strict_micro": 0.3853073463268366
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.5453944215767838,
+                  "strict_micro": 0.4542728635682159
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.557524931726437,
+                  "strict_micro": 0.49775112443778113
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.5200577722606583,
+                  "strict_micro": 0.5269865067466267
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.5197712011375938,
+                  "strict_micro": 0.5412293853073463
+                }
+              ],
+              "fit": {
+                "training_records": 859,
+                "truth_labels": {
+                  "/": 12,
+                  "0": 132,
+                  "1": 307,
+                  "I": 4,
+                  "X": 25,
+                  "\\prime": 4,
+                  "\\times": 52,
+                  "i": 39,
+                  "o": 7,
+                  "x": 246,
+                  "|": 31
+                },
+                "features": 2601
+              }
+            },
+            {
+              "held_group": "3",
+              "train_formulas": 792,
+              "held_formulas": 192,
+              "selected_c": 0.3,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.48666674298875884,
+                  "strict_micro": 0.3964757709251101
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.576034677740351,
+                  "strict_micro": 0.46622613803230545
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.5825668692116522,
+                  "strict_micro": 0.5051395007342144
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.566779560507128,
+                  "strict_micro": 0.5286343612334802
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.5640485241726972,
+                  "strict_micro": 0.540381791483113
+                }
+              ],
+              "fit": {
+                "training_records": 906,
+                "truth_labels": {
+                  "/": 19,
+                  "0": 145,
+                  "1": 307,
+                  "I": 4,
+                  "X": 27,
+                  "\\prime": 2,
+                  "\\times": 67,
+                  "i": 46,
+                  "l": 2,
+                  "o": 6,
+                  "x": 236,
+                  "|": 45
+                },
+                "features": 2723
+              }
+            },
+            {
+              "held_group": "4",
+              "train_formulas": 762,
+              "held_formulas": 222,
+              "selected_c": 0.1,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.5113974539388678,
+                  "strict_micro": 0.4029503105590062
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.5909387151369412,
+                  "strict_micro": 0.4860248447204969
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.5833432746537606,
+                  "strict_micro": 0.5163043478260869
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.5806173842137189,
+                  "strict_micro": 0.5543478260869565
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.5776835001883851,
+                  "strict_micro": 0.5659937888198758
+                }
+              ],
+              "fit": {
+                "training_records": 856,
+                "truth_labels": {
+                  "/": 16,
+                  "0": 151,
+                  "1": 317,
+                  "I": 2,
+                  "X": 15,
+                  "\\prime": 4,
+                  "\\times": 58,
+                  "i": 39,
+                  "l": 2,
+                  "o": 8,
+                  "x": 205,
+                  "|": 39
+                },
+                "features": 2532
+              }
+            }
+          ]
+        },
+        "context_geometry": {
+          "metrics": {
+            "all_records": 9535,
+            "all_top1": 0.7286837965390666,
+            "baseline_all_top1": 0.7061352910330362,
+            "strict_records": 1685,
+            "strict_micro_top1": 0.5198813056379822,
+            "strict_macro_top1": 0.6022508626960488,
+            "eligible_records": 1200,
+            "changed": 363,
+            "improved": 248,
+            "regressed": 33,
+            "paired_sign_test_p": 6.196844034966565e-42,
+            "formula_exact": 0.1910569105691057,
+            "baseline_formula_exact": 0.16463414634146342,
+            "by_family": {
+              "vertical_slash": {
+                "records": 802,
+                "baseline_top1": 0.3566084788029925,
+                "reranked_top1": 0.5149625935162094,
+                "top5_oracle": 0.8728179551122195
+              },
+              "circle": {
+                "records": 224,
+                "baseline_top1": 0.5,
+                "reranked_top1": 0.7410714285714286,
+                "top5_oracle": 0.9241071428571429
+              },
+              "cross": {
+                "records": 659,
+                "baseline_top1": 0.40212443095599393,
+                "reranked_top1": 0.45068285280728376,
+                "top5_oracle": 0.9074355083459787
+              }
+            },
+            "by_label": {
+              "/": {
+                "records": 19,
+                "baseline_hits": 18,
+                "reranked_hits": 17,
+                "top5_hits": 19
+              },
+              "0": {
+                "records": 213,
+                "baseline_hits": 112,
+                "reranked_hits": 163,
+                "top5_hits": 198
+              },
+              "1": {
+                "records": 721,
+                "baseline_hits": 230,
+                "reranked_hits": 359,
+                "top5_hits": 620
+              },
+              "\\times": {
+                "records": 72,
+                "baseline_hits": 44,
+                "reranked_hits": 56,
+                "top5_hits": 71
+              },
+              "o": {
+                "records": 11,
+                "baseline_hits": 0,
+                "reranked_hits": 3,
+                "top5_hits": 9
+              },
+              "x": {
+                "records": 587,
+                "baseline_hits": 221,
+                "reranked_hits": 241,
+                "top5_hits": 527
+              },
+              "|": {
+                "records": 62,
+                "baseline_hits": 38,
+                "reranked_hits": 37,
+                "top5_hits": 61
+              }
+            }
+          },
+          "folds": [
+            {
+              "held_group": "0",
+              "train_formulas": 788,
+              "held_formulas": 196,
+              "selected_c": 0.3,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.4771986910958203,
+                  "strict_micro": 0.39111111111111113
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.5213856590958411,
+                  "strict_micro": 0.46074074074074073
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.5423097013965795,
+                  "strict_micro": 0.49703703703703705
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.542054078119626,
+                  "strict_micro": 0.5318518518518518
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.542147526598553,
+                  "strict_micro": 0.5503703703703704
+                }
+              ],
+              "fit": {
+                "training_records": 902,
+                "truth_labels": {
+                  "/": 15,
+                  "0": 152,
+                  "1": 318,
+                  "I": 4,
+                  "X": 28,
+                  "\\prime": 2,
+                  "\\times": 43,
+                  "i": 49,
+                  "l": 2,
+                  "o": 7,
+                  "x": 231,
+                  "|": 51
+                },
+                "features": 2712
+              }
+            },
+            {
+              "held_group": "1",
+              "train_formulas": 805,
+              "held_formulas": 179,
+              "selected_c": 1.0,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.47731119079688383,
+                  "strict_micro": 0.3918918918918919
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.5582398692417694,
+                  "strict_micro": 0.4701280227596017
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.5825948677151386,
+                  "strict_micro": 0.5085348506401138
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.590472429718754,
+                  "strict_micro": 0.5398293029871978
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.5535509434907341,
+                  "strict_micro": 0.5448079658605974
+                }
+              ],
+              "fit": {
+                "training_records": 905,
+                "truth_labels": {
+                  "/": 14,
+                  "0": 152,
+                  "1": 319,
+                  "I": 2,
+                  "X": 25,
+                  "\\prime": 4,
+                  "\\times": 60,
+                  "i": 31,
+                  "l": 2,
+                  "o": 8,
+                  "x": 238,
+                  "|": 50
+                },
+                "features": 2701
+              }
+            },
+            {
+              "held_group": "2",
+              "train_formulas": 789,
+              "held_formulas": 195,
+              "selected_c": 0.1,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.4654323904278329,
+                  "strict_micro": 0.3853073463268366
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.5478565888834986,
+                  "strict_micro": 0.4715142428785607
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.541892816819219,
+                  "strict_micro": 0.5082458770614693
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.5336291378319346,
+                  "strict_micro": 0.5374812593703149
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.5037582752544519,
+                  "strict_micro": 0.5427286356821589
+                }
+              ],
+              "fit": {
+                "training_records": 859,
+                "truth_labels": {
+                  "/": 12,
+                  "0": 132,
+                  "1": 307,
+                  "I": 4,
+                  "X": 25,
+                  "\\prime": 4,
+                  "\\times": 52,
+                  "i": 39,
+                  "o": 7,
+                  "x": 246,
+                  "|": 31
+                },
+                "features": 2615
+              }
+            },
+            {
+              "held_group": "3",
+              "train_formulas": 792,
+              "held_formulas": 192,
+              "selected_c": 1.0,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.48666674298875884,
+                  "strict_micro": 0.3964757709251101
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.5670709887878763,
+                  "strict_micro": 0.473568281938326
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.579254501523082,
+                  "strict_micro": 0.5102790014684288
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.5933183594511667,
+                  "strict_micro": 0.5462555066079295
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.581261249124374,
+                  "strict_micro": 0.5580029368575624
+                }
+              ],
+              "fit": {
+                "training_records": 906,
+                "truth_labels": {
+                  "/": 19,
+                  "0": 145,
+                  "1": 307,
+                  "I": 4,
+                  "X": 27,
+                  "\\prime": 2,
+                  "\\times": 67,
+                  "i": 46,
+                  "l": 2,
+                  "o": 6,
+                  "x": 236,
+                  "|": 45
+                },
+                "features": 2737
+              }
+            },
+            {
+              "held_group": "4",
+              "train_formulas": 762,
+              "held_formulas": 222,
+              "selected_c": 0.3,
+              "inner_trials": [
+                {
+                  "c": null,
+                  "strict_macro": 0.5113974539388678,
+                  "strict_micro": 0.4029503105590062
+                },
+                {
+                  "c": 0.1,
+                  "strict_macro": 0.6045993033891809,
+                  "strict_micro": 0.484472049689441
+                },
+                {
+                  "c": 0.3,
+                  "strict_macro": 0.6249845517055036,
+                  "strict_micro": 0.5341614906832298
+                },
+                {
+                  "c": 1.0,
+                  "strict_macro": 0.6188099294549548,
+                  "strict_micro": 0.5659937888198758
+                },
+                {
+                  "c": 3.0,
+                  "strict_macro": 0.597500239598201,
+                  "strict_micro": 0.5768633540372671
+                }
+              ],
+              "fit": {
+                "training_records": 856,
+                "truth_labels": {
+                  "/": 16,
+                  "0": 151,
+                  "1": 317,
+                  "I": 2,
+                  "X": 15,
+                  "\\prime": 4,
+                  "\\times": 58,
+                  "i": 39,
+                  "l": 2,
+                  "o": 8,
+                  "x": 205,
+                  "|": 39
+                },
+                "features": 2546
+              }
+            }
+          ]
+        }
+      },
+      "context_increment_over_emission": {
+        "strict_micro_top1": 0.13412462908011868,
+        "strict_macro_top1": 0.07665600588608779,
+        "all_top1": 0.02317776612480338
+      }
+    }
+  },
+  "limitations": [
+    "The direct set has three writers and no O, o, or vertical-bar truth labels.",
+    "This is an exploratory dataset already inspected during model development, not an untouched final acceptance set.",
+    "Truth grouping is supplied; grouping and formula decoding are not evaluated here."
+  ],
+  "product_adopted": false
+}

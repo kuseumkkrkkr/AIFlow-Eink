@@ -1,0 +1,463 @@
+{
+  "schema": "aiflow-wide-candidate-syntax-rescue-evaluation/v1",
+  "generated_at": "2026-08-19T11:56:33.941965+00:00",
+  "training_performed": false,
+  "configuration": {
+    "candidate_width": 10,
+    "auxiliary_weight": 0.6,
+    "allowed_auxiliary_policies": [
+      "current_expanded_writer_loo_probability_fusion",
+      "old_new_product_probability_fusion"
+    ],
+    "minimum_baseline_digit_count": 2,
+    "maximum_changes": 2,
+    "maximum_formula_glyphs": 64,
+    "minimum_digit_probability_ratio": 0.01,
+    "equality_candidate_must_be_top1": true,
+    "literal_alpha_operand_lock": true
+  },
+  "gate": {
+    "runtime_admitted": true,
+    "status": "shadow_runtime_only",
+    "criteria": {
+      "direct_formula_improvement": true,
+      "direct_regressions_zero": true,
+      "crohme_formula_improvement": true,
+      "crohme_regressions_zero": true,
+      "candidate_union_preserved": true
+    },
+    "limits": "Top-10 and thresholds were inspected on repeated project-owned development data; CROHME is noncommercial repeated diagnostic evidence; untouched commercial writer/formula acceptance remains required"
+  },
+  "direct_project_owned_writer_loo": {
+    "evaluation": {
+      "records": 387,
+      "formulas": 95,
+      "baseline_character_top1_count": 355,
+      "challenger_character_top1_count": 358,
+      "challenger_character_top1": 0.9250645994832042,
+      "glyph_improved": 3,
+      "glyph_regressed": 0,
+      "baseline_formula_exact_count": 76,
+      "challenger_formula_exact_count": 78,
+      "challenger_formula_exact": 0.8210526315789474,
+      "formula_improved": 2,
+      "formula_regressed": 0,
+      "formula_outcomes": [
+        {
+          "formula_id": "aiflow_0140",
+          "direction": "improved",
+          "truth": [
+            "1",
+            "+",
+            "1",
+            "=",
+            "2"
+          ],
+          "before": [
+            "1",
+            "+",
+            "\\prime",
+            "=",
+            "2"
+          ],
+          "after": [
+            "1",
+            "+",
+            "1",
+            "=",
+            "2"
+          ]
+        },
+        {
+          "formula_id": "aiflow_0152",
+          "direction": "improved",
+          "truth": [
+            "6",
+            "\\times",
+            "0",
+            "=",
+            "0"
+          ],
+          "before": [
+            "6",
+            "\\times",
+            "0",
+            "\\approx",
+            "\\mathcal{O}"
+          ],
+          "after": [
+            "6",
+            "\\times",
+            "0",
+            "=",
+            "0"
+          ]
+        }
+      ],
+      "glyph_outcomes": [
+        {
+          "record_id": "project_owned_ownership_4d88871abe2e5b30619857e3",
+          "formula_id": "aiflow_0140",
+          "direction": "improved",
+          "truth": "1",
+          "before": "\\prime",
+          "after": "1"
+        },
+        {
+          "record_id": "project_owned_ownership_9dd9348612a3ebfbc0c457ae",
+          "formula_id": "aiflow_0152",
+          "direction": "improved",
+          "truth": "=",
+          "before": "\\approx",
+          "after": "="
+        },
+        {
+          "record_id": "project_owned_ownership_ce70721ef1e63d967f5cff78",
+          "formula_id": "aiflow_0152",
+          "direction": "improved",
+          "truth": "0",
+          "before": "\\mathcal{O}",
+          "after": "0"
+        }
+      ]
+    },
+    "audit": {
+      "schema": "aiflow-wide-candidate-syntax-rescue/v1",
+      "status": "shadow_runtime_only",
+      "configuration": {
+        "candidate_width": 10,
+        "auxiliary_weight": 0.6,
+        "allowed_auxiliary_policies": [
+          "current_expanded_writer_loo_probability_fusion",
+          "old_new_product_probability_fusion"
+        ],
+        "minimum_baseline_digit_count": 2,
+        "maximum_changes": 2,
+        "maximum_formula_glyphs": 64,
+        "minimum_digit_probability_ratio": 0.01,
+        "equality_candidate_must_be_top1": true,
+        "literal_alpha_operand_lock": true
+      },
+      "records": 387,
+      "formulas": 95,
+      "changed_glyphs": 3,
+      "changed_formulas": 2,
+      "baseline_formula_order_authoritative": true,
+      "wide_candidate_context_order_used": false,
+      "changes": [
+        {
+          "formula_id": "aiflow_0140",
+          "record_id": "project_owned_ownership_4d88871abe2e5b30619857e3",
+          "context_index": 2,
+          "before": "\\prime",
+          "after": "1",
+          "candidate_rank": 6,
+          "candidate_probability": 0.01762687787413597,
+          "rule": "numeric_operand_slot"
+        },
+        {
+          "formula_id": "aiflow_0152",
+          "record_id": "project_owned_ownership_9dd9348612a3ebfbc0c457ae",
+          "context_index": 3,
+          "before": "\\approx",
+          "after": "=",
+          "candidate_rank": 1,
+          "candidate_probability": 0.5789320468902588,
+          "rule": "top1_equality_slot"
+        },
+        {
+          "formula_id": "aiflow_0152",
+          "record_id": "project_owned_ownership_ce70721ef1e63d967f5cff78",
+          "context_index": 4,
+          "before": "\\mathcal{O}",
+          "after": "0",
+          "candidate_rank": 2,
+          "candidate_probability": 0.012140908278524876,
+          "rule": "numeric_operand_slot"
+        }
+      ],
+      "skipped": {
+        "baseline_already_valid": 41,
+        "insufficient_numeric_intent": 41,
+        "missing_structure_evidence": 1,
+        "no_valid_repair": 10
+      },
+      "candidate_union_preservation_rate": 1.0,
+      "tokens_outside_baseline_and_wide_union": 0,
+      "inserted_or_deleted_glyphs": 0,
+      "glyph_order_mutations": 0,
+      "grouping_mutations": 0,
+      "layout_mutations": 0,
+      "arithmetic_evaluation": false
+    }
+  },
+  "crohme_noncommercial_diagnostic": {
+    "evaluation": {
+      "records": 9535,
+      "formulas": 984,
+      "baseline_character_top1_count": 7513,
+      "challenger_character_top1_count": 7516,
+      "challenger_character_top1": 0.788253801782905,
+      "glyph_improved": 3,
+      "glyph_regressed": 0,
+      "baseline_formula_exact_count": 286,
+      "challenger_formula_exact_count": 288,
+      "challenger_formula_exact": 0.2926829268292683,
+      "formula_improved": 2,
+      "formula_regressed": 0,
+      "formula_outcomes": [
+        {
+          "formula_id": "RIT_2014_204.inkml",
+          "direction": "improved",
+          "truth": [
+            "4",
+            "7",
+            "4",
+            "7",
+            "4",
+            "+",
+            "5",
+            "2",
+            "7",
+            "2",
+            "=",
+            "5",
+            "2",
+            "7",
+            "4",
+            "6"
+          ],
+          "before": [
+            "4",
+            "7",
+            "\\mathcal{G}",
+            "7",
+            "4",
+            "+",
+            "5",
+            "2",
+            "7",
+            "2",
+            "=",
+            "5",
+            "2",
+            "7",
+            "4",
+            "6"
+          ],
+          "after": [
+            "4",
+            "7",
+            "4",
+            "7",
+            "4",
+            "+",
+            "5",
+            "2",
+            "7",
+            "2",
+            "=",
+            "5",
+            "2",
+            "7",
+            "4",
+            "6"
+          ]
+        },
+        {
+          "formula_id": "RIT_2014_70.inkml",
+          "direction": "improved",
+          "truth": [
+            "1",
+            "+",
+            "1",
+            "+",
+            "1",
+            "+",
+            "1",
+            "+",
+            "1",
+            "=",
+            "5"
+          ],
+          "before": [
+            "1",
+            "+",
+            "1",
+            "+",
+            "1",
+            "+",
+            "|",
+            "+",
+            "|",
+            "=",
+            "5"
+          ],
+          "after": [
+            "1",
+            "+",
+            "1",
+            "+",
+            "1",
+            "+",
+            "1",
+            "+",
+            "1",
+            "=",
+            "5"
+          ]
+        }
+      ],
+      "glyph_outcomes": [
+        {
+          "record_id": "RIT_2014_204.inkml:2",
+          "formula_id": "RIT_2014_204.inkml",
+          "direction": "improved",
+          "truth": "4",
+          "before": "\\mathcal{G}",
+          "after": "4"
+        },
+        {
+          "record_id": "RIT_2014_70.inkml:6",
+          "formula_id": "RIT_2014_70.inkml",
+          "direction": "improved",
+          "truth": "1",
+          "before": "|",
+          "after": "1"
+        },
+        {
+          "record_id": "RIT_2014_70.inkml:8",
+          "formula_id": "RIT_2014_70.inkml",
+          "direction": "improved",
+          "truth": "1",
+          "before": "|",
+          "after": "1"
+        }
+      ]
+    },
+    "audit": {
+      "schema": "aiflow-wide-candidate-syntax-rescue/v1",
+      "status": "shadow_runtime_only",
+      "configuration": {
+        "candidate_width": 10,
+        "auxiliary_weight": 0.6,
+        "allowed_auxiliary_policies": [
+          "current_expanded_writer_loo_probability_fusion",
+          "old_new_product_probability_fusion"
+        ],
+        "minimum_baseline_digit_count": 2,
+        "maximum_changes": 2,
+        "maximum_formula_glyphs": 64,
+        "minimum_digit_probability_ratio": 0.01,
+        "equality_candidate_must_be_top1": true,
+        "literal_alpha_operand_lock": true
+      },
+      "records": 9535,
+      "formulas": 984,
+      "changed_glyphs": 3,
+      "changed_formulas": 2,
+      "baseline_formula_order_authoritative": true,
+      "wide_candidate_context_order_used": false,
+      "changes": [
+        {
+          "formula_id": "RIT_2014_204.inkml",
+          "record_id": "RIT_2014_204.inkml:2",
+          "context_index": 2,
+          "before": "\\mathcal{G}",
+          "after": "4",
+          "candidate_rank": 6,
+          "candidate_probability": 0.036767516285181046,
+          "rule": "numeric_operand_slot"
+        },
+        {
+          "formula_id": "RIT_2014_70.inkml",
+          "record_id": "RIT_2014_70.inkml:6",
+          "context_index": 6,
+          "before": "|",
+          "after": "1",
+          "candidate_rank": 2,
+          "candidate_probability": 0.26853862404823303,
+          "rule": "numeric_operand_slot"
+        },
+        {
+          "formula_id": "RIT_2014_70.inkml",
+          "record_id": "RIT_2014_70.inkml:8",
+          "context_index": 8,
+          "before": "|",
+          "after": "1",
+          "candidate_rank": 4,
+          "candidate_probability": 0.1419418305158615,
+          "rule": "numeric_operand_slot"
+        }
+      ],
+      "skipped": {
+        "baseline_already_valid": 47,
+        "formula_too_long": 1,
+        "insufficient_numeric_intent": 462,
+        "missing_structure_evidence": 55,
+        "no_valid_repair": 417
+      },
+      "candidate_union_preservation_rate": 1.0,
+      "tokens_outside_baseline_and_wide_union": 0,
+      "inserted_or_deleted_glyphs": 0,
+      "glyph_order_mutations": 0,
+      "grouping_mutations": 0,
+      "layout_mutations": 0,
+      "arithmetic_evaluation": false
+    },
+    "preceding_dual_hwr_audit": {
+      "schema": "aiflow-dual-hwr-numeric-rescue/v1",
+      "status": "shadow_runtime_only",
+      "configuration": {
+        "auxiliary_policy": "current_expanded_writer_loo_probability_fusion",
+        "auxiliary_weight": 0.6,
+        "maximum_operand_changes": 2
+      },
+      "records": 9535,
+      "formulas": 984,
+      "changed_glyphs": 2,
+      "changed_formulas": 2,
+      "auxiliary_order_mismatch_formulas": 5,
+      "changes": [
+        {
+          "formula_id": "26_em_99.inkml",
+          "record_id": "26_em_99.inkml:7",
+          "context_index": 9,
+          "before": "o",
+          "after": "0",
+          "outside_baseline_top5": true
+        },
+        {
+          "formula_id": "RIT_2014_108.inkml",
+          "record_id": "RIT_2014_108.inkml:1",
+          "context_index": 0,
+          "before": "w",
+          "after": "2",
+          "outside_baseline_top5": true
+        }
+      ],
+      "skipped": {
+        "auxiliary_order_mismatch": 5,
+        "no_operand_to_digit_change": 934,
+        "proposal_not_valid_numeric": 42,
+        "too_many_operand_changes": 1
+      },
+      "baseline_top5_expansions": 2,
+      "candidate_union_preservation_rate": 1.0,
+      "tokens_outside_dual_hwr_union": 0,
+      "deleted_glyphs": 0,
+      "grouping_mutations": 0,
+      "operator_relation_or_fence_mutations": 0,
+      "arithmetic_evaluation": false
+    },
+    "product_validation": false
+  },
+  "inputs": {
+    "direct_baseline": "6785a5afef6fb133f1ced28f50ae3bafddb6fe10b810dfc56a59d62ff2bde91c",
+    "direct_wide_candidates": "f848a91d59a0b11970889c839cbe08fd1fdac5499cc910d95d02bdac653d029e",
+    "crohme_pre_dual_baseline": "b8e812abba7bd1a970b41de757c844a2928cb7a37c72939085890b591ddd530d",
+    "crohme_auxiliary_top5": "7e5c573bb2beb5ce72eaaf3f03fb8ad559611c7d68981caa5b70c4637f0789ac",
+    "crohme_auxiliary_finalized": "44132510ebe5697c1d436102380f752d2699f74d6494a084df6366d8604105c0",
+    "crohme_wide_candidates": "adfdb46458ba1003eb55d5d5763741be70063aff2d6f7ad4c1ef705b96b4954c"
+  }
+}

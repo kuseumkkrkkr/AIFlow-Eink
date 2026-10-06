@@ -1,0 +1,92 @@
+{
+  "schema": "aiflow-formula-error-escape-audit/v1",
+  "generated_at": "2026-08-20T00:00:00+09:00",
+  "status": "development_only_posthoc_shadow",
+  "training_performed": false,
+  "baseline": {
+    "runtime_commit": "3d76423685ba68f14073c7a6b4c23034b1706fc3",
+    "formula_exact": 152,
+    "formulas": 159,
+    "rate": 0.9559748427672956
+  },
+  "remaining_formula_ids": [
+    "aiflow_0023",
+    "aiflow_0032",
+    "aiflow_0036",
+    "aiflow_0038",
+    "aiflow_0046",
+    "aiflow_0104",
+    "aiflow_0113"
+  ],
+  "raw_stroke_visual_audit": {
+    "path": "D:/AIFlow-Workspace/PrivateData/remaining-errors-r27-raw-strokes.png",
+    "sha256": "7975589f999b01a7a73070e93342b1b7b5bdd425840bcf9663afd97c98d8ca3e",
+    "decision": "retain all seven records; no confirmed corrupt label or missing trajectory"
+  },
+  "probes": {
+    "external_embedding_class_centroids": {
+      "training_records": 167088,
+      "embedding_dimensions": 128,
+      "decision": "rejected",
+      "reason": "candidate-preserving centroid fusion did not recover a remaining formula without choosing another wrong shape family"
+    },
+    "closed_stroke_reverse_and_cyclic_ensemble": {
+      "external_collision_free_records": 18330,
+      "eligible_closed_single_strokes": 1735,
+      "zero_regression_improving_configuration_found": false,
+      "p_to_8_external_probe": {
+        "records": 5,
+        "truth_distribution": [
+          {"token": "P", "count": 3},
+          {"token": "\\rho", "count": 1},
+          {"token": "p", "count": 1},
+          {"token": "8", "count": 0}
+        ]
+      },
+      "decision": "rejected"
+    },
+    "bert_tiny_function_argument_attention": {
+      "model": "google/bert_uncased_L-2_H-128_A-2 project-owned refit r3",
+      "formula_id": "aiflow_0104",
+      "target": "y",
+      "fused_hwr_rank": 21,
+      "context_rank_raw": 74,
+      "context_rank_after_open_fence_repair": 78,
+      "decision": "rejected",
+      "reason": "role-conditioned fusion promotes r before y; attention does not provide a safe y versus q decision"
+    },
+    "two_stroke_five_geometry_and_latin_auxiliary": {
+      "project_candidate_records": 22,
+      "project_truth_five": 22,
+      "external_broad_candidate_records": 27,
+      "external_truth_distribution": {
+        "5": 10,
+        "6": 1,
+        "J": 4,
+        "\\Gamma": 1,
+        "\\Sigma": 2,
+        "\\hbar": 3,
+        "\\mathcal{T}": 2,
+        "\\sum": 4
+      },
+      "aiflow_0046_strict_gate_external_records": 0,
+      "decision": "rejected",
+      "reason": "the broad gate regresses external symbols and the strict gate has no external positive support"
+    }
+  },
+  "result": {
+    "formula_exact_before": 152,
+    "formula_exact_after": 152,
+    "selected_changes": 0,
+    "regressions": 0,
+    "product_default_enabled": false,
+    "next_required_evidence": "fresh commercial project-owned writer-disjoint trajectories for separated-top-bar 5, closed-loop 0 and 8, cursive y versus q, and standalone x versus times"
+  },
+  "contracts": {
+    "target_label_used_for_inference": false,
+    "writer_identity_used_for_inference": false,
+    "arithmetic_evaluation": false,
+    "candidate_invention": false,
+    "test_tuned_rule_admitted": false
+  }
+}

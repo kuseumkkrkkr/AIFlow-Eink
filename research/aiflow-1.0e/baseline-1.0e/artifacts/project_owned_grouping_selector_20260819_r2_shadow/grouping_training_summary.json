@@ -1,0 +1,710 @@
+{
+  "schema": "aiflow-project-owned-grouping-training/v1",
+  "generated_at": "2026-08-19T13:48:24.489705+00:00",
+  "status": "shadow",
+  "model_version": "aiflow-stroke-grouping-1.0-r2-shadow",
+  "dataset": {
+    "dataset_info_sha256": "03dfc7d65cf39b66410198e0410414f73398ec968bac3cd3c73fe26ce699cb3f",
+    "formulas_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "ownership_sha256": "2b466b35cedfa9f9d3ed4f965ef36884cb0eab0791466b50524e906b5f0647df",
+    "formulas": 96,
+    "writers": 7,
+    "writer_formulas": {
+      "writer_001": 10,
+      "writer_002": 23,
+      "writer_003": 20,
+      "writer_004": 10,
+      "writer_006": 20,
+      "writer_007": 8,
+      "writer_008": 5
+    }
+  },
+  "lattice": {
+    "config": {
+      "temporal_window": 6,
+      "spatial_neighbors": 4,
+      "max_long_group_width_fraction": 0.45
+    },
+    "oracle": {
+      "formulas": 96,
+      "truth_groups": 393,
+      "group_recall": 1.0,
+      "recoverable_partitions": 96,
+      "partition_recoverable": 1.0,
+      "mean_candidates": 25.34375,
+      "missing": []
+    }
+  },
+  "evaluation": {
+    "protocol": "nested leave-one-writer-out; outer writer is absent from model fit and bias selection",
+    "nested_writer_loo": {
+      "metrics": {
+        "formulas": 96,
+        "partition_exact": 0.9270833333333334,
+        "exact_partitions": 89,
+        "truth_groups": 393,
+        "exact_group_recall": 0.9669211195928753,
+        "pair_precision": 0.963963963963964,
+        "pair_recall": 0.9771689497716894,
+        "pair_f1": 0.9705215419501134,
+        "overmerge_rate": 0.041666666666666664,
+        "oversplit_rate": 0.041666666666666664
+      },
+      "folds": [
+        {
+          "held_out_writer": "writer_001",
+          "train_formulas": 86,
+          "test_formulas": 10,
+          "inner_selected_group_bias": 1.0,
+          "test": {
+            "formulas": 10,
+            "partition_exact": 0.9,
+            "exact_partitions": 9,
+            "truth_groups": 32,
+            "exact_group_recall": 0.96875,
+            "pair_precision": 1.0,
+            "pair_recall": 0.9333333333333333,
+            "pair_f1": 0.9655172413793104,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.1
+          }
+        },
+        {
+          "held_out_writer": "writer_002",
+          "train_formulas": 73,
+          "test_formulas": 23,
+          "inner_selected_group_bias": -1.5,
+          "test": {
+            "formulas": 23,
+            "partition_exact": 0.8695652173913043,
+            "exact_partitions": 20,
+            "truth_groups": 100,
+            "exact_group_recall": 0.92,
+            "pair_precision": 0.88,
+            "pair_recall": 0.9777777777777777,
+            "pair_f1": 0.9263157894736842,
+            "overmerge_rate": 0.13043478260869565,
+            "oversplit_rate": 0.043478260869565216
+          }
+        },
+        {
+          "held_out_writer": "writer_003",
+          "train_formulas": 76,
+          "test_formulas": 20,
+          "inner_selected_group_bias": 0.0,
+          "test": {
+            "formulas": 20,
+            "partition_exact": 1.0,
+            "exact_partitions": 20,
+            "truth_groups": 88,
+            "exact_group_recall": 1.0,
+            "pair_precision": 1.0,
+            "pair_recall": 1.0,
+            "pair_f1": 1.0,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.0
+          }
+        },
+        {
+          "held_out_writer": "writer_004",
+          "train_formulas": 86,
+          "test_formulas": 10,
+          "inner_selected_group_bias": -1.0,
+          "test": {
+            "formulas": 10,
+            "partition_exact": 0.9,
+            "exact_partitions": 9,
+            "truth_groups": 35,
+            "exact_group_recall": 0.9714285714285714,
+            "pair_precision": 1.0,
+            "pair_recall": 0.9230769230769231,
+            "pair_f1": 0.9600000000000001,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.1
+          }
+        },
+        {
+          "held_out_writer": "writer_006",
+          "train_formulas": 76,
+          "test_formulas": 20,
+          "inner_selected_group_bias": -1.0,
+          "test": {
+            "formulas": 20,
+            "partition_exact": 0.9,
+            "exact_partitions": 18,
+            "truth_groups": 80,
+            "exact_group_recall": 0.9625,
+            "pair_precision": 0.9545454545454546,
+            "pair_recall": 0.9767441860465116,
+            "pair_f1": 0.9655172413793104,
+            "overmerge_rate": 0.05,
+            "oversplit_rate": 0.05
+          }
+        },
+        {
+          "held_out_writer": "writer_007",
+          "train_formulas": 88,
+          "test_formulas": 8,
+          "inner_selected_group_bias": -0.5,
+          "test": {
+            "formulas": 8,
+            "partition_exact": 1.0,
+            "exact_partitions": 8,
+            "truth_groups": 35,
+            "exact_group_recall": 1.0,
+            "pair_precision": 1.0,
+            "pair_recall": 1.0,
+            "pair_f1": 1.0,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.0
+          }
+        },
+        {
+          "held_out_writer": "writer_008",
+          "train_formulas": 91,
+          "test_formulas": 5,
+          "inner_selected_group_bias": 0.0,
+          "test": {
+            "formulas": 5,
+            "partition_exact": 1.0,
+            "exact_partitions": 5,
+            "truth_groups": 23,
+            "exact_group_recall": 1.0,
+            "pair_precision": 1.0,
+            "pair_recall": 1.0,
+            "pair_f1": 1.0,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.0
+          }
+        }
+      ]
+    },
+    "deployment_bias_selection": {
+      "winner": {
+        "group_bias": 0.0,
+        "metrics": {
+          "formulas": 96,
+          "partition_exact": 0.96875,
+          "exact_partitions": 93,
+          "truth_groups": 393,
+          "exact_group_recall": 0.989821882951654,
+          "pair_precision": 0.9953917050691244,
+          "pair_recall": 0.9863013698630136,
+          "pair_f1": 0.9908256880733944,
+          "overmerge_rate": 0.010416666666666666,
+          "oversplit_rate": 0.020833333333333332
+        }
+      },
+      "trials": [
+        {
+          "group_bias": -3.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.90625,
+            "exact_partitions": 87,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9516539440203562,
+            "pair_precision": 0.9267241379310345,
+            "pair_recall": 0.9817351598173516,
+            "pair_f1": 0.9534368070953437,
+            "overmerge_rate": 0.07291666666666667,
+            "oversplit_rate": 0.03125
+          }
+        },
+        {
+          "group_bias": -2.5,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9270833333333334,
+            "exact_partitions": 89,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9643765903307888,
+            "pair_precision": 0.9598214285714286,
+            "pair_recall": 0.9817351598173516,
+            "pair_f1": 0.9706546275395034,
+            "overmerge_rate": 0.052083333333333336,
+            "oversplit_rate": 0.03125
+          }
+        },
+        {
+          "group_bias": -2.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9270833333333334,
+            "exact_partitions": 89,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9643765903307888,
+            "pair_precision": 0.9598214285714286,
+            "pair_recall": 0.9817351598173516,
+            "pair_f1": 0.9706546275395034,
+            "overmerge_rate": 0.052083333333333336,
+            "oversplit_rate": 0.03125
+          }
+        },
+        {
+          "group_bias": -1.5,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9270833333333334,
+            "exact_partitions": 89,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9643765903307888,
+            "pair_precision": 0.9598214285714286,
+            "pair_recall": 0.9817351598173516,
+            "pair_f1": 0.9706546275395034,
+            "overmerge_rate": 0.052083333333333336,
+            "oversplit_rate": 0.03125
+          }
+        },
+        {
+          "group_bias": -1.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9375,
+            "exact_partitions": 90,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9694656488549618,
+            "pair_precision": 0.9641255605381166,
+            "pair_recall": 0.9817351598173516,
+            "pair_f1": 0.9728506787330317,
+            "overmerge_rate": 0.041666666666666664,
+            "oversplit_rate": 0.03125
+          }
+        },
+        {
+          "group_bias": -0.5,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9583333333333334,
+            "exact_partitions": 92,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9796437659033079,
+            "pair_precision": 0.9772727272727273,
+            "pair_recall": 0.9817351598173516,
+            "pair_f1": 0.979498861047836,
+            "overmerge_rate": 0.020833333333333332,
+            "oversplit_rate": 0.03125
+          }
+        },
+        {
+          "group_bias": 0.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.96875,
+            "exact_partitions": 93,
+            "truth_groups": 393,
+            "exact_group_recall": 0.989821882951654,
+            "pair_precision": 0.9953917050691244,
+            "pair_recall": 0.9863013698630136,
+            "pair_f1": 0.9908256880733944,
+            "overmerge_rate": 0.010416666666666666,
+            "oversplit_rate": 0.020833333333333332
+          }
+        },
+        {
+          "group_bias": 0.5,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9583333333333334,
+            "exact_partitions": 92,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9872773536895675,
+            "pair_precision": 0.9953703703703703,
+            "pair_recall": 0.9817351598173516,
+            "pair_f1": 0.9885057471264368,
+            "overmerge_rate": 0.010416666666666666,
+            "oversplit_rate": 0.03125
+          }
+        },
+        {
+          "group_bias": 1.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9479166666666666,
+            "exact_partitions": 91,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9847328244274809,
+            "pair_precision": 0.9953488372093023,
+            "pair_recall": 0.9771689497716894,
+            "pair_f1": 0.9861751152073732,
+            "overmerge_rate": 0.010416666666666666,
+            "oversplit_rate": 0.041666666666666664
+          }
+        },
+        {
+          "group_bias": 1.5,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9479166666666666,
+            "exact_partitions": 91,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9847328244274809,
+            "pair_precision": 1.0,
+            "pair_recall": 0.9680365296803652,
+            "pair_f1": 0.9837587006960556,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.052083333333333336
+          }
+        },
+        {
+          "group_bias": 2.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9375,
+            "exact_partitions": 90,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9796437659033079,
+            "pair_precision": 1.0,
+            "pair_recall": 0.954337899543379,
+            "pair_f1": 0.9766355140186915,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.0625
+          }
+        },
+        {
+          "group_bias": 2.5,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9270833333333334,
+            "exact_partitions": 89,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9770992366412213,
+            "pair_precision": 1.0,
+            "pair_recall": 0.9497716894977168,
+            "pair_f1": 0.9742388758782201,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.07291666666666667
+          }
+        },
+        {
+          "group_bias": 3.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.875,
+            "exact_partitions": 84,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9643765903307888,
+            "pair_precision": 1.0,
+            "pair_recall": 0.8767123287671232,
+            "pair_f1": 0.9343065693430657,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.125
+          }
+        }
+      ]
+    },
+    "failed_formulas": [
+      {
+        "sample_id": "aiflow_0018",
+        "writer": "writer_002",
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0020",
+        "writer": "writer_002",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0021",
+        "writer": "writer_002",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0128",
+        "writer": "writer_006",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            7
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0130",
+        "writer": "writer_006",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0010",
+        "writer": "writer_004",
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0074",
+        "writer": "writer_001",
+        "truth": [
+          [
+            0,
+            3
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ]
+  },
+  "artifact": {
+    "file": "grouping_selector.joblib",
+    "sha256": "b4ba7b7ab95b8414ba9ce8d0af31eb80a87e3480aca1519cf49bb9e696a5fb0f",
+    "feature_names": [
+      "stroke_count",
+      "point_count_log",
+      "width_ref",
+      "height_ref",
+      "aspect_log",
+      "temporal_span",
+      "temporal_contiguous",
+      "singleton",
+      "has_spatial_pair",
+      "pair_gap_mean_ref",
+      "pair_gap_max_ref",
+      "x_overlap_mean",
+      "y_overlap_mean",
+      "stroke_width_mean_ref",
+      "stroke_width_std_ref",
+      "stroke_height_mean_ref",
+      "stroke_height_std_ref",
+      "path_length_ref",
+      "endpoint_gap_mean_ref",
+      "candidate_cx_formula",
+      "candidate_cy_formula",
+      "candidate_width_formula"
+    ],
+    "group_bias": 0.0
+  },
+  "contracts": {
+    "label_features": false,
+    "writer_features": false,
+    "target_cell_count_input": false,
+    "all_strokes_exactly_once": true,
+    "insertion_or_deletion": false,
+    "product_default_enabled": false
+  }
+}

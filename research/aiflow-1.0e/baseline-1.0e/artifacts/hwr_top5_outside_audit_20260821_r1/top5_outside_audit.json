@@ -1,0 +1,2893 @@
+{
+  "schema": "aiflow-hwr-top5-outside-audit/v1",
+  "generated_at": "2026-08-21T09:43:08.794692+00:00",
+  "status": "validation_only_diagnostic",
+  "training_performed": false,
+  "selection_performed": false,
+  "crohme_gradient_updates": 0,
+  "baseline": {
+    "hwr_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "supported_records": 11991,
+    "top1": 0.7269618880827287,
+    "top5": 0.9375364856976065,
+    "outside_top5": 749
+  },
+  "outside_top5": {
+    "records": 749,
+    "by_category": {
+      "core_operator": 125,
+      "delimiter": 14,
+      "digit": 304,
+      "latin": 272,
+      "other_math": 34
+    },
+    "by_training_support_band": {
+      "1-49": 41,
+      "200-499": 593,
+      "50-199": 73,
+      "500+": 42
+    },
+    "zero_commercial_support_rows": 0,
+    "labels": [
+      {
+        "truth": "2",
+        "category": "digit",
+        "outside_top5": 101,
+        "truth_rank": {
+          "count": 101,
+          "mean": 28.801980198019802,
+          "median": 19,
+          "maximum": 152,
+          "rank_6_to_10": 31,
+          "rank_11_to_20": 22,
+          "rank_21_plus": 48
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 112,
+            "uji": 108,
+            "isgl": 112,
+            "uci": 0
+          },
+          "external_total": 332,
+          "project_owned_pool": 13,
+          "total": 345,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\Sigma",
+            "count": 10
+          },
+          {
+            "prediction": "\\tau",
+            "count": 6
+          },
+          {
+            "prediction": "\\wr",
+            "count": 6
+          },
+          {
+            "prediction": "\\mathcal{C}",
+            "count": 5
+          },
+          {
+            "prediction": "\\&",
+            "count": 5
+          },
+          {
+            "prediction": "\\omega",
+            "count": 4
+          },
+          {
+            "prediction": "\\mathscr{L}",
+            "count": 4
+          },
+          {
+            "prediction": "\\mathcal{L}",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "truth": "1",
+        "category": "digit",
+        "outside_top5": 99,
+        "truth_rank": {
+          "count": 99,
+          "mean": 14.656565656565656,
+          "median": 9,
+          "maximum": 160,
+          "rank_6_to_10": 58,
+          "rank_11_to_20": 27,
+          "rank_21_plus": 14
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 107,
+            "uji": 108,
+            "isgl": 104,
+            "uci": 0
+          },
+          "external_total": 319,
+          "project_owned_pool": 25,
+          "total": 344,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\wedge",
+            "count": 12
+          },
+          {
+            "prediction": ")",
+            "count": 11
+          },
+          {
+            "prediction": "\\setminus",
+            "count": 7
+          },
+          {
+            "prediction": "\\Lambda",
+            "count": 6
+          },
+          {
+            "prediction": "\\upharpoonright",
+            "count": 4
+          },
+          {
+            "prediction": "\\dashv",
+            "count": 4
+          },
+          {
+            "prediction": "\\int",
+            "count": 3
+          },
+          {
+            "prediction": "[",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "truth": "+",
+        "category": "core_operator",
+        "outside_top5": 59,
+        "truth_rank": {
+          "count": 59,
+          "mean": 47.79661016949152,
+          "median": 21,
+          "maximum": 352,
+          "rank_6_to_10": 21,
+          "rank_11_to_20": 7,
+          "rank_21_plus": 31
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 81,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 81,
+          "project_owned_pool": 24,
+          "total": 105,
+          "band": "50-199",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\dashv",
+            "count": 23
+          },
+          {
+            "prediction": "\\dag",
+            "count": 5
+          },
+          {
+            "prediction": "\\div",
+            "count": 3
+          },
+          {
+            "prediction": "f",
+            "count": 3
+          },
+          {
+            "prediction": "\\shortrightarrow",
+            "count": 3
+          },
+          {
+            "prediction": "\\ast",
+            "count": 2
+          },
+          {
+            "prediction": "\\nmid",
+            "count": 2
+          },
+          {
+            "prediction": "\\psi",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "truth": "z",
+        "category": "latin",
+        "outside_top5": 54,
+        "truth_rank": {
+          "count": 54,
+          "mean": 70.5,
+          "median": 56.5,
+          "maximum": 289,
+          "rank_6_to_10": 7,
+          "rank_11_to_20": 4,
+          "rank_21_plus": 43
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 54,
+            "uji": 108,
+            "isgl": 110,
+            "uci": 154
+          },
+          "external_total": 426,
+          "project_owned_pool": 0,
+          "total": 426,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\partial",
+            "count": 10
+          },
+          {
+            "prediction": "g",
+            "count": 8
+          },
+          {
+            "prediction": "J",
+            "count": 7
+          },
+          {
+            "prediction": "y",
+            "count": 7
+          },
+          {
+            "prediction": "\\vartheta",
+            "count": 4
+          },
+          {
+            "prediction": "3",
+            "count": 3
+          },
+          {
+            "prediction": "\\gamma",
+            "count": 2
+          },
+          {
+            "prediction": "\\Im",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "truth": "0",
+        "category": "digit",
+        "outside_top5": 53,
+        "truth_rank": {
+          "count": 53,
+          "mean": 11.018867924528301,
+          "median": 9,
+          "maximum": 55,
+          "rank_6_to_10": 34,
+          "rank_11_to_20": 15,
+          "rank_21_plus": 4
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 120,
+            "uji": 108,
+            "isgl": 99,
+            "uci": 0
+          },
+          "external_total": 327,
+          "project_owned_pool": 16,
+          "total": 343,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\fullmoon",
+            "count": 21
+          },
+          {
+            "prediction": "\\circ",
+            "count": 16
+          },
+          {
+            "prediction": "o",
+            "count": 3
+          },
+          {
+            "prediction": "\\emptyset",
+            "count": 2
+          },
+          {
+            "prediction": "\\diamond",
+            "count": 1
+          },
+          {
+            "prediction": "\\circlearrowright",
+            "count": 1
+          },
+          {
+            "prediction": "\\heartsuit",
+            "count": 1
+          },
+          {
+            "prediction": "\\lozenge",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "x",
+        "category": "latin",
+        "outside_top5": 42,
+        "truth_rank": {
+          "count": 42,
+          "mean": 19.428571428571427,
+          "median": 11.5,
+          "maximum": 117,
+          "rank_6_to_10": 20,
+          "rank_11_to_20": 12,
+          "rank_21_plus": 10
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 60,
+            "uji": 108,
+            "isgl": 107,
+            "uci": 0
+          },
+          "external_total": 275,
+          "project_owned_pool": 2,
+          "total": 277,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\ae",
+            "count": 8
+          },
+          {
+            "prediction": "n",
+            "count": 7
+          },
+          {
+            "prediction": "\\varkappa",
+            "count": 4
+          },
+          {
+            "prediction": "\\mathscr{H}",
+            "count": 3
+          },
+          {
+            "prediction": "\\leadsto",
+            "count": 3
+          },
+          {
+            "prediction": "\\rightsquigarrow",
+            "count": 3
+          },
+          {
+            "prediction": "\\subsetneq",
+            "count": 2
+          },
+          {
+            "prediction": "k",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "truth": "=",
+        "category": "core_operator",
+        "outside_top5": 41,
+        "truth_rank": {
+          "count": 41,
+          "mean": 49.951219512195124,
+          "median": 19,
+          "maximum": 359,
+          "rank_6_to_10": 12,
+          "rank_11_to_20": 12,
+          "rank_21_plus": 17
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 0,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 0,
+          "project_owned_pool": 20,
+          "total": 20,
+          "band": "1-49",
+          "interpretation": "external row absent; project-owned calibration only"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "I",
+            "count": 16
+          },
+          {
+            "prediction": "\\tau",
+            "count": 5
+          },
+          {
+            "prediction": "\\supseteq",
+            "count": 3
+          },
+          {
+            "prediction": "\\rightleftarrows",
+            "count": 3
+          },
+          {
+            "prediction": "]",
+            "count": 2
+          },
+          {
+            "prediction": "\\circlearrowright",
+            "count": 2
+          },
+          {
+            "prediction": "\\&",
+            "count": 1
+          },
+          {
+            "prediction": "\\varpropto",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "a",
+        "category": "latin",
+        "outside_top5": 33,
+        "truth_rank": {
+          "count": 33,
+          "mean": 28.87878787878788,
+          "median": 15,
+          "maximum": 220,
+          "rank_6_to_10": 12,
+          "rank_11_to_20": 11,
+          "rank_21_plus": 10
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 78,
+            "uji": 108,
+            "isgl": 105,
+            "uci": 154
+          },
+          "external_total": 445,
+          "project_owned_pool": 2,
+          "total": 447,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\varpropto",
+            "count": 13
+          },
+          {
+            "prediction": "\\omega",
+            "count": 2
+          },
+          {
+            "prediction": "\\alpha",
+            "count": 2
+          },
+          {
+            "prediction": "\\angle",
+            "count": 2
+          },
+          {
+            "prediction": "\\mathfrak{A}",
+            "count": 2
+          },
+          {
+            "prediction": "\\sigma",
+            "count": 1
+          },
+          {
+            "prediction": "h",
+            "count": 1
+          },
+          {
+            "prediction": "x",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "b",
+        "category": "latin",
+        "outside_top5": 29,
+        "truth_rank": {
+          "count": 29,
+          "mean": 24.17241379310345,
+          "median": 11,
+          "maximum": 94,
+          "rank_6_to_10": 13,
+          "rank_11_to_20": 7,
+          "rank_21_plus": 9
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 52,
+            "uji": 108,
+            "isgl": 106,
+            "uci": 127
+          },
+          "external_total": 393,
+          "project_owned_pool": 5,
+          "total": 398,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\ell",
+            "count": 9
+          },
+          {
+            "prediction": "\\with",
+            "count": 8
+          },
+          {
+            "prediction": "\\vartriangle",
+            "count": 3
+          },
+          {
+            "prediction": "\\mathcal{C}",
+            "count": 2
+          },
+          {
+            "prediction": "e",
+            "count": 1
+          },
+          {
+            "prediction": "\\varrho",
+            "count": 1
+          },
+          {
+            "prediction": "\\mathscr{S}",
+            "count": 1
+          },
+          {
+            "prediction": "\\male",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "k",
+        "category": "latin",
+        "outside_top5": 18,
+        "truth_rank": {
+          "count": 18,
+          "mean": 24.444444444444443,
+          "median": 11.5,
+          "maximum": 180,
+          "rank_6_to_10": 9,
+          "rank_11_to_20": 4,
+          "rank_21_plus": 5
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 53,
+            "uji": 108,
+            "isgl": 109,
+            "uci": 0
+          },
+          "external_total": 270,
+          "project_owned_pool": 0,
+          "total": 270,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\mathcal{R}",
+            "count": 5
+          },
+          {
+            "prediction": "\\sphericalangle",
+            "count": 2
+          },
+          {
+            "prediction": "h",
+            "count": 2
+          },
+          {
+            "prediction": "\\varrho",
+            "count": 1
+          },
+          {
+            "prediction": "\\mathcal{L}",
+            "count": 1
+          },
+          {
+            "prediction": "b",
+            "count": 1
+          },
+          {
+            "prediction": "\\AA",
+            "count": 1
+          },
+          {
+            "prediction": "R",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "4",
+        "category": "digit",
+        "outside_top5": 17,
+        "truth_rank": {
+          "count": 17,
+          "mean": 20,
+          "median": 8,
+          "maximum": 97,
+          "rank_6_to_10": 9,
+          "rank_11_to_20": 4,
+          "rank_21_plus": 4
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 55,
+            "uji": 108,
+            "isgl": 112,
+            "uci": 0
+          },
+          "external_total": 275,
+          "project_owned_pool": 9,
+          "total": 284,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "G",
+            "count": 3
+          },
+          {
+            "prediction": "h",
+            "count": 3
+          },
+          {
+            "prediction": "\\zeta",
+            "count": 2
+          },
+          {
+            "prediction": "5",
+            "count": 1
+          },
+          {
+            "prediction": "\\hookrightarrow",
+            "count": 1
+          },
+          {
+            "prediction": "\\varsubsetneq",
+            "count": 1
+          },
+          {
+            "prediction": "\\leq",
+            "count": 1
+          },
+          {
+            "prediction": "\\langle",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "7",
+        "category": "digit",
+        "outside_top5": 16,
+        "truth_rank": {
+          "count": 16,
+          "mean": 28.3125,
+          "median": 9.0,
+          "maximum": 139,
+          "rank_6_to_10": 9,
+          "rank_11_to_20": 3,
+          "rank_21_plus": 4
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 68,
+            "uji": 108,
+            "isgl": 108,
+            "uci": 0
+          },
+          "external_total": 284,
+          "project_owned_pool": 8,
+          "total": 292,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\mp",
+            "count": 3
+          },
+          {
+            "prediction": ">",
+            "count": 2
+          },
+          {
+            "prediction": "\\neq",
+            "count": 2
+          },
+          {
+            "prediction": "f",
+            "count": 2
+          },
+          {
+            "prediction": "Y",
+            "count": 1
+          },
+          {
+            "prediction": "]",
+            "count": 1
+          },
+          {
+            "prediction": "\\geqslant",
+            "count": 1
+          },
+          {
+            "prediction": "\\mathscr{S}",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "i",
+        "category": "latin",
+        "outside_top5": 12,
+        "truth_rank": {
+          "count": 12,
+          "mean": 32.166666666666664,
+          "median": 10.5,
+          "maximum": 93,
+          "rank_6_to_10": 6,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 5
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 54,
+            "uji": 108,
+            "isgl": 101,
+            "uci": 0
+          },
+          "external_total": 263,
+          "project_owned_pool": 0,
+          "total": 263,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\mathcal{L}",
+            "count": 2
+          },
+          {
+            "prediction": "\\{",
+            "count": 1
+          },
+          {
+            "prediction": "\\llbracket",
+            "count": 1
+          },
+          {
+            "prediction": "\\perp",
+            "count": 1
+          },
+          {
+            "prediction": "\\partial",
+            "count": 1
+          },
+          {
+            "prediction": "8",
+            "count": 1
+          },
+          {
+            "prediction": "\\oint",
+            "count": 1
+          },
+          {
+            "prediction": "\\lambda",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "(",
+        "category": "delimiter",
+        "outside_top5": 11,
+        "truth_rank": {
+          "count": 11,
+          "mean": 8.181818181818182,
+          "median": 8,
+          "maximum": 11,
+          "rank_6_to_10": 10,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 0,
+            "uji": 108,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 108,
+          "project_owned_pool": 6,
+          "total": 114,
+          "band": "50-199",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "|",
+            "count": 6
+          },
+          {
+            "prediction": "1",
+            "count": 3
+          },
+          {
+            "prediction": "\\lceil",
+            "count": 1
+          },
+          {
+            "prediction": "\\mid",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "n",
+        "category": "latin",
+        "outside_top5": 11,
+        "truth_rank": {
+          "count": 11,
+          "mean": 11.454545454545455,
+          "median": 8,
+          "maximum": 28,
+          "rank_6_to_10": 7,
+          "rank_11_to_20": 3,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 55,
+            "uji": 108,
+            "isgl": 107,
+            "uci": 117
+          },
+          "external_total": 387,
+          "project_owned_pool": 2,
+          "total": 389,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "m",
+            "count": 3
+          },
+          {
+            "prediction": "\\cap",
+            "count": 2
+          },
+          {
+            "prediction": "b",
+            "count": 1
+          },
+          {
+            "prediction": "\\frown",
+            "count": 1
+          },
+          {
+            "prediction": "p",
+            "count": 1
+          },
+          {
+            "prediction": "\\mu",
+            "count": 1
+          },
+          {
+            "prediction": "\\Omega",
+            "count": 1
+          },
+          {
+            "prediction": "\\sim",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "f",
+        "category": "latin",
+        "outside_top5": 10,
+        "truth_rank": {
+          "count": 10,
+          "mean": 16.9,
+          "median": 9.0,
+          "maximum": 88,
+          "rank_6_to_10": 7,
+          "rank_11_to_20": 2,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 60,
+            "uji": 108,
+            "isgl": 114,
+            "uci": 0
+          },
+          "external_total": 282,
+          "project_owned_pool": 2,
+          "total": 284,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\int",
+            "count": 3
+          },
+          {
+            "prediction": "6",
+            "count": 2
+          },
+          {
+            "prediction": "\\mathscr{S}",
+            "count": 2
+          },
+          {
+            "prediction": "5",
+            "count": 1
+          },
+          {
+            "prediction": "\\mathscr{F}",
+            "count": 1
+          },
+          {
+            "prediction": "\\fint",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "-",
+        "category": "core_operator",
+        "outside_top5": 9,
+        "truth_rank": {
+          "count": 9,
+          "mean": 12.444444444444445,
+          "median": 9,
+          "maximum": 27,
+          "rank_6_to_10": 6,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 2
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 107,
+            "uji": 108,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 215,
+          "project_owned_pool": 8,
+          "total": 223,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\frown",
+            "count": 5
+          },
+          {
+            "prediction": "\\sim",
+            "count": 1
+          },
+          {
+            "prediction": "/",
+            "count": 1
+          },
+          {
+            "prediction": "\\curvearrowright",
+            "count": 1
+          },
+          {
+            "prediction": "\\infty",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\sqrt{}",
+        "category": "other_math",
+        "outside_top5": 9,
+        "truth_rank": {
+          "count": 9,
+          "mean": 12.88888888888889,
+          "median": 11,
+          "maximum": 28,
+          "rank_6_to_10": 4,
+          "rank_11_to_20": 3,
+          "rank_21_plus": 2
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 881,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 881,
+          "project_owned_pool": 0,
+          "total": 881,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "-",
+            "count": 4
+          },
+          {
+            "prediction": "\\multimap",
+            "count": 1
+          },
+          {
+            "prediction": "\\dotsc",
+            "count": 1
+          },
+          {
+            "prediction": "J",
+            "count": 1
+          },
+          {
+            "prediction": "\\int",
+            "count": 1
+          },
+          {
+            "prediction": "\\leftarrow",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "h",
+        "category": "latin",
+        "outside_top5": 9,
+        "truth_rank": {
+          "count": 9,
+          "mean": 33.77777777777778,
+          "median": 32,
+          "maximum": 57,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 7
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 53,
+            "uji": 108,
+            "isgl": 105,
+            "uci": 115
+          },
+          "external_total": 381,
+          "project_owned_pool": 0,
+          "total": 381,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\ell",
+            "count": 3
+          },
+          {
+            "prediction": "\\mathcal{A}",
+            "count": 2
+          },
+          {
+            "prediction": "\\male",
+            "count": 1
+          },
+          {
+            "prediction": "A",
+            "count": 1
+          },
+          {
+            "prediction": "\\lambda",
+            "count": 1
+          },
+          {
+            "prediction": "\\vartriangle",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "r",
+        "category": "latin",
+        "outside_top5": 9,
+        "truth_rank": {
+          "count": 9,
+          "mean": 20.333333333333332,
+          "median": 17,
+          "maximum": 63,
+          "rank_6_to_10": 3,
+          "rank_11_to_20": 4,
+          "rank_21_plus": 2
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 55,
+            "uji": 108,
+            "isgl": 107,
+            "uci": 108
+          },
+          "external_total": 378,
+          "project_owned_pool": 0,
+          "total": 378,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\mathcal{M}",
+            "count": 3
+          },
+          {
+            "prediction": "\\ohm",
+            "count": 2
+          },
+          {
+            "prediction": "\\wp",
+            "count": 1
+          },
+          {
+            "prediction": "\\sqrt{}",
+            "count": 1
+          },
+          {
+            "prediction": "\\cap",
+            "count": 1
+          },
+          {
+            "prediction": "\\mathcal{R}",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "9",
+        "category": "digit",
+        "outside_top5": 8,
+        "truth_rank": {
+          "count": 8,
+          "mean": 8.125,
+          "median": 7.0,
+          "maximum": 15,
+          "rank_6_to_10": 7,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 81,
+            "uji": 108,
+            "isgl": 106,
+            "uci": 0
+          },
+          "external_total": 295,
+          "project_owned_pool": 5,
+          "total": 300,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\mathcal{S}",
+            "count": 3
+          },
+          {
+            "prediction": "g",
+            "count": 2
+          },
+          {
+            "prediction": "a",
+            "count": 1
+          },
+          {
+            "prediction": "3",
+            "count": 1
+          },
+          {
+            "prediction": "\\mathscr{P}",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\theta",
+        "category": "other_math",
+        "outside_top5": 7,
+        "truth_rank": {
+          "count": 7,
+          "mean": 23.428571428571427,
+          "median": 17,
+          "maximum": 59,
+          "rank_6_to_10": 3,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 3
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 585,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 585,
+          "project_owned_pool": 0,
+          "total": 585,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\mathcal{O}",
+            "count": 2
+          },
+          {
+            "prediction": "\\mathbb{Q}",
+            "count": 1
+          },
+          {
+            "prediction": "\\mathfrak{S}",
+            "count": 1
+          },
+          {
+            "prediction": "\\copyright",
+            "count": 1
+          },
+          {
+            "prediction": "o",
+            "count": 1
+          },
+          {
+            "prediction": "\\Downarrow",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\pi",
+        "category": "other_math",
+        "outside_top5": 6,
+        "truth_rank": {
+          "count": 6,
+          "mean": 13.5,
+          "median": 11.0,
+          "maximum": 29,
+          "rank_6_to_10": 3,
+          "rank_11_to_20": 2,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 1375,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 1375,
+          "project_owned_pool": 0,
+          "total": 1375,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "R",
+            "count": 2
+          },
+          {
+            "prediction": "\\prod",
+            "count": 1
+          },
+          {
+            "prediction": "\\mathcal{H}",
+            "count": 1
+          },
+          {
+            "prediction": "\\mapsfrom",
+            "count": 1
+          },
+          {
+            "prediction": "\\Re",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "v",
+        "category": "latin",
+        "outside_top5": 6,
+        "truth_rank": {
+          "count": 6,
+          "mean": 10.333333333333334,
+          "median": 7.0,
+          "maximum": 25,
+          "rank_6_to_10": 5,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 57,
+            "uji": 108,
+            "isgl": 108,
+            "uci": 140
+          },
+          "external_total": 413,
+          "project_owned_pool": 0,
+          "total": 413,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\sqrt{}",
+            "count": 3
+          },
+          {
+            "prediction": "b",
+            "count": 1
+          },
+          {
+            "prediction": "\\rightsquigarrow",
+            "count": 1
+          },
+          {
+            "prediction": "\\nu",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "y",
+        "category": "latin",
+        "outside_top5": 6,
+        "truth_rank": {
+          "count": 6,
+          "mean": 66.5,
+          "median": 10.0,
+          "maximum": 351,
+          "rank_6_to_10": 3,
+          "rank_11_to_20": 2,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 53,
+            "uji": 108,
+            "isgl": 105,
+            "uci": 124
+          },
+          "external_total": 390,
+          "project_owned_pool": 4,
+          "total": 394,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "J",
+            "count": 1
+          },
+          {
+            "prediction": "\\vDash",
+            "count": 1
+          },
+          {
+            "prediction": "\\psi",
+            "count": 1
+          },
+          {
+            "prediction": "g",
+            "count": 1
+          },
+          {
+            "prediction": "\\vartheta",
+            "count": 1
+          },
+          {
+            "prediction": "\\mathds{P}",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "5",
+        "category": "digit",
+        "outside_top5": 4,
+        "truth_rank": {
+          "count": 4,
+          "mean": 6.75,
+          "median": 7.0,
+          "maximum": 7,
+          "rank_6_to_10": 4,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 71,
+            "uji": 108,
+            "isgl": 114,
+            "uci": 0
+          },
+          "external_total": 293,
+          "project_owned_pool": 12,
+          "total": 305,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "S",
+            "count": 3
+          },
+          {
+            "prediction": "\\Gamma",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\sum",
+        "category": "other_math",
+        "outside_top5": 4,
+        "truth_rank": {
+          "count": 4,
+          "mean": 48,
+          "median": 9.0,
+          "maximum": 168,
+          "rank_6_to_10": 3,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 3054,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 3054,
+          "project_owned_pool": 0,
+          "total": 3054,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "5",
+            "count": 1
+          },
+          {
+            "prediction": "-",
+            "count": 1
+          },
+          {
+            "prediction": "\\%",
+            "count": 1
+          },
+          {
+            "prediction": "\\mathcal{Z}",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\times",
+        "category": "core_operator",
+        "outside_top5": 4,
+        "truth_rank": {
+          "count": 4,
+          "mean": 17.25,
+          "median": 17.5,
+          "maximum": 27,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 2,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 1358,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 1358,
+          "project_owned_pool": 7,
+          "total": 1365,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "x",
+            "count": 1
+          },
+          {
+            "prediction": "\\L",
+            "count": 1
+          },
+          {
+            "prediction": "X",
+            "count": 1
+          },
+          {
+            "prediction": "\\nmid",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "l",
+        "category": "latin",
+        "outside_top5": 4,
+        "truth_rank": {
+          "count": 4,
+          "mean": 9.75,
+          "median": 8.5,
+          "maximum": 14,
+          "rank_6_to_10": 3,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 51,
+            "uji": 108,
+            "isgl": 109,
+            "uci": 157
+          },
+          "external_total": 425,
+          "project_owned_pool": 0,
+          "total": 425,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\ell",
+            "count": 1
+          },
+          {
+            "prediction": "\\iota",
+            "count": 1
+          },
+          {
+            "prediction": "\\rho",
+            "count": 1
+          },
+          {
+            "prediction": "\\lfloor",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "o",
+        "category": "latin",
+        "outside_top5": 4,
+        "truth_rank": {
+          "count": 4,
+          "mean": 12,
+          "median": 11.0,
+          "maximum": 16,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 3,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 56,
+            "uji": 108,
+            "isgl": 109,
+            "uci": 127
+          },
+          "external_total": 400,
+          "project_owned_pool": 0,
+          "total": 400,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\mathcal{O}",
+            "count": 3
+          },
+          {
+            "prediction": "\\sigma",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "|",
+        "category": "core_operator",
+        "outside_top5": 4,
+        "truth_rank": {
+          "count": 4,
+          "mean": 9.5,
+          "median": 9.5,
+          "maximum": 13,
+          "rank_6_to_10": 2,
+          "rank_11_to_20": 2,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 460,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 460,
+          "project_owned_pool": 0,
+          "total": 460,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "I",
+            "count": 1
+          },
+          {
+            "prediction": "1",
+            "count": 1
+          },
+          {
+            "prediction": "\\int",
+            "count": 1
+          },
+          {
+            "prediction": "l",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "/",
+        "category": "core_operator",
+        "outside_top5": 3,
+        "truth_rank": {
+          "count": 3,
+          "mean": 9.666666666666666,
+          "median": 10,
+          "maximum": 12,
+          "rank_6_to_10": 2,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 478,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 478,
+          "project_owned_pool": 3,
+          "total": 481,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "1",
+            "count": 2
+          },
+          {
+            "prediction": "\\int",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "3",
+        "category": "digit",
+        "outside_top5": 3,
+        "truth_rank": {
+          "count": 3,
+          "mean": 14.666666666666666,
+          "median": 11,
+          "maximum": 25,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 108,
+            "uji": 108,
+            "isgl": 104,
+            "uci": 0
+          },
+          "external_total": 320,
+          "project_owned_pool": 10,
+          "total": 330,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "5",
+            "count": 1
+          },
+          {
+            "prediction": ")",
+            "count": 1
+          },
+          {
+            "prediction": "\\lambda",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "F",
+        "category": "latin",
+        "outside_top5": 3,
+        "truth_rank": {
+          "count": 3,
+          "mean": 30.333333333333332,
+          "median": 28,
+          "maximum": 55,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 2
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 51,
+            "uji": 108,
+            "isgl": 112,
+            "uci": 0
+          },
+          "external_total": 271,
+          "project_owned_pool": 0,
+          "total": 271,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\pi",
+            "count": 1
+          },
+          {
+            "prediction": "\\fint",
+            "count": 1
+          },
+          {
+            "prediction": "\\Psi",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\phi",
+        "category": "other_math",
+        "outside_top5": 3,
+        "truth_rank": {
+          "count": 3,
+          "mean": 6,
+          "median": 6,
+          "maximum": 6,
+          "rank_6_to_10": 3,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 617,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 617,
+          "project_owned_pool": 0,
+          "total": 617,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\varnothing",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "truth": "d",
+        "category": "latin",
+        "outside_top5": 3,
+        "truth_rank": {
+          "count": 3,
+          "mean": 45.333333333333336,
+          "median": 13,
+          "maximum": 112,
+          "rank_6_to_10": 0,
+          "rank_11_to_20": 2,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 53,
+            "uji": 108,
+            "isgl": 103,
+            "uci": 142
+          },
+          "external_total": 406,
+          "project_owned_pool": 0,
+          "total": 406,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\delta",
+            "count": 1
+          },
+          {
+            "prediction": "\\S",
+            "count": 1
+          },
+          {
+            "prediction": "\\pitchfork",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "e",
+        "category": "latin",
+        "outside_top5": 3,
+        "truth_rank": {
+          "count": 3,
+          "mean": 97.66666666666667,
+          "median": 88,
+          "maximum": 198,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 2
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 57,
+            "uji": 108,
+            "isgl": 104,
+            "uci": 168
+          },
+          "external_total": 437,
+          "project_owned_pool": 0,
+          "total": 437,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\ell",
+            "count": 1
+          },
+          {
+            "prediction": "l",
+            "count": 1
+          },
+          {
+            "prediction": "\\mathscr{C}",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "6",
+        "category": "digit",
+        "outside_top5": 2,
+        "truth_rank": {
+          "count": 2,
+          "mean": 7,
+          "median": 7.0,
+          "maximum": 8,
+          "rank_6_to_10": 2,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 90,
+            "uji": 108,
+            "isgl": 111,
+            "uci": 0
+          },
+          "external_total": 309,
+          "project_owned_pool": 8,
+          "total": 317,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\sigma",
+            "count": 1
+          },
+          {
+            "prediction": "8",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "C",
+        "category": "latin",
+        "outside_top5": 2,
+        "truth_rank": {
+          "count": 2,
+          "mean": 13,
+          "median": 13.0,
+          "maximum": 20,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 121,
+            "uji": 108,
+            "isgl": 107,
+            "uci": 0
+          },
+          "external_total": 336,
+          "project_owned_pool": 0,
+          "total": 336,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "(",
+            "count": 1
+          },
+          {
+            "prediction": "\\subseteq",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "I",
+        "category": "latin",
+        "outside_top5": 2,
+        "truth_rank": {
+          "count": 2,
+          "mean": 6.5,
+          "median": 6.5,
+          "maximum": 7,
+          "rank_6_to_10": 2,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 90,
+            "uji": 108,
+            "isgl": 114,
+            "uci": 0
+          },
+          "external_total": 312,
+          "project_owned_pool": 0,
+          "total": 312,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\pm",
+            "count": 1
+          },
+          {
+            "prediction": "\\AE",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\alpha",
+        "category": "other_math",
+        "outside_top5": 2,
+        "truth_rank": {
+          "count": 2,
+          "mean": 21,
+          "median": 21.0,
+          "maximum": 36,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 2339,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 2339,
+          "project_owned_pool": 0,
+          "total": 2339,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\omega",
+            "count": 1
+          },
+          {
+            "prediction": "\\ae",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "j",
+        "category": "latin",
+        "outside_top5": 2,
+        "truth_rank": {
+          "count": 2,
+          "mean": 13,
+          "median": 13.0,
+          "maximum": 19,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 47,
+            "uji": 108,
+            "isgl": 108,
+            "uci": 0
+          },
+          "external_total": 263,
+          "project_owned_pool": 0,
+          "total": 263,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\diamondsuit",
+            "count": 1
+          },
+          {
+            "prediction": "\\div",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "q",
+        "category": "latin",
+        "outside_top5": 2,
+        "truth_rank": {
+          "count": 2,
+          "mean": 24,
+          "median": 24.0,
+          "maximum": 42,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 63,
+            "uji": 108,
+            "isgl": 104,
+            "uci": 112
+          },
+          "external_total": 387,
+          "project_owned_pool": 0,
+          "total": 387,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "8",
+            "count": 1
+          },
+          {
+            "prediction": "7",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": ")",
+        "category": "delimiter",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 9,
+          "median": 9,
+          "maximum": 9,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 0,
+            "uji": 108,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 108,
+          "project_owned_pool": 6,
+          "total": 114,
+          "band": "50-199",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\backslash",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "8",
+        "category": "digit",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 19,
+          "median": 19,
+          "maximum": 19,
+          "rank_6_to_10": 0,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 109,
+            "uji": 108,
+            "isgl": 108,
+            "uci": 0
+          },
+          "external_total": 325,
+          "project_owned_pool": 6,
+          "total": 331,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\nu",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": ">",
+        "category": "core_operator",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 8,
+          "median": 8,
+          "maximum": 8,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 90,
+            "uji": 108,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 198,
+          "project_owned_pool": 0,
+          "total": 198,
+          "band": "50-199",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "7",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "E",
+        "category": "latin",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 6,
+          "median": 6,
+          "maximum": 6,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 49,
+            "uji": 108,
+            "isgl": 113,
+            "uci": 0
+          },
+          "external_total": 270,
+          "project_owned_pool": 0,
+          "total": 270,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\epsilon",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "G",
+        "category": "latin",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 6,
+          "median": 6,
+          "maximum": 6,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 106,
+            "uji": 108,
+            "isgl": 106,
+            "uci": 0
+          },
+          "external_total": 320,
+          "project_owned_pool": 0,
+          "total": 320,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "a",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "L",
+        "category": "latin",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 11,
+          "median": 11,
+          "maximum": 11,
+          "rank_6_to_10": 0,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 100,
+            "uji": 108,
+            "isgl": 108,
+            "uci": 0
+          },
+          "external_total": 316,
+          "project_owned_pool": 0,
+          "total": 316,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "2",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "N",
+        "category": "latin",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 43,
+          "median": 43,
+          "maximum": 43,
+          "rank_6_to_10": 0,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 95,
+            "uji": 108,
+            "isgl": 114,
+            "uci": 0
+          },
+          "external_total": 317,
+          "project_owned_pool": 0,
+          "total": 317,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\leftrightarrow",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "[",
+        "category": "delimiter",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 6,
+          "median": 6,
+          "maximum": 6,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 824,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 824,
+          "project_owned_pool": 0,
+          "total": 824,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\tau",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\beta",
+        "category": "other_math",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 8,
+          "median": 8,
+          "maximum": 8,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 1017,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 1017,
+          "project_owned_pool": 0,
+          "total": 1017,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\rho",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\geq",
+        "category": "core_operator",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 50,
+          "median": 50,
+          "maximum": 50,
+          "rank_6_to_10": 0,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 780,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 780,
+          "project_owned_pool": 0,
+          "total": 780,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\pi",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\infty",
+        "category": "other_math",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 6,
+          "median": 6,
+          "maximum": 6,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 2619,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 2619,
+          "project_owned_pool": 0,
+          "total": 2619,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "-",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\leq",
+        "category": "core_operator",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 31,
+          "median": 31,
+          "maximum": 31,
+          "rank_6_to_10": 0,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 949,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 949,
+          "project_owned_pool": 0,
+          "total": 949,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\guillemotleft",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\neq",
+        "category": "core_operator",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 11,
+          "median": 11,
+          "maximum": 11,
+          "rank_6_to_10": 0,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 1374,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 1374,
+          "project_owned_pool": 0,
+          "total": 1374,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\preccurlyeq",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\pm",
+        "category": "core_operator",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 195,
+          "median": 195,
+          "maximum": 195,
+          "rank_6_to_10": 0,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 1375,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 1375,
+          "project_owned_pool": 0,
+          "total": 1375,
+          "band": "500+",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\nexists",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\prime",
+        "category": "other_math",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 9,
+          "median": 9,
+          "maximum": 9,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 132,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 132,
+          "project_owned_pool": 0,
+          "total": 132,
+          "band": "50-199",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "1",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "\\}",
+        "category": "delimiter",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 13,
+          "median": 13,
+          "maximum": 13,
+          "rank_6_to_10": 0,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 289,
+            "uji": 0,
+            "isgl": 0,
+            "uci": 0
+          },
+          "external_total": 289,
+          "project_owned_pool": 0,
+          "total": 289,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\xi",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "c",
+        "category": "latin",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 8,
+          "median": 8,
+          "maximum": 8,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 61,
+            "uji": 108,
+            "isgl": 114,
+            "uci": 128
+          },
+          "external_total": 411,
+          "project_owned_pool": 0,
+          "total": 411,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\mathds{C}",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "g",
+        "category": "latin",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 9,
+          "median": 9,
+          "maximum": 9,
+          "rank_6_to_10": 1,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 51,
+            "uji": 108,
+            "isgl": 108,
+            "uci": 125
+          },
+          "external_total": 392,
+          "project_owned_pool": 0,
+          "total": 392,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "s",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "p",
+        "category": "latin",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 19,
+          "median": 19,
+          "maximum": 19,
+          "rank_6_to_10": 0,
+          "rank_11_to_20": 1,
+          "rank_21_plus": 0
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 50,
+            "uji": 108,
+            "isgl": 113,
+            "uci": 118
+          },
+          "external_total": 389,
+          "project_owned_pool": 0,
+          "total": 389,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\vDash",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "truth": "s",
+        "category": "latin",
+        "outside_top5": 1,
+        "truth_rank": {
+          "count": 1,
+          "mean": 94,
+          "median": 94,
+          "maximum": 94,
+          "rank_6_to_10": 0,
+          "rank_11_to_20": 0,
+          "rank_21_plus": 1
+        },
+        "commercial_training_support": {
+          "external_by_source": {
+            "hwrt": 54,
+            "uji": 108,
+            "isgl": 113,
+            "uci": 120
+          },
+          "external_total": 395,
+          "project_owned_pool": 0,
+          "total": 395,
+          "band": "200-499",
+          "interpretation": "admitted commercial training examples exist"
+        },
+        "top1_confusions": [
+          {
+            "prediction": "\\Lambda",
+            "count": 1
+          }
+        ]
+      }
+    ]
+  },
+  "unsupported_truth_groups": {
+    "records": 542,
+    "labels": {
+      "\\sin": 105,
+      ",": 97,
+      "t": 93,
+      "\\cos": 86,
+      "\\lim": 41,
+      "\\log": 37,
+      "\\tan": 36,
+      ".": 31,
+      "!": 16
+    },
+    "commercial_single_glyph_expansion": {
+      "t": {
+        "crohme_validation_groups": 93,
+        "commercial_training_support": {
+          "hwrt": 0,
+          "uji": 108,
+          "isgl": 109,
+          "uci": 0
+        }
+      },
+      ",": {
+        "crohme_validation_groups": 97,
+        "commercial_training_support": {
+          "hwrt": 0,
+          "uji": 108,
+          "isgl": 0,
+          "uci": 0
+        }
+      },
+      ".": {
+        "crohme_validation_groups": 31,
+        "commercial_training_support": {
+          "hwrt": 0,
+          "uji": 64,
+          "isgl": 0,
+          "uci": 0
+        }
+      },
+      "!": {
+        "crohme_validation_groups": 16,
+        "commercial_training_support": {
+          "hwrt": 0,
+          "uji": 108,
+          "isgl": 0,
+          "uci": 0
+        }
+      }
+    },
+    "commercial_single_glyph_recoverable_groups": 237,
+    "semantic_function_composition": {
+      "\\sin": 105,
+      "\\cos": 86,
+      "\\lim": 41,
+      "\\log": 37,
+      "\\tan": 36
+    },
+    "semantic_function_groups": 305
+  },
+  "conclusion": {
+    "outside_top5_is_untrained_vocabulary": false,
+    "outside_top5_zero_support_records": 0,
+    "main_cause": "shape/domain generalization and class confusion inside the existing vocabulary; not wholesale absence of English training",
+    "separate_missing_vocabulary": [
+      "t",
+      ",",
+      ".",
+      "!"
+    ],
+    "formula_complete_policy": "score final whole-formula decisions; prefix predictions are provisional and excluded"
+  },
+  "inputs": {
+    "outside_rows": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\crohme_stream_rank_context_expanded_20260820_r2_shadow\\crohme_test_truth_outside_top5.jsonl.gz",
+    "outside_rows_sha256": "e0382462d5b2d17a8b993498a60b118531b7600f24217d4915afb81edbaea152",
+    "candidate_build_report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\crohme_standard_context_20260820_r1_research\\test_candidate_build_report.json",
+    "candidate_build_report_sha256": "d4d5a5f7968c11c088d9d707f8f51969297a3adc91732d4f235206897a05da89",
+    "canonical_root": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\datasets\\normalized\\v1"
+  }
+}

@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>RIT_2014_89.inkml</title>
+<style>body{font:16px system-ui;margin:24px;max-width:720px}canvas{border:1px solid #888;width:100%;height:auto}input{width:100%}button{margin-right:8px}</style>
+<h1>RIT_2014_89.inkml</h1><p>truth: $ r \geq 1 $</p>
+<canvas id="ink" width="640" height="480"></canvas>
+<p><button id="play" type="button">play (48 Hz)</button><button id="reset" type="button">reset</button></p>
+<input id="step" type="range" min="0" value="0"><output id="count"></output>
+<script>
+const strokes=[[[347.0, 187.0], [342.0, 184.0], [342.0, 191.0], [342.0, 201.0], [342.0, 215.0], [342.0, 228.0], [340.0, 239.0], [338.0, 245.0], [337.0, 249.0], [336.0, 250.0], [336.0, 245.0], [340.0, 229.0], [349.0, 208.0], [359.0, 189.0], [369.0, 175.0], [376.0, 167.0], [383.0, 161.0], [391.0, 159.0], [399.0, 159.0], [405.0, 161.0], [408.0, 167.0], [410.0, 176.0]], [[461.0, 146.0], [466.0, 148.0], [475.0, 151.0], [490.0, 155.0], [505.0, 160.0], [516.0, 162.0], [525.0, 165.0], [530.0, 166.0], [532.0, 168.0], [532.0, 172.0], [525.0, 179.0], [514.0, 189.0], [499.0, 198.0], [484.0, 208.0], [470.0, 216.0], [462.0, 219.0], [457.0, 221.0], [456.0, 222.0], [456.0, 223.0], [458.0, 223.0]], [[418.0, 272.0], [428.0, 267.0], [441.0, 266.0], [461.0, 266.0], [483.0, 266.0], [506.0, 266.0], [522.0, 267.0], [532.0, 268.0], [539.0, 269.0], [542.0, 269.0], [545.0, 269.0]], [[607.0, 139.0], [605.0, 144.0], [604.0, 160.0], [602.0, 181.0], [599.0, 204.0], [595.0, 226.0], [591.0, 245.0], [587.0, 262.0], [585.0, 273.0], [584.0, 281.0], [584.0, 286.0]]]; const points=[];
+for(let s=0;s<strokes.length;s++) for(let p=0;p<strokes[s].length;p++) points.push([s,p,strokes[s][p]]);
+const canvas=document.getElementById('ink'),ctx=canvas.getContext('2d'),step=document.getElementById('step'),count=document.getElementById('count');
+step.max=points.length; let timer=null;
+const flat=points.map(v=>v[2]), xs=flat.map(v=>v[0]), ys=flat.map(v=>v[1]);
+const loX=Math.min(...xs), hiX=Math.max(...xs), loY=Math.min(...ys), hiY=Math.max(...ys), span=Math.max(hiX-loX,hiY-loY,1), pad=32;
+function map(p){return [pad+(p[0]-loX)/span*(canvas.width-2*pad),pad+(p[1]-loY)/span*(canvas.height-2*pad)]}
+function draw(){const n=Number(step.value);ctx.clearRect(0,0,canvas.width,canvas.height);ctx.lineWidth=2;ctx.strokeStyle='#111';ctx.lineCap='round';for(let i=0;i<n;i++){const [s,p,point]=points[i],xy=map(point);if(p===0){ctx.beginPath();ctx.moveTo(...xy)}else{ctx.lineTo(...xy);ctx.stroke();ctx.beginPath();ctx.moveTo(...xy)}ctx.fillStyle='#2563eb';ctx.beginPath();ctx.arc(...xy,2.5,0,Math.PI*2);ctx.fill()}count.value=`${n} / ${points.length} points`;}
+step.addEventListener('input',draw);document.getElementById('reset').onclick=()=>{step.value=0;draw()};document.getElementById('play').onclick=()=>{if(timer){clearInterval(timer);timer=null;return} timer=setInterval(()=>{if(Number(step.value)>=points.length){clearInterval(timer);timer=null}else{step.value=Number(step.value)+1;draw()}},1000/48)};draw();
+</script>

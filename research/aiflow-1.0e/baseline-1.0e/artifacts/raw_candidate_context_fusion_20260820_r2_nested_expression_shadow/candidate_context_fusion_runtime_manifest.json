@@ -1,0 +1,117 @@
+{
+  "schema": "aiflow-nested-expression-context-loop/v1",
+  "generated_at": "2026-08-19T19:15:00Z",
+  "status": "development_only_posthoc_shadow",
+  "decision": "retain_as_shadow_only",
+  "baseline": {
+    "name": "r23_latin_t_guarded",
+    "output": "D:/AIFlow-Workspace/PrivateData/candidate-context-runtime-20260820-r23-latin-t-guarded-final.json",
+    "sha256": "7294fb873b50698659ef77cdeacbbce0eba011f947dc965cd0b16479494a2edf"
+  },
+  "challenger": {
+    "name": "r25_nested_expression_final",
+    "output": "D:/AIFlow-Workspace/PrivateData/candidate-context-runtime-20260820-r25-nested-expression-final.json",
+    "sha256": "5217c07a24ac907074f469aeee5ba74e34bbd95dc40d59738cad992d61d173f1"
+  },
+  "artifacts": {
+    "candidate_context_fusion_config": "candidate_context_fusion_runtime_config.json",
+    "candidate_context_fusion_config_sha256": "341a71e66beeb8fbac36a96ba930be7d2a8a7b98732a19a8250c7a8e6c418606",
+    "formula_placement_config": "../formula_placement_rescue_20260820_r2_nested_expression_shadow/formula_placement_rescue_runtime_config.json",
+    "formula_placement_config_sha256": "fd5d4ccb6ec138aa8506aaafdb68b12d26b3acee1114d2006bd109d52b4e3d15",
+    "crohme_diagnostic": "formula_context_crohme_raw_diagnostic.json",
+    "crohme_diagnostic_sha256": "6184427b35c13a416e8290507ddc51893d760db195789f58fd907d13f9b0bc2f",
+    "frozen_partition_ranker_sha256": "0d283d40b40f60d58131dec213efb84074f9119ac82b32fcb893ca931aeb0582"
+  },
+  "scores": {
+    "all_159": {
+      "baseline_exact": 150,
+      "challenger_exact": 151,
+      "total": 159
+    },
+    "chronological_ownership_49": {
+      "baseline_exact": 47,
+      "challenger_exact": 47,
+      "total": 49
+    },
+    "accepted_ownership_96": {
+      "baseline_exact": 93,
+      "challenger_exact": 93,
+      "total": 96
+    },
+    "public_non_phone_110": {
+      "baseline_exact": 107,
+      "challenger_exact": 107,
+      "total": 110
+    },
+    "owned_phone_replay_49": {
+      "baseline_exact": 43,
+      "challenger_exact": 44,
+      "total": 49
+    },
+    "improved_formula_ids": [
+      "aiflow_0109"
+    ],
+    "regressed_formula_ids": []
+  },
+  "aiflow_0109": {
+    "truth_tokens": ["(", "x", "+", "(", "y", "-", "1", ")", ")"],
+    "baseline_tokens": ["(", "7", "\\subset", "4", "(", "y", "-", "1", ")", ")"],
+    "challenger_tokens": ["(", "x", "+", "(", "y", "-", "1", ")", ")"],
+    "partition_rank": 3,
+    "cross_admission_rule": "auxiliary_nested_expression",
+    "x_candidate_rank": 3,
+    "plus_candidate_rank": 3,
+    "open_fence_candidate_rank": 1,
+    "placement_rule": "value_cross_plus_open_fence"
+  },
+  "crohme_repeated_noncommercial_diagnostic": {
+    "protocol_formulas": 985,
+    "eligible_formulas": 722,
+    "grouping_exact_before": 331,
+    "grouping_exact_after": 331,
+    "formula_exact_before": 77,
+    "formula_exact_after": 77,
+    "nested_expression_cross_merge_changed": 0,
+    "open_fence_plus_rescue_changed": 2,
+    "grouping_regressed": 0,
+    "formula_regressed": 0,
+    "product_validation": false
+  },
+  "rejected_experiments": {
+    "bert_tiny_masked_context": {
+      "decision": "reject_for_runtime_integration",
+      "reason": "candidate-preserving probe ranked required x too low and prior strict homograph macro regressed"
+    },
+    "owned_context_function_dsl_retrain_r7": {
+      "decision": "reject",
+      "writer_loo_top1_before": 0.8910,
+      "writer_loo_top1_after": 0.8815,
+      "writer_loo_formula_exact_before": 0.6596,
+      "writer_loo_formula_exact_after": 0.6596,
+      "crohme_formula_exact_before": 0.2795,
+      "crohme_formula_exact_after": 0.2622,
+      "crohme_regressions_before": 280,
+      "crohme_regressions_after": 385
+    },
+    "fresh_partition_ranker_retrain_r37": {
+      "decision": "reject_for_comparison",
+      "reason": "recomputed CUDA features changed three unrelated grouping selections; frozen r12 was retained for paired comparison"
+    }
+  },
+  "contracts": {
+    "candidate_preserving": true,
+    "all_strokes_exactly_once": true,
+    "insertions_or_deletions": 0,
+    "glyph_order_mutations": 0,
+    "target_label_or_glyph_count_input": false,
+    "writer_identity_input": false,
+    "arithmetic_evaluation": false,
+    "formula_layout_owns_structure": true,
+    "product_default_enabled": false
+  },
+  "limits": [
+    "thresholds were inspected on the current 159 formulas",
+    "CROHME is repeated noncommercial diagnostic evidence only",
+    "fresh commercial project-owned writer-disjoint and formula-disjoint acceptance remains required"
+  ]
+}

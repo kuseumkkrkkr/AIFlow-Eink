@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>aiflow_0107</title>
+<style>body{font:16px system-ui;margin:24px;max-width:720px}canvas{border:1px solid #888;width:100%;height:auto}input{width:100%}button{margin-right:8px}</style>
+<h1>aiflow_0107</h1><p>labels: b / 3</p>
+<canvas id="ink" width="640" height="480"></canvas>
+<p><button id="play" type="button">play (48 Hz)</button><button id="reset" type="button">reset</button></p>
+<input id="step" type="range" min="0" value="0"><output id="count"></output>
+<script>
+const strokes=[[[105.0, 112.0], [106.0, 121.0], [106.0, 125.0], [106.0, 131.0], [106.0, 136.0], [106.0, 143.0], [106.0, 149.0], [106.0, 155.0], [106.0, 160.0], [105.0, 164.0], [105.0, 166.0], [105.0, 167.0], [104.0, 167.0], [104.0, 166.0], [104.0, 165.0], [104.0, 160.0], [104.0, 155.0], [104.0, 149.0], [107.0, 144.0], [110.0, 142.0], [114.0, 141.0], [117.0, 141.0], [121.0, 141.0], [124.0, 142.0], [126.0, 145.0], [127.0, 148.0], [127.0, 150.0], [127.0, 154.0], [126.0, 157.0], [121.0, 160.0], [115.0, 162.0], [111.0, 164.0], [108.0, 165.0], [107.0, 165.0], [105.0, 165.0]], [[179.0, 109.0], [177.0, 117.0], [173.0, 127.0], [165.0, 140.0], [158.0, 153.0], [153.0, 163.0], [149.0, 170.0], [147.0, 174.0], [145.0, 177.0], [145.0, 178.0], [144.0, 178.0], [142.0, 178.0]], [[191.0, 135.0], [199.0, 132.0], [203.0, 132.0], [207.0, 132.0], [209.0, 132.0], [210.0, 132.0], [211.0, 132.0], [211.0, 134.0], [206.0, 137.0], [201.0, 141.0], [197.0, 143.0], [195.0, 145.0], [193.0, 145.0], [194.0, 145.0], [197.0, 146.0], [199.0, 147.0], [201.0, 149.0], [203.0, 151.0], [205.0, 153.0], [206.0, 154.0], [207.0, 156.0], [207.0, 157.0], [207.0, 158.0], [204.0, 159.0], [196.0, 160.0], [188.0, 161.0], [181.0, 162.0], [177.0, 163.0], [175.0, 163.0], [174.0, 163.0], [172.0, 164.0]]]; const points=[];
+for(let s=0;s<strokes.length;s++) for(let p=0;p<strokes[s].length;p++) points.push([s,p,strokes[s][p]]);
+const canvas=document.getElementById('ink'),ctx=canvas.getContext('2d'),step=document.getElementById('step'),count=document.getElementById('count');
+step.max=points.length; let timer=null;
+const flat=points.map(v=>v[2]), xs=flat.map(v=>v[0]), ys=flat.map(v=>v[1]);
+const loX=Math.min(...xs), hiX=Math.max(...xs), loY=Math.min(...ys), hiY=Math.max(...ys), span=Math.max(hiX-loX,hiY-loY,1), pad=32;
+function map(p){return [pad+(p[0]-loX)/span*(canvas.width-2*pad),pad+(p[1]-loY)/span*(canvas.height-2*pad)]}
+function draw(){const n=Number(step.value);ctx.clearRect(0,0,canvas.width,canvas.height);ctx.lineWidth=2;ctx.strokeStyle='#111';ctx.lineCap='round';for(let i=0;i<n;i++){const [s,p,point]=points[i],xy=map(point);if(p===0){ctx.beginPath();ctx.moveTo(...xy)}else{ctx.lineTo(...xy);ctx.stroke();ctx.beginPath();ctx.moveTo(...xy)}ctx.fillStyle='#2563eb';ctx.beginPath();ctx.arc(...xy,2.5,0,Math.PI*2);ctx.fill()}count.value=`${n} / ${points.length} points`;}
+step.addEventListener('input',draw);document.getElementById('reset').onclick=()=>{step.value=0;draw()};document.getElementById('play').onclick=()=>{if(timer){clearInterval(timer);timer=null;return} timer=setInterval(()=>{if(Number(step.value)>=points.length){clearInterval(timer);timer=null}else{step.value=Number(step.value)+1;draw()}},1000/48)};draw();
+</script>

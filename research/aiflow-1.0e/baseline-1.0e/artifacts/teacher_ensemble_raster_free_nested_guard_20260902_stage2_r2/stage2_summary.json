@@ -1,0 +1,52 @@
+{
+  "schema": "aiflow-1.0e-stage2-offline-teacher-ensemble-summary/v1",
+  "status": "shadow_only",
+  "baseline": {
+    "rows": 387,
+    "top1_correct": 317,
+    "top1": 0.8191214470284238,
+    "top5_correct": 374,
+    "top5": 0.9664082687338501,
+    "formula_exact_correct": 49,
+    "formula_total": 95,
+    "formula_exact": 0.5157894736842106
+  },
+  "offline_teacher_comparison": {
+    "texteller": {"top1_correct": 334, "formula_exact_correct": 55, "row_level_regressions": 20},
+    "unimernet_tiny": {"top1_correct": 329, "formula_exact_correct": 51, "row_level_regressions": 20},
+    "microsoft_trocr_small": {"top1_correct": 338, "formula_exact_correct": 60, "row_level_regressions": 22},
+    "uniform_probability_ensemble": {"top1_correct": 342, "formula_exact_correct": 60, "row_level_regressions": 15}
+  },
+  "raster_free_student_raw": {
+    "top1_correct": 330,
+    "formula_exact_correct": 53,
+    "row_level_regressions": 24
+  },
+  "nested_writer_loo_guard": {
+    "top1_correct": 317,
+    "top5_correct": 374,
+    "formula_exact_correct": 49,
+    "row_level_regressions": 0,
+    "changed_rows": 1,
+    "row_level_improvements": 0,
+    "candidate_contract_violations": 0
+  },
+  "gates": {
+    "top1_nonregression": true,
+    "top5_nonregression": true,
+    "formula_exact_nonregression": true,
+    "nested_held_writer_row_regression_zero": true,
+    "safety_gate_pass": true,
+    "measured_efficacy_gain": false,
+    "product_adopted": false
+  },
+  "runtime_contract": {
+    "input": "existing 5-channel ordered online ink",
+    "external_teacher_in_runtime": false,
+    "raster_in_runtime": false,
+    "candidate_creation": false,
+    "stroke_regrouping": false,
+    "product_runtime_changed": false,
+    "huggingface_public_copy_changed": false
+  }
+}

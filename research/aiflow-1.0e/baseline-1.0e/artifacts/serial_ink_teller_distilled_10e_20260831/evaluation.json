@@ -1,0 +1,72 @@
+{
+  "schema": "aiflow-1.0e-serial-ink-teller-distilled/v1",
+  "status": "shadow_only",
+  "runtime_contract": {
+    "serial": [
+      "ordered_online_ink",
+      "AIFlow_online_prior",
+      "distilled_bridge",
+      "TexTeller_decoder"
+    ],
+    "raster_runtime": false,
+    "teacher_runtime": false,
+    "candidate_only": false,
+    "free_form_decoder": true
+  },
+  "teacher_contract": {
+    "model": "TexTeller ViT encoder",
+    "used_during_fit_only": true,
+    "target_memory_tokens": 16,
+    "runtime_saved": false
+  },
+  "data": {
+    "train_formulas": 110,
+    "eval_formulas": 47,
+    "writer_count": 3,
+    "raw_stroke_input": true,
+    "external_new_data": false
+  },
+  "training": {
+    "distill_epochs": 20,
+    "decoder_epochs": 20,
+    "batch_size": 8,
+    "online_lr": 1e-05,
+    "bridge_lr": 0.001,
+    "decoder_lr": 2e-05,
+    "refit_distill_loss": 0.16810409724712372
+  },
+  "baseline": {
+    "formula_exact": 16,
+    "formula_count": 47,
+    "formula_exact_rate": 0.3404255319148936
+  },
+  "writer_loo": [
+    {
+      "held_writer": "3e41b56c75d3f1af3cc89494",
+      "formula_count": 8,
+      "distill_loss": 0.2015722393989563,
+      "exact": 0,
+      "exact_rate": 0.0
+    },
+    {
+      "held_writer": "baed3dc87cbfa8c20bdde074",
+      "formula_count": 16,
+      "distill_loss": 0.21700501441955566,
+      "exact": 0,
+      "exact_rate": 0.0
+    },
+    {
+      "held_writer": "ed6789e0639f68e05d5e2d1b",
+      "formula_count": 23,
+      "distill_loss": 0.32114893198013306,
+      "exact": 0,
+      "exact_rate": 0.0
+    }
+  ],
+  "aggregate": {
+    "formula_exact": 0,
+    "formula_count": 47,
+    "formula_exact_rate": 0.0
+  },
+  "checkpoint": "artifacts\\serial_ink_teller_distilled_10e_20260831\\serial_bridge_distilled.pt"
+}

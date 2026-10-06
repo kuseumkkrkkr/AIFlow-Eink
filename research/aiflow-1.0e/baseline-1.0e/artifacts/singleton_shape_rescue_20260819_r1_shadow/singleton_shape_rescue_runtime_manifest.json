@@ -1,0 +1,96 @@
+{
+  "schema": "aiflow-singleton-shape-rescue-runtime-manifest/v1",
+  "generated_at": "2026-08-19T10:59:11.732878+00:00",
+  "status": "shadow_runtime_only",
+  "shadow_runtime_admitted": true,
+  "product_default_admitted": false,
+  "training": {
+    "rescue_layer_trained": false,
+    "auxiliary_head_calibrated": true,
+    "project_owned_formulas": 95,
+    "project_owned_glyphs": 387,
+    "writer_groups": 7,
+    "selection": "writer-LOO auxiliary heads; held writer excluded",
+    "excluded_formula": "aiflow_0064",
+    "excluded_reason": "truth token t is outside the frozen 372-class vocabulary"
+  },
+  "runtime_contract": {
+    "scope": "formula length one only",
+    "authoritative_candidates": "original frozen HWR Top-5",
+    "auxiliary_evidence_only": true,
+    "allowed_tokens": ["/", "\\times"],
+    "candidate_preservation_rate": 1.0,
+    "new_tokens": 0,
+    "deleted_glyphs": 0,
+    "grouping_mutations": 0
+  },
+  "configuration": {
+    "path": "artifacts/singleton_shape_rescue_20260819_r1_shadow/singleton_shape_rescue_runtime_config.json",
+    "sha256": "c1287fdd1e49814abe21d9c527b04d949ff23a5d961839fb9116680c3630a3bf"
+  },
+  "backward_compatibility": {
+    "singleton_layer_disabled_prediction_changes": 0,
+    "records": 387,
+    "runtime_sha256": "7246f95b8be26b86d29b031050b502c30990c384a8e9e3c5394a3aec4c4062ff"
+  },
+  "metrics": {
+    "direct_project_owned_writer_loo": {
+      "formulas": 95,
+      "records": 387,
+      "baseline_character_top1_count": 349,
+      "challenger_character_top1_count": 351,
+      "challenger_character_top1": 0.9069767441860465,
+      "baseline_formula_exact_count": 72,
+      "challenger_formula_exact_count": 74,
+      "challenger_formula_exact": 0.7789473684210526,
+      "improved_formulas": 2,
+      "regressed_formulas": 0
+    },
+    "external_collision_free_holdout": {
+      "records": 18330,
+      "baseline_top1_count": 14179,
+      "challenger_top1_count": 14187,
+      "challenger_top1": 0.7739770867430442,
+      "improved_glyphs": 8,
+      "regressed_glyphs": 0,
+      "candidate_violations": 0
+    },
+    "crohme_noncommercial_diagnostic": {
+      "formulas": 984,
+      "singleton_formulas": 0,
+      "applicable_changes": 0,
+      "product_validation": false
+    }
+  },
+  "rejected_broader_challengers": [
+    {
+      "name": "replace the complete HWR candidate stream with expanded writer-LOO heads",
+      "result": "direct final character count 353/387 but formula exact 71/95; 4 formulas improved and 5 regressed"
+    },
+    {
+      "name": "0.6 full-stream probability fusion",
+      "result": "direct final character count 356/387 and formula exact 72/95; 4 formulas improved and 4 regressed"
+    },
+    {
+      "name": "0.4 full-stream product fusion on CROHME",
+      "result": "character count 7556/9535 and formula exact 287/984, but 14 previously exact formulas regressed"
+    }
+  ],
+  "evidence": {
+    "expanded_derivative_sha256": "d58098e073b52e7d1f5703981bcffc04e1000813b607168654ba3dbc7d11fabc",
+    "writer_loo_report_sha256": "ccc50307ef78b9c3ab5b3c8a8b253efd519db0f06f2c868446dcf93448aed89b",
+    "writer_loo_heads_sha256": "80464eb50ef14acb194c944fc5c95201ce94d03e4687b721a5f097aad67706bc",
+    "new_product_report_sha256": "e5af918668dc5bbeeef9f74d0096339a8391fce917fc1d4b79972c23506c7249",
+    "new_product_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "direct_auxiliary_sha256": "99c1e3a7a4f32d4dd41a1ea1c303e7d1ef49b762196f5b03c5deb30ff305e7ce",
+    "evaluation_sha256": "38137fd76e41caffc03118fa11327bc8f2dce5a13e57e24ace4f96154f55abf9",
+    "integrated_runtime_sha256": "cf230bab5b68fa1e577903fb4a9e2944cacc379a6648aca578eade34c2fa118b",
+    "crohme_product_fusion_report_sha256": "a1897f59bd41bb21bd16bf202acd6666d75d2a0a88bfe407adb5f805a391ab51"
+  },
+  "limits": [
+    "the two direct positives were repeatedly observed during threshold selection",
+    "the external holdout is glyph-only and does not validate formula-level singleton routing",
+    "CROHME contains no singleton formulas in this evaluation split",
+    "fresh project-owned singleton formulas from untouched writers are required before product promotion"
+  ]
+}

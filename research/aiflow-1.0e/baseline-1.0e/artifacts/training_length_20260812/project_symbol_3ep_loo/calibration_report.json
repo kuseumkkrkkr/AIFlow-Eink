@@ -1,0 +1,357 @@
+{
+  "schema": "aiflow-project-symbol-head-calibration/v2",
+  "base_checkpoint_sha256": "07bd33628e2b2feb2962776b269b56a955076b08f6521275dca446946731560e",
+  "base_checkpoint_name": "classifier_checkpoint.pt",
+  "seed": 20260812,
+  "data_policy": {
+    "project_owned_training": "only real symbol trajectories from non-held hashed writer groups",
+    "project_owned_formula_grouping_training": false,
+    "raw_dataset_mutation": false,
+    "external_rehearsal": "math_train only; fixed external holdout excluded"
+  },
+  "calibration": {
+    "punctuation_labels": [
+      "(",
+      ")",
+      "="
+    ],
+    "output_rows_only": true,
+    "steps": 250,
+    "learning_rate": 0.001,
+    "punctuation_direct_batch_size": 16,
+    "other_symbol_direct_batch_size": 32,
+    "rehearsal_batch_size": 64,
+    "rehearsal_negative_rows": 8192,
+    "punctuation_rehearsal_loss_weight": 8.0,
+    "other_symbol_rehearsal_loss_weight": 16.0,
+    "rehearsal_records": 8408
+  },
+  "base_external": {
+    "top1": 0.66426320568285,
+    "top5": 0.9424771671206538,
+    "math": {
+      "top1": 0.6504398120255452,
+      "top5": 0.9382455717556332,
+      "punctuation": {
+        "records": 24,
+        "top1_hits": 17,
+        "top5_hits": 24,
+        "top1": 0.7083333333333334,
+        "top5": 1.0
+      }
+    }
+  },
+  "mode": "leave_one_writer_out",
+  "writer_groups": 3,
+  "pooled_direct": {
+    "base": {
+      "records": 211,
+      "top1": 0.38388625592417064,
+      "top5": 0.5829383886255924,
+      "punctuation": {
+        "records": 32,
+        "top1_hits": 0,
+        "top5_hits": 0,
+        "top1": 0.0,
+        "top5": 0.0
+      }
+    },
+    "calibrated": {
+      "records": 211,
+      "top1": 0.6492890995260664,
+      "top5": 0.8578199052132701,
+      "punctuation": {
+        "records": 32,
+        "top1_hits": 29,
+        "top5_hits": 31,
+        "top1": 0.90625,
+        "top5": 0.96875
+      }
+    }
+  },
+  "folds": [
+    {
+      "held_writer_group": "3e41b56c75d3f1af3cc89494",
+      "held_records": 35,
+      "base_direct": {
+        "metric": "glyph_top1_top5",
+        "records": 35,
+        "missing_predictions": 0,
+        "top1": 0.45714285714285713,
+        "top5": 0.6571428571428571,
+        "punctuation": {
+          "records": 5,
+          "top1_hits": 0,
+          "top5_hits": 0,
+          "top1": 0.0,
+          "top5": 0.0
+        }
+      },
+      "calibrated_direct": {
+        "metric": "glyph_top1_top5",
+        "records": 35,
+        "missing_predictions": 0,
+        "top1": 0.8,
+        "top5": 0.9142857142857143,
+        "punctuation": {
+          "records": 5,
+          "top1_hits": 3,
+          "top5_hits": 5,
+          "top1": 0.6,
+          "top5": 1.0
+        }
+      },
+      "calibrated_external": {
+        "top1": 0.667734871548363,
+        "top5": 0.9401271163809218,
+        "math": {
+          "top1": 0.6543559464995783,
+          "top5": 0.9355946499578263,
+          "punctuation": {
+            "records": 24,
+            "top1_hits": 24,
+            "top5_hits": 24,
+            "top1": 1.0,
+            "top5": 1.0
+          }
+        }
+      },
+      "calibration_train": {
+        "punctuation": {
+          "project_train_records": 27,
+          "target_output_rows": [
+            369,
+            370,
+            371
+          ],
+          "direct_batch_size": 16,
+          "rehearsal_loss_weight": 8.0,
+          "steps": 250,
+          "mean_loss": 9.664190797805785
+        },
+        "other_observed_symbols": {
+          "project_train_records": 149,
+          "target_output_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            121,
+            305,
+            343,
+            344,
+            348,
+            355,
+            356,
+            365,
+            366
+          ],
+          "direct_batch_size": 32,
+          "rehearsal_loss_weight": 16.0,
+          "steps": 250,
+          "mean_loss": 17.123757400512694
+        }
+      }
+    },
+    {
+      "held_writer_group": "baed3dc87cbfa8c20bdde074",
+      "held_records": 76,
+      "base_direct": {
+        "metric": "glyph_top1_top5",
+        "records": 76,
+        "missing_predictions": 0,
+        "top1": 0.3684210526315789,
+        "top5": 0.6447368421052632,
+        "punctuation": {
+          "records": 12,
+          "top1_hits": 0,
+          "top5_hits": 0,
+          "top1": 0.0,
+          "top5": 0.0
+        }
+      },
+      "calibrated_direct": {
+        "metric": "glyph_top1_top5",
+        "records": 76,
+        "missing_predictions": 0,
+        "top1": 0.7236842105263158,
+        "top5": 0.881578947368421,
+        "punctuation": {
+          "records": 12,
+          "top1_hits": 12,
+          "top5_hits": 12,
+          "top1": 1.0,
+          "top5": 1.0
+        }
+      },
+      "calibrated_external": {
+        "top1": 0.6667734871548363,
+        "top5": 0.9400202958927523,
+        "math": {
+          "top1": 0.6532714784913844,
+          "top5": 0.9354741535124714,
+          "punctuation": {
+            "records": 24,
+            "top1_hits": 24,
+            "top5_hits": 24,
+            "top1": 1.0,
+            "top5": 1.0
+          }
+        }
+      },
+      "calibration_train": {
+        "punctuation": {
+          "project_train_records": 20,
+          "target_output_rows": [
+            369,
+            370,
+            371
+          ],
+          "direct_batch_size": 16,
+          "rehearsal_loss_weight": 8.0,
+          "steps": 250,
+          "mean_loss": 9.915537481307984
+        },
+        "other_observed_symbols": {
+          "project_train_records": 115,
+          "target_output_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            121,
+            305,
+            344,
+            348,
+            355,
+            356,
+            365,
+            366
+          ],
+          "direct_batch_size": 32,
+          "rehearsal_loss_weight": 16.0,
+          "steps": 250,
+          "mean_loss": 17.02863300704956
+        }
+      }
+    },
+    {
+      "held_writer_group": "ed6789e0639f68e05d5e2d1b",
+      "held_records": 100,
+      "base_direct": {
+        "metric": "glyph_top1_top5",
+        "records": 100,
+        "missing_predictions": 0,
+        "top1": 0.37,
+        "top5": 0.51,
+        "punctuation": {
+          "records": 15,
+          "top1_hits": 0,
+          "top5_hits": 0,
+          "top1": 0.0,
+          "top5": 0.0
+        }
+      },
+      "calibrated_direct": {
+        "metric": "glyph_top1_top5",
+        "records": 100,
+        "missing_predictions": 0,
+        "top1": 0.54,
+        "top5": 0.82,
+        "punctuation": {
+          "records": 15,
+          "top1_hits": 14,
+          "top5_hits": 14,
+          "top1": 0.9333333333333333,
+          "top5": 0.9333333333333333
+        }
+      },
+      "calibrated_external": {
+        "top1": 0.6687496661859744,
+        "top5": 0.9415157827271271,
+        "math": {
+          "top1": 0.6555006627304495,
+          "top5": 0.9371611037474394,
+          "punctuation": {
+            "records": 24,
+            "top1_hits": 24,
+            "top5_hits": 24,
+            "top1": 1.0,
+            "top5": 1.0
+          }
+        }
+      },
+      "calibration_train": {
+        "punctuation": {
+          "project_train_records": 17,
+          "target_output_rows": [
+            369,
+            370,
+            371
+          ],
+          "direct_batch_size": 16,
+          "rehearsal_loss_weight": 8.0,
+          "steps": 250,
+          "mean_loss": 9.78170885848999
+        },
+        "other_observed_symbols": {
+          "project_train_records": 94,
+          "target_output_rows": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            121,
+            305,
+            343,
+            344,
+            355,
+            356,
+            365,
+            366
+          ],
+          "direct_batch_size": 32,
+          "rehearsal_loss_weight": 16.0,
+          "steps": 250,
+          "mean_loss": 16.903160400390625
+        }
+      }
+    }
+  ],
+  "acceptance": {
+    "direct_top1_gain": 0.26540284360189575,
+    "external_math_top1_worst_regression": -0.002831666465839211,
+    "writer_disjoint_direct_gain_gate": true,
+    "external_math_regression_gate": true,
+    "accepted_for_research_candidate": true
+  },
+  "product_adopted": false,
+  "limit": "three project writer groups are a small research validation set; formula grouping and decoding remain absent"
+}

@@ -1,0 +1,662 @@
+{
+  "schema": "aiflow-project-owned-grouping-training/v1",
+  "generated_at": "2026-08-19T14:12:22.442105+00:00",
+  "status": "shadow",
+  "model_version": "aiflow-stroke-grouping-1.0-r3-selected-shadow",
+  "dataset": {
+    "dataset_info_sha256": "03dfc7d65cf39b66410198e0410414f73398ec968bac3cd3c73fe26ce699cb3f",
+    "formulas_sha256": "aaa749b96faa4be289dcc433f4debc17cdab618529ef8443800599b9c980a401",
+    "ownership_sha256": "2b466b35cedfa9f9d3ed4f965ef36884cb0eab0791466b50524e906b5f0647df",
+    "formulas": 96,
+    "writers": 7,
+    "writer_formulas": {
+      "writer_001": 10,
+      "writer_002": 23,
+      "writer_003": 20,
+      "writer_004": 10,
+      "writer_006": 20,
+      "writer_007": 8,
+      "writer_008": 5
+    }
+  },
+  "lattice": {
+    "config": {
+      "temporal_window": 6,
+      "spatial_neighbors": 4,
+      "max_long_group_width_fraction": 1.0
+    },
+    "oracle": {
+      "formulas": 96,
+      "truth_groups": 393,
+      "group_recall": 1.0,
+      "recoverable_partitions": 96,
+      "partition_recoverable": 1.0,
+      "mean_candidates": 31.010416666666668,
+      "missing": []
+    }
+  },
+  "evaluation": {
+    "protocol": "nested leave-one-writer-out; outer writer is absent from model fit and bias selection",
+    "nested_writer_loo": {
+      "metrics": {
+        "formulas": 96,
+        "partition_exact": 0.9375,
+        "exact_partitions": 90,
+        "truth_groups": 393,
+        "exact_group_recall": 0.9745547073791349,
+        "pair_precision": 0.9385964912280702,
+        "pair_recall": 0.9771689497716894,
+        "pair_f1": 0.9574944071588366,
+        "overmerge_rate": 0.020833333333333332,
+        "oversplit_rate": 0.041666666666666664
+      },
+      "folds": [
+        {
+          "held_out_writer": "writer_001",
+          "train_formulas": 86,
+          "test_formulas": 10,
+          "inner_selected_group_bias": 1.5,
+          "test": {
+            "formulas": 10,
+            "partition_exact": 0.9,
+            "exact_partitions": 9,
+            "truth_groups": 32,
+            "exact_group_recall": 0.96875,
+            "pair_precision": 1.0,
+            "pair_recall": 0.9333333333333333,
+            "pair_f1": 0.9655172413793104,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.1
+          }
+        },
+        {
+          "held_out_writer": "writer_002",
+          "train_formulas": 73,
+          "test_formulas": 23,
+          "inner_selected_group_bias": -1.5,
+          "test": {
+            "formulas": 23,
+            "partition_exact": 0.9130434782608695,
+            "exact_partitions": 21,
+            "truth_groups": 100,
+            "exact_group_recall": 0.94,
+            "pair_precision": 0.7627118644067796,
+            "pair_recall": 1.0,
+            "pair_f1": 0.8653846153846153,
+            "overmerge_rate": 0.08695652173913043,
+            "oversplit_rate": 0.0
+          }
+        },
+        {
+          "held_out_writer": "writer_003",
+          "train_formulas": 76,
+          "test_formulas": 20,
+          "inner_selected_group_bias": 0.0,
+          "test": {
+            "formulas": 20,
+            "partition_exact": 1.0,
+            "exact_partitions": 20,
+            "truth_groups": 88,
+            "exact_group_recall": 1.0,
+            "pair_precision": 1.0,
+            "pair_recall": 1.0,
+            "pair_f1": 1.0,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.0
+          }
+        },
+        {
+          "held_out_writer": "writer_004",
+          "train_formulas": 86,
+          "test_formulas": 10,
+          "inner_selected_group_bias": 0.0,
+          "test": {
+            "formulas": 10,
+            "partition_exact": 0.8,
+            "exact_partitions": 8,
+            "truth_groups": 35,
+            "exact_group_recall": 0.9428571428571428,
+            "pair_precision": 1.0,
+            "pair_recall": 0.8846153846153846,
+            "pair_f1": 0.9387755102040816,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.2
+          }
+        },
+        {
+          "held_out_writer": "writer_006",
+          "train_formulas": 76,
+          "test_formulas": 20,
+          "inner_selected_group_bias": 0.5,
+          "test": {
+            "formulas": 20,
+            "partition_exact": 0.95,
+            "exact_partitions": 19,
+            "truth_groups": 80,
+            "exact_group_recall": 0.9875,
+            "pair_precision": 1.0,
+            "pair_recall": 0.9767441860465116,
+            "pair_f1": 0.988235294117647,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.05
+          }
+        },
+        {
+          "held_out_writer": "writer_007",
+          "train_formulas": 88,
+          "test_formulas": 8,
+          "inner_selected_group_bias": 1.0,
+          "test": {
+            "formulas": 8,
+            "partition_exact": 1.0,
+            "exact_partitions": 8,
+            "truth_groups": 35,
+            "exact_group_recall": 1.0,
+            "pair_precision": 1.0,
+            "pair_recall": 1.0,
+            "pair_f1": 1.0,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.0
+          }
+        },
+        {
+          "held_out_writer": "writer_008",
+          "train_formulas": 91,
+          "test_formulas": 5,
+          "inner_selected_group_bias": -1.0,
+          "test": {
+            "formulas": 5,
+            "partition_exact": 1.0,
+            "exact_partitions": 5,
+            "truth_groups": 23,
+            "exact_group_recall": 1.0,
+            "pair_precision": 1.0,
+            "pair_recall": 1.0,
+            "pair_f1": 1.0,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.0
+          }
+        }
+      ]
+    },
+    "deployment_bias_selection": {
+      "winner": {
+        "group_bias": -1.0,
+        "metrics": {
+          "formulas": 96,
+          "partition_exact": 0.9375,
+          "exact_partitions": 90,
+          "truth_groups": 393,
+          "exact_group_recall": 0.9720101781170484,
+          "pair_precision": 0.9307359307359307,
+          "pair_recall": 0.9817351598173516,
+          "pair_f1": 0.9555555555555557,
+          "overmerge_rate": 0.03125,
+          "oversplit_rate": 0.03125
+        }
+      },
+      "trials": [
+        {
+          "group_bias": -3.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.90625,
+            "exact_partitions": 87,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9389312977099237,
+            "pair_precision": 0.8181818181818182,
+            "pair_recall": 0.9863013698630136,
+            "pair_f1": 0.8944099378881987,
+            "overmerge_rate": 0.07291666666666667,
+            "oversplit_rate": 0.020833333333333332
+          }
+        },
+        {
+          "group_bias": -2.5,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.90625,
+            "exact_partitions": 87,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9491094147582697,
+            "pair_precision": 0.8634538152610441,
+            "pair_recall": 0.9817351598173516,
+            "pair_f1": 0.9188034188034189,
+            "overmerge_rate": 0.0625,
+            "oversplit_rate": 0.03125
+          }
+        },
+        {
+          "group_bias": -2.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9166666666666666,
+            "exact_partitions": 88,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9567430025445293,
+            "pair_precision": 0.9033613445378151,
+            "pair_recall": 0.9817351598173516,
+            "pair_f1": 0.9409190371991246,
+            "overmerge_rate": 0.052083333333333336,
+            "oversplit_rate": 0.03125
+          }
+        },
+        {
+          "group_bias": -1.5,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9270833333333334,
+            "exact_partitions": 89,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9669211195928753,
+            "pair_precision": 0.9267241379310345,
+            "pair_recall": 0.9817351598173516,
+            "pair_f1": 0.9534368070953437,
+            "overmerge_rate": 0.041666666666666664,
+            "oversplit_rate": 0.03125
+          }
+        },
+        {
+          "group_bias": -1.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9375,
+            "exact_partitions": 90,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9720101781170484,
+            "pair_precision": 0.9307359307359307,
+            "pair_recall": 0.9817351598173516,
+            "pair_f1": 0.9555555555555557,
+            "overmerge_rate": 0.03125,
+            "oversplit_rate": 0.03125
+          }
+        },
+        {
+          "group_bias": -0.5,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9270833333333334,
+            "exact_partitions": 89,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9694656488549618,
+            "pair_precision": 0.9304347826086956,
+            "pair_recall": 0.9771689497716894,
+            "pair_f1": 0.953229398663697,
+            "overmerge_rate": 0.03125,
+            "oversplit_rate": 0.041666666666666664
+          }
+        },
+        {
+          "group_bias": 0.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9270833333333334,
+            "exact_partitions": 89,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9694656488549618,
+            "pair_precision": 0.9304347826086956,
+            "pair_recall": 0.9771689497716894,
+            "pair_f1": 0.953229398663697,
+            "overmerge_rate": 0.03125,
+            "oversplit_rate": 0.041666666666666664
+          }
+        },
+        {
+          "group_bias": 0.5,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9270833333333334,
+            "exact_partitions": 89,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9720101781170484,
+            "pair_precision": 0.9380530973451328,
+            "pair_recall": 0.9680365296803652,
+            "pair_f1": 0.952808988764045,
+            "overmerge_rate": 0.020833333333333332,
+            "oversplit_rate": 0.052083333333333336
+          }
+        },
+        {
+          "group_bias": 1.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.9270833333333334,
+            "exact_partitions": 89,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9720101781170484,
+            "pair_precision": 0.9380530973451328,
+            "pair_recall": 0.9680365296803652,
+            "pair_f1": 0.952808988764045,
+            "overmerge_rate": 0.020833333333333332,
+            "oversplit_rate": 0.052083333333333336
+          }
+        },
+        {
+          "group_bias": 1.5,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.90625,
+            "exact_partitions": 87,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9669211195928753,
+            "pair_precision": 0.9375,
+            "pair_recall": 0.958904109589041,
+            "pair_f1": 0.9480812641083523,
+            "overmerge_rate": 0.020833333333333332,
+            "oversplit_rate": 0.07291666666666667
+          }
+        },
+        {
+          "group_bias": 2.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.8958333333333334,
+            "exact_partitions": 86,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9694656488549618,
+            "pair_precision": 0.9950980392156863,
+            "pair_recall": 0.9269406392694064,
+            "pair_f1": 0.9598108747044918,
+            "overmerge_rate": 0.010416666666666666,
+            "oversplit_rate": 0.09375
+          }
+        },
+        {
+          "group_bias": 2.5,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.875,
+            "exact_partitions": 84,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9618320610687023,
+            "pair_precision": 0.9950248756218906,
+            "pair_recall": 0.91324200913242,
+            "pair_f1": 0.9523809523809524,
+            "overmerge_rate": 0.010416666666666666,
+            "oversplit_rate": 0.11458333333333333
+          }
+        },
+        {
+          "group_bias": 3.0,
+          "metrics": {
+            "formulas": 96,
+            "partition_exact": 0.84375,
+            "exact_partitions": 81,
+            "truth_groups": 393,
+            "exact_group_recall": 0.9567430025445293,
+            "pair_precision": 1.0,
+            "pair_recall": 0.8858447488584474,
+            "pair_f1": 0.9394673123486683,
+            "overmerge_rate": 0.0,
+            "oversplit_rate": 0.15625
+          }
+        }
+      ]
+    },
+    "failed_formulas": [
+      {
+        "sample_id": "aiflow_0018",
+        "writer": "writer_002",
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            6
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0020",
+        "writer": "writer_002",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0130",
+        "writer": "writer_006",
+        "truth": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0008",
+        "writer": "writer_004",
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0010",
+        "writer": "writer_004",
+        "truth": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "predicted": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      },
+      {
+        "sample_id": "aiflow_0074",
+        "writer": "writer_001",
+        "truth": [
+          [
+            0,
+            3
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "predicted": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ]
+  },
+  "artifact": {
+    "file": "grouping_selector.joblib",
+    "sha256": "4a6b3fa461ca15ab5872f9648541904c04f032fe096d6185ab6c501b2ca02ebd",
+    "feature_names": [
+      "stroke_count",
+      "point_count_log",
+      "width_ref",
+      "height_ref",
+      "aspect_log",
+      "temporal_span",
+      "temporal_contiguous",
+      "singleton",
+      "has_spatial_pair",
+      "pair_gap_mean_ref",
+      "pair_gap_max_ref",
+      "x_overlap_mean",
+      "y_overlap_mean",
+      "stroke_width_mean_ref",
+      "stroke_width_std_ref",
+      "stroke_height_mean_ref",
+      "stroke_height_std_ref",
+      "path_length_ref",
+      "endpoint_gap_mean_ref",
+      "candidate_cx_formula",
+      "candidate_cy_formula",
+      "candidate_width_formula"
+    ],
+    "group_bias": -1.0
+  },
+  "contracts": {
+    "label_features": false,
+    "writer_features": false,
+    "target_cell_count_input": false,
+    "all_strokes_exactly_once": true,
+    "insertion_or_deletion": false,
+    "product_default_enabled": false
+  }
+}

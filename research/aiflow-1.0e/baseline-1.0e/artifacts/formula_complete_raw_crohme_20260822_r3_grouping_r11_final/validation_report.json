@@ -1,0 +1,73 @@
+{
+  "schema": "aiflow-formula-complete-raw-crohme-validation/v1",
+  "generated_at": "2026-08-21T17:53:44.779046+00:00",
+  "status": "noncommercial_validation_only_posthoc_shadow",
+  "training_performed": false,
+  "selection_performed": false,
+  "threshold_tuning_performed": false,
+  "crohme_rows_used_for_training": 0,
+  "crohme_gradient_updates": 0,
+  "prefix_or_streaming_accuracy_scored": false,
+  "decision_boundary": "formula_complete whole-formula only",
+  "official_lgeval_or_symlg": false,
+  "coverage": {
+    "protocol_formulas": 1199,
+    "exact_formula_duplicates_removed": 0,
+    "eligible_formulas": 769,
+    "limited_run": false,
+    "skipped": {
+      "missing_truth_partition": 1,
+      "single_point_source_stroke": 80,
+      "unsupported_truth_label": 349
+    }
+  },
+  "scores": {
+    "grouping_exact_count": 314,
+    "grouping_exact": 0.4083224967490247,
+    "flat_token_sequence_exact_count": 59,
+    "flat_token_sequence_exact": 0.07672301690507152,
+    "layout_order_exact_count": 169,
+    "layout_order_exact": 0.21976592977893367,
+    "layout_token_sequence_exact_count": 59,
+    "layout_token_sequence_exact": 0.07672301690507152,
+    "relation_exact_on_grouping_exact_parsed": 0.6528662420382165,
+    "relation_exact_on_structural_formulas": 0.46236559139784944,
+    "strict_group_layout_relation_character_exact_count": 50,
+    "strict_group_layout_relation_character_exact": 0.06501950585175553,
+    "relation_micro": {
+      "tp": 544,
+      "fp": 37,
+      "fn": 239,
+      "precision": 0.9363166953528399,
+      "recall": 0.6947637292464879,
+      "f1": 0.7976539589442816
+    }
+  },
+  "contracts": {
+    "all_input_strokes_exactly_once": true,
+    "pre_complete_commits": 0,
+    "prefix_accuracy_scored": false,
+    "target_label_writer_or_glyph_count_input": false,
+    "product_default_enabled": false,
+    "posthoc_shadow_opt_in": true,
+    "raw_fallback_exact_formulas": 769,
+    "product_auto_commits": 0,
+    "product_decision": "REVIEW_REQUIRED",
+    "autograd_enabled": false
+  },
+  "limits": [
+    "local structural proxy only; official CROHME LgEval/symLG is not installed",
+    "unsupported labels and single-point source strokes are excluded",
+    "partition ranker was tuned on previously inspected project-owned formulas"
+  ],
+  "inputs": {
+    "partition_ranker_sha256": "69925b478d2170bafcf2a12576ee07f6372b5318311fa53b3d12905c5d9362bf",
+    "hwr_checkpoint_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "context_checkpoint_sha256": "125dc9cd1457a46153522f9041117d320c06071a7f71d65bf7929b5ef4c0671a",
+    "context_training_data": "project-owned 47 formulas / 211 glyphs / 3 writers plus deterministic owned formula DSL"
+  },
+  "output": {
+    "predictions": "artifacts\\formula_complete_raw_crohme_20260822_r3_grouping_r11_final\\formula_results.jsonl.gz",
+    "predictions_sha256": "7e7e837b7c6937518ab974fa94fe0ba87a7763524e7a817f618361ca8b6d6c40"
+  }
+}

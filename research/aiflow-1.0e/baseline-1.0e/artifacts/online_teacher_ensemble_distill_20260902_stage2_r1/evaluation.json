@@ -1,0 +1,189 @@
+{
+  "adapter": {
+    "changed_rows": 73,
+    "formula_exact": 0.5473684210526316,
+    "formula_exact_correct": 52,
+    "formula_total": 95,
+    "row_level_improvements": 36,
+    "row_level_regressions": 22,
+    "rows": 387,
+    "top1": 0.8552971576227391,
+    "top1_correct": 331
+  },
+  "adoption": {
+    "fresh_acceptance_required": true,
+    "product_runtime_changed": false,
+    "row_level_regression_gate": false
+  },
+  "baseline": {
+    "changed_rows": 0,
+    "formula_exact": 0.5157894736842106,
+    "formula_exact_correct": 49,
+    "formula_total": 95,
+    "row_level_improvements": 0,
+    "row_level_regressions": 0,
+    "rows": 387,
+    "top1": 0.8191214470284238,
+    "top1_correct": 317
+  },
+  "candidate_recall": 0.9664082687338501,
+  "checkpoint": "artifacts\\online_teacher_ensemble_distill_20260902_stage2_r1\\online_candidate_ranker.pt",
+  "data": {
+    "candidates": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\ocr_trocr_hwr95_candidates_20260901_r1\\candidates.jsonl.gz",
+    "formulas": 95,
+    "raw": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-head-calibration-20260819-r1\\project_owned_ownership_eval_95.jsonl.gz",
+    "records": 387,
+    "teacher": "artifacts\\offline_teacher_ensemble_20260902_stage2_r2\\ensemble_probability_mean_writer_loo_predictions.jsonl.gz",
+    "writers": 7
+  },
+  "external_teacher_in_runtime": false,
+  "hwr_checkpoint_sha256": "adea8868585111314e8bd4f6696a0a90e27a51b9e83d8bbc325b9c916c91afea",
+  "loss_reports": [
+    {
+      "ce": 1.2883320073286693,
+      "held_writer": "0051ac0f3b066f191a50",
+      "kl": 0.04218602466086547,
+      "stability": 0.32669600372513136
+    },
+    {
+      "ce": 1.1375617511344678,
+      "held_writer": "2d04cc6470b7a5aa8e47",
+      "kl": 0.031319576654244556,
+      "stability": 0.31746332369970554
+    },
+    {
+      "ce": 1.2742319757288152,
+      "held_writer": "8c90e0ce2f8501e6cf74",
+      "kl": 0.04054113090828513,
+      "stability": 0.29135027742295555
+    },
+    {
+      "ce": 1.2660329275661044,
+      "held_writer": "8fd01f2ab9d55fa944e4",
+      "kl": 0.047397055145767,
+      "stability": 0.3494650463539141
+    },
+    {
+      "ce": 1.303448929389318,
+      "held_writer": "90ae7abee30ebd1c3a53",
+      "kl": 0.0415754225725929,
+      "stability": 0.3745581681529681
+    },
+    {
+      "ce": 1.2594213521841802,
+      "held_writer": "99a922f1edc2ef0565d0",
+      "kl": 0.03734964815278848,
+      "stability": 0.34893879469371203
+    },
+    {
+      "ce": 1.2275981671280332,
+      "held_writer": "aaae4f8b061e862bc663",
+      "kl": 0.03807131905988273,
+      "stability": 0.29244589634860557
+    }
+  ],
+  "schema": "aiflow-1.0e-online-candidate-distill/v1",
+  "status": "shadow_only",
+  "training": {
+    "epochs": 3,
+    "hwr_embedding_size": 128,
+    "learning_rate": 0.0003,
+    "loss": "0.50 CE + 0.30 teacher KL + baseline stability/pairwise margin",
+    "numeric_size": 21,
+    "refit_loss": {
+      "ce": 1.218544003036287,
+      "kl": 0.03862641839724448,
+      "stability": 0.2866648782769011
+    },
+    "seed": 20260902,
+    "student_parameters": 78833,
+    "temperature": 2.0
+  },
+  "training_data_boundary": "project-owned candidate cache; external teacher scores used as soft targets only",
+  "writer_loo": [
+    {
+      "changed_rows": 24,
+      "formula_exact": 0.47368421052631576,
+      "formula_exact_correct": 9,
+      "formula_total": 19,
+      "held_writer": "0051ac0f3b066f191a50",
+      "row_level_improvements": 13,
+      "row_level_regressions": 8,
+      "rows": 82,
+      "top1": 0.8292682926829268,
+      "top1_correct": 68
+    },
+    {
+      "changed_rows": 4,
+      "formula_exact": 0.7,
+      "formula_exact_correct": 7,
+      "formula_total": 10,
+      "held_writer": "2d04cc6470b7a5aa8e47",
+      "row_level_improvements": 2,
+      "row_level_regressions": 1,
+      "rows": 32,
+      "top1": 0.90625,
+      "top1_correct": 29
+    },
+    {
+      "changed_rows": 6,
+      "formula_exact": 0.3,
+      "formula_exact_correct": 3,
+      "formula_total": 10,
+      "held_writer": "8c90e0ce2f8501e6cf74",
+      "row_level_improvements": 2,
+      "row_level_regressions": 4,
+      "rows": 35,
+      "top1": 0.7714285714285715,
+      "top1_correct": 27
+    },
+    {
+      "changed_rows": 21,
+      "formula_exact": 0.391304347826087,
+      "formula_exact_correct": 9,
+      "formula_total": 23,
+      "held_writer": "8fd01f2ab9d55fa944e4",
+      "row_level_improvements": 11,
+      "row_level_regressions": 6,
+      "rows": 100,
+      "top1": 0.82,
+      "top1_correct": 82
+    },
+    {
+      "changed_rows": 6,
+      "formula_exact": 0.9,
+      "formula_exact_correct": 18,
+      "formula_total": 20,
+      "held_writer": "90ae7abee30ebd1c3a53",
+      "row_level_improvements": 5,
+      "row_level_regressions": 1,
+      "rows": 80,
+      "top1": 0.975,
+      "top1_correct": 78
+    },
+    {
+      "changed_rows": 4,
+      "formula_exact": 0.625,
+      "formula_exact_correct": 5,
+      "formula_total": 8,
+      "held_writer": "99a922f1edc2ef0565d0",
+      "row_level_improvements": 2,
+      "row_level_regressions": 1,
+      "rows": 35,
+      "top1": 0.9142857142857143,
+      "top1_correct": 32
+    },
+    {
+      "changed_rows": 8,
+      "formula_exact": 0.2,
+      "formula_exact_correct": 1,
+      "formula_total": 5,
+      "held_writer": "aaae4f8b061e862bc663",
+      "row_level_improvements": 1,
+      "row_level_regressions": 1,
+      "rows": 23,
+      "top1": 0.6521739130434783,
+      "top1_correct": 15
+    }
+  ]
+}

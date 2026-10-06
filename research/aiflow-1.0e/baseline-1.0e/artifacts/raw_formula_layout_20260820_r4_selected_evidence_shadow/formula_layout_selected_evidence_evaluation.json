@@ -1,0 +1,5646 @@
+{
+  "schema": "aiflow-formula-layout-evaluation/v1",
+  "generated_at": "2026-08-19T23:33:54.223552+00:00",
+  "layer": {
+    "input": "immutable symbol boxes plus HWR Top-5",
+    "output": "geometry-derived order and spatial relation graph",
+    "grouping_mutations": 0,
+    "threshold_selection": "none",
+    "selected_finalized_layout_evidence": {
+      "direct": {
+        "candidate_extensions": 0,
+        "candidate_extension_policy": "upstream finalized token only",
+        "selected_semantic_promotions": 387,
+        "selected_semantic_policy": "upstream finalized token receives layout-only unit evidence"
+      },
+      "crohme": {
+        "candidate_extensions": 0,
+        "candidate_extension_policy": "upstream finalized token only",
+        "selected_semantic_promotions": 9535,
+        "selected_semantic_policy": "upstream finalized token receives layout-only unit evidence"
+      }
+    }
+  },
+  "direct": {
+    "metrics": {
+      "formulas": 95,
+      "layout_order_exact": 0.9894736842105263,
+      "layout_order_exact_count": 94,
+      "ordered_pair_accuracy": 0.9986263736263736,
+      "ordered_pairs": 728,
+      "character_accuracy": {
+        "records": 387,
+        "hwr_top1": 0.7002583979328165,
+        "context_finalized": 0.8940568475452196,
+        "top5_oracle": 0.9354005167958657
+      },
+      "character_formula_exact": {
+        "hwr_top1": 0.3263157894736842,
+        "context_finalized": 0.7263157894736842,
+        "top5_oracle": 0.8105263157894737
+      },
+      "layout_and_character_formula_exact": {
+        "hwr_top1": 0.3263157894736842,
+        "context_finalized": 0.7263157894736842,
+        "top5_oracle": 0.8105263157894737
+      },
+      "order_failures": [
+        {
+          "formula_id": "aiflow_0074",
+          "truth_labels": [
+            "7",
+            "-",
+            "0"
+          ],
+          "layout_labels": [
+            "7",
+            "0",
+            "-"
+          ],
+          "edges": [],
+          "top5_oracle": false
+        }
+      ]
+    },
+    "flat_structure_gate": {
+      "expected": "zero structural edges in accepted direct flat formulas",
+      "passed": true,
+      "formulas": 94,
+      "excluded_relation_formulas": [
+        "aiflow_0065"
+      ],
+      "false_positive_edges": 0,
+      "affected_formulas": 0,
+      "failures": []
+    },
+    "candidates_sha256": "a4936b4cfabd4437d2315d7253d536d8fceb8f8ecc736bfa8dcae9eff42b4d61",
+    "finalized_sha256": "1adf78301e82c6aa3d8543d0d8470714e484922088d7615b1526026658debb2d",
+    "interpretation": "accepted ownership order and explicit relation overlay are evaluation truth only and are not read by the layout layer"
+  },
+  "owned_relation_acceptance": {
+    "artifact_sha256": "f79a6d9e90451d0c4e92f9d41f72f71064a00e348487073bb582ffb8d5d9bc14",
+    "status": "relation_only_character_oracle",
+    "relation_only_character_oracle": {
+      "declared_formulas": 3,
+      "evaluated_formulas": 3,
+      "formula_exact_count": 3,
+      "formula_exact": 1.0,
+      "micro": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "character_model_evaluated": false,
+      "character_formula_exact": null,
+      "relation_and_character_formula_exact_count": null,
+      "failures": []
+    },
+    "matched_direct_hwr": {
+      "declared_formulas": 3,
+      "evaluated_formulas": 1,
+      "formula_exact_count": 1,
+      "formula_exact": 1.0,
+      "micro": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "character_model_evaluated": true,
+      "character_formula_exact": {
+        "hwr_top1_count": 1,
+        "context_finalized_count": 1
+      },
+      "relation_and_character_formula_exact_count": 1,
+      "failures": []
+    },
+    "commercial_training_rights": "project_owned_consent_verified"
+  },
+  "crohme_noncommercial": {
+    "tracegroup_order_proxy": {
+      "formulas": 984,
+      "layout_order_exact": 0.3150406504065041,
+      "layout_order_exact_count": 310,
+      "ordered_pair_accuracy": 0.7867042895991111,
+      "ordered_pairs": 68398,
+      "character_accuracy": {
+        "records": 9535,
+        "hwr_top1": 0.6950183534347142,
+        "context_finalized": 0.7885684320922915,
+        "top5_oracle": 0.9320398531725222
+      },
+      "character_formula_exact": {
+        "hwr_top1": 0.15853658536585366,
+        "context_finalized": 0.2886178861788618,
+        "top5_oracle": 0.6443089430894309
+      },
+      "layout_and_character_formula_exact": {
+        "hwr_top1": 0.08739837398373984,
+        "context_finalized": 0.1290650406504065,
+        "top5_oracle": 0.2550813008130081
+      },
+      "order_failures": [
+        {
+          "formula_id": "18_em_0.inkml",
+          "truth_labels": [
+            "x",
+            "x",
+            "x",
+            "+",
+            "y",
+            "k",
+            "y",
+            "x",
+            "k",
+            "k",
+            "k"
+          ],
+          "layout_labels": [
+            "x",
+            "k",
+            "x",
+            "x",
+            "k",
+            "+",
+            "y",
+            "k",
+            "y",
+            "x",
+            "k"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_0.inkml:2",
+              "child": "18_em_0.inkml:10",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_0.inkml:4",
+              "child": "18_em_0.inkml:5",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_0.inkml:0",
+              "child": "18_em_0.inkml:9",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_1.inkml",
+          "truth_labels": [
+            "4",
+            "\\sqrt{}",
+            "8"
+          ],
+          "layout_labels": [
+            "\\sqrt{}",
+            "4",
+            "8"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_1.inkml:1",
+              "child": "18_em_1.inkml:0",
+              "type": "contains",
+              "confidence": 0.95,
+              "source": "root_topk_geometry"
+            },
+            {
+              "parent": "18_em_1.inkml:1",
+              "child": "18_em_1.inkml:2",
+              "type": "contains",
+              "confidence": 0.95,
+              "source": "root_topk_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_11.inkml",
+          "truth_labels": [
+            "q",
+            "q",
+            "2",
+            "="
+          ],
+          "layout_labels": [
+            "q",
+            "=",
+            "2",
+            "q"
+          ],
+          "edges": [],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_12.inkml",
+          "truth_labels": [
+            "p",
+            "e",
+            "-",
+            "-",
+            "-",
+            "p",
+            ")",
+            "e",
+            "1",
+            "1",
+            "("
+          ],
+          "layout_labels": [
+            "-",
+            "p",
+            "e",
+            "1",
+            "-",
+            "(",
+            "1",
+            "-",
+            "p",
+            ")",
+            "e"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:0",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:1",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:10",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:11",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:12",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:4",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:5",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:6",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:7",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:8",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_13.inkml",
+          "truth_labels": [
+            "4",
+            "+",
+            "+",
+            "4",
+            "-",
+            "4",
+            "4",
+            "2",
+            "2"
+          ],
+          "layout_labels": [
+            "4",
+            "2",
+            "+",
+            "4",
+            "2",
+            "+",
+            "-",
+            "4",
+            "4"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_13.inkml:4",
+              "child": "18_em_13.inkml:3",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_13.inkml:4",
+              "child": "18_em_13.inkml:5",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_13.inkml:0",
+              "child": "18_em_13.inkml:7",
+              "type": "superscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_13.inkml:6",
+              "child": "18_em_13.inkml:8",
+              "type": "superscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_14.inkml",
+          "truth_labels": [
+            "d",
+            "x",
+            "d",
+            "x",
+            "d",
+            "y",
+            "d",
+            "y",
+            "-",
+            "=",
+            "1",
+            "-",
+            "-"
+          ],
+          "layout_labels": [
+            "-",
+            "d",
+            "y",
+            "d",
+            "x",
+            "=",
+            "-",
+            "1",
+            "d",
+            "-",
+            "x",
+            "d",
+            "y"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_14.inkml:8",
+              "child": "18_em_14.inkml:0",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:8",
+              "child": "18_em_14.inkml:1",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:11",
+              "child": "18_em_14.inkml:10",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:11",
+              "child": "18_em_14.inkml:12",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:11",
+              "child": "18_em_14.inkml:2",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:12",
+              "child": "18_em_14.inkml:2",
+              "type": "above",
+              "confidence": 0.9239130434782609,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:11",
+              "child": "18_em_14.inkml:3",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:12",
+              "child": "18_em_14.inkml:3",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:12",
+              "child": "18_em_14.inkml:4",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:12",
+              "child": "18_em_14.inkml:5",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:8",
+              "child": "18_em_14.inkml:6",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:8",
+              "child": "18_em_14.inkml:7",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_15.inkml",
+          "truth_labels": [
+            "k",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "=",
+            "1",
+            "0"
+          ],
+          "layout_labels": [
+            "k",
+            "=",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "edges": [],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_16.inkml",
+          "truth_labels": [
+            "m",
+            "2",
+            "\\geq"
+          ],
+          "layout_labels": [
+            "m",
+            "\\geq",
+            "2"
+          ],
+          "edges": [],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_17.inkml",
+          "truth_labels": [
+            "(",
+            ")",
+            "u",
+            "(",
+            "0",
+            ")",
+            "1",
+            "-",
+            "u",
+            "(",
+            "0",
+            ")",
+            "u",
+            "=",
+            "-"
+          ],
+          "layout_labels": [
+            "u",
+            "(",
+            ")",
+            "=",
+            "-",
+            "u",
+            "(",
+            "0",
+            ")",
+            "1",
+            "-",
+            "u",
+            "(",
+            "0",
+            ")"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:10",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:11",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:12",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:13",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:3",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:4",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:5",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:6",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:7",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:8",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_18.inkml",
+          "truth_labels": [
+            "\\theta",
+            "3",
+            "\\theta",
+            "+",
+            "\\theta",
+            "2",
+            "=",
+            "1"
+          ],
+          "layout_labels": [
+            "\\theta",
+            "3",
+            "=",
+            "\\theta",
+            "1",
+            "+",
+            "\\theta",
+            "2"
+          ],
+          "edges": [],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_19.inkml",
+          "truth_labels": [
+            "y",
+            "x",
+            "\\neq"
+          ],
+          "layout_labels": [
+            "y",
+            "\\neq",
+            "x"
+          ],
+          "edges": [],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_2.inkml",
+          "truth_labels": [
+            "C",
+            "1",
+            "y",
+            "1",
+            "n",
+            "-",
+            "1",
+            ")",
+            "+",
+            "2",
+            "y",
+            "2",
+            "(",
+            "n",
+            "-",
+            ")",
+            "+",
+            "+",
+            "C",
+            "n",
+            "y",
+            "n",
+            ")",
+            "0",
+            "(",
+            "(",
+            "C",
+            "1",
+            "1",
+            "-",
+            "n",
+            "=",
+            "\\dots"
+          ],
+          "layout_labels": [
+            "C",
+            "1",
+            "y",
+            "1",
+            "(",
+            "n",
+            "-",
+            "1",
+            ")",
+            "+",
+            "C",
+            "2",
+            "y",
+            "2",
+            "(",
+            "n",
+            "-",
+            "1",
+            ")",
+            "+",
+            "\\dots",
+            "+",
+            "C",
+            "n",
+            "y",
+            "n",
+            "(",
+            "n",
+            "-",
+            "1",
+            ")",
+            "=",
+            "0"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_2.inkml:0",
+              "child": "18_em_2.inkml:1",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_2.inkml:10",
+              "child": "18_em_2.inkml:11",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_2.inkml:18",
+              "child": "18_em_2.inkml:19",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_2.inkml:20",
+              "child": "18_em_2.inkml:21",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_2.inkml:2",
+              "child": "18_em_2.inkml:3",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_2.inkml:26",
+              "child": "18_em_2.inkml:9",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_20.inkml",
+          "truth_labels": [
+            "+",
+            "-",
+            "-",
+            "=",
+            "1",
+            "1",
+            "p",
+            "q",
+            "1"
+          ],
+          "layout_labels": [
+            "-",
+            "1",
+            "p",
+            "+",
+            "-",
+            "1",
+            "q",
+            "=",
+            "1"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_20.inkml:1",
+              "child": "18_em_20.inkml:5",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_20.inkml:1",
+              "child": "18_em_20.inkml:6",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_20.inkml:2",
+              "child": "18_em_20.inkml:7",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_20.inkml:2",
+              "child": "18_em_20.inkml:8",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_21.inkml",
+          "truth_labels": [
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "2"
+          ],
+          "layout_labels": [
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "0",
+            "0",
+            "1",
+            "0",
+            "1",
+            "2"
+          ],
+          "edges": [],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_22.inkml",
+          "truth_labels": [
+            "p",
+            "1",
+            "1",
+            "p",
+            "2",
+            "p",
+            "n",
+            "n",
+            "\\gamma",
+            "\\gamma",
+            "\\gamma",
+            "\\dots",
+            "2"
+          ],
+          "layout_labels": [
+            "p",
+            "\\gamma",
+            "1",
+            "1",
+            "p",
+            "\\gamma",
+            "2",
+            "2",
+            "\\dots",
+            "p",
+            "\\gamma",
+            "n",
+            "n"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_22.inkml:0",
+              "child": "18_em_22.inkml:1",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_22.inkml:3",
+              "child": "18_em_22.inkml:10",
+              "type": "superscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_22.inkml:3",
+              "child": "18_em_22.inkml:12",
+              "type": "superscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_22.inkml:3",
+              "child": "18_em_22.inkml:4",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_22.inkml:5",
+              "child": "18_em_22.inkml:6",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_22.inkml:5",
+              "child": "18_em_22.inkml:8",
+              "type": "superscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_22.inkml:0",
+              "child": "18_em_22.inkml:9",
+              "type": "superscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_23.inkml",
+          "truth_labels": [
+            "6",
+            "2",
+            "4",
+            "6",
+            "3",
+            "4",
+            "\\div",
+            "\\div",
+            "-",
+            "1",
+            "8",
+            "=",
+            "-"
+          ],
+          "layout_labels": [
+            "-",
+            "1",
+            "8",
+            "\\div",
+            "6",
+            "2",
+            "4",
+            "\\div",
+            "6",
+            "=",
+            "-",
+            "3",
+            "4"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:0",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:1",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:10",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:2",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:3",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:12",
+              "child": "18_em_23.inkml:4",
+              "type": "above",
+              "confidence": 0.9342105263157895,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:12",
+              "child": "18_em_23.inkml:5",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:6",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:7",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:9",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_24.inkml",
+          "truth_labels": [
+            "7",
+            "5",
+            "2",
+            "9",
+            "5",
+            "3",
+            "6",
+            "1",
+            "5",
+            "6",
+            "2",
+            "5",
+            "-"
+          ],
+          "layout_labels": [
+            "-",
+            "7",
+            "5",
+            "2",
+            "9",
+            "5",
+            "3",
+            "6",
+            "1",
+            "5",
+            "6",
+            "2",
+            "5"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:0",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:1",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:10",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:11",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:2",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:3",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:4",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:5",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:6",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:7",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:8",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:9",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_3.inkml",
+          "truth_labels": [
+            "q",
+            "1",
+            "q",
+            "2",
+            "q",
+            "m",
+            "\\dots"
+          ],
+          "layout_labels": [
+            "q",
+            "1",
+            "q",
+            "2",
+            "\\dots",
+            "q",
+            "m"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_3.inkml:7",
+              "child": "18_em_3.inkml:8",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_5.inkml",
+          "truth_labels": [
+            "g",
+            "n",
+            "\\rightarrow",
+            "\\infty",
+            "\\int",
+            "g",
+            "=",
+            "\\int",
+            "n"
+          ],
+          "layout_labels": [
+            "\\int",
+            "g",
+            "n",
+            "=",
+            "\\rightarrow",
+            "\\infty",
+            "\\int",
+            "g",
+            "n"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_5.inkml:0",
+              "child": "18_em_5.inkml:1",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_6.inkml",
+          "truth_labels": [
+            "g",
+            ")",
+            "-",
+            "g",
+            "(",
+            "a",
+            "b",
+            "-",
+            "a",
+            ")",
+            "(",
+            "b",
+            "="
+          ],
+          "layout_labels": [
+            "g",
+            "(",
+            "b",
+            ")",
+            "-",
+            "g",
+            "(",
+            "a",
+            ")",
+            "=",
+            "b",
+            "-",
+            "a"
+          ],
+          "edges": [],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_9.inkml",
+          "truth_labels": [
+            "b",
+            "+",
+            "\\sqrt{}",
+            "c",
+            "-",
+            "a"
+          ],
+          "layout_labels": [
+            "-",
+            "a",
+            "b",
+            "+",
+            "\\sqrt{}",
+            "c"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_9.inkml:4",
+              "child": "18_em_9.inkml:0",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_9.inkml:4",
+              "child": "18_em_9.inkml:1",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_9.inkml:4",
+              "child": "18_em_9.inkml:2",
+              "type": "below",
+              "confidence": 0.9246153846153846,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_9.inkml:2",
+              "child": "18_em_9.inkml:3",
+              "type": "contains",
+              "confidence": 0.95,
+              "source": "root_topk_geometry"
+            },
+            {
+              "parent": "18_em_9.inkml:4",
+              "child": "18_em_9.inkml:3",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_9.inkml:4",
+              "child": "18_em_9.inkml:5",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "20_em_25.inkml",
+          "truth_labels": [
+            "+",
+            "y",
+            ")",
+            "x",
+            "y",
+            "x",
+            "y",
+            "+",
+            "(",
+            "x",
+            "="
+          ],
+          "layout_labels": [
+            "(",
+            "x",
+            "+",
+            "y",
+            ")",
+            "=",
+            "x",
+            "y",
+            "+",
+            "x",
+            "y"
+          ],
+          "edges": [],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "20_em_26.inkml",
+          "truth_labels": [
+            "9",
+            "9",
+            "+",
+            "\\sqrt{}",
+            "-",
+            "9"
+          ],
+          "layout_labels": [
+            "-",
+            "9",
+            "9",
+            "+",
+            "\\sqrt{}",
+            "9"
+          ],
+          "edges": [
+            {
+              "parent": "20_em_26.inkml:4",
+              "child": "20_em_26.inkml:0",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_26.inkml:4",
+              "child": "20_em_26.inkml:1",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_26.inkml:4",
+              "child": "20_em_26.inkml:2",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_26.inkml:4",
+              "child": "20_em_26.inkml:3",
+              "type": "below",
+              "confidence": 0.9054054054054055,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_26.inkml:4",
+              "child": "20_em_26.inkml:5",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "20_em_27.inkml",
+          "truth_labels": [
+            "R",
+            "o",
+            "+",
+            "1",
+            "-",
+            "+",
+            "+",
+            "2",
+            "+",
+            "2",
+            "-",
+            "2",
+            "+",
+            "-",
+            "\\beta",
+            "=",
+            "\\beta",
+            "\\beta",
+            "\\beta",
+            "\\beta",
+            "r",
+            "r",
+            "e",
+            "(",
+            "(",
+            ")",
+            ")",
+            "2",
+            "o",
+            "-"
+          ],
+          "layout_labels": [
+            "R",
+            "o",
+            "=",
+            "-",
+            "(",
+            "\\beta",
+            "-",
+            "+",
+            "1",
+            "\\beta",
+            ")",
+            "r",
+            "e",
+            "+",
+            "\\beta",
+            "+",
+            "2",
+            "+",
+            "2",
+            "\\beta",
+            "-",
+            "2",
+            "+",
+            "2",
+            "-",
+            "(",
+            "\\beta",
+            ")",
+            "r",
+            "o"
+          ],
+          "edges": [
+            {
+              "parent": "20_em_27.inkml:0",
+              "child": "20_em_27.inkml:1",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:10",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:11",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:12",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:13",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:13",
+              "child": "20_em_27.inkml:14",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:14",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:10",
+              "child": "20_em_27.inkml:16",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:16",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:13",
+              "child": "20_em_27.inkml:17",
+              "type": "above",
+              "confidence": 0.8827586206896552,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:17",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:18",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:4",
+              "child": "20_em_27.inkml:18",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:19",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:4",
+              "child": "20_em_27.inkml:19",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:2",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:4",
+              "child": "20_em_27.inkml:2",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:20",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:22",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:23",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:13",
+              "child": "20_em_27.inkml:24",
+              "type": "above",
+              "confidence": 0.9323529411764706,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:25",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:13",
+              "child": "20_em_27.inkml:27",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:27",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:3",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:4",
+              "child": "20_em_27.inkml:3",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:4",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:5",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:6",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:7",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:8",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:10",
+              "child": "20_em_27.inkml:9",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:9",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "20_em_29.inkml",
+          "truth_labels": [
+            "\\infty",
+            "\\infty",
+            ")",
+            "-",
+            "("
+          ],
+          "layout_labels": [
+            "(",
+            "-",
+            "\\infty",
+            "\\infty",
+            ")"
+          ],
+          "edges": [],
+          "top5_oracle": true
+        }
+      ]
+    },
+    "relation_graph": {
+      "formulas": 984,
+      "formula_exact": 0.5650406504065041,
+      "formula_exact_count": 556,
+      "character_formula_exact": {
+        "hwr_top1": 0.15853658536585366,
+        "context_finalized": 0.2886178861788618,
+        "top5_oracle": 0.6443089430894309
+      },
+      "relation_and_character_formula_exact": {
+        "hwr_top1": 0.12601626016260162,
+        "context_finalized": 0.22967479674796748,
+        "top5_oracle": 0.42378048780487804,
+        "context_finalized_count": 226
+      },
+      "micro": {
+        "tp": 2858,
+        "fp": 251,
+        "fn": 1396,
+        "precision": 0.9192666452235445,
+        "recall": 0.6718382698636577,
+        "f1": 0.7763140024446558
+      },
+      "by_relation": {
+        "above": {
+          "tp": 994,
+          "fp": 7,
+          "fn": 198,
+          "precision": 0.993006993006993,
+          "recall": 0.8338926174496645,
+          "f1": 0.9065207478340174
+        },
+        "below": {
+          "tp": 862,
+          "fp": 20,
+          "fn": 150,
+          "precision": 0.9773242630385488,
+          "recall": 0.8517786561264822,
+          "f1": 0.9102428722280886
+        },
+        "contains": {
+          "tp": 328,
+          "fp": 12,
+          "fn": 130,
+          "precision": 0.9647058823529412,
+          "recall": 0.7161572052401747,
+          "f1": 0.8220551378446116
+        },
+        "subscript": {
+          "tp": 348,
+          "fp": 111,
+          "fn": 437,
+          "precision": 0.7581699346405228,
+          "recall": 0.44331210191082804,
+          "f1": 0.5594855305466239
+        },
+        "superscript": {
+          "tp": 326,
+          "fp": 101,
+          "fn": 481,
+          "precision": 0.7634660421545667,
+          "recall": 0.40396530359355637,
+          "f1": 0.5283630470016207
+        }
+      },
+      "failures": [
+        {
+          "formula_id": "18_em_0.inkml",
+          "truth": [
+            [
+              "18_em_0.inkml:0",
+              "18_em_0.inkml:9",
+              "subscript"
+            ],
+            [
+              "18_em_0.inkml:2",
+              "18_em_0.inkml:10",
+              "subscript"
+            ],
+            [
+              "18_em_0.inkml:4",
+              "18_em_0.inkml:5",
+              "subscript"
+            ],
+            [
+              "18_em_0.inkml:7",
+              "18_em_0.inkml:8",
+              "subscript"
+            ]
+          ],
+          "predicted": [
+            [
+              "18_em_0.inkml:0",
+              "18_em_0.inkml:9",
+              "subscript"
+            ],
+            [
+              "18_em_0.inkml:2",
+              "18_em_0.inkml:10",
+              "subscript"
+            ],
+            [
+              "18_em_0.inkml:4",
+              "18_em_0.inkml:5",
+              "subscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "18_em_14.inkml",
+          "truth": [
+            [
+              "18_em_14.inkml:11",
+              "18_em_14.inkml:10",
+              "above"
+            ],
+            [
+              "18_em_14.inkml:11",
+              "18_em_14.inkml:12",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:11",
+              "18_em_14.inkml:2",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:11",
+              "18_em_14.inkml:3",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:11",
+              "18_em_14.inkml:4",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:11",
+              "18_em_14.inkml:5",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:12",
+              "18_em_14.inkml:2",
+              "above"
+            ],
+            [
+              "18_em_14.inkml:12",
+              "18_em_14.inkml:3",
+              "above"
+            ],
+            [
+              "18_em_14.inkml:12",
+              "18_em_14.inkml:4",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:12",
+              "18_em_14.inkml:5",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:8",
+              "18_em_14.inkml:0",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:8",
+              "18_em_14.inkml:1",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:8",
+              "18_em_14.inkml:6",
+              "above"
+            ],
+            [
+              "18_em_14.inkml:8",
+              "18_em_14.inkml:7",
+              "above"
+            ]
+          ],
+          "predicted": [
+            [
+              "18_em_14.inkml:11",
+              "18_em_14.inkml:10",
+              "above"
+            ],
+            [
+              "18_em_14.inkml:11",
+              "18_em_14.inkml:12",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:11",
+              "18_em_14.inkml:2",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:11",
+              "18_em_14.inkml:3",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:12",
+              "18_em_14.inkml:2",
+              "above"
+            ],
+            [
+              "18_em_14.inkml:12",
+              "18_em_14.inkml:3",
+              "above"
+            ],
+            [
+              "18_em_14.inkml:12",
+              "18_em_14.inkml:4",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:12",
+              "18_em_14.inkml:5",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:8",
+              "18_em_14.inkml:0",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:8",
+              "18_em_14.inkml:1",
+              "below"
+            ],
+            [
+              "18_em_14.inkml:8",
+              "18_em_14.inkml:6",
+              "above"
+            ],
+            [
+              "18_em_14.inkml:8",
+              "18_em_14.inkml:7",
+              "above"
+            ]
+          ]
+        },
+        {
+          "formula_id": "18_em_18.inkml",
+          "truth": [
+            [
+              "18_em_18.inkml:0",
+              "18_em_18.inkml:1",
+              "subscript"
+            ],
+            [
+              "18_em_18.inkml:2",
+              "18_em_18.inkml:7",
+              "subscript"
+            ],
+            [
+              "18_em_18.inkml:4",
+              "18_em_18.inkml:5",
+              "subscript"
+            ]
+          ],
+          "predicted": []
+        },
+        {
+          "formula_id": "18_em_2.inkml",
+          "truth": [
+            [
+              "18_em_2.inkml:0",
+              "18_em_2.inkml:1",
+              "subscript"
+            ],
+            [
+              "18_em_2.inkml:10",
+              "18_em_2.inkml:11",
+              "subscript"
+            ],
+            [
+              "18_em_2.inkml:10",
+              "18_em_2.inkml:12",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:10",
+              "18_em_2.inkml:13",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:10",
+              "18_em_2.inkml:14",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:10",
+              "18_em_2.inkml:15",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:10",
+              "18_em_2.inkml:27",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:18",
+              "18_em_2.inkml:19",
+              "subscript"
+            ],
+            [
+              "18_em_2.inkml:2",
+              "18_em_2.inkml:24",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:2",
+              "18_em_2.inkml:3",
+              "subscript"
+            ],
+            [
+              "18_em_2.inkml:2",
+              "18_em_2.inkml:4",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:2",
+              "18_em_2.inkml:5",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:2",
+              "18_em_2.inkml:6",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:2",
+              "18_em_2.inkml:7",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:20",
+              "18_em_2.inkml:21",
+              "subscript"
+            ],
+            [
+              "18_em_2.inkml:20",
+              "18_em_2.inkml:22",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:20",
+              "18_em_2.inkml:25",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:20",
+              "18_em_2.inkml:28",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:20",
+              "18_em_2.inkml:29",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:20",
+              "18_em_2.inkml:30",
+              "superscript"
+            ],
+            [
+              "18_em_2.inkml:26",
+              "18_em_2.inkml:9",
+              "subscript"
+            ]
+          ],
+          "predicted": [
+            [
+              "18_em_2.inkml:0",
+              "18_em_2.inkml:1",
+              "subscript"
+            ],
+            [
+              "18_em_2.inkml:10",
+              "18_em_2.inkml:11",
+              "subscript"
+            ],
+            [
+              "18_em_2.inkml:18",
+              "18_em_2.inkml:19",
+              "subscript"
+            ],
+            [
+              "18_em_2.inkml:2",
+              "18_em_2.inkml:3",
+              "subscript"
+            ],
+            [
+              "18_em_2.inkml:20",
+              "18_em_2.inkml:21",
+              "subscript"
+            ],
+            [
+              "18_em_2.inkml:26",
+              "18_em_2.inkml:9",
+              "subscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "18_em_21.inkml",
+          "truth": [
+            [
+              "18_em_21.inkml:15",
+              "18_em_21.inkml:16",
+              "subscript"
+            ]
+          ],
+          "predicted": []
+        },
+        {
+          "formula_id": "18_em_22.inkml",
+          "truth": [
+            [
+              "18_em_22.inkml:0",
+              "18_em_22.inkml:1",
+              "subscript"
+            ],
+            [
+              "18_em_22.inkml:0",
+              "18_em_22.inkml:2",
+              "superscript"
+            ],
+            [
+              "18_em_22.inkml:0",
+              "18_em_22.inkml:9",
+              "superscript"
+            ],
+            [
+              "18_em_22.inkml:10",
+              "18_em_22.inkml:12",
+              "subscript"
+            ],
+            [
+              "18_em_22.inkml:3",
+              "18_em_22.inkml:10",
+              "superscript"
+            ],
+            [
+              "18_em_22.inkml:3",
+              "18_em_22.inkml:12",
+              "superscript"
+            ],
+            [
+              "18_em_22.inkml:3",
+              "18_em_22.inkml:4",
+              "subscript"
+            ],
+            [
+              "18_em_22.inkml:5",
+              "18_em_22.inkml:6",
+              "subscript"
+            ],
+            [
+              "18_em_22.inkml:5",
+              "18_em_22.inkml:7",
+              "superscript"
+            ],
+            [
+              "18_em_22.inkml:5",
+              "18_em_22.inkml:8",
+              "superscript"
+            ],
+            [
+              "18_em_22.inkml:8",
+              "18_em_22.inkml:7",
+              "subscript"
+            ],
+            [
+              "18_em_22.inkml:9",
+              "18_em_22.inkml:2",
+              "subscript"
+            ]
+          ],
+          "predicted": [
+            [
+              "18_em_22.inkml:0",
+              "18_em_22.inkml:1",
+              "subscript"
+            ],
+            [
+              "18_em_22.inkml:0",
+              "18_em_22.inkml:9",
+              "superscript"
+            ],
+            [
+              "18_em_22.inkml:3",
+              "18_em_22.inkml:10",
+              "superscript"
+            ],
+            [
+              "18_em_22.inkml:3",
+              "18_em_22.inkml:12",
+              "superscript"
+            ],
+            [
+              "18_em_22.inkml:3",
+              "18_em_22.inkml:4",
+              "subscript"
+            ],
+            [
+              "18_em_22.inkml:5",
+              "18_em_22.inkml:6",
+              "subscript"
+            ],
+            [
+              "18_em_22.inkml:5",
+              "18_em_22.inkml:8",
+              "superscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "18_em_3.inkml",
+          "truth": [
+            [
+              "18_em_3.inkml:0",
+              "18_em_3.inkml:1",
+              "subscript"
+            ],
+            [
+              "18_em_3.inkml:3",
+              "18_em_3.inkml:4",
+              "subscript"
+            ],
+            [
+              "18_em_3.inkml:7",
+              "18_em_3.inkml:8",
+              "subscript"
+            ]
+          ],
+          "predicted": [
+            [
+              "18_em_3.inkml:7",
+              "18_em_3.inkml:8",
+              "subscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "18_em_4.inkml",
+          "truth": [
+            [
+              "18_em_4.inkml:0",
+              "18_em_4.inkml:1",
+              "superscript"
+            ],
+            [
+              "18_em_4.inkml:0",
+              "18_em_4.inkml:2",
+              "superscript"
+            ]
+          ],
+          "predicted": []
+        },
+        {
+          "formula_id": "18_em_5.inkml",
+          "truth": [
+            [
+              "18_em_5.inkml:5",
+              "18_em_5.inkml:9",
+              "subscript"
+            ]
+          ],
+          "predicted": [
+            [
+              "18_em_5.inkml:0",
+              "18_em_5.inkml:1",
+              "subscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "18_em_8.inkml",
+          "truth": [
+            [
+              "18_em_8.inkml:0",
+              "18_em_8.inkml:1",
+              "subscript"
+            ],
+            [
+              "18_em_8.inkml:0",
+              "18_em_8.inkml:2",
+              "subscript"
+            ],
+            [
+              "18_em_8.inkml:0",
+              "18_em_8.inkml:3",
+              "subscript"
+            ],
+            [
+              "18_em_8.inkml:5",
+              "18_em_8.inkml:6",
+              "subscript"
+            ],
+            [
+              "18_em_8.inkml:5",
+              "18_em_8.inkml:7",
+              "subscript"
+            ]
+          ],
+          "predicted": [
+            [
+              "18_em_8.inkml:0",
+              "18_em_8.inkml:1",
+              "subscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "20_em_26.inkml",
+          "truth": [
+            [
+              "20_em_26.inkml:3",
+              "20_em_26.inkml:5",
+              "contains"
+            ],
+            [
+              "20_em_26.inkml:4",
+              "20_em_26.inkml:0",
+              "above"
+            ],
+            [
+              "20_em_26.inkml:4",
+              "20_em_26.inkml:1",
+              "below"
+            ],
+            [
+              "20_em_26.inkml:4",
+              "20_em_26.inkml:2",
+              "below"
+            ],
+            [
+              "20_em_26.inkml:4",
+              "20_em_26.inkml:3",
+              "below"
+            ],
+            [
+              "20_em_26.inkml:4",
+              "20_em_26.inkml:5",
+              "below"
+            ]
+          ],
+          "predicted": [
+            [
+              "20_em_26.inkml:4",
+              "20_em_26.inkml:0",
+              "above"
+            ],
+            [
+              "20_em_26.inkml:4",
+              "20_em_26.inkml:1",
+              "below"
+            ],
+            [
+              "20_em_26.inkml:4",
+              "20_em_26.inkml:2",
+              "below"
+            ],
+            [
+              "20_em_26.inkml:4",
+              "20_em_26.inkml:3",
+              "below"
+            ],
+            [
+              "20_em_26.inkml:4",
+              "20_em_26.inkml:5",
+              "below"
+            ]
+          ]
+        },
+        {
+          "formula_id": "20_em_27.inkml",
+          "truth": [
+            [
+              "20_em_27.inkml:0",
+              "20_em_27.inkml:1",
+              "subscript"
+            ],
+            [
+              "20_em_27.inkml:10",
+              "20_em_27.inkml:16",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:10",
+              "20_em_27.inkml:9",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:13",
+              "20_em_27.inkml:14",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:13",
+              "20_em_27.inkml:27",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:20",
+              "20_em_27.inkml:22",
+              "subscript"
+            ],
+            [
+              "20_em_27.inkml:21",
+              "20_em_27.inkml:28",
+              "subscript"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:10",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:11",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:12",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:13",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:14",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:16",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:17",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:18",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:19",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:2",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:20",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:21",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:22",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:23",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:24",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:25",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:26",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:27",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:28",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:3",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:4",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:5",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:6",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:7",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:8",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:9",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:4",
+              "20_em_27.inkml:18",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:4",
+              "20_em_27.inkml:19",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:4",
+              "20_em_27.inkml:2",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:4",
+              "20_em_27.inkml:3",
+              "above"
+            ]
+          ],
+          "predicted": [
+            [
+              "20_em_27.inkml:0",
+              "20_em_27.inkml:1",
+              "subscript"
+            ],
+            [
+              "20_em_27.inkml:10",
+              "20_em_27.inkml:16",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:10",
+              "20_em_27.inkml:9",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:13",
+              "20_em_27.inkml:14",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:13",
+              "20_em_27.inkml:17",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:13",
+              "20_em_27.inkml:24",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:13",
+              "20_em_27.inkml:27",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:10",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:11",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:12",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:13",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:14",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:16",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:17",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:18",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:19",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:2",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:20",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:22",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:23",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:25",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:27",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:3",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:4",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:5",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:6",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:7",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:8",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:29",
+              "20_em_27.inkml:9",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:4",
+              "20_em_27.inkml:18",
+              "below"
+            ],
+            [
+              "20_em_27.inkml:4",
+              "20_em_27.inkml:19",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:4",
+              "20_em_27.inkml:2",
+              "above"
+            ],
+            [
+              "20_em_27.inkml:4",
+              "20_em_27.inkml:3",
+              "above"
+            ]
+          ]
+        },
+        {
+          "formula_id": "20_em_31.inkml",
+          "truth": [
+            [
+              "20_em_31.inkml:1",
+              "20_em_31.inkml:2",
+              "superscript"
+            ],
+            [
+              "20_em_31.inkml:1",
+              "20_em_31.inkml:3",
+              "superscript"
+            ],
+            [
+              "20_em_31.inkml:4",
+              "20_em_31.inkml:10",
+              "superscript"
+            ],
+            [
+              "20_em_31.inkml:4",
+              "20_em_31.inkml:5",
+              "superscript"
+            ]
+          ],
+          "predicted": [
+            [
+              "20_em_31.inkml:1",
+              "20_em_31.inkml:2",
+              "superscript"
+            ],
+            [
+              "20_em_31.inkml:1",
+              "20_em_31.inkml:3",
+              "superscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "20_em_33.inkml",
+          "truth": [
+            [
+              "20_em_33.inkml:1",
+              "20_em_33.inkml:2",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:10",
+              "20_em_33.inkml:11",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:14",
+              "20_em_33.inkml:0",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:15",
+              "20_em_33.inkml:8",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:16",
+              "20_em_33.inkml:12",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:17",
+              "20_em_33.inkml:13",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:1",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:10",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:11",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:12",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:13",
+              "below"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:15",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:16",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:17",
+              "below"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:2",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:3",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:4",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:5",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:6",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:7",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:8",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:9",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:3",
+              "20_em_33.inkml:4",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:6",
+              "20_em_33.inkml:7",
+              "subscript"
+            ]
+          ],
+          "predicted": [
+            [
+              "20_em_33.inkml:1",
+              "20_em_33.inkml:2",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:10",
+              "20_em_33.inkml:11",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:15",
+              "20_em_33.inkml:8",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:16",
+              "20_em_33.inkml:12",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:17",
+              "20_em_33.inkml:13",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:1",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:10",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:11",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:12",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:13",
+              "below"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:15",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:16",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:17",
+              "below"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:2",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:3",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:4",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:5",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:6",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:7",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:8",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:19",
+              "20_em_33.inkml:9",
+              "above"
+            ],
+            [
+              "20_em_33.inkml:3",
+              "20_em_33.inkml:4",
+              "subscript"
+            ],
+            [
+              "20_em_33.inkml:6",
+              "20_em_33.inkml:7",
+              "subscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "20_em_36.inkml",
+          "truth": [
+            [
+              "20_em_36.inkml:0",
+              "20_em_36.inkml:1",
+              "subscript"
+            ],
+            [
+              "20_em_36.inkml:4",
+              "20_em_36.inkml:5",
+              "subscript"
+            ]
+          ],
+          "predicted": [
+            [
+              "20_em_36.inkml:0",
+              "20_em_36.inkml:1",
+              "subscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "20_em_37.inkml",
+          "truth": [
+            [
+              "20_em_37.inkml:12",
+              "20_em_37.inkml:10",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:12",
+              "20_em_37.inkml:11",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:12",
+              "20_em_37.inkml:13",
+              "below"
+            ],
+            [
+              "20_em_37.inkml:12",
+              "20_em_37.inkml:22",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:12",
+              "20_em_37.inkml:23",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:12",
+              "20_em_37.inkml:27",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:18",
+              "20_em_37.inkml:31",
+              "superscript"
+            ],
+            [
+              "20_em_37.inkml:2",
+              "20_em_37.inkml:3",
+              "superscript"
+            ],
+            [
+              "20_em_37.inkml:21",
+              "20_em_37.inkml:24",
+              "subscript"
+            ],
+            [
+              "20_em_37.inkml:22",
+              "20_em_37.inkml:23",
+              "subscript"
+            ],
+            [
+              "20_em_37.inkml:23",
+              "20_em_37.inkml:27",
+              "superscript"
+            ],
+            [
+              "20_em_37.inkml:24",
+              "20_em_37.inkml:25",
+              "superscript"
+            ],
+            [
+              "20_em_37.inkml:29",
+              "20_em_37.inkml:15",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:29",
+              "20_em_37.inkml:16",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:29",
+              "20_em_37.inkml:21",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:29",
+              "20_em_37.inkml:24",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:29",
+              "20_em_37.inkml:25",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:29",
+              "20_em_37.inkml:26",
+              "below"
+            ],
+            [
+              "20_em_37.inkml:4",
+              "20_em_37.inkml:0",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:4",
+              "20_em_37.inkml:1",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:4",
+              "20_em_37.inkml:2",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:4",
+              "20_em_37.inkml:3",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:4",
+              "20_em_37.inkml:5",
+              "below"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:17",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:18",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:19",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:20",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:28",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:31",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:7",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:9",
+              "below"
+            ]
+          ],
+          "predicted": [
+            [
+              "20_em_37.inkml:12",
+              "20_em_37.inkml:10",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:12",
+              "20_em_37.inkml:11",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:12",
+              "20_em_37.inkml:13",
+              "below"
+            ],
+            [
+              "20_em_37.inkml:12",
+              "20_em_37.inkml:22",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:12",
+              "20_em_37.inkml:23",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:21",
+              "20_em_37.inkml:25",
+              "superscript"
+            ],
+            [
+              "20_em_37.inkml:22",
+              "20_em_37.inkml:23",
+              "subscript"
+            ],
+            [
+              "20_em_37.inkml:29",
+              "20_em_37.inkml:15",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:29",
+              "20_em_37.inkml:16",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:29",
+              "20_em_37.inkml:24",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:29",
+              "20_em_37.inkml:26",
+              "below"
+            ],
+            [
+              "20_em_37.inkml:4",
+              "20_em_37.inkml:0",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:4",
+              "20_em_37.inkml:1",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:4",
+              "20_em_37.inkml:2",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:4",
+              "20_em_37.inkml:5",
+              "below"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:17",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:18",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:19",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:20",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:28",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:7",
+              "above"
+            ],
+            [
+              "20_em_37.inkml:8",
+              "20_em_37.inkml:9",
+              "below"
+            ]
+          ]
+        },
+        {
+          "formula_id": "20_em_38.inkml",
+          "truth": [
+            [
+              "20_em_38.inkml:1",
+              "20_em_38.inkml:2",
+              "subscript"
+            ],
+            [
+              "20_em_38.inkml:1",
+              "20_em_38.inkml:3",
+              "subscript"
+            ]
+          ],
+          "predicted": []
+        },
+        {
+          "formula_id": "20_em_43.inkml",
+          "truth": [
+            [
+              "20_em_43.inkml:11",
+              "20_em_43.inkml:4",
+              "superscript"
+            ],
+            [
+              "20_em_43.inkml:11",
+              "20_em_43.inkml:5",
+              "superscript"
+            ],
+            [
+              "20_em_43.inkml:11",
+              "20_em_43.inkml:6",
+              "superscript"
+            ],
+            [
+              "20_em_43.inkml:5",
+              "20_em_43.inkml:4",
+              "above"
+            ],
+            [
+              "20_em_43.inkml:5",
+              "20_em_43.inkml:6",
+              "below"
+            ]
+          ],
+          "predicted": [
+            [
+              "20_em_43.inkml:11",
+              "20_em_43.inkml:4",
+              "superscript"
+            ],
+            [
+              "20_em_43.inkml:11",
+              "20_em_43.inkml:6",
+              "superscript"
+            ],
+            [
+              "20_em_43.inkml:13",
+              "20_em_43.inkml:2",
+              "superscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "20_em_46.inkml",
+          "truth": [
+            [
+              "20_em_46.inkml:11",
+              "20_em_46.inkml:0",
+              "subscript"
+            ],
+            [
+              "20_em_46.inkml:3",
+              "20_em_46.inkml:0",
+              "above"
+            ],
+            [
+              "20_em_46.inkml:3",
+              "20_em_46.inkml:1",
+              "above"
+            ],
+            [
+              "20_em_46.inkml:3",
+              "20_em_46.inkml:11",
+              "above"
+            ],
+            [
+              "20_em_46.inkml:3",
+              "20_em_46.inkml:12",
+              "below"
+            ],
+            [
+              "20_em_46.inkml:3",
+              "20_em_46.inkml:2",
+              "above"
+            ],
+            [
+              "20_em_46.inkml:3",
+              "20_em_46.inkml:4",
+              "below"
+            ],
+            [
+              "20_em_46.inkml:4",
+              "20_em_46.inkml:12",
+              "subscript"
+            ],
+            [
+              "20_em_46.inkml:5",
+              "20_em_46.inkml:10",
+              "below"
+            ],
+            [
+              "20_em_46.inkml:5",
+              "20_em_46.inkml:13",
+              "below"
+            ],
+            [
+              "20_em_46.inkml:5",
+              "20_em_46.inkml:6",
+              "above"
+            ],
+            [
+              "20_em_46.inkml:5",
+              "20_em_46.inkml:7",
+              "above"
+            ],
+            [
+              "20_em_46.inkml:5",
+              "20_em_46.inkml:8",
+              "below"
+            ],
+            [
+              "20_em_46.inkml:5",
+              "20_em_46.inkml:9",
+              "below"
+            ],
+            [
+              "20_em_46.inkml:6",
+              "20_em_46.inkml:7",
+              "subscript"
+            ],
+            [
+              "20_em_46.inkml:8",
+              "20_em_46.inkml:9",
+              "subscript"
+            ]
+          ],
+          "predicted": [
+            [
+              "20_em_46.inkml:11",
+              "20_em_46.inkml:0",
+              "subscript"
+            ],
+            [
+              "20_em_46.inkml:3",
+              "20_em_46.inkml:0",
+              "above"
+            ],
+            [
+              "20_em_46.inkml:3",
+              "20_em_46.inkml:1",
+              "above"
+            ],
+            [
+              "20_em_46.inkml:3",
+              "20_em_46.inkml:11",
+              "above"
+            ],
+            [
+              "20_em_46.inkml:3",
+              "20_em_46.inkml:12",
+              "below"
+            ],
+            [
+              "20_em_46.inkml:3",
+              "20_em_46.inkml:2",
+              "above"
+            ],
+            [
+              "20_em_46.inkml:3",
+              "20_em_46.inkml:4",
+              "below"
+            ],
+            [
+              "20_em_46.inkml:5",
+              "20_em_46.inkml:10",
+              "below"
+            ],
+            [
+              "20_em_46.inkml:5",
+              "20_em_46.inkml:13",
+              "below"
+            ],
+            [
+              "20_em_46.inkml:5",
+              "20_em_46.inkml:6",
+              "above"
+            ],
+            [
+              "20_em_46.inkml:5",
+              "20_em_46.inkml:7",
+              "above"
+            ],
+            [
+              "20_em_46.inkml:5",
+              "20_em_46.inkml:8",
+              "below"
+            ],
+            [
+              "20_em_46.inkml:5",
+              "20_em_46.inkml:9",
+              "below"
+            ],
+            [
+              "20_em_46.inkml:6",
+              "20_em_46.inkml:7",
+              "subscript"
+            ],
+            [
+              "20_em_46.inkml:8",
+              "20_em_46.inkml:9",
+              "subscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "20_em_48.inkml",
+          "truth": [],
+          "predicted": [
+            [
+              "20_em_48.inkml:7",
+              "20_em_48.inkml:8",
+              "superscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "23_em_50.inkml",
+          "truth": [
+            [
+              "23_em_50.inkml:0",
+              "23_em_50.inkml:1",
+              "superscript"
+            ],
+            [
+              "23_em_50.inkml:0",
+              "23_em_50.inkml:2",
+              "superscript"
+            ]
+          ],
+          "predicted": []
+        },
+        {
+          "formula_id": "23_em_51.inkml",
+          "truth": [
+            [
+              "23_em_51.inkml:12",
+              "23_em_51.inkml:13",
+              "subscript"
+            ],
+            [
+              "23_em_51.inkml:2",
+              "23_em_51.inkml:3",
+              "subscript"
+            ],
+            [
+              "23_em_51.inkml:5",
+              "23_em_51.inkml:6",
+              "subscript"
+            ],
+            [
+              "23_em_51.inkml:7",
+              "23_em_51.inkml:11",
+              "subscript"
+            ],
+            [
+              "23_em_51.inkml:7",
+              "23_em_51.inkml:12",
+              "superscript"
+            ],
+            [
+              "23_em_51.inkml:7",
+              "23_em_51.inkml:13",
+              "superscript"
+            ],
+            [
+              "23_em_51.inkml:8",
+              "23_em_51.inkml:1",
+              "subscript"
+            ],
+            [
+              "23_em_51.inkml:8",
+              "23_em_51.inkml:2",
+              "superscript"
+            ],
+            [
+              "23_em_51.inkml:8",
+              "23_em_51.inkml:3",
+              "superscript"
+            ],
+            [
+              "23_em_51.inkml:9",
+              "23_em_51.inkml:4",
+              "subscript"
+            ],
+            [
+              "23_em_51.inkml:9",
+              "23_em_51.inkml:5",
+              "superscript"
+            ],
+            [
+              "23_em_51.inkml:9",
+              "23_em_51.inkml:6",
+              "superscript"
+            ]
+          ],
+          "predicted": [
+            [
+              "23_em_51.inkml:7",
+              "23_em_51.inkml:11",
+              "subscript"
+            ],
+            [
+              "23_em_51.inkml:7",
+              "23_em_51.inkml:12",
+              "superscript"
+            ],
+            [
+              "23_em_51.inkml:7",
+              "23_em_51.inkml:13",
+              "superscript"
+            ],
+            [
+              "23_em_51.inkml:8",
+              "23_em_51.inkml:1",
+              "subscript"
+            ],
+            [
+              "23_em_51.inkml:8",
+              "23_em_51.inkml:2",
+              "superscript"
+            ],
+            [
+              "23_em_51.inkml:9",
+              "23_em_51.inkml:5",
+              "superscript"
+            ]
+          ]
+        },
+        {
+          "formula_id": "23_em_55.inkml",
+          "truth": [
+            [
+              "23_em_55.inkml:0",
+              "23_em_55.inkml:1",
+              "contains"
+            ],
+            [
+              "23_em_55.inkml:0",
+              "23_em_55.inkml:2",
+              "contains"
+            ],
+            [
+              "23_em_55.inkml:0",
+              "23_em_55.inkml:3",
+              "contains"
+            ]
+          ],
+          "predicted": []
+        },
+        {
+          "formula_id": "23_em_58.inkml",
+          "truth": [
+            [
+              "23_em_58.inkml:0",
+              "23_em_58.inkml:1",
+              "superscript"
+            ]
+          ],
+          "predicted": []
+        },
+        {
+          "formula_id": "23_em_59.inkml",
+          "truth": [
+            [
+              "23_em_59.inkml:0",
+              "23_em_59.inkml:1",
+              "superscript"
+            ],
+            [
+              "23_em_59.inkml:0",
+              "23_em_59.inkml:14",
+              "subscript"
+            ],
+            [
+              "23_em_59.inkml:0",
+              "23_em_59.inkml:2",
+              "subscript"
+            ],
+            [
+              "23_em_59.inkml:0",
+              "23_em_59.inkml:3",
+              "subscript"
+            ],
+            [
+              "23_em_59.inkml:11",
+              "23_em_59.inkml:12",
+              "superscript"
+            ],
+            [
+              "23_em_59.inkml:16",
+              "23_em_59.inkml:10",
+              "superscript"
+            ],
+            [
+              "23_em_59.inkml:16",
+              "23_em_59.inkml:15",
+              "subscript"
+            ],
+            [
+              "23_em_59.inkml:16",
+              "23_em_59.inkml:8",
+              "subscript"
+            ],
+            [
+              "23_em_59.inkml:16",
+              "23_em_59.inkml:9",
+              "subscript"
+            ],
+            [
+              "23_em_59.inkml:5",
+              "23_em_59.inkml:6",
+              "superscript"
+            ]
+          ],
+          "predicted": [
+            [
+              "23_em_59.inkml:0",
+              "23_em_59.inkml:1",
+              "superscript"
+            ],
+            [
+              "23_em_59.inkml:0",
+              "23_em_59.inkml:14",
+              "subscript"
+            ],
+            [
+              "23_em_59.inkml:0",
+              "23_em_59.inkml:3",
+              "subscript"
+            ],
+            [
+              "23_em_59.inkml:16",
+              "23_em_59.inkml:10",
+              "superscript"
+            ],
+            [
+              "23_em_59.inkml:16",
+              "23_em_59.inkml:9",
+              "subscript"
+            ],
+            [
+              "23_em_59.inkml:4",
+              "23_em_59.inkml:5",
+              "superscript"
+            ]
+          ]
+        }
+      ],
+      "license_boundary": "CROHME noncommercial evaluation only; no fitting or threshold selection"
+    },
+    "baseline_tracegroup_order_proxy": {
+      "formulas": 984,
+      "layout_order_exact": 0.3150406504065041,
+      "layout_order_exact_count": 310,
+      "ordered_pair_accuracy": 0.7867042895991111,
+      "ordered_pairs": 68398,
+      "character_accuracy": {
+        "records": 9535,
+        "hwr_top1": 0.6950183534347142,
+        "context_finalized": 0.7883586785527006,
+        "top5_oracle": 0.9320398531725222
+      },
+      "character_formula_exact": {
+        "hwr_top1": 0.15853658536585366,
+        "context_finalized": 0.28760162601626016,
+        "top5_oracle": 0.6443089430894309
+      },
+      "layout_and_character_formula_exact": {
+        "hwr_top1": 0.08739837398373984,
+        "context_finalized": 0.1290650406504065,
+        "top5_oracle": 0.2550813008130081
+      },
+      "order_failures": [
+        {
+          "formula_id": "18_em_0.inkml",
+          "truth_labels": [
+            "x",
+            "x",
+            "x",
+            "+",
+            "y",
+            "k",
+            "y",
+            "x",
+            "k",
+            "k",
+            "k"
+          ],
+          "layout_labels": [
+            "x",
+            "k",
+            "x",
+            "x",
+            "k",
+            "+",
+            "y",
+            "k",
+            "y",
+            "x",
+            "k"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_0.inkml:2",
+              "child": "18_em_0.inkml:10",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_0.inkml:4",
+              "child": "18_em_0.inkml:5",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_0.inkml:0",
+              "child": "18_em_0.inkml:9",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_1.inkml",
+          "truth_labels": [
+            "4",
+            "\\sqrt{}",
+            "8"
+          ],
+          "layout_labels": [
+            "\\sqrt{}",
+            "4",
+            "8"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_1.inkml:1",
+              "child": "18_em_1.inkml:0",
+              "type": "contains",
+              "confidence": 0.95,
+              "source": "root_topk_geometry"
+            },
+            {
+              "parent": "18_em_1.inkml:1",
+              "child": "18_em_1.inkml:2",
+              "type": "contains",
+              "confidence": 0.95,
+              "source": "root_topk_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_11.inkml",
+          "truth_labels": [
+            "q",
+            "q",
+            "2",
+            "="
+          ],
+          "layout_labels": [
+            "q",
+            "=",
+            "2",
+            "q"
+          ],
+          "edges": [],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_12.inkml",
+          "truth_labels": [
+            "p",
+            "e",
+            "-",
+            "-",
+            "-",
+            "p",
+            ")",
+            "e",
+            "1",
+            "1",
+            "("
+          ],
+          "layout_labels": [
+            "-",
+            "p",
+            "e",
+            "1",
+            "-",
+            "(",
+            "1",
+            "-",
+            "p",
+            ")",
+            "e"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:0",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:1",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:10",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:11",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:12",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:4",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:5",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:6",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:7",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_12.inkml:3",
+              "child": "18_em_12.inkml:8",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_13.inkml",
+          "truth_labels": [
+            "4",
+            "+",
+            "+",
+            "4",
+            "-",
+            "4",
+            "4",
+            "2",
+            "2"
+          ],
+          "layout_labels": [
+            "4",
+            "2",
+            "+",
+            "4",
+            "2",
+            "+",
+            "-",
+            "4",
+            "4"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_13.inkml:4",
+              "child": "18_em_13.inkml:3",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_13.inkml:4",
+              "child": "18_em_13.inkml:5",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_13.inkml:0",
+              "child": "18_em_13.inkml:7",
+              "type": "superscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_13.inkml:6",
+              "child": "18_em_13.inkml:8",
+              "type": "superscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_14.inkml",
+          "truth_labels": [
+            "d",
+            "x",
+            "d",
+            "x",
+            "d",
+            "y",
+            "d",
+            "y",
+            "-",
+            "=",
+            "1",
+            "-",
+            "-"
+          ],
+          "layout_labels": [
+            "-",
+            "d",
+            "y",
+            "d",
+            "x",
+            "=",
+            "-",
+            "1",
+            "d",
+            "-",
+            "x",
+            "d",
+            "y"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_14.inkml:8",
+              "child": "18_em_14.inkml:0",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:8",
+              "child": "18_em_14.inkml:1",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:11",
+              "child": "18_em_14.inkml:10",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:11",
+              "child": "18_em_14.inkml:12",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:11",
+              "child": "18_em_14.inkml:2",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:12",
+              "child": "18_em_14.inkml:2",
+              "type": "above",
+              "confidence": 0.9239130434782609,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:11",
+              "child": "18_em_14.inkml:3",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:12",
+              "child": "18_em_14.inkml:3",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:12",
+              "child": "18_em_14.inkml:4",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:12",
+              "child": "18_em_14.inkml:5",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:8",
+              "child": "18_em_14.inkml:6",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_14.inkml:8",
+              "child": "18_em_14.inkml:7",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_15.inkml",
+          "truth_labels": [
+            "k",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "=",
+            "1",
+            "0"
+          ],
+          "layout_labels": [
+            "k",
+            "=",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "edges": [],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_16.inkml",
+          "truth_labels": [
+            "m",
+            "2",
+            "\\geq"
+          ],
+          "layout_labels": [
+            "m",
+            "\\geq",
+            "2"
+          ],
+          "edges": [],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_17.inkml",
+          "truth_labels": [
+            "(",
+            ")",
+            "u",
+            "(",
+            "0",
+            ")",
+            "1",
+            "-",
+            "u",
+            "(",
+            "0",
+            ")",
+            "u",
+            "=",
+            "-"
+          ],
+          "layout_labels": [
+            "u",
+            "(",
+            ")",
+            "=",
+            "-",
+            "u",
+            "(",
+            "0",
+            ")",
+            "1",
+            "-",
+            "u",
+            "(",
+            "0",
+            ")"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:10",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:11",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:12",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:13",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:3",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:4",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:5",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:6",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:7",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_17.inkml:16",
+              "child": "18_em_17.inkml:8",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_18.inkml",
+          "truth_labels": [
+            "\\theta",
+            "3",
+            "\\theta",
+            "+",
+            "\\theta",
+            "2",
+            "=",
+            "1"
+          ],
+          "layout_labels": [
+            "\\theta",
+            "3",
+            "=",
+            "\\theta",
+            "1",
+            "+",
+            "\\theta",
+            "2"
+          ],
+          "edges": [],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_19.inkml",
+          "truth_labels": [
+            "y",
+            "x",
+            "\\neq"
+          ],
+          "layout_labels": [
+            "y",
+            "\\neq",
+            "x"
+          ],
+          "edges": [],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_2.inkml",
+          "truth_labels": [
+            "C",
+            "1",
+            "y",
+            "1",
+            "n",
+            "-",
+            "1",
+            ")",
+            "+",
+            "2",
+            "y",
+            "2",
+            "(",
+            "n",
+            "-",
+            ")",
+            "+",
+            "+",
+            "C",
+            "n",
+            "y",
+            "n",
+            ")",
+            "0",
+            "(",
+            "(",
+            "C",
+            "1",
+            "1",
+            "-",
+            "n",
+            "=",
+            "\\dots"
+          ],
+          "layout_labels": [
+            "C",
+            "1",
+            "y",
+            "1",
+            "(",
+            "n",
+            "-",
+            "1",
+            ")",
+            "+",
+            "C",
+            "2",
+            "y",
+            "2",
+            "(",
+            "n",
+            "-",
+            "1",
+            ")",
+            "+",
+            "\\dots",
+            "+",
+            "C",
+            "n",
+            "y",
+            "n",
+            "(",
+            "n",
+            "-",
+            "1",
+            ")",
+            "=",
+            "0"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_2.inkml:0",
+              "child": "18_em_2.inkml:1",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_2.inkml:10",
+              "child": "18_em_2.inkml:11",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_2.inkml:18",
+              "child": "18_em_2.inkml:19",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_2.inkml:20",
+              "child": "18_em_2.inkml:21",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_2.inkml:2",
+              "child": "18_em_2.inkml:3",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_2.inkml:26",
+              "child": "18_em_2.inkml:9",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_20.inkml",
+          "truth_labels": [
+            "+",
+            "-",
+            "-",
+            "=",
+            "1",
+            "1",
+            "p",
+            "q",
+            "1"
+          ],
+          "layout_labels": [
+            "-",
+            "1",
+            "p",
+            "+",
+            "-",
+            "1",
+            "q",
+            "=",
+            "1"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_20.inkml:1",
+              "child": "18_em_20.inkml:5",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_20.inkml:1",
+              "child": "18_em_20.inkml:6",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_20.inkml:2",
+              "child": "18_em_20.inkml:7",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_20.inkml:2",
+              "child": "18_em_20.inkml:8",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_21.inkml",
+          "truth_labels": [
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "2"
+          ],
+          "layout_labels": [
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "0",
+            "0",
+            "1",
+            "0",
+            "1",
+            "2"
+          ],
+          "edges": [],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_22.inkml",
+          "truth_labels": [
+            "p",
+            "1",
+            "1",
+            "p",
+            "2",
+            "p",
+            "n",
+            "n",
+            "\\gamma",
+            "\\gamma",
+            "\\gamma",
+            "\\dots",
+            "2"
+          ],
+          "layout_labels": [
+            "p",
+            "\\gamma",
+            "1",
+            "1",
+            "p",
+            "\\gamma",
+            "2",
+            "2",
+            "\\dots",
+            "p",
+            "\\gamma",
+            "n",
+            "n"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_22.inkml:0",
+              "child": "18_em_22.inkml:1",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_22.inkml:3",
+              "child": "18_em_22.inkml:10",
+              "type": "superscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_22.inkml:3",
+              "child": "18_em_22.inkml:12",
+              "type": "superscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_22.inkml:3",
+              "child": "18_em_22.inkml:4",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_22.inkml:5",
+              "child": "18_em_22.inkml:6",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_22.inkml:5",
+              "child": "18_em_22.inkml:8",
+              "type": "superscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "18_em_22.inkml:0",
+              "child": "18_em_22.inkml:9",
+              "type": "superscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "18_em_23.inkml",
+          "truth_labels": [
+            "6",
+            "2",
+            "4",
+            "6",
+            "3",
+            "4",
+            "\\div",
+            "\\div",
+            "-",
+            "1",
+            "8",
+            "=",
+            "-"
+          ],
+          "layout_labels": [
+            "-",
+            "1",
+            "8",
+            "\\div",
+            "6",
+            "2",
+            "4",
+            "\\div",
+            "6",
+            "=",
+            "-",
+            "3",
+            "4"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:0",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:1",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:10",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:2",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:3",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:12",
+              "child": "18_em_23.inkml:4",
+              "type": "above",
+              "confidence": 0.9342105263157895,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:12",
+              "child": "18_em_23.inkml:5",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:6",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:7",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_23.inkml:8",
+              "child": "18_em_23.inkml:9",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_24.inkml",
+          "truth_labels": [
+            "7",
+            "5",
+            "2",
+            "9",
+            "5",
+            "3",
+            "6",
+            "1",
+            "5",
+            "6",
+            "2",
+            "5",
+            "-"
+          ],
+          "layout_labels": [
+            "-",
+            "7",
+            "5",
+            "2",
+            "9",
+            "5",
+            "3",
+            "6",
+            "1",
+            "5",
+            "6",
+            "2",
+            "5"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:0",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:1",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:10",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:11",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:2",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:3",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:4",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:5",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:6",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:7",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:8",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_24.inkml:12",
+              "child": "18_em_24.inkml:9",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_3.inkml",
+          "truth_labels": [
+            "q",
+            "1",
+            "q",
+            "2",
+            "q",
+            "m",
+            "\\dots"
+          ],
+          "layout_labels": [
+            "q",
+            "1",
+            "q",
+            "2",
+            "\\dots",
+            "q",
+            "m"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_3.inkml:7",
+              "child": "18_em_3.inkml:8",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_5.inkml",
+          "truth_labels": [
+            "g",
+            "n",
+            "\\rightarrow",
+            "\\infty",
+            "\\int",
+            "g",
+            "=",
+            "\\int",
+            "n"
+          ],
+          "layout_labels": [
+            "\\int",
+            "g",
+            "n",
+            "=",
+            "\\rightarrow",
+            "\\infty",
+            "\\int",
+            "g",
+            "n"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_5.inkml:0",
+              "child": "18_em_5.inkml:1",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_6.inkml",
+          "truth_labels": [
+            "g",
+            ")",
+            "-",
+            "g",
+            "(",
+            "a",
+            "b",
+            "-",
+            "a",
+            ")",
+            "(",
+            "b",
+            "="
+          ],
+          "layout_labels": [
+            "g",
+            "(",
+            "b",
+            ")",
+            "-",
+            "g",
+            "(",
+            "a",
+            ")",
+            "=",
+            "b",
+            "-",
+            "a"
+          ],
+          "edges": [],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "18_em_9.inkml",
+          "truth_labels": [
+            "b",
+            "+",
+            "\\sqrt{}",
+            "c",
+            "-",
+            "a"
+          ],
+          "layout_labels": [
+            "-",
+            "a",
+            "b",
+            "+",
+            "\\sqrt{}",
+            "c"
+          ],
+          "edges": [
+            {
+              "parent": "18_em_9.inkml:4",
+              "child": "18_em_9.inkml:0",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_9.inkml:4",
+              "child": "18_em_9.inkml:1",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_9.inkml:4",
+              "child": "18_em_9.inkml:2",
+              "type": "below",
+              "confidence": 0.9246153846153846,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_9.inkml:2",
+              "child": "18_em_9.inkml:3",
+              "type": "contains",
+              "confidence": 0.95,
+              "source": "root_topk_geometry"
+            },
+            {
+              "parent": "18_em_9.inkml:4",
+              "child": "18_em_9.inkml:3",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "18_em_9.inkml:4",
+              "child": "18_em_9.inkml:5",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "20_em_25.inkml",
+          "truth_labels": [
+            "+",
+            "y",
+            ")",
+            "x",
+            "y",
+            "x",
+            "y",
+            "+",
+            "(",
+            "x",
+            "="
+          ],
+          "layout_labels": [
+            "(",
+            "x",
+            "+",
+            "y",
+            ")",
+            "=",
+            "x",
+            "y",
+            "+",
+            "x",
+            "y"
+          ],
+          "edges": [],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "20_em_26.inkml",
+          "truth_labels": [
+            "9",
+            "9",
+            "+",
+            "\\sqrt{}",
+            "-",
+            "9"
+          ],
+          "layout_labels": [
+            "-",
+            "9",
+            "9",
+            "+",
+            "\\sqrt{}",
+            "9"
+          ],
+          "edges": [
+            {
+              "parent": "20_em_26.inkml:4",
+              "child": "20_em_26.inkml:0",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_26.inkml:4",
+              "child": "20_em_26.inkml:1",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_26.inkml:4",
+              "child": "20_em_26.inkml:2",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_26.inkml:4",
+              "child": "20_em_26.inkml:3",
+              "type": "below",
+              "confidence": 0.9054054054054055,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_26.inkml:4",
+              "child": "20_em_26.inkml:5",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": true
+        },
+        {
+          "formula_id": "20_em_27.inkml",
+          "truth_labels": [
+            "R",
+            "o",
+            "+",
+            "1",
+            "-",
+            "+",
+            "+",
+            "2",
+            "+",
+            "2",
+            "-",
+            "2",
+            "+",
+            "-",
+            "\\beta",
+            "=",
+            "\\beta",
+            "\\beta",
+            "\\beta",
+            "\\beta",
+            "r",
+            "r",
+            "e",
+            "(",
+            "(",
+            ")",
+            ")",
+            "2",
+            "o",
+            "-"
+          ],
+          "layout_labels": [
+            "R",
+            "o",
+            "=",
+            "-",
+            "(",
+            "\\beta",
+            "-",
+            "+",
+            "1",
+            "\\beta",
+            ")",
+            "r",
+            "e",
+            "+",
+            "\\beta",
+            "+",
+            "2",
+            "+",
+            "2",
+            "\\beta",
+            "-",
+            "2",
+            "+",
+            "2",
+            "-",
+            "(",
+            "\\beta",
+            ")",
+            "r",
+            "o"
+          ],
+          "edges": [
+            {
+              "parent": "20_em_27.inkml:0",
+              "child": "20_em_27.inkml:1",
+              "type": "subscript",
+              "confidence": 0.8,
+              "source": "script_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:10",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:11",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:12",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:13",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:13",
+              "child": "20_em_27.inkml:14",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:14",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:10",
+              "child": "20_em_27.inkml:16",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:16",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:13",
+              "child": "20_em_27.inkml:17",
+              "type": "above",
+              "confidence": 0.8827586206896552,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:17",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:18",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:4",
+              "child": "20_em_27.inkml:18",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:19",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:4",
+              "child": "20_em_27.inkml:19",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:2",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:4",
+              "child": "20_em_27.inkml:2",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:20",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:22",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:23",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:13",
+              "child": "20_em_27.inkml:24",
+              "type": "above",
+              "confidence": 0.9323529411764706,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:25",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:13",
+              "child": "20_em_27.inkml:27",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:27",
+              "type": "below",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:3",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:4",
+              "child": "20_em_27.inkml:3",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:4",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:5",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:6",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:7",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:8",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:10",
+              "child": "20_em_27.inkml:9",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            },
+            {
+              "parent": "20_em_27.inkml:29",
+              "child": "20_em_27.inkml:9",
+              "type": "above",
+              "confidence": 0.95,
+              "source": "fraction_geometry"
+            }
+          ],
+          "top5_oracle": false
+        },
+        {
+          "formula_id": "20_em_29.inkml",
+          "truth_labels": [
+            "\\infty",
+            "\\infty",
+            ")",
+            "-",
+            "("
+          ],
+          "layout_labels": [
+            "(",
+            "-",
+            "\\infty",
+            "\\infty",
+            ")"
+          ],
+          "edges": [],
+          "top5_oracle": true
+        }
+      ]
+    },
+    "finalizer_delta": {
+      "changed_glyphs": 2,
+      "improved_glyphs": 2,
+      "regressed_glyphs": 0,
+      "net_glyph_improvement": 2,
+      "improved_formulas": 1,
+      "regressed_formulas": 0,
+      "changes": [
+        {
+          "formula_id": "31_em_195.inkml",
+          "record_id": "31_em_195.inkml:0",
+          "before": "\\lfloor",
+          "after": "1",
+          "truth": "1",
+          "outcome": "improved",
+          "before_probability": 0.43276089429855347,
+          "after_probability": 1.0
+        },
+        {
+          "formula_id": "RIT_2014_146.inkml",
+          "record_id": "RIT_2014_146.inkml:1",
+          "before": "\\mid",
+          "after": "1",
+          "truth": "1",
+          "outcome": "improved",
+          "before_probability": 0.20749011635780334,
+          "after_probability": 1.0
+        }
+      ]
+    },
+    "candidates_sha256": "2665d32b1e67f0ea5710c1096d8ede8c7205273a0d173305e836f1feefd364a6",
+    "finalized_sha256": "9c1be1638171bbbaf361e75a4a309d3c4d098a20978d72953739f75e62b28c6f",
+    "baseline_finalized_sha256": "57dfdcb9941651eb52aa72fc65324c5b9b984fc537c32f9acbdd466fb375cddf",
+    "product_validation": false
+  },
+  "script_layout_checkpoint": null
+}

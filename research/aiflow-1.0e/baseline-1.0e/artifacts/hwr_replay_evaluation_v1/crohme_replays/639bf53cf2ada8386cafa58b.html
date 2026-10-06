@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>501_em_23.inkml</title>
+<style>body{font:16px system-ui;margin:24px;max-width:720px}canvas{border:1px solid #888;width:100%;height:auto}input{width:100%}button{margin-right:8px}</style>
+<h1>501_em_23.inkml</h1><p>truth: $\phi &gt; 0$</p>
+<canvas id="ink" width="640" height="480"></canvas>
+<p><button id="play" type="button">play (48 Hz)</button><button id="reset" type="button">reset</button></p>
+<input id="step" type="range" min="0" value="0"><output id="count"></output>
+<script>
+const strokes=[[[164.0, 215.0], [161.0, 215.0], [158.0, 216.0], [156.0, 219.0], [152.0, 222.0], [149.0, 227.0], [145.0, 233.0], [142.0, 240.0], [140.0, 248.0], [138.0, 257.0], [139.0, 267.0], [141.0, 276.0], [144.0, 284.0], [148.0, 290.0], [152.0, 295.0], [164.0, 300.0], [170.0, 299.0], [176.0, 296.0], [182.0, 292.0], [187.0, 286.0], [191.0, 278.0], [194.0, 270.0], [196.0, 261.0], [196.0, 253.0], [195.0, 245.0], [193.0, 239.0], [189.0, 236.0], [185.0, 234.0], [178.0, 234.0], [172.0, 236.0], [166.0, 239.0], [160.0, 243.0], [159.0, 245.0]], [[198.0, 191.0], [198.0, 192.0], [195.0, 199.0], [193.0, 204.0], [191.0, 209.0], [189.0, 217.0], [185.0, 225.0], [182.0, 235.0], [177.0, 247.0], [168.0, 277.0], [164.0, 294.0], [160.0, 312.0]], [[223.0, 229.0], [223.0, 232.0], [224.0, 235.0], [227.0, 237.0], [230.0, 239.0], [235.0, 242.0], [240.0, 244.0], [246.0, 246.0], [252.0, 248.0], [257.0, 251.0], [260.0, 254.0], [261.0, 258.0], [257.0, 267.0], [253.0, 273.0], [248.0, 280.0], [241.0, 287.0], [235.0, 296.0], [229.0, 304.0], [225.0, 312.0], [219.0, 322.0]], [[297.0, 238.0], [292.0, 247.0], [288.0, 253.0], [285.0, 260.0], [283.0, 268.0], [282.0, 274.0], [282.0, 279.0], [284.0, 283.0], [287.0, 286.0], [290.0, 287.0], [294.0, 285.0], [307.0, 273.0], [311.0, 265.0], [315.0, 257.0], [318.0, 249.0], [319.0, 243.0], [318.0, 239.0], [315.0, 236.0], [310.0, 235.0], [304.0, 237.0], [299.0, 238.0]]]; const points=[];
+for(let s=0;s<strokes.length;s++) for(let p=0;p<strokes[s].length;p++) points.push([s,p,strokes[s][p]]);
+const canvas=document.getElementById('ink'),ctx=canvas.getContext('2d'),step=document.getElementById('step'),count=document.getElementById('count');
+step.max=points.length; let timer=null;
+const flat=points.map(v=>v[2]), xs=flat.map(v=>v[0]), ys=flat.map(v=>v[1]);
+const loX=Math.min(...xs), hiX=Math.max(...xs), loY=Math.min(...ys), hiY=Math.max(...ys), span=Math.max(hiX-loX,hiY-loY,1), pad=32;
+function map(p){return [pad+(p[0]-loX)/span*(canvas.width-2*pad),pad+(p[1]-loY)/span*(canvas.height-2*pad)]}
+function draw(){const n=Number(step.value);ctx.clearRect(0,0,canvas.width,canvas.height);ctx.lineWidth=2;ctx.strokeStyle='#111';ctx.lineCap='round';for(let i=0;i<n;i++){const [s,p,point]=points[i],xy=map(point);if(p===0){ctx.beginPath();ctx.moveTo(...xy)}else{ctx.lineTo(...xy);ctx.stroke();ctx.beginPath();ctx.moveTo(...xy)}ctx.fillStyle='#2563eb';ctx.beginPath();ctx.arc(...xy,2.5,0,Math.PI*2);ctx.fill()}count.value=`${n} / ${points.length} points`;}
+step.addEventListener('input',draw);document.getElementById('reset').onclick=()=>{step.value=0;draw()};document.getElementById('play').onclick=()=>{if(timer){clearInterval(timer);timer=null;return} timer=setInterval(()=>{if(Number(step.value)>=points.length){clearInterval(timer);timer=null}else{step.value=Number(step.value)+1;draw()}},1000/48)};draw();
+</script>
