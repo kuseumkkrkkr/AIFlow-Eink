@@ -1,0 +1,209 @@
+{
+  "schema": "aiflow-cleanroom-writer-style/v4",
+  "generated_at": "2026-08-22T12:10:02.332783+00:00",
+  "status": "candidate_pass",
+  "classes": 61,
+  "writers": 4,
+  "generated_rows": 244,
+  "shape": [
+    4,
+    61,
+    128,
+    5
+  ],
+  "writer_styles": [
+    {
+      "writer_id": "writer_compact_upright",
+      "slant": -0.03,
+      "width_scale": 0.82,
+      "height_scale": 1.1,
+      "baseline_tilt": -0.025,
+      "roundness": 0.08,
+      "bow_x": -0.006,
+      "bow_y": 0.004,
+      "terminal_hook": -0.006,
+      "motor_speed_scale": 0.92,
+      "damping_offset": 0.07,
+      "minimum_jerk_scale": 0.86,
+      "tremor_scale": 0.72,
+      "drift_scale": 0.68
+    },
+    {
+      "writer_id": "writer_slanted_round",
+      "slant": 0.22,
+      "width_scale": 0.98,
+      "height_scale": 1.02,
+      "baseline_tilt": 0.035,
+      "roundness": 0.28,
+      "bow_x": 0.016,
+      "bow_y": 0.006,
+      "terminal_hook": 0.014,
+      "motor_speed_scale": 0.88,
+      "damping_offset": 0.09,
+      "minimum_jerk_scale": 1.08,
+      "tremor_scale": 0.62,
+      "drift_scale": 0.72
+    },
+    {
+      "writer_id": "writer_wide_relaxed",
+      "slant": 0.04,
+      "width_scale": 1.22,
+      "height_scale": 0.88,
+      "baseline_tilt": -0.045,
+      "roundness": 0.18,
+      "bow_x": -0.012,
+      "bow_y": 0.015,
+      "terminal_hook": -0.012,
+      "motor_speed_scale": 0.82,
+      "damping_offset": -0.04,
+      "minimum_jerk_scale": 1.18,
+      "tremor_scale": 0.82,
+      "drift_scale": 1.12
+    },
+    {
+      "writer_id": "writer_narrow_quick",
+      "slant": 0.13,
+      "width_scale": 0.76,
+      "height_scale": 1.16,
+      "baseline_tilt": 0.055,
+      "roundness": 0.04,
+      "bow_x": 0.008,
+      "bow_y": -0.012,
+      "terminal_hook": 0.008,
+      "motor_speed_scale": 1.18,
+      "damping_offset": -0.06,
+      "minimum_jerk_scale": 0.76,
+      "tremor_scale": 1.22,
+      "drift_scale": 0.88
+    }
+  ],
+  "per_writer": {
+    "writer_compact_upright": {
+      "hwr": {
+        "records": 61,
+        "top1": 0.7213114754098361,
+        "top5": 0.9508196721311475
+      },
+      "topology_mismatches": 0,
+      "style_reverted_rows": 0,
+      "style_strength": {
+        "minimum": 0.46,
+        "median": 1.0
+      }
+    },
+    "writer_slanted_round": {
+      "hwr": {
+        "records": 61,
+        "top1": 0.6885245901639344,
+        "top5": 0.9180327868852459
+      },
+      "topology_mismatches": 0,
+      "style_reverted_rows": 0,
+      "style_strength": {
+        "minimum": 0.82,
+        "median": 1.0
+      }
+    },
+    "writer_wide_relaxed": {
+      "hwr": {
+        "records": 61,
+        "top1": 0.7377049180327869,
+        "top5": 0.9508196721311475
+      },
+      "topology_mismatches": 0,
+      "style_reverted_rows": 1,
+      "style_strength": {
+        "minimum": 0.0,
+        "median": 1.0
+      }
+    },
+    "writer_narrow_quick": {
+      "hwr": {
+        "records": 61,
+        "top1": 0.6557377049180327,
+        "top5": 0.9344262295081968
+      },
+      "topology_mismatches": 0,
+      "style_reverted_rows": 1,
+      "style_strength": {
+        "minimum": 0.0,
+        "median": 1.0
+      }
+    }
+  },
+  "writer_separation": {
+    "minimum_pair_median_rms": 0.04564345255494118,
+    "pairwise": {
+      "writer_compact_upright__writer_slanted_round": {
+        "median_rms": 0.06769262999296188,
+        "minimum_rms": 0.028811169788241386,
+        "maximum_rms": 0.09759493917226791
+      },
+      "writer_compact_upright__writer_wide_relaxed": {
+        "median_rms": 0.08612338453531265,
+        "minimum_rms": 0.03082946315407753,
+        "maximum_rms": 0.1223471388220787
+      },
+      "writer_compact_upright__writer_narrow_quick": {
+        "median_rms": 0.04564345255494118,
+        "minimum_rms": 0.02360985055565834,
+        "maximum_rms": 0.07535237073898315
+      },
+      "writer_slanted_round__writer_wide_relaxed": {
+        "median_rms": 0.07472776621580124,
+        "minimum_rms": 0.022065535187721252,
+        "maximum_rms": 0.13429482281208038
+      },
+      "writer_slanted_round__writer_narrow_quick": {
+        "median_rms": 0.04843432828783989,
+        "minimum_rms": 0.024126799777150154,
+        "maximum_rms": 0.07807843387126923
+      },
+      "writer_wide_relaxed__writer_narrow_quick": {
+        "median_rms": 0.10663129389286041,
+        "minimum_rms": 0.0,
+        "maximum_rms": 0.15855589509010315
+      }
+    }
+  },
+  "topology_mismatches": 0,
+  "gates": {
+    "non_spatial_channels": true,
+    "topology": true,
+    "writer_separation": true,
+    "hwr_top5": true,
+    "finite_unit_box": true
+  },
+  "source": {
+    "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\cleanroom_alphanumeric_pen_physics_v3_20260823_r5",
+    "npz_sha256": "258766a3051fa915bd95b4e69fa4753b9d7c10557ab25e8c8bf0eb4fecaf55fe"
+  },
+  "output": {
+    "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\cleanroom_writer_style_v4_20260823_r1\\synthetic_writers_alphanumeric.npz",
+    "sha256": "9c453c3ae41e425de79aa63b0ce7b5b39d038ee3ac38f924ea24a4f13f8a492f"
+  },
+  "metadata": {
+    "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\cleanroom_writer_style_v4_20260823_r1\\writer_metadata.json",
+    "sha256": "fb666ccaf9d1796a5002a18296f24849291f2449e69666e15f5c3474838135a7"
+  },
+  "previews": {
+    "digits": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\cleanroom_writer_style_v4_20260823_r1\\preview_writer_styles_digits.png",
+      "sha256": "085c89a49d1c10bd3986724bc3606ab638c1465f9f1223c68ae622193e0ff544"
+    },
+    "uppercase": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\cleanroom_writer_style_v4_20260823_r1\\preview_writer_styles_uppercase.png",
+      "sha256": "acbc4fe4f44bc59fc6a0b56f564afc0dbb3dc5cab54dace9bf2f6cd2c14bd317"
+    },
+    "lowercase": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\cleanroom_writer_style_v4_20260823_r1\\preview_writer_styles_lowercase.png",
+      "sha256": "2435edb2f3070cb98291cd8aae6793ac35343256cc006ca566b002cd671e2a39"
+    }
+  },
+  "training_performed": false,
+  "crohme_rows": 0,
+  "mathwriting_rows": 0,
+  "product_runtime_changed": false,
+  "hwr_checkpoint_changed": false,
+  "context_checkpoint_changed": false
+}

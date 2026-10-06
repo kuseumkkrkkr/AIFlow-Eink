@@ -1,0 +1,2569 @@
+{
+  "schema": "aiflow-commercial-hwr-cleanroom-physics/v2",
+  "generated_at": "2026-08-22T07:36:47.355071+00:00",
+  "status": "search_only",
+  "architecture_unchanged": true,
+  "architecture": {
+    "input": [
+      128,
+      5
+    ],
+    "channels": [
+      "x",
+      "y",
+      "delta_t",
+      "stroke_start",
+      "observed"
+    ],
+    "classes": 372,
+    "hidden": 128,
+    "transformer_blocks": 4,
+    "attention_heads": 4,
+    "single_head": true
+  },
+  "input_contract": {
+    "channels": [
+      "x",
+      "y",
+      "delta_t",
+      "stroke_start",
+      "observed"
+    ],
+    "observed_channel_mode": "uniform-time",
+    "math_observed_transform": "uniform-time",
+    "auxiliary_observed_transform": "uniform-time",
+    "observed_channel_policy": "constant_one_for_source_invariance",
+    "delta_t_policy": "normalized_sequence_progress:first_zero_then_1/(points-1)"
+  },
+  "selection_policy": {
+    "project_writer_disjoint": true,
+    "writers": 7,
+    "records": 387,
+    "selection_used_fresh_acceptance": false,
+    "selection_used_crohme": false,
+    "selection_used_mathwriting": false,
+    "external_rows_role": "class-balanced rehearsal and same-label DTW parents only"
+  },
+  "clean_room_contract": {
+    "purpose": "independent rights-compliant physical simulation, not licence circumvention",
+    "admitted_parent_sources": [
+      "hwrt",
+      "isgl",
+      "uci",
+      "uji"
+    ],
+    "excluded_sources": [
+      "BDSHWA: no character boundary",
+      "noncommercial evaluation corpora"
+    ],
+    "same_label_dtw_only": true,
+    "same_stroke_count_dtw_only": true,
+    "project_dtw_cross_writer_only": true,
+    "near_parent_filter": "DTW-aligned RMS [0.035, 0.45] and synthetic-parent RMS >= 0.008",
+    "physical_parameters": "predeclared generic spring, damping, inertia, tremor, drift, monotonic speed warp",
+    "physical_parameters_fitted_from_external_evaluation": false,
+    "evaluation_error_labels_used_for_targeting": false,
+    "non_spatial_channels_unchanged": [
+      "delta_t",
+      "stroke_start",
+      "observed"
+    ],
+    "time_quality": "uniform delta_t; speed variation represented only by monotonic XY progression"
+  },
+  "dtw_banks": {
+    "external": {
+      "requested": 1024,
+      "generated": 1024,
+      "attempts": 1128,
+      "eligible_labels": 371,
+      "generated_labels": 368,
+      "eligible_topology_groups": 1258,
+      "unique_parent_records": 1926,
+      "same_label_pairs_only": true,
+      "same_stroke_count_only": true,
+      "cross_writer_required": false,
+      "non_spatial_channels_preserved": true,
+      "rejections": {
+        "parent distance is outside the clean-room blend gate": 102,
+        "synthetic trajectory is too close to a parent": 2
+      },
+      "pair_rms": {
+        "minimum": 0.035332563942063036,
+        "median": 0.18576912061450185,
+        "maximum": 0.4499156815903994
+      },
+      "dtw_cost": {
+        "minimum": 0.0514244749184907,
+        "median": 0.2683045623045699,
+        "maximum": 0.7637638303150552
+      }
+    },
+    "project_final": {
+      "requested": 192,
+      "generated": 192,
+      "attempts": 276,
+      "eligible_labels": 25,
+      "generated_labels": 25,
+      "eligible_topology_groups": 29,
+      "unique_parent_records": 210,
+      "same_label_pairs_only": true,
+      "same_stroke_count_only": true,
+      "cross_writer_required": true,
+      "non_spatial_channels_preserved": true,
+      "rejections": {
+        "parent distance is outside the clean-room blend gate": 23,
+        "same_writer": 60,
+        "synthetic trajectory is too close to a parent": 1
+      },
+      "pair_rms": {
+        "minimum": 0.03741908803627675,
+        "median": 0.09433568617610118,
+        "maximum": 0.4220540707400819
+      },
+      "dtw_cost": {
+        "minimum": 0.06738432868892645,
+        "median": 0.15558545395476236,
+        "maximum": 0.7512384142260152
+      }
+    }
+  },
+  "variants": {
+    "control_head": {
+      "variant": {
+        "name": "control_head",
+        "train_scope": "head",
+        "learning_rate": 0.0,
+        "geometry": {
+          "name": "none",
+          "train_scope": "last_block",
+          "learning_rate": 0.0,
+          "rotation_degrees": 0.0,
+          "aspect_log_scale": 0.0,
+          "shear": 0.0,
+          "elastic": 0.0,
+          "top5_margin_weight": 0.0
+        },
+        "physics": {
+          "name": "none",
+          "time_warp_log": 0.0,
+          "response_min": 1.0,
+          "response_max": 1.0,
+          "momentum_min": 0.0,
+          "momentum_max": 0.0,
+          "tremor": 0.0,
+          "drift": 0.0
+        },
+        "use_dtw": false,
+        "top5_margin_weight": 0.0
+      },
+      "folds": [
+        {
+          "held_writer": "2108826fd653f869fdd991c5",
+          "held_records": 100,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 267,
+            "eligible_labels": 23,
+            "generated_labels": 23,
+            "eligible_topology_groups": 25,
+            "unique_parent_records": 184,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 18,
+              "same_writer": 56,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.03501454829742798,
+              "median": 0.09091529165948388,
+              "maximum": 0.44021274958275225
+            },
+            "dtw_cost": {
+              "minimum": 0.06689412455683347,
+              "median": 0.14438826554872142,
+              "maximum": 0.7750779087190021
+            }
+          }
+        },
+        {
+          "held_writer": "3e41b56c75d3f1af3cc89494",
+          "held_records": 35,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 255,
+            "eligible_labels": 24,
+            "generated_labels": 24,
+            "eligible_topology_groups": 27,
+            "unique_parent_records": 195,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 18,
+              "same_writer": 44,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.03522273612971999,
+              "median": 0.08856506339049226,
+              "maximum": 0.4230647051393576
+            },
+            "dtw_cost": {
+              "minimum": 0.058316669117363974,
+              "median": 0.1481241691455171,
+              "maximum": 0.6476540817603127
+            }
+          }
+        },
+        {
+          "held_writer": "50768ec7799073826818d9b6",
+          "held_records": 23,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 285,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 198,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 21,
+              "same_writer": 72
+            },
+            "pair_rms": {
+              "minimum": 0.03501454829742798,
+              "median": 0.09900950222744045,
+              "maximum": 0.44021274958275225
+            },
+            "dtw_cost": {
+              "minimum": 0.0636351681296792,
+              "median": 0.15906238072398046,
+              "maximum": 0.7750779087190021
+            }
+          }
+        },
+        {
+          "held_writer": "6253df366faf0937d94146d3",
+          "held_records": 80,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 273,
+            "eligible_labels": 24,
+            "generated_labels": 24,
+            "eligible_topology_groups": 28,
+            "unique_parent_records": 191,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 15,
+              "same_writer": 62,
+              "synthetic trajectory is too close to a parent": 4
+            },
+            "pair_rms": {
+              "minimum": 0.03701828278431756,
+              "median": 0.10697232512028942,
+              "maximum": 0.4266969990985092
+            },
+            "dtw_cost": {
+              "minimum": 0.06910353041935756,
+              "median": 0.1681120777065805,
+              "maximum": 0.7684913601847677
+            }
+          }
+        },
+        {
+          "held_writer": "6654957a88583df48a89c20d",
+          "held_records": 35,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 267,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 195,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 22,
+              "same_writer": 52,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.035307154036296064,
+              "median": 0.09333674820086221,
+              "maximum": 0.42245362706564243
+            },
+            "dtw_cost": {
+              "minimum": 0.06689412455683347,
+              "median": 0.1491448675791814,
+              "maximum": 0.7576277981436377
+            }
+          }
+        },
+        {
+          "held_writer": "baed3dc87cbfa8c20bdde074",
+          "held_records": 82,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 264,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 179,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 17,
+              "same_writer": 53,
+              "synthetic trajectory is too close to a parent": 2
+            },
+            "pair_rms": {
+              "minimum": 0.03522273612971999,
+              "median": 0.09353439195736311,
+              "maximum": 0.4220540707400819
+            },
+            "dtw_cost": {
+              "minimum": 0.058316669117363974,
+              "median": 0.14805074538531485,
+              "maximum": 0.7210638522362219
+            }
+          }
+        },
+        {
+          "held_writer": "ed6789e0639f68e05d5e2d1b",
+          "held_records": 32,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 263,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 28,
+            "unique_parent_records": 190,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 19,
+              "same_writer": 49,
+              "synthetic trajectory is too close to a parent": 3
+            },
+            "pair_rms": {
+              "minimum": 0.03522273612971999,
+              "median": 0.0987663441679551,
+              "maximum": 0.4266969990985092
+            },
+            "dtw_cost": {
+              "minimum": 0.058316669117363974,
+              "median": 0.16039938759411226,
+              "maximum": 0.7684913601847677
+            }
+          }
+        }
+      ],
+      "writer_disjoint": {
+        "records": 387,
+        "top1": 0.8036175710594315,
+        "top5": 0.9612403100775194,
+        "strict_macro_top1": 0.7854737432780668,
+        "strict_macro_top5": 0.9735486900562897,
+        "ece_10": 0.08070054061191029,
+        "writer_macro_top1": 0.7974241727443893,
+        "writer_macro_top5": 0.9405931731122988,
+        "worst_writer_top1": 0.6521739130434783,
+        "worst_writer_top5": 0.7391304347826086,
+        "by_writer": [
+          {
+            "writer": "2108826fd653f869fdd991c5",
+            "records": 100,
+            "top1": 0.76,
+            "top5": 0.97
+          },
+          {
+            "writer": "3e41b56c75d3f1af3cc89494",
+            "records": 35,
+            "top1": 0.7714285714285715,
+            "top5": 0.9714285714285714
+          },
+          {
+            "writer": "50768ec7799073826818d9b6",
+            "records": 23,
+            "top1": 0.6521739130434783,
+            "top5": 0.7391304347826086
+          },
+          {
+            "writer": "6253df366faf0937d94146d3",
+            "records": 80,
+            "top1": 0.925,
+            "top5": 1.0
+          },
+          {
+            "writer": "6654957a88583df48a89c20d",
+            "records": 35,
+            "top1": 0.8857142857142857,
+            "top5": 0.9714285714285714
+          },
+          {
+            "writer": "baed3dc87cbfa8c20bdde074",
+            "records": 82,
+            "top1": 0.7439024390243902,
+            "top5": 0.9634146341463414
+          },
+          {
+            "writer": "ed6789e0639f68e05d5e2d1b",
+            "records": 32,
+            "top1": 0.84375,
+            "top5": 0.96875
+          }
+        ],
+        "by_label": {
+          "+": {
+            "records": 37,
+            "top1": 0.8378378378378378,
+            "top5": 0.9459459459459459
+          },
+          "-": {
+            "records": 10,
+            "top1": 0.9,
+            "top5": 1.0
+          },
+          "/": {
+            "records": 8,
+            "top1": 0.875,
+            "top5": 1.0
+          },
+          "0": {
+            "records": 24,
+            "top1": 0.6666666666666666,
+            "top5": 0.875
+          },
+          "1": {
+            "records": 41,
+            "top1": 0.6585365853658537,
+            "top5": 0.975609756097561
+          },
+          "2": {
+            "records": 24,
+            "top1": 0.9583333333333334,
+            "top5": 0.9583333333333334
+          },
+          "3": {
+            "records": 17,
+            "top1": 0.9411764705882353,
+            "top5": 1.0
+          },
+          "4": {
+            "records": 17,
+            "top1": 0.8823529411764706,
+            "top5": 1.0
+          },
+          "5": {
+            "records": 23,
+            "top1": 0.7391304347826086,
+            "top5": 0.9130434782608695
+          },
+          "6": {
+            "records": 18,
+            "top1": 0.8333333333333334,
+            "top5": 1.0
+          },
+          "7": {
+            "records": 14,
+            "top1": 0.8571428571428571,
+            "top5": 1.0
+          },
+          "8": {
+            "records": 13,
+            "top1": 0.38461538461538464,
+            "top5": 0.9230769230769231
+          },
+          "9": {
+            "records": 7,
+            "top1": 0.8571428571428571,
+            "top5": 0.8571428571428571
+          },
+          "\\div": {
+            "records": 11,
+            "top1": 0.7272727272727273,
+            "top5": 0.9090909090909091
+          },
+          "\\neq": {
+            "records": 1,
+            "top1": 0.0,
+            "top5": 1.0
+          },
+          "\\sqrt{}": {
+            "records": 1,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "\\times": {
+            "records": 18,
+            "top1": 0.7777777777777778,
+            "top5": 1.0
+          },
+          "a": {
+            "records": 4,
+            "top1": 0.75,
+            "top5": 1.0
+          },
+          "b": {
+            "records": 7,
+            "top1": 0.8571428571428571,
+            "top5": 1.0
+          },
+          "f": {
+            "records": 6,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "m": {
+            "records": 3,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "n": {
+            "records": 7,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "x": {
+            "records": 5,
+            "top1": 0.2,
+            "top5": 1.0
+          },
+          "y": {
+            "records": 7,
+            "top1": 0.7142857142857143,
+            "top5": 1.0
+          },
+          "(": {
+            "records": 11,
+            "top1": 0.9090909090909091,
+            "top5": 1.0
+          },
+          ")": {
+            "records": 11,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "=": {
+            "records": 42,
+            "top1": 0.8809523809523809,
+            "top5": 0.9285714285714286
+          }
+        },
+        "by_family": {
+          "vertical_slash": {
+            "records": 49,
+            "top1": 0.6938775510204082,
+            "top5": 0.9795918367346939
+          },
+          "circle": {
+            "records": 24,
+            "top1": 0.6666666666666666,
+            "top5": 0.875
+          },
+          "cross": {
+            "records": 23,
+            "top1": 0.6521739130434783,
+            "top5": 1.0
+          }
+        }
+      }
+    },
+    "dtw_only_fast": {
+      "variant": {
+        "name": "dtw_only_fast",
+        "train_scope": "last_block",
+        "learning_rate": 2e-05,
+        "geometry": {
+          "name": "mild_v2",
+          "train_scope": "last_block",
+          "learning_rate": 0.0,
+          "rotation_degrees": 5.0,
+          "aspect_log_scale": 0.08,
+          "shear": 0.05,
+          "elastic": 0.008,
+          "top5_margin_weight": 0.0
+        },
+        "physics": {
+          "name": "none",
+          "time_warp_log": 0.0,
+          "response_min": 1.0,
+          "response_max": 1.0,
+          "momentum_min": 0.0,
+          "momentum_max": 0.0,
+          "tremor": 0.0,
+          "drift": 0.0
+        },
+        "use_dtw": true,
+        "top5_margin_weight": 0.35
+      },
+      "folds": [
+        {
+          "held_writer": "2108826fd653f869fdd991c5",
+          "held_records": 100,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "none",
+              "time_warp_log": 0.0,
+              "response_min": 1.0,
+              "response_max": 1.0,
+              "momentum_min": 0.0,
+              "momentum_max": 0.0,
+              "tremor": 0.0,
+              "drift": 0.0
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.7823845744132996,
+            "final_loss": 4.314288139343262,
+            "seconds": 5.3437555000055
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 267,
+            "eligible_labels": 23,
+            "generated_labels": 23,
+            "eligible_topology_groups": 25,
+            "unique_parent_records": 184,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 18,
+              "same_writer": 56,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.03501454829742798,
+              "median": 0.09091529165948388,
+              "maximum": 0.44021274958275225
+            },
+            "dtw_cost": {
+              "minimum": 0.06689412455683347,
+              "median": 0.14438826554872142,
+              "maximum": 0.7750779087190021
+            }
+          }
+        },
+        {
+          "held_writer": "3e41b56c75d3f1af3cc89494",
+          "held_records": 35,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "none",
+              "time_warp_log": 0.0,
+              "response_min": 1.0,
+              "response_max": 1.0,
+              "momentum_min": 0.0,
+              "momentum_max": 0.0,
+              "tremor": 0.0,
+              "drift": 0.0
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.3475265006224313,
+            "final_loss": 2.8201904296875,
+            "seconds": 5.136440099995525
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 255,
+            "eligible_labels": 24,
+            "generated_labels": 24,
+            "eligible_topology_groups": 27,
+            "unique_parent_records": 195,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 18,
+              "same_writer": 44,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.03522273612971999,
+              "median": 0.08856506339049226,
+              "maximum": 0.4230647051393576
+            },
+            "dtw_cost": {
+              "minimum": 0.058316669117363974,
+              "median": 0.1481241691455171,
+              "maximum": 0.6476540817603127
+            }
+          }
+        },
+        {
+          "held_writer": "50768ec7799073826818d9b6",
+          "held_records": 23,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "none",
+              "time_warp_log": 0.0,
+              "response_min": 1.0,
+              "response_max": 1.0,
+              "momentum_min": 0.0,
+              "momentum_max": 0.0,
+              "tremor": 0.0,
+              "drift": 0.0
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.601239502429962,
+            "final_loss": 3.595999002456665,
+            "seconds": 5.116299799999979
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 285,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 198,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 21,
+              "same_writer": 72
+            },
+            "pair_rms": {
+              "minimum": 0.03501454829742798,
+              "median": 0.09900950222744045,
+              "maximum": 0.44021274958275225
+            },
+            "dtw_cost": {
+              "minimum": 0.0636351681296792,
+              "median": 0.15906238072398046,
+              "maximum": 0.7750779087190021
+            }
+          }
+        },
+        {
+          "held_writer": "6253df366faf0937d94146d3",
+          "held_records": 80,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "none",
+              "time_warp_log": 0.0,
+              "response_min": 1.0,
+              "response_max": 1.0,
+              "momentum_min": 0.0,
+              "momentum_max": 0.0,
+              "tremor": 0.0,
+              "drift": 0.0
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.9041899542013803,
+            "final_loss": 3.4889068603515625,
+            "seconds": 5.069649299999583
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 273,
+            "eligible_labels": 24,
+            "generated_labels": 24,
+            "eligible_topology_groups": 28,
+            "unique_parent_records": 191,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 15,
+              "same_writer": 62,
+              "synthetic trajectory is too close to a parent": 4
+            },
+            "pair_rms": {
+              "minimum": 0.03701828278431756,
+              "median": 0.10697232512028942,
+              "maximum": 0.4266969990985092
+            },
+            "dtw_cost": {
+              "minimum": 0.06910353041935756,
+              "median": 0.1681120777065805,
+              "maximum": 0.7684913601847677
+            }
+          }
+        },
+        {
+          "held_writer": "6654957a88583df48a89c20d",
+          "held_records": 35,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "none",
+              "time_warp_log": 0.0,
+              "response_min": 1.0,
+              "response_max": 1.0,
+              "momentum_min": 0.0,
+              "momentum_max": 0.0,
+              "tremor": 0.0,
+              "drift": 0.0
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.8347239991029105,
+            "final_loss": 2.7961928844451904,
+            "seconds": 5.0884966000012355
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 267,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 195,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 22,
+              "same_writer": 52,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.035307154036296064,
+              "median": 0.09333674820086221,
+              "maximum": 0.42245362706564243
+            },
+            "dtw_cost": {
+              "minimum": 0.06689412455683347,
+              "median": 0.1491448675791814,
+              "maximum": 0.7576277981436377
+            }
+          }
+        },
+        {
+          "held_writer": "baed3dc87cbfa8c20bdde074",
+          "held_records": 82,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "none",
+              "time_warp_log": 0.0,
+              "response_min": 1.0,
+              "response_max": 1.0,
+              "momentum_min": 0.0,
+              "momentum_max": 0.0,
+              "tremor": 0.0,
+              "drift": 0.0
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 4.4202253222465515,
+            "final_loss": 6.266162395477295,
+            "seconds": 5.1004085000022314
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 264,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 179,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 17,
+              "same_writer": 53,
+              "synthetic trajectory is too close to a parent": 2
+            },
+            "pair_rms": {
+              "minimum": 0.03522273612971999,
+              "median": 0.09353439195736311,
+              "maximum": 0.4220540707400819
+            },
+            "dtw_cost": {
+              "minimum": 0.058316669117363974,
+              "median": 0.14805074538531485,
+              "maximum": 0.7210638522362219
+            }
+          }
+        },
+        {
+          "held_writer": "ed6789e0639f68e05d5e2d1b",
+          "held_records": 32,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "none",
+              "time_warp_log": 0.0,
+              "response_min": 1.0,
+              "response_max": 1.0,
+              "momentum_min": 0.0,
+              "momentum_max": 0.0,
+              "tremor": 0.0,
+              "drift": 0.0
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 4.047013918558757,
+            "final_loss": 5.412509918212891,
+            "seconds": 5.074030399999174
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 263,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 28,
+            "unique_parent_records": 190,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 19,
+              "same_writer": 49,
+              "synthetic trajectory is too close to a parent": 3
+            },
+            "pair_rms": {
+              "minimum": 0.03522273612971999,
+              "median": 0.0987663441679551,
+              "maximum": 0.4266969990985092
+            },
+            "dtw_cost": {
+              "minimum": 0.058316669117363974,
+              "median": 0.16039938759411226,
+              "maximum": 0.7684913601847677
+            }
+          }
+        }
+      ],
+      "writer_disjoint": {
+        "records": 387,
+        "top1": 0.8062015503875969,
+        "top5": 0.9612403100775194,
+        "strict_macro_top1": 0.7883227461270698,
+        "strict_macro_top5": 0.9735486900562897,
+        "ece_10": 0.07709038969928289,
+        "writer_macro_top1": 0.799166333023135,
+        "writer_macro_top5": 0.9405931731122988,
+        "worst_writer_top1": 0.6521739130434783,
+        "worst_writer_top5": 0.7391304347826086,
+        "by_writer": [
+          {
+            "writer": "2108826fd653f869fdd991c5",
+            "records": 100,
+            "top1": 0.76,
+            "top5": 0.97
+          },
+          {
+            "writer": "3e41b56c75d3f1af3cc89494",
+            "records": 35,
+            "top1": 0.7714285714285715,
+            "top5": 0.9714285714285714
+          },
+          {
+            "writer": "50768ec7799073826818d9b6",
+            "records": 23,
+            "top1": 0.6521739130434783,
+            "top5": 0.7391304347826086
+          },
+          {
+            "writer": "6253df366faf0937d94146d3",
+            "records": 80,
+            "top1": 0.925,
+            "top5": 1.0
+          },
+          {
+            "writer": "6654957a88583df48a89c20d",
+            "records": 35,
+            "top1": 0.8857142857142857,
+            "top5": 0.9714285714285714
+          },
+          {
+            "writer": "baed3dc87cbfa8c20bdde074",
+            "records": 82,
+            "top1": 0.7560975609756098,
+            "top5": 0.9634146341463414
+          },
+          {
+            "writer": "ed6789e0639f68e05d5e2d1b",
+            "records": 32,
+            "top1": 0.84375,
+            "top5": 0.96875
+          }
+        ],
+        "by_label": {
+          "+": {
+            "records": 37,
+            "top1": 0.8378378378378378,
+            "top5": 0.9459459459459459
+          },
+          "-": {
+            "records": 10,
+            "top1": 0.9,
+            "top5": 1.0
+          },
+          "/": {
+            "records": 8,
+            "top1": 0.875,
+            "top5": 1.0
+          },
+          "0": {
+            "records": 24,
+            "top1": 0.6666666666666666,
+            "top5": 0.875
+          },
+          "1": {
+            "records": 41,
+            "top1": 0.6585365853658537,
+            "top5": 0.975609756097561
+          },
+          "2": {
+            "records": 24,
+            "top1": 0.9583333333333334,
+            "top5": 0.9583333333333334
+          },
+          "3": {
+            "records": 17,
+            "top1": 0.9411764705882353,
+            "top5": 1.0
+          },
+          "4": {
+            "records": 17,
+            "top1": 0.8823529411764706,
+            "top5": 1.0
+          },
+          "5": {
+            "records": 23,
+            "top1": 0.7391304347826086,
+            "top5": 0.9130434782608695
+          },
+          "6": {
+            "records": 18,
+            "top1": 0.8333333333333334,
+            "top5": 1.0
+          },
+          "7": {
+            "records": 14,
+            "top1": 0.8571428571428571,
+            "top5": 1.0
+          },
+          "8": {
+            "records": 13,
+            "top1": 0.46153846153846156,
+            "top5": 0.9230769230769231
+          },
+          "9": {
+            "records": 7,
+            "top1": 0.8571428571428571,
+            "top5": 0.8571428571428571
+          },
+          "\\div": {
+            "records": 11,
+            "top1": 0.7272727272727273,
+            "top5": 0.9090909090909091
+          },
+          "\\neq": {
+            "records": 1,
+            "top1": 0.0,
+            "top5": 1.0
+          },
+          "\\sqrt{}": {
+            "records": 1,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "\\times": {
+            "records": 18,
+            "top1": 0.7777777777777778,
+            "top5": 1.0
+          },
+          "a": {
+            "records": 4,
+            "top1": 0.75,
+            "top5": 1.0
+          },
+          "b": {
+            "records": 7,
+            "top1": 0.8571428571428571,
+            "top5": 1.0
+          },
+          "f": {
+            "records": 6,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "m": {
+            "records": 3,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "n": {
+            "records": 7,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "x": {
+            "records": 5,
+            "top1": 0.2,
+            "top5": 1.0
+          },
+          "y": {
+            "records": 7,
+            "top1": 0.7142857142857143,
+            "top5": 1.0
+          },
+          "(": {
+            "records": 11,
+            "top1": 0.9090909090909091,
+            "top5": 1.0
+          },
+          ")": {
+            "records": 11,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "=": {
+            "records": 42,
+            "top1": 0.8809523809523809,
+            "top5": 0.9285714285714286
+          }
+        },
+        "by_family": {
+          "vertical_slash": {
+            "records": 49,
+            "top1": 0.6938775510204082,
+            "top5": 0.9795918367346939
+          },
+          "circle": {
+            "records": 24,
+            "top1": 0.6666666666666666,
+            "top5": 0.875
+          },
+          "cross": {
+            "records": 23,
+            "top1": 0.6521739130434783,
+            "top5": 1.0
+          }
+        }
+      }
+    },
+    "dtw_physics_light_fast": {
+      "variant": {
+        "name": "dtw_physics_light_fast",
+        "train_scope": "last_block",
+        "learning_rate": 2e-05,
+        "geometry": {
+          "name": "mild_v2",
+          "train_scope": "last_block",
+          "learning_rate": 0.0,
+          "rotation_degrees": 5.0,
+          "aspect_log_scale": 0.08,
+          "shear": 0.05,
+          "elastic": 0.008,
+          "top5_margin_weight": 0.0
+        },
+        "physics": {
+          "name": "light",
+          "time_warp_log": 0.12,
+          "response_min": 0.62,
+          "response_max": 0.82,
+          "momentum_min": 0.03,
+          "momentum_max": 0.14,
+          "tremor": 0.0035,
+          "drift": 0.0045
+        },
+        "use_dtw": true,
+        "top5_margin_weight": 0.35
+      },
+      "folds": [
+        {
+          "held_writer": "2108826fd653f869fdd991c5",
+          "held_records": 100,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.815322756767273,
+            "final_loss": 4.767446517944336,
+            "seconds": 14.12978640000074
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 267,
+            "eligible_labels": 23,
+            "generated_labels": 23,
+            "eligible_topology_groups": 25,
+            "unique_parent_records": 184,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 18,
+              "same_writer": 56,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.03501454829742798,
+              "median": 0.09091529165948388,
+              "maximum": 0.44021274958275225
+            },
+            "dtw_cost": {
+              "minimum": 0.06689412455683347,
+              "median": 0.14438826554872142,
+              "maximum": 0.7750779087190021
+            }
+          }
+        },
+        {
+          "held_writer": "3e41b56c75d3f1af3cc89494",
+          "held_records": 35,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.3967267870903015,
+            "final_loss": 2.7487401962280273,
+            "seconds": 13.556451000004017
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 255,
+            "eligible_labels": 24,
+            "generated_labels": 24,
+            "eligible_topology_groups": 27,
+            "unique_parent_records": 195,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 18,
+              "same_writer": 44,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.03522273612971999,
+              "median": 0.08856506339049226,
+              "maximum": 0.4230647051393576
+            },
+            "dtw_cost": {
+              "minimum": 0.058316669117363974,
+              "median": 0.1481241691455171,
+              "maximum": 0.6476540817603127
+            }
+          }
+        },
+        {
+          "held_writer": "50768ec7799073826818d9b6",
+          "held_records": 23,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.5506208141644797,
+            "final_loss": 3.4956018924713135,
+            "seconds": 13.770418799998879
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 285,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 198,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 21,
+              "same_writer": 72
+            },
+            "pair_rms": {
+              "minimum": 0.03501454829742798,
+              "median": 0.09900950222744045,
+              "maximum": 0.44021274958275225
+            },
+            "dtw_cost": {
+              "minimum": 0.0636351681296792,
+              "median": 0.15906238072398046,
+              "maximum": 0.7750779087190021
+            }
+          }
+        },
+        {
+          "held_writer": "6253df366faf0937d94146d3",
+          "held_records": 80,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.9088486234347024,
+            "final_loss": 3.407248020172119,
+            "seconds": 14.398288099997444
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 273,
+            "eligible_labels": 24,
+            "generated_labels": 24,
+            "eligible_topology_groups": 28,
+            "unique_parent_records": 191,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 15,
+              "same_writer": 62,
+              "synthetic trajectory is too close to a parent": 4
+            },
+            "pair_rms": {
+              "minimum": 0.03701828278431756,
+              "median": 0.10697232512028942,
+              "maximum": 0.4266969990985092
+            },
+            "dtw_cost": {
+              "minimum": 0.06910353041935756,
+              "median": 0.1681120777065805,
+              "maximum": 0.7684913601847677
+            }
+          }
+        },
+        {
+          "held_writer": "6654957a88583df48a89c20d",
+          "held_records": 35,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.86452054977417,
+            "final_loss": 2.6740329265594482,
+            "seconds": 14.11029370000324
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 267,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 195,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 22,
+              "same_writer": 52,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.035307154036296064,
+              "median": 0.09333674820086221,
+              "maximum": 0.42245362706564243
+            },
+            "dtw_cost": {
+              "minimum": 0.06689412455683347,
+              "median": 0.1491448675791814,
+              "maximum": 0.7576277981436377
+            }
+          }
+        },
+        {
+          "held_writer": "baed3dc87cbfa8c20bdde074",
+          "held_records": 82,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 4.3979116181532545,
+            "final_loss": 6.2723917961120605,
+            "seconds": 14.064360900003521
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 264,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 179,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 17,
+              "same_writer": 53,
+              "synthetic trajectory is too close to a parent": 2
+            },
+            "pair_rms": {
+              "minimum": 0.03522273612971999,
+              "median": 0.09353439195736311,
+              "maximum": 0.4220540707400819
+            },
+            "dtw_cost": {
+              "minimum": 0.058316669117363974,
+              "median": 0.14805074538531485,
+              "maximum": 0.7210638522362219
+            }
+          }
+        },
+        {
+          "held_writer": "ed6789e0639f68e05d5e2d1b",
+          "held_records": 32,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 2e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 4.019971340894699,
+            "final_loss": 5.120064735412598,
+            "seconds": 14.140944300001138
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 263,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 28,
+            "unique_parent_records": 190,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 19,
+              "same_writer": 49,
+              "synthetic trajectory is too close to a parent": 3
+            },
+            "pair_rms": {
+              "minimum": 0.03522273612971999,
+              "median": 0.0987663441679551,
+              "maximum": 0.4266969990985092
+            },
+            "dtw_cost": {
+              "minimum": 0.058316669117363974,
+              "median": 0.16039938759411226,
+              "maximum": 0.7684913601847677
+            }
+          }
+        }
+      ],
+      "writer_disjoint": {
+        "records": 387,
+        "top1": 0.8062015503875969,
+        "top5": 0.9612403100775194,
+        "strict_macro_top1": 0.7883227461270698,
+        "strict_macro_top5": 0.9735486900562897,
+        "ece_10": 0.07407948521064545,
+        "writer_macro_top1": 0.799166333023135,
+        "writer_macro_top5": 0.9405931731122988,
+        "worst_writer_top1": 0.6521739130434783,
+        "worst_writer_top5": 0.7391304347826086,
+        "by_writer": [
+          {
+            "writer": "2108826fd653f869fdd991c5",
+            "records": 100,
+            "top1": 0.76,
+            "top5": 0.97
+          },
+          {
+            "writer": "3e41b56c75d3f1af3cc89494",
+            "records": 35,
+            "top1": 0.7714285714285715,
+            "top5": 0.9714285714285714
+          },
+          {
+            "writer": "50768ec7799073826818d9b6",
+            "records": 23,
+            "top1": 0.6521739130434783,
+            "top5": 0.7391304347826086
+          },
+          {
+            "writer": "6253df366faf0937d94146d3",
+            "records": 80,
+            "top1": 0.925,
+            "top5": 1.0
+          },
+          {
+            "writer": "6654957a88583df48a89c20d",
+            "records": 35,
+            "top1": 0.8857142857142857,
+            "top5": 0.9714285714285714
+          },
+          {
+            "writer": "baed3dc87cbfa8c20bdde074",
+            "records": 82,
+            "top1": 0.7560975609756098,
+            "top5": 0.9634146341463414
+          },
+          {
+            "writer": "ed6789e0639f68e05d5e2d1b",
+            "records": 32,
+            "top1": 0.84375,
+            "top5": 0.96875
+          }
+        ],
+        "by_label": {
+          "+": {
+            "records": 37,
+            "top1": 0.8378378378378378,
+            "top5": 0.9459459459459459
+          },
+          "-": {
+            "records": 10,
+            "top1": 0.9,
+            "top5": 1.0
+          },
+          "/": {
+            "records": 8,
+            "top1": 0.875,
+            "top5": 1.0
+          },
+          "0": {
+            "records": 24,
+            "top1": 0.6666666666666666,
+            "top5": 0.875
+          },
+          "1": {
+            "records": 41,
+            "top1": 0.6585365853658537,
+            "top5": 0.975609756097561
+          },
+          "2": {
+            "records": 24,
+            "top1": 0.9583333333333334,
+            "top5": 0.9583333333333334
+          },
+          "3": {
+            "records": 17,
+            "top1": 0.9411764705882353,
+            "top5": 1.0
+          },
+          "4": {
+            "records": 17,
+            "top1": 0.8823529411764706,
+            "top5": 1.0
+          },
+          "5": {
+            "records": 23,
+            "top1": 0.7391304347826086,
+            "top5": 0.9130434782608695
+          },
+          "6": {
+            "records": 18,
+            "top1": 0.8333333333333334,
+            "top5": 1.0
+          },
+          "7": {
+            "records": 14,
+            "top1": 0.8571428571428571,
+            "top5": 1.0
+          },
+          "8": {
+            "records": 13,
+            "top1": 0.46153846153846156,
+            "top5": 0.9230769230769231
+          },
+          "9": {
+            "records": 7,
+            "top1": 0.8571428571428571,
+            "top5": 0.8571428571428571
+          },
+          "\\div": {
+            "records": 11,
+            "top1": 0.7272727272727273,
+            "top5": 0.9090909090909091
+          },
+          "\\neq": {
+            "records": 1,
+            "top1": 0.0,
+            "top5": 1.0
+          },
+          "\\sqrt{}": {
+            "records": 1,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "\\times": {
+            "records": 18,
+            "top1": 0.7777777777777778,
+            "top5": 1.0
+          },
+          "a": {
+            "records": 4,
+            "top1": 0.75,
+            "top5": 1.0
+          },
+          "b": {
+            "records": 7,
+            "top1": 0.8571428571428571,
+            "top5": 1.0
+          },
+          "f": {
+            "records": 6,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "m": {
+            "records": 3,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "n": {
+            "records": 7,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "x": {
+            "records": 5,
+            "top1": 0.2,
+            "top5": 1.0
+          },
+          "y": {
+            "records": 7,
+            "top1": 0.7142857142857143,
+            "top5": 1.0
+          },
+          "(": {
+            "records": 11,
+            "top1": 0.9090909090909091,
+            "top5": 1.0
+          },
+          ")": {
+            "records": 11,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "=": {
+            "records": 42,
+            "top1": 0.8809523809523809,
+            "top5": 0.9285714285714286
+          }
+        },
+        "by_family": {
+          "vertical_slash": {
+            "records": 49,
+            "top1": 0.6938775510204082,
+            "top5": 0.9795918367346939
+          },
+          "circle": {
+            "records": 24,
+            "top1": 0.6666666666666666,
+            "top5": 0.875
+          },
+          "cross": {
+            "records": 23,
+            "top1": 0.6521739130434783,
+            "top5": 1.0
+          }
+        }
+      }
+    },
+    "dtw_physics_light_top5": {
+      "variant": {
+        "name": "dtw_physics_light_top5",
+        "train_scope": "last_block",
+        "learning_rate": 1.5e-05,
+        "geometry": {
+          "name": "mild_v2",
+          "train_scope": "last_block",
+          "learning_rate": 0.0,
+          "rotation_degrees": 5.0,
+          "aspect_log_scale": 0.08,
+          "shear": 0.05,
+          "elastic": 0.008,
+          "top5_margin_weight": 0.0
+        },
+        "physics": {
+          "name": "light",
+          "time_warp_log": 0.12,
+          "response_min": 0.62,
+          "response_max": 0.82,
+          "momentum_min": 0.03,
+          "momentum_max": 0.14,
+          "tremor": 0.0035,
+          "drift": 0.0045
+        },
+        "use_dtw": true,
+        "top5_margin_weight": 0.5
+      },
+      "folds": [
+        {
+          "held_writer": "2108826fd653f869fdd991c5",
+          "held_records": 100,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 1.5e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.8911424477895102,
+            "final_loss": 4.796011924743652,
+            "seconds": 14.084258399998362
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 267,
+            "eligible_labels": 23,
+            "generated_labels": 23,
+            "eligible_topology_groups": 25,
+            "unique_parent_records": 184,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 18,
+              "same_writer": 56,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.03501454829742798,
+              "median": 0.09091529165948388,
+              "maximum": 0.44021274958275225
+            },
+            "dtw_cost": {
+              "minimum": 0.06689412455683347,
+              "median": 0.14438826554872142,
+              "maximum": 0.7750779087190021
+            }
+          }
+        },
+        {
+          "held_writer": "3e41b56c75d3f1af3cc89494",
+          "held_records": 35,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 1.5e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.44356240828832,
+            "final_loss": 2.7975850105285645,
+            "seconds": 13.594475799996872
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 255,
+            "eligible_labels": 24,
+            "generated_labels": 24,
+            "eligible_topology_groups": 27,
+            "unique_parent_records": 195,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 18,
+              "same_writer": 44,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.03522273612971999,
+              "median": 0.08856506339049226,
+              "maximum": 0.4230647051393576
+            },
+            "dtw_cost": {
+              "minimum": 0.058316669117363974,
+              "median": 0.1481241691455171,
+              "maximum": 0.6476540817603127
+            }
+          }
+        },
+        {
+          "held_writer": "50768ec7799073826818d9b6",
+          "held_records": 23,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 1.5e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.607378989458084,
+            "final_loss": 3.4479687213897705,
+            "seconds": 13.461689999996452
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 285,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 198,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 21,
+              "same_writer": 72
+            },
+            "pair_rms": {
+              "minimum": 0.03501454829742798,
+              "median": 0.09900950222744045,
+              "maximum": 0.44021274958275225
+            },
+            "dtw_cost": {
+              "minimum": 0.0636351681296792,
+              "median": 0.15906238072398046,
+              "maximum": 0.7750779087190021
+            }
+          }
+        },
+        {
+          "held_writer": "6253df366faf0937d94146d3",
+          "held_records": 80,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 1.5e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.996880133946737,
+            "final_loss": 3.4454922676086426,
+            "seconds": 13.51025369999843
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 273,
+            "eligible_labels": 24,
+            "generated_labels": 24,
+            "eligible_topology_groups": 28,
+            "unique_parent_records": 191,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 15,
+              "same_writer": 62,
+              "synthetic trajectory is too close to a parent": 4
+            },
+            "pair_rms": {
+              "minimum": 0.03701828278431756,
+              "median": 0.10697232512028942,
+              "maximum": 0.4266969990985092
+            },
+            "dtw_cost": {
+              "minimum": 0.06910353041935756,
+              "median": 0.1681120777065805,
+              "maximum": 0.7684913601847677
+            }
+          }
+        },
+        {
+          "held_writer": "6654957a88583df48a89c20d",
+          "held_records": 35,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 1.5e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.9224680960178375,
+            "final_loss": 2.7285964488983154,
+            "seconds": 13.758700700003828
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 267,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 195,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 22,
+              "same_writer": 52,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.035307154036296064,
+              "median": 0.09333674820086221,
+              "maximum": 0.42245362706564243
+            },
+            "dtw_cost": {
+              "minimum": 0.06689412455683347,
+              "median": 0.1491448675791814,
+              "maximum": 0.7576277981436377
+            }
+          }
+        },
+        {
+          "held_writer": "baed3dc87cbfa8c20bdde074",
+          "held_records": 82,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 1.5e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 4.529028475284576,
+            "final_loss": 6.341339588165283,
+            "seconds": 13.781062400004885
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 264,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 179,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 17,
+              "same_writer": 53,
+              "synthetic trajectory is too close to a parent": 2
+            },
+            "pair_rms": {
+              "minimum": 0.03522273612971999,
+              "median": 0.09353439195736311,
+              "maximum": 0.4220540707400819
+            },
+            "dtw_cost": {
+              "minimum": 0.058316669117363974,
+              "median": 0.14805074538531485,
+              "maximum": 0.7210638522362219
+            }
+          }
+        },
+        {
+          "held_writer": "ed6789e0639f68e05d5e2d1b",
+          "held_records": 32,
+          "training": {
+            "steps": 24,
+            "direct_batch_size": 20,
+            "external_batch_size": 40,
+            "learning_rate": 1.5e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 4.105080723762512,
+            "final_loss": 5.336765289306641,
+            "seconds": 13.570604399996228
+          },
+          "direct_dtw_bank": {
+            "requested": 192,
+            "generated": 192,
+            "attempts": 263,
+            "eligible_labels": 25,
+            "generated_labels": 25,
+            "eligible_topology_groups": 28,
+            "unique_parent_records": 190,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 19,
+              "same_writer": 49,
+              "synthetic trajectory is too close to a parent": 3
+            },
+            "pair_rms": {
+              "minimum": 0.03522273612971999,
+              "median": 0.0987663441679551,
+              "maximum": 0.4266969990985092
+            },
+            "dtw_cost": {
+              "minimum": 0.058316669117363974,
+              "median": 0.16039938759411226,
+              "maximum": 0.7684913601847677
+            }
+          }
+        }
+      ],
+      "writer_disjoint": {
+        "records": 387,
+        "top1": 0.8036175710594315,
+        "top5": 0.9612403100775194,
+        "strict_macro_top1": 0.7854737432780668,
+        "strict_macro_top5": 0.9735486900562897,
+        "ece_10": 0.07254976596327098,
+        "writer_macro_top1": 0.7974241727443893,
+        "writer_macro_top5": 0.9405931731122988,
+        "worst_writer_top1": 0.6521739130434783,
+        "worst_writer_top5": 0.7391304347826086,
+        "by_writer": [
+          {
+            "writer": "2108826fd653f869fdd991c5",
+            "records": 100,
+            "top1": 0.76,
+            "top5": 0.97
+          },
+          {
+            "writer": "3e41b56c75d3f1af3cc89494",
+            "records": 35,
+            "top1": 0.7714285714285715,
+            "top5": 0.9714285714285714
+          },
+          {
+            "writer": "50768ec7799073826818d9b6",
+            "records": 23,
+            "top1": 0.6521739130434783,
+            "top5": 0.7391304347826086
+          },
+          {
+            "writer": "6253df366faf0937d94146d3",
+            "records": 80,
+            "top1": 0.925,
+            "top5": 1.0
+          },
+          {
+            "writer": "6654957a88583df48a89c20d",
+            "records": 35,
+            "top1": 0.8857142857142857,
+            "top5": 0.9714285714285714
+          },
+          {
+            "writer": "baed3dc87cbfa8c20bdde074",
+            "records": 82,
+            "top1": 0.7439024390243902,
+            "top5": 0.9634146341463414
+          },
+          {
+            "writer": "ed6789e0639f68e05d5e2d1b",
+            "records": 32,
+            "top1": 0.84375,
+            "top5": 0.96875
+          }
+        ],
+        "by_label": {
+          "+": {
+            "records": 37,
+            "top1": 0.8378378378378378,
+            "top5": 0.9459459459459459
+          },
+          "-": {
+            "records": 10,
+            "top1": 0.9,
+            "top5": 1.0
+          },
+          "/": {
+            "records": 8,
+            "top1": 0.875,
+            "top5": 1.0
+          },
+          "0": {
+            "records": 24,
+            "top1": 0.6666666666666666,
+            "top5": 0.875
+          },
+          "1": {
+            "records": 41,
+            "top1": 0.6585365853658537,
+            "top5": 0.975609756097561
+          },
+          "2": {
+            "records": 24,
+            "top1": 0.9583333333333334,
+            "top5": 0.9583333333333334
+          },
+          "3": {
+            "records": 17,
+            "top1": 0.9411764705882353,
+            "top5": 1.0
+          },
+          "4": {
+            "records": 17,
+            "top1": 0.8823529411764706,
+            "top5": 1.0
+          },
+          "5": {
+            "records": 23,
+            "top1": 0.7391304347826086,
+            "top5": 0.9130434782608695
+          },
+          "6": {
+            "records": 18,
+            "top1": 0.8333333333333334,
+            "top5": 1.0
+          },
+          "7": {
+            "records": 14,
+            "top1": 0.8571428571428571,
+            "top5": 1.0
+          },
+          "8": {
+            "records": 13,
+            "top1": 0.38461538461538464,
+            "top5": 0.9230769230769231
+          },
+          "9": {
+            "records": 7,
+            "top1": 0.8571428571428571,
+            "top5": 0.8571428571428571
+          },
+          "\\div": {
+            "records": 11,
+            "top1": 0.7272727272727273,
+            "top5": 0.9090909090909091
+          },
+          "\\neq": {
+            "records": 1,
+            "top1": 0.0,
+            "top5": 1.0
+          },
+          "\\sqrt{}": {
+            "records": 1,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "\\times": {
+            "records": 18,
+            "top1": 0.7777777777777778,
+            "top5": 1.0
+          },
+          "a": {
+            "records": 4,
+            "top1": 0.75,
+            "top5": 1.0
+          },
+          "b": {
+            "records": 7,
+            "top1": 0.8571428571428571,
+            "top5": 1.0
+          },
+          "f": {
+            "records": 6,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "m": {
+            "records": 3,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "n": {
+            "records": 7,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "x": {
+            "records": 5,
+            "top1": 0.2,
+            "top5": 1.0
+          },
+          "y": {
+            "records": 7,
+            "top1": 0.7142857142857143,
+            "top5": 1.0
+          },
+          "(": {
+            "records": 11,
+            "top1": 0.9090909090909091,
+            "top5": 1.0
+          },
+          ")": {
+            "records": 11,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "=": {
+            "records": 42,
+            "top1": 0.8809523809523809,
+            "top5": 0.9285714285714286
+          }
+        },
+        "by_family": {
+          "vertical_slash": {
+            "records": 49,
+            "top1": 0.6938775510204082,
+            "top5": 0.9795918367346939
+          },
+          "circle": {
+            "records": 24,
+            "top1": 0.6666666666666666,
+            "top5": 0.875
+          },
+          "cross": {
+            "records": 23,
+            "top1": 0.6521739130434783,
+            "top5": 1.0
+          }
+        }
+      }
+    }
+  },
+  "selection": {
+    "selected": "dtw_physics_light_fast",
+    "augmentation_adopted": true,
+    "reason": "best safe writer-disjoint Top-5, then Top-1/macro/calibration",
+    "gates": {
+      "dtw_only_fast": {
+        "passed": true,
+        "reasons": []
+      },
+      "dtw_physics_light_fast": {
+        "passed": true,
+        "reasons": []
+      },
+      "dtw_physics_light_top5": {
+        "passed": true,
+        "reasons": []
+      }
+    }
+  },
+  "final_training": null,
+  "external_technical_nonregression": null,
+  "training_data_guard": {
+    "schema": "aiflow-training-data-guard/v1",
+    "policy": "CROHME and MathWriting are validation-only",
+    "forbidden_markers": [
+      "30_noncommercial_evaluation",
+      "crohme",
+      "mathwriting"
+    ],
+    "admitted_sources": {
+      "hwrt": 150789,
+      "isgl": 6591,
+      "project_owned": 387,
+      "uci": 2580,
+      "uji": 7128
+    },
+    "crohme_rows": 0,
+    "mathwriting_rows": 0,
+    "crohme_gradient_updates": 0,
+    "mathwriting_gradient_updates": 0,
+    "total_gradient_updates": 504,
+    "total_gradient_updates_recorded": true,
+    "passed": true
+  },
+  "inputs": {
+    "canonical_root": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\datasets\\normalized\\v1",
+    "cache_manifest": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\unified_head_20260813\\unified_math_8ep_full\\cache\\cache_manifest.json",
+    "cache_manifest_sha256": "eb34355c4a90c65326758d59dc167463e1d87dc29748d44c5041a3f1d4210f80",
+    "parent_checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_augmentation_20260822_r1_shadow\\commercial_hwr_augmented_checkpoint.pt",
+    "parent_checkpoint_sha256": "41efdfdbb45bafbdfd45a1715bd40ff3c7d6dd48dda164c49cf7153a074e40d1",
+    "parent_writer_loo": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_augmentation_20260822_r1_shadow\\selected_writer_loo_models.pt",
+    "parent_writer_loo_sha256": "cce8894f508d02e3cdd043548d7e51c00f8bc05a7c2e713c3de62838b2222c51",
+    "project_owned_rows": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-head-calibration-20260819-r1\\project_owned_ownership_eval_95.jsonl.gz",
+    "project_owned_rows_sha256": "d58098e073b52e7d1f5703981bcffc04e1000813b607168654ba3dbc7d11fabc"
+  },
+  "parent_summary": {
+    "selected_variant": "mild_tail_top5",
+    "architecture_unchanged": true
+  },
+  "elapsed_seconds": 418.04841699999815,
+  "frozen_candidate": false,
+  "product_adopted": false,
+  "adoption_limit": "fresh unseen-writer acceptance and final research evaluation remain pending; grouping/context/layout are outside this trainer",
+  "generated_data": {
+    "external_dtw_bank": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_cleanroom_physics_20260823_smoke_r4_search24\\external_same_label_dtw_bank.npz",
+      "sha256": "cfccfc7a7a8fe9957faa245645879bb5e54af1186231c1436f972e31716b7bf2"
+    },
+    "project_dtw_bank": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_cleanroom_physics_20260823_smoke_r4_search24\\project_cross_writer_dtw_bank.npz",
+      "sha256": "18d29f3c71692c288c993b5181b43310728cef1c4d2e7812819e4670eb384761"
+    },
+    "visual_audit": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_cleanroom_physics_20260823_smoke_r4_search24\\cleanroom_dtw_physics_preview.png",
+      "sha256": "0de8e8381fc2350c744ef2760ed46e185feab12b06f00186ebf4a22319466b47"
+    }
+  }
+}

@@ -1,0 +1,922 @@
+{
+  "schema": "aiflow-cleanroom-hwr-dataset/v3",
+  "bank_schema": "aiflow-cleanroom-profiled-augmentation/v3",
+  "profile_schema": "aiflow-cleanroom-trajectory-profiles/v3",
+  "generated_at": "2026-08-22T08:33:34.694278+00:00",
+  "status": "materialized_cleanroom_training_dataset",
+  "training_performed": false,
+  "selection_used_crohme": false,
+  "selection_used_fresh_acceptance": false,
+  "clean_room_contract": {
+    "purpose": "rights-cleared class-conditional online-ink augmentation",
+    "admitted_external_sources": {
+      "hwrt": 150789,
+      "isgl": 6591,
+      "uci": 2580,
+      "uji": 7128
+    },
+    "admitted_project_owned_rows": 387,
+    "excluded_sources": [
+      "CROHME: noncommercial evaluation only",
+      "BDSHWA: no character boundary",
+      "external technical evaluation split",
+      "fresh unseen-writer acceptance"
+    ],
+    "profile_features": [
+      "stroke_count",
+      "closed_loop",
+      "loop_direction",
+      "loop_start_phase",
+      "aspect_ratio",
+      "path_length",
+      "closure",
+      "turning"
+    ],
+    "direction_policy": "sample only same-direction approved parents; never reverse a trajectory; start phase comes from an approved same-class style parent",
+    "time_quality": "uniform delta_t; physical speed is represented by monotonic XY progression",
+    "row_provenance": "hashed parents plus deterministic transform metadata",
+    "crohme_rows": 0,
+    "crohme_statistics": 0
+  },
+  "inputs": {
+    "canonical_root": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\datasets\\normalized\\v1",
+    "cache_manifest": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\unified_head_20260813\\unified_math_8ep_full\\cache\\cache_manifest.json",
+    "cache_manifest_sha256": "eb34355c4a90c65326758d59dc167463e1d87dc29748d44c5041a3f1d4210f80",
+    "project_owned_rows": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-head-calibration-20260819-r1\\project_owned_ownership_eval_95.jsonl.gz",
+    "project_owned_rows_sha256": "d58098e073b52e7d1f5703981bcffc04e1000813b607168654ba3dbc7d11fabc"
+  },
+  "profiles": {
+    "external_path": "profiles/external_training_profiles.json",
+    "external_sha256": "6f7e57424cff4bed4dd64a90a29c84b4e78f94f43e4f00d64e59e5fbe4fb8686",
+    "project_final_path": "profiles/project_final_profiles.json",
+    "project_final_sha256": "1bc7845f3c64dd6548f62376c290d7caa90b95c4eca9ff7f4ba5988e9a4a88da",
+    "external_special_loop_classes": {
+      "0": {
+        "label_index": 3,
+        "records": 327,
+        "stroke_counts": {
+          "1": 319,
+          "2": 8
+        },
+        "loop_records": 290,
+        "loop_direction": {
+          "clockwise_y_up": 279,
+          "counterclockwise_y_up": 11
+        },
+        "aspect_ratio": {
+          "records": 327,
+          "q10": 0.5234688076378935,
+          "median": 0.7383823990821838,
+          "q90": 1.1160898552328629
+        },
+        "total_length": {
+          "records": 327,
+          "q10": 2.4985864402663935,
+          "median": 2.7763722481548845,
+          "q90": 3.18150330421316
+        },
+        "closure_ratio": {
+          "records": 290,
+          "q10": 0.02341039980694755,
+          "median": 0.08733387644498611,
+          "q90": 0.23130849762951255
+        },
+        "absolute_turn": {
+          "records": 327,
+          "q10": 0.0,
+          "median": 6.823695677594706,
+          "q90": 13.20458222727999
+        },
+        "start_phase": {
+          "records": 290,
+          "mean_radians": 4.784318646238784,
+          "concentration": 0.9294833109982817
+        }
+      },
+      "O": {
+        "label_index": 29,
+        "records": 288,
+        "stroke_counts": {
+          "1": 286,
+          "2": 1,
+          "4": 1
+        },
+        "loop_records": 240,
+        "loop_direction": {
+          "clockwise_y_up": 233,
+          "counterclockwise_y_up": 7
+        },
+        "aspect_ratio": {
+          "records": 288,
+          "q10": 0.6809903390104837,
+          "median": 0.9364388583243344,
+          "q90": 1.2295710721700737
+        },
+        "total_length": {
+          "records": 288,
+          "q10": 2.6678383535618755,
+          "median": 3.0138350162994842,
+          "q90": 3.3351117384873263
+        },
+        "closure_ratio": {
+          "records": 240,
+          "q10": 0.0279064474861697,
+          "median": 0.10564533141803387,
+          "q90": 0.2339430148303198
+        },
+        "absolute_turn": {
+          "records": 288,
+          "q10": 0.0,
+          "median": 7.009873246367729,
+          "q90": 10.698308000649408
+        },
+        "start_phase": {
+          "records": 240,
+          "mean_radians": 4.803983392624481,
+          "concentration": 0.9173864014551314
+        }
+      },
+      "o": {
+        "label_index": 357,
+        "records": 400,
+        "stroke_counts": {
+          "1": 398,
+          "2": 2
+        },
+        "loop_records": 331,
+        "loop_direction": {
+          "clockwise_y_up": 194,
+          "counterclockwise_y_up": 137
+        },
+        "aspect_ratio": {
+          "records": 400,
+          "q10": 0.8041004335958889,
+          "median": 1.1081537642705415,
+          "q90": 1.455980866096773
+        },
+        "total_length": {
+          "records": 400,
+          "q10": 2.698303173722504,
+          "median": 3.1851716384001705,
+          "q90": 4.988626612000495
+        },
+        "closure_ratio": {
+          "records": 331,
+          "q10": 0.0,
+          "median": 0.0547137082845132,
+          "q90": 0.2343808223636024
+        },
+        "absolute_turn": {
+          "records": 400,
+          "q10": 0.0,
+          "median": 8.120855814294577,
+          "q90": 15.361469887319718
+        },
+        "start_phase": {
+          "records": 331,
+          "mean_radians": 4.779362552220949,
+          "concentration": 0.3809166094593446
+        }
+      },
+      "\\circ": {
+        "label_index": 101,
+        "records": 880,
+        "stroke_counts": {
+          "1": 858,
+          "2": 21,
+          "4": 1
+        },
+        "loop_records": 824,
+        "loop_direction": {
+          "clockwise_y_up": 708,
+          "counterclockwise_y_up": 116
+        },
+        "aspect_ratio": {
+          "records": 880,
+          "q10": 0.8278854324315802,
+          "median": 1.064516095196467,
+          "q90": 1.3509705727554167
+        },
+        "total_length": {
+          "records": 880,
+          "q10": 2.872551010269182,
+          "median": 3.1761974980649272,
+          "q90": 3.4953831957533503
+        },
+        "closure_ratio": {
+          "records": 824,
+          "q10": 0.02545881658792901,
+          "median": 0.09559182621389889,
+          "q90": 0.2289055083217393
+        },
+        "absolute_turn": {
+          "records": 880,
+          "q10": 8.897486802022947,
+          "median": 21.34023106210714,
+          "q90": 42.05481759962968
+        },
+        "start_phase": {
+          "records": 824,
+          "mean_radians": 4.823654415529523,
+          "concentration": 0.7137055716256072
+        }
+      },
+      "\\mathcal{O}": {
+        "label_index": 192,
+        "records": 777,
+        "stroke_counts": {
+          "1": 760,
+          "2": 16,
+          "3": 1
+        },
+        "loop_records": 443,
+        "loop_direction": {
+          "clockwise_y_up": 398,
+          "counterclockwise_y_up": 45
+        },
+        "aspect_ratio": {
+          "records": 777,
+          "q10": 0.7019048720598221,
+          "median": 0.9329267963767052,
+          "q90": 1.2243250834898278
+        },
+        "total_length": {
+          "records": 777,
+          "q10": 2.782915255616064,
+          "median": 3.16306851063766,
+          "q90": 3.534187839612551
+        },
+        "closure_ratio": {
+          "records": 443,
+          "q10": 0.08024426533941945,
+          "median": 0.20194367238137706,
+          "q90": 0.30053651418359145
+        },
+        "absolute_turn": {
+          "records": 777,
+          "q10": 0.0,
+          "median": 10.322470340215943,
+          "q90": 22.40491746152258
+        },
+        "start_phase": {
+          "records": 443,
+          "mean_radians": 4.598127720692817,
+          "concentration": 0.9132451687046111
+        }
+      }
+    },
+    "project_special_loop_classes": {
+      "0": {
+        "label_index": 3,
+        "records": 24,
+        "stroke_counts": {
+          "1": 23,
+          "2": 1
+        },
+        "loop_records": 21,
+        "loop_direction": {
+          "clockwise_y_up": 21,
+          "counterclockwise_y_up": 0
+        },
+        "aspect_ratio": {
+          "records": 24,
+          "q10": 0.5483448553313892,
+          "median": 0.7043019222267431,
+          "q90": 1.41899504519161
+        },
+        "total_length": {
+          "records": 24,
+          "q10": 2.348405226273819,
+          "median": 2.6664443600303995,
+          "q90": 3.074654282909684
+        },
+        "closure_ratio": {
+          "records": 21,
+          "q10": 0.06437947449942343,
+          "median": 0.18215143011027526,
+          "q90": 0.29087246827311075
+        },
+        "absolute_turn": {
+          "records": 24,
+          "q10": 1.3736364182102205,
+          "median": 6.085645717578164,
+          "q90": 7.310165161818527
+        },
+        "start_phase": {
+          "records": 21,
+          "mean_radians": 4.258337809951163,
+          "concentration": 0.9002129793685402
+        }
+      }
+    }
+  },
+  "datasets": {
+    "external": {
+      "bank": {
+        "path": "external_profiled_augmented.npz",
+        "sha256": "31eb534d125f38cfbe5aa33d38545489d71737461f9f605da5304ebab8d3d577",
+        "metadata_path": "external_profiled_augmented.metadata.jsonl.gz",
+        "metadata_sha256": "411097fe5846ec3da6c7c6c82c47dc3da66cf2cb0e8cc1ee691edca18ec5c87b",
+        "records": 4096,
+        "labels": 371
+      },
+      "bank_audit": {
+        "schema": "aiflow-cleanroom-profiled-augmentation/v3",
+        "requested": 4096,
+        "generated": 4096,
+        "attempts": 4643,
+        "eligible_labels": 371,
+        "generated_labels": 371,
+        "eligible_profile_groups": 1807,
+        "unique_parent_fingerprints": 8600,
+        "same_label_only": true,
+        "same_stroke_count_only": true,
+        "same_loop_direction_only": true,
+        "cross_writer_required": false,
+        "profile_fitted_rows": 167088,
+        "evaluation_rows": 0,
+        "crohme_rows": 0,
+        "non_spatial_channels_preserved": true,
+        "physics": {
+          "name": "light",
+          "time_warp_log": 0.12,
+          "response_min": 0.62,
+          "response_max": 0.82,
+          "momentum_min": 0.03,
+          "momentum_max": 0.14,
+          "tremor": 0.0035,
+          "drift": 0.0045
+        },
+        "physics_applied_rows": 4041,
+        "loop_direction_rows": {
+          "clockwise_y_up": 561,
+          "counterclockwise_y_up": 409,
+          "no_primary_loop": 3126
+        },
+        "rejections": {
+          "parent distance is outside the clean-room blend gate": 420,
+          "physics_topology_reverted": 55,
+          "profile transform changed stroke or loop topology": 124,
+          "synthetic trajectory is too close to a parent": 3
+        }
+      },
+      "validation": {
+        "records": 4096,
+        "labels": 371,
+        "finite": true,
+        "coordinates_in_unit_box": true,
+        "uniform_time": true,
+        "topology_mismatches": 0,
+        "cross_writer_verified": false
+      }
+    },
+    "project_final": {
+      "bank": {
+        "path": "project_profiled_augmented_final.npz",
+        "sha256": "3ae663f937d8d0cad37f2206c998bf75af448a90db2cae2469d4f86aee60dbaf",
+        "metadata_path": "project_profiled_augmented_final.metadata.jsonl.gz",
+        "metadata_sha256": "ea901d2b6da1d9b32c0d3b88c9bad436380607ec33abd28e04e4d8518c449a35",
+        "records": 512,
+        "labels": 25
+      },
+      "bank_audit": {
+        "schema": "aiflow-cleanroom-profiled-augmentation/v3",
+        "requested": 512,
+        "generated": 512,
+        "attempts": 722,
+        "eligible_labels": 25,
+        "generated_labels": 25,
+        "eligible_profile_groups": 30,
+        "unique_parent_fingerprints": 331,
+        "same_label_only": true,
+        "same_stroke_count_only": true,
+        "same_loop_direction_only": true,
+        "cross_writer_required": true,
+        "profile_fitted_rows": 387,
+        "evaluation_rows": 0,
+        "crohme_rows": 0,
+        "non_spatial_channels_preserved": true,
+        "physics": {
+          "name": "light",
+          "time_warp_log": 0.12,
+          "response_min": 0.62,
+          "response_max": 0.82,
+          "momentum_min": 0.03,
+          "momentum_max": 0.14,
+          "tremor": 0.0035,
+          "drift": 0.0045
+        },
+        "physics_applied_rows": 511,
+        "loop_direction_rows": {
+          "clockwise_y_up": 21,
+          "counterclockwise_y_up": 0,
+          "no_primary_loop": 491
+        },
+        "rejections": {
+          "parent distance is outside the clean-room blend gate": 70,
+          "physics_topology_reverted": 1,
+          "profile transform changed stroke or loop topology": 3,
+          "same_writer": 134,
+          "synthetic trajectory is too close to a parent": 3
+        }
+      },
+      "validation": {
+        "records": 512,
+        "labels": 25,
+        "finite": true,
+        "coordinates_in_unit_box": true,
+        "uniform_time": true,
+        "topology_mismatches": 0,
+        "cross_writer_verified": true
+      }
+    },
+    "project_writer_loo": {
+      "8fd01f2ab9d55fa944e4": {
+        "held_writer_fingerprint": "8fd01f2ab9d55fa944e4",
+        "held_records": 100,
+        "profile_fit_records": 287,
+        "held_rows_in_profile": 0,
+        "bank": {
+          "path": "project_writer_loo/held_8fd01f2ab9d55fa944e4.npz",
+          "sha256": "5bb53ef88cbd0672f15610bb1ab6f7b816ab76e184dab660537a06970b6fa4ed",
+          "metadata_path": "project_writer_loo/held_8fd01f2ab9d55fa944e4.metadata.jsonl.gz",
+          "metadata_sha256": "f556395fa2e3512fb80f4956b1ad55d16f898f67d395b7fecf83816f692c0dc0",
+          "records": 512,
+          "labels": 23
+        },
+        "bank_audit": {
+          "schema": "aiflow-cleanroom-profiled-augmentation/v3",
+          "requested": 512,
+          "generated": 512,
+          "attempts": 749,
+          "eligible_labels": 23,
+          "generated_labels": 23,
+          "eligible_profile_groups": 25,
+          "unique_parent_fingerprints": 245,
+          "same_label_only": true,
+          "same_stroke_count_only": true,
+          "same_loop_direction_only": true,
+          "cross_writer_required": true,
+          "profile_fitted_rows": 287,
+          "evaluation_rows": 0,
+          "crohme_rows": 0,
+          "non_spatial_channels_preserved": true,
+          "physics": {
+            "name": "light",
+            "time_warp_log": 0.12,
+            "response_min": 0.62,
+            "response_max": 0.82,
+            "momentum_min": 0.03,
+            "momentum_max": 0.14,
+            "tremor": 0.0035,
+            "drift": 0.0045
+          },
+          "physics_applied_rows": 511,
+          "loop_direction_rows": {
+            "clockwise_y_up": 39,
+            "counterclockwise_y_up": 0,
+            "no_primary_loop": 473
+          },
+          "rejections": {
+            "parent distance is outside the clean-room blend gate": 75,
+            "physics_topology_reverted": 1,
+            "profile transform changed stroke or loop topology": 5,
+            "same_writer": 150,
+            "synthetic trajectory is too close to a parent": 7
+          }
+        },
+        "validation": {
+          "records": 512,
+          "labels": 23,
+          "finite": true,
+          "coordinates_in_unit_box": true,
+          "uniform_time": true,
+          "topology_mismatches": 0,
+          "cross_writer_verified": true
+        },
+        "profile_path": "profiles/project_loo_held_8fd01f2ab9d55fa944e4.json",
+        "profile_sha256": "2dd4daa473d99902ac0c6084f974eba4af9221649340d935137fb2183cf04174"
+      },
+      "8c90e0ce2f8501e6cf74": {
+        "held_writer_fingerprint": "8c90e0ce2f8501e6cf74",
+        "held_records": 35,
+        "profile_fit_records": 352,
+        "held_rows_in_profile": 0,
+        "bank": {
+          "path": "project_writer_loo/held_8c90e0ce2f8501e6cf74.npz",
+          "sha256": "a0347f6e91a41c30a5492b068c72c8749bc9f20b1b1a43652e419a06347f7e84",
+          "metadata_path": "project_writer_loo/held_8c90e0ce2f8501e6cf74.metadata.jsonl.gz",
+          "metadata_sha256": "b799c80552b8cebc9a40167abb6223987938a394f0fae766b6610d6095cf8873",
+          "records": 512,
+          "labels": 24
+        },
+        "bank_audit": {
+          "schema": "aiflow-cleanroom-profiled-augmentation/v3",
+          "requested": 512,
+          "generated": 512,
+          "attempts": 738,
+          "eligible_labels": 24,
+          "generated_labels": 24,
+          "eligible_profile_groups": 28,
+          "unique_parent_fingerprints": 301,
+          "same_label_only": true,
+          "same_stroke_count_only": true,
+          "same_loop_direction_only": true,
+          "cross_writer_required": true,
+          "profile_fitted_rows": 352,
+          "evaluation_rows": 0,
+          "crohme_rows": 0,
+          "non_spatial_channels_preserved": true,
+          "physics": {
+            "name": "light",
+            "time_warp_log": 0.12,
+            "response_min": 0.62,
+            "response_max": 0.82,
+            "momentum_min": 0.03,
+            "momentum_max": 0.14,
+            "tremor": 0.0035,
+            "drift": 0.0045
+          },
+          "physics_applied_rows": 510,
+          "loop_direction_rows": {
+            "clockwise_y_up": 30,
+            "counterclockwise_y_up": 0,
+            "no_primary_loop": 482
+          },
+          "rejections": {
+            "parent distance is outside the clean-room blend gate": 59,
+            "physics_topology_reverted": 2,
+            "profile transform changed stroke or loop topology": 6,
+            "same_writer": 159,
+            "synthetic trajectory is too close to a parent": 2
+          }
+        },
+        "validation": {
+          "records": 512,
+          "labels": 24,
+          "finite": true,
+          "coordinates_in_unit_box": true,
+          "uniform_time": true,
+          "topology_mismatches": 0,
+          "cross_writer_verified": true
+        },
+        "profile_path": "profiles/project_loo_held_8c90e0ce2f8501e6cf74.json",
+        "profile_sha256": "6ed4541d2fc5913a9b67bba1613c6bb8840c0bb8815c4fad41ea1df799aecf3e"
+      },
+      "aaae4f8b061e862bc663": {
+        "held_writer_fingerprint": "aaae4f8b061e862bc663",
+        "held_records": 23,
+        "profile_fit_records": 364,
+        "held_rows_in_profile": 0,
+        "bank": {
+          "path": "project_writer_loo/held_aaae4f8b061e862bc663.npz",
+          "sha256": "2e906d6a4dcbe99f893ee770943c02bfdeaa0c9c3c82513185cb419add7f17a3",
+          "metadata_path": "project_writer_loo/held_aaae4f8b061e862bc663.metadata.jsonl.gz",
+          "metadata_sha256": "2ac0f83a098a79e3ccda2425fd29abbc385411b27118dd7e362923457ca087ac",
+          "records": 512,
+          "labels": 25
+        },
+        "bank_audit": {
+          "schema": "aiflow-cleanroom-profiled-augmentation/v3",
+          "requested": 512,
+          "generated": 512,
+          "attempts": 701,
+          "eligible_labels": 25,
+          "generated_labels": 25,
+          "eligible_profile_groups": 30,
+          "unique_parent_fingerprints": 319,
+          "same_label_only": true,
+          "same_stroke_count_only": true,
+          "same_loop_direction_only": true,
+          "cross_writer_required": true,
+          "profile_fitted_rows": 364,
+          "evaluation_rows": 0,
+          "crohme_rows": 0,
+          "non_spatial_channels_preserved": true,
+          "physics": {
+            "name": "light",
+            "time_warp_log": 0.12,
+            "response_min": 0.62,
+            "response_max": 0.82,
+            "momentum_min": 0.03,
+            "momentum_max": 0.14,
+            "tremor": 0.0035,
+            "drift": 0.0045
+          },
+          "physics_applied_rows": 512,
+          "loop_direction_rows": {
+            "clockwise_y_up": 25,
+            "counterclockwise_y_up": 0,
+            "no_primary_loop": 487
+          },
+          "rejections": {
+            "parent distance is outside the clean-room blend gate": 66,
+            "profile transform changed stroke or loop topology": 6,
+            "same_writer": 117
+          }
+        },
+        "validation": {
+          "records": 512,
+          "labels": 25,
+          "finite": true,
+          "coordinates_in_unit_box": true,
+          "uniform_time": true,
+          "topology_mismatches": 0,
+          "cross_writer_verified": true
+        },
+        "profile_path": "profiles/project_loo_held_aaae4f8b061e862bc663.json",
+        "profile_sha256": "cb1c822e62ba8146a1fe103fdd34d72364c8606333e8753423b5f43a6467904c"
+      },
+      "90ae7abee30ebd1c3a53": {
+        "held_writer_fingerprint": "90ae7abee30ebd1c3a53",
+        "held_records": 80,
+        "profile_fit_records": 307,
+        "held_rows_in_profile": 0,
+        "bank": {
+          "path": "project_writer_loo/held_90ae7abee30ebd1c3a53.npz",
+          "sha256": "04729f19dfe32fea5cddd793e4cc199afa0e38b1c7bbfeab48d738c8781eb932",
+          "metadata_path": "project_writer_loo/held_90ae7abee30ebd1c3a53.metadata.jsonl.gz",
+          "metadata_sha256": "84f6a33431c552488d3309caaf4cd09e71475ea4623ad51e6579fbbb1b22bd66",
+          "records": 512,
+          "labels": 24
+        },
+        "bank_audit": {
+          "schema": "aiflow-cleanroom-profiled-augmentation/v3",
+          "requested": 512,
+          "generated": 512,
+          "attempts": 722,
+          "eligible_labels": 24,
+          "generated_labels": 24,
+          "eligible_profile_groups": 29,
+          "unique_parent_fingerprints": 270,
+          "same_label_only": true,
+          "same_stroke_count_only": true,
+          "same_loop_direction_only": true,
+          "cross_writer_required": true,
+          "profile_fitted_rows": 307,
+          "evaluation_rows": 0,
+          "crohme_rows": 0,
+          "non_spatial_channels_preserved": true,
+          "physics": {
+            "name": "light",
+            "time_warp_log": 0.12,
+            "response_min": 0.62,
+            "response_max": 0.82,
+            "momentum_min": 0.03,
+            "momentum_max": 0.14,
+            "tremor": 0.0035,
+            "drift": 0.0045
+          },
+          "physics_applied_rows": 511,
+          "loop_direction_rows": {
+            "clockwise_y_up": 22,
+            "counterclockwise_y_up": 0,
+            "no_primary_loop": 490
+          },
+          "rejections": {
+            "parent distance is outside the clean-room blend gate": 64,
+            "physics_topology_reverted": 1,
+            "profile transform changed stroke or loop topology": 3,
+            "same_writer": 140,
+            "synthetic trajectory is too close to a parent": 3
+          }
+        },
+        "validation": {
+          "records": 512,
+          "labels": 24,
+          "finite": true,
+          "coordinates_in_unit_box": true,
+          "uniform_time": true,
+          "topology_mismatches": 0,
+          "cross_writer_verified": true
+        },
+        "profile_path": "profiles/project_loo_held_90ae7abee30ebd1c3a53.json",
+        "profile_sha256": "8fbfc5ece1c3700dcb800d8ccd051e7853e8fbf9a4a2bff8d5fd2619e101737a"
+      },
+      "99a922f1edc2ef0565d0": {
+        "held_writer_fingerprint": "99a922f1edc2ef0565d0",
+        "held_records": 35,
+        "profile_fit_records": 352,
+        "held_rows_in_profile": 0,
+        "bank": {
+          "path": "project_writer_loo/held_99a922f1edc2ef0565d0.npz",
+          "sha256": "04d2c970887fb18855cdbaa7c0944ce9b7f9c67edcb4564873ce3861bebc1068",
+          "metadata_path": "project_writer_loo/held_99a922f1edc2ef0565d0.metadata.jsonl.gz",
+          "metadata_sha256": "81057cca4ba8782518a9cc28013eefb3b1f0270ea4078ec72d437fd54602889d",
+          "records": 512,
+          "labels": 25
+        },
+        "bank_audit": {
+          "schema": "aiflow-cleanroom-profiled-augmentation/v3",
+          "requested": 512,
+          "generated": 512,
+          "attempts": 687,
+          "eligible_labels": 25,
+          "generated_labels": 25,
+          "eligible_profile_groups": 30,
+          "unique_parent_fingerprints": 307,
+          "same_label_only": true,
+          "same_stroke_count_only": true,
+          "same_loop_direction_only": true,
+          "cross_writer_required": true,
+          "profile_fitted_rows": 352,
+          "evaluation_rows": 0,
+          "crohme_rows": 0,
+          "non_spatial_channels_preserved": true,
+          "physics": {
+            "name": "light",
+            "time_warp_log": 0.12,
+            "response_min": 0.62,
+            "response_max": 0.82,
+            "momentum_min": 0.03,
+            "momentum_max": 0.14,
+            "tremor": 0.0035,
+            "drift": 0.0045
+          },
+          "physics_applied_rows": 512,
+          "loop_direction_rows": {
+            "clockwise_y_up": 20,
+            "counterclockwise_y_up": 0,
+            "no_primary_loop": 492
+          },
+          "rejections": {
+            "parent distance is outside the clean-room blend gate": 49,
+            "profile transform changed stroke or loop topology": 8,
+            "same_writer": 117,
+            "synthetic trajectory is too close to a parent": 1
+          }
+        },
+        "validation": {
+          "records": 512,
+          "labels": 25,
+          "finite": true,
+          "coordinates_in_unit_box": true,
+          "uniform_time": true,
+          "topology_mismatches": 0,
+          "cross_writer_verified": true
+        },
+        "profile_path": "profiles/project_loo_held_99a922f1edc2ef0565d0.json",
+        "profile_sha256": "9031ae5c352a1faaf73e17750d64aabc7a3bcb2b36b664dde81bccbdbe48f23a"
+      },
+      "0051ac0f3b066f191a50": {
+        "held_writer_fingerprint": "0051ac0f3b066f191a50",
+        "held_records": 82,
+        "profile_fit_records": 305,
+        "held_rows_in_profile": 0,
+        "bank": {
+          "path": "project_writer_loo/held_0051ac0f3b066f191a50.npz",
+          "sha256": "295cddf3e83b9d80991fa2fbbdead63304cd81d8a20d3afe2cd1bde3520d36c9",
+          "metadata_path": "project_writer_loo/held_0051ac0f3b066f191a50.metadata.jsonl.gz",
+          "metadata_sha256": "98f7fa552ca60c7bdf751bc0e5c853f9cdb302ed0ece3a5037187872b6acb6bb",
+          "records": 512,
+          "labels": 25
+        },
+        "bank_audit": {
+          "schema": "aiflow-cleanroom-profiled-augmentation/v3",
+          "requested": 512,
+          "generated": 512,
+          "attempts": 723,
+          "eligible_labels": 25,
+          "generated_labels": 25,
+          "eligible_profile_groups": 29,
+          "unique_parent_fingerprints": 272,
+          "same_label_only": true,
+          "same_stroke_count_only": true,
+          "same_loop_direction_only": true,
+          "cross_writer_required": true,
+          "profile_fitted_rows": 305,
+          "evaluation_rows": 0,
+          "crohme_rows": 0,
+          "non_spatial_channels_preserved": true,
+          "physics": {
+            "name": "light",
+            "time_warp_log": 0.12,
+            "response_min": 0.62,
+            "response_max": 0.82,
+            "momentum_min": 0.03,
+            "momentum_max": 0.14,
+            "tremor": 0.0035,
+            "drift": 0.0045
+          },
+          "physics_applied_rows": 512,
+          "loop_direction_rows": {
+            "clockwise_y_up": 29,
+            "counterclockwise_y_up": 0,
+            "no_primary_loop": 483
+          },
+          "rejections": {
+            "parent distance is outside the clean-room blend gate": 64,
+            "profile transform changed stroke or loop topology": 8,
+            "same_writer": 135,
+            "synthetic trajectory is too close to a parent": 4
+          }
+        },
+        "validation": {
+          "records": 512,
+          "labels": 25,
+          "finite": true,
+          "coordinates_in_unit_box": true,
+          "uniform_time": true,
+          "topology_mismatches": 0,
+          "cross_writer_verified": true
+        },
+        "profile_path": "profiles/project_loo_held_0051ac0f3b066f191a50.json",
+        "profile_sha256": "a9e4dd8e2b5a4b3f97823de9491fb9cac51a4c13145859dc9033df039a1d9237"
+      },
+      "2d04cc6470b7a5aa8e47": {
+        "held_writer_fingerprint": "2d04cc6470b7a5aa8e47",
+        "held_records": 32,
+        "profile_fit_records": 355,
+        "held_rows_in_profile": 0,
+        "bank": {
+          "path": "project_writer_loo/held_2d04cc6470b7a5aa8e47.npz",
+          "sha256": "22b497926c62b14b01d16683a19613addfa259f742ddb914833885fda0c29a26",
+          "metadata_path": "project_writer_loo/held_2d04cc6470b7a5aa8e47.metadata.jsonl.gz",
+          "metadata_sha256": "d4762fedfb779ae210b765bd5bb387baa47290f1ea8e54ccecfdf1fa23d67895",
+          "records": 512,
+          "labels": 25
+        },
+        "bank_audit": {
+          "schema": "aiflow-cleanroom-profiled-augmentation/v3",
+          "requested": 512,
+          "generated": 512,
+          "attempts": 742,
+          "eligible_labels": 25,
+          "generated_labels": 25,
+          "eligible_profile_groups": 29,
+          "unique_parent_fingerprints": 308,
+          "same_label_only": true,
+          "same_stroke_count_only": true,
+          "same_loop_direction_only": true,
+          "cross_writer_required": true,
+          "profile_fitted_rows": 355,
+          "evaluation_rows": 0,
+          "crohme_rows": 0,
+          "non_spatial_channels_preserved": true,
+          "physics": {
+            "name": "light",
+            "time_warp_log": 0.12,
+            "response_min": 0.62,
+            "response_max": 0.82,
+            "momentum_min": 0.03,
+            "momentum_max": 0.14,
+            "tremor": 0.0035,
+            "drift": 0.0045
+          },
+          "physics_applied_rows": 512,
+          "loop_direction_rows": {
+            "clockwise_y_up": 19,
+            "counterclockwise_y_up": 0,
+            "no_primary_loop": 493
+          },
+          "rejections": {
+            "parent distance is outside the clean-room blend gate": 43,
+            "profile transform changed stroke or loop topology": 1,
+            "same_writer": 178,
+            "synthetic trajectory is too close to a parent": 8
+          }
+        },
+        "validation": {
+          "records": 512,
+          "labels": 25,
+          "finite": true,
+          "coordinates_in_unit_box": true,
+          "uniform_time": true,
+          "topology_mismatches": 0,
+          "cross_writer_verified": true
+        },
+        "profile_path": "profiles/project_loo_held_2d04cc6470b7a5aa8e47.json",
+        "profile_sha256": "cc0a51c0260907d0b3289a7bbe0dd3b4c801740f528b4f72f3b2671b8834d0d0"
+      }
+    }
+  },
+  "visual_audit": {
+    "path": "cleanroom_profiled_preview.png",
+    "sha256": "a5a7c89ced64c3425b90b00b673e1dbb6b4643d378d07a1e47dac00e772c39ee"
+  },
+  "training_data_guard": {
+    "schema": "aiflow-training-data-guard/v1",
+    "policy": "CROHME and MathWriting are validation-only",
+    "forbidden_markers": [
+      "30_noncommercial_evaluation",
+      "crohme",
+      "mathwriting"
+    ],
+    "admitted_sources": {
+      "cleanroom_external_synthetic": 4096,
+      "cleanroom_project_synthetic_final": 512,
+      "hwrt": 150789,
+      "isgl": 6591,
+      "project_owned": 387,
+      "uci": 2580,
+      "uji": 7128
+    },
+    "crohme_rows": 0,
+    "mathwriting_rows": 0,
+    "crohme_gradient_updates": 0,
+    "mathwriting_gradient_updates": 0,
+    "total_gradient_updates": 0,
+    "total_gradient_updates_recorded": true,
+    "passed": true
+  }
+}

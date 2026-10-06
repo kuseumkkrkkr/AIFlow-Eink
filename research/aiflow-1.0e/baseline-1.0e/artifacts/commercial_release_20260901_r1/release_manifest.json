@@ -1,0 +1,77 @@
+{
+  "schema": "aiflow-commercial-release-manifest/v1",
+  "generated_at": "2026-09-01T12:30:00Z",
+  "release_channel": "bounded_review_required_beta",
+  "product_adopted": false,
+  "product_auto_commit": false,
+  "decision": "hold_full_commercial_release",
+  "runtime_contract": {
+    "primary": "frozen 5-channel ordered online-ink HWR candidate",
+    "channels": ["x", "y", "delta_t", "stroke_start", "observed"],
+    "shape": [128, 5],
+    "candidate_policy": "preserve HWR Top-k; no new token, deletion, regrouping, or relation invention",
+    "fallback": "REVIEW_REQUIRED with immutable raw ink"
+  },
+  "gates": {
+    "writer_loo_nonregression": {
+      "passed": true,
+      "records": 387,
+      "formulas": 95,
+      "top1": 0.8191214470284238,
+      "top5": 0.9664082687338501,
+      "formula_exact": 0.5157894736842106,
+      "row_level_top1_regressions": 0,
+      "checkpoint": "artifacts/commercial_hwr_stability_20260901_r1_shadow/commercial_hwr_stability_checkpoint.pt",
+      "checkpoint_sha256": "ADEA8868585111314E8BD4F6696A0A90E27A51B9E83D8BBC325B9C916C91AFEA"
+    },
+    "fresh_untouched_acceptance": {
+      "passed": false,
+      "reason": "collector last-run reports no new items after the existing acceptance pool",
+      "last_run": "D:/AIFlow-Workspace/PrivateData/math-ink-data-collector/last-run.json",
+      "last_run_sha256": "605DBB26B1DAC93EA6F4DBAD01A069BBDF90FD682C79BDB61C48412393F43821",
+      "listed": 164,
+      "downloaded": 0,
+      "new_items": 0,
+      "required_before_adoption": ["at least 2 unseen writers", "at least 50 formulas and 180 glyphs", "ownership and SHA freeze"]
+    },
+    "research_loop_candidate": {
+      "passed": false,
+      "reason": "new profiled 45-step search has the same Top-1 but loses Top-5 against the frozen v4 candidate",
+      "selected_variant": "profiled_last_block_fast",
+      "top1": 0.8191214470284238,
+      "top5": 0.9638242894056848,
+      "input": "artifacts/commercial_hwr_cleanroom_profiled_20260901_r1_research/training_report.json",
+      "input_sha256": "FCB876FAD8CF4BDF0601E09E61D000FA88C46E7E9289FF258614B049D436AD91"
+    },
+    "math_exact_ast_equivalence": {
+      "passed": false,
+      "reason": "guard self-tests pass, but fresh product acceptance and end-to-end AST equivalence are not established"
+    },
+    "android_device_gate": {
+      "passed": false,
+      "reason": "no 1.0e LiteRT bundle and real-device p50/p95, PSS, and battery report were supplied"
+    },
+    "license_audit": {
+      "passed": false,
+      "reason": "the public serial 1.0e artifact is a research shadow; release attribution and commercial rights for every bundled weight/data source remain incomplete"
+    }
+  },
+  "shadow_components": {
+    "serial_ink_teller": {
+      "status": "shadow_only",
+      "writer_loo_exact": "0/47",
+      "baseline_exact": "16/47",
+      "train_set_overfit": false,
+      "evaluation": "artifacts/serial_ink_teller_distilled_10e_20260831/evaluation.json",
+      "evaluation_sha256": "F1AA7957E4D4BA624E2916EC7686C04F5565C147240A1E6A75027CD05A45A70C",
+      "huggingface": "https://huggingface.co/cwLeeDev/aiflow-math-ink-1.0e"
+    },
+    "formula_context_and_grouping": "shadow; candidate-preserving only; automatic commit disabled"
+  },
+  "required_next_evidence": [
+    "fresh writer/formula-disjoint acceptance with ownership review and SHA freeze",
+    "formula exact plus AST/semantic equivalence on that untouched set",
+    "1.0e-compatible Android bundle parity and three-tier real-device benchmark",
+    "third-party notices and commercial rights audit for all shipped weights and data"
+  ]
+}

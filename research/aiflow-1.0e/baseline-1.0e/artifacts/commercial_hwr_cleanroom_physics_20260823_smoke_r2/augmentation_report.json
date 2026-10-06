@@ -1,0 +1,1296 @@
+{
+  "schema": "aiflow-commercial-hwr-cleanroom-physics/v2",
+  "generated_at": "2026-08-22T07:22:26.097777+00:00",
+  "status": "search_only",
+  "architecture_unchanged": true,
+  "architecture": {
+    "input": [
+      128,
+      5
+    ],
+    "channels": [
+      "x",
+      "y",
+      "delta_t",
+      "stroke_start",
+      "observed"
+    ],
+    "classes": 372,
+    "hidden": 128,
+    "transformer_blocks": 4,
+    "attention_heads": 4,
+    "single_head": true
+  },
+  "input_contract": {
+    "channels": [
+      "x",
+      "y",
+      "delta_t",
+      "stroke_start",
+      "observed"
+    ],
+    "observed_channel_mode": "uniform-time",
+    "math_observed_transform": "uniform-time",
+    "auxiliary_observed_transform": "uniform-time",
+    "observed_channel_policy": "constant_one_for_source_invariance",
+    "delta_t_policy": "normalized_sequence_progress:first_zero_then_1/(points-1)"
+  },
+  "selection_policy": {
+    "project_writer_disjoint": true,
+    "writers": 7,
+    "records": 387,
+    "selection_used_fresh_acceptance": false,
+    "selection_used_crohme": false,
+    "selection_used_mathwriting": false,
+    "external_rows_role": "class-balanced rehearsal and same-label DTW parents only"
+  },
+  "clean_room_contract": {
+    "purpose": "independent rights-compliant physical simulation, not licence circumvention",
+    "admitted_parent_sources": [
+      "hwrt",
+      "isgl",
+      "uci",
+      "uji"
+    ],
+    "excluded_sources": [
+      "BDSHWA: no character boundary",
+      "noncommercial evaluation corpora"
+    ],
+    "same_label_dtw_only": true,
+    "same_stroke_count_dtw_only": true,
+    "project_dtw_cross_writer_only": true,
+    "near_parent_filter": "DTW-aligned RMS [0.035, 0.45] and synthetic-parent RMS >= 0.008",
+    "physical_parameters": "predeclared generic spring, damping, inertia, tremor, drift, monotonic speed warp",
+    "physical_parameters_fitted_from_external_evaluation": false,
+    "evaluation_error_labels_used_for_targeting": false,
+    "non_spatial_channels_unchanged": [
+      "delta_t",
+      "stroke_start",
+      "observed"
+    ],
+    "time_quality": "uniform delta_t; speed variation represented only by monotonic XY progression"
+  },
+  "dtw_banks": {
+    "external": {
+      "requested": 32,
+      "generated": 32,
+      "attempts": 35,
+      "eligible_labels": 371,
+      "generated_labels": 32,
+      "eligible_topology_groups": 1258,
+      "unique_parent_records": 64,
+      "same_label_pairs_only": true,
+      "same_stroke_count_only": true,
+      "cross_writer_required": false,
+      "non_spatial_channels_preserved": true,
+      "rejections": {
+        "parent distance is outside the clean-room blend gate": 3
+      },
+      "pair_rms": {
+        "minimum": 0.03777464652924475,
+        "median": 0.12347746051478946,
+        "maximum": 0.44380179896450006
+      },
+      "dtw_cost": {
+        "minimum": 0.0634902107175353,
+        "median": 0.1980679329625678,
+        "maximum": 0.7320528995696396
+      }
+    },
+    "project_final": {
+      "requested": 8,
+      "generated": 8,
+      "attempts": 10,
+      "eligible_labels": 25,
+      "generated_labels": 8,
+      "eligible_topology_groups": 29,
+      "unique_parent_records": 16,
+      "same_label_pairs_only": true,
+      "same_stroke_count_only": true,
+      "cross_writer_required": true,
+      "non_spatial_channels_preserved": true,
+      "rejections": {
+        "same_writer": 2
+      },
+      "pair_rms": {
+        "minimum": 0.040453837325365526,
+        "median": 0.08547871761289455,
+        "maximum": 0.09999589262357153
+      },
+      "dtw_cost": {
+        "minimum": 0.08234046868335555,
+        "median": 0.1407307996474419,
+        "maximum": 0.1933688781753872
+      }
+    }
+  },
+  "variants": {
+    "control_head": {
+      "variant": {
+        "name": "control_head",
+        "train_scope": "head",
+        "learning_rate": 0.0,
+        "geometry": {
+          "name": "none",
+          "train_scope": "last_block",
+          "learning_rate": 0.0,
+          "rotation_degrees": 0.0,
+          "aspect_log_scale": 0.0,
+          "shear": 0.0,
+          "elastic": 0.0,
+          "top5_margin_weight": 0.0
+        },
+        "physics": {
+          "name": "none",
+          "time_warp_log": 0.0,
+          "response_min": 1.0,
+          "response_max": 1.0,
+          "momentum_min": 0.0,
+          "momentum_max": 0.0,
+          "tremor": 0.0,
+          "drift": 0.0
+        },
+        "use_dtw": false,
+        "top5_margin_weight": 0.0
+      },
+      "folds": [
+        {
+          "held_writer": "2108826fd653f869fdd991c5",
+          "held_records": 100,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 8,
+            "eligible_labels": 23,
+            "generated_labels": 8,
+            "eligible_topology_groups": 25,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {},
+            "pair_rms": {
+              "minimum": 0.03541821045780916,
+              "median": 0.06166951569787786,
+              "maximum": 0.41813095964985875
+            },
+            "dtw_cost": {
+              "minimum": 0.06929703885914902,
+              "median": 0.10477294269237894,
+              "maximum": 0.7509179690006121
+            }
+          }
+        },
+        {
+          "held_writer": "3e41b56c75d3f1af3cc89494",
+          "held_records": 35,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 9,
+            "eligible_labels": 24,
+            "generated_labels": 8,
+            "eligible_topology_groups": 27,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "same_writer": 1
+            },
+            "pair_rms": {
+              "minimum": 0.03951087436333725,
+              "median": 0.09618905589900975,
+              "maximum": 0.275725939196798
+            },
+            "dtw_cost": {
+              "minimum": 0.06689412455683347,
+              "median": 0.16047642177737353,
+              "maximum": 0.4860106544423194
+            }
+          }
+        },
+        {
+          "held_writer": "50768ec7799073826818d9b6",
+          "held_records": 23,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 11,
+            "eligible_labels": 25,
+            "generated_labels": 8,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 2,
+              "same_writer": 1
+            },
+            "pair_rms": {
+              "minimum": 0.07296189984883672,
+              "median": 0.09460975438716172,
+              "maximum": 0.3419429173826855
+            },
+            "dtw_cost": {
+              "minimum": 0.12485554977822057,
+              "median": 0.19804835017875538,
+              "maximum": 0.6471100802021591
+            }
+          }
+        },
+        {
+          "held_writer": "6253df366faf0937d94146d3",
+          "held_records": 80,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 10,
+            "eligible_labels": 24,
+            "generated_labels": 8,
+            "eligible_topology_groups": 28,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "same_writer": 2
+            },
+            "pair_rms": {
+              "minimum": 0.04958351062356565,
+              "median": 0.09113094381426401,
+              "maximum": 0.37293760900315803
+            },
+            "dtw_cost": {
+              "minimum": 0.07601677678308119,
+              "median": 0.14878030091016553,
+              "maximum": 0.5883476367478752
+            }
+          }
+        },
+        {
+          "held_writer": "6654957a88583df48a89c20d",
+          "held_records": 35,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 8,
+            "eligible_labels": 25,
+            "generated_labels": 8,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {},
+            "pair_rms": {
+              "minimum": 0.051242479330019845,
+              "median": 0.1041476679025415,
+              "maximum": 0.33433665740890817
+            },
+            "dtw_cost": {
+              "minimum": 0.09673951311431438,
+              "median": 0.16732705252118224,
+              "maximum": 0.5737551964759353
+            }
+          }
+        },
+        {
+          "held_writer": "baed3dc87cbfa8c20bdde074",
+          "held_records": 82,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 12,
+            "eligible_labels": 25,
+            "generated_labels": 8,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 3,
+              "same_writer": 1
+            },
+            "pair_rms": {
+              "minimum": 0.04491218853623257,
+              "median": 0.09174368158242535,
+              "maximum": 0.25546375279490674
+            },
+            "dtw_cost": {
+              "minimum": 0.0788518123412773,
+              "median": 0.15588080883878844,
+              "maximum": 0.501523072748302
+            }
+          }
+        },
+        {
+          "held_writer": "ed6789e0639f68e05d5e2d1b",
+          "held_records": 32,
+          "training": {
+            "steps": 0,
+            "seconds": 0.0,
+            "train_scope": "frozen_control",
+            "initialization": "previous commercial-rights writer-LOO challenger"
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 13,
+            "eligible_labels": 25,
+            "generated_labels": 8,
+            "eligible_topology_groups": 28,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 1,
+              "same_writer": 3,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.05195194633706447,
+              "median": 0.08281638670789791,
+              "maximum": 0.35724750419991125
+            },
+            "dtw_cost": {
+              "minimum": 0.09320410421343928,
+              "median": 0.13901887284108053,
+              "maximum": 0.5687070523647717
+            }
+          }
+        }
+      ],
+      "writer_disjoint": {
+        "records": 387,
+        "top1": 0.8036175710594315,
+        "top5": 0.9612403100775194,
+        "strict_macro_top1": 0.7854737432780668,
+        "strict_macro_top5": 0.9735486900562897,
+        "ece_10": 0.08070054061191029,
+        "writer_macro_top1": 0.7974241727443893,
+        "writer_macro_top5": 0.9405931731122988,
+        "worst_writer_top1": 0.6521739130434783,
+        "worst_writer_top5": 0.7391304347826086,
+        "by_writer": [
+          {
+            "writer": "2108826fd653f869fdd991c5",
+            "records": 100,
+            "top1": 0.76,
+            "top5": 0.97
+          },
+          {
+            "writer": "3e41b56c75d3f1af3cc89494",
+            "records": 35,
+            "top1": 0.7714285714285715,
+            "top5": 0.9714285714285714
+          },
+          {
+            "writer": "50768ec7799073826818d9b6",
+            "records": 23,
+            "top1": 0.6521739130434783,
+            "top5": 0.7391304347826086
+          },
+          {
+            "writer": "6253df366faf0937d94146d3",
+            "records": 80,
+            "top1": 0.925,
+            "top5": 1.0
+          },
+          {
+            "writer": "6654957a88583df48a89c20d",
+            "records": 35,
+            "top1": 0.8857142857142857,
+            "top5": 0.9714285714285714
+          },
+          {
+            "writer": "baed3dc87cbfa8c20bdde074",
+            "records": 82,
+            "top1": 0.7439024390243902,
+            "top5": 0.9634146341463414
+          },
+          {
+            "writer": "ed6789e0639f68e05d5e2d1b",
+            "records": 32,
+            "top1": 0.84375,
+            "top5": 0.96875
+          }
+        ],
+        "by_label": {
+          "+": {
+            "records": 37,
+            "top1": 0.8378378378378378,
+            "top5": 0.9459459459459459
+          },
+          "-": {
+            "records": 10,
+            "top1": 0.9,
+            "top5": 1.0
+          },
+          "/": {
+            "records": 8,
+            "top1": 0.875,
+            "top5": 1.0
+          },
+          "0": {
+            "records": 24,
+            "top1": 0.6666666666666666,
+            "top5": 0.875
+          },
+          "1": {
+            "records": 41,
+            "top1": 0.6585365853658537,
+            "top5": 0.975609756097561
+          },
+          "2": {
+            "records": 24,
+            "top1": 0.9583333333333334,
+            "top5": 0.9583333333333334
+          },
+          "3": {
+            "records": 17,
+            "top1": 0.9411764705882353,
+            "top5": 1.0
+          },
+          "4": {
+            "records": 17,
+            "top1": 0.8823529411764706,
+            "top5": 1.0
+          },
+          "5": {
+            "records": 23,
+            "top1": 0.7391304347826086,
+            "top5": 0.9130434782608695
+          },
+          "6": {
+            "records": 18,
+            "top1": 0.8333333333333334,
+            "top5": 1.0
+          },
+          "7": {
+            "records": 14,
+            "top1": 0.8571428571428571,
+            "top5": 1.0
+          },
+          "8": {
+            "records": 13,
+            "top1": 0.38461538461538464,
+            "top5": 0.9230769230769231
+          },
+          "9": {
+            "records": 7,
+            "top1": 0.8571428571428571,
+            "top5": 0.8571428571428571
+          },
+          "\\div": {
+            "records": 11,
+            "top1": 0.7272727272727273,
+            "top5": 0.9090909090909091
+          },
+          "\\neq": {
+            "records": 1,
+            "top1": 0.0,
+            "top5": 1.0
+          },
+          "\\sqrt{}": {
+            "records": 1,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "\\times": {
+            "records": 18,
+            "top1": 0.7777777777777778,
+            "top5": 1.0
+          },
+          "a": {
+            "records": 4,
+            "top1": 0.75,
+            "top5": 1.0
+          },
+          "b": {
+            "records": 7,
+            "top1": 0.8571428571428571,
+            "top5": 1.0
+          },
+          "f": {
+            "records": 6,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "m": {
+            "records": 3,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "n": {
+            "records": 7,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "x": {
+            "records": 5,
+            "top1": 0.2,
+            "top5": 1.0
+          },
+          "y": {
+            "records": 7,
+            "top1": 0.7142857142857143,
+            "top5": 1.0
+          },
+          "(": {
+            "records": 11,
+            "top1": 0.9090909090909091,
+            "top5": 1.0
+          },
+          ")": {
+            "records": 11,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "=": {
+            "records": 42,
+            "top1": 0.8809523809523809,
+            "top5": 0.9285714285714286
+          }
+        },
+        "by_family": {
+          "vertical_slash": {
+            "records": 49,
+            "top1": 0.6938775510204082,
+            "top5": 0.9795918367346939
+          },
+          "circle": {
+            "records": 24,
+            "top1": 0.6666666666666666,
+            "top5": 0.875
+          },
+          "cross": {
+            "records": 23,
+            "top1": 0.6521739130434783,
+            "top5": 1.0
+          }
+        }
+      }
+    },
+    "dtw_physics_light": {
+      "variant": {
+        "name": "dtw_physics_light",
+        "train_scope": "last_block",
+        "learning_rate": 1e-05,
+        "geometry": {
+          "name": "mild_v2",
+          "train_scope": "last_block",
+          "learning_rate": 0.0,
+          "rotation_degrees": 5.0,
+          "aspect_log_scale": 0.08,
+          "shear": 0.05,
+          "elastic": 0.008,
+          "top5_margin_weight": 0.0
+        },
+        "physics": {
+          "name": "light",
+          "time_warp_log": 0.12,
+          "response_min": 0.62,
+          "response_max": 0.82,
+          "momentum_min": 0.03,
+          "momentum_max": 0.14,
+          "tremor": 0.0035,
+          "drift": 0.0045
+        },
+        "use_dtw": true,
+        "top5_margin_weight": 0.25
+      },
+      "folds": [
+        {
+          "held_writer": "2108826fd653f869fdd991c5",
+          "held_records": 100,
+          "training": {
+            "steps": 1,
+            "direct_batch_size": 8,
+            "external_batch_size": 16,
+            "learning_rate": 1e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 8.795148849487305,
+            "final_loss": 8.795148849487305,
+            "seconds": 0.580704699998023
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 8,
+            "eligible_labels": 23,
+            "generated_labels": 8,
+            "eligible_topology_groups": 25,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {},
+            "pair_rms": {
+              "minimum": 0.03541821045780916,
+              "median": 0.06166951569787786,
+              "maximum": 0.41813095964985875
+            },
+            "dtw_cost": {
+              "minimum": 0.06929703885914902,
+              "median": 0.10477294269237894,
+              "maximum": 0.7509179690006121
+            }
+          }
+        },
+        {
+          "held_writer": "3e41b56c75d3f1af3cc89494",
+          "held_records": 35,
+          "training": {
+            "steps": 1,
+            "direct_batch_size": 8,
+            "external_batch_size": 16,
+            "learning_rate": 1e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 3.3887147903442383,
+            "final_loss": 3.3887147903442383,
+            "seconds": 0.2863708000004408
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 9,
+            "eligible_labels": 24,
+            "generated_labels": 8,
+            "eligible_topology_groups": 27,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "same_writer": 1
+            },
+            "pair_rms": {
+              "minimum": 0.03951087436333725,
+              "median": 0.09618905589900975,
+              "maximum": 0.275725939196798
+            },
+            "dtw_cost": {
+              "minimum": 0.06689412455683347,
+              "median": 0.16047642177737353,
+              "maximum": 0.4860106544423194
+            }
+          }
+        },
+        {
+          "held_writer": "50768ec7799073826818d9b6",
+          "held_records": 23,
+          "training": {
+            "steps": 1,
+            "direct_batch_size": 8,
+            "external_batch_size": 16,
+            "learning_rate": 1e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 2.7295262813568115,
+            "final_loss": 2.7295262813568115,
+            "seconds": 0.3222366999980295
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 11,
+            "eligible_labels": 25,
+            "generated_labels": 8,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 2,
+              "same_writer": 1
+            },
+            "pair_rms": {
+              "minimum": 0.07296189984883672,
+              "median": 0.09460975438716172,
+              "maximum": 0.3419429173826855
+            },
+            "dtw_cost": {
+              "minimum": 0.12485554977822057,
+              "median": 0.19804835017875538,
+              "maximum": 0.6471100802021591
+            }
+          }
+        },
+        {
+          "held_writer": "6253df366faf0937d94146d3",
+          "held_records": 80,
+          "training": {
+            "steps": 1,
+            "direct_batch_size": 8,
+            "external_batch_size": 16,
+            "learning_rate": 1e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 5.1213507652282715,
+            "final_loss": 5.1213507652282715,
+            "seconds": 0.2905927999963751
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 10,
+            "eligible_labels": 24,
+            "generated_labels": 8,
+            "eligible_topology_groups": 28,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "same_writer": 2
+            },
+            "pair_rms": {
+              "minimum": 0.04958351062356565,
+              "median": 0.09113094381426401,
+              "maximum": 0.37293760900315803
+            },
+            "dtw_cost": {
+              "minimum": 0.07601677678308119,
+              "median": 0.14878030091016553,
+              "maximum": 0.5883476367478752
+            }
+          }
+        },
+        {
+          "held_writer": "6654957a88583df48a89c20d",
+          "held_records": 35,
+          "training": {
+            "steps": 1,
+            "direct_batch_size": 8,
+            "external_batch_size": 16,
+            "learning_rate": 1e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 2.4692115783691406,
+            "final_loss": 2.4692115783691406,
+            "seconds": 0.3171135999946273
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 8,
+            "eligible_labels": 25,
+            "generated_labels": 8,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {},
+            "pair_rms": {
+              "minimum": 0.051242479330019845,
+              "median": 0.1041476679025415,
+              "maximum": 0.33433665740890817
+            },
+            "dtw_cost": {
+              "minimum": 0.09673951311431438,
+              "median": 0.16732705252118224,
+              "maximum": 0.5737551964759353
+            }
+          }
+        },
+        {
+          "held_writer": "baed3dc87cbfa8c20bdde074",
+          "held_records": 82,
+          "training": {
+            "steps": 1,
+            "direct_batch_size": 8,
+            "external_batch_size": 16,
+            "learning_rate": 1e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 4.632969856262207,
+            "final_loss": 4.632969856262207,
+            "seconds": 0.31142459999682615
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 12,
+            "eligible_labels": 25,
+            "generated_labels": 8,
+            "eligible_topology_groups": 29,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 3,
+              "same_writer": 1
+            },
+            "pair_rms": {
+              "minimum": 0.04491218853623257,
+              "median": 0.09174368158242535,
+              "maximum": 0.25546375279490674
+            },
+            "dtw_cost": {
+              "minimum": 0.0788518123412773,
+              "median": 0.15588080883878844,
+              "maximum": 0.501523072748302
+            }
+          }
+        },
+        {
+          "held_writer": "ed6789e0639f68e05d5e2d1b",
+          "held_records": 32,
+          "training": {
+            "steps": 1,
+            "direct_batch_size": 8,
+            "external_batch_size": 16,
+            "learning_rate": 1e-05,
+            "train_scope": "last_block",
+            "use_dtw": true,
+            "physics": {
+              "name": "light",
+              "time_warp_log": 0.12,
+              "response_min": 0.62,
+              "response_max": 0.82,
+              "momentum_min": 0.03,
+              "momentum_max": 0.14,
+              "tremor": 0.0035,
+              "drift": 0.0045
+            },
+            "trainable_parameters": 246389,
+            "mean_loss": 1.898629903793335,
+            "final_loss": 1.898629903793335,
+            "seconds": 0.3068383999998332
+          },
+          "direct_dtw_bank": {
+            "requested": 8,
+            "generated": 8,
+            "attempts": 13,
+            "eligible_labels": 25,
+            "generated_labels": 8,
+            "eligible_topology_groups": 28,
+            "unique_parent_records": 16,
+            "same_label_pairs_only": true,
+            "same_stroke_count_only": true,
+            "cross_writer_required": true,
+            "non_spatial_channels_preserved": true,
+            "rejections": {
+              "parent distance is outside the clean-room blend gate": 1,
+              "same_writer": 3,
+              "synthetic trajectory is too close to a parent": 1
+            },
+            "pair_rms": {
+              "minimum": 0.05195194633706447,
+              "median": 0.08281638670789791,
+              "maximum": 0.35724750419991125
+            },
+            "dtw_cost": {
+              "minimum": 0.09320410421343928,
+              "median": 0.13901887284108053,
+              "maximum": 0.5687070523647717
+            }
+          }
+        }
+      ],
+      "writer_disjoint": {
+        "records": 387,
+        "top1": 0.8036175710594315,
+        "top5": 0.9612403100775194,
+        "strict_macro_top1": 0.7854737432780668,
+        "strict_macro_top5": 0.9735486900562897,
+        "ece_10": 0.08065161559470865,
+        "writer_macro_top1": 0.7974241727443893,
+        "writer_macro_top5": 0.9405931731122988,
+        "worst_writer_top1": 0.6521739130434783,
+        "worst_writer_top5": 0.7391304347826086,
+        "by_writer": [
+          {
+            "writer": "2108826fd653f869fdd991c5",
+            "records": 100,
+            "top1": 0.76,
+            "top5": 0.97
+          },
+          {
+            "writer": "3e41b56c75d3f1af3cc89494",
+            "records": 35,
+            "top1": 0.7714285714285715,
+            "top5": 0.9714285714285714
+          },
+          {
+            "writer": "50768ec7799073826818d9b6",
+            "records": 23,
+            "top1": 0.6521739130434783,
+            "top5": 0.7391304347826086
+          },
+          {
+            "writer": "6253df366faf0937d94146d3",
+            "records": 80,
+            "top1": 0.925,
+            "top5": 1.0
+          },
+          {
+            "writer": "6654957a88583df48a89c20d",
+            "records": 35,
+            "top1": 0.8857142857142857,
+            "top5": 0.9714285714285714
+          },
+          {
+            "writer": "baed3dc87cbfa8c20bdde074",
+            "records": 82,
+            "top1": 0.7439024390243902,
+            "top5": 0.9634146341463414
+          },
+          {
+            "writer": "ed6789e0639f68e05d5e2d1b",
+            "records": 32,
+            "top1": 0.84375,
+            "top5": 0.96875
+          }
+        ],
+        "by_label": {
+          "+": {
+            "records": 37,
+            "top1": 0.8378378378378378,
+            "top5": 0.9459459459459459
+          },
+          "-": {
+            "records": 10,
+            "top1": 0.9,
+            "top5": 1.0
+          },
+          "/": {
+            "records": 8,
+            "top1": 0.875,
+            "top5": 1.0
+          },
+          "0": {
+            "records": 24,
+            "top1": 0.6666666666666666,
+            "top5": 0.875
+          },
+          "1": {
+            "records": 41,
+            "top1": 0.6585365853658537,
+            "top5": 0.975609756097561
+          },
+          "2": {
+            "records": 24,
+            "top1": 0.9583333333333334,
+            "top5": 0.9583333333333334
+          },
+          "3": {
+            "records": 17,
+            "top1": 0.9411764705882353,
+            "top5": 1.0
+          },
+          "4": {
+            "records": 17,
+            "top1": 0.8823529411764706,
+            "top5": 1.0
+          },
+          "5": {
+            "records": 23,
+            "top1": 0.7391304347826086,
+            "top5": 0.9130434782608695
+          },
+          "6": {
+            "records": 18,
+            "top1": 0.8333333333333334,
+            "top5": 1.0
+          },
+          "7": {
+            "records": 14,
+            "top1": 0.8571428571428571,
+            "top5": 1.0
+          },
+          "8": {
+            "records": 13,
+            "top1": 0.38461538461538464,
+            "top5": 0.9230769230769231
+          },
+          "9": {
+            "records": 7,
+            "top1": 0.8571428571428571,
+            "top5": 0.8571428571428571
+          },
+          "\\div": {
+            "records": 11,
+            "top1": 0.7272727272727273,
+            "top5": 0.9090909090909091
+          },
+          "\\neq": {
+            "records": 1,
+            "top1": 0.0,
+            "top5": 1.0
+          },
+          "\\sqrt{}": {
+            "records": 1,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "\\times": {
+            "records": 18,
+            "top1": 0.7777777777777778,
+            "top5": 1.0
+          },
+          "a": {
+            "records": 4,
+            "top1": 0.75,
+            "top5": 1.0
+          },
+          "b": {
+            "records": 7,
+            "top1": 0.8571428571428571,
+            "top5": 1.0
+          },
+          "f": {
+            "records": 6,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "m": {
+            "records": 3,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "n": {
+            "records": 7,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "x": {
+            "records": 5,
+            "top1": 0.2,
+            "top5": 1.0
+          },
+          "y": {
+            "records": 7,
+            "top1": 0.7142857142857143,
+            "top5": 1.0
+          },
+          "(": {
+            "records": 11,
+            "top1": 0.9090909090909091,
+            "top5": 1.0
+          },
+          ")": {
+            "records": 11,
+            "top1": 1.0,
+            "top5": 1.0
+          },
+          "=": {
+            "records": 42,
+            "top1": 0.8809523809523809,
+            "top5": 0.9285714285714286
+          }
+        },
+        "by_family": {
+          "vertical_slash": {
+            "records": 49,
+            "top1": 0.6938775510204082,
+            "top5": 0.9795918367346939
+          },
+          "circle": {
+            "records": 24,
+            "top1": 0.6666666666666666,
+            "top5": 0.875
+          },
+          "cross": {
+            "records": 23,
+            "top1": 0.6521739130434783,
+            "top5": 1.0
+          }
+        }
+      }
+    }
+  },
+  "selection": {
+    "selected": "dtw_physics_light",
+    "augmentation_adopted": true,
+    "reason": "best safe writer-disjoint Top-5, then Top-1/macro/calibration",
+    "gates": {
+      "dtw_physics_light": {
+        "passed": true,
+        "reasons": []
+      }
+    }
+  },
+  "final_training": null,
+  "external_technical_nonregression": null,
+  "training_data_guard": {
+    "schema": "aiflow-training-data-guard/v1",
+    "policy": "CROHME and MathWriting are validation-only",
+    "forbidden_markers": [
+      "30_noncommercial_evaluation",
+      "crohme",
+      "mathwriting"
+    ],
+    "admitted_sources": {
+      "hwrt": 150789,
+      "isgl": 6591,
+      "project_owned": 387,
+      "uci": 2580,
+      "uji": 7128
+    },
+    "crohme_rows": 0,
+    "mathwriting_rows": 0,
+    "crohme_gradient_updates": 0,
+    "mathwriting_gradient_updates": 0,
+    "total_gradient_updates": 7,
+    "total_gradient_updates_recorded": true,
+    "passed": true
+  },
+  "inputs": {
+    "canonical_root": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\datasets\\normalized\\v1",
+    "cache_manifest": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\unified_head_20260813\\unified_math_8ep_full\\cache\\cache_manifest.json",
+    "cache_manifest_sha256": "eb34355c4a90c65326758d59dc167463e1d87dc29748d44c5041a3f1d4210f80",
+    "parent_checkpoint": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_augmentation_20260822_r1_shadow\\commercial_hwr_augmented_checkpoint.pt",
+    "parent_checkpoint_sha256": "41efdfdbb45bafbdfd45a1715bd40ff3c7d6dd48dda164c49cf7153a074e40d1",
+    "parent_writer_loo": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_augmentation_20260822_r1_shadow\\selected_writer_loo_models.pt",
+    "parent_writer_loo_sha256": "cce8894f508d02e3cdd043548d7e51c00f8bc05a7c2e713c3de62838b2222c51",
+    "project_owned_rows": "D:\\AIFlow-Workspace\\PrivateData\\math-ink-data-collector\\derived\\hwr-head-calibration-20260819-r1\\project_owned_ownership_eval_95.jsonl.gz",
+    "project_owned_rows_sha256": "d58098e073b52e7d1f5703981bcffc04e1000813b607168654ba3dbc7d11fabc"
+  },
+  "parent_summary": {
+    "selected_variant": "mild_tail_top5",
+    "architecture_unchanged": true
+  },
+  "elapsed_seconds": 17.688085100002354,
+  "frozen_candidate": false,
+  "product_adopted": false,
+  "adoption_limit": "fresh unseen-writer acceptance and final research evaluation remain pending; grouping/context/layout are outside this trainer",
+  "generated_data": {
+    "external_dtw_bank": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_cleanroom_physics_20260823_smoke_r2\\external_same_label_dtw_bank.npz",
+      "sha256": "00929a3e9d482717c20bb2649d954cfbaab1c2793629dd8fbf729525d937bc4f"
+    },
+    "project_dtw_bank": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_cleanroom_physics_20260823_smoke_r2\\project_cross_writer_dtw_bank.npz",
+      "sha256": "d01eb4cd6ff350576b4cd84666aec3d55d49079551314dfab048520b6187065e"
+    },
+    "visual_audit": {
+      "path": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_cleanroom_physics_20260823_smoke_r2\\cleanroom_dtw_physics_preview.png",
+      "sha256": "0de8e8381fc2350c744ef2760ed46e185feab12b06f00186ebf4a22319466b47"
+    }
+  }
+}

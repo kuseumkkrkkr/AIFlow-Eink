@@ -1,0 +1,937 @@
+{
+  "schema": "aiflow-known-hwr-stability-diagnostic/v4",
+  "generated_at": "2026-08-22T11:58:01.444867+00:00",
+  "training_performed": false,
+  "acceptance_valid": false,
+  "contaminated_by_prior_observation": true,
+  "usable_for_model_selection": false,
+  "usable_for_product_promotion": false,
+  "reason": "the same 186 glyphs were opened during earlier v3 evaluation; this comparison is a regression diagnostic only",
+  "baseline": {
+    "records": 186,
+    "writers": 2,
+    "formulas": 53,
+    "top1": 0.8548387096774194,
+    "top5": 0.9731182795698925,
+    "outside_top5": 5,
+    "formula_exact": 0.6037735849056604,
+    "writer_macro_top1": 0.8298245614035088,
+    "writer_macro_top5": 0.9245614035087719,
+    "strict_macro_top1": 0.8625258799171843,
+    "strict_macro_top5": 0.9635610766045548,
+    "by_writer": {
+      "27f66571c13bf39a3d4ef022": {
+        "records": 171,
+        "top1": 0.8596491228070176,
+        "top5": 0.9824561403508771
+      },
+      "ca031f8f1de952920a57a4f7": {
+        "records": 15,
+        "top1": 0.8,
+        "top5": 0.8666666666666667
+      }
+    },
+    "by_label": {
+      "(": {
+        "records": 18,
+        "top1": 0.6111111111111112,
+        "top5": 1.0
+      },
+      ")": {
+        "records": 18,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "+": {
+        "records": 15,
+        "top1": 0.8,
+        "top5": 1.0
+      },
+      "-": {
+        "records": 8,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "/": {
+        "records": 1,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "0": {
+        "records": 4,
+        "top1": 0.25,
+        "top5": 0.75
+      },
+      "1": {
+        "records": 11,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "2": {
+        "records": 14,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "3": {
+        "records": 5,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "4": {
+        "records": 7,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "5": {
+        "records": 6,
+        "top1": 0.8333333333333334,
+        "top5": 0.8333333333333334
+      },
+      "6": {
+        "records": 4,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "7": {
+        "records": 2,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "8": {
+        "records": 4,
+        "top1": 0.25,
+        "top5": 0.75
+      },
+      "9": {
+        "records": 3,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "=": {
+        "records": 10,
+        "top1": 0.8,
+        "top5": 0.9
+      },
+      "\\div": {
+        "records": 2,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "\\sqrt{}": {
+        "records": 1,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "\\times": {
+        "records": 9,
+        "top1": 0.8888888888888888,
+        "top5": 1.0
+      },
+      "f": {
+        "records": 7,
+        "top1": 0.7142857142857143,
+        "top5": 1.0
+      },
+      "g": {
+        "records": 5,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "x": {
+        "records": 18,
+        "top1": 0.8333333333333334,
+        "top5": 1.0
+      },
+      "y": {
+        "records": 14,
+        "top1": 0.8571428571428571,
+        "top5": 0.9285714285714286
+      }
+    },
+    "by_family": {
+      "vertical_slash": {
+        "records": 12,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "circle": {
+        "records": 4,
+        "top1": 0.25,
+        "top5": 0.75
+      },
+      "cross": {
+        "records": 27,
+        "top1": 0.8518518518518519,
+        "top5": 1.0
+      }
+    }
+  },
+  "candidate": {
+    "records": 186,
+    "writers": 2,
+    "formulas": 53,
+    "top1": 0.8548387096774194,
+    "top5": 0.9731182795698925,
+    "outside_top5": 5,
+    "formula_exact": 0.5849056603773585,
+    "writer_macro_top1": 0.8298245614035088,
+    "writer_macro_top5": 0.9245614035087719,
+    "strict_macro_top1": 0.8562456866804694,
+    "strict_macro_top5": 0.9635610766045548,
+    "by_writer": {
+      "27f66571c13bf39a3d4ef022": {
+        "records": 171,
+        "top1": 0.8596491228070176,
+        "top5": 0.9824561403508771
+      },
+      "ca031f8f1de952920a57a4f7": {
+        "records": 15,
+        "top1": 0.8,
+        "top5": 0.8666666666666667
+      }
+    },
+    "by_label": {
+      "(": {
+        "records": 18,
+        "top1": 0.6111111111111112,
+        "top5": 1.0
+      },
+      ")": {
+        "records": 18,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "+": {
+        "records": 15,
+        "top1": 0.8,
+        "top5": 1.0
+      },
+      "-": {
+        "records": 8,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "/": {
+        "records": 1,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "0": {
+        "records": 4,
+        "top1": 0.25,
+        "top5": 0.75
+      },
+      "1": {
+        "records": 11,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "2": {
+        "records": 14,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "3": {
+        "records": 5,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "4": {
+        "records": 7,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "5": {
+        "records": 6,
+        "top1": 0.8333333333333334,
+        "top5": 0.8333333333333334
+      },
+      "6": {
+        "records": 4,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "7": {
+        "records": 2,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "8": {
+        "records": 4,
+        "top1": 0.25,
+        "top5": 0.75
+      },
+      "9": {
+        "records": 3,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "=": {
+        "records": 10,
+        "top1": 0.8,
+        "top5": 0.9
+      },
+      "\\div": {
+        "records": 2,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "\\sqrt{}": {
+        "records": 1,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "\\times": {
+        "records": 9,
+        "top1": 0.8888888888888888,
+        "top5": 1.0
+      },
+      "f": {
+        "records": 7,
+        "top1": 0.7142857142857143,
+        "top5": 1.0
+      },
+      "g": {
+        "records": 5,
+        "top1": 0.8,
+        "top5": 1.0
+      },
+      "x": {
+        "records": 18,
+        "top1": 0.8888888888888888,
+        "top5": 1.0
+      },
+      "y": {
+        "records": 14,
+        "top1": 0.8571428571428571,
+        "top5": 0.9285714285714286
+      }
+    },
+    "by_family": {
+      "vertical_slash": {
+        "records": 12,
+        "top1": 1.0,
+        "top5": 1.0
+      },
+      "circle": {
+        "records": 4,
+        "top1": 0.25,
+        "top5": 0.75
+      },
+      "cross": {
+        "records": 27,
+        "top1": 0.8888888888888888,
+        "top5": 1.0
+      }
+    }
+  },
+  "delta": {
+    "top1": 0.0,
+    "top5": 0.0,
+    "formula_exact": -0.018867924528301883,
+    "strict_macro_top5": 0.0,
+    "changed_candidate_sets": 48,
+    "top1_improved": 1,
+    "top1_regressed": 1,
+    "top5_rescued": 0,
+    "top5_lost": 0
+  },
+  "diagnostic_checks": {
+    "top1_nonregression": true,
+    "top5_nonregression": true,
+    "formula_exact_nonregression": false,
+    "strict_macro_top5_nonregression": true,
+    "family_top5_nonregression": true,
+    "top1_regressions_zero": false
+  },
+  "all_diagnostic_checks_passed": false,
+  "changes": [
+    {
+      "record_id": "project_owned_ownership_006af13c568fd75a924b5e63",
+      "formula_id": "aiflow_0067",
+      "writer_group": "ca031f8f1de952920a57a4f7",
+      "truth": "1",
+      "baseline_top1": "1",
+      "candidate_top1": "1",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_01c4e7409b5dfed12898d7de",
+      "formula_id": "aiflow_0116",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "(",
+      "baseline_top1": "\\iota",
+      "candidate_top1": "\\iota",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_075ffa21d742b70954f36e25",
+      "formula_id": "aiflow_0116",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "f",
+      "baseline_top1": "\\fint",
+      "candidate_top1": "\\fint",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_0e6f8574e1fef7f9895fc311",
+      "formula_id": "aiflow_0093",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "x",
+      "baseline_top1": "x",
+      "candidate_top1": "x",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_10c8701e52e839911da3384c",
+      "formula_id": "aiflow_0102",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "x",
+      "baseline_top1": "x",
+      "candidate_top1": "x",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_1151b744b95568a4b23cd1b9",
+      "formula_id": "aiflow_0107",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "2",
+      "baseline_top1": "2",
+      "candidate_top1": "2",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_11c295113e2edee2e68f8d8c",
+      "formula_id": "aiflow_0092",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "\\times",
+      "baseline_top1": "x",
+      "candidate_top1": "x",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_121a0b6fbdd58dd831107a35",
+      "formula_id": "aiflow_0068",
+      "writer_group": "ca031f8f1de952920a57a4f7",
+      "truth": "4",
+      "baseline_top1": "4",
+      "candidate_top1": "4",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_150690ba43d9e7e9fd8ac258",
+      "formula_id": "aiflow_0109",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "x",
+      "baseline_top1": "\\kappa",
+      "candidate_top1": "x",
+      "improved": true,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_18de4a1aa41a3d2b38fa5ac9",
+      "formula_id": "aiflow_0100",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "1",
+      "baseline_top1": "1",
+      "candidate_top1": "1",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_1cab740e73545dedbbdbd1c0",
+      "formula_id": "aiflow_0097",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "x",
+      "baseline_top1": "x",
+      "candidate_top1": "x",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_2cf87672d34a58aee6004a04",
+      "formula_id": "aiflow_0116",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "=",
+      "baseline_top1": "=",
+      "candidate_top1": "=",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_3f9716826cc5a4c59097c174",
+      "formula_id": "aiflow_0088",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "9",
+      "baseline_top1": "9",
+      "candidate_top1": "9",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_474a7344593361c6abd5f3aa",
+      "formula_id": "aiflow_0110",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": ")",
+      "baseline_top1": ")",
+      "candidate_top1": ")",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_490efa060fb8d0a8e950052d",
+      "formula_id": "aiflow_0110",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "+",
+      "baseline_top1": "+",
+      "candidate_top1": "+",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_4c0935a2b1d84fd78aa75222",
+      "formula_id": "aiflow_0068",
+      "writer_group": "ca031f8f1de952920a57a4f7",
+      "truth": "0",
+      "baseline_top1": "\\circ",
+      "candidate_top1": "\\circ",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_4c18794bb7bbb7d9c53649b8",
+      "formula_id": "aiflow_0090",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "2",
+      "baseline_top1": "2",
+      "candidate_top1": "2",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_52c230bbeae8ae929d2c39d0",
+      "formula_id": "aiflow_0112",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "x",
+      "baseline_top1": "x",
+      "candidate_top1": "x",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_580737daffa7e93d967d935d",
+      "formula_id": "aiflow_0116",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "x",
+      "baseline_top1": "x",
+      "candidate_top1": "x",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_684312235793dfc17fbfca1d",
+      "formula_id": "aiflow_0101",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "7",
+      "baseline_top1": "7",
+      "candidate_top1": "7",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_72238d3a543648005a4814cc",
+      "formula_id": "aiflow_0089",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "0",
+      "baseline_top1": "0",
+      "candidate_top1": "0",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_74565a32ffaa640afe152974",
+      "formula_id": "aiflow_0097",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "g",
+      "baseline_top1": "g",
+      "candidate_top1": "g",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_7640a5b3fb0ca5e8bad200dc",
+      "formula_id": "aiflow_0104",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "y",
+      "baseline_top1": "\\zeta",
+      "candidate_top1": "\\zeta",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": false,
+      "candidate_top5_hit": false
+    },
+    {
+      "record_id": "project_owned_ownership_78329d8cdb8be61e94e2c140",
+      "formula_id": "aiflow_0104",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "+",
+      "baseline_top1": "+",
+      "candidate_top1": "+",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_7e56e6d3484eefea2ee13aba",
+      "formula_id": "aiflow_0105",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": ")",
+      "baseline_top1": ")",
+      "candidate_top1": ")",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_8044fc6113ecd28270135e7a",
+      "formula_id": "aiflow_0038",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "x",
+      "baseline_top1": "\\mathfrak{X}",
+      "candidate_top1": "\\mathfrak{X}",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_88c88a6c43c5d09bdc744dd9",
+      "formula_id": "aiflow_0044",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "=",
+      "baseline_top1": "\\Xi",
+      "candidate_top1": "\\Xi",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_8a204720221a5ff2be7ba512",
+      "formula_id": "aiflow_0034",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "5",
+      "baseline_top1": "5",
+      "candidate_top1": "5",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_8b36ef03f71ae5ecc401df50",
+      "formula_id": "aiflow_0096",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": ")",
+      "baseline_top1": ")",
+      "candidate_top1": ")",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_8ce86685ea2d8c059f9a181d",
+      "formula_id": "aiflow_0106",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": ")",
+      "baseline_top1": ")",
+      "candidate_top1": ")",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_8cf67d039c000b0038759435",
+      "formula_id": "aiflow_0067",
+      "writer_group": "ca031f8f1de952920a57a4f7",
+      "truth": "\\times",
+      "baseline_top1": "\\times",
+      "candidate_top1": "\\times",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_930143f3dd0a92ede2036eb1",
+      "formula_id": "aiflow_0083",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": ")",
+      "baseline_top1": ")",
+      "candidate_top1": ")",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_9665d2de215dc1025c48ca4e",
+      "formula_id": "aiflow_0099",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "\\sqrt{}",
+      "baseline_top1": "\\sqrt{}",
+      "candidate_top1": "\\sqrt{}",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_9959959d7d75f1468d7bba63",
+      "formula_id": "aiflow_0094",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "3",
+      "baseline_top1": "3",
+      "candidate_top1": "3",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_9ab37c1529b69461ac49818e",
+      "formula_id": "aiflow_0115",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "g",
+      "baseline_top1": "g",
+      "candidate_top1": "y",
+      "improved": false,
+      "regressed": true,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_9d5749a1e9c91542432f6ebe",
+      "formula_id": "aiflow_0105",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "x",
+      "baseline_top1": "x",
+      "candidate_top1": "x",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_a44b50490efe53b748871541",
+      "formula_id": "aiflow_0085",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "+",
+      "baseline_top1": "+",
+      "candidate_top1": "+",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_aa00c0cea4327eb46920f080",
+      "formula_id": "aiflow_0035",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "6",
+      "baseline_top1": "6",
+      "candidate_top1": "6",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_abf10ca9152bcb07a8d2b13c",
+      "formula_id": "aiflow_0033",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "4",
+      "baseline_top1": "4",
+      "candidate_top1": "4",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_ad95655c92488bd2f00db906",
+      "formula_id": "aiflow_0108",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "(",
+      "baseline_top1": "[",
+      "candidate_top1": "[",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_bf74ce30d1b6dff6b36e5cde",
+      "formula_id": "aiflow_0111",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": ")",
+      "baseline_top1": ")",
+      "candidate_top1": ")",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_cc7306ec43c4259733e5a475",
+      "formula_id": "aiflow_0090",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "1",
+      "baseline_top1": "1",
+      "candidate_top1": "1",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_cdf489ad3e190cc3705e17ec",
+      "formula_id": "aiflow_0099",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "x",
+      "baseline_top1": "x",
+      "candidate_top1": "x",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_d49cbb19d7f5daffb9f9f194",
+      "formula_id": "aiflow_0104",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "x",
+      "baseline_top1": "x",
+      "candidate_top1": "x",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_e82e178a2907e67b108a6b26",
+      "formula_id": "aiflow_0086",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "8",
+      "baseline_top1": "\\parr",
+      "candidate_top1": "\\parr",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_ec0fc17ffd38cf9ee234b15e",
+      "formula_id": "aiflow_0043",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "-",
+      "baseline_top1": "-",
+      "candidate_top1": "-",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_f334e8c52c555f8653d538e8",
+      "formula_id": "aiflow_0109",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": ")",
+      "baseline_top1": ")",
+      "candidate_top1": ")",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    },
+    {
+      "record_id": "project_owned_ownership_f8cf6b3f6d556bc46242c363",
+      "formula_id": "aiflow_0037",
+      "writer_group": "27f66571c13bf39a3d4ef022",
+      "truth": "9",
+      "baseline_top1": "9",
+      "candidate_top1": "9",
+      "improved": false,
+      "regressed": false,
+      "baseline_top5_hit": true,
+      "candidate_top5_hit": true
+    }
+  ],
+  "inputs": {
+    "baseline": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_cleanroom_physics_fresh_acceptance_20260823_r1\\fresh_candidate.jsonl.gz",
+    "baseline_sha256": "32e64573124e3c2dc5ba585bea760e7152f25b18bd7b0d8a46d5ed84dd6a5d06",
+    "candidate": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_stability_known_diagnostic_20260823_r2\\known_candidate.jsonl.gz",
+    "candidate_sha256": "c523438be19ccead02592f2e508dce31e0936a0ec9ab6bdf231e5eb655e296f8",
+    "candidate_build": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_stability_known_diagnostic_20260823_r2\\known_candidate.jsonl.gz.report.json",
+    "candidate_build_sha256": "c13cd9f2ff240165de3b1425ff06784f703b3dbe03ce3f1bc6c2564cc25b9fd9",
+    "stability_report": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\commercial_hwr_stability_20260823_r3_shadow\\stability_report.json",
+    "stability_report_sha256": "9f8f3e368643d145bd0922254c23d6c71699efc50b6068d7fb3aa35ac861dd4f",
+    "checkpoint_sha256": "ba5cf14bbec6f8a4bc9192717044437331fc7aa257b85f49689d1eb2df946a66"
+  }
+}
