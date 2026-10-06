@@ -1,0 +1,21 @@
+# AIFlow-Eink cloud research startup
+
+This task already has an isolated cloud checkout. Use /workspace/AIFlow-Eink; do not create a Git worktree unless the user requests one. Inspect git status, current HEAD, AGENTS.md, and the newest research/aiflow-1.0e report before coding. Preserve existing changes.
+
+The repository now contains the complete archived AIFlow 1.0e research snapshot plus follow-up cloud experiments. It is not only a documentation mirror. Runtime setup is outside the checkout:
+
+- /workspace/.aiflow-eink-env/venv provides JSON/schema/document checks; run /workspace/.aiflow-eink-env/venv/bin/python /workspace/.aiflow-eink-env/validate.py.
+- /workspace/.aiflow-research-env/venv provides Python 3.12, torch 2.5.1+cpu, numpy 2.1.3, scipy 1.15.3 and Trackio 0.40.0. Activate with source /workspace/.aiflow-research-env/venv/bin/activate and export PYTHONPYCACHEPREFIX=/workspace/.aiflow-research-env/pycache. CPU-only; no GPU or web service is required.
+- If dependencies or archive inputs are missing, use the saved install script. restore_large_artifacts.py validates split archives and restored file hashes and preserves changed existing files. Do not bypass checksums or TLS. Expect approximately 27 GiB total checkout/Git/dependency storage; inspect disk and cgroup CPU/memory limits before new runs.
+
+Research working directory: /workspace/AIFlow-Eink/research/aiflow-1.0e/selective-2d. Run scripts from that directory. scripts/cloud_hwr_snapshot.py configures archived machine-specific canonical/cache paths at runtime while retaining historical source/data SHA checks. Run the following readiness check:
+
+PYTHONPYCACHEPREFIX=/workspace/.aiflow-research-env/pycache /workspace/.aiflow-research-env/venv/bin/python -c "import sys; sys.path.insert(0, 'scripts'); from cloud_hwr_snapshot import configure; r=configure(); r.load(); r.selftest(); r.direct.broad.previous.global_load(r.direct.broad.previous.OUTPUT)"
+
+For an independent portable replay of archived V33, run scripts/verify_hwr_cloud_v33.py --output with a NEW result path outside historical artifact directories. Read its --help for exact arguments. Preserve the original verifier and certificates. The strict historical verifier has a diagnosed cross-platform gradient tolerance failure on Linux CPU: do not loosen it or claim bit-exact Windows/Linux parity. The separate cloud verifier explicitly reports tolerance, exact Top-5 order and metric parity on all 6515 diagnostic inputs.
+
+Training processes do not persist across tasks. Before resuming, inspect frozen_plan.json, run_started.json, completed.json/failure.json and full training JSONL for both arms of the latest experiment. Refuse to overwrite any historical run. V35 runs two cold canonical arms (v33_control and teacher_correct_feature), each 2400 steps with the same V25 schedule and coefficients. It uses 2 torch threads per arm; at most two parallel arms fit the observed 4-core cgroup quota. Evaluate only after BOTH arms complete, then run scripts/verify_hwr_teacher_correct_feature_v35.py. Resume_state.pt is periodic state evidence; the trainer currently has no automatic resume CLI. Do not restart into an existing output directory.
+
+The frozen historical archive, checkpoint/feature files, manifests, source hashes and original verification certificates must remain byte-identical. New research changes and results belong in separate scripts/reports/artifact directories. Do not alter a source file bound into a running plan. Owned 149-formula data is consumed oracle-group HWR diagnostic data, not new acceptance or official expression accuracy. It must not enter optimizers. CROHME is a separate noncommercial shadow evaluation; zero CROHME rows enter this training. Canonical is retained; no product promotion, deployment or raw-stroke grouping validation is implied.
+
+No daemon needs restart. Validate with actual dependency/data checks and relevant functional tests, then the experiment-specific independent verifier. Do not infer inference readiness from documentation checks alone. Use existing HTTPS Git proxy authentication and configured CA; never print/extract credentials or request a token merely because gh API access is unavailable.
