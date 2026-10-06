@@ -1,0 +1,99 @@
+{
+  "arguments": {
+    "architecture": "mlp",
+    "cache": "D:\\AIFlow-Workspace\\Projects\\Aiflow\\aiflow-math-ink-1.0\\artifacts\\accuracy_upgrade_20260911_cache",
+    "config": "configs\\accuracy_upgrade_10e_20260911.json",
+    "device": "cpu",
+    "features": "formula28",
+    "geometry": "restored",
+    "joint": false,
+    "loss_mode": "legacy_kl",
+    "neighbors": 4,
+    "output": "artifacts\\accuracy_upgrade_20260911_r2_mlp_b",
+    "stage": "student",
+    "structure_weight": 1.0,
+    "teacher": "texteller",
+    "top_k": 5,
+    "window": 6
+  },
+  "command": [
+    "scripts/run_accuracy_upgrade_10e.py",
+    "--config",
+    "configs/accuracy_upgrade_10e_20260911.json",
+    "--output",
+    "artifacts/accuracy_upgrade_20260911_r2_mlp_b",
+    "--stage",
+    "student",
+    "--architecture",
+    "mlp",
+    "--features",
+    "formula28",
+    "--geometry",
+    "restored",
+    "--loss-mode",
+    "legacy_kl",
+    "--teacher",
+    "texteller",
+    "--device",
+    "cpu"
+  ],
+  "configuration": {
+    "accumulation": 4,
+    "batch_size": 8,
+    "candidates": "D:/AIFlow-Workspace/Projects/Aiflow/aiflow-math-ink-1.0/artifacts/auxiliary_distillation_data_20260902_r1/combined_candidates.jsonl.gz",
+    "data_rights_catalog": "D:/AIFlow-Workspace/Projects/Aiflow/aiflow-math-ink-1.0/datasets/DATASET_CATALOG.md",
+    "encoder_learning_rate": 1e-05,
+    "epochs": 12,
+    "execution_model": "gpt-5.6-luna",
+    "hwr_checkpoint": "D:/AIFlow-Workspace/Projects/Aiflow/aiflow-math-ink-1.0/artifacts/time_normalization_20260813/uniform_time_unified_math_8ep_full/classifier_checkpoint.pt",
+    "hwr_training_report": "D:/AIFlow-Workspace/Projects/Aiflow/aiflow-math-ink-1.0/artifacts/time_normalization_20260813/uniform_time_unified_math_8ep_full/training_report.json",
+    "inner_folds": 3,
+    "input_mode": "uniform-time",
+    "learning_rate": 0.0003,
+    "original_candidates": "D:/AIFlow-Workspace/Projects/Aiflow/aiflow-math-ink-1.0/artifacts/ocr_trocr_hwr95_candidates_20260901_r1/candidates.jsonl.gz",
+    "patience": 3,
+    "policy": {
+      "dataset_role": "consumed_development",
+      "external_teacher_in_runtime": false,
+      "fresh_acceptance_required": true,
+      "paid_services": false,
+      "product_activation": false,
+      "upload": false
+    },
+    "raw": "D:/AIFlow-Workspace/Projects/Aiflow/aiflow-math-ink-1.0/artifacts/auxiliary_distillation_data_20260902_r1/combined_raw.jsonl.gz",
+    "repeat_seeds": [
+      20260911,
+      20260912
+    ],
+    "schema": "aiflow-accuracy-upgrade-run/v2",
+    "seed": 20260910,
+    "sources": [
+      {
+        "formulas": "D:/AIFlow-Workspace/PrivateData/math-ink-data-collector/derived/public-candidate-20260819-r2/data/formulas_valid.jsonl",
+        "ownership": "D:/AIFlow-Workspace/PrivateData/math-ink-data-collector/derived/public-candidate-20260819-r2/data/ownership_train.jsonl"
+      },
+      {
+        "formulas": "D:/AIFlow-Workspace/PrivateData/math-ink-data-collector/derived/fresh-context-acceptance-20260820-r2/frozen_acceptance/frozen_dataset/data/formulas_valid.jsonl",
+        "ownership": "D:/AIFlow-Workspace/PrivateData/math-ink-data-collector/derived/fresh-context-acceptance-20260820-r2/frozen_acceptance/frozen_dataset/data/ownership_train.jsonl"
+      }
+    ],
+    "teachers": {
+      "texteller": "D:/AIFlow-Workspace/Projects/Aiflow/aiflow-math-ink-1.0/artifacts/accuracy_upgrade_20260911_texteller_features",
+      "trocr_small": "D:/AIFlow-Workspace/Projects/Aiflow/aiflow-math-ink-1.0/artifacts/accuracy_upgrade_20260911_trocr_features",
+      "unimernet_tiny": "D:/AIFlow-Workspace/Projects/Aiflow/aiflow-math-ink-1.0/artifacts/accuracy_upgrade_20260911_unimernet_features"
+    },
+    "temperature": 2.0,
+    "top_k": 5,
+    "weight_decay": 0.001
+  },
+  "cuda": "12.4",
+  "device": "cpu",
+  "elapsed_seconds": 850.3574671999959,
+  "exit_code": 0,
+  "gpu": null,
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+  "stage": "student",
+  "status": "completed",
+  "torch": "2.5.1+cu124"
+}
