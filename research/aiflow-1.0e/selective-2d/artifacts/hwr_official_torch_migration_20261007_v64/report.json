@@ -1,0 +1,153 @@
+{
+  "schema": "aiflow-official-torch-migration/v64",
+  "torch_version": "2.14.1+cpu",
+  "torch_module": "/workspace/shared/aiflow-runtime/lib/python3.12/site-packages/torch/__init__.py",
+  "protocol": {
+    "runtime": "official PyTorch only",
+    "fallback_enabled": false,
+    "training_performed": false,
+    "retired_final_tests_loaded": false,
+    "independent_acceptance": false,
+    "product_default_changed": false
+  },
+  "verification": {
+    "requests": 579,
+    "full_logit_max_abs_error": 3.0994415283203125e-06,
+    "full_probability_max_abs_error": 8.344650268554688e-07,
+    "singleton_vs_padded_batch_max_abs_error": 4.76837158203125e-06,
+    "all_final_tokens_and_formula_decisions_match": true,
+    "invalid_contracts_rejected": 6,
+    "finite_fp32_shape_checked": true,
+    "canonical_sha256": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "tolerance": "1e-4 logits/log-probabilities, 1e-5 probabilities; exact class and fused decisions required"
+  },
+  "metrics": {
+    "fused": {
+      "formulas": 149,
+      "tokens": 579,
+      "baseline_formula_exact": 76,
+      "formula_exact": 108,
+      "baseline_token_hits": 470,
+      "token_hits": 526,
+      "recovered_formula_ids": [
+        "aiflow_0144",
+        "aiflow_0145",
+        "aiflow_0146",
+        "aiflow_0016",
+        "aiflow_0019",
+        "aiflow_0152",
+        "aiflow_0124",
+        "aiflow_0125",
+        "aiflow_0126",
+        "aiflow_0127",
+        "aiflow_0134",
+        "aiflow_0050",
+        "aiflow_0053",
+        "aiflow_0060",
+        "aiflow_0061",
+        "aiflow_0161",
+        "aiflow_0003",
+        "aiflow_0004",
+        "aiflow_0007",
+        "aiflow_0010",
+        "aiflow_0075",
+        "aiflow_0078",
+        "aiflow_0118",
+        "aiflow_0089",
+        "aiflow_0090",
+        "aiflow_0095",
+        "aiflow_0096",
+        "aiflow_0097",
+        "aiflow_0099",
+        "aiflow_0105",
+        "aiflow_0108",
+        "aiflow_0110",
+        "aiflow_0113",
+        "aiflow_0115",
+        "aiflow_0116"
+      ],
+      "regressed_formula_ids": [
+        "aiflow_0129",
+        "aiflow_0162",
+        "aiflow_0072"
+      ],
+      "token_recoveries": 65,
+      "token_regressions": 9
+    },
+    "strict": {
+      "formulas": 149,
+      "tokens": 579,
+      "baseline_formula_exact": 76,
+      "formula_exact": 97,
+      "baseline_token_hits": 470,
+      "token_hits": 504,
+      "recovered_formula_ids": [
+        "aiflow_0146",
+        "aiflow_0016",
+        "aiflow_0152",
+        "aiflow_0125",
+        "aiflow_0050",
+        "aiflow_0053",
+        "aiflow_0060",
+        "aiflow_0061",
+        "aiflow_0161",
+        "aiflow_0004",
+        "aiflow_0010",
+        "aiflow_0078",
+        "aiflow_0089",
+        "aiflow_0095",
+        "aiflow_0096",
+        "aiflow_0097",
+        "aiflow_0099",
+        "aiflow_0105",
+        "aiflow_0108",
+        "aiflow_0110",
+        "aiflow_0111",
+        "aiflow_0113",
+        "aiflow_0116"
+      ],
+      "regressed_formula_ids": [
+        "aiflow_0129",
+        "aiflow_0162"
+      ],
+      "token_recoveries": 38,
+      "token_regressions": 4
+    },
+    "capped": {
+      "formulas": 149,
+      "tokens": 579,
+      "baseline_formula_exact": 76,
+      "formula_exact": 82,
+      "baseline_token_hits": 470,
+      "token_hits": 481,
+      "recovered_formula_ids": [
+        "aiflow_0053",
+        "aiflow_0161",
+        "aiflow_0089",
+        "aiflow_0097",
+        "aiflow_0110",
+        "aiflow_0113"
+      ],
+      "regressed_formula_ids": [],
+      "token_recoveries": 11,
+      "token_regressions": 0
+    }
+  },
+  "runtime": {
+    "threads": 1,
+    "forward_median_ms": 0.215006,
+    "warmups_per_request": 2,
+    "scope": "official LM forward and validation only; no HWR or request packing",
+    "process_peak_rss_kib": 278836
+  },
+  "provenance": {
+    "research/aiflow-1.0e/selective-2d/artifacts/hwr_failure_cause_microscope_20260928/mini_lm_distill_20261003_one_layer/mini_formula_lm.pt": "2c448199c2b4d65c4d786348ad2f3ba09322fedb5337b35d503f48d0462d01f2",
+    "research/aiflow-1.0e/augmentation-models/canonical/project_symbol_head_checkpoint.pt": "04f8608aebcf6c02d45ad6f5735229b9eaa2c4b4e1be0db4793d02273ef2d00e",
+    "research/aiflow-1.0e/selective-2d/artifacts/hwr_numpy_reconstruction_20261007_v63/requests.jsonl": "94feea130ce20dee56bff7c176e956c5c0164f4cd63d50395ec101d21040503e",
+    "research/aiflow-1.0e/selective-2d/artifacts/hwr_numpy_reconstruction_20261007_v63/predictions.jsonl": "a7807b02ebc384190244afbdc5e0ce2a9115095761c0a4503eb43614651f6949",
+    "research/aiflow-1.0e/selective-2d/artifacts/hwr_numpy_reconstruction_20261007_v63/migration_reference_logits.npz": "8fd971fca8050905d38fe1ee0e6579372b3597a7b332220cb0eebc76ca816522",
+    "research/aiflow-1.0e/selective-2d/scripts/verify_official_mini_lm_v64.py": "b602b8e4393b12094d8ff66df535d80c6e471e770cbb7b93376953f5abf1e885",
+    "research/aiflow-1.0e/selective-2d/scripts/official_mini_lm_v64.py": "f8bf3d0b86591818230117013ccc391ec8b9a589198a80d372099efc2d7436a5"
+  },
+  "limitation": "Same-input migration parity against newly generated archived NumPy reference, not new HWR generalization or literal-error acceptance."
+}
