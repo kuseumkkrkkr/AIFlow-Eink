@@ -1,0 +1,48 @@
+{
+  "schema": "aiflow-literal-digit-counterfactual/v65",
+  "protocol": {
+    "official_torch": true,
+    "training_performed": false,
+    "retired_final_tests_loaded": false,
+    "consumed149_loaded": false,
+    "raw_ink_loaded": false,
+    "thresholds_selected": false,
+    "product_changed": false,
+    "literal_target_is_visual_top1": true,
+    "arithmetic_result_used_by_decoding": false,
+    "assumptions": "Clean symbolic neighboring tokens and synthetic two-digit visual distributions; targets stand for literal writing, including arithmetic errors."
+  },
+  "checkpoint_sha256": "2c448199c2b4d65c4d786348ad2f3ba09322fedb5337b35d503f48d0462d01f2",
+  "code_sha256": "6e26c5b9e84f6ed75349d080f775f1bc5c051b72990d99b81cc372bc0ef3a12b",
+  "contexts": 300,
+  "synthetic_decisions": 81000,
+  "counts": {
+    "0.10:arithmetically_invalid": 25632,
+    "0.10:arithmetically_valid": 1368,
+    "0.10:changed": 6076,
+    "0.10:changed_invalid": 5795,
+    "0.10:changed_to_arithmetic_result": 284,
+    "0.10:changed_valid": 281,
+    "0.10:total": 27000,
+    "0.20:arithmetically_invalid": 25632,
+    "0.20:arithmetically_valid": 1368,
+    "0.20:changed": 2867,
+    "0.20:changed_invalid": 2750,
+    "0.20:changed_to_arithmetic_result": 128,
+    "0.20:changed_valid": 117,
+    "0.20:total": 27000,
+    "0.30:arithmetically_invalid": 25632,
+    "0.30:arithmetically_valid": 1368,
+    "0.30:changed": 0,
+    "0.30:total": 27000
+  },
+  "runtime": {
+    "torch_version": "2.14.1+cpu",
+    "threads": 1,
+    "forward_median_ms": 0.402633,
+    "process_peak_rss_kib": 261076,
+    "scope": "LM forward/log-softmax only; single pass no warmup; peak includes entire synthetic audit"
+  },
+  "interpretation": "A changed literal is a synthetic transcription failure by construction. These are risk controls, not real handwriting error rates or evidence that the LM solves arithmetic.",
+  "next_step": "Use explicit literal-preservation controls for future training and inference contracts; require independently transcribed writer/formula-disjoint ink before acceptance."
+}
